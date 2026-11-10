@@ -1,0 +1,473 @@
+{
+  "provider": "kokoro",
+  "voice": "kokoro-v1.0:am_michael@1.12",
+  "sample_rate": 24000,
+  "generated": "2026-11-10T00:04:31+00:00",
+  "beats": [
+    {
+      "id": "b01",
+      "section": "hook",
+      "start": 0.6,
+      "end": 5.382,
+      "words": 16,
+      "wpm": 201
+    },
+    {
+      "id": "b02",
+      "section": "hook",
+      "start": 5.782,
+      "end": 12.61,
+      "words": 21,
+      "wpm": 185
+    },
+    {
+      "id": "b03",
+      "section": "move",
+      "start": 13.91,
+      "end": 20.579,
+      "words": 18,
+      "wpm": 162
+    },
+    {
+      "id": "b04",
+      "section": "move",
+      "start": 20.979,
+      "end": 33.754,
+      "words": 33,
+      "wpm": 155
+    },
+    {
+      "id": "b05",
+      "section": "move",
+      "start": 34.154,
+      "end": 43.385,
+      "words": 26,
+      "wpm": 169
+    },
+    {
+      "id": "b06",
+      "section": "move",
+      "start": 43.785,
+      "end": 50.236,
+      "words": 18,
+      "wpm": 167
+    },
+    {
+      "id": "b07",
+      "section": "move",
+      "start": 50.636,
+      "end": 61.136,
+      "words": 30,
+      "wpm": 171
+    },
+    {
+      "id": "b08",
+      "section": "move",
+      "start": 61.536,
+      "end": 72.895,
+      "words": 32,
+      "wpm": 169
+    },
+    {
+      "id": "b09",
+      "section": "move",
+      "start": 73.295,
+      "end": 76.34,
+      "words": 11,
+      "wpm": 217
+    },
+    {
+      "id": "b10",
+      "section": "sky",
+      "start": 77.64,
+      "end": 88.104,
+      "words": 28,
+      "wpm": 161
+    },
+    {
+      "id": "b11",
+      "section": "sky",
+      "start": 88.504,
+      "end": 102.056,
+      "words": 34,
+      "wpm": 151
+    },
+    {
+      "id": "b12",
+      "section": "sky",
+      "start": 102.456,
+      "end": 116.152,
+      "words": 37,
+      "wpm": 162
+    },
+    {
+      "id": "b13",
+      "section": "sky",
+      "start": 116.552,
+      "end": 126.192,
+      "words": 34,
+      "wpm": 212
+    },
+    {
+      "id": "b14",
+      "section": "sky",
+      "start": 126.592,
+      "end": 136.09,
+      "words": 29,
+      "wpm": 183
+    },
+    {
+      "id": "b15",
+      "section": "sky",
+      "start": 136.49,
+      "end": 143.642,
+      "words": 22,
+      "wpm": 185
+    },
+    {
+      "id": "b16",
+      "section": "sky",
+      "start": 144.042,
+      "end": 156.19,
+      "words": 35,
+      "wpm": 173
+    },
+    {
+      "id": "b17",
+      "section": "eclipse",
+      "start": 157.49,
+      "end": 169.975,
+      "words": 34,
+      "wpm": 163
+    },
+    {
+      "id": "b18",
+      "section": "eclipse",
+      "start": 170.375,
+      "end": 178.646,
+      "words": 25,
+      "wpm": 181
+    },
+    {
+      "id": "b19",
+      "section": "eclipse",
+      "start": 179.046,
+      "end": 187.081,
+      "words": 24,
+      "wpm": 179
+    },
+    {
+      "id": "b20",
+      "section": "eclipse",
+      "start": 187.481,
+      "end": 197.781,
+      "words": 29,
+      "wpm": 169
+    },
+    {
+      "id": "b21",
+      "section": "tides",
+      "start": 199.081,
+      "end": 208.07,
+      "words": 29,
+      "wpm": 194
+    },
+    {
+      "id": "b22",
+      "section": "tides",
+      "start": 208.47,
+      "end": 215.276,
+      "words": 20,
+      "wpm": 176
+    },
+    {
+      "id": "b23",
+      "section": "tides",
+      "start": 215.676,
+      "end": 230.088,
+      "words": 43,
+      "wpm": 179
+    },
+    {
+      "id": "b24",
+      "section": "tides",
+      "start": 230.488,
+      "end": 240.072,
+      "words": 24,
+      "wpm": 150
+    },
+    {
+      "id": "b25",
+      "section": "tides",
+      "start": 240.472,
+      "end": 251.736,
+      "words": 30,
+      "wpm": 160
+    },
+    {
+      "id": "b26",
+      "section": "tides",
+      "start": 252.136,
+      "end": 262.236,
+      "words": 28,
+      "wpm": 166
+    },
+    {
+      "id": "b27",
+      "section": "tides",
+      "start": 262.636,
+      "end": 268.548,
+      "words": 18,
+      "wpm": 183
+    },
+    {
+      "id": "b28",
+      "section": "coasts",
+      "start": 269.848,
+      "end": 282.926,
+      "words": 37,
+      "wpm": 170
+    },
+    {
+      "id": "b29",
+      "section": "coasts",
+      "start": 283.326,
+      "end": 296.269,
+      "words": 35,
+      "wpm": 162
+    },
+    {
+      "id": "b30",
+      "section": "coasts",
+      "start": 296.669,
+      "end": 309.392,
+      "words": 33,
+      "wpm": 156
+    },
+    {
+      "id": "b31",
+      "section": "coasts",
+      "start": 309.792,
+      "end": 320.145,
+      "words": 30,
+      "wpm": 174
+    },
+    {
+      "id": "b32",
+      "section": "coasts",
+      "start": 320.545,
+      "end": 337.192,
+      "words": 48,
+      "wpm": 173
+    },
+    {
+      "id": "b33",
+      "section": "roche",
+      "start": 338.492,
+      "end": 342.617,
+      "words": 15,
+      "wpm": 218
+    },
+    {
+      "id": "b34",
+      "section": "roche",
+      "start": 343.017,
+      "end": 355.655,
+      "words": 36,
+      "wpm": 171
+    },
+    {
+      "id": "b35",
+      "section": "roche",
+      "start": 356.055,
+      "end": 360.906,
+      "words": 17,
+      "wpm": 210
+    },
+    {
+      "id": "b36",
+      "section": "days",
+      "start": 362.206,
+      "end": 369.415,
+      "words": 23,
+      "wpm": 191
+    },
+    {
+      "id": "b37",
+      "section": "days",
+      "start": 369.815,
+      "end": 379.414,
+      "words": 26,
+      "wpm": 163
+    },
+    {
+      "id": "b38",
+      "section": "days",
+      "start": 379.814,
+      "end": 387.801,
+      "words": 22,
+      "wpm": 165
+    },
+    {
+      "id": "b39",
+      "section": "days",
+      "start": 388.201,
+      "end": 398.534,
+      "words": 28,
+      "wpm": 163
+    },
+    {
+      "id": "b40",
+      "section": "days",
+      "start": 398.934,
+      "end": 408.325,
+      "words": 25,
+      "wpm": 160
+    },
+    {
+      "id": "b41",
+      "section": "days",
+      "start": 408.725,
+      "end": 424.891,
+      "words": 45,
+      "wpm": 167
+    },
+    {
+      "id": "b42",
+      "section": "you",
+      "start": 426.191,
+      "end": 439.373,
+      "words": 38,
+      "wpm": 173
+    },
+    {
+      "id": "b43",
+      "section": "you",
+      "start": 439.773,
+      "end": 457.104,
+      "words": 44,
+      "wpm": 152
+    },
+    {
+      "id": "b44",
+      "section": "outro",
+      "start": 458.404,
+      "end": 471.459,
+      "words": 32,
+      "wpm": 147
+    },
+    {
+      "id": "b45",
+      "section": "outro",
+      "start": 471.859,
+      "end": 483.066,
+      "words": 34,
+      "wpm": 182
+    },
+    {
+      "id": "b46",
+      "section": "outro",
+      "start": 483.466,
+      "end": 489.928,
+      "words": 19,
+      "wpm": 176
+    },
+    {
+      "id": "b47",
+      "section": "outro",
+      "start": 490.328,
+      "end": 502.22,
+      "words": 35,
+      "wpm": 177
+    }
+  ],
+  "sections": [
+    {
+      "id": "hook",
+      "chapter": "Intro",
+      "start": 0.6,
+      "end": 13.91,
+      "clock": null
+    },
+    {
+      "id": "move",
+      "chapter": "Moving the Moon",
+      "start": 13.91,
+      "end": 77.64,
+      "clock": null
+    },
+    {
+      "id": "sky",
+      "chapter": "A bigger, faster Moon",
+      "start": 77.64,
+      "end": 157.49,
+      "clock": null
+    },
+    {
+      "id": "eclipse",
+      "chapter": "Eclipses, upgraded",
+      "start": 157.49,
+      "end": 199.081,
+      "clock": null
+    },
+    {
+      "id": "tides",
+      "chapter": "Eight times the tide",
+      "start": 199.081,
+      "end": 269.848,
+      "clock": null
+    },
+    {
+      "id": "coasts",
+      "chapter": "What happens at the coast",
+      "start": 269.848,
+      "end": 338.492,
+      "clock": null
+    },
+    {
+      "id": "roche",
+      "chapter": "Would the Moon survive?",
+      "start": 338.492,
+      "end": 362.206,
+      "clock": null
+    },
+    {
+      "id": "days",
+      "chapter": "Longer days, faster",
+      "start": 362.206,
+      "end": 426.191,
+      "clock": null
+    },
+    {
+      "id": "you",
+      "chapter": "Would you feel it?",
+      "start": 426.191,
+      "end": 458.404,
+      "clock": null
+    },
+    {
+      "id": "outro",
+      "chapter": "What we learned",
+      "start": 458.404,
+      "end": 503.52,
+      "clock": null
+    }
+  ],
+  "total": 507.52,
+  "retention_gaps": [
+    5.8,
+    67.5,
+    84.2,
+    41.6,
+    16.6,
+    47.0,
+    34.0,
+    41.8,
+    23.7,
+    46.5,
+    17.5,
+    81.3
+  ],
+  "hook_end": 12.61,
+  "qa_issues": []
+}

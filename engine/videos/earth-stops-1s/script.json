@@ -1,0 +1,1214 @@
+{
+  "video_id": "earth-stops-1s",
+  "title": "What If Earth Stopped Spinning for 1 Second?",
+  "series": "Planet Breakers",
+  "next_video": "What If You Fell Into Jupiter?",
+  "voice_style": "curious, warm, precise; mid-pace; slight pause before every reveal",
+  "shorts": [
+    {
+      "id": "short1",
+      "title": "Could friction save you if Earth stopped?",
+      "beats": [
+        "b16",
+        "b20"
+      ]
+    },
+    {
+      "id": "short2",
+      "title": "Earth stops: a Mach 1.37 wind",
+      "beats": [
+        "b27",
+        "b30"
+      ]
+    },
+    {
+      "id": "short3",
+      "title": "Earth stops for 1 second: the strangest side effect",
+      "beats": [
+        "b48",
+        "b51"
+      ]
+    }
+  ],
+  "generated": "2026-11-09T23:37:30+00:00",
+  "sections": [
+    {
+      "id": "hook",
+      "chapter": "Intro",
+      "clock": null,
+      "beats": [
+        {
+          "id": "b01",
+          "text": "Right now, Earth's spin carries you at up to 1,670 kilometers per hour, and you can't feel it.",
+          "visual": {
+            "scene": "earth_spin",
+            "phase": "spin"
+          },
+          "kinetic": "1,670 km/h",
+          "claims": [
+            "v_eq_kmh"
+          ],
+          "template_text": "Right now, Earth's spin carries you at up to {{v_eq_kmh}} kilometers per hour, and you can't feel it.",
+          "spoken": "Right now, Earth's spin carries you at up to one thousand six hundred and seventy kilometers per hour, and you can't feel it.",
+          "est_start": 0.0,
+          "est_dur": 7.8
+        },
+        {
+          "id": "b02",
+          "text": "So what if, for one second, the ground under you stopped, and everything else didn't?",
+          "visual": {
+            "scene": "earth_spin",
+            "phase": "stop"
+          },
+          "kinetic": "1 second",
+          "retention": "Hook question (open loop)",
+          "claims": [],
+          "template_text": "So what if, for one second, the ground under you stopped, and everything else didn't?",
+          "spoken": "So what if, for one second, the ground under you stopped, and everything else didn't?",
+          "est_start": 8.2,
+          "est_dur": 5.1
+        }
+      ],
+      "est_start": 0.0
+    },
+    {
+      "id": "speed",
+      "chapter": "How fast are we spinning?",
+      "clock": null,
+      "beats": [
+        {
+          "id": "b03",
+          "text": "Welcome to The If Engine, where we run impossible scenarios through real physics, and show you the math.",
+          "visual": {
+            "scene": "title"
+          },
+          "kinetic": null,
+          "claims": [],
+          "template_text": "Welcome to The If Engine, where we run impossible scenarios through real physics, and show you the math.",
+          "spoken": "Welcome to The If Engine, where we run impossible scenarios through real physics, and show you the math.",
+          "est_start": 14.7,
+          "est_dur": 6.1
+        },
+        {
+          "id": "b04",
+          "text": "First, the speed. Earth turns once every 23.93 hours relative to the stars. That's the sidereal day, about four minutes shorter than the 24-hour day on your clock, because Earth is also circling the Sun.",
+          "visual": {
+            "scene": "earth_spin",
+            "phase": "sidereal"
+          },
+          "kinetic": "23 h 56 min 4 s",
+          "claims": [
+            "sidereal_h",
+            "sidereal_hms"
+          ],
+          "template_text": "First, the speed. Earth turns once every {{sidereal_h}} hours relative to the stars. That's the sidereal day, about four minutes shorter than the 24-hour day on your clock, because Earth is also circling the Sun.",
+          "spoken": "First, the speed. Earth turns once every twenty-three point nine three hours relative to the stars. That's the sidereal day, about four minutes shorter than the twenty-four hour day on your clock, because Earth is also circling the Sun.",
+          "est_start": 21.2,
+          "est_dur": 13.3
+        },
+        {
+          "id": "b05",
+          "text": "Divide the distance around the equator by that time, and you get about 465 meters per second. That's roughly 1,670 kilometers per hour, faster than the speed of sound.",
+          "visual": {
+            "scene": "earth_spin",
+            "phase": "equator"
+          },
+          "card": "v_equator",
+          "kinetic": null,
+          "claims": [
+            "v_eq_ms",
+            "v_eq_kmh",
+            "c_air"
+          ],
+          "template_text": "Divide the distance around the equator by that time, and you get about {{v_eq_ms}} meters per second. That's roughly {{v_eq_kmh}} kilometers per hour, faster than the speed of sound.",
+          "spoken": "Divide the distance around the equator by that time, and you get about four hundred and sixty-five meters per second. That's roughly one thousand six hundred and seventy kilometers per hour, faster than the speed of sound.",
+          "est_start": 34.9,
+          "est_dur": 12.6
+        },
+        {
+          "id": "b06",
+          "text": "But not everyone moves that fast. The farther you are from the equator, the smaller the circle you trace every day.",
+          "visual": {
+            "scene": "latitude",
+            "phase": "circles"
+          },
+          "kinetic": null,
+          "claims": [],
+          "template_text": "But not everyone moves that fast. The farther you are from the equator, the smaller the circle you trace every day.",
+          "spoken": "But not everyone moves that fast. The farther you are from the equator, the smaller the circle you trace every day.",
+          "est_start": 47.9,
+          "est_dur": 7.2
+        },
+        {
+          "id": "b07",
+          "text": "In Singapore, you're doing about 465 meters per second. In Cairo, 403. New York, 353. London, 290. And at the North Pole, you're just turning in place.",
+          "visual": {
+            "scene": "latitude",
+            "phase": "bars"
+          },
+          "card": "v_latitude",
+          "kinetic": null,
+          "claims": [
+            "v_singapore_ms",
+            "v_cairo_ms",
+            "v_newyork_ms",
+            "v_london_ms",
+            "v_northpole_ms"
+          ],
+          "template_text": "In Singapore, you're doing about {{v_singapore_ms}} meters per second. In Cairo, {{v_cairo_ms}}. New York, {{v_newyork_ms}}. London, {{v_london_ms}}. And at the North Pole, you're just turning in place.",
+          "spoken": "In Singapore, you're doing about four hundred and sixty-five meters per second. In Cairo, four hundred and three. New York, three hundred and fifty-three. London, two hundred and ninety. And at the North Pole, you're just turning in place.",
+          "est_start": 55.5,
+          "est_dur": 13.3
+        },
+        {
+          "id": "b08",
+          "text": "We never feel any of this, because the ground, the air, the oceans and you are all moving together, at a steady speed. Motion you share with everything around you is motion you can't feel.",
+          "visual": {
+            "scene": "latitude",
+            "phase": "together"
+          },
+          "kinetic": "Moving together = feels like standing still",
+          "claims": [],
+          "template_text": "We never feel any of this, because the ground, the air, the oceans and you are all moving together, at a steady speed. Motion you share with everything around you is motion you can't feel.",
+          "spoken": "We never feel any of this, because the ground, the air, the oceans and you are all moving together, at a steady speed. Motion you share with everything around you is motion you can't feel.",
+          "est_start": 69.2,
+          "est_dur": 11.9
+        },
+        {
+          "id": "b09",
+          "text": "Which is exactly why breaking that agreement, even for one second, is such a terrible idea.",
+          "visual": {
+            "scene": "latitude",
+            "phase": "break"
+          },
+          "kinetic": null,
+          "retention": "Stakes raise",
+          "claims": [],
+          "template_text": "Which is exactly why breaking that agreement, even for one second, is such a terrible idea.",
+          "spoken": "Which is exactly why breaking that agreement, even for one second, is such a terrible idea.",
+          "est_start": 81.5,
+          "est_dur": 5.5
+        }
+      ],
+      "est_start": 14.7
+    },
+    {
+      "id": "rules",
+      "chapter": "The rules",
+      "clock": null,
+      "beats": [
+        {
+          "id": "b10",
+          "text": "Here are the rules of today's experiment.",
+          "visual": {
+            "scene": "rules",
+            "phase": "0",
+            "items": [
+              {
+                "n": "1",
+                "h": "STOP",
+                "d": "Solid Earth stops rotating instantly"
+              },
+              {
+                "n": "2",
+                "h": "HOLD",
+                "d": "It stays still for exactly 1 second"
+              },
+              {
+                "n": "3",
+                "h": "RESTART",
+                "d": "It snaps back to its normal spin"
+              }
+            ]
+          },
+          "kinetic": null,
+          "claims": [],
+          "template_text": "Here are the rules of today's experiment.",
+          "spoken": "Here are the rules of today's experiment.",
+          "est_start": 88.2,
+          "est_dur": 2.4
+        },
+        {
+          "id": "b11",
+          "text": "Rule one: the solid Earth, every rock and everything bolted to it, stops rotating instantly.",
+          "visual": {
+            "scene": "rules",
+            "phase": "1",
+            "items": [
+              {
+                "n": "1",
+                "h": "STOP",
+                "d": "Solid Earth stops rotating instantly"
+              },
+              {
+                "n": "2",
+                "h": "HOLD",
+                "d": "It stays still for exactly 1 second"
+              },
+              {
+                "n": "3",
+                "h": "RESTART",
+                "d": "It snaps back to its normal spin"
+              }
+            ]
+          },
+          "kinetic": null,
+          "claims": [],
+          "template_text": "Rule one: the solid Earth, every rock and everything bolted to it, stops rotating instantly.",
+          "spoken": "Rule one: the solid Earth, every rock and everything bolted to it, stops rotating instantly.",
+          "est_start": 91.0,
+          "est_dur": 5.1
+        },
+        {
+          "id": "b12",
+          "text": "Rule two: it stays perfectly still for exactly one second.",
+          "visual": {
+            "scene": "rules",
+            "phase": "2",
+            "items": [
+              {
+                "n": "1",
+                "h": "STOP",
+                "d": "Solid Earth stops rotating instantly"
+              },
+              {
+                "n": "2",
+                "h": "HOLD",
+                "d": "It stays still for exactly 1 second"
+              },
+              {
+                "n": "3",
+                "h": "RESTART",
+                "d": "It snaps back to its normal spin"
+              }
+            ]
+          },
+          "kinetic": null,
+          "claims": [],
+          "template_text": "Rule two: it stays perfectly still for exactly one second.",
+          "spoken": "Rule two: it stays perfectly still for exactly one second.",
+          "est_start": 96.5,
+          "est_dur": 3.4
+        },
+        {
+          "id": "b13",
+          "text": "Rule three: it snaps back to its normal spin, as if nothing happened.",
+          "visual": {
+            "scene": "rules",
+            "phase": "3",
+            "items": [
+              {
+                "n": "1",
+                "h": "STOP",
+                "d": "Solid Earth stops rotating instantly"
+              },
+              {
+                "n": "2",
+                "h": "HOLD",
+                "d": "It stays still for exactly 1 second"
+              },
+              {
+                "n": "3",
+                "h": "RESTART",
+                "d": "It snaps back to its normal spin"
+              }
+            ]
+          },
+          "kinetic": null,
+          "claims": [],
+          "template_text": "Rule three: it snaps back to its normal spin, as if nothing happened.",
+          "spoken": "Rule three: it snaps back to its normal spin, as if nothing happened.",
+          "est_start": 100.4,
+          "est_dur": 4.4
+        },
+        {
+          "id": "b14",
+          "text": "Everything that isn't rock, the air, the water, and you, simply follows Newton's first law. It keeps moving at the speed it already had.",
+          "visual": {
+            "scene": "rules",
+            "phase": "law",
+            "items": [
+              {
+                "n": "1",
+                "h": "STOP",
+                "d": "Solid Earth stops rotating instantly"
+              },
+              {
+                "n": "2",
+                "h": "HOLD",
+                "d": "It stays still for exactly 1 second"
+              },
+              {
+                "n": "3",
+                "h": "RESTART",
+                "d": "It snaps back to its normal spin"
+              }
+            ],
+            "law": "ΣF = 0 ⇒ v = constant",
+            "caption": "Air, water and people keep the velocity they had"
+          },
+          "kinetic": "Newton's 1st law: objects keep moving",
+          "claims": [],
+          "template_text": "Everything that isn't rock, the air, the water, and you, simply follows Newton's first law. It keeps moving at the speed it already had.",
+          "spoken": "Everything that isn't rock, the air, the water, and you, simply follows Newton's first law. It keeps moving at the speed it already had.",
+          "est_start": 105.2,
+          "est_dur": 8.2
+        }
+      ],
+      "est_start": 88.2
+    },
+    {
+      "id": "you",
+      "chapter": "Second zero: you",
+      "clock": "T + 0.00 s",
+      "beats": [
+        {
+          "id": "b15",
+          "text": "Let's start the clock. At time zero, the ground stops. Say you're standing on the equator. From the ground's point of view, you're suddenly hurtling east at 465 meters per second.",
+          "visual": {
+            "scene": "person",
+            "phase": "launch"
+          },
+          "kinetic": "465 m/s →",
+          "claims": [
+            "v_eq_ms"
+          ],
+          "template_text": "Let's start the clock. At time zero, the ground stops. Say you're standing on the equator. From the ground's point of view, you're suddenly hurtling east at {{v_eq_ms}} meters per second.",
+          "spoken": "Let's start the clock. At time zero, the ground stops. Say you're standing on the equator. From the ground's point of view, you're suddenly hurtling east at four hundred and sixty-five meters per second.",
+          "est_start": 114.7,
+          "est_dur": 11.6
+        },
+        {
+          "id": "b16",
+          "text": "Can friction save you? Rubber on dry concrete can slow you down at about 6.9 meters per second squared. Over the whole second, that takes off just 7 meters per second. You'd still be going 458.",
+          "visual": {
+            "scene": "person",
+            "phase": "friction"
+          },
+          "card": "friction",
+          "kinetic": null,
+          "claims": [
+            "friction_decel",
+            "friction_dv",
+            "v_after_friction"
+          ],
+          "template_text": "Can friction save you? Rubber on dry concrete can slow you down at about {{friction_decel}} meters per second squared. Over the whole second, that takes off just {{friction_dv}} meters per second. You'd still be going {{v_after_friction}}.",
+          "spoken": "Can friction save you? Rubber on dry concrete can slow you down at about six point nine meters per second squared. Over the whole second, that takes off just seven meters per second. You'd still be going four hundred and fifty-eight.",
+          "est_start": 126.7,
+          "est_dur": 14.0
+        },
+        {
+          "id": "b17",
+          "text": "If nothing were in your way, you'd tumble almost half a kilometer in that one second.",
+          "visual": {
+            "scene": "person",
+            "phase": "distance"
+          },
+          "kinetic": "≈ 465 m in 1 s",
+          "claims": [
+            "one_sec_distance"
+          ],
+          "template_text": "If nothing were in your way, you'd tumble almost half a kilometer in that one second.",
+          "spoken": "If nothing were in your way, you'd tumble almost half a kilometer in that one second.",
+          "est_start": 141.0,
+          "est_dur": 5.5
+        },
+        {
+          "id": "b18",
+          "text": "But on a planet covered in walls, trees and cars, something is always in your way. So how hard is that hit?",
+          "visual": {
+            "scene": "person",
+            "phase": "wall"
+          },
+          "kinetic": null,
+          "retention": "Open loop: how hard is the hit?",
+          "claims": [],
+          "template_text": "But on a planet covered in walls, trees and cars, something is always in your way. So how hard is that hit?",
+          "spoken": "But on a planet covered in walls, trees and cars, something is always in your way. So how hard is that hit?",
+          "est_start": 146.9,
+          "est_dur": 7.5
+        },
+        {
+          "id": "b19",
+          "text": "At 465 meters per second, a 70 kilogram person carries about 7.6 megajoules of kinetic energy. That's the energy released by roughly 1.8 kilograms of TNT.",
+          "visual": {
+            "scene": "person",
+            "phase": "energy"
+          },
+          "card": "ke_person",
+          "kinetic": null,
+          "claims": [
+            "v_eq_ms",
+            "person_mass",
+            "ke_person_mj",
+            "ke_person_tnt"
+          ],
+          "template_text": "At {{v_eq_ms}} meters per second, a {{person_mass}} kilogram person carries about {{ke_person_mj}} megajoules of kinetic energy. That's the energy released by roughly {{ke_person_tnt}} kilograms of TNT.",
+          "spoken": "At four hundred and sixty-five meters per second, a seventy kilogram person carries about seven point six megajoules of kinetic energy. That's the energy released by roughly one point eight kilograms of TNT.",
+          "est_start": 154.8,
+          "est_dur": 11.2
+        },
+        {
+          "id": "b20",
+          "text": "Here's another way to feel that number. Hitting a wall at that speed is like falling from a height of 11 kilometers, with no air to slow you down. That's higher than Mount Everest.",
+          "visual": {
+            "scene": "fall",
+            "phase": "everest"
+          },
+          "card": "fall_height",
+          "kinetic": null,
+          "claims": [
+            "fall_height_km",
+            "everest_km"
+          ],
+          "template_text": "Here's another way to feel that number. Hitting a wall at that speed is like falling from a height of {{fall_height_km}} kilometers, with no air to slow you down. That's higher than Mount Everest.",
+          "spoken": "Here's another way to feel that number. Hitting a wall at that speed is like falling from a height of eleven kilometers, with no air to slow you down. That's higher than Mount Everest.",
+          "est_start": 166.4,
+          "est_dur": 11.6
+        },
+        {
+          "id": "b21",
+          "text": "In London, the numbers are smaller, but not small enough. Even at 290 meters per second, it's the same as falling from 4.3 kilometers.",
+          "visual": {
+            "scene": "fall",
+            "phase": "london"
+          },
+          "kinetic": "London: 4.3 km drop",
+          "claims": [
+            "v_london_ms",
+            "fall_height_london_km"
+          ],
+          "template_text": "In London, the numbers are smaller, but not small enough. Even at {{v_london_ms}} meters per second, it's the same as falling from {{fall_height_london_km}} kilometers.",
+          "spoken": "In London, the numbers are smaller, but not small enough. Even at two hundred and ninety meters per second, it's the same as falling from four point three kilometers.",
+          "est_start": 178.4,
+          "est_dur": 9.9
+        }
+      ],
+      "est_start": 114.7
+    },
+    {
+      "id": "buildings",
+      "chapter": "The buildings",
+      "clock": "T + 0.00 s",
+      "beats": [
+        {
+          "id": "b22",
+          "text": "Now, buildings. Unlike you, they're anchored to the rock. So when the rock stops, their foundations stop with it, instantly.",
+          "visual": {
+            "scene": "building",
+            "phase": "anchor"
+          },
+          "kinetic": null,
+          "claims": [],
+          "template_text": "Now, buildings. Unlike you, they're anchored to the rock. So when the rock stops, their foundations stop with it, instantly.",
+          "spoken": "Now, buildings. Unlike you, they're anchored to the rock. So when the rock stops, their foundations stop with it, instantly.",
+          "est_start": 189.6,
+          "est_dur": 6.8
+        },
+        {
+          "id": "b23",
+          "text": "The upper floors don't know that yet. The news travels up the structure as a shear wave, a kind of sound wave in steel, moving at about 3,200 meters per second.",
+          "visual": {
+            "scene": "building",
+            "phase": "wave"
+          },
+          "kinetic": "Shear wave: 3,200 m/s",
+          "claims": [
+            "c_steel"
+          ],
+          "template_text": "The upper floors don't know that yet. The news travels up the structure as a shear wave, a kind of sound wave in steel, moving at about {{c_steel}} meters per second.",
+          "spoken": "The upper floors don't know that yet. The news travels up the structure as a shear wave, a kind of sound wave in steel, moving at about three thousand two hundred meters per second.",
+          "est_start": 196.8,
+          "est_dur": 11.6
+        },
+        {
+          "id": "b24",
+          "text": "The stress that wave carries is density, times wave speed, times the sudden change in velocity. For steel, that's about 12 gigapascals.",
+          "visual": {
+            "scene": "building",
+            "phase": "stress"
+          },
+          "card": "steel_stress",
+          "kinetic": null,
+          "claims": [
+            "steel_stress_gpa"
+          ],
+          "template_text": "The stress that wave carries is density, times wave speed, times the sudden change in velocity. For steel, that's about {{steel_stress_gpa}} gigapascals.",
+          "spoken": "The stress that wave carries is density, times wave speed, times the sudden change in velocity. For steel, that's about twelve gigapascals.",
+          "est_start": 208.8,
+          "est_dur": 7.5
+        },
+        {
+          "id": "b25",
+          "text": "Common structural steel starts to give way in shear at around 140 megapascals. Our stress wave is about 80 times that. Structures bolted to the ground just aren't built for a jolt like this.",
+          "visual": {
+            "scene": "building",
+            "phase": "fail"
+          },
+          "kinetic": "80× beyond shear yield",
+          "claims": [
+            "steel_yield_mpa",
+            "steel_ratio"
+          ],
+          "template_text": "Common structural steel starts to give way in shear at around {{steel_yield_mpa}} megapascals. Our stress wave is about {{steel_ratio}} times that. Structures bolted to the ground just aren't built for a jolt like this.",
+          "spoken": "Common structural steel starts to give way in shear at around one hundred and forty megapascals. Our stress wave is about eighty times that. Structures bolted to the ground just aren't built for a jolt like this.",
+          "est_start": 216.7,
+          "est_dur": 12.6
+        },
+        {
+          "id": "b26",
+          "text": "And yet, as bad as all that is, it isn't the biggest problem. The biggest problem is the thing you can't see.",
+          "visual": {
+            "scene": "air",
+            "phase": "tease"
+          },
+          "kinetic": null,
+          "retention": "Reveal tease: the invisible threat",
+          "claims": [],
+          "template_text": "And yet, as bad as all that is, it isn't the biggest problem. The biggest problem is the thing you can't see.",
+          "spoken": "And yet, as bad as all that is, it isn't the biggest problem. The biggest problem is the thing you can't see.",
+          "est_start": 229.7,
+          "est_dur": 7.5
+        }
+      ],
+      "est_start": 189.6
+    },
+    {
+      "id": "air",
+      "chapter": "A supersonic wind",
+      "clock": "T + 0.00 s",
+      "beats": [
+        {
+          "id": "b27",
+          "text": "The atmosphere isn't bolted to anything. When the ground stops, the air keeps going. At the equator, that's a wind of 465 meters per second, blowing from west to east.",
+          "visual": {
+            "scene": "air",
+            "phase": "wind"
+          },
+          "kinetic": "Wind: 465 m/s",
+          "claims": [
+            "v_eq_ms"
+          ],
+          "template_text": "The atmosphere isn't bolted to anything. When the ground stops, the air keeps going. At the equator, that's a wind of {{v_eq_ms}} meters per second, blowing from west to east.",
+          "spoken": "The atmosphere isn't bolted to anything. When the ground stops, the air keeps going. At the equator, that's a wind of four hundred and sixty-five meters per second, blowing from west to east.",
+          "est_start": 238.5,
+          "est_dur": 11.2
+        },
+        {
+          "id": "b28",
+          "text": "At sea level, sound travels at about 340 meters per second. So at the equator, this wind is Mach 1.37. It stays supersonic everywhere within about 43 degrees of the equator. That's two-thirds of Earth's surface, all at once.",
+          "visual": {
+            "scene": "air",
+            "phase": "mach"
+          },
+          "card": "mach",
+          "kinetic": null,
+          "claims": [
+            "c_air",
+            "mach",
+            "supersonic_lat",
+            "supersonic_area_frac"
+          ],
+          "template_text": "At sea level, sound travels at about {{c_air}} meters per second. So at the equator, this wind is Mach {{mach}}. It stays supersonic everywhere within about {{supersonic_lat}} degrees of the equator. That's {{supersonic_area_frac}} of Earth's surface, all at once.",
+          "spoken": "At sea level, sound travels at about three hundred and forty meters per second. So at the equator, this wind is Mach one point three seven. It stays supersonic everywhere within about forty-three degrees of the equator. That's two-thirds of Earth's surface, all at once.",
+          "est_start": 250.2,
+          "est_dur": 15.3
+        },
+        {
+          "id": "b29",
+          "text": "Anything standing in its way gets pushed with at least half the air density times the wind speed squared. That's 132 kilopascals, about 14 tonnes of force on every square meter of wall.",
+          "visual": {
+            "scene": "air",
+            "phase": "pressure"
+          },
+          "card": "ram_pressure",
+          "kinetic": null,
+          "claims": [
+            "q_kpa",
+            "q_tonnes"
+          ],
+          "template_text": "Anything standing in its way gets pushed with at least half the air density times the wind speed squared. That's {{q_kpa}} kilopascals, about {{q_tonnes}} tonnes of force on every square meter of wall.",
+          "spoken": "Anything standing in its way gets pushed with at least half the air density times the wind speed squared. That's one hundred and thirty-two kilopascals, about fourteen tonnes of force on every square meter of wall.",
+          "est_start": 265.9,
+          "est_dur": 12.3
+        },
+        {
+          "id": "b30",
+          "text": "For comparison, a Category 5 hurricane starts at 252 kilometers per hour. That push grows with the square of the speed, so our wind pushes about 44 times harder than the minimum Category 5 wind.",
+          "visual": {
+            "scene": "compare",
+            "a": {
+              "label": "Cat 5 minimum",
+              "sub": "252 km/h",
+              "value": "3",
+              "unit": "kPa"
+            },
+            "b": {
+              "label": "Earth stops",
+              "sub": "1,670 km/h",
+              "value": "132",
+              "unit": "kPa"
+            },
+            "ratio": "44×"
+          },
+          "card": "hurricane_ratio",
+          "kinetic": null,
+          "claims": [
+            "cat5_kmh",
+            "hurricane_ratio"
+          ],
+          "template_text": "For comparison, a Category 5 hurricane starts at {{cat5_kmh}} kilometers per hour. That push grows with the square of the speed, so our wind pushes about {{hurricane_ratio}} times harder than the minimum Category 5 wind.",
+          "spoken": "For comparison, a Category five hurricane starts at two hundred and fifty-two kilometers per hour. That push grows with the square of the speed, so our wind pushes about forty-four times harder than the minimum Category five wind.",
+          "est_start": 278.6,
+          "est_dur": 13.0
+        },
+        {
+          "id": "b31",
+          "text": "Across that zone, every building, tree and hill would grow its own shock wave. Picture a sonic boom, but instead of one passing jet, it comes from every obstacle at the same moment.",
+          "visual": {
+            "scene": "air",
+            "phase": "shocks"
+          },
+          "kinetic": "Shock waves everywhere",
+          "claims": [],
+          "template_text": "Across that zone, every building, tree and hill would grow its own shock wave. Picture a sonic boom, but instead of one passing jet, it comes from every obstacle at the same moment.",
+          "spoken": "Across that zone, every building, tree and hill would grow its own shock wave. Picture a sonic boom, but instead of one passing jet, it comes from every obstacle at the same moment.",
+          "est_start": 292.0,
+          "est_dur": 11.2
+        },
+        {
+          "id": "b32",
+          "text": "Altogether, the moving air carries about 3.7 × 10²³ joules of kinetic energy relative to the ground. That's roughly 600 years of humanity's entire energy use.",
+          "visual": {
+            "scene": "atm_energy"
+          },
+          "card": "atm_ke",
+          "kinetic": null,
+          "claims": [
+            "atm_ke",
+            "atm_ke_years"
+          ],
+          "retention": "Shock stat (pattern interrupt)",
+          "template_text": "Altogether, the moving air carries about {{atm_ke}} joules of kinetic energy relative to the ground. That's roughly {{atm_ke_years}} years of humanity's entire energy use.",
+          "spoken": "Altogether, the moving air carries about three point seven times ten to the twenty-third joules of kinetic energy relative to the ground. That's roughly six hundred years of humanity's entire energy use.",
+          "est_start": 303.6,
+          "est_dur": 10.9
+        },
+        {
+          "id": "b33",
+          "text": "But here's the twist. It only has one second to deliver it. In one second, even the fastest air moves less than half a kilometer, and most of the air above the rooftops never touches anything solid before the ground starts again.",
+          "visual": {
+            "scene": "air",
+            "phase": "twist"
+          },
+          "kinetic": "Only 1 second to deliver it",
+          "retention": "Twist: the clock saves us (partly)",
+          "claims": [
+            "one_sec_distance"
+          ],
+          "template_text": "But here's the twist. It only has one second to deliver it. In one second, even the fastest air moves less than half a kilometer, and most of the air above the rooftops never touches anything solid before the ground starts again.",
+          "spoken": "But here's the twist. It only has one second to deliver it. In one second, even the fastest air moves less than half a kilometer, and most of the air above the rooftops never touches anything solid before the ground starts again.",
+          "est_start": 314.9,
+          "est_dur": 14.3
+        }
+      ],
+      "est_start": 238.5
+    },
+    {
+      "id": "oceans",
+      "chapter": "The oceans",
+      "clock": "T + 0.00 s",
+      "beats": [
+        {
+          "id": "b34",
+          "text": "Now, the oceans. Like the air, the water keeps moving while the sea floor stops. The open ocean is, on average, 3.7 kilometers deep, and near the equator that entire column of water slides east by up to 465 meters.",
+          "visual": {
+            "scene": "ocean",
+            "phase": "slide"
+          },
+          "kinetic": null,
+          "claims": [
+            "ocean_depth_km",
+            "one_sec_distance"
+          ],
+          "template_text": "Now, the oceans. Like the air, the water keeps moving while the sea floor stops. The open ocean is, on average, {{ocean_depth_km}} kilometers deep, and near the equator that entire column of water slides east by up to {{one_sec_distance}} meters.",
+          "spoken": "Now, the oceans. Like the air, the water keeps moving while the sea floor stops. The open ocean is, on average, three point seven kilometers deep, and near the equator that entire column of water slides east by up to four hundred and sixty-five meters.",
+          "est_start": 330.5,
+          "est_dur": 15.3
+        },
+        {
+          "id": "b35",
+          "text": "That's about 1.7 million cubic meters of water shoved toward the shore for every single meter of coastline in its path. Roughly 690 Olympic swimming pools, per meter.",
+          "visual": {
+            "scene": "ocean",
+            "phase": "volume"
+          },
+          "card": "ocean_volume",
+          "kinetic": null,
+          "claims": [
+            "ocean_volume_per_m",
+            "olympic_pools"
+          ],
+          "template_text": "That's about {{ocean_volume_per_m}} million cubic meters of water shoved toward the shore for every single meter of coastline in its path. Roughly {{olympic_pools}} Olympic swimming pools, per meter.",
+          "spoken": "That's about one point seven million cubic meters of water shoved toward the shore for every single meter of coastline in its path. Roughly six hundred and ninety Olympic swimming pools, per meter.",
+          "est_start": 346.3,
+          "est_dur": 11.2
+        },
+        {
+          "id": "b36",
+          "text": "But the coasts are where it gets violent. When fast-moving water slams into a steep rock face, it can't get out of the way. Engineers call this water hammer, and the pressure spike is density, times the speed of sound in water, times the impact speed.",
+          "visual": {
+            "scene": "ocean",
+            "phase": "hammer"
+          },
+          "kinetic": "Water hammer",
+          "claims": [],
+          "retention": "Escalation: the coasts",
+          "template_text": "But the coasts are where it gets violent. When fast-moving water slams into a steep rock face, it can't get out of the way. Engineers call this water hammer, and the pressure spike is density, times the speed of sound in water, times the impact speed.",
+          "spoken": "But the coasts are where it gets violent. When fast-moving water slams into a steep rock face, it can't get out of the way. Engineers call this water hammer, and the pressure spike is density, times the speed of sound in water, times the impact speed.",
+          "est_start": 357.9,
+          "est_dur": 15.7
+        },
+        {
+          "id": "b37",
+          "text": "With water hitting rock at 465 meters per second, that's around 720 megapascals, more than 6 times the crushing pressure at the bottom of the Mariana Trench.",
+          "visual": {
+            "scene": "ocean",
+            "phase": "hammer"
+          },
+          "card": "water_hammer",
+          "kinetic": null,
+          "claims": [
+            "v_eq_ms",
+            "hammer_mpa",
+            "hammer_ratio_floor"
+          ],
+          "template_text": "With water hitting rock at {{v_eq_ms}} meters per second, that's around {{hammer_mpa}} megapascals, more than {{hammer_ratio_floor}} times the crushing pressure at the bottom of the Mariana Trench.",
+          "spoken": "With water hitting rock at four hundred and sixty-five meters per second, that's around seven hundred and twenty megapascals, more than six times the crushing pressure at the bottom of the Mariana Trench.",
+          "est_start": 374.0,
+          "est_dur": 11.2
+        },
+        {
+          "id": "b38",
+          "text": "On the coasts facing the other way, the water does the reverse. It pulls away from the land, for a moment uncovering the sea floor near the shore.",
+          "visual": {
+            "scene": "ocean",
+            "phase": "pullback"
+          },
+          "kinetic": null,
+          "claims": [],
+          "template_text": "On the coasts facing the other way, the water does the reverse. It pulls away from the land, for a moment uncovering the sea floor near the shore.",
+          "spoken": "On the coasts facing the other way, the water does the reverse. It pulls away from the land, for a moment uncovering the sea floor near the shore.",
+          "est_start": 385.7,
+          "est_dur": 9.5
+        },
+        {
+          "id": "b39",
+          "text": "Once the ground starts again, gravity tries to level everything out, and that sends tsunamis across every ocean. In water 3.7 kilometers deep, a tsunami travels at about 684 kilometers per hour, nearly as fast as a jet airliner, crossing 5,000 kilometers of ocean in about 7.3 hours.",
+          "visual": {
+            "scene": "tsunami"
+          },
+          "card": "tsunami_speed",
+          "kinetic": null,
+          "claims": [
+            "ocean_depth_km",
+            "tsunami_kmh",
+            "ocean_cross_km",
+            "ocean_cross_h",
+            "jet_ratio"
+          ],
+          "template_text": "Once the ground starts again, gravity tries to level everything out, and that sends tsunamis across every ocean. In water {{ocean_depth_km}} kilometers deep, a tsunami travels at about {{tsunami_kmh}} kilometers per hour, nearly as fast as a jet airliner, crossing {{ocean_cross_km}} kilometers of ocean in about {{ocean_cross_h}} hours.",
+          "spoken": "Once the ground starts again, gravity tries to level everything out, and that sends tsunamis across every ocean. In water three point seven kilometers deep, a tsunami travels at about six hundred and eighty-four kilometers per hour, nearly as fast as a jet airliner, crossing five thousand kilometers of ocean in about seven point three hours.",
+          "est_start": 395.6,
+          "est_dur": 19.1
+        },
+        {
+          "id": "b40",
+          "text": "How tall would those waves be? Honestly, that depends on the shape of every coastline and sea floor. That takes a supercomputer, not a video. But the push is enormous, and it reaches every ocean basin at once.",
+          "visual": {
+            "scene": "tsunami",
+            "phase": "unknown"
+          },
+          "kinetic": "Wave height = ?",
+          "retention": "Honesty beat / pattern break",
+          "claims": [],
+          "template_text": "How tall would those waves be? Honestly, that depends on the shape of every coastline and sea floor. That takes a supercomputer, not a video. But the push is enormous, and it reaches every ocean basin at once.",
+          "spoken": "How tall would those waves be? Honestly, that depends on the shape of every coastline and sea floor. That takes a supercomputer, not a video. But the push is enormous, and it reaches every ocean basin at once.",
+          "est_start": 415.1,
+          "est_dur": 13.0
+        }
+      ],
+      "est_start": 330.5
+    },
+    {
+      "id": "safe",
+      "chapter": "Who's safe?",
+      "clock": "T + 0.00 s",
+      "beats": [
+        {
+          "id": "b41",
+          "text": "So, is anyone safe? Surprisingly, yes. Anyone who isn't touching the ground.",
+          "visual": {
+            "scene": "safe",
+            "phase": "plane"
+          },
+          "kinetic": "Who's safe?",
+          "retention": "Surprise answer",
+          "claims": [],
+          "template_text": "So, is anyone safe? Surprisingly, yes. Anyone who isn't touching the ground.",
+          "spoken": "So, is anyone safe? Surprisingly, yes. Anyone who isn't touching the ground.",
+          "est_start": 429.3,
+          "est_dur": 4.1
+        },
+        {
+          "id": "b42",
+          "text": "A cruising airliner is carried by the air around it, and that air doesn't stop. For that one second, passengers would feel nothing at all, while the ground far below them lurches to a halt.",
+          "visual": {
+            "scene": "safe",
+            "phase": "plane"
+          },
+          "kinetic": null,
+          "claims": [],
+          "template_text": "A cruising airliner is carried by the air around it, and that air doesn't stop. For that one second, passengers would feel nothing at all, while the ground far below them lurches to a halt.",
+          "spoken": "A cruising airliner is carried by the air around it, and that air doesn't stop. For that one second, passengers would feel nothing at all, while the ground far below them lurches to a halt.",
+          "est_start": 433.8,
+          "est_dur": 11.9
+        },
+        {
+          "id": "b43",
+          "text": "And the astronauts on the International Space Station, orbiting at about 28,000 kilometers per hour, wouldn't notice anything. Their orbit doesn't care how fast the planet underneath is spinning.",
+          "visual": {
+            "scene": "safe",
+            "phase": "iss"
+          },
+          "kinetic": "ISS: 28,000 km/h",
+          "claims": [
+            "iss_kmh"
+          ],
+          "template_text": "And the astronauts on the International Space Station, orbiting at about {{iss_kmh}} kilometers per hour, wouldn't notice anything. Their orbit doesn't care how fast the planet underneath is spinning.",
+          "spoken": "And the astronauts on the International Space Station, orbiting at about twenty-eight thousand kilometers per hour, wouldn't notice anything. Their orbit doesn't care how fast the planet underneath is spinning.",
+          "est_start": 446.2,
+          "est_dur": 10.2
+        }
+      ],
+      "est_start": 429.3
+    },
+    {
+      "id": "restart",
+      "chapter": "Second one: the restart",
+      "clock": "T + 1.00 s",
+      "beats": [
+        {
+          "id": "b44",
+          "text": "Then the second is up. The rock snaps back to full speed.",
+          "visual": {
+            "scene": "restart",
+            "phase": "snap"
+          },
+          "kinetic": "Restart",
+          "claims": [],
+          "template_text": "Then the second is up. The rock snaps back to full speed.",
+          "spoken": "Then the second is up. The rock snaps back to full speed.",
+          "est_start": 457.7,
+          "est_dur": 4.1
+        },
+        {
+          "id": "b45",
+          "text": "That should fix everything, right? Not quite. Anything that got slowed down during that second, by hitting a wall, scraping along the ground or piling up against a coast, is now moving slower than the ground again.",
+          "visual": {
+            "scene": "restart",
+            "phase": "mismatch"
+          },
+          "kinetic": null,
+          "retention": "Reversal: the fix makes it worse",
+          "claims": [],
+          "template_text": "That should fix everything, right? Not quite. Anything that got slowed down during that second, by hitting a wall, scraping along the ground or piling up against a coast, is now moving slower than the ground again.",
+          "spoken": "That should fix everything, right? Not quite. Anything that got slowed down during that second, by hitting a wall, scraping along the ground or piling up against a coast, is now moving slower than the ground again.",
+          "est_start": 462.2,
+          "est_dur": 12.6
+        },
+        {
+          "id": "b46",
+          "text": "So the jolt happens again, in reverse. Everything that was stopped gets hit by the restarting planet at up to 465 meters per second, from the other direction.",
+          "visual": {
+            "scene": "restart",
+            "phase": "reverse"
+          },
+          "kinetic": "← 465 m/s",
+          "claims": [
+            "v_eq_ms"
+          ],
+          "template_text": "So the jolt happens again, in reverse. Everything that was stopped gets hit by the restarting planet at up to {{v_eq_ms}} meters per second, from the other direction.",
+          "spoken": "So the jolt happens again, in reverse. Everything that was stopped gets hit by the restarting planet at up to four hundred and sixty-five meters per second, from the other direction.",
+          "est_start": 475.2,
+          "est_dur": 10.6
+        },
+        {
+          "id": "b47",
+          "text": "Two hits, one second apart. That's the real price of a single stopped second.",
+          "visual": {
+            "scene": "restart",
+            "phase": "two"
+          },
+          "kinetic": "Two hits. One second apart.",
+          "claims": [],
+          "template_text": "Two hits, one second apart. That's the real price of a single stopped second.",
+          "spoken": "Two hits, one second apart. That's the real price of a single stopped second.",
+          "est_start": 486.2,
+          "est_dur": 4.8
+        }
+      ],
+      "est_start": 457.7
+    },
+    {
+      "id": "aftermath",
+      "chapter": "Earth is one second late",
+      "clock": null,
+      "beats": [
+        {
+          "id": "b48",
+          "text": "Once the dust settles, there's one strange, permanent change. Earth has lost exactly one second of rotation.",
+          "visual": {
+            "scene": "leap",
+            "phase": "lag"
+          },
+          "kinetic": null,
+          "retention": "Final mystery: the permanent change",
+          "claims": [],
+          "template_text": "Once the dust settles, there's one strange, permanent change. Earth has lost exactly one second of rotation.",
+          "spoken": "Once the dust settles, there's one strange, permanent change. Earth has lost exactly one second of rotation.",
+          "est_start": 492.2,
+          "est_dur": 5.8
+        },
+        {
+          "id": "b49",
+          "text": "In that second, the planet should have turned by about 15 arcseconds. It didn't. So every place on Earth is now one second behind where the stars say it should be.",
+          "visual": {
+            "scene": "leap",
+            "phase": "angle"
+          },
+          "card": "rotation_lag",
+          "kinetic": null,
+          "claims": [
+            "rot_arcsec"
+          ],
+          "template_text": "In that second, the planet should have turned by about {{rot_arcsec}} arcseconds. It didn't. So every place on Earth is now one second behind where the stars say it should be.",
+          "spoken": "In that second, the planet should have turned by about fifteen arcseconds. It didn't. So every place on Earth is now one second behind where the stars say it should be.",
+          "est_start": 498.4,
+          "est_dur": 10.6
+        },
+        {
+          "id": "b50",
+          "text": "Astronomers track exactly this kind of drift. Atomic clocks keep steady time, but Earth's spin isn't perfectly steady, so since 1972, timekeepers have inserted 27 leap seconds to keep our clocks in step with the planet.",
+          "visual": {
+            "scene": "leap",
+            "phase": "leap"
+          },
+          "kinetic": "27 leap seconds since 1972",
+          "claims": [
+            "leap_count"
+          ],
+          "template_text": "Astronomers track exactly this kind of drift. Atomic clocks keep steady time, but Earth's spin isn't perfectly steady, so since 1972, timekeepers have inserted {{leap_count}} leap seconds to keep our clocks in step with the planet.",
+          "spoken": "Astronomers track exactly this kind of drift. Atomic clocks keep steady time, but Earth's spin isn't perfectly steady, so since nineteen seventy-two, timekeepers have inserted twenty-seven leap seconds to keep our clocks in step with the planet.",
+          "est_start": 509.4,
+          "est_dur": 12.6
+        },
+        {
+          "id": "b51",
+          "text": "So after all that destruction, the official cleanup would include one tiny line item: one more leap second.",
+          "visual": {
+            "scene": "leap",
+            "phase": "plusone"
+          },
+          "kinetic": "+1 leap second",
+          "claims": [
+            "ut1_tolerance"
+          ],
+          "template_text": "So after all that destruction, the official cleanup would include one tiny line item: one more leap second.",
+          "spoken": "So after all that destruction, the official cleanup would include one tiny line item: one more leap second.",
+          "est_start": 522.4,
+          "est_dur": 6.1
+        }
+      ],
+      "est_start": 492.2
+    },
+    {
+      "id": "outro",
+      "chapter": "What we learned",
+      "clock": null,
+      "beats": [
+        {
+          "id": "b52",
+          "text": "So, what if Earth stopped spinning for one second? A supersonic wind, a stress wave through every building, water hammer on the coasts, tsunamis in every ocean, and then the whole thing again in reverse.",
+          "visual": {
+            "scene": "recap",
+            "phase": "list",
+            "items": [
+              {
+                "label": "Supersonic wind",
+                "value": "Mach 1.37"
+              },
+              {
+                "label": "Shear wave through buildings",
+                "value": "12 GPa"
+              },
+              {
+                "label": "Water hammer on the coasts",
+                "value": "720 MPa"
+              },
+              {
+                "label": "Tsunamis in every ocean",
+                "value": "684 km/h"
+              },
+              {
+                "label": "…then all again in reverse",
+                "value": ""
+              }
+            ]
+          },
+          "kinetic": null,
+          "claims": [],
+          "template_text": "So, what if Earth stopped spinning for one second? A supersonic wind, a stress wave through every building, water hammer on the coasts, tsunamis in every ocean, and then the whole thing again in reverse.",
+          "spoken": "So, what if Earth stopped spinning for one second? A supersonic wind, a stress wave through every building, water hammer on the coasts, tsunamis in every ocean, and then the whole thing again in reverse.",
+          "est_start": 529.9,
+          "est_dur": 11.9
+        },
+        {
+          "id": "b53",
+          "text": "One second is short. Momentum doesn't care.",
+          "visual": {
+            "scene": "recap",
+            "phase": "moral",
+            "lines": [
+              "One second is short.",
+              "Momentum doesn't care."
+            ]
+          },
+          "kinetic": null,
+          "claims": [],
+          "template_text": "One second is short. Momentum doesn't care.",
+          "spoken": "One second is short. Momentum doesn't care.",
+          "est_start": 542.2,
+          "est_dur": 2.4
+        },
+        {
+          "id": "b54",
+          "text": "Every number in this video comes from a calculation or a cited source, and the sources are in the description, so go ahead and check our math.",
+          "visual": {
+            "scene": "recap",
+            "phase": "sources"
+          },
+          "kinetic": null,
+          "claims": [],
+          "template_text": "Every number in this video comes from a calculation or a cited source, and the sources are in the description, so go ahead and check our math.",
+          "spoken": "Every number in this video comes from a calculation or a cited source, and the sources are in the description, so go ahead and check our math.",
+          "est_start": 545.0,
+          "est_dur": 9.2
+        },
+        {
+          "id": "b55",
+          "text": "Next time, we leave solid ground behind entirely. What happens if you fall into Jupiter, a planet with no solid surface to land on? Subscribe so you don't miss it. This was The If Engine. Run the impossible. Do the math.",
+          "visual": {
+            "scene": "outro",
+            "art": "banded",
+            "colors": [
+              "#E9C9A0",
+              "#C88B5A",
+              "#F1DDBF",
+              "#B5703E",
+              "#EED5B0",
+              "#A86A3F",
+              "#E3C298"
+            ],
+            "spot": "#C1502E"
+          },
+          "kinetic": null,
+          "retention": "Next-video setup",
+          "claims": [
+            "F30"
+          ],
+          "template_text": "Next time, we leave solid ground behind entirely. What happens if you fall into Jupiter, a planet with no solid surface to land on? Subscribe so you don't miss it. This was The If Engine. Run the impossible. Do the math.",
+          "spoken": "Next time, we leave solid ground behind entirely. What happens if you fall into Jupiter, a planet with no solid surface to land on? Subscribe so you don't miss it. This was The If Engine. Run the impossible. Do the math.",
+          "est_start": 554.6,
+          "est_dur": 14.0
+        }
+      ],
+      "est_start": 529.9
+    }
+  ],
+  "est_total_s": 569.9,
+  "metadata": {
+    "alt_titles": [
+      "Earth Stops Spinning for ONE Second. Here's the Real Math",
+      "1 Second Without Earth's Spin: Mach 1.37 Winds, Tsunamis & More"
+    ],
+    "hook": "Right now Earth's spin carries you at up to 1,670 km/h (465 m/s). What if, for one second, the ground stopped and nothing else did?",
+    "summary": "We run the scenario through real physics and show every calculation on screen: the supersonic wind, the shear wave through every building, water hammer on the coasts, ocean-wide tsunamis, the restart, and the one permanent change (Earth ends up exactly one second late).",
+    "key_numbers": [
+      "Equator speed: 2πR ÷ T(sidereal) = 465 m/s ≈ 1,670 km/h",
+      "Wind if the ground stops: Mach 1.37, ram pressure ≥ 132 kPa (≈ 44× a minimum Cat-5 wind)",
+      "Your kinetic energy at the equator (70 kg): 7.6 MJ ≈ 1.8 kg TNT ≈ the energy of a 11 km fall",
+      "Shear wave in steel: τ = ρ c Δv ≈ 12 GPa ≈ 80× shear yield",
+      "Water hammer: Δp = ρ c Δv ≈ 720 MPa, more than 6× the Challenger Deep pressure",
+      "Tsunami speed √(g·d) at 3.7 km depth: 684 km/h",
+      "Rotation lost: 15 arcseconds = 1 leap second"
+    ],
+    "assumptions": "Assumptions: the solid Earth stops instantly, holds for exactly 1 s, then resumes. Wave heights are not estimated (they need coastline-resolving simulations).",
+    "tags": [
+      "what if earth stopped spinning",
+      "earth stopped spinning",
+      "earth stops spinning for 1 second",
+      "what if",
+      "physics",
+      "science explained",
+      "earth rotation",
+      "hypothetical scenario",
+      "planet breakers",
+      "the if engine",
+      "supersonic wind",
+      "tsunami",
+      "leap second",
+      "space",
+      "earth science",
+      "thought experiment",
+      "real physics",
+      "science documentary"
+    ],
+    "hashtags": "#science #physics #whatif #space #earth"
+  },
+  "thumbnail": {
+    "headline": "Earth Stops<br>for <em>1&nbsp;Sec</em>",
+    "number": "1,670 km/h → 0",
+    "badge": "STOP",
+    "art": {
+      "planet": [
+        "#9be7ff",
+        "#2b7bd6",
+        "#0d2a66"
+      ],
+      "land": true,
+      "winds": true,
+      "moon": false
+    }
+  },
+  "checks": {
+    "hook_est_s": 13.3,
+    "retention_gaps_est_s": [
+      8.2,
+      73.2,
+      65.4,
+      82.9,
+      73.9,
+      11.3,
+      43.0,
+      57.2,
+      14.3,
+      32.8,
+      30.1,
+      62.3,
+      15.3
+    ],
+    "est_total_min": 9.5,
+    "warnings": []
+  }
+}

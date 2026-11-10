@@ -1,0 +1,30 @@
+# --- The If Engine (engine/) ---
+# runtime / installs
+engine/.venv
+engine/models
+engine/logs/
+engine/remotion/node_modules/
+engine/remotion/out/
+engine/remotion/src/generated/
+engine/remotion/public/*/
+!engine/remotion/public/fonts/
+__pycache__/
+*.pyc
+# credentials: never committed (engine/secrets keeps only README + .gitignore)
+engine/secrets/*
+!engine/secrets/.gitignore
+!engine/secrets/README.txt
+client_secret*.json
+token.json
+# large / binary outputs: never committed (published to YouTube, passed between jobs as artifacts)
+engine/videos/*/audio/
+engine/videos/*/renders/
+engine/videos/*/build/
+engine/videos/*/shorts/*.mp4
+engine/videos/*/shorts/*.ass
+engine/videos/*/thumbnail.png
+engine/videos/*/thumbnail.jpg
+*.mp4
+*.wav
+*.mp3
+*.onnx

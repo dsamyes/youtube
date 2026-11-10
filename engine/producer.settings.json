@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "deny": [
+      "Bash(curl:*)", "Bash(wget:*)", "Bash(nc:*)", "Bash(ssh:*)", "Bash(scp:*)",
+      "Bash(env)", "Bash(env:*)", "Bash(printenv:*)", "Bash(set)",
+      "Bash(git push:*)", "Bash(git commit:*)", "Bash(git reset:*)", "Bash(git checkout:*)", "Bash(git stash:*)",
+      "Bash(pip install:*)", "Bash(npm install:*)", "Bash(npx -y:*)",
+      "Read(./engine/secrets/**)", "Edit(./engine/secrets/**)", "Write(./engine/secrets/**)",
+      "Edit(./.github/**)", "Write(./.github/**)",
+      "Edit(./engine/pipeline/**)", "Write(./engine/pipeline/**)",
+      "Edit(./engine/PRODUCER.md)", "Write(./engine/PRODUCER.md)",
+      "Edit(./engine/producer.settings.json)", "Write(./engine/producer.settings.json)",
+      "Edit(./engine/remotion/src/scenes/**)", "Write(./engine/remotion/src/scenes/**)",
+      "Edit(./engine/remotion/src/components/**)", "Write(./engine/remotion/src/components/**)"
+    ]
+  }
+}

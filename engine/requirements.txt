@@ -1,0 +1,11 @@
+espeakng-loader==0.2.4
+google-api-python-client==2.201.0
+google-auth-httplib2==0.4.4
+google-auth-oauthlib==1.5.0
+kokoro-onnx==0.6.1
+num2words==0.5.14
+numpy==2.5.4
+onnxruntime==1.31.1
+pillow==13.0.0
+piper-tts==1.8.0
+soundfile==0.14.0

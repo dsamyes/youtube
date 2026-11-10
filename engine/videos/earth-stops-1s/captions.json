@@ -1,0 +1,1042 @@
+{
+  "cues": [
+    {
+      "beat": "b01",
+      "start": 0.6,
+      "end": 3.388,
+      "text": "Right now, Earth's spin\ncarries you at up to"
+    },
+    {
+      "beat": "b01",
+      "start": 3.388,
+      "end": 7.726,
+      "text": "1,670 kilometers per hour,\nand you can't feel it."
+    },
+    {
+      "beat": "b02",
+      "start": 8.126,
+      "end": 9.866,
+      "text": "So what if, for one second,"
+    },
+    {
+      "beat": "b02",
+      "start": 9.866,
+      "end": 12.476,
+      "text": "the ground under you stopped,\nand everything else didn't?"
+    },
+    {
+      "beat": "b03",
+      "start": 13.776,
+      "end": 16.861,
+      "text": "Welcome to The If Engine,\nwhere we run impossible"
+    },
+    {
+      "beat": "b03",
+      "start": 16.861,
+      "end": 19.945,
+      "text": "scenarios through real\nphysics, and show you the math."
+    },
+    {
+      "beat": "b04",
+      "start": 20.345,
+      "end": 26.3,
+      "text": "First, the speed. Earth turns once\nevery 23.93 hours relative to the stars."
+    },
+    {
+      "beat": "b04",
+      "start": 26.3,
+      "end": 30.022,
+      "text": "That's the sidereal day, about\nfour minutes shorter than the"
+    },
+    {
+      "beat": "b04",
+      "start": 30.022,
+      "end": 34.861,
+      "text": "24-hour day on your clock, because\nEarth is also circling the Sun."
+    },
+    {
+      "beat": "b05",
+      "start": 35.261,
+      "end": 38.475,
+      "text": "Divide the distance around\nthe equator by that time,"
+    },
+    {
+      "beat": "b05",
+      "start": 38.475,
+      "end": 42.403,
+      "text": "and you get about 465 meters per second."
+    },
+    {
+      "beat": "b05",
+      "start": 42.403,
+      "end": 46.331,
+      "text": "That's roughly 1,670 kilometers per hour,"
+    },
+    {
+      "beat": "b05",
+      "start": 46.331,
+      "end": 48.474,
+      "text": "faster than the speed of sound."
+    },
+    {
+      "beat": "b06",
+      "start": 48.874,
+      "end": 50.806,
+      "text": "But not everyone moves that fast."
+    },
+    {
+      "beat": "b06",
+      "start": 50.806,
+      "end": 53.06,
+      "text": "The farther you are from the equator,"
+    },
+    {
+      "beat": "b06",
+      "start": 53.06,
+      "end": 55.636,
+      "text": "the smaller the circle\nyou trace every day."
+    },
+    {
+      "beat": "b07",
+      "start": 56.036,
+      "end": 62.606,
+      "text": "In Singapore, you're doing about 465\nmeters per second. In Cairo, 403."
+    },
+    {
+      "beat": "b07",
+      "start": 62.606,
+      "end": 66.622,
+      "text": "New York, 353. London, 290."
+    },
+    {
+      "beat": "b07",
+      "start": 66.622,
+      "end": 70.272,
+      "text": "And at the North Pole,\nyou're just turning in place."
+    },
+    {
+      "beat": "b08",
+      "start": 70.672,
+      "end": 74.156,
+      "text": "We never feel any of this,\nbecause the ground, the air,"
+    },
+    {
+      "beat": "b08",
+      "start": 74.156,
+      "end": 77.958,
+      "text": "the oceans and you are all moving\ntogether, at a steady speed."
+    },
+    {
+      "beat": "b08",
+      "start": 77.958,
+      "end": 81.759,
+      "text": "Motion you share with everything\naround you is motion you can't feel."
+    },
+    {
+      "beat": "b09",
+      "start": 82.159,
+      "end": 84.678,
+      "text": "Which is exactly why\nbreaking that agreement,"
+    },
+    {
+      "beat": "b09",
+      "start": 84.678,
+      "end": 87.917,
+      "text": "even for one second, is\nsuch a terrible idea."
+    },
+    {
+      "beat": "b10",
+      "start": 89.217,
+      "end": 91.444,
+      "text": "Here are the rules of today's experiment."
+    },
+    {
+      "beat": "b11",
+      "start": 91.844,
+      "end": 93.848,
+      "text": "Rule one: the solid Earth,"
+    },
+    {
+      "beat": "b11",
+      "start": 93.848,
+      "end": 97.856,
+      "text": "every rock and everything bolted\nto it, stops rotating instantly."
+    },
+    {
+      "beat": "b12",
+      "start": 98.256,
+      "end": 101.943,
+      "text": "Rule two: it stays perfectly\nstill for exactly one second."
+    },
+    {
+      "beat": "b13",
+      "start": 102.343,
+      "end": 106.633,
+      "text": "Rule three: it snaps back to its\nnormal spin, as if nothing happened."
+    },
+    {
+      "beat": "b14",
+      "start": 107.033,
+      "end": 109.699,
+      "text": "Everything that isn't\nrock, the air, the water,"
+    },
+    {
+      "beat": "b14",
+      "start": 109.699,
+      "end": 112.031,
+      "text": "and you, simply follows\nNewton's first law."
+    },
+    {
+      "beat": "b14",
+      "start": 112.031,
+      "end": 115.03,
+      "text": "It keeps moving at the\nspeed it already had."
+    },
+    {
+      "beat": "b15",
+      "start": 116.33,
+      "end": 117.709,
+      "text": "Let's start the clock."
+    },
+    {
+      "beat": "b15",
+      "start": 117.709,
+      "end": 119.777,
+      "text": "At time zero, the ground stops."
+    },
+    {
+      "beat": "b15",
+      "start": 119.777,
+      "end": 121.845,
+      "text": "Say you're standing on the equator."
+    },
+    {
+      "beat": "b15",
+      "start": 121.845,
+      "end": 123.914,
+      "text": "From the ground's point of view,"
+    },
+    {
+      "beat": "b15",
+      "start": 123.914,
+      "end": 128.05,
+      "text": "you're suddenly hurtling east\nat 465 meters per second."
+    },
+    {
+      "beat": "b16",
+      "start": 128.45,
+      "end": 129.849,
+      "text": "Can friction save you?"
+    },
+    {
+      "beat": "b16",
+      "start": 129.849,
+      "end": 132.647,
+      "text": "Rubber on dry concrete can slow you down"
+    },
+    {
+      "beat": "b16",
+      "start": 132.647,
+      "end": 135.795,
+      "text": "at about 6.9 meters per second squared."
+    },
+    {
+      "beat": "b16",
+      "start": 135.795,
+      "end": 139.993,
+      "text": "Over the whole second, that takes\noff just 7 meters per second."
+    },
+    {
+      "beat": "b16",
+      "start": 139.993,
+      "end": 142.791,
+      "text": "You'd still be going 458."
+    },
+    {
+      "beat": "b17",
+      "start": 143.191,
+      "end": 145.017,
+      "text": "If nothing were in your way,"
+    },
+    {
+      "beat": "b17",
+      "start": 145.017,
+      "end": 148.061,
+      "text": "you'd tumble almost half a\nkilometer in that one second."
+    },
+    {
+      "beat": "b18",
+      "start": 148.461,
+      "end": 150.571,
+      "text": "But on a planet covered in walls,"
+    },
+    {
+      "beat": "b18",
+      "start": 150.571,
+      "end": 153.284,
+      "text": "trees and cars, something\nis always in your way."
+    },
+    {
+      "beat": "b18",
+      "start": 153.284,
+      "end": 155.092,
+      "text": "So how hard is that hit?"
+    },
+    {
+      "beat": "b19",
+      "start": 155.492,
+      "end": 160.429,
+      "text": "At 465 meters per second,\na 70 kilogram person"
+    },
+    {
+      "beat": "b19",
+      "start": 160.429,
+      "end": 164.131,
+      "text": "carries about 7.6 megajoules\nof kinetic energy."
+    },
+    {
+      "beat": "b19",
+      "start": 164.131,
+      "end": 169.068,
+      "text": "That's the energy released by\nroughly 1.8 kilograms of TNT."
+    },
+    {
+      "beat": "b20",
+      "start": 169.468,
+      "end": 171.724,
+      "text": "Here's another way to feel that number."
+    },
+    {
+      "beat": "b20",
+      "start": 171.724,
+      "end": 175.27,
+      "text": "Hitting a wall at that\nspeed is like falling from a"
+    },
+    {
+      "beat": "b20",
+      "start": 175.27,
+      "end": 178.815,
+      "text": "height of 11 kilometers,\nwith no air to slow you down."
+    },
+    {
+      "beat": "b20",
+      "start": 178.815,
+      "end": 180.427,
+      "text": "That's higher than Mount Everest."
+    },
+    {
+      "beat": "b21",
+      "start": 180.827,
+      "end": 184.351,
+      "text": "In London, the numbers are\nsmaller, but not small enough."
+    },
+    {
+      "beat": "b21",
+      "start": 184.351,
+      "end": 187.523,
+      "text": "Even at 290 meters per second,"
+    },
+    {
+      "beat": "b21",
+      "start": 187.523,
+      "end": 191.047,
+      "text": "it's the same as falling\nfrom 4.3 kilometers."
+    },
+    {
+      "beat": "b22",
+      "start": 192.347,
+      "end": 195.492,
+      "text": "Now, buildings. Unlike you,\nthey're anchored to the rock."
+    },
+    {
+      "beat": "b22",
+      "start": 195.492,
+      "end": 199.336,
+      "text": "So when the rock stops, their\nfoundations stop with it, instantly."
+    },
+    {
+      "beat": "b23",
+      "start": 199.736,
+      "end": 201.953,
+      "text": "The upper floors don't know that yet."
+    },
+    {
+      "beat": "b23",
+      "start": 201.953,
+      "end": 205.119,
+      "text": "The news travels up the\nstructure as a shear wave,"
+    },
+    {
+      "beat": "b23",
+      "start": 205.119,
+      "end": 207.336,
+      "text": "a kind of sound wave in steel,"
+    },
+    {
+      "beat": "b23",
+      "start": 207.336,
+      "end": 210.503,
+      "text": "moving at about 3,200 meters per second."
+    },
+    {
+      "beat": "b24",
+      "start": 210.903,
+      "end": 213.867,
+      "text": "The stress that wave carries is density,"
+    },
+    {
+      "beat": "b24",
+      "start": 213.867,
+      "end": 217.677,
+      "text": "times wave speed, times the\nsudden change in velocity."
+    },
+    {
+      "beat": "b24",
+      "start": 217.677,
+      "end": 220.217,
+      "text": "For steel, that's about 12 gigapascals."
+    },
+    {
+      "beat": "b25",
+      "start": 220.617,
+      "end": 222.734,
+      "text": "Common structural steel starts to give"
+    },
+    {
+      "beat": "b25",
+      "start": 222.734,
+      "end": 226.262,
+      "text": "way in shear at around 140 megapascals."
+    },
+    {
+      "beat": "b25",
+      "start": 226.262,
+      "end": 229.084,
+      "text": "Our stress wave is about 80 times that."
+    },
+    {
+      "beat": "b25",
+      "start": 229.084,
+      "end": 233.67,
+      "text": "Structures bolted to the ground just\naren't built for a jolt like this."
+    },
+    {
+      "beat": "b26",
+      "start": 234.07,
+      "end": 237.818,
+      "text": "And yet, as bad as all that is,\nit isn't the biggest problem."
+    },
+    {
+      "beat": "b26",
+      "start": 237.818,
+      "end": 240.413,
+      "text": "The biggest problem is\nthe thing you can't see."
+    },
+    {
+      "beat": "b27",
+      "start": 241.713,
+      "end": 243.841,
+      "text": "The atmosphere isn't bolted to anything."
+    },
+    {
+      "beat": "b27",
+      "start": 243.841,
+      "end": 246.679,
+      "text": "When the ground stops,\nthe air keeps going."
+    },
+    {
+      "beat": "b27",
+      "start": 246.679,
+      "end": 251.645,
+      "text": "At the equator, that's a wind\nof 465 meters per second,"
+    },
+    {
+      "beat": "b27",
+      "start": 251.645,
+      "end": 253.418,
+      "text": "blowing from west to east."
+    },
+    {
+      "beat": "b28",
+      "start": 253.818,
+      "end": 259.143,
+      "text": "At sea level, sound travels at\nabout 340 meters per second."
+    },
+    {
+      "beat": "b28",
+      "start": 259.143,
+      "end": 263.708,
+      "text": "So at the equator, this wind is Mach 1.37."
+    },
+    {
+      "beat": "b28",
+      "start": 263.708,
+      "end": 267.892,
+      "text": "It stays supersonic everywhere within\nabout 43 degrees of the equator."
+    },
+    {
+      "beat": "b28",
+      "start": 267.892,
+      "end": 270.935,
+      "text": "That's two-thirds of Earth's\nsurface, all at once."
+    },
+    {
+      "beat": "b29",
+      "start": 271.335,
+      "end": 274.844,
+      "text": "Anything standing in its way\ngets pushed with at least"
+    },
+    {
+      "beat": "b29",
+      "start": 274.844,
+      "end": 278.002,
+      "text": "half the air density times\nthe wind speed squared."
+    },
+    {
+      "beat": "b29",
+      "start": 278.002,
+      "end": 280.107,
+      "text": "That's 132 kilopascals,"
+    },
+    {
+      "beat": "b29",
+      "start": 280.107,
+      "end": 283.967,
+      "text": "about 14 tonnes of force on\nevery square meter of wall."
+    },
+    {
+      "beat": "b30",
+      "start": 284.367,
+      "end": 290.103,
+      "text": "For comparison, a Category 5 hurricane\nstarts at 252 kilometers per hour."
+    },
+    {
+      "beat": "b30",
+      "start": 290.103,
+      "end": 293.544,
+      "text": "That push grows with\nthe square of the speed,"
+    },
+    {
+      "beat": "b30",
+      "start": 293.544,
+      "end": 298.898,
+      "text": "so our wind pushes about 44 times\nharder than the minimum Category 5 wind."
+    },
+    {
+      "beat": "b31",
+      "start": 299.298,
+      "end": 304.011,
+      "text": "Across that zone, every building, tree\nand hill would grow its own shock wave."
+    },
+    {
+      "beat": "b31",
+      "start": 304.011,
+      "end": 307.377,
+      "text": "Picture a sonic boom, but\ninstead of one passing jet,"
+    },
+    {
+      "beat": "b31",
+      "start": 307.377,
+      "end": 310.407,
+      "text": "it comes from every\nobstacle at the same moment."
+    },
+    {
+      "beat": "b32",
+      "start": 310.807,
+      "end": 316.572,
+      "text": "Altogether, the moving air\ncarries about 3.7 × 10²³"
+    },
+    {
+      "beat": "b32",
+      "start": 316.572,
+      "end": 319.865,
+      "text": "joules of kinetic energy\nrelative to the ground."
+    },
+    {
+      "beat": "b32",
+      "start": 319.865,
+      "end": 323.983,
+      "text": "That's roughly 600 years of\nhumanity's entire energy use."
+    },
+    {
+      "beat": "b33",
+      "start": 324.383,
+      "end": 325.687,
+      "text": "But here's the twist."
+    },
+    {
+      "beat": "b33",
+      "start": 325.687,
+      "end": 328.294,
+      "text": "It only has one second to deliver it."
+    },
+    {
+      "beat": "b33",
+      "start": 328.294,
+      "end": 332.532,
+      "text": "In one second, even the fastest air\nmoves less than half a kilometer,"
+    },
+    {
+      "beat": "b33",
+      "start": 332.532,
+      "end": 335.791,
+      "text": "and most of the air above\nthe rooftops never touches"
+    },
+    {
+      "beat": "b33",
+      "start": 335.791,
+      "end": 338.073,
+      "text": "anything solid before\nthe ground starts again."
+    },
+    {
+      "beat": "b34",
+      "start": 339.373,
+      "end": 344.799,
+      "text": "Now, the oceans. Like the air, the water\nkeeps moving while the sea floor stops."
+    },
+    {
+      "beat": "b34",
+      "start": 344.799,
+      "end": 348.778,
+      "text": "The open ocean is, on\naverage, 3.7 kilometers deep,"
+    },
+    {
+      "beat": "b34",
+      "start": 348.778,
+      "end": 351.31,
+      "text": "and near the equator that entire column"
+    },
+    {
+      "beat": "b34",
+      "start": 351.31,
+      "end": 355.651,
+      "text": "of water slides east by up to 465 meters."
+    },
+    {
+      "beat": "b35",
+      "start": 356.051,
+      "end": 360.347,
+      "text": "That's about 1.7 million cubic\nmeters of water shoved toward"
+    },
+    {
+      "beat": "b35",
+      "start": 360.347,
+      "end": 364.286,
+      "text": "the shore for every single\nmeter of coastline in its path."
+    },
+    {
+      "beat": "b35",
+      "start": 364.286,
+      "end": 367.866,
+      "text": "Roughly 690 Olympic\nswimming pools, per meter."
+    },
+    {
+      "beat": "b36",
+      "start": 368.266,
+      "end": 370.985,
+      "text": "But the coasts are where it gets violent."
+    },
+    {
+      "beat": "b36",
+      "start": 370.985,
+      "end": 374.045,
+      "text": "When fast-moving water slams\ninto a steep rock face,"
+    },
+    {
+      "beat": "b36",
+      "start": 374.045,
+      "end": 376.424,
+      "text": "it can't get out of the way."
+    },
+    {
+      "beat": "b36",
+      "start": 376.424,
+      "end": 380.164,
+      "text": "Engineers call this water hammer,\nand the pressure spike is density,"
+    },
+    {
+      "beat": "b36",
+      "start": 380.164,
+      "end": 383.903,
+      "text": "times the speed of sound in\nwater, times the impact speed."
+    },
+    {
+      "beat": "b37",
+      "start": 384.303,
+      "end": 388.639,
+      "text": "With water hitting rock\nat 465 meters per second,"
+    },
+    {
+      "beat": "b37",
+      "start": 388.639,
+      "end": 391.169,
+      "text": "that's around 720 megapascals,"
+    },
+    {
+      "beat": "b37",
+      "start": 391.169,
+      "end": 396.228,
+      "text": "more than 6 times the crushing pressure\nat the bottom of the Mariana Trench."
+    },
+    {
+      "beat": "b38",
+      "start": 396.628,
+      "end": 400.347,
+      "text": "On the coasts facing the other\nway, the water does the reverse."
+    },
+    {
+      "beat": "b38",
+      "start": 400.347,
+      "end": 402.206,
+      "text": "It pulls away from the land,"
+    },
+    {
+      "beat": "b38",
+      "start": 402.206,
+      "end": 405.305,
+      "text": "for a moment uncovering the\nsea floor near the shore."
+    },
+    {
+      "beat": "b39",
+      "start": 405.705,
+      "end": 410.084,
+      "text": "Once the ground starts again, gravity\ntries to level everything out,"
+    },
+    {
+      "beat": "b39",
+      "start": 410.084,
+      "end": 412.871,
+      "text": "and that sends tsunamis\nacross every ocean."
+    },
+    {
+      "beat": "b39",
+      "start": 412.871,
+      "end": 415.657,
+      "text": "In water 3.7 kilometers deep,"
+    },
+    {
+      "beat": "b39",
+      "start": 415.657,
+      "end": 420.434,
+      "text": "a tsunami travels at about\n684 kilometers per hour,"
+    },
+    {
+      "beat": "b39",
+      "start": 420.434,
+      "end": 423.221,
+      "text": "nearly as fast as a jet airliner,"
+    },
+    {
+      "beat": "b39",
+      "start": 423.221,
+      "end": 427.998,
+      "text": "crossing 5,000 kilometers\nof ocean in about 7.3 hours."
+    },
+    {
+      "beat": "b40",
+      "start": 428.398,
+      "end": 430.506,
+      "text": "How tall would those waves be?"
+    },
+    {
+      "beat": "b40",
+      "start": 430.506,
+      "end": 434.722,
+      "text": "Honestly, that depends on the shape\nof every coastline and sea floor."
+    },
+    {
+      "beat": "b40",
+      "start": 434.722,
+      "end": 437.181,
+      "text": "That takes a supercomputer, not a video."
+    },
+    {
+      "beat": "b40",
+      "start": 437.181,
+      "end": 441.748,
+      "text": "But the push is enormous, and it\nreaches every ocean basin at once."
+    },
+    {
+      "beat": "b41",
+      "start": 443.048,
+      "end": 444.67,
+      "text": "So, is anyone safe?"
+    },
+    {
+      "beat": "b41",
+      "start": 444.67,
+      "end": 445.481,
+      "text": "Surprisingly, yes."
+    },
+    {
+      "beat": "b41",
+      "start": 445.481,
+      "end": 447.914,
+      "text": "Anyone who isn't touching the ground."
+    },
+    {
+      "beat": "b42",
+      "start": 448.314,
+      "end": 451.634,
+      "text": "A cruising airliner is\ncarried by the air around it,"
+    },
+    {
+      "beat": "b42",
+      "start": 451.634,
+      "end": 453.294,
+      "text": "and that air doesn't stop."
+    },
+    {
+      "beat": "b42",
+      "start": 453.294,
+      "end": 456.614,
+      "text": "For that one second, passengers\nwould feel nothing at all,"
+    },
+    {
+      "beat": "b42",
+      "start": 456.614,
+      "end": 459.934,
+      "text": "while the ground far below\nthem lurches to a halt."
+    },
+    {
+      "beat": "b43",
+      "start": 460.334,
+      "end": 463.614,
+      "text": "And the astronauts on the\nInternational Space Station,"
+    },
+    {
+      "beat": "b43",
+      "start": 463.614,
+      "end": 468.124,
+      "text": "orbiting at about 28,000 kilometers\nper hour, wouldn't notice anything."
+    },
+    {
+      "beat": "b43",
+      "start": 468.124,
+      "end": 472.634,
+      "text": "Their orbit doesn't care how fast\nthe planet underneath is spinning."
+    },
+    {
+      "beat": "b44",
+      "start": 473.934,
+      "end": 475.307,
+      "text": "Then the second is up."
+    },
+    {
+      "beat": "b44",
+      "start": 475.307,
+      "end": 477.229,
+      "text": "The rock snaps back to full speed."
+    },
+    {
+      "beat": "b45",
+      "start": 477.629,
+      "end": 480.083,
+      "text": "That should fix everything,\nright? Not quite."
+    },
+    {
+      "beat": "b45",
+      "start": 480.083,
+      "end": 484.289,
+      "text": "Anything that got slowed down during\nthat second, by hitting a wall,"
+    },
+    {
+      "beat": "b45",
+      "start": 484.289,
+      "end": 487.795,
+      "text": "scraping along the ground or\npiling up against a coast,"
+    },
+    {
+      "beat": "b45",
+      "start": 487.795,
+      "end": 490.599,
+      "text": "is now moving slower\nthan the ground again."
+    },
+    {
+      "beat": "b46",
+      "start": 490.999,
+      "end": 493.396,
+      "text": "So the jolt happens again, in reverse."
+    },
+    {
+      "beat": "b46",
+      "start": 493.396,
+      "end": 496.82,
+      "text": "Everything that was stopped gets\nhit by the restarting planet"
+    },
+    {
+      "beat": "b46",
+      "start": 496.82,
+      "end": 501.614,
+      "text": "at up to 465 meters per second,\nfrom the other direction."
+    },
+    {
+      "beat": "b47",
+      "start": 502.014,
+      "end": 503.644,
+      "text": "Two hits, one second apart."
+    },
+    {
+      "beat": "b47",
+      "start": 503.644,
+      "end": 506.579,
+      "text": "That's the real price of\na single stopped second."
+    },
+    {
+      "beat": "b48",
+      "start": 507.879,
+      "end": 511.556,
+      "text": "Once the dust settles, there's\none strange, permanent change."
+    },
+    {
+      "beat": "b48",
+      "start": 511.556,
+      "end": 514.824,
+      "text": "Earth has lost exactly\none second of rotation."
+    },
+    {
+      "beat": "b49",
+      "start": 515.224,
+      "end": 519.653,
+      "text": "In that second, the planet should have\nturned by about 15 arcseconds. It didn't."
+    },
+    {
+      "beat": "b49",
+      "start": 519.653,
+      "end": 522.501,
+      "text": "So every place on Earth is now one second"
+    },
+    {
+      "beat": "b49",
+      "start": 522.501,
+      "end": 525.032,
+      "text": "behind where the stars say it should be."
+    },
+    {
+      "beat": "b50",
+      "start": 525.432,
+      "end": 528.231,
+      "text": "Astronomers track exactly\nthis kind of drift."
+    },
+    {
+      "beat": "b50",
+      "start": 528.231,
+      "end": 530.23,
+      "text": "Atomic clocks keep steady time,"
+    },
+    {
+      "beat": "b50",
+      "start": 530.23,
+      "end": 534.228,
+      "text": "but Earth's spin isn't\nperfectly steady, so since 1972,"
+    },
+    {
+      "beat": "b50",
+      "start": 534.228,
+      "end": 536.627,
+      "text": "timekeepers have inserted 27 leap seconds"
+    },
+    {
+      "beat": "b50",
+      "start": 536.627,
+      "end": 540.225,
+      "text": "to keep our clocks in\nstep with the planet."
+    },
+    {
+      "beat": "b51",
+      "start": 540.625,
+      "end": 543.541,
+      "text": "So after all that destruction,\nthe official cleanup"
+    },
+    {
+      "beat": "b51",
+      "start": 543.541,
+      "end": 547.187,
+      "text": "would include one tiny line\nitem: one more leap second."
+    },
+    {
+      "beat": "b52",
+      "start": 548.487,
+      "end": 551.701,
+      "text": "So, what if Earth stopped\nspinning for one second?"
+    },
+    {
+      "beat": "b52",
+      "start": 551.701,
+      "end": 554.915,
+      "text": "A supersonic wind, a stress\nwave through every building,"
+    },
+    {
+      "beat": "b52",
+      "start": 554.915,
+      "end": 556.701,
+      "text": "water hammer on the coasts,"
+    },
+    {
+      "beat": "b52",
+      "start": 556.701,
+      "end": 560.986,
+      "text": "tsunamis in every ocean, and then\nthe whole thing again in reverse."
+    },
+    {
+      "beat": "b53",
+      "start": 561.386,
+      "end": 562.932,
+      "text": "One second is short."
+    },
+    {
+      "beat": "b53",
+      "start": 562.932,
+      "end": 564.091,
+      "text": "Momentum doesn't care."
+    },
+    {
+      "beat": "b54",
+      "start": 564.491,
+      "end": 568.582,
+      "text": "Every number in this video comes\nfrom a calculation or a cited source,"
+    },
+    {
+      "beat": "b54",
+      "start": 568.582,
+      "end": 572.987,
+      "text": "and the sources are in the description,\nso go ahead and check our math."
+    },
+    {
+      "beat": "b55",
+      "start": 573.387,
+      "end": 576.169,
+      "text": "Next time, we leave solid\nground behind entirely."
+    },
+    {
+      "beat": "b55",
+      "start": 576.169,
+      "end": 578.603,
+      "text": "What happens if you fall into Jupiter,"
+    },
+    {
+      "beat": "b55",
+      "start": 578.603,
+      "end": 581.733,
+      "text": "a planet with no solid surface to land on?"
+    },
+    {
+      "beat": "b55",
+      "start": 581.733,
+      "end": 583.82,
+      "text": "Subscribe so you don't miss it."
+    },
+    {
+      "beat": "b55",
+      "start": 583.82,
+      "end": 585.558,
+      "text": "This was The If Engine."
+    },
+    {
+      "beat": "b55",
+      "start": 585.558,
+      "end": 587.645,
+      "text": "Run the impossible. Do the math."
+    }
+  ]
+}

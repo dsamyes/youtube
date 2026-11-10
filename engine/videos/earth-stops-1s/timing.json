@@ -1,0 +1,545 @@
+{
+  "provider": "kokoro",
+  "voice": "kokoro-v1.0:am_michael@1.12",
+  "sample_rate": 24000,
+  "generated": "2026-11-09T23:34:49+00:00",
+  "beats": [
+    {
+      "id": "b01",
+      "section": "hook",
+      "start": 0.6,
+      "end": 7.726,
+      "words": 23,
+      "wpm": 194
+    },
+    {
+      "id": "b02",
+      "section": "hook",
+      "start": 8.126,
+      "end": 12.476,
+      "words": 15,
+      "wpm": 207
+    },
+    {
+      "id": "b03",
+      "section": "speed",
+      "start": 13.776,
+      "end": 19.945,
+      "words": 18,
+      "wpm": 175
+    },
+    {
+      "id": "b04",
+      "section": "speed",
+      "start": 20.345,
+      "end": 34.861,
+      "words": 39,
+      "wpm": 161
+    },
+    {
+      "id": "b05",
+      "section": "speed",
+      "start": 35.261,
+      "end": 48.474,
+      "words": 37,
+      "wpm": 168
+    },
+    {
+      "id": "b06",
+      "section": "speed",
+      "start": 48.874,
+      "end": 55.636,
+      "words": 21,
+      "wpm": 186
+    },
+    {
+      "id": "b07",
+      "section": "speed",
+      "start": 56.036,
+      "end": 70.272,
+      "words": 39,
+      "wpm": 164
+    },
+    {
+      "id": "b08",
+      "section": "speed",
+      "start": 70.672,
+      "end": 81.759,
+      "words": 35,
+      "wpm": 189
+    },
+    {
+      "id": "b09",
+      "section": "speed",
+      "start": 82.159,
+      "end": 87.917,
+      "words": 16,
+      "wpm": 167
+    },
+    {
+      "id": "b10",
+      "section": "rules",
+      "start": 89.217,
+      "end": 91.444,
+      "words": 7,
+      "wpm": 189
+    },
+    {
+      "id": "b11",
+      "section": "rules",
+      "start": 91.844,
+      "end": 97.856,
+      "words": 15,
+      "wpm": 150
+    },
+    {
+      "id": "b12",
+      "section": "rules",
+      "start": 98.256,
+      "end": 101.943,
+      "words": 10,
+      "wpm": 163
+    },
+    {
+      "id": "b13",
+      "section": "rules",
+      "start": 102.343,
+      "end": 106.633,
+      "words": 13,
+      "wpm": 182
+    },
+    {
+      "id": "b14",
+      "section": "rules",
+      "start": 107.033,
+      "end": 115.03,
+      "words": 24,
+      "wpm": 180
+    },
+    {
+      "id": "b15",
+      "section": "you",
+      "start": 116.33,
+      "end": 128.05,
+      "words": 34,
+      "wpm": 174
+    },
+    {
+      "id": "b16",
+      "section": "you",
+      "start": 128.45,
+      "end": 142.791,
+      "words": 41,
+      "wpm": 172
+    },
+    {
+      "id": "b17",
+      "section": "you",
+      "start": 143.191,
+      "end": 148.061,
+      "words": 16,
+      "wpm": 197
+    },
+    {
+      "id": "b18",
+      "section": "you",
+      "start": 148.461,
+      "end": 155.092,
+      "words": 22,
+      "wpm": 199
+    },
+    {
+      "id": "b19",
+      "section": "you",
+      "start": 155.492,
+      "end": 169.068,
+      "words": 33,
+      "wpm": 146
+    },
+    {
+      "id": "b20",
+      "section": "you",
+      "start": 169.468,
+      "end": 180.427,
+      "words": 34,
+      "wpm": 186
+    },
+    {
+      "id": "b21",
+      "section": "you",
+      "start": 180.827,
+      "end": 191.047,
+      "words": 29,
+      "wpm": 170
+    },
+    {
+      "id": "b22",
+      "section": "buildings",
+      "start": 192.347,
+      "end": 199.336,
+      "words": 20,
+      "wpm": 172
+    },
+    {
+      "id": "b23",
+      "section": "buildings",
+      "start": 199.736,
+      "end": 210.503,
+      "words": 34,
+      "wpm": 189
+    },
+    {
+      "id": "b24",
+      "section": "buildings",
+      "start": 210.903,
+      "end": 220.217,
+      "words": 22,
+      "wpm": 142
+    },
+    {
+      "id": "b25",
+      "section": "buildings",
+      "start": 220.617,
+      "end": 233.67,
+      "words": 37,
+      "wpm": 170
+    },
+    {
+      "id": "b26",
+      "section": "buildings",
+      "start": 234.07,
+      "end": 240.413,
+      "words": 22,
+      "wpm": 208
+    },
+    {
+      "id": "b27",
+      "section": "air",
+      "start": 241.713,
+      "end": 253.418,
+      "words": 33,
+      "wpm": 169
+    },
+    {
+      "id": "b28",
+      "section": "air",
+      "start": 253.818,
+      "end": 270.935,
+      "words": 45,
+      "wpm": 158
+    },
+    {
+      "id": "b29",
+      "section": "air",
+      "start": 271.335,
+      "end": 283.967,
+      "words": 36,
+      "wpm": 171
+    },
+    {
+      "id": "b30",
+      "section": "air",
+      "start": 284.367,
+      "end": 298.898,
+      "words": 38,
+      "wpm": 157
+    },
+    {
+      "id": "b31",
+      "section": "air",
+      "start": 299.298,
+      "end": 310.407,
+      "words": 33,
+      "wpm": 178
+    },
+    {
+      "id": "b32",
+      "section": "air",
+      "start": 310.807,
+      "end": 323.983,
+      "words": 32,
+      "wpm": 146
+    },
+    {
+      "id": "b33",
+      "section": "air",
+      "start": 324.383,
+      "end": 338.073,
+      "words": 42,
+      "wpm": 184
+    },
+    {
+      "id": "b34",
+      "section": "oceans",
+      "start": 339.373,
+      "end": 355.651,
+      "words": 45,
+      "wpm": 166
+    },
+    {
+      "id": "b35",
+      "section": "oceans",
+      "start": 356.051,
+      "end": 367.866,
+      "words": 33,
+      "wpm": 168
+    },
+    {
+      "id": "b36",
+      "section": "oceans",
+      "start": 368.266,
+      "end": 383.903,
+      "words": 46,
+      "wpm": 177
+    },
+    {
+      "id": "b37",
+      "section": "oceans",
+      "start": 384.303,
+      "end": 396.228,
+      "words": 33,
+      "wpm": 166
+    },
+    {
+      "id": "b38",
+      "section": "oceans",
+      "start": 396.628,
+      "end": 405.305,
+      "words": 28,
+      "wpm": 194
+    },
+    {
+      "id": "b39",
+      "section": "oceans",
+      "start": 405.705,
+      "end": 427.998,
+      "words": 56,
+      "wpm": 151
+    },
+    {
+      "id": "b40",
+      "section": "oceans",
+      "start": 428.398,
+      "end": 441.748,
+      "words": 38,
+      "wpm": 171
+    },
+    {
+      "id": "b41",
+      "section": "safe",
+      "start": 443.048,
+      "end": 447.914,
+      "words": 12,
+      "wpm": 148
+    },
+    {
+      "id": "b42",
+      "section": "safe",
+      "start": 448.314,
+      "end": 459.934,
+      "words": 35,
+      "wpm": 181
+    },
+    {
+      "id": "b43",
+      "section": "safe",
+      "start": 460.334,
+      "end": 472.634,
+      "words": 30,
+      "wpm": 146
+    },
+    {
+      "id": "b44",
+      "section": "restart",
+      "start": 473.934,
+      "end": 477.229,
+      "words": 12,
+      "wpm": 218
+    },
+    {
+      "id": "b45",
+      "section": "restart",
+      "start": 477.629,
+      "end": 490.599,
+      "words": 37,
+      "wpm": 171
+    },
+    {
+      "id": "b46",
+      "section": "restart",
+      "start": 490.999,
+      "end": 501.614,
+      "words": 31,
+      "wpm": 175
+    },
+    {
+      "id": "b47",
+      "section": "restart",
+      "start": 502.014,
+      "end": 506.579,
+      "words": 14,
+      "wpm": 184
+    },
+    {
+      "id": "b48",
+      "section": "aftermath",
+      "start": 507.879,
+      "end": 514.824,
+      "words": 17,
+      "wpm": 147
+    },
+    {
+      "id": "b49",
+      "section": "aftermath",
+      "start": 515.224,
+      "end": 525.032,
+      "words": 31,
+      "wpm": 190
+    },
+    {
+      "id": "b50",
+      "section": "aftermath",
+      "start": 525.432,
+      "end": 540.225,
+      "words": 37,
+      "wpm": 150
+    },
+    {
+      "id": "b51",
+      "section": "aftermath",
+      "start": 540.625,
+      "end": 547.187,
+      "words": 18,
+      "wpm": 165
+    },
+    {
+      "id": "b52",
+      "section": "outro",
+      "start": 548.487,
+      "end": 560.986,
+      "words": 35,
+      "wpm": 168
+    },
+    {
+      "id": "b53",
+      "section": "outro",
+      "start": 561.386,
+      "end": 564.091,
+      "words": 7,
+      "wpm": 155
+    },
+    {
+      "id": "b54",
+      "section": "outro",
+      "start": 564.491,
+      "end": 572.987,
+      "words": 27,
+      "wpm": 191
+    },
+    {
+      "id": "b55",
+      "section": "outro",
+      "start": 573.387,
+      "end": 587.645,
+      "words": 41,
+      "wpm": 173
+    }
+  ],
+  "sections": [
+    {
+      "id": "hook",
+      "chapter": "Intro",
+      "start": 0.6,
+      "end": 13.776,
+      "clock": null
+    },
+    {
+      "id": "speed",
+      "chapter": "How fast are we spinning?",
+      "start": 13.776,
+      "end": 89.217,
+      "clock": null
+    },
+    {
+      "id": "rules",
+      "chapter": "The rules",
+      "start": 89.217,
+      "end": 116.33,
+      "clock": null
+    },
+    {
+      "id": "you",
+      "chapter": "Second zero: you",
+      "start": 116.33,
+      "end": 192.347,
+      "clock": "T + 0.00 s"
+    },
+    {
+      "id": "buildings",
+      "chapter": "The buildings",
+      "start": 192.347,
+      "end": 241.713,
+      "clock": "T + 0.00 s"
+    },
+    {
+      "id": "air",
+      "chapter": "A supersonic wind",
+      "start": 241.713,
+      "end": 339.373,
+      "clock": "T + 0.00 s"
+    },
+    {
+      "id": "oceans",
+      "chapter": "The oceans",
+      "start": 339.373,
+      "end": 443.048,
+      "clock": "T + 0.00 s"
+    },
+    {
+      "id": "safe",
+      "chapter": "Who's safe?",
+      "start": 443.048,
+      "end": 473.934,
+      "clock": "T + 0.00 s"
+    },
+    {
+      "id": "restart",
+      "chapter": "Second one: the restart",
+      "start": 473.934,
+      "end": 507.879,
+      "clock": "T + 1.00 s"
+    },
+    {
+      "id": "aftermath",
+      "chapter": "Earth is one second late",
+      "start": 507.879,
+      "end": 548.487,
+      "clock": null
+    },
+    {
+      "id": "outro",
+      "chapter": "What we learned",
+      "start": 548.487,
+      "end": 588.945,
+      "clock": null
+    }
+  ],
+  "total": 592.945,
+  "retention_gaps": [
+    8.1,
+    74.0,
+    66.3,
+    85.6,
+    76.7,
+    13.6,
+    43.9,
+    60.1,
+    14.6,
+    34.6,
+    30.2,
+    65.5,
+    19.6
+  ],
+  "hook_end": 12.476,
+  "qa_issues": []
+}

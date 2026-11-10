@@ -1,0 +1,140 @@
+{
+  "video_id": "moon-twice-as-close",
+  "generated": "2026-11-10T00:29:32+00:00",
+  "title": "What If the Moon Was Twice as Close?",
+  "alt_titles": [
+    "What If the Moon Were Half as Far Away? The Real Math",
+    "Moon at Half the Distance: 8× Tides and Total Eclipses Only"
+  ],
+  "description": "Halve the Moon's distance and it looks twice as wide. Every tide on Earth gets 8 times stronger.\n\nWe run the scenario through real physics with every calculation on screen: the new sky, a 9.9-day lunar month, eclipses that are always total, equilibrium tides, the Roche limit, tidal braking and whether you'd feel it.\n\n⏱ Chapters\n0:00 Intro\n0:13 Moving the Moon\n1:17 A bigger, faster Moon\n2:37 Eclipses, upgraded\n3:19 Eight times the tide\n4:29 What happens at the coast\n5:38 Would the Moon survive?\n6:02 Longer days, faster\n7:06 Would you feel it?\n7:38 What we learned\n\n🧮 The numbers (computed in code, rounded)\n• Energy to move the Moon in: 3.8 × 10²⁸ J ≈ 100 s of the Sun's total output\n• Apparent size: 0.53° → 1.07°, about 4× the light\n• Orbit: 9.7 days, full Moon every 9.9 days\n• Tidal force × 8; equilibrium tide range 54 cm → 4.3 m\n• Roche limit ≈ 18,000 km, new orbit 10× farther out\n• Day lengthening 2.3 → 150 ms per century\n\n📚 Sources\n[S1] NASA NSSDC, Moon Fact Sheet: https://nssdc.gsfc.nasa.gov/planetary/factsheet/moonfact.html\n[S2] NASA NSSDC, Earth Fact Sheet: https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html\n[S3] NIST CODATA 2018, fundamental constants: https://physics.nist.gov/cuu/Constants/\n[S4] IAU 2012 Resolution B2, re-definition of the astronomical unit: https://www.iau.org/static/resolutions/IAU2012_English.pdf\n[S5] IAU 2015 Resolution B3, nominal solar and planetary conversion cons...: https://arxiv.org/abs/1510.07674\n[S6] NASA NSSDC, Sun Fact Sheet: https://nssdc.gsfc.nasa.gov/planetary/factsheet/sunfact.html\n[S7] NOAA National Ocean Service, Tides and Water Levels: what causes tides: https://oceanservice.noaa.gov/education/tutorial_tides/tides02_cause.html\n[S8] Ocean Motion, Tide-generating forces background: https://www.oceanmotion.org/html/background/tides-forces.htm\n[S9] Stephenson, Morrison & Hohenkerk, Measurement of the Earth's rotati...: https://pmc.ncbi.nlm.nih.gov/articles/PMC5247521/\n[S10] Encyclopaedia Britannica, Roche limit: https://www.britannica.com/science/Roche-limit\n[S11] NASA/IERS, tropical year: https://www.iers.org/IERS/EN/Science/EarthRotation/EarthRotation.html\n[S12] ICRP Publication 89, reference adult: https://www.icrp.org/publication.asp?id=ICRP%20Publication%2089\n[S13] NASA Science, Moon: Lunar laser ranging shows the Moon moving away...: https://science.nasa.gov/moon/facts/\n\nAssumptions: the Moon is placed on a circular orbit at half its mean distance; tides use equilibrium theory, so real coastal tide heights are not estimated.\n\nHow this video was made: animations are generated from code; the narration voice is synthetic (text-to-speech); every number is computed by our calculation script and checked against the sources above.\n\nNext: How Long Could You Survive on Every Planet?\n\n#science #space #moon #physics #whatif",
+  "tags": [
+    "what if the moon was closer",
+    "moon twice as close",
+    "what if",
+    "moon",
+    "tides",
+    "eclipse",
+    "roche limit",
+    "physics",
+    "science explained",
+    "space",
+    "astronomy",
+    "planet breakers",
+    "the if engine",
+    "thought experiment",
+    "real physics"
+  ],
+  "categoryId": "28",
+  "category": "Science & Technology",
+  "defaultLanguage": "en",
+  "defaultAudioLanguage": "en",
+  "playlist": "Planet Breakers",
+  "shorts_playlist": "Shorts: 60-Second Ifs",
+  "madeForKids": false,
+  "containsSyntheticMedia": false,
+  "containsSyntheticMedia_rationale": "Stylised, clearly animated vector graphics; generic TTS narrator not imitating any real person. AI voice disclosed in description.",
+  "chapters": [
+    {
+      "t": 0.0,
+      "label": "Intro"
+    },
+    {
+      "t": 13.91,
+      "label": "Moving the Moon"
+    },
+    {
+      "t": 77.64,
+      "label": "A bigger, faster Moon"
+    },
+    {
+      "t": 157.49,
+      "label": "Eclipses, upgraded"
+    },
+    {
+      "t": 199.08,
+      "label": "Eight times the tide"
+    },
+    {
+      "t": 269.85,
+      "label": "What happens at the coast"
+    },
+    {
+      "t": 338.49,
+      "label": "Would the Moon survive?"
+    },
+    {
+      "t": 362.21,
+      "label": "Longer days, faster"
+    },
+    {
+      "t": 426.19,
+      "label": "Would you feel it?"
+    },
+    {
+      "t": 458.4,
+      "label": "What we learned"
+    }
+  ],
+  "license": "youtube",
+  "embeddable": true,
+  "human_review_required": true,
+  "shorts": [
+    {
+      "id": "short1",
+      "file": "shorts/moon-twice-as-close_short1.mp4",
+      "title": "A Moon twice as close: every eclipse would be total #Shorts",
+      "description": "But the real show would happen in daytime.\n\nThe full explanation, with every calculation on screen: {{LONG_URL}}\n\n#science #space #moon #physics #whatif #Shorts",
+      "tags": [
+        "what if the moon was closer",
+        "moon twice as close",
+        "what if",
+        "moon",
+        "tides",
+        "eclipse",
+        "roche limit",
+        "physics",
+        "science explained",
+        "space",
+        "shorts"
+      ]
+    },
+    {
+      "id": "short2",
+      "file": "shorts/moon-twice-as-close_short2.mp4",
+      "title": "Twice-as-close Moon: 8× stronger tides #Shorts",
+      "description": "Now for the part that really matters.\n\nThe full explanation, with every calculation on screen: {{LONG_URL}}\n\n#science #space #moon #physics #whatif #Shorts",
+      "tags": [
+        "what if the moon was closer",
+        "moon twice as close",
+        "what if",
+        "moon",
+        "tides",
+        "eclipse",
+        "roche limit",
+        "physics",
+        "science explained",
+        "space",
+        "shorts"
+      ]
+    },
+    {
+      "id": "short3",
+      "file": "shorts/moon-twice-as-close_short3.mp4",
+      "title": "Could a closer Moon get torn apart? #Shorts",
+      "description": "Wait.\n\nThe full explanation, with every calculation on screen: {{LONG_URL}}\n\n#science #space #moon #physics #whatif #Shorts",
+      "tags": [
+        "what if the moon was closer",
+        "moon twice as close",
+        "what if",
+        "moon",
+        "tides",
+        "eclipse",
+        "roche limit",
+        "physics",
+        "science explained",
+        "space",
+        "shorts"
+      ]
+    }
+  ]
+}

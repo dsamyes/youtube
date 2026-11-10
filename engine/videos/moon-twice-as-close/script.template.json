@@ -1,0 +1,797 @@
+{
+  "video_id": "moon-twice-as-close",
+  "title": "What If the Moon Was Twice as Close?",
+  "series": "Planet Breakers",
+  "next_video": "How Long Could You Survive on Every Planet?",
+  "voice_style": "calm wonder, then brisk for the numbers",
+  "sections": [
+    {
+      "id": "hook",
+      "chapter": "Intro",
+      "clock": null,
+      "beats": [
+        {
+          "id": "b01",
+          "text": "Imagine stepping outside tonight and seeing a Moon twice as wide as the one you know.",
+          "visual": {
+            "scene": "sky",
+            "phase": "reveal"
+          },
+          "claims": [
+            "width_ratio"
+          ],
+          "kinetic": "Twice as wide"
+        },
+        {
+          "id": "b02",
+          "text": "Beautiful. Except every tide on Earth would be pulled {{tide_ratio}} times harder. So what if the Moon was twice as close?",
+          "visual": {
+            "scene": "tides",
+            "phase": "hook"
+          },
+          "claims": [
+            "tide_ratio"
+          ],
+          "kinetic": "{{tide_ratio}}× the tide",
+          "retention": "Hook question (open loop)"
+        }
+      ]
+    },
+    {
+      "id": "move",
+      "chapter": "Moving the Moon",
+      "clock": null,
+      "beats": [
+        {
+          "id": "b03",
+          "text": "This is The If Engine, where impossible scenarios get real physics, and every number is shown on screen.",
+          "visual": {
+            "scene": "title"
+          },
+          "claims": []
+        },
+        {
+          "id": "b04",
+          "text": "Today the Moon orbits about {{d_old_km}} kilometers away, on average. We'll halve that, to {{d_new_km}} kilometers, on a neat circular orbit.",
+          "visual": {
+            "scene": "orbit",
+            "phase": "halve"
+          },
+          "claims": [
+            "d_old_km",
+            "d_new_km"
+          ]
+        },
+        {
+          "id": "b05",
+          "text": "Moving it would not be easy. Bringing the Moon closer means draining energy from its orbit: about {{move_energy}} joules.",
+          "visual": {
+            "scene": "number",
+            "value": "{{move_energy}}",
+            "unit": "J",
+            "label": "orbital energy to remove"
+          },
+          "claims": [
+            "move_energy"
+          ],
+          "card": "move_energy"
+        },
+        {
+          "id": "b06",
+          "text": "That's roughly what the entire Sun radiates into space in {{sun_seconds}} seconds. Not a job for rockets.",
+          "visual": {
+            "scene": "clock",
+            "label": "all of the Sun's output for",
+            "time": "{{sun_seconds}} s",
+            "speed": "30"
+          },
+          "claims": [
+            "sun_seconds"
+          ]
+        },
+        {
+          "id": "b07",
+          "text": "Here's the strange part. To bring a moon closer, you'd slow it down. It would then fall inward, and end up moving faster than before. Orbits are counterintuitive like that.",
+          "visual": {
+            "scene": "orbit",
+            "phase": "fall"
+          },
+          "claims": []
+        },
+        {
+          "id": "b08",
+          "text": "So we'll skip the how. Our Moon simply arrives in its new orbit, moving at {{v_new_kms}} kilometers per second instead of {{v_old_kms}}, exactly the speed that orbit needs.",
+          "visual": {
+            "scene": "orbit",
+            "phase": "speed"
+          },
+          "claims": [
+            "v_new_kms",
+            "v_old_kms"
+          ],
+          "card": "orbit_speed"
+        },
+        {
+          "id": "b09",
+          "text": "And the first thing anyone would notice is the night sky.",
+          "visual": {
+            "scene": "sky",
+            "phase": "night"
+          },
+          "claims": [],
+          "retention": "Transition: the new sky"
+        }
+      ]
+    },
+    {
+      "id": "sky",
+      "chapter": "A bigger, faster Moon",
+      "clock": null,
+      "beats": [
+        {
+          "id": "b10",
+          "text": "Today the full Moon spans about {{theta_old}} degrees of sky. At half the distance, it spans {{theta_new}} degrees, about twice as wide.",
+          "visual": {
+            "scene": "sky",
+            "phase": "compare"
+          },
+          "claims": [
+            "theta_old",
+            "theta_new",
+            "width_ratio"
+          ],
+          "card": "angular_size"
+        },
+        {
+          "id": "b11",
+          "text": "Twice as wide means about {{area_ratio}} times the area. Same sunlight, same dusty gray surface, so the full Moon would shine about {{area_ratio}} times brighter, roughly {{mag_gain}} magnitudes on the astronomer's scale.",
+          "visual": {
+            "scene": "sky",
+            "phase": "bright"
+          },
+          "claims": [
+            "area_ratio",
+            "mag_gain"
+          ],
+          "card": "brightness"
+        },
+        {
+          "id": "b12",
+          "text": "It would also race around us. Kepler's third law shrinks the orbit to {{period_new_d}} days instead of {{period_old_d}}. Full Moons would come every {{synodic_new_d}} days instead of every {{synodic_old_d}}.",
+          "visual": {
+            "scene": "orbit",
+            "phase": "periods"
+          },
+          "claims": [
+            "period_new_d",
+            "period_old_d",
+            "synodic_new_d",
+            "synodic_old_d"
+          ],
+          "card": "kepler"
+        },
+        {
+          "id": "b13",
+          "text": "That means the whole show, from a thin crescent to full and back to dark, would play out in about a week and a half. You'd barely finish one phase before the next began.",
+          "visual": {
+            "scene": "orbit",
+            "phase": "phases"
+          },
+          "claims": [
+            "synodic_new_d"
+          ]
+        },
+        {
+          "id": "b14",
+          "text": "Against the stars, it would drift about {{deg_day_new}} degrees a day instead of {{deg_day_old}}. In a single hour, it would slide about {{widths_per_hour}} of its own widths.",
+          "visual": {
+            "scene": "bars",
+            "title": "Drift against the stars, degrees per day",
+            "unit": "°",
+            "items": [
+              {
+                "label": "Today",
+                "value": "{{deg_day_old}}"
+              },
+              {
+                "label": "Twice as close",
+                "value": "{{deg_day_new}}",
+                "color": "#FFB547"
+              }
+            ]
+          },
+          "claims": [
+            "deg_day_new",
+            "deg_day_old",
+            "widths_per_hour"
+          ],
+          "kinetic": "{{deg_day_new}}° per day"
+        },
+        {
+          "id": "b15",
+          "text": "And moonrise would slip later each day by about {{moonrise_new_h}} hours, instead of the roughly {{moonrise_old_min}} minutes we're used to.",
+          "visual": {
+            "scene": "clock",
+            "label": "moonrise comes later each day by",
+            "time": "{{moonrise_new_h}} h",
+            "sub": "today: about {{moonrise_old_min}} min",
+            "speed": "40"
+          },
+          "claims": [
+            "moonrise_new_h",
+            "moonrise_old_min"
+          ]
+        },
+        {
+          "id": "b16",
+          "text": "And from the Moon, the view would change too. Astronauts there would see Earth spanning about {{earth_from_moon_new}} degrees instead of {{earth_from_moon_old}}, a blue world twice as wide hanging over the horizon.",
+          "visual": {
+            "scene": "globe",
+            "spin": "8",
+            "r": "260",
+            "label": "Earth from the Moon: {{earth_from_moon_new}}°",
+            "sub": "today: {{earth_from_moon_old}}°"
+          },
+          "claims": [
+            "earth_from_moon_new",
+            "earth_from_moon_old"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "eclipse",
+      "chapter": "Eclipses, upgraded",
+      "clock": null,
+      "beats": [
+        {
+          "id": "b17",
+          "text": "But the real show would happen in daytime. Right now, at its average distance, the Moon looks slightly smaller than the Sun: {{theta_old_precise}} degrees versus {{theta_sun}}.",
+          "visual": {
+            "scene": "eclipse",
+            "phase": "today"
+          },
+          "claims": [
+            "theta_old_precise",
+            "theta_sun"
+          ],
+          "retention": "Reveal: the daytime show"
+        },
+        {
+          "id": "b18",
+          "text": "That's why some solar eclipses today are annular: the Moon doesn't quite cover the Sun, leaving a thin ring of fire around a dark disk.",
+          "visual": {
+            "scene": "eclipse",
+            "phase": "ring"
+          },
+          "claims": [],
+          "kinetic": "Ring of fire"
+        },
+        {
+          "id": "b19",
+          "text": "Twice as close, the Moon would look about twice as wide as the Sun. No more rings. Every central solar eclipse would be total.",
+          "visual": {
+            "scene": "eclipse",
+            "phase": "total"
+          },
+          "claims": [
+            "moon_sun_ratio"
+          ],
+          "kinetic": "Every eclipse total"
+        },
+        {
+          "id": "b20",
+          "text": "And the shadow would be enormous: a dark spot about {{umbra_km}} kilometers across, sweeping over the ground, wide enough to cover a whole country at once.",
+          "visual": {
+            "scene": "eclipse",
+            "phase": "shadow"
+          },
+          "claims": [
+            "umbra_km"
+          ],
+          "card": "eclipse"
+        }
+      ]
+    },
+    {
+      "id": "tides",
+      "chapter": "Eight times the tide",
+      "clock": null,
+      "beats": [
+        {
+          "id": "b21",
+          "text": "Now for the part that really matters. Tides don't come from the Moon's pull itself, but from the difference in pull between Earth's near side and its far side.",
+          "visual": {
+            "scene": "tides",
+            "phase": "diff"
+          },
+          "claims": [],
+          "retention": "Escalation: the real consequence"
+        },
+        {
+          "id": "b22",
+          "text": "That difference shrinks with the cube of distance. Halve the distance, and it grows by two cubed: {{tide_ratio}} times stronger.",
+          "visual": {
+            "scene": "tides",
+            "phase": "cube"
+          },
+          "claims": [
+            "tide_ratio"
+          ],
+          "card": "tide_force"
+        },
+        {
+          "id": "b23",
+          "text": "Notice the twist. The Moon's direct pull on Earth only gets {{pull_ratio}} times stronger, because gravity falls with the square of distance. Tides double that, because they depend on how quickly the pull changes from one side of the planet to the other.",
+          "visual": {
+            "scene": "compare",
+            "a": {
+              "label": "Moon's pull",
+              "value": "{{pull_ratio}}",
+              "unit": "×"
+            },
+            "b": {
+              "label": "Moon's tide",
+              "value": "{{tide_ratio}}",
+              "unit": "×"
+            }
+          },
+          "claims": [
+            "pull_ratio",
+            "tide_ratio"
+          ],
+          "retention": "Counterintuitive reveal"
+        },
+        {
+          "id": "b24",
+          "text": "In the open ocean, the Moon's tide today is a gentle bulge about {{bulge_old_cm}} centimeters high, in the idealized case where water responds freely.",
+          "visual": {
+            "scene": "tides",
+            "phase": "bulge"
+          },
+          "claims": [
+            "bulge_old_cm"
+          ],
+          "card": "bulge"
+        },
+        {
+          "id": "b25",
+          "text": "Twice as close, that bulge becomes about {{bulge_new_m}} meters, and the swing from high to low tide grows from about {{range_old_cm}} centimeters to about {{range_new_m}} meters.",
+          "visual": {
+            "scene": "tides",
+            "phase": "bulge8"
+          },
+          "claims": [
+            "bulge_new_m",
+            "range_old_cm",
+            "range_new_m"
+          ],
+          "kinetic": "{{range_old_cm}} cm → {{range_new_m}} m"
+        },
+        {
+          "id": "b26",
+          "text": "The timing shifts too. Because the Moon moves faster across our sky, high tide would arrive about every {{tide_period_new_h}} hours instead of every {{tide_period_old_h}}.",
+          "visual": {
+            "scene": "clock",
+            "label": "time between high tides",
+            "time": "{{tide_period_new_h}} h",
+            "sub": "today: {{tide_period_old_h}} h",
+            "speed": "60"
+          },
+          "claims": [
+            "tide_period_new_h",
+            "tide_period_old_h"
+          ]
+        },
+        {
+          "id": "b27",
+          "text": "But nobody lives in the open ocean. People live at the edges, where the water meets the land.",
+          "visual": {
+            "scene": "tides",
+            "phase": "coast"
+          },
+          "claims": [],
+          "retention": "Pattern break"
+        }
+      ]
+    },
+    {
+      "id": "coasts",
+      "chapter": "What happens at the coast",
+      "clock": null,
+      "beats": [
+        {
+          "id": "b28",
+          "text": "Real coastlines turn that gentle bulge into something wilder. Bays and gulfs can resonate with the tide, like water sloshing in a bathtub. That's how the Bay of Fundy gets some of the highest tides on Earth.",
+          "visual": {
+            "scene": "tides",
+            "phase": "slosh"
+          },
+          "claims": [
+            "F19"
+          ]
+        },
+        {
+          "id": "b29",
+          "text": "Harbors, river mouths, wetlands and coastal cities are all shaped around today's tides. Every one of them would be forced by a tide {{tide_ratio}} times stronger, about every {{tide_period_new_h}} hours, without a break.",
+          "visual": {
+            "scene": "tides",
+            "phase": "coast"
+          },
+          "claims": [
+            "tide_ratio",
+            "tide_period_new_h"
+          ]
+        },
+        {
+          "id": "b30",
+          "text": "So how high would Fundy's tides go with {{tide_ratio}} times the push? Honestly, that needs an ocean model, not a calculator. Resonance can amplify or dampen, and the answer changes bay by bay.",
+          "visual": {
+            "scene": "tides",
+            "phase": "unknown"
+          },
+          "claims": [
+            "tide_ratio"
+          ],
+          "kinetic": "Coastal height: needs a model",
+          "retention": "Honesty beat"
+        },
+        {
+          "id": "b31",
+          "text": "What we can calculate is the rhythm. Today the Sun adds a tide about {{sun_share_old_pct}} percent as strong as the Moon's. When they line up, we get extra-high spring tides.",
+          "visual": {
+            "scene": "compare",
+            "a": {
+              "label": "Sun's share today",
+              "value": "{{sun_share_old_pct}}",
+              "unit": "%"
+            },
+            "b": {
+              "label": "Moon twice as close",
+              "value": "{{sun_share_new_pct}}",
+              "unit": "%"
+            }
+          },
+          "claims": [
+            "sun_share_old_pct"
+          ]
+        },
+        {
+          "id": "b32",
+          "text": "With the Moon twice as close, the Sun's share drops to about {{sun_share_new_pct}} percent. In the simple theory, spring tides today are about {{spring_neap_old}} times the size of neap tides. In the new world they'd be only about {{spring_neap_new_pct}} percent bigger. The monthly rhythm almost vanishes.",
+          "visual": {
+            "scene": "compare"
+          },
+          "claims": [
+            "sun_share_new_pct",
+            "spring_neap_old",
+            "spring_neap_new_pct"
+          ],
+          "card": "sun_share"
+        }
+      ]
+    },
+    {
+      "id": "roche",
+      "chapter": "Would the Moon survive?",
+      "clock": null,
+      "beats": [
+        {
+          "id": "b33",
+          "text": "Wait. If Earth pulls harder on the Moon too, could the Moon get torn apart?",
+          "visual": {
+            "scene": "roche",
+            "phase": "question"
+          },
+          "claims": [],
+          "retention": "Open loop: danger to the Moon"
+        },
+        {
+          "id": "b34",
+          "text": "There is a limit for that, called the Roche limit. Inside it, a moon held together only by its own gravity gets pulled apart by tides. For Earth and our Moon, it's about {{roche_km}} kilometers.",
+          "visual": {
+            "scene": "roche",
+            "phase": "limit"
+          },
+          "claims": [
+            "roche_km"
+          ],
+          "card": "roche"
+        },
+        {
+          "id": "b35",
+          "text": "Our new orbit is still about {{roche_margin}} times farther out than that. The Moon would be safe.",
+          "visual": {
+            "scene": "roche",
+            "phase": "safe"
+          },
+          "claims": [
+            "roche_margin"
+          ],
+          "kinetic": "The Moon is safe"
+        }
+      ]
+    },
+    {
+      "id": "days",
+      "chapter": "Longer days, faster",
+      "clock": null,
+      "beats": [
+        {
+          "id": "b36",
+          "text": "Earth would pay a price, though. The tidal bulges drag on our spinning planet like a brake, and that slowly lengthens the day.",
+          "visual": {
+            "scene": "daylength",
+            "phase": "brake"
+          },
+          "claims": [],
+          "retention": "Twist: the hidden cost"
+        },
+        {
+          "id": "b37",
+          "text": "This isn't hypothetical physics. The same tidal brake has been slowing Earth for billions of years. It's the reason the day keeps getting very slightly longer.",
+          "visual": {
+            "scene": "daylength",
+            "phase": "brake"
+          },
+          "claims": [
+            "F16"
+          ]
+        },
+        {
+          "id": "b38",
+          "text": "That braking depends roughly on the Moon's distance to the sixth power. Halve the distance, and it gets about {{brake_ratio}} times stronger.",
+          "visual": {
+            "scene": "daylength",
+            "phase": "power"
+          },
+          "claims": [
+            "brake_ratio"
+          ],
+          "card": "braking"
+        },
+        {
+          "id": "b39",
+          "text": "Tidal friction should be adding about {{lod_old_ms}} milliseconds to the day every century. Twice as close, that becomes about {{lod_new_ms}} milliseconds per century.",
+          "visual": {
+            "scene": "bars",
+            "title": "Day-length growth, milliseconds per century",
+            "unit": "ms",
+            "items": [
+              {
+                "label": "Today (tidal friction)",
+                "value": "{{lod_old_ms}}"
+              },
+              {
+                "label": "Moon twice as close",
+                "value": "{{lod_new_ms}}",
+                "color": "#FFB547"
+              }
+            ]
+          },
+          "claims": [
+            "lod_old_ms",
+            "lod_new_ms"
+          ]
+        },
+        {
+          "id": "b40",
+          "text": "Over a million years, that's about {{myr_new_min}} extra minutes per day instead of about {{myr_old_s}} seconds, if the rate stayed constant, which it wouldn't exactly.",
+          "visual": {
+            "scene": "daylength",
+            "phase": "myr"
+          },
+          "claims": [
+            "myr_new_min",
+            "myr_old_s"
+          ],
+          "kinetic": "+{{myr_new_min}} min per million years"
+        },
+        {
+          "id": "b41",
+          "text": "There's a flip side. The same tidal tug that slows Earth also pushes the Moon gently outward. Our real Moon is drifting away by about {{recession_cm}} centimeters a year. A closer Moon would be pushed outward harder, slowly undoing part of our experiment.",
+          "visual": {
+            "scene": "orbit",
+            "phase": "drift"
+          },
+          "claims": [
+            "recession_cm"
+          ],
+          "retention": "Reversal: the Moon fights back"
+        }
+      ]
+    },
+    {
+      "id": "you",
+      "chapter": "Would you feel it?",
+      "clock": null,
+      "beats": [
+        {
+          "id": "b42",
+          "text": "And you? Would you feel lighter with that giant Moon overhead? For a {{person_mass}} kilogram person, the extra tidal pull changes your weight by about {{weight_new_g}} grams. That's less than a tenth of a gram.",
+          "visual": {
+            "scene": "number",
+            "value": "{{weight_new_g}}",
+            "unit": "g",
+            "label": "your weight change, Moon overhead",
+            "sub": "today: {{weight_old_g}} g"
+          },
+          "claims": [
+            "person_mass",
+            "weight_new_g"
+          ],
+          "card": "weight",
+          "retention": "Personal stakes"
+        },
+        {
+          "id": "b43",
+          "text": "Today it's about {{weight_old_g}} grams. Tides need size to work. Across Earth's {{earth_diam_km}} kilometers, the Moon's pull changes enough to lift whole oceans. Across a human body, the difference is far too small to feel.",
+          "visual": {
+            "scene": "number"
+          },
+          "claims": [
+            "weight_old_g",
+            "earth_diam_km"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "outro",
+      "chapter": "What we learned",
+      "clock": null,
+      "beats": [
+        {
+          "id": "b44",
+          "text": "So, a Moon twice as close: about {{area_ratio}} times brighter, a full Moon every {{synodic_new_d}} days, only total eclipses, tides {{tide_ratio}} times stronger, and days stretching about {{brake_ratio}} times faster.",
+          "visual": {
+            "scene": "recap",
+            "phase": "list",
+            "items": [
+              {
+                "label": "Full Moon brightness",
+                "value": "{{area_ratio}}×"
+              },
+              {
+                "label": "Full Moon every",
+                "value": "{{synodic_new_d}} days"
+              },
+              {
+                "label": "Solar eclipses",
+                "value": "all total"
+              },
+              {
+                "label": "Tidal force",
+                "value": "{{tide_ratio}}×"
+              },
+              {
+                "label": "Day lengthening",
+                "value": "{{brake_ratio}}×"
+              }
+            ]
+          },
+          "claims": [
+            "area_ratio",
+            "synodic_new_d",
+            "tide_ratio",
+            "brake_ratio"
+          ]
+        },
+        {
+          "id": "b45",
+          "text": "Distance is the quiet number behind our sky, our oceans, and even the length of our days. Change it by half, and almost everything we take for granted about the Moon changes with it.",
+          "visual": {
+            "scene": "recap",
+            "phase": "moral",
+            "lines": [
+              "Distance runs the sky,",
+              "the tides, and the day."
+            ]
+          },
+          "claims": []
+        },
+        {
+          "id": "b46",
+          "text": "Every number here came from a calculation or a cited source, all listed in the description. Check our math.",
+          "visual": {
+            "scene": "recap",
+            "phase": "sources"
+          },
+          "claims": []
+        },
+        {
+          "id": "b47",
+          "text": "Next time, we leave Earth entirely: how long could you survive on every planet in the solar system? Subscribe so you don't miss it. This was The If Engine. Run the impossible. Do the math.",
+          "visual": {
+            "scene": "outro",
+            "art": "sphere",
+            "colors": [
+              "#FFD9A8",
+              "#E0731F",
+              "#7A2E12"
+            ]
+          },
+          "claims": [
+            "F20"
+          ]
+        }
+      ]
+    }
+  ],
+  "shorts": [
+    {
+      "id": "short1",
+      "title": "A Moon twice as close: every eclipse would be total",
+      "beats": [
+        "b17",
+        "b20"
+      ]
+    },
+    {
+      "id": "short2",
+      "title": "Twice-as-close Moon: {{tide_ratio}}× stronger tides",
+      "beats": [
+        "b21",
+        "b25"
+      ]
+    },
+    {
+      "id": "short3",
+      "title": "Could a closer Moon get torn apart?",
+      "beats": [
+        "b33",
+        "b35"
+      ]
+    }
+  ],
+  "thumbnail": {
+    "headline": "Moon<br><em>Twice</em><br>as Close",
+    "number": "{{tide_ratio}}× tides",
+    "badge": "2× WIDER",
+    "art": {
+      "planet": [
+        "#9be7ff",
+        "#2b7bd6",
+        "#0d2a66"
+      ],
+      "land": true,
+      "winds": false,
+      "moon": true
+    }
+  },
+  "metadata": {
+    "alt_titles": [
+      "What If the Moon Were Half as Far Away? The Real Math",
+      "Moon at Half the Distance: {{tide_ratio}}× Tides and Total Eclipses Only"
+    ],
+    "hook": "Halve the Moon's distance and it looks twice as wide. Every tide on Earth gets {{tide_ratio}} times stronger.",
+    "summary": "We run the scenario through real physics with every calculation on screen: the new sky, a {{synodic_new_d}}-day lunar month, eclipses that are always total, equilibrium tides, the Roche limit, tidal braking and whether you'd feel it.",
+    "key_numbers": [
+      "Energy to move the Moon in: {{move_energy}} J ≈ {{sun_seconds}} s of the Sun's total output",
+      "Apparent size: {{theta_old}}° → {{theta_new}}°, about {{area_ratio}}× the light",
+      "Orbit: {{period_new_d}} days, full Moon every {{synodic_new_d}} days",
+      "Tidal force × {{tide_ratio}}; equilibrium tide range {{range_old_cm}} cm → {{range_new_m}} m",
+      "Roche limit ≈ {{roche_km}} km, new orbit {{roche_margin}}× farther out",
+      "Day lengthening {{lod_old_ms}} → {{lod_new_ms}} ms per century"
+    ],
+    "assumptions": "Assumptions: the Moon is placed on a circular orbit at half its mean distance; tides use equilibrium theory, so real coastal tide heights are not estimated.",
+    "tags": [
+      "what if the moon was closer",
+      "moon twice as close",
+      "what if",
+      "moon",
+      "tides",
+      "eclipse",
+      "roche limit",
+      "physics",
+      "science explained",
+      "space",
+      "astronomy",
+      "planet breakers",
+      "the if engine",
+      "thought experiment",
+      "real physics"
+    ],
+    "hashtags": "#science #space #moon #physics #whatif"
+  }
+}

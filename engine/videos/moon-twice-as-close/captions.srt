@@ -1,0 +1,646 @@
+1
+00:00:00,600 --> 00:00:02,393
+Imagine stepping outside
+tonight and seeing
+
+2
+00:00:02,393 --> 00:00:05,382
+a Moon twice as wide as the one you know.
+
+3
+00:00:05,782 --> 00:00:09,684
+Beautiful. Except every tide on
+Earth would be pulled 8 times harder.
+
+4
+00:00:09,684 --> 00:00:12,610
+So what if the Moon was twice as close?
+
+5
+00:00:13,910 --> 00:00:17,986
+This is The If Engine, where
+impossible scenarios get real physics,
+
+6
+00:00:17,986 --> 00:00:20,579
+and every number is shown on screen.
+
+7
+00:00:20,979 --> 00:00:22,915
+Today the Moon orbits about
+
+8
+00:00:22,915 --> 00:00:27,173
+384,400 kilometers away, on average.
+
+9
+00:00:27,173 --> 00:00:31,818
+We'll halve that, to 192,200 kilometers,
+
+10
+00:00:31,818 --> 00:00:33,754
+on a neat circular orbit.
+
+11
+00:00:34,154 --> 00:00:36,284
+Moving it would not be easy.
+
+12
+00:00:36,284 --> 00:00:38,414
+Bringing the Moon closer means draining
+
+13
+00:00:38,414 --> 00:00:43,385
+energy from its orbit:
+about 3.8 × 10²⁸ joules.
+
+14
+00:00:43,785 --> 00:00:48,444
+That's roughly what the entire Sun
+radiates into space in 100 seconds.
+
+15
+00:00:48,444 --> 00:00:50,236
+Not a job for rockets.
+
+16
+00:00:50,636 --> 00:00:52,036
+Here's the strange part.
+
+17
+00:00:52,036 --> 00:00:55,186
+To bring a moon closer,
+you'd slow it down.
+
+18
+00:00:55,186 --> 00:00:59,386
+It would then fall inward, and
+end up moving faster than before.
+
+19
+00:00:59,386 --> 00:01:01,136
+Orbits are counterintuitive like that.
+
+20
+00:01:01,536 --> 00:01:03,311
+So we'll skip the how.
+
+21
+00:01:03,311 --> 00:01:08,280
+Our Moon simply arrives in its new
+orbit, moving at 1.4 kilometers
+
+22
+00:01:08,280 --> 00:01:12,895
+per second instead of 1.0, exactly
+the speed that orbit needs.
+
+23
+00:01:13,295 --> 00:01:16,340
+And the first thing anyone
+would notice is the night sky.
+
+24
+00:01:17,640 --> 00:01:22,498
+Today the full Moon spans
+about 0.53 degrees of sky.
+
+25
+00:01:22,498 --> 00:01:28,104
+At half the distance, it spans
+1.07 degrees, about twice as wide.
+
+26
+00:01:28,504 --> 00:01:32,091
+Twice as wide means
+about 4 times the area.
+
+27
+00:01:32,091 --> 00:01:36,874
+Same sunlight, same dusty gray
+surface, so the full Moon would shine
+
+28
+00:01:36,874 --> 00:01:42,056
+about 4 times brighter, roughly 1.5
+magnitudes on the astronomer's scale.
+
+29
+00:01:42,456 --> 00:01:44,677
+It would also race around us.
+
+30
+00:01:44,677 --> 00:01:46,528
+Kepler's third law shrinks the
+
+31
+00:01:46,528 --> 00:01:50,600
+orbit to 9.7 days instead of 27.3.
+
+32
+00:01:50,600 --> 00:01:56,152
+Full Moons would come every
+9.9 days instead of every 29.5.
+
+33
+00:01:56,552 --> 00:02:00,805
+That means the whole show, from a thin
+crescent to full and back to dark,
+
+34
+00:02:00,805 --> 00:02:03,640
+would play out in about a week and a half.
+
+35
+00:02:03,640 --> 00:02:06,192
+You'd barely finish one
+phase before the next began.
+
+36
+00:02:06,592 --> 00:02:11,177
+Against the stars, it would drift
+about 37 degrees a day instead of 13.
+
+37
+00:02:11,177 --> 00:02:16,090
+In a single hour, it would slide
+about 1.4 of its own widths.
+
+38
+00:02:16,490 --> 00:02:20,716
+And moonrise would slip later
+each day by about 2.7 hours,
+
+39
+00:02:20,716 --> 00:02:23,642
+instead of the roughly
+50 minutes we're used to.
+
+40
+00:02:24,042 --> 00:02:27,166
+And from the Moon, the
+view would change too.
+
+41
+00:02:27,166 --> 00:02:28,901
+Astronauts there would see Earth
+
+42
+00:02:28,901 --> 00:02:32,719
+spanning about 3.8 degrees instead of 1.9,
+
+43
+00:02:32,719 --> 00:02:36,190
+a blue world twice as wide
+hanging over the horizon.
+
+44
+00:02:37,490 --> 00:02:40,428
+But the real show would happen in daytime.
+
+45
+00:02:40,428 --> 00:02:42,631
+Right now, at its average distance,
+
+46
+00:02:42,631 --> 00:02:45,569
+the Moon looks slightly
+smaller than the Sun:
+
+47
+00:02:45,569 --> 00:02:49,975
+0.527 degrees versus 0.533.
+
+48
+00:02:50,375 --> 00:02:54,014
+That's why some solar eclipses
+today are annular: the Moon doesn't
+
+49
+00:02:54,014 --> 00:02:58,646
+quite cover the Sun, leaving a thin
+ring of fire around a dark disk.
+
+50
+00:02:59,046 --> 00:03:04,737
+Twice as close, the Moon would look about
+twice as wide as the Sun. No more rings.
+
+51
+00:03:04,737 --> 00:03:07,081
+Every central solar
+eclipse would be total.
+
+52
+00:03:07,481 --> 00:03:09,612
+And the shadow would be enormous:
+
+53
+00:03:09,612 --> 00:03:13,164
+a dark spot about 1,700 kilometers across,
+
+54
+00:03:13,164 --> 00:03:17,781
+sweeping over the ground, wide enough
+to cover a whole country at once.
+
+55
+00:03:19,081 --> 00:03:21,251
+Now for the part that really matters.
+
+56
+00:03:21,251 --> 00:03:23,730
+Tides don't come from
+the Moon's pull itself,
+
+57
+00:03:23,730 --> 00:03:28,070
+but from the difference in pull between
+Earth's near side and its far side.
+
+58
+00:03:28,470 --> 00:03:31,192
+That difference shrinks
+with the cube of distance.
+
+59
+00:03:31,192 --> 00:03:35,276
+Halve the distance, and it grows
+by two cubed: 8 times stronger.
+
+60
+00:03:35,676 --> 00:03:40,368
+Notice the twist. The Moon's direct pull
+on Earth only gets 4 times stronger,
+
+61
+00:03:40,368 --> 00:03:43,050
+because gravity falls with
+the square of distance.
+
+62
+00:03:43,050 --> 00:03:46,066
+Tides double that, because
+they depend on how quickly
+
+63
+00:03:46,066 --> 00:03:50,088
+the pull changes from one side
+of the planet to the other.
+
+64
+00:03:50,488 --> 00:03:56,079
+In the open ocean, the Moon's tide
+today is a gentle bulge about 36
+
+65
+00:03:56,079 --> 00:04:00,072
+centimeters high, in the idealized
+case where water responds freely.
+
+66
+00:04:00,472 --> 00:04:06,104
+Twice as close, that bulge becomes
+about 2.9 meters, and the swing from
+
+67
+00:04:06,104 --> 00:04:11,736
+high to low tide grows from about
+54 centimeters to about 4.3 meters.
+
+68
+00:04:12,136 --> 00:04:13,579
+The timing shifts too.
+
+69
+00:04:13,579 --> 00:04:16,465
+Because the Moon moves
+faster across our sky,
+
+70
+00:04:16,465 --> 00:04:18,629
+high tide would arrive about every
+
+71
+00:04:18,629 --> 00:04:22,236
+13.3 hours instead of every 12.4.
+
+72
+00:04:22,636 --> 00:04:24,935
+But nobody lives in the open ocean.
+
+73
+00:04:24,935 --> 00:04:28,548
+People live at the edges,
+where the water meets the land.
+
+74
+00:04:29,848 --> 00:04:33,029
+Real coastlines turn that gentle
+bulge into something wilder.
+
+75
+00:04:33,029 --> 00:04:37,978
+Bays and gulfs can resonate with the
+tide, like water sloshing in a bathtub.
+
+76
+00:04:37,978 --> 00:04:42,926
+That's how the Bay of Fundy gets
+some of the highest tides on Earth.
+
+77
+00:04:43,326 --> 00:04:45,545
+Harbors, river mouths,
+wetlands and coastal
+
+78
+00:04:45,545 --> 00:04:48,133
+cities are all shaped
+around today's tides.
+
+79
+00:04:48,133 --> 00:04:52,941
+Every one of them would be forced
+by a tide 8 times stronger,
+
+80
+00:04:52,941 --> 00:04:56,269
+about every 13.3 hours, without a break.
+
+81
+00:04:56,669 --> 00:05:01,296
+So how high would Fundy's
+tides go with 8 times the push?
+
+82
+00:05:01,296 --> 00:05:04,765
+Honestly, that needs an ocean
+model, not a calculator.
+
+83
+00:05:04,765 --> 00:05:09,392
+Resonance can amplify or dampen,
+and the answer changes bay by bay.
+
+84
+00:05:09,792 --> 00:05:12,208
+What we can calculate is the rhythm.
+
+85
+00:05:12,208 --> 00:05:17,039
+Today the Sun adds a tide about 46
+percent as strong as the Moon's.
+
+86
+00:05:17,039 --> 00:05:20,145
+When they line up, we get
+extra-high spring tides.
+
+87
+00:05:20,545 --> 00:05:25,400
+With the Moon twice as close, the
+Sun's share drops to about 6 percent.
+
+88
+00:05:25,400 --> 00:05:27,828
+In the simple theory, spring tides today
+
+89
+00:05:27,828 --> 00:05:31,643
+are about 2.7 times
+the size of neap tides.
+
+90
+00:05:31,643 --> 00:05:35,458
+In the new world they'd be
+only about 12 percent bigger.
+
+91
+00:05:35,458 --> 00:05:37,192
+The monthly rhythm almost vanishes.
+
+92
+00:05:38,492 --> 00:05:42,617
+Wait. If Earth pulls harder on the Moon
+too, could the Moon get torn apart?
+
+93
+00:05:43,017 --> 00:05:46,528
+There is a limit for that,
+called the Roche limit.
+
+94
+00:05:46,528 --> 00:05:49,336
+Inside it, a moon held together only by
+
+95
+00:05:49,336 --> 00:05:52,144
+its own gravity gets
+pulled apart by tides.
+
+96
+00:05:52,144 --> 00:05:55,655
+For Earth and our Moon, it's
+about 18,000 kilometers.
+
+97
+00:05:56,055 --> 00:05:59,479
+Our new orbit is still about
+10 times farther out than that.
+
+98
+00:05:59,479 --> 00:06:00,906
+The Moon would be safe.
+
+99
+00:06:02,206 --> 00:06:04,087
+Earth would pay a price, though.
+
+100
+00:06:04,087 --> 00:06:07,534
+The tidal bulges drag on our
+spinning planet like a brake,
+
+101
+00:06:07,534 --> 00:06:09,415
+and that slowly lengthens the day.
+
+102
+00:06:09,815 --> 00:06:11,292
+This isn't hypothetical physics.
+
+103
+00:06:11,292 --> 00:06:15,722
+The same tidal brake has been
+slowing Earth for billions of years.
+
+104
+00:06:15,722 --> 00:06:19,414
+It's the reason the day keeps
+getting very slightly longer.
+
+105
+00:06:19,814 --> 00:06:24,171
+That braking depends roughly on the
+Moon's distance to the sixth power.
+
+106
+00:06:24,171 --> 00:06:27,801
+Halve the distance, and it
+gets about 64 times stronger.
+
+107
+00:06:28,201 --> 00:06:30,415
+Tidal friction should be adding about
+
+108
+00:06:30,415 --> 00:06:33,737
+2.3 milliseconds to the day every century.
+
+109
+00:06:33,737 --> 00:06:38,534
+Twice as close, that becomes about
+150 milliseconds per century.
+
+110
+00:06:38,934 --> 00:06:43,817
+Over a million years, that's about
+25 extra minutes per day instead of
+
+111
+00:06:43,817 --> 00:06:48,325
+about 23 seconds, if the rate stayed
+constant, which it wouldn't exactly.
+
+112
+00:06:48,725 --> 00:06:50,162
+There's a flip side.
+
+113
+00:06:50,162 --> 00:06:54,832
+The same tidal tug that slows Earth
+also pushes the Moon gently outward.
+
+114
+00:06:54,832 --> 00:06:59,862
+Our real Moon is drifting away
+by about 3.8 centimeters a year.
+
+115
+00:06:59,862 --> 00:07:02,736
+A closer Moon would be
+pushed outward harder,
+
+116
+00:07:02,736 --> 00:07:04,891
+slowly undoing part of our experiment.
+
+117
+00:07:06,191 --> 00:07:10,007
+And you? Would you feel lighter
+with that giant Moon overhead?
+
+118
+00:07:10,007 --> 00:07:12,782
+For a 70 kilogram person, the extra tidal
+
+119
+00:07:12,782 --> 00:07:16,598
+pull changes your weight
+by about 0.06 grams.
+
+120
+00:07:16,598 --> 00:07:19,373
+That's less than a tenth of a gram.
+
+121
+00:07:19,773 --> 00:07:23,318
+Today it's about 0.008 grams.
+
+122
+00:07:23,318 --> 00:07:25,287
+Tides need size to work.
+
+123
+00:07:25,287 --> 00:07:28,832
+Across Earth's 12,742 kilometers,
+
+124
+00:07:28,832 --> 00:07:32,377
+the Moon's pull changes
+enough to lift whole oceans.
+
+125
+00:07:32,377 --> 00:07:37,104
+Across a human body, the difference
+is far too small to feel.
+
+126
+00:07:38,404 --> 00:07:40,852
+So, a Moon twice as close:
+
+127
+00:07:40,852 --> 00:07:45,747
+about 4 times brighter, a
+full Moon every 9.9 days,
+
+128
+00:07:45,747 --> 00:07:48,603
+only total eclipses,
+tides 8 times stronger,
+
+129
+00:07:48,603 --> 00:07:51,459
+and days stretching about 64 times faster.
+
+130
+00:07:51,859 --> 00:07:54,496
+Distance is the quiet
+number behind our sky,
+
+131
+00:07:54,496 --> 00:07:57,462
+our oceans, and even
+the length of our days.
+
+132
+00:07:57,462 --> 00:08:00,099
+Change it by half, and
+almost everything we
+
+133
+00:08:00,099 --> 00:08:03,066
+take for granted about
+the Moon changes with it.
+
+134
+00:08:03,466 --> 00:08:06,187
+Every number here came
+from a calculation or
+
+135
+00:08:06,187 --> 00:08:09,928
+a cited source, all listed in
+the description. Check our math.
+
+136
+00:08:10,328 --> 00:08:12,367
+Next time, we leave Earth entirely:
+
+137
+00:08:12,367 --> 00:08:16,444
+how long could you survive on
+every planet in the solar system?
+
+138
+00:08:16,444 --> 00:08:18,483
+Subscribe so you don't miss it.
+
+139
+00:08:18,483 --> 00:08:20,181
+This was The If Engine.
+
+140
+00:08:20,181 --> 00:08:22,220
+Run the impossible. Do the math.

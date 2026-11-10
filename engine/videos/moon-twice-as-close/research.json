@@ -1,0 +1,238 @@
+{
+  "facts": {
+    "F01": {
+      "fact": "Moon mean distance (semimajor axis)",
+      "value": 384400.0,
+      "unit": "km",
+      "sources": [
+        "S1"
+      ]
+    },
+    "F02": {
+      "fact": "Moon mass",
+      "value": 7.346e+22,
+      "unit": "kg",
+      "sources": [
+        "S1"
+      ]
+    },
+    "F03": {
+      "fact": "Moon volumetric mean radius",
+      "value": 1737.4,
+      "unit": "km",
+      "sources": [
+        "S1"
+      ]
+    },
+    "F04": {
+      "fact": "Moon sidereal orbit period",
+      "value": 27.3217,
+      "unit": "days",
+      "sources": [
+        "S1"
+      ]
+    },
+    "F05": {
+      "fact": "Moon mean density",
+      "value": 3344.0,
+      "unit": "kg/m^3",
+      "sources": [
+        "S1"
+      ]
+    },
+    "F06": {
+      "fact": "Earth mass",
+      "value": 5.9722e+24,
+      "unit": "kg",
+      "sources": [
+        "S2"
+      ]
+    },
+    "F07": {
+      "fact": "Earth volumetric mean radius",
+      "value": 6371.0,
+      "unit": "km",
+      "sources": [
+        "S2"
+      ]
+    },
+    "F08": {
+      "fact": "Earth mean density",
+      "value": 5514.0,
+      "unit": "kg/m^3",
+      "sources": [
+        "S2"
+      ]
+    },
+    "F09": {
+      "fact": "Newtonian constant of gravitation G",
+      "value": 6.6743e-11,
+      "unit": "m^3/(kg s^2)",
+      "sources": [
+        "S3"
+      ]
+    },
+    "F10": {
+      "fact": "Standard gravity g",
+      "value": 9.80665,
+      "unit": "m/s^2",
+      "sources": [
+        "S3"
+      ]
+    },
+    "F11": {
+      "fact": "Astronomical unit",
+      "value": 149597870.7,
+      "unit": "km",
+      "sources": [
+        "S4"
+      ]
+    },
+    "F12": {
+      "fact": "Nominal solar radius",
+      "value": 695700.0,
+      "unit": "km",
+      "sources": [
+        "S5"
+      ]
+    },
+    "F13": {
+      "fact": "Nominal solar luminosity",
+      "value": 3.828e+26,
+      "unit": "W",
+      "sources": [
+        "S5"
+      ]
+    },
+    "F14": {
+      "fact": "Sun mass",
+      "value": 1.9885e+30,
+      "unit": "kg",
+      "sources": [
+        "S6"
+      ]
+    },
+    "F15": {
+      "fact": "Sun's tide-generating force is about half (46%) of the Moon's",
+      "value": 0.46,
+      "unit": "ratio",
+      "sources": [
+        "S7",
+        "S8"
+      ]
+    },
+    "F16": {
+      "fact": "Day-length increase predicted from tidal friction",
+      "value": 2.3,
+      "unit": "ms/century",
+      "sources": [
+        "S9"
+      ]
+    },
+    "F17": {
+      "fact": "Fluid Roche limit coefficient (Roche 1849)",
+      "value": 2.44,
+      "unit": "-",
+      "sources": [
+        "S10"
+      ]
+    },
+    "F18": {
+      "fact": "Tropical year",
+      "value": 365.2422,
+      "unit": "days",
+      "sources": [
+        "S11"
+      ]
+    },
+    "F19": {
+      "fact": "Coastal tides can be strongly amplified by basin resonance (e.g. Bay of Fundy)",
+      "value": "qualitative",
+      "unit": "-",
+      "sources": [
+        "S7"
+      ]
+    },
+    "F20": {
+      "fact": "Assumed adult body mass (round number)",
+      "value": 70.0,
+      "unit": "kg",
+      "sources": [
+        "S12"
+      ]
+    },
+    "F21": {
+      "fact": "Earth sidereal rotation period",
+      "value": 23.9345,
+      "unit": "h",
+      "sources": [
+        "S2"
+      ]
+    },
+    "F22": {
+      "fact": "The Moon recedes from Earth by about 3.8 cm per year (lunar laser ranging)",
+      "value": 3.8,
+      "unit": "cm/yr",
+      "sources": [
+        "S13"
+      ]
+    }
+  },
+  "sources": {
+    "S1": {
+      "title": "NASA NSSDC, Moon Fact Sheet",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/moonfact.html"
+    },
+    "S2": {
+      "title": "NASA NSSDC, Earth Fact Sheet",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html"
+    },
+    "S3": {
+      "title": "NIST CODATA 2018, fundamental constants",
+      "url": "https://physics.nist.gov/cuu/Constants/"
+    },
+    "S4": {
+      "title": "IAU 2012 Resolution B2, re-definition of the astronomical unit",
+      "url": "https://www.iau.org/static/resolutions/IAU2012_English.pdf"
+    },
+    "S5": {
+      "title": "IAU 2015 Resolution B3, nominal solar and planetary conversion constants",
+      "url": "https://arxiv.org/abs/1510.07674"
+    },
+    "S6": {
+      "title": "NASA NSSDC, Sun Fact Sheet",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/sunfact.html"
+    },
+    "S7": {
+      "title": "NOAA National Ocean Service, Tides and Water Levels: what causes tides",
+      "url": "https://oceanservice.noaa.gov/education/tutorial_tides/tides02_cause.html"
+    },
+    "S8": {
+      "title": "Ocean Motion (NASA-funded education site), Tide-generating forces background",
+      "url": "https://www.oceanmotion.org/html/background/tides-forces.htm"
+    },
+    "S9": {
+      "title": "Stephenson, Morrison & Hohenkerk (2016), Measurement of the Earth's rotation: 720 BC to AD 2015, Proc. R. Soc. A 472",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5247521/"
+    },
+    "S10": {
+      "title": "Encyclopaedia Britannica, Roche limit",
+      "url": "https://www.britannica.com/science/Roche-limit"
+    },
+    "S11": {
+      "title": "NASA/IERS, tropical year (365.2422 days)",
+      "url": "https://www.iers.org/IERS/EN/Science/EarthRotation/EarthRotation.html"
+    },
+    "S13": {
+      "title": "NASA Science, Moon: Lunar laser ranging shows the Moon moving away ~3.8 cm/yr",
+      "url": "https://science.nasa.gov/moon/facts/"
+    },
+    "S12": {
+      "title": "ICRP Publication 89, reference adult",
+      "url": "https://www.icrp.org/publication.asp?id=ICRP%20Publication%2089"
+    }
+  },
+  "cities": {},
+  "generated": "2026-11-09T23:45:03+00:00",
+  "url_probe": {}
+}

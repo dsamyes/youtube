@@ -1,0 +1,332 @@
+{
+  "reviewer": "editorial fact-check pass (agent), 2026-11-09",
+  "beats": {
+    "b01": {
+      "verdict": "fixed",
+      "note": "Speed is rotation-only; 'up to' = equator. Draft said 'you're moving at' which ignores orbital motion.",
+      "hash": "7658d5f0e5fe"
+    },
+    "b02": {
+      "verdict": "rhetoric",
+      "note": "Scenario question.",
+      "hash": "cf17775fccfc"
+    },
+    "b03": {
+      "verdict": "rhetoric",
+      "note": "Channel intro.",
+      "hash": "279850908b5b"
+    },
+    "b04": {
+      "verdict": "ok",
+      "note": "Sidereal 23.9345 h (NASA). Solar minus sidereal = 3 min 56 s -> 'about four minutes'; cause = orbital motion is correct.",
+      "hash": "0325c15dee89"
+    },
+    "b05": {
+      "verdict": "ok",
+      "note": "2*pi*a/T_sid = 465.1 m/s = 1,674 km/h -> 'roughly 1,670'. 465 > 340 m/s so 'faster than sound' holds.",
+      "hash": "78354978a8b2"
+    },
+    "b06": {
+      "verdict": "ok",
+      "note": "Radius of the circle = N cos(lat), shrinks with latitude.",
+      "hash": "d2fce6811a68"
+    },
+    "b07": {
+      "verdict": "ok",
+      "note": "WGS84 ellipsoid speeds at city latitudes; pole speed 0.",
+      "hash": "537a29ff07c1"
+    },
+    "b08": {
+      "verdict": "ok",
+      "note": "Uniform circular motion at constant speed; centripetal accel 0.034 m/s^2 is imperceptible. Simplification acceptable.",
+      "hash": "cef2736ee5c2"
+    },
+    "b09": {
+      "verdict": "rhetoric",
+      "note": "Transition.",
+      "hash": "66e685ea262a"
+    },
+    "b10": {
+      "verdict": "rhetoric",
+      "note": "Scenario rules.",
+      "hash": "f22687fd9ef4"
+    },
+    "b11": {
+      "verdict": "ok",
+      "note": "Scenario rule (stated as hypothetical).",
+      "hash": "d7a29b0b766c"
+    },
+    "b12": {
+      "verdict": "ok",
+      "note": "Scenario rule.",
+      "hash": "9347c848a9ca"
+    },
+    "b13": {
+      "verdict": "ok",
+      "note": "Scenario rule.",
+      "hash": "3ba9e746f2e2"
+    },
+    "b14": {
+      "verdict": "ok",
+      "note": "Newton's first law: unforced bodies keep their velocity.",
+      "hash": "5641be7291c4"
+    },
+    "b15": {
+      "verdict": "ok",
+      "note": "Relative speed to stopped ground = inertial speed, 465 m/s at equator, eastward.",
+      "hash": "0918145438f0"
+    },
+    "b16": {
+      "verdict": "ok",
+      "note": "mu=0.7 rubber/dry concrete (Eng. ToolBox 0.6-0.85); a = mu g = 6.9 m/s^2; 1 s -> 7 m/s; 465-7=458.",
+      "hash": "8a25ae26fc58"
+    },
+    "b17": {
+      "verdict": "fixed",
+      "note": "Draft implied open-ended tumble; scoped to 'in that one second' (<= 465 m).",
+      "hash": "abd46e7cf418"
+    },
+    "b18": {
+      "verdict": "rhetoric",
+      "note": "Open loop.",
+      "hash": "f4044a8f8031"
+    },
+    "b19": {
+      "verdict": "ok",
+      "note": "1/2*70*465.1^2 = 7.57 MJ; /4.184 MJ/kg = 1.81 kg TNT.",
+      "hash": "09f985facca9"
+    },
+    "b20": {
+      "verdict": "ok",
+      "note": "Energy-equivalent drop h = v^2/2g = 11.0 km > Everest 8.85 km; 'no air' caveat stated.",
+      "hash": "7afecd803f26"
+    },
+    "b21": {
+      "verdict": "ok",
+      "note": "London 51.5 N: 290 m/s -> 4.3 km.",
+      "hash": "39a1865c57f5"
+    },
+    "b22": {
+      "verdict": "ok",
+      "note": "Follows from rule one (rock and everything bolted to it stops).",
+      "hash": "9811e38711b3"
+    },
+    "b23": {
+      "verdict": "fixed",
+      "note": "Draft used compression (bar) wave 5,000 m/s; a sideways base jolt travels up as a SHEAR wave, sqrt(G/rho) = 3,180 m/s.",
+      "hash": "4895f36c7446"
+    },
+    "b24": {
+      "verdict": "fixed",
+      "note": "tau = rho c_s dv = 11.6 GPa (draft: 18 GPa from bar model).",
+      "hash": "fe2105ef98ca"
+    },
+    "b25": {
+      "verdict": "fixed",
+      "note": "Compared against shear yield 250/sqrt(3) = 144 MPa -> ~80x (draft: 74x vs tensile yield). Conclusion phrased qualitatively.",
+      "hash": "9a04ff140b7b"
+    },
+    "b26": {
+      "verdict": "rhetoric",
+      "note": "Tease.",
+      "hash": "13fd8ad3c5ad"
+    },
+    "b27": {
+      "verdict": "ok",
+      "note": "Air keeps eastward velocity; relative wind blows west->east at 465 m/s at equator.",
+      "hash": "c13910c1a5a2"
+    },
+    "b28": {
+      "verdict": "fixed",
+      "note": "Draft said supersonic 'everywhere'. Only where v(lat) > 340 m/s: |lat| < 43 deg = sin(43 deg) = 68% of surface. Spherical approx, 'about'.",
+      "hash": "103ecb5cf5f5"
+    },
+    "b29": {
+      "verdict": "ok",
+      "note": "q = 1/2 rho v^2 = 132 kPa is a LOWER bound; shock-corrected pitot overpressure is 196 kPa, hence 'at least'. 13.5 t-force/m^2 shown as 14.",
+      "hash": "a7066e4b62e2"
+    },
+    "b30": {
+      "verdict": "fixed",
+      "note": "Draft showed 253 km/h (our own mph conversion); NOAA publishes 252 km/h - now uses published value. Ratio (465.1/70.2)^2 = 43.9.",
+      "hash": "c70d12623d61"
+    },
+    "b31": {
+      "verdict": "fixed",
+      "note": "Draft said 'every obstacle on the planet'; restricted to the supersonic zone.",
+      "hash": "a173e0e8939f"
+    },
+    "b32": {
+      "verdict": "ok",
+      "note": "1/2 * 5.148e18 kg * 2/3 * v_eq^2 = 3.7e23 J (area-weighted cos^2 mean 2/3, uniform column mass assumed). / 620 EJ/yr = ~600 yr.",
+      "hash": "2f32cf38cb1a"
+    },
+    "b33": {
+      "verdict": "ok",
+      "note": "465 m < 500 m. ~95% of atmospheric mass lies above ~500 m altitude, so 'most of the air above the rooftops' is defensible; mountains excepted.",
+      "hash": "7017dafbf86e"
+    },
+    "b34": {
+      "verdict": "ok",
+      "note": "Seafloor stops, water keeps velocity; NOAA mean depth 3,682 m.",
+      "hash": "10de6f640281"
+    },
+    "b35": {
+      "verdict": "ok",
+      "note": "465 m * 3,682 m = 1.71e6 m^3 per metre; /2,500 m^3 = 685 pools. Deep-water column assumption stated via 'in its path'.",
+      "hash": "e7bac5f73d97"
+    },
+    "b36": {
+      "verdict": "ok",
+      "note": "Joukowsky water-hammer relation dp = rho c dv for an instantaneous stop against a rigid boundary.",
+      "hash": "49ea9b6edd6b"
+    },
+    "b37": {
+      "verdict": "ok",
+      "note": "1025*1500*465.1 = 715 MPa ('around 720'); Challenger Deep 10,935 m -> ~110 MPa; ratio 6.5 -> 'more than 6'.",
+      "hash": "a0de2f63882c"
+    },
+    "b38": {
+      "verdict": "ok",
+      "note": "Water moving east leaves west-side (east-facing) coasts; qualitative, scoped to 'near the shore'.",
+      "hash": "b8e9361b807f"
+    },
+    "b39": {
+      "verdict": "ok",
+      "note": "sqrt(g*3682) = 190 m/s = 684 km/h, 76% of ~900 km/h jet cruise ('nearly'); NOAA itself says 'as fast as a jet plane'. 5,000 km / 190 m/s = 7.3 h.",
+      "hash": "df0b62592f45"
+    },
+    "b40": {
+      "verdict": "ok",
+      "note": "Honest uncertainty statement; no height claimed.",
+      "hash": "32297e75f5a0"
+    },
+    "b41": {
+      "verdict": "ok",
+      "note": "Things not in contact with the ground keep moving with the air/orbit.",
+      "hash": "b6c563723f4a"
+    },
+    "b42": {
+      "verdict": "ok",
+      "note": "At cruise altitude the air mass is undisturbed during the 1 s (no obstacles).",
+      "hash": "81c312d1ecb7"
+    },
+    "b43": {
+      "verdict": "ok",
+      "note": "NASA: ~17,500 mph = 28,000 km/h. Orbit is set by gravity and the ISS's own velocity, not Earth's spin.",
+      "hash": "396312c41e49"
+    },
+    "b44": {
+      "verdict": "ok",
+      "note": "Scenario rule three.",
+      "hash": "2ef4ed0c4830"
+    },
+    "b45": {
+      "verdict": "ok",
+      "note": "Anything that lost eastward speed is now slower than the restarted ground.",
+      "hash": "da3c64524b05"
+    },
+    "b46": {
+      "verdict": "ok",
+      "note": "Object at rest (inertial) vs ground at 465 m/s -> relative 465 m/s, opposite direction; 'up to'.",
+      "hash": "b2b10bc787e7"
+    },
+    "b47": {
+      "verdict": "rhetoric",
+      "note": "Summary line.",
+      "hash": "ddab7c4055fe"
+    },
+    "b48": {
+      "verdict": "ok",
+      "note": "Rotation phase permanently lags by 1 s under the scenario rules.",
+      "hash": "9909f59f3f86"
+    },
+    "b49": {
+      "verdict": "ok",
+      "note": "360 deg * 3600 / 86,164 s = 15.04 arcsec per second of time.",
+      "hash": "75376b14edec"
+    },
+    "b50": {
+      "verdict": "fixed",
+      "note": "Draft said Earth's spin 'wobbles' (wobble = polar motion, a different thing); now 'isn't perfectly steady'. 27 leap seconds 1972-2016 (IERS).",
+      "hash": "c48d4f0cdb22"
+    },
+    "b51": {
+      "verdict": "ok",
+      "note": "IERS keeps |UT1-UTC| < 0.9 s, so a 1 s jump forces a leap second.",
+      "hash": "9591934b47f5"
+    },
+    "b52": {
+      "verdict": "ok",
+      "note": "Recap of claims made above.",
+      "hash": "f0e6844ba85a"
+    },
+    "b53": {
+      "verdict": "rhetoric",
+      "note": "Moral.",
+      "hash": "3a7dc607f5ea"
+    },
+    "b54": {
+      "verdict": "fixed",
+      "note": "Draft said 'every number was calculated on screen' - false for cited facts (e.g. ISS speed) and city speeds. Reworded.",
+      "hash": "535e6bee16e4"
+    },
+    "b55": {
+      "verdict": "fixed",
+      "note": "'no surface' -> 'no solid surface' (NASA: Jupiter has no true solid surface).",
+      "hash": "7d882efa5f50"
+    }
+  },
+  "fixes": [
+    {
+      "beat": "b01",
+      "issue": "'you're moving at up to 1,670 km/h' ignores orbital/galactic motion",
+      "fix": "'Earth's spin carries you at up to 1,670 km/h'"
+    },
+    {
+      "beat": "hook",
+      "issue": "hook estimated at 15.8 s (> 15 s limit, caught by build_script.py)",
+      "fix": "trimmed b01/b02 wording to 14.7 s"
+    },
+    {
+      "beat": "b17",
+      "issue": "tumble distance had no time bound",
+      "fix": "'almost half a kilometer in that one second'"
+    },
+    {
+      "beat": "b23-b25",
+      "issue": "physics model error: used compression-wave speed (5,000 m/s) and tensile yield; a sideways jolt propagates as a shear wave",
+      "fix": "shear wave 3,200 m/s, tau = 12 GPa, vs shear yield 140 MPa = 80x (calc.py + research F31 added)"
+    },
+    {
+      "beat": "b28",
+      "issue": "'supersonic everywhere at once' is false above ~43 deg latitude",
+      "fix": "'supersonic within about 43 degrees of the equator, two-thirds of Earth's surface' (new calc values)"
+    },
+    {
+      "beat": "b30",
+      "issue": "Cat-5 threshold shown as 253 km/h (our conversion) vs NOAA's published 252 km/h",
+      "fix": "uses NOAA's published 252 km/h (research F33); self-check confirms mph/km/h agree"
+    },
+    {
+      "beat": "b31",
+      "issue": "shock waves 'from every obstacle on the planet' contradicts the supersonic band",
+      "fix": "scoped to 'across that zone'"
+    },
+    {
+      "beat": "b50",
+      "issue": "'Earth's spin wobbles' conflates polar motion with rotation-rate variation",
+      "fix": "'Earth's spin isn't perfectly steady'"
+    },
+    {
+      "beat": "b54",
+      "issue": "'every number was calculated on screen' overstated (some are cited facts)",
+      "fix": "'comes from a calculation or a cited source'"
+    },
+    {
+      "beat": "b55",
+      "issue": "'no surface' imprecise",
+      "fix": "'no solid surface'"
+    }
+  ]
+}

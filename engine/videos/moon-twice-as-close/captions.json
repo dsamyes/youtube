@@ -1,0 +1,844 @@
+{
+  "cues": [
+    {
+      "beat": "b01",
+      "start": 0.6,
+      "end": 2.393,
+      "text": "Imagine stepping outside\ntonight and seeing"
+    },
+    {
+      "beat": "b01",
+      "start": 2.393,
+      "end": 5.382,
+      "text": "a Moon twice as wide as the one you know."
+    },
+    {
+      "beat": "b02",
+      "start": 5.782,
+      "end": 9.684,
+      "text": "Beautiful. Except every tide on\nEarth would be pulled 8 times harder."
+    },
+    {
+      "beat": "b02",
+      "start": 9.684,
+      "end": 12.61,
+      "text": "So what if the Moon was twice as close?"
+    },
+    {
+      "beat": "b03",
+      "start": 13.91,
+      "end": 17.986,
+      "text": "This is The If Engine, where\nimpossible scenarios get real physics,"
+    },
+    {
+      "beat": "b03",
+      "start": 17.986,
+      "end": 20.579,
+      "text": "and every number is shown on screen."
+    },
+    {
+      "beat": "b04",
+      "start": 20.979,
+      "end": 22.915,
+      "text": "Today the Moon orbits about"
+    },
+    {
+      "beat": "b04",
+      "start": 22.915,
+      "end": 27.173,
+      "text": "384,400 kilometers away, on average."
+    },
+    {
+      "beat": "b04",
+      "start": 27.173,
+      "end": 31.818,
+      "text": "We'll halve that, to 192,200 kilometers,"
+    },
+    {
+      "beat": "b04",
+      "start": 31.818,
+      "end": 33.754,
+      "text": "on a neat circular orbit."
+    },
+    {
+      "beat": "b05",
+      "start": 34.154,
+      "end": 36.284,
+      "text": "Moving it would not be easy."
+    },
+    {
+      "beat": "b05",
+      "start": 36.284,
+      "end": 38.414,
+      "text": "Bringing the Moon closer means draining"
+    },
+    {
+      "beat": "b05",
+      "start": 38.414,
+      "end": 43.385,
+      "text": "energy from its orbit:\nabout 3.8 × 10²⁸ joules."
+    },
+    {
+      "beat": "b06",
+      "start": 43.785,
+      "end": 48.444,
+      "text": "That's roughly what the entire Sun\nradiates into space in 100 seconds."
+    },
+    {
+      "beat": "b06",
+      "start": 48.444,
+      "end": 50.236,
+      "text": "Not a job for rockets."
+    },
+    {
+      "beat": "b07",
+      "start": 50.636,
+      "end": 52.036,
+      "text": "Here's the strange part."
+    },
+    {
+      "beat": "b07",
+      "start": 52.036,
+      "end": 55.186,
+      "text": "To bring a moon closer,\nyou'd slow it down."
+    },
+    {
+      "beat": "b07",
+      "start": 55.186,
+      "end": 59.386,
+      "text": "It would then fall inward, and\nend up moving faster than before."
+    },
+    {
+      "beat": "b07",
+      "start": 59.386,
+      "end": 61.136,
+      "text": "Orbits are counterintuitive like that."
+    },
+    {
+      "beat": "b08",
+      "start": 61.536,
+      "end": 63.311,
+      "text": "So we'll skip the how."
+    },
+    {
+      "beat": "b08",
+      "start": 63.311,
+      "end": 68.28,
+      "text": "Our Moon simply arrives in its new\norbit, moving at 1.4 kilometers"
+    },
+    {
+      "beat": "b08",
+      "start": 68.28,
+      "end": 72.895,
+      "text": "per second instead of 1.0, exactly\nthe speed that orbit needs."
+    },
+    {
+      "beat": "b09",
+      "start": 73.295,
+      "end": 76.34,
+      "text": "And the first thing anyone\nwould notice is the night sky."
+    },
+    {
+      "beat": "b10",
+      "start": 77.64,
+      "end": 82.498,
+      "text": "Today the full Moon spans\nabout 0.53 degrees of sky."
+    },
+    {
+      "beat": "b10",
+      "start": 82.498,
+      "end": 88.104,
+      "text": "At half the distance, it spans\n1.07 degrees, about twice as wide."
+    },
+    {
+      "beat": "b11",
+      "start": 88.504,
+      "end": 92.091,
+      "text": "Twice as wide means\nabout 4 times the area."
+    },
+    {
+      "beat": "b11",
+      "start": 92.091,
+      "end": 96.874,
+      "text": "Same sunlight, same dusty gray\nsurface, so the full Moon would shine"
+    },
+    {
+      "beat": "b11",
+      "start": 96.874,
+      "end": 102.056,
+      "text": "about 4 times brighter, roughly 1.5\nmagnitudes on the astronomer's scale."
+    },
+    {
+      "beat": "b12",
+      "start": 102.456,
+      "end": 104.677,
+      "text": "It would also race around us."
+    },
+    {
+      "beat": "b12",
+      "start": 104.677,
+      "end": 106.528,
+      "text": "Kepler's third law shrinks the"
+    },
+    {
+      "beat": "b12",
+      "start": 106.528,
+      "end": 110.6,
+      "text": "orbit to 9.7 days instead of 27.3."
+    },
+    {
+      "beat": "b12",
+      "start": 110.6,
+      "end": 116.152,
+      "text": "Full Moons would come every\n9.9 days instead of every 29.5."
+    },
+    {
+      "beat": "b13",
+      "start": 116.552,
+      "end": 120.805,
+      "text": "That means the whole show, from a thin\ncrescent to full and back to dark,"
+    },
+    {
+      "beat": "b13",
+      "start": 120.805,
+      "end": 123.64,
+      "text": "would play out in about a week and a half."
+    },
+    {
+      "beat": "b13",
+      "start": 123.64,
+      "end": 126.192,
+      "text": "You'd barely finish one\nphase before the next began."
+    },
+    {
+      "beat": "b14",
+      "start": 126.592,
+      "end": 131.177,
+      "text": "Against the stars, it would drift\nabout 37 degrees a day instead of 13."
+    },
+    {
+      "beat": "b14",
+      "start": 131.177,
+      "end": 136.09,
+      "text": "In a single hour, it would slide\nabout 1.4 of its own widths."
+    },
+    {
+      "beat": "b15",
+      "start": 136.49,
+      "end": 140.716,
+      "text": "And moonrise would slip later\neach day by about 2.7 hours,"
+    },
+    {
+      "beat": "b15",
+      "start": 140.716,
+      "end": 143.642,
+      "text": "instead of the roughly\n50 minutes we're used to."
+    },
+    {
+      "beat": "b16",
+      "start": 144.042,
+      "end": 147.166,
+      "text": "And from the Moon, the\nview would change too."
+    },
+    {
+      "beat": "b16",
+      "start": 147.166,
+      "end": 148.901,
+      "text": "Astronauts there would see Earth"
+    },
+    {
+      "beat": "b16",
+      "start": 148.901,
+      "end": 152.719,
+      "text": "spanning about 3.8 degrees instead of 1.9,"
+    },
+    {
+      "beat": "b16",
+      "start": 152.719,
+      "end": 156.19,
+      "text": "a blue world twice as wide\nhanging over the horizon."
+    },
+    {
+      "beat": "b17",
+      "start": 157.49,
+      "end": 160.428,
+      "text": "But the real show would happen in daytime."
+    },
+    {
+      "beat": "b17",
+      "start": 160.428,
+      "end": 162.631,
+      "text": "Right now, at its average distance,"
+    },
+    {
+      "beat": "b17",
+      "start": 162.631,
+      "end": 165.569,
+      "text": "the Moon looks slightly\nsmaller than the Sun:"
+    },
+    {
+      "beat": "b17",
+      "start": 165.569,
+      "end": 169.975,
+      "text": "0.527 degrees versus 0.533."
+    },
+    {
+      "beat": "b18",
+      "start": 170.375,
+      "end": 174.014,
+      "text": "That's why some solar eclipses\ntoday are annular: the Moon doesn't"
+    },
+    {
+      "beat": "b18",
+      "start": 174.014,
+      "end": 178.646,
+      "text": "quite cover the Sun, leaving a thin\nring of fire around a dark disk."
+    },
+    {
+      "beat": "b19",
+      "start": 179.046,
+      "end": 184.737,
+      "text": "Twice as close, the Moon would look about\ntwice as wide as the Sun. No more rings."
+    },
+    {
+      "beat": "b19",
+      "start": 184.737,
+      "end": 187.081,
+      "text": "Every central solar\neclipse would be total."
+    },
+    {
+      "beat": "b20",
+      "start": 187.481,
+      "end": 189.612,
+      "text": "And the shadow would be enormous:"
+    },
+    {
+      "beat": "b20",
+      "start": 189.612,
+      "end": 193.164,
+      "text": "a dark spot about 1,700 kilometers across,"
+    },
+    {
+      "beat": "b20",
+      "start": 193.164,
+      "end": 197.781,
+      "text": "sweeping over the ground, wide enough\nto cover a whole country at once."
+    },
+    {
+      "beat": "b21",
+      "start": 199.081,
+      "end": 201.251,
+      "text": "Now for the part that really matters."
+    },
+    {
+      "beat": "b21",
+      "start": 201.251,
+      "end": 203.73,
+      "text": "Tides don't come from\nthe Moon's pull itself,"
+    },
+    {
+      "beat": "b21",
+      "start": 203.73,
+      "end": 208.07,
+      "text": "but from the difference in pull between\nEarth's near side and its far side."
+    },
+    {
+      "beat": "b22",
+      "start": 208.47,
+      "end": 211.192,
+      "text": "That difference shrinks\nwith the cube of distance."
+    },
+    {
+      "beat": "b22",
+      "start": 211.192,
+      "end": 215.276,
+      "text": "Halve the distance, and it grows\nby two cubed: 8 times stronger."
+    },
+    {
+      "beat": "b23",
+      "start": 215.676,
+      "end": 220.368,
+      "text": "Notice the twist. The Moon's direct pull\non Earth only gets 4 times stronger,"
+    },
+    {
+      "beat": "b23",
+      "start": 220.368,
+      "end": 223.05,
+      "text": "because gravity falls with\nthe square of distance."
+    },
+    {
+      "beat": "b23",
+      "start": 223.05,
+      "end": 226.066,
+      "text": "Tides double that, because\nthey depend on how quickly"
+    },
+    {
+      "beat": "b23",
+      "start": 226.066,
+      "end": 230.088,
+      "text": "the pull changes from one side\nof the planet to the other."
+    },
+    {
+      "beat": "b24",
+      "start": 230.488,
+      "end": 236.079,
+      "text": "In the open ocean, the Moon's tide\ntoday is a gentle bulge about 36"
+    },
+    {
+      "beat": "b24",
+      "start": 236.079,
+      "end": 240.072,
+      "text": "centimeters high, in the idealized\ncase where water responds freely."
+    },
+    {
+      "beat": "b25",
+      "start": 240.472,
+      "end": 246.104,
+      "text": "Twice as close, that bulge becomes\nabout 2.9 meters, and the swing from"
+    },
+    {
+      "beat": "b25",
+      "start": 246.104,
+      "end": 251.736,
+      "text": "high to low tide grows from about\n54 centimeters to about 4.3 meters."
+    },
+    {
+      "beat": "b26",
+      "start": 252.136,
+      "end": 253.579,
+      "text": "The timing shifts too."
+    },
+    {
+      "beat": "b26",
+      "start": 253.579,
+      "end": 256.465,
+      "text": "Because the Moon moves\nfaster across our sky,"
+    },
+    {
+      "beat": "b26",
+      "start": 256.465,
+      "end": 258.629,
+      "text": "high tide would arrive about every"
+    },
+    {
+      "beat": "b26",
+      "start": 258.629,
+      "end": 262.236,
+      "text": "13.3 hours instead of every 12.4."
+    },
+    {
+      "beat": "b27",
+      "start": 262.636,
+      "end": 264.935,
+      "text": "But nobody lives in the open ocean."
+    },
+    {
+      "beat": "b27",
+      "start": 264.935,
+      "end": 268.548,
+      "text": "People live at the edges,\nwhere the water meets the land."
+    },
+    {
+      "beat": "b28",
+      "start": 269.848,
+      "end": 273.029,
+      "text": "Real coastlines turn that gentle\nbulge into something wilder."
+    },
+    {
+      "beat": "b28",
+      "start": 273.029,
+      "end": 277.978,
+      "text": "Bays and gulfs can resonate with the\ntide, like water sloshing in a bathtub."
+    },
+    {
+      "beat": "b28",
+      "start": 277.978,
+      "end": 282.926,
+      "text": "That's how the Bay of Fundy gets\nsome of the highest tides on Earth."
+    },
+    {
+      "beat": "b29",
+      "start": 283.326,
+      "end": 285.545,
+      "text": "Harbors, river mouths,\nwetlands and coastal"
+    },
+    {
+      "beat": "b29",
+      "start": 285.545,
+      "end": 288.133,
+      "text": "cities are all shaped\naround today's tides."
+    },
+    {
+      "beat": "b29",
+      "start": 288.133,
+      "end": 292.941,
+      "text": "Every one of them would be forced\nby a tide 8 times stronger,"
+    },
+    {
+      "beat": "b29",
+      "start": 292.941,
+      "end": 296.269,
+      "text": "about every 13.3 hours, without a break."
+    },
+    {
+      "beat": "b30",
+      "start": 296.669,
+      "end": 301.296,
+      "text": "So how high would Fundy's\ntides go with 8 times the push?"
+    },
+    {
+      "beat": "b30",
+      "start": 301.296,
+      "end": 304.765,
+      "text": "Honestly, that needs an ocean\nmodel, not a calculator."
+    },
+    {
+      "beat": "b30",
+      "start": 304.765,
+      "end": 309.392,
+      "text": "Resonance can amplify or dampen,\nand the answer changes bay by bay."
+    },
+    {
+      "beat": "b31",
+      "start": 309.792,
+      "end": 312.208,
+      "text": "What we can calculate is the rhythm."
+    },
+    {
+      "beat": "b31",
+      "start": 312.208,
+      "end": 317.039,
+      "text": "Today the Sun adds a tide about 46\npercent as strong as the Moon's."
+    },
+    {
+      "beat": "b31",
+      "start": 317.039,
+      "end": 320.145,
+      "text": "When they line up, we get\nextra-high spring tides."
+    },
+    {
+      "beat": "b32",
+      "start": 320.545,
+      "end": 325.4,
+      "text": "With the Moon twice as close, the\nSun's share drops to about 6 percent."
+    },
+    {
+      "beat": "b32",
+      "start": 325.4,
+      "end": 327.828,
+      "text": "In the simple theory, spring tides today"
+    },
+    {
+      "beat": "b32",
+      "start": 327.828,
+      "end": 331.643,
+      "text": "are about 2.7 times\nthe size of neap tides."
+    },
+    {
+      "beat": "b32",
+      "start": 331.643,
+      "end": 335.458,
+      "text": "In the new world they'd be\nonly about 12 percent bigger."
+    },
+    {
+      "beat": "b32",
+      "start": 335.458,
+      "end": 337.192,
+      "text": "The monthly rhythm almost vanishes."
+    },
+    {
+      "beat": "b33",
+      "start": 338.492,
+      "end": 342.617,
+      "text": "Wait. If Earth pulls harder on the Moon\ntoo, could the Moon get torn apart?"
+    },
+    {
+      "beat": "b34",
+      "start": 343.017,
+      "end": 346.528,
+      "text": "There is a limit for that,\ncalled the Roche limit."
+    },
+    {
+      "beat": "b34",
+      "start": 346.528,
+      "end": 349.336,
+      "text": "Inside it, a moon held together only by"
+    },
+    {
+      "beat": "b34",
+      "start": 349.336,
+      "end": 352.144,
+      "text": "its own gravity gets\npulled apart by tides."
+    },
+    {
+      "beat": "b34",
+      "start": 352.144,
+      "end": 355.655,
+      "text": "For Earth and our Moon, it's\nabout 18,000 kilometers."
+    },
+    {
+      "beat": "b35",
+      "start": 356.055,
+      "end": 359.479,
+      "text": "Our new orbit is still about\n10 times farther out than that."
+    },
+    {
+      "beat": "b35",
+      "start": 359.479,
+      "end": 360.906,
+      "text": "The Moon would be safe."
+    },
+    {
+      "beat": "b36",
+      "start": 362.206,
+      "end": 364.087,
+      "text": "Earth would pay a price, though."
+    },
+    {
+      "beat": "b36",
+      "start": 364.087,
+      "end": 367.534,
+      "text": "The tidal bulges drag on our\nspinning planet like a brake,"
+    },
+    {
+      "beat": "b36",
+      "start": 367.534,
+      "end": 369.415,
+      "text": "and that slowly lengthens the day."
+    },
+    {
+      "beat": "b37",
+      "start": 369.815,
+      "end": 371.292,
+      "text": "This isn't hypothetical physics."
+    },
+    {
+      "beat": "b37",
+      "start": 371.292,
+      "end": 375.722,
+      "text": "The same tidal brake has been\nslowing Earth for billions of years."
+    },
+    {
+      "beat": "b37",
+      "start": 375.722,
+      "end": 379.414,
+      "text": "It's the reason the day keeps\ngetting very slightly longer."
+    },
+    {
+      "beat": "b38",
+      "start": 379.814,
+      "end": 384.171,
+      "text": "That braking depends roughly on the\nMoon's distance to the sixth power."
+    },
+    {
+      "beat": "b38",
+      "start": 384.171,
+      "end": 387.801,
+      "text": "Halve the distance, and it\ngets about 64 times stronger."
+    },
+    {
+      "beat": "b39",
+      "start": 388.201,
+      "end": 390.415,
+      "text": "Tidal friction should be adding about"
+    },
+    {
+      "beat": "b39",
+      "start": 390.415,
+      "end": 393.737,
+      "text": "2.3 milliseconds to the day every century."
+    },
+    {
+      "beat": "b39",
+      "start": 393.737,
+      "end": 398.534,
+      "text": "Twice as close, that becomes about\n150 milliseconds per century."
+    },
+    {
+      "beat": "b40",
+      "start": 398.934,
+      "end": 403.817,
+      "text": "Over a million years, that's about\n25 extra minutes per day instead of"
+    },
+    {
+      "beat": "b40",
+      "start": 403.817,
+      "end": 408.325,
+      "text": "about 23 seconds, if the rate stayed\nconstant, which it wouldn't exactly."
+    },
+    {
+      "beat": "b41",
+      "start": 408.725,
+      "end": 410.162,
+      "text": "There's a flip side."
+    },
+    {
+      "beat": "b41",
+      "start": 410.162,
+      "end": 414.832,
+      "text": "The same tidal tug that slows Earth\nalso pushes the Moon gently outward."
+    },
+    {
+      "beat": "b41",
+      "start": 414.832,
+      "end": 419.862,
+      "text": "Our real Moon is drifting away\nby about 3.8 centimeters a year."
+    },
+    {
+      "beat": "b41",
+      "start": 419.862,
+      "end": 422.736,
+      "text": "A closer Moon would be\npushed outward harder,"
+    },
+    {
+      "beat": "b41",
+      "start": 422.736,
+      "end": 424.891,
+      "text": "slowly undoing part of our experiment."
+    },
+    {
+      "beat": "b42",
+      "start": 426.191,
+      "end": 430.007,
+      "text": "And you? Would you feel lighter\nwith that giant Moon overhead?"
+    },
+    {
+      "beat": "b42",
+      "start": 430.007,
+      "end": 432.782,
+      "text": "For a 70 kilogram person, the extra tidal"
+    },
+    {
+      "beat": "b42",
+      "start": 432.782,
+      "end": 436.598,
+      "text": "pull changes your weight\nby about 0.06 grams."
+    },
+    {
+      "beat": "b42",
+      "start": 436.598,
+      "end": 439.373,
+      "text": "That's less than a tenth of a gram."
+    },
+    {
+      "beat": "b43",
+      "start": 439.773,
+      "end": 443.318,
+      "text": "Today it's about 0.008 grams."
+    },
+    {
+      "beat": "b43",
+      "start": 443.318,
+      "end": 445.287,
+      "text": "Tides need size to work."
+    },
+    {
+      "beat": "b43",
+      "start": 445.287,
+      "end": 448.832,
+      "text": "Across Earth's 12,742 kilometers,"
+    },
+    {
+      "beat": "b43",
+      "start": 448.832,
+      "end": 452.377,
+      "text": "the Moon's pull changes\nenough to lift whole oceans."
+    },
+    {
+      "beat": "b43",
+      "start": 452.377,
+      "end": 457.104,
+      "text": "Across a human body, the difference\nis far too small to feel."
+    },
+    {
+      "beat": "b44",
+      "start": 458.404,
+      "end": 460.852,
+      "text": "So, a Moon twice as close:"
+    },
+    {
+      "beat": "b44",
+      "start": 460.852,
+      "end": 465.747,
+      "text": "about 4 times brighter, a\nfull Moon every 9.9 days,"
+    },
+    {
+      "beat": "b44",
+      "start": 465.747,
+      "end": 468.603,
+      "text": "only total eclipses,\ntides 8 times stronger,"
+    },
+    {
+      "beat": "b44",
+      "start": 468.603,
+      "end": 471.459,
+      "text": "and days stretching about 64 times faster."
+    },
+    {
+      "beat": "b45",
+      "start": 471.859,
+      "end": 474.496,
+      "text": "Distance is the quiet\nnumber behind our sky,"
+    },
+    {
+      "beat": "b45",
+      "start": 474.496,
+      "end": 477.462,
+      "text": "our oceans, and even\nthe length of our days."
+    },
+    {
+      "beat": "b45",
+      "start": 477.462,
+      "end": 480.099,
+      "text": "Change it by half, and\nalmost everything we"
+    },
+    {
+      "beat": "b45",
+      "start": 480.099,
+      "end": 483.066,
+      "text": "take for granted about\nthe Moon changes with it."
+    },
+    {
+      "beat": "b46",
+      "start": 483.466,
+      "end": 486.187,
+      "text": "Every number here came\nfrom a calculation or"
+    },
+    {
+      "beat": "b46",
+      "start": 486.187,
+      "end": 489.928,
+      "text": "a cited source, all listed in\nthe description. Check our math."
+    },
+    {
+      "beat": "b47",
+      "start": 490.328,
+      "end": 492.367,
+      "text": "Next time, we leave Earth entirely:"
+    },
+    {
+      "beat": "b47",
+      "start": 492.367,
+      "end": 496.444,
+      "text": "how long could you survive on\nevery planet in the solar system?"
+    },
+    {
+      "beat": "b47",
+      "start": 496.444,
+      "end": 498.483,
+      "text": "Subscribe so you don't miss it."
+    },
+    {
+      "beat": "b47",
+      "start": 498.483,
+      "end": 500.181,
+      "text": "This was The If Engine."
+    },
+    {
+      "beat": "b47",
+      "start": 500.181,
+      "end": 502.22,
+      "text": "Run the impossible. Do the math."
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "source": "renders/earth-stops-1s_1080p.mp4",
+  "shorts": [
+    {
+      "id": "short1",
+      "title": "Could friction save you if Earth stopped?",
+      "file": "shorts/earth-stops-1s_short1.mp4",
+      "duration_s": 52.8,
+      "audio": true,
+      "source_range": [
+        128.2,
+        181.03
+      ]
+    },
+    {
+      "id": "short2",
+      "title": "Earth stops: a Mach 1.37 wind",
+      "file": "shorts/earth-stops-1s_short2.mp4",
+      "duration_s": 58.1,
+      "audio": true,
+      "source_range": [
+        241.46,
+        299.5
+      ]
+    },
+    {
+      "id": "short3",
+      "title": "Earth stops for 1 second: the strangest side effect",
+      "file": "shorts/earth-stops-1s_short3.mp4",
+      "duration_s": 40.2,
+      "audio": true,
+      "source_range": [
+        507.63,
+        547.79
+      ]
+    }
+  ]
+}

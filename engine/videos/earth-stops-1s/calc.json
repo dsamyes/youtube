@@ -1,0 +1,919 @@
+{
+  "generated": "2026-11-09T23:37:30+00:00",
+  "video_id": "earth-stops-1s",
+  "values": {
+    "sidereal_h": {
+      "value": 23.9345,
+      "unit": "h",
+      "display": "23.93",
+      "derivation": "sidereal rotation period",
+      "facts": [
+        "F02"
+      ]
+    },
+    "sidereal_hms": {
+      "value": 86164.2,
+      "unit": "s",
+      "display": "23 h 56 min 4 s",
+      "derivation": "23.9345 h in h:min:s",
+      "facts": [
+        "F02"
+      ]
+    },
+    "v_eq_ms": {
+      "value": 465.10054855239747,
+      "unit": "m/s",
+      "display": "465",
+      "derivation": "v = omega*a = 2*pi*a/T_sid",
+      "facts": [
+        "F01",
+        "F02"
+      ]
+    },
+    "v_eq_kmh": {
+      "value": 1674.361974788631,
+      "unit": "km/h",
+      "display": "1,670",
+      "derivation": "v_eq * 3.6",
+      "facts": [
+        "F01",
+        "F02"
+      ]
+    },
+    "v_eq_mph": {
+      "value": 1040.4002965112686,
+      "unit": "mph",
+      "display": "1,040",
+      "derivation": "v_eq / 0.44704",
+      "facts": [
+        "F01",
+        "F02"
+      ]
+    },
+    "v_eq_solar_ms": {
+      "value": 463.8312116386399,
+      "unit": "m/s",
+      "display": "464",
+      "derivation": "2*pi*a / 86400 s (solar-day convention)",
+      "facts": [
+        "F01"
+      ]
+    },
+    "circumference_km": {
+      "value": 40075.016685578485,
+      "unit": "km",
+      "display": "40,075",
+      "derivation": "2*pi*a",
+      "facts": [
+        "F01"
+      ]
+    },
+    "v_quito_ms": {
+      "value": 465.0982687397509,
+      "unit": "m/s",
+      "display": "465",
+      "derivation": "omega*N(phi)*cos(phi), phi=-0.18",
+      "facts": [
+        "F01",
+        "F02",
+        "F03",
+        "F35"
+      ]
+    },
+    "v_singapore_ms": {
+      "value": 464.97231456725905,
+      "unit": "m/s",
+      "display": "465",
+      "derivation": "omega*N(phi)*cos(phi), phi=1.35",
+      "facts": [
+        "F01",
+        "F02",
+        "F03",
+        "F35"
+      ]
+    },
+    "v_mumbai_ms": {
+      "value": 439.70665120535546,
+      "unit": "m/s",
+      "display": "440",
+      "derivation": "omega*N(phi)*cos(phi), phi=19.08",
+      "facts": [
+        "F01",
+        "F02",
+        "F03",
+        "F35"
+      ]
+    },
+    "v_cairo_ms": {
+      "value": 402.964598965003,
+      "unit": "m/s",
+      "display": "403",
+      "derivation": "omega*N(phi)*cos(phi), phi=30.04",
+      "facts": [
+        "F01",
+        "F02",
+        "F03",
+        "F35"
+      ]
+    },
+    "v_tehran_ms": {
+      "value": 378.17893672225625,
+      "unit": "m/s",
+      "display": "378",
+      "derivation": "omega*N(phi)*cos(phi), phi=35.69",
+      "facts": [
+        "F01",
+        "F02",
+        "F03",
+        "F35"
+      ]
+    },
+    "v_newyork_ms": {
+      "value": 353.05883875442487,
+      "unit": "m/s",
+      "display": "353",
+      "derivation": "omega*N(phi)*cos(phi), phi=40.71",
+      "facts": [
+        "F01",
+        "F02",
+        "F03",
+        "F35"
+      ]
+    },
+    "v_london_ms": {
+      "value": 290.0637939596858,
+      "unit": "m/s",
+      "display": "290",
+      "derivation": "omega*N(phi)*cos(phi), phi=51.51",
+      "facts": [
+        "F01",
+        "F02",
+        "F03",
+        "F35"
+      ]
+    },
+    "v_reykjavik_ms": {
+      "value": 203.3435483184004,
+      "unit": "m/s",
+      "display": "203",
+      "derivation": "omega*N(phi)*cos(phi), phi=64.15",
+      "facts": [
+        "F01",
+        "F02",
+        "F03",
+        "F35"
+      ]
+    },
+    "v_northpole_ms": {
+      "value": 2.8575001473002444e-14,
+      "unit": "m/s",
+      "display": "0",
+      "derivation": "omega*N(phi)*cos(phi), phi=90.0",
+      "facts": [
+        "F01",
+        "F02",
+        "F03",
+        "F35"
+      ]
+    },
+    "friction_decel": {
+      "value": 6.864654999999999,
+      "unit": "m/s^2",
+      "display": "6.9",
+      "derivation": "mu*g",
+      "facts": [
+        "F26",
+        "F04"
+      ]
+    },
+    "friction_dv": {
+      "value": 6.864654999999999,
+      "unit": "m/s",
+      "display": "7",
+      "derivation": "mu*g*1 s",
+      "facts": [
+        "F26",
+        "F04"
+      ]
+    },
+    "v_after_friction": {
+      "value": 458.23589355239744,
+      "unit": "m/s",
+      "display": "458",
+      "derivation": "v_eq - mu*g*1s",
+      "facts": [
+        "F26"
+      ]
+    },
+    "one_sec_distance": {
+      "value": 465.10054855239747,
+      "unit": "m",
+      "display": "465",
+      "derivation": "v_eq * 1 s",
+      "facts": [
+        "F01",
+        "F02"
+      ]
+    },
+    "freefall_1s": {
+      "value": 4.903325,
+      "unit": "m",
+      "display": "4.9",
+      "derivation": "1/2 g t^2, t=1 s",
+      "facts": [
+        "F04"
+      ]
+    },
+    "t_land": {
+      "value": 0.45160075575178754,
+      "unit": "s",
+      "display": "0.45",
+      "derivation": "sqrt(2h/g), h=1 m",
+      "facts": [
+        "F29",
+        "F04"
+      ]
+    },
+    "land_distance": {
+      "value": 210.03975922683364,
+      "unit": "m",
+      "display": "210",
+      "derivation": "v_eq * t_land",
+      "facts": [
+        "F29"
+      ]
+    },
+    "person_mass": {
+      "value": 70.0,
+      "unit": "kg",
+      "display": "70",
+      "derivation": "assumed",
+      "facts": [
+        "F28"
+      ]
+    },
+    "ke_person_mj": {
+      "value": 7.571148209230937,
+      "unit": "MJ",
+      "display": "7.6",
+      "derivation": "1/2 m v^2",
+      "facts": [
+        "F28",
+        "F01",
+        "F02"
+      ]
+    },
+    "ke_person_tnt": {
+      "value": 1.8095478511546215,
+      "unit": "kg TNT",
+      "display": "1.8",
+      "derivation": "KE / 4.184 MJ/kg",
+      "facts": [
+        "F19"
+      ]
+    },
+    "fall_height_km": {
+      "value": 11.029175114016562,
+      "unit": "km",
+      "display": "11",
+      "derivation": "v^2/(2g)",
+      "facts": [
+        "F04"
+      ]
+    },
+    "everest_km": {
+      "value": 8.84886,
+      "unit": "km",
+      "display": "8.85",
+      "derivation": "Everest height",
+      "facts": [
+        "F20"
+      ]
+    },
+    "fall_vs_everest": {
+      "value": 1.2463950287400367,
+      "unit": "x",
+      "display": "1.2",
+      "derivation": "h / Everest",
+      "facts": [
+        "F20"
+      ]
+    },
+    "fall_height_london_km": {
+      "value": 4.289793383382046,
+      "unit": "km",
+      "display": "4.3",
+      "derivation": "v_London^2/(2g)",
+      "facts": [
+        "F04"
+      ]
+    },
+    "c_steel": {
+      "value": 3178.350331229312,
+      "unit": "m/s",
+      "display": "3,200",
+      "derivation": "shear wave speed sqrt(G/rho)",
+      "facts": [
+        "F31",
+        "F24"
+      ]
+    },
+    "c_steel_long": {
+      "value": 5047.544651250688,
+      "unit": "m/s",
+      "display": "5,000",
+      "derivation": "bar (compression) wave speed sqrt(E/rho)",
+      "facts": [
+        "F23",
+        "F24"
+      ]
+    },
+    "steel_stress_gpa": {
+      "value": 11.604281987989609,
+      "unit": "GPa",
+      "display": "12",
+      "derivation": "tau = rho*c_s*dv",
+      "facts": [
+        "F31",
+        "F24"
+      ]
+    },
+    "steel_yield_mpa": {
+      "value": 144.33756729740642,
+      "unit": "MPa",
+      "display": "140",
+      "derivation": "von Mises shear yield = 250/sqrt(3)",
+      "facts": [
+        "F25"
+      ]
+    },
+    "steel_ratio": {
+      "value": 80.39682395421752,
+      "unit": "x",
+      "display": "80",
+      "derivation": "tau / tau_y",
+      "facts": [
+        "F25",
+        "F31"
+      ]
+    },
+    "steel_strain_pct": {
+      "value": 14.633394688511489,
+      "unit": "%",
+      "display": "15",
+      "derivation": "shear strain = dv/c_s",
+      "facts": [
+        "F31",
+        "F24"
+      ]
+    },
+    "c_air": {
+      "value": 340.29228686527705,
+      "unit": "m/s",
+      "display": "340",
+      "derivation": "sqrt(gamma R T)",
+      "facts": [
+        "F08",
+        "F09",
+        "F06"
+      ]
+    },
+    "mach": {
+      "value": 1.3667678243219554,
+      "unit": "-",
+      "display": "1.37",
+      "derivation": "v/c",
+      "facts": [
+        "F08",
+        "F09",
+        "F06"
+      ]
+    },
+    "supersonic_lat": {
+      "value": 42.97483594857743,
+      "unit": "deg",
+      "display": "43",
+      "derivation": "acos(c/v_eq)",
+      "facts": [
+        "F08",
+        "F09",
+        "F06"
+      ]
+    },
+    "supersonic_area_pct": {
+      "value": 68.16770870049955,
+      "unit": "%",
+      "display": "68",
+      "derivation": "area fraction between +/-lat = sin(lat)",
+      "facts": []
+    },
+    "supersonic_area_frac": {
+      "value": 0.6816770870049954,
+      "unit": "-",
+      "display": "two-thirds",
+      "derivation": "sin(lat_ss) ~ 0.68",
+      "facts": []
+    },
+    "q_kpa": {
+      "value": 132.49509366154138,
+      "unit": "kPa",
+      "display": "132",
+      "derivation": "1/2 rho v^2",
+      "facts": [
+        "F05"
+      ]
+    },
+    "q_atm": {
+      "value": 1.307624906602925,
+      "unit": "atm",
+      "display": "1.3",
+      "derivation": "q / 101325 Pa",
+      "facts": [
+        "F07"
+      ]
+    },
+    "q_tonnes": {
+      "value": 13.51073951467029,
+      "unit": "tonnes-force per m^2",
+      "display": "14",
+      "derivation": "q*1m^2/g/1000",
+      "facts": [
+        "F04"
+      ]
+    },
+    "pitot_overpressure_kpa": {
+      "value": 196.01298797566426,
+      "unit": "kPa",
+      "display": "196",
+      "derivation": "Rayleigh pitot: p02 - p1",
+      "facts": [
+        "F07",
+        "F08"
+      ]
+    },
+    "cat5_kmh": {
+      "value": 252.0,
+      "unit": "km/h",
+      "display": "252",
+      "derivation": "NOAA NHC published km/h threshold",
+      "facts": [
+        "F33"
+      ]
+    },
+    "cat5_ms": {
+      "value": 70.18528,
+      "unit": "m/s",
+      "display": "70",
+      "derivation": "157 mph * 0.44704",
+      "facts": [
+        "F10"
+      ]
+    },
+    "cat5_q_kpa": {
+      "value": 3.0171587863155205,
+      "unit": "kPa",
+      "display": "3",
+      "derivation": "1/2 rho v^2",
+      "facts": [
+        "F05",
+        "F10"
+      ]
+    },
+    "hurricane_ratio": {
+      "value": 43.91386169746177,
+      "unit": "x",
+      "display": "44",
+      "derivation": "(v_eq/v_cat5)^2",
+      "facts": [
+        "F10"
+      ]
+    },
+    "atm_ke": {
+      "value": 3.712025807725796e+23,
+      "unit": "J",
+      "display": "3.7 × 10²³",
+      "derivation": "1/2 M <v^2>, <cos^2>=2/3",
+      "facts": [
+        "F21"
+      ]
+    },
+    "atm_ke_years": {
+      "value": 598.7138399557736,
+      "unit": "years",
+      "display": "600",
+      "derivation": "KE / world energy per year (rounded to 100)",
+      "facts": [
+        "F22"
+      ]
+    },
+    "ocean_depth_km": {
+      "value": 3.682,
+      "unit": "km",
+      "display": "3.7",
+      "derivation": "NOAA average depth",
+      "facts": [
+        "F11"
+      ]
+    },
+    "ocean_volume_per_m": {
+      "value": 1.7125002197699275,
+      "unit": "million m^3 per m",
+      "display": "1.7",
+      "derivation": "v*1s*depth",
+      "facts": [
+        "F11"
+      ]
+    },
+    "olympic_pools": {
+      "value": 685.000087907971,
+      "unit": "pools per m",
+      "display": "690",
+      "derivation": "vol / 2500 m^3",
+      "facts": [
+        "F27"
+      ]
+    },
+    "hammer_mpa": {
+      "value": 715.092093399311,
+      "unit": "MPa",
+      "display": "720",
+      "derivation": "Joukowsky rho*c*dv",
+      "facts": [
+        "F12",
+        "F13",
+        "F34"
+      ]
+    },
+    "hammer_atm": {
+      "value": 7057.410248204403,
+      "unit": "atm",
+      "display": "7,100",
+      "derivation": "dp / 101325",
+      "facts": [
+        "F07"
+      ]
+    },
+    "trench_mpa": {
+      "value": 110.01793569374999,
+      "unit": "MPa",
+      "display": "110",
+      "derivation": "p0 + rho g h",
+      "facts": [
+        "F12",
+        "F14"
+      ]
+    },
+    "hammer_ratio": {
+      "value": 6.49977741256542,
+      "unit": "x",
+      "display": "6.5",
+      "derivation": "dp / p_trench",
+      "facts": [
+        "F14"
+      ]
+    },
+    "hammer_ratio_floor": {
+      "value": 6,
+      "unit": "x",
+      "display": "6",
+      "derivation": "floor(ratio)",
+      "facts": [
+        "F14"
+      ]
+    },
+    "tsunami_ms": {
+      "value": 190.02127591404073,
+      "unit": "m/s",
+      "display": "190",
+      "derivation": "sqrt(g d)",
+      "facts": [
+        "F04",
+        "F11"
+      ]
+    },
+    "tsunami_kmh": {
+      "value": 684.0765932905466,
+      "unit": "km/h",
+      "display": "684",
+      "derivation": "sqrt(g d)*3.6",
+      "facts": [
+        "F04",
+        "F11",
+        "F15"
+      ]
+    },
+    "tsunami_mph": {
+      "value": 425.0654883546008,
+      "unit": "mph",
+      "display": "425",
+      "derivation": "sqrt(g d)/0.44704",
+      "facts": [
+        "F04",
+        "F11"
+      ]
+    },
+    "jet_ratio": {
+      "value": 0.7600851036561629,
+      "unit": "x",
+      "display": "0.76",
+      "derivation": "tsunami / jet cruise",
+      "facts": [
+        "F32"
+      ]
+    },
+    "ocean_cross_km": {
+      "value": 5000,
+      "unit": "km",
+      "display": "5,000",
+      "derivation": "illustrative ocean width",
+      "facts": []
+    },
+    "ocean_cross_h": {
+      "value": 7.309123055868627,
+      "unit": "h",
+      "display": "7.3",
+      "derivation": "5000 km / c",
+      "facts": [
+        "F11"
+      ]
+    },
+    "iss_kmh": {
+      "value": 28163.52,
+      "unit": "km/h",
+      "display": "28,000",
+      "derivation": "17,500 mph in km/h",
+      "facts": [
+        "F18"
+      ]
+    },
+    "iss_vs_ground": {
+      "value": 16.820448877880974,
+      "unit": "x",
+      "display": "17",
+      "derivation": "v_iss / v_eq",
+      "facts": [
+        "F18"
+      ]
+    },
+    "rot_arcsec": {
+      "value": 15.04104953101172,
+      "unit": "arcsec",
+      "display": "15",
+      "derivation": "360°/T_sid * 1 s",
+      "facts": [
+        "F02"
+      ]
+    },
+    "leap_count": {
+      "value": 27.0,
+      "unit": "count",
+      "display": "27",
+      "derivation": "IERS list",
+      "facts": [
+        "F16"
+      ]
+    },
+    "ut1_tolerance": {
+      "value": 0.9,
+      "unit": "s",
+      "display": "0.9",
+      "derivation": "IERS rule",
+      "facts": [
+        "F17"
+      ]
+    }
+  },
+  "cards": {
+    "v_equator": {
+      "title": "How fast is the equator moving?",
+      "formula": "v = 2πR ÷ T",
+      "sub": "2π × 6,378.137 km ÷ 23 h 56 min 4 s",
+      "result": "465 m/s ≈ 1,670 km/h",
+      "note": "T = sidereal day (one turn relative to the stars)",
+      "src": "NASA Earth Fact Sheet · WGS84"
+    },
+    "v_latitude": {
+      "title": "Your speed depends on latitude",
+      "formula": "v = ω · R · cos(latitude)",
+      "sub": "London 51.5°N: 465 × cos 51.5° (WGS84)",
+      "result": "≈ 290 m/s",
+      "note": "Exact ellipsoid formula used in calc.py",
+      "src": "WGS84"
+    },
+    "friction": {
+      "title": "Can friction stop you?",
+      "formula": "a = μ · g",
+      "sub": "0.7 × 9.81 m/s² = 6.9 m/s²",
+      "result": "after 1 s: still 458 m/s",
+      "note": "μ ≈ 0.7: rubber on dry concrete",
+      "src": "Engineering ToolBox"
+    },
+    "ke_person": {
+      "title": "Your kinetic energy",
+      "formula": "E = ½ m v²",
+      "sub": "½ × 70 kg × (465 m/s)²",
+      "result": "7.6 MJ ≈ 1.8 kg of TNT",
+      "note": "1 kg TNT = 4.184 MJ",
+      "src": "NIST SP 811"
+    },
+    "fall_height": {
+      "title": "Same as falling from…",
+      "formula": "h = v² ÷ 2g",
+      "sub": "(465 m/s)² ÷ (2 × 9.81 m/s²)",
+      "result": "11 km  (Everest: 8.85 km)",
+      "note": "No air resistance",
+      "src": "Everest: Britannica"
+    },
+    "steel_stress": {
+      "title": "The shear wave in steel",
+      "formula": "τ = ρ · c · Δv",
+      "sub": "7,850 kg/m³ × 3,200 m/s × 465 m/s",
+      "result": "12 GPa ≈ 80× yield",
+      "note": "c = √(G/ρ); A36 shear yield = 250 MPa ÷ √3 ≈ 140 MPa",
+      "src": "ASTM A36 · Eng. ToolBox"
+    },
+    "mach": {
+      "title": "How fast is that wind?",
+      "formula": "c = √(γ R T) ,  M = v ÷ c",
+      "sub": "√(1.4 × 287 × 288 K) = 340 m/s",
+      "result": "Mach 1.37",
+      "note": "Supersonic within ±43° latitude (68% of Earth)",
+      "src": "US Standard Atmosphere 1976"
+    },
+    "ram_pressure": {
+      "title": "The push on every wall",
+      "formula": "q = ½ ρ v²",
+      "sub": "½ × 1.225 kg/m³ × (465 m/s)²",
+      "result": "≥ 132 kPa ≈ 14 t per m²",
+      "note": "Shock-corrected: ~196 kPa",
+      "src": "NASA Glenn"
+    },
+    "hurricane_ratio": {
+      "title": "vs. a Category 5 hurricane",
+      "formula": "q₁ ÷ q₂ = (v₁ ÷ v₂)²",
+      "sub": "(465 ÷ 70 m/s)²",
+      "result": "≈ 44× the push",
+      "note": "Cat 5 starts at 252 km/h",
+      "src": "NOAA NHC"
+    },
+    "atm_ke": {
+      "title": "Energy in the moving air",
+      "formula": "E = ½ M ⟨v²⟩",
+      "sub": "½ × 5.15×10¹⁸ kg × ⅔ × (465 m/s)²",
+      "result": "≈ 3.7 × 10²³ J ≈ 600 yrs of human energy use",
+      "note": "⟨v²⟩ = ⅔ v² (area average of cos²); world use ≈ 620 EJ/yr",
+      "src": "Trenberth & Smith 2005 · Energy Institute"
+    },
+    "ocean_volume": {
+      "title": "Water on the move",
+      "formula": "V = v · t · depth",
+      "sub": "465 m/s × 1 s × 3.7 km",
+      "result": "1.7 million m³ per metre",
+      "note": "≈ 690 Olympic pools per metre of coast",
+      "src": "NOAA (avg depth)"
+    },
+    "water_hammer": {
+      "title": "Water hammer",
+      "formula": "Δp = ρ · c · Δv",
+      "sub": "1,025 kg/m³ × 1,500 m/s × 465 m/s",
+      "result": "≈ 720 MPa  (6.5× Challenger Deep)",
+      "note": "Trench floor ≈ 110 MPa",
+      "src": "Joukowsky · NOAA"
+    },
+    "tsunami_speed": {
+      "title": "Tsunami speed",
+      "formula": "c = √(g · d)",
+      "sub": "√(9.81 m/s² × 3,682 m)",
+      "result": "190 m/s ≈ 684 km/h",
+      "note": "5,000 km in ≈ 7.3 h",
+      "src": "NOAA"
+    },
+    "rotation_lag": {
+      "title": "Earth is now one second late",
+      "formula": "θ = 360° × (1 s ÷ T)",
+      "sub": "1,296,000″ ÷ 86,164 s",
+      "result": "15 arcseconds behind",
+      "note": "Fix: 1 leap second (there have been 27)",
+      "src": "IERS"
+    }
+  },
+  "extra": {
+    "city_speeds": {
+      "Quito": {
+        "lat": -0.18,
+        "v_ms": 465.1,
+        "v_kmh": 1674
+      },
+      "Singapore": {
+        "lat": 1.35,
+        "v_ms": 465.0,
+        "v_kmh": 1674
+      },
+      "Mumbai": {
+        "lat": 19.08,
+        "v_ms": 439.7,
+        "v_kmh": 1583
+      },
+      "Cairo": {
+        "lat": 30.04,
+        "v_ms": 403.0,
+        "v_kmh": 1451
+      },
+      "Tehran": {
+        "lat": 35.69,
+        "v_ms": 378.2,
+        "v_kmh": 1361
+      },
+      "New York": {
+        "lat": 40.71,
+        "v_ms": 353.1,
+        "v_kmh": 1271
+      },
+      "London": {
+        "lat": 51.51,
+        "v_ms": 290.1,
+        "v_kmh": 1044
+      },
+      "Reykjavik": {
+        "lat": 64.15,
+        "v_ms": 203.3,
+        "v_kmh": 732
+      },
+      "North Pole": {
+        "lat": 90.0,
+        "v_ms": 0.0,
+        "v_kmh": 0
+      }
+    }
+  },
+  "checks": [
+    {
+      "check": "v_eq ~ 465 m/s",
+      "pass": true
+    },
+    {
+      "check": "v_eq_kmh rounds to 1,670",
+      "pass": true
+    },
+    {
+      "check": "equator speed is supersonic",
+      "pass": true
+    },
+    {
+      "check": "pole speed ~ 0",
+      "pass": true
+    },
+    {
+      "check": "speeds decrease with |latitude|",
+      "pass": true
+    },
+    {
+      "check": "spherical cross-check within 0.5%",
+      "pass": true
+    },
+    {
+      "check": "pitot overpressure >= q (q is a lower bound)",
+      "pass": true
+    },
+    {
+      "check": "energy/height consistent: m g h == KE",
+      "pass": true
+    },
+    {
+      "check": "fall height above Everest",
+      "pass": true
+    },
+    {
+      "check": "tsunami slower than 'jet' 500 mph but same order",
+      "pass": true
+    },
+    {
+      "check": "hammer > trench pressure",
+      "pass": true
+    },
+    {
+      "check": "ISS faster than ground",
+      "pass": true
+    },
+    {
+      "check": "c_air ~ 340 m/s",
+      "pass": true
+    },
+    {
+      "check": "NOAA km/h and mph Cat-5 thresholds agree",
+      "pass": true
+    },
+    {
+      "check": "shear wave slower than bar wave",
+      "pass": true
+    },
+    {
+      "check": "supersonic band ~ 40-45 deg",
+      "pass": true
+    },
+    {
+      "check": "supersonic area ~ two-thirds",
+      "pass": true
+    }
+  ]
+}

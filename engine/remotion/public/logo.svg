@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <radialGradient id="bg" cx="40%" cy="35%" r="75%">
+      <stop offset="0" stop-color="#232A6B"/>
+      <stop offset="0.6" stop-color="#11153A"/>
+      <stop offset="1" stop-color="#070920"/>
+    </radialGradient>
+    <linearGradient id="orbit" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#3DE0FF"/>
+      <stop offset="1" stop-color="#B66BFF"/>
+    </linearGradient>
+    <radialGradient id="planet" cx="35%" cy="35%" r="70%">
+      <stop offset="0" stop-color="#FFE29A"/>
+      <stop offset="0.55" stop-color="#FFB547"/>
+      <stop offset="1" stop-color="#E0731F"/>
+    </radialGradient>
+    <clipPath id="back"><rect x="-300" y="-300" width="600" height="300"/></clipPath>
+    <clipPath id="front"><rect x="-300" y="0" width="600" height="300"/></clipPath>
+  </defs>
+  <circle cx="256" cy="256" r="256" fill="url(#bg)"/>
+  <!-- stars -->
+  <g fill="#fff">
+    <circle cx="96" cy="120" r="2.2" opacity=".8"/><circle cx="410" cy="96" r="1.8" opacity=".7"/>
+    <circle cx="430" cy="350" r="2" opacity=".6"/><circle cx="78" cy="330" r="1.6" opacity=".6"/>
+    <circle cx="150" cy="70" r="1.4" opacity=".5"/><circle cx="370" cy="440" r="1.6" opacity=".5"/>
+    <circle cx="300" cy="64" r="1.2" opacity=".6"/><circle cx="60" cy="230" r="1.2" opacity=".5"/>
+  </g>
+  <!-- orbit back half -->
+  <g transform="translate(256 272) rotate(-18)">
+    <ellipse rx="214" ry="78" fill="none" stroke="url(#orbit)" stroke-width="12" clip-path="url(#back)" opacity=".55"/>
+  </g>
+  <!-- lettermark "if" -->
+  <g fill="#F4F6FF">
+    <rect x="172" y="236" width="48" height="150" rx="12"/>
+    <path d="M262 386 V214 C262 170 292 144 334 144 C346 144 357 146 366 150 V194 C358 191 349 190 341 190 C319 190 310 199 310 220 V386 Z"/>
+    <rect x="240" y="236" width="112" height="40" rx="10"/>
+  </g>
+  <!-- planet as the dot of the i -->
+  <defs>
+    <clipPath id="pback"><rect x="-60" y="-60" width="120" height="60"/></clipPath>
+    <clipPath id="pfront"><rect x="-60" y="0" width="120" height="60"/></clipPath>
+  </defs>
+  <g transform="translate(196 186) rotate(-18)">
+    <ellipse rx="46" ry="12" fill="none" stroke="#FFD27A" stroke-width="5" clip-path="url(#pback)"/>
+    <circle r="27" fill="url(#planet)" transform="rotate(18)"/>
+    <ellipse rx="46" ry="12" fill="none" stroke="#FFD27A" stroke-width="5" clip-path="url(#pfront)"/>
+  </g>
+  <!-- orbit front half -->
+  <g transform="translate(256 272) rotate(-18)">
+    <ellipse rx="214" ry="78" fill="none" stroke="url(#orbit)" stroke-width="12" clip-path="url(#front)"/>
+    <circle cx="150" cy="56" r="11" fill="#3DE0FF"/>
+  </g>
+</svg>

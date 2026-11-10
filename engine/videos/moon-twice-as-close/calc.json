@@ -1,0 +1,689 @@
+{
+  "generated": "2026-11-09T23:45:13+00:00",
+  "video_id": "moon-twice-as-close",
+  "values": {
+    "d_old_km": {
+      "value": 384400.0,
+      "unit": "km",
+      "display": "384,400",
+      "derivation": "NASA mean distance",
+      "facts": [
+        "F01"
+      ]
+    },
+    "d_new_km": {
+      "value": 192200.0,
+      "unit": "km",
+      "display": "192,200",
+      "derivation": "d/2",
+      "facts": [
+        "F01"
+      ]
+    },
+    "move_energy": {
+      "value": 3.8087074565967742e+28,
+      "unit": "J",
+      "display": "3.8 × 10²⁸",
+      "derivation": "G Me Mm (1/2d2 - 1/2d1)",
+      "facts": [
+        "F09",
+        "F06",
+        "F02",
+        "F01"
+      ]
+    },
+    "sun_seconds": {
+      "value": 99.49601506261166,
+      "unit": "s",
+      "display": "100",
+      "derivation": "E / L_sun",
+      "facts": [
+        "F13"
+      ]
+    },
+    "v_old_kms": {
+      "value": 1.0245497036070483,
+      "unit": "km/s",
+      "display": "1.0",
+      "derivation": "sqrt(G(M+m)/d1)",
+      "facts": [
+        "F09",
+        "F06",
+        "F02",
+        "F01"
+      ]
+    },
+    "v_new_kms": {
+      "value": 1.4489320861664223,
+      "unit": "km/s",
+      "display": "1.4",
+      "derivation": "sqrt(G(M+m)/d2)",
+      "facts": [
+        "F09",
+        "F06",
+        "F02",
+        "F01"
+      ]
+    },
+    "theta_old": {
+      "value": 0.526652645398807,
+      "unit": "deg",
+      "display": "0.53",
+      "derivation": "2 atan(Rm/(d1-Re))",
+      "facts": [
+        "F03",
+        "F01",
+        "F07"
+      ]
+    },
+    "theta_new": {
+      "value": 1.0713374873846424,
+      "unit": "deg",
+      "display": "1.07",
+      "derivation": "2 atan(Rm/(d2-Re))",
+      "facts": [
+        "F03",
+        "F01",
+        "F07"
+      ]
+    },
+    "theta_sun": {
+      "value": 0.5329004520039888,
+      "unit": "deg",
+      "display": "0.533",
+      "derivation": "2 atan(Rs/AU)",
+      "facts": [
+        "F12",
+        "F11"
+      ]
+    },
+    "theta_old_precise": {
+      "value": 0.526652645398807,
+      "unit": "deg",
+      "display": "0.527",
+      "derivation": "2 atan(Rm/(d1-Re))",
+      "facts": [
+        "F03",
+        "F01",
+        "F07"
+      ]
+    },
+    "width_ratio": {
+      "value": 2.034239259490235,
+      "unit": "x",
+      "display": "2",
+      "derivation": "theta2/theta1",
+      "facts": [
+        "F03",
+        "F01"
+      ]
+    },
+    "area_ratio": {
+      "value": 4.1381293648513795,
+      "unit": "x",
+      "display": "4",
+      "derivation": "(theta2/theta1)^2",
+      "facts": [
+        "F03",
+        "F01"
+      ]
+    },
+    "mag_gain": {
+      "value": 1.5420101582861783,
+      "unit": "mag",
+      "display": "1.5",
+      "derivation": "2.5 log10(area ratio)",
+      "facts": [
+        "F03",
+        "F01"
+      ]
+    },
+    "moon_sun_ratio": {
+      "value": 2.0103895265163394,
+      "unit": "x",
+      "display": "2",
+      "derivation": "theta_moon_new / theta_sun",
+      "facts": [
+        "F12",
+        "F11"
+      ]
+    },
+    "period_old_d": {
+      "value": 27.3217,
+      "unit": "days",
+      "display": "27.3",
+      "derivation": "NASA sidereal period",
+      "facts": [
+        "F04"
+      ]
+    },
+    "period_new_d": {
+      "value": 9.659679671772247,
+      "unit": "days",
+      "display": "9.7",
+      "derivation": "T1 / 2^1.5 (Kepler III)",
+      "facts": [
+        "F04"
+      ]
+    },
+    "synodic_old_d": {
+      "value": 29.5307263564655,
+      "unit": "days",
+      "display": "29.5",
+      "derivation": "1/(1/T1 - 1/yr)",
+      "facts": [
+        "F04",
+        "F18"
+      ]
+    },
+    "synodic_new_d": {
+      "value": 9.922092490251398,
+      "unit": "days",
+      "display": "9.9",
+      "derivation": "1/(1/T2 - 1/yr)",
+      "facts": [
+        "F04",
+        "F18"
+      ]
+    },
+    "deg_day_old": {
+      "value": 13.176339686037107,
+      "unit": "deg/day",
+      "display": "13",
+      "derivation": "360/T1",
+      "facts": [
+        "F04"
+      ]
+    },
+    "deg_day_new": {
+      "value": 37.26831657285705,
+      "unit": "deg/day",
+      "display": "37",
+      "derivation": "360/T2",
+      "facts": [
+        "F04"
+      ]
+    },
+    "tide_period_old_h": {
+      "value": 12.4206155527589,
+      "unit": "h",
+      "display": "12.4",
+      "derivation": "half a lunar day",
+      "facts": [
+        "F21",
+        "F04"
+      ]
+    },
+    "tide_period_new_h": {
+      "value": 13.344994874756928,
+      "unit": "h",
+      "display": "13.3",
+      "derivation": "half a lunar day",
+      "facts": [
+        "F21",
+        "F04"
+      ]
+    },
+    "moonrise_old_min": {
+      "value": 50.47386633106797,
+      "unit": "min",
+      "display": "50",
+      "derivation": "lunar day - 24 h",
+      "facts": [
+        "F21",
+        "F04"
+      ]
+    },
+    "moonrise_new_h": {
+      "value": 2.689989749513856,
+      "unit": "h",
+      "display": "2.7",
+      "derivation": "lunar day - 24 h",
+      "facts": [
+        "F21",
+        "F04"
+      ]
+    },
+    "widths_per_hour": {
+      "value": 1.449446642308639,
+      "unit": "moon widths",
+      "display": "1.4",
+      "derivation": "deg per hour / theta_new",
+      "facts": [
+        "F04",
+        "F03",
+        "F01"
+      ]
+    },
+    "pull_ratio": {
+      "value": 4.0,
+      "unit": "x",
+      "display": "4",
+      "derivation": "(d1/d2)^2 (gravity ~ 1/d^2)",
+      "facts": [
+        "F01"
+      ]
+    },
+    "earth_from_moon_old": {
+      "value": 1.9076736987858969,
+      "unit": "deg",
+      "display": "1.9",
+      "derivation": "2 atan(Re/(d1-Rm))",
+      "facts": [
+        "F07",
+        "F01",
+        "F03"
+      ]
+    },
+    "earth_from_moon_new": {
+      "value": 3.831674634712093,
+      "unit": "deg",
+      "display": "3.8",
+      "derivation": "2 atan(Re/(d2-Rm))",
+      "facts": [
+        "F07",
+        "F01",
+        "F03"
+      ]
+    },
+    "recession_cm": {
+      "value": 3.8,
+      "unit": "cm/yr",
+      "display": "3.8",
+      "derivation": "lunar laser ranging",
+      "facts": [
+        "F22"
+      ]
+    },
+    "earth_diam_km": {
+      "value": 12742.0,
+      "unit": "km",
+      "display": "12,742",
+      "derivation": "2 x mean radius",
+      "facts": [
+        "F07"
+      ]
+    },
+    "umbra_km": {
+      "value": 1746.3278569219126,
+      "unit": "km",
+      "display": "1,700",
+      "derivation": "(theta_m - theta_s) * (d2 - Re)",
+      "facts": [
+        "F03",
+        "F12",
+        "F11",
+        "F01"
+      ]
+    },
+    "tide_ratio": {
+      "value": 8.0,
+      "unit": "x",
+      "display": "8",
+      "derivation": "(d1/d2)^3",
+      "facts": [
+        "F01"
+      ]
+    },
+    "bulge_old_cm": {
+      "value": 35.67770121752651,
+      "unit": "cm",
+      "display": "36",
+      "derivation": "(Mm/Me)(Re/d)^3 Re",
+      "facts": [
+        "F02",
+        "F06",
+        "F07",
+        "F01"
+      ]
+    },
+    "bulge_new_m": {
+      "value": 2.854216097402121,
+      "unit": "m",
+      "display": "2.9",
+      "derivation": "8 x bulge",
+      "facts": [
+        "F02",
+        "F06",
+        "F07",
+        "F01"
+      ]
+    },
+    "range_old_cm": {
+      "value": 53.51655182628977,
+      "unit": "cm",
+      "display": "54",
+      "derivation": "1.5 h1",
+      "facts": [
+        "F02",
+        "F06",
+        "F07",
+        "F01"
+      ]
+    },
+    "range_new_m": {
+      "value": 4.281324146103182,
+      "unit": "m",
+      "display": "4.3",
+      "derivation": "1.5 h2",
+      "facts": [
+        "F02",
+        "F06",
+        "F07",
+        "F01"
+      ]
+    },
+    "sun_share_old_pct": {
+      "value": 46.0,
+      "unit": "%",
+      "display": "46",
+      "derivation": "NOAA/OceanMotion ~46%",
+      "facts": [
+        "F15"
+      ]
+    },
+    "sun_share_new_pct": {
+      "value": 5.740617164043401,
+      "unit": "%",
+      "display": "6",
+      "derivation": "0.46/8",
+      "facts": [
+        "F14",
+        "F02",
+        "F11",
+        "F01"
+      ]
+    },
+    "spring_neap_old": {
+      "value": 2.698562517721629,
+      "unit": "x",
+      "display": "2.7",
+      "derivation": "(1+r)/(1-r)",
+      "facts": [
+        "F14",
+        "F02",
+        "F11",
+        "F01"
+      ]
+    },
+    "spring_neap_new_pct": {
+      "value": 12.18046838697009,
+      "unit": "%",
+      "display": "12",
+      "derivation": "((1+r')/(1-r') - 1)*100",
+      "facts": [
+        "F14",
+        "F02",
+        "F11",
+        "F01"
+      ]
+    },
+    "roche_km": {
+      "value": 18365.281763394687,
+      "unit": "km",
+      "display": "18,000",
+      "derivation": "2.44 Re (rho_E/rho_M)^(1/3)",
+      "facts": [
+        "F17",
+        "F07",
+        "F08",
+        "F05"
+      ]
+    },
+    "roche_margin": {
+      "value": 10.465398923695753,
+      "unit": "x",
+      "display": "10",
+      "derivation": "d2 / d_Roche",
+      "facts": [
+        "F17",
+        "F01"
+      ]
+    },
+    "brake_ratio": {
+      "value": 64.0,
+      "unit": "x",
+      "display": "64",
+      "derivation": "(d1/d2)^6 (torque ~ M^2/d^6)",
+      "facts": [
+        "F01"
+      ]
+    },
+    "lod_old_ms": {
+      "value": 2.3,
+      "unit": "ms/century",
+      "display": "2.3",
+      "derivation": "tidal friction prediction",
+      "facts": [
+        "F16"
+      ]
+    },
+    "lod_new_ms": {
+      "value": 147.2,
+      "unit": "ms/century",
+      "display": "150",
+      "derivation": "2.3 x 64",
+      "facts": [
+        "F16",
+        "F01"
+      ]
+    },
+    "myr_old_s": {
+      "value": 23.0,
+      "unit": "s per Myr",
+      "display": "23",
+      "derivation": "2.3 ms/cy x 10,000 cy",
+      "facts": [
+        "F16"
+      ]
+    },
+    "myr_new_min": {
+      "value": 24.533333333333335,
+      "unit": "min per Myr",
+      "display": "25",
+      "derivation": "147 ms/cy x 10,000 cy / 60",
+      "facts": [
+        "F16",
+        "F01"
+      ]
+    },
+    "weight_old_g": {
+      "value": 0.007850936701571996,
+      "unit": "g",
+      "display": "0.008",
+      "derivation": "m * 2GMm Re/d^3 / g",
+      "facts": [
+        "F20",
+        "F09",
+        "F02",
+        "F07",
+        "F01",
+        "F10"
+      ]
+    },
+    "weight_new_g": {
+      "value": 0.06280749361257597,
+      "unit": "g",
+      "display": "0.06",
+      "derivation": "x8",
+      "facts": [
+        "F20",
+        "F09",
+        "F02",
+        "F07",
+        "F01",
+        "F10"
+      ]
+    },
+    "person_mass": {
+      "value": 70.0,
+      "unit": "kg",
+      "display": "70",
+      "derivation": "assumed",
+      "facts": [
+        "F20"
+      ]
+    }
+  },
+  "cards": {
+    "move_energy": {
+      "title": "Energy to pull the Moon in",
+      "formula": "ΔE = G·M·m (1/2d₂ − 1/2d₁)",
+      "sub": "6.67×10⁻¹¹ × 5.97×10²⁴ × 7.35×10²² × (…)",
+      "result": "≈ 3.8 × 10²⁸ J",
+      "note": "= 100 s of the Sun's total output",
+      "src": "NASA · IAU 2015 B3"
+    },
+    "orbit_speed": {
+      "title": "A faster orbit",
+      "formula": "v = √(G·M ÷ d)",
+      "sub": "d halves → v × √2",
+      "result": "1.0 → 1.4 km/s",
+      "note": "circular orbit",
+      "src": "Kepler / Newton"
+    },
+    "angular_size": {
+      "title": "How big it looks",
+      "formula": "θ = 2·atan(R ÷ distance)",
+      "sub": "2·atan(1,737 km ÷ 192,200 km − Earth radius)",
+      "result": "0.53° → 1.07°",
+      "note": "≈ 2× wider, 4× the area",
+      "src": "NASA Moon Fact Sheet"
+    },
+    "brightness": {
+      "title": "How bright the full Moon gets",
+      "formula": "Δm = 2.5 · log₁₀(area ratio)",
+      "sub": "2.5 × log₁₀(4)",
+      "result": "≈ 1.5 magnitudes brighter",
+      "note": "same sunlight, same surface",
+      "src": "photometry"
+    },
+    "kepler": {
+      "title": "A shorter month",
+      "formula": "T ∝ d^1.5",
+      "sub": "27.3 d ÷ 2^1.5",
+      "result": "9.7 days per orbit",
+      "note": "full Moon every 9.9 days",
+      "src": "Kepler's 3rd law"
+    },
+    "eclipse": {
+      "title": "The new eclipse shadow",
+      "formula": "w ≈ (θ_Moon − θ_Sun) × distance",
+      "sub": "(1.07° − 0.533°) × 185,800 km",
+      "result": "≈ 1,700 km wide",
+      "note": "every central eclipse is total",
+      "src": "IAU · NASA"
+    },
+    "tide_force": {
+      "title": "Tidal force",
+      "formula": "F_tide ∝ M ÷ d³",
+      "sub": "(1 ÷ ½)³",
+      "result": "= 8× stronger",
+      "note": "tides come from the DIFFERENCE in pull across Earth",
+      "src": "Newton"
+    },
+    "bulge": {
+      "title": "The open-ocean bulge",
+      "formula": "h = (M/Mₑ)(Rₑ/d)³ Rₑ",
+      "sub": "0.0123 × (6,371 ÷ 384,400)³ × 6,371 km",
+      "result": "36 cm → 2.9 m",
+      "note": "tide range 54 cm → 4.3 m (equilibrium)",
+      "src": "equilibrium tide theory"
+    },
+    "sun_share": {
+      "title": "The Sun's share of the tide",
+      "formula": "r = (M☉/M)(d/AU)³",
+      "sub": "46% ÷ 8",
+      "result": "≈ 6%",
+      "note": "spring vs neap: 2.7× → +12%",
+      "src": "NOAA"
+    },
+    "roche": {
+      "title": "Would the Moon break apart?",
+      "formula": "d_R = 2.44 · Rₑ · (ρₑ ÷ ρ_M)^⅓",
+      "sub": "2.44 × 6,371 km × (5,514 ÷ 3,344)^⅓",
+      "result": "≈ 18,000 km",
+      "note": "new orbit is 10× farther out",
+      "src": "Roche (1849) · NASA"
+    },
+    "braking": {
+      "title": "Faster tidal braking",
+      "formula": "torque ∝ M² ÷ d⁶",
+      "sub": "2⁶ = 64",
+      "result": "2.3 → 150 ms per century",
+      "note": "rough, linear extrapolation",
+      "src": "Stephenson et al. 2016"
+    },
+    "weight": {
+      "title": "Does it change your weight?",
+      "formula": "Δa = 2·G·M·Rₑ ÷ d³",
+      "sub": "× 70 kg ÷ g",
+      "result": "0.008 g → 0.06 g",
+      "note": "grams-force, Moon directly overhead",
+      "src": "Newton"
+    }
+  },
+  "extra": {
+    "sky": {
+      "theta_old": 0.526652645398807,
+      "theta_new": 1.0713374873846424,
+      "theta_sun": 0.5329004520039888
+    },
+    "tide": {
+      "old_cm": 35.67770121752651,
+      "new_cm": 285.4216097402121
+    },
+    "roche": {
+      "roche_km": 18365.281763394687,
+      "d_new_km": 192200.0,
+      "d_old_km": 384400.0,
+      "earth_km": 6371.0
+    }
+  },
+  "checks": [
+    {
+      "check": "Kepler period from G within 0.5% of NASA sidereal period",
+      "pass": true
+    },
+    {
+      "check": "current synodic month ~29.5 d",
+      "pass": true
+    },
+    {
+      "check": "today the Moon at mean distance looks slightly smaller than the Sun (annular)",
+      "pass": true
+    },
+    {
+      "check": "new Moon is larger than the Sun",
+      "pass": true
+    },
+    {
+      "check": "computed Sun/Moon tide ratio matches cited ~0.46",
+      "pass": true
+    },
+    {
+      "check": "Moon well outside Roche limit",
+      "pass": true
+    },
+    {
+      "check": "equilibrium lunar tide today ~0.36 m",
+      "pass": true
+    },
+    {
+      "check": "speed scales as sqrt(2)",
+      "pass": true
+    },
+    {
+      "check": "energy ~ 3.8e28 J",
+      "pass": true
+    },
+    {
+      "check": "width ratio ~2",
+      "pass": true
+    },
+    {
+      "check": "today's tides every ~12.4 h",
+      "pass": true
+    }
+  ]
+}

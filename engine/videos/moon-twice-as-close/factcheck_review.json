@@ -1,0 +1,262 @@
+{
+  "reviewer": "editorial fact-check pass (producer playbook validation run), 2026-11-09",
+  "beats": {
+    "b01": {
+      "verdict": "ok",
+      "note": "theta ratio 1.07/0.527 = 2.03 for an observer under the Moon: 'twice as wide' holds.",
+      "hash": "7986ee11835b"
+    },
+    "b02": {
+      "verdict": "ok",
+      "note": "Tidal acceleration ∝ M/d³ → (2)³ = 8; 'pulled 8 times harder' refers to the tidal pull, defined in b21-b23.",
+      "hash": "1310391ed597"
+    },
+    "b03": {
+      "verdict": "rhetoric",
+      "note": "Channel intro; no factual claim beyond the show format.",
+      "hash": "741eb3429739"
+    },
+    "b04": {
+      "verdict": "ok",
+      "note": "NASA semimajor axis 384,400 km; scenario halves it to 192,200 km (stated as an assumption).",
+      "hash": "a471fdd769c7"
+    },
+    "b05": {
+      "verdict": "ok",
+      "note": "Inward move lowers orbital energy: ΔE = G Me Mm (1/2d2 − 1/2d1) = 3.8e28 J.",
+      "hash": "d687d499fc28"
+    },
+    "b06": {
+      "verdict": "ok",
+      "note": "3.8e28 J ÷ 3.828e26 W (IAU nominal L☉) = 99.5 s → 'roughly 100 seconds'.",
+      "hash": "6bd51e5905b0"
+    },
+    "b07": {
+      "verdict": "fixed",
+      "note": "Draft said you 'first have to' slow it; other manoeuvres exist, so softened to 'you'd slow it down' (Hohmann-style descent).",
+      "hash": "956c9990ff69"
+    },
+    "b08": {
+      "verdict": "ok",
+      "note": "v = √(G(M+m)/d): 1.02 → 1.44 km/s (√2).",
+      "hash": "65f2b94e31f5"
+    },
+    "b09": {
+      "verdict": "rhetoric",
+      "note": "Transition line; no factual claim.",
+      "hash": "a0b351d8e325"
+    },
+    "b10": {
+      "verdict": "ok",
+      "note": "2·atan(Rm/(d−Re)) for an observer below the Moon: 0.53° → 1.07°.",
+      "hash": "ef355ed4a85b"
+    },
+    "b11": {
+      "verdict": "ok",
+      "note": "Same albedo/illumination: flux ∝ solid angle ∝ θ² ≈ 4.1; 2.5 log10 4.1 = 1.54 mag.",
+      "hash": "a6efb238e43d"
+    },
+    "b12": {
+      "verdict": "ok",
+      "note": "Kepler III: 27.32/2^1.5 = 9.66 d; synodic 1/(1/T − 1/yr): 29.53 → 9.92 d.",
+      "hash": "7620af743115"
+    },
+    "b13": {
+      "verdict": "ok",
+      "note": "A 9.9-day phase cycle is about a week and a half; checked by comparisons().",
+      "hash": "92e5654320e2"
+    },
+    "b14": {
+      "verdict": "ok",
+      "note": "360°/T: 13.2 → 37.3 °/day; per hour 1.55° ÷ 1.07° = 1.45 widths ('about 1.4').",
+      "hash": "a6184c92f542"
+    },
+    "b15": {
+      "verdict": "ok",
+      "note": "Lunar day = 1/(1/sidereal day − 1/T): 24.84 h → 26.69 h; moonrise delay 50 min → 2.7 h.",
+      "hash": "7b7aed8132f4"
+    },
+    "b16": {
+      "verdict": "ok",
+      "note": "Earth seen from the Moon: 2·atan(Re/(d−Rm)) = 1.9° → 3.8°.",
+      "hash": "5ed69672aae3"
+    },
+    "b17": {
+      "verdict": "ok",
+      "note": "Mean distance, observer below the Moon: 0.527° vs Sun 0.533° (IAU radius, 1 AU) → annular geometry.",
+      "hash": "4d04ed8d2228"
+    },
+    "b18": {
+      "verdict": "ok",
+      "note": "Annular eclipses occur when the Moon's disk is smaller than the Sun's (true today).",
+      "hash": "da4951cfadec"
+    },
+    "b19": {
+      "verdict": "ok",
+      "note": "1.07° vs 0.533° → Moon always larger, so central eclipses are total (no annular).",
+      "hash": "02d7a7532641"
+    },
+    "b20": {
+      "verdict": "ok",
+      "note": "Umbra width ≈ (θm − θs)·(d − Re) = 1,745 km; simplified cone model, stated with 'about'.",
+      "hash": "7b0e9151baf7"
+    },
+    "b21": {
+      "verdict": "ok",
+      "note": "Tides arise from the gradient of the Moon's gravity across Earth (NOAA).",
+      "hash": "f26fe6d48523"
+    },
+    "b22": {
+      "verdict": "ok",
+      "note": "Tidal acceleration 2GMR/d³ → ×8.",
+      "hash": "ac842ed830de"
+    },
+    "b23": {
+      "verdict": "ok",
+      "note": "Direct pull ∝ 1/d² → ×4; tidal ∝ 1/d³ → ×8 = double; checked by comparisons().",
+      "hash": "498658120d74"
+    },
+    "b24": {
+      "verdict": "ok",
+      "note": "Equilibrium bulge (Mm/Me)(Re/d)³Re = 0.357 m; idealized case stated.",
+      "hash": "8b29665a49f2"
+    },
+    "b25": {
+      "verdict": "ok",
+      "note": "×8: 2.86 m bulge; equilibrium range 1.5h: 0.54 m → 4.3 m.",
+      "hash": "b6dda30d03d2"
+    },
+    "b26": {
+      "verdict": "ok",
+      "note": "Half a lunar day: 12.42 h → 13.34 h.",
+      "hash": "817ba5af3d7c"
+    },
+    "b27": {
+      "verdict": "rhetoric",
+      "note": "Pattern break; true statement (people live on coasts, not open ocean).",
+      "hash": "ba4a0825623f"
+    },
+    "b28": {
+      "verdict": "ok",
+      "note": "Basin resonance amplifies tides; Bay of Fundy has some of the highest tides (NOAA); qualitative F19.",
+      "hash": "c34e3c4fb985"
+    },
+    "b29": {
+      "verdict": "fixed",
+      "note": "Draft said 'twice a day, every day', but the new semidiurnal period is 13.3 h; changed to 'about every 13 hours'. Typed '13' replaced by {{tide_period_new_h}} after factcheck flagged it as unsourced.",
+      "hash": "6bd7a9179f72"
+    },
+    "b30": {
+      "verdict": "ok",
+      "note": "Honest uncertainty; no coastal height claimed.",
+      "hash": "e549f119dcfa"
+    },
+    "b31": {
+      "verdict": "ok",
+      "note": "NOAA: the Sun's tide-generating force is about half the Moon's; 46% (OceanMotion); our computed ratio 0.459.",
+      "hash": "d12fc63cec52"
+    },
+    "b32": {
+      "verdict": "ok",
+      "note": "0.459/8 = 5.7% → 'about 6'; spring/neap (1±r): 2.7 → 1.12; 'almost vanishes' judged fair for a 12% difference (comparisons() checks < 15%).",
+      "hash": "a190df3f191f"
+    },
+    "b33": {
+      "verdict": "rhetoric",
+      "note": "Open-loop question.",
+      "hash": "dd864bcbadd6"
+    },
+    "b34": {
+      "verdict": "ok",
+      "note": "Fluid Roche limit 2.44 Re (ρE/ρM)^(1/3) = 18,370 km; 'held together only by its own gravity' matches the fluid-limit assumption.",
+      "hash": "7cd20fb4fd99"
+    },
+    "b35": {
+      "verdict": "ok",
+      "note": "192,200/18,370 = 10.5 → 'about 10 times farther out'.",
+      "hash": "9166a8f90c81"
+    },
+    "b36": {
+      "verdict": "ok",
+      "note": "Tidal friction lengthens the day (Stephenson et al. 2016).",
+      "hash": "4d5d58b76a2d"
+    },
+    "b37": {
+      "verdict": "ok",
+      "note": "Long-term tidal braking is established (S9); day length increasing.",
+      "hash": "d41f3e2efa6e"
+    },
+    "b38": {
+      "verdict": "ok",
+      "note": "Torque ∝ M²R⁵k2/(Q d⁶) → 2⁶ = 64 for the same Earth response; 'roughly' covers frequency-dependent Q.",
+      "hash": "af8e0943a5e2"
+    },
+    "b39": {
+      "verdict": "ok",
+      "note": "S9 tidal-friction prediction 2.3 ms/cy × 64 = 147 → 'about 150'.",
+      "hash": "ee39d80b7e1e"
+    },
+    "b40": {
+      "verdict": "ok",
+      "note": "× 10,000 centuries: 23 s vs 1,472 s ≈ 25 min; linearity caveat stated.",
+      "hash": "591a7bd706a6"
+    },
+    "b41": {
+      "verdict": "ok",
+      "note": "LLR recession 3.8 cm/yr (NASA); a larger torque pushes outward faster since the orbit period (9.7 d) still exceeds Earth's spin period.",
+      "hash": "714fceaa4a98"
+    },
+    "b42": {
+      "verdict": "ok",
+      "note": "m·2GMm Re/d³/g = 0.063 g-force with the Moon overhead; < 0.1 g checked.",
+      "hash": "4b938b75bb98"
+    },
+    "b43": {
+      "verdict": "ok",
+      "note": "Today 0.008 g; Earth diameter 2×6371 km; tidal differences scale with size.",
+      "hash": "d4db856f5436"
+    },
+    "b44": {
+      "verdict": "ok",
+      "note": "Recap of values verified above.",
+      "hash": "9a0c1c3495e1"
+    },
+    "b45": {
+      "verdict": "rhetoric",
+      "note": "Moral/summary line; rhetorical, no new number.",
+      "hash": "a4ed88dc6b35"
+    },
+    "b46": {
+      "verdict": "ok",
+      "note": "True: all numbers are calc.json values from cited facts.",
+      "hash": "c18fc636f0be"
+    },
+    "b47": {
+      "verdict": "ok",
+      "note": "Next topic is the next 'todo' in topics.json; F20 claim placeholder harmless.",
+      "hash": "033c118eeee9"
+    }
+  },
+  "fixes": [
+    {
+      "beat": "b07",
+      "issue": "'you first have to slow it down' implied the only possible method",
+      "fix": "'you'd slow it down' (one standard way)"
+    },
+    {
+      "beat": "b29",
+      "issue": "'twice a day, every day' contradicts the new 13.3-hour tidal period computed in b26",
+      "fix": "'about every 13 hours, without a break'"
+    },
+    {
+      "beat": "b12/b40 calc",
+      "issue": "display rounding showed '1' km/s and '99' s",
+      "fix": "fixed-decimal display (1.0 km/s) and 1-sig-fig '100' s"
+    },
+    {
+      "beat": "script",
+      "issue": "first draft estimated at 6.4 min (< 8 min target, caught by build_script.py)",
+      "fix": "added substantive beats (orbit mechanics, phases, Earth seen from the Moon, pull vs tide, recession)"
+    }
+  ]
+}

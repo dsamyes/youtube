@@ -1,0 +1,171 @@
+{
+  "about": "Topic backlog + production log. Statuses: todo -> produced (by the producer run) -> published (by the publish job). The producer picks one 'todo' topic (or the queued request), never a topic whose status is not 'todo', and never a near-duplicate of an existing title.",
+  "series_playlists": [
+    "Planet Breakers",
+    "Fall Into…",
+    "Human Limits",
+    "Scale Shock"
+  ],
+  "topics": [
+    {
+      "id": "earth-stops-1s",
+      "title": "What If Earth Stopped Spinning for 1 Second?",
+      "series": "Planet Breakers",
+      "status": "published",
+      "video_id": "earth-stops-1s",
+      "produced": "2026-11-09",
+      "youtube_id": "KDFkzbBbN78",
+      "source": "CHANNEL-SETUP.md #1"
+    },
+    {
+      "id": "fall-into-jupiter",
+      "title": "What If You Fell Into Jupiter? (Every Layer, Explained)",
+      "series": "Fall Into…",
+      "status": "todo",
+      "source": "CHANNEL-SETUP.md #2"
+    },
+    {
+      "id": "moon-twice-as-close",
+      "title": "What If the Moon Was Twice as Close?",
+      "series": "Planet Breakers",
+      "status": "drafted",
+      "source": "CHANNEL-SETUP.md #3",
+      "video_id": "moon-twice-as-close",
+      "produced": "2026-11-09",
+      "note": "Playbook validation run (local): research..factcheck PASS, stills checked, 540p render only. Not uploaded. To publish: run the deterministic stages (voice, full render, metadata, shorts) and upload, or reset to 'todo'."
+    },
+    {
+      "id": "survive-every-planet",
+      "title": "How Long Could You Survive on Every Planet?",
+      "series": "Human Limits",
+      "status": "todo",
+      "source": "CHANNEL-SETUP.md #4"
+    },
+    {
+      "id": "neutron-star-teaspoon",
+      "title": "What If a Teaspoon of Neutron Star Landed in Your City?",
+      "series": "Scale Shock",
+      "status": "todo",
+      "source": "CHANNEL-SETUP.md #5"
+    },
+    {
+      "id": "sun-vanished",
+      "title": "What If the Sun Vanished Right Now? (Minute by Minute)",
+      "series": "Planet Breakers",
+      "status": "todo",
+      "source": "CHANNEL-SETUP.md #6"
+    },
+    {
+      "id": "fall-into-black-hole",
+      "title": "What If You Fell Into a Black Hole? Two Endings",
+      "series": "Fall Into…",
+      "status": "todo",
+      "source": "CHANNEL-SETUP.md #7"
+    },
+    {
+      "id": "earth-had-rings",
+      "title": "What If Earth Had Rings Like Saturn?",
+      "series": "Planet Breakers",
+      "status": "todo",
+      "source": "CHANNEL-SETUP.md #8"
+    },
+    {
+      "id": "hole-through-earth",
+      "title": "What If You Dug a Hole Through the Earth and Jumped?",
+      "series": "Human Limits",
+      "status": "todo",
+      "source": "CHANNEL-SETUP.md #9"
+    },
+    {
+      "id": "all-humans-jump",
+      "title": "What If All Humans Jumped at Once? (The Real Math)",
+      "series": "Scale Shock",
+      "status": "todo",
+      "source": "CHANNEL-SETUP.md #10"
+    },
+    {
+      "id": "oxygen-gone-5s",
+      "title": "What If Oxygen Disappeared for 5 Seconds?",
+      "series": "Planet Breakers",
+      "status": "todo",
+      "source": "CHANNEL-SETUP.md #11"
+    },
+    {
+      "id": "stand-on-sun",
+      "title": "What If You Could Stand on the Sun for One Second?",
+      "series": "Human Limits",
+      "status": "todo",
+      "source": "CHANNEL-SETUP.md #12"
+    },
+    {
+      "id": "earth-spun-faster",
+      "title": "What If Earth Spun Twice as Fast?",
+      "series": "Planet Breakers",
+      "status": "todo",
+      "source": "evergreen backlog"
+    },
+    {
+      "id": "fall-into-venus",
+      "title": "What If You Fell Into Venus?",
+      "series": "Fall Into…",
+      "status": "todo",
+      "source": "evergreen backlog"
+    },
+    {
+      "id": "no-moon",
+      "title": "What If the Moon Disappeared?",
+      "series": "Planet Breakers",
+      "status": "todo",
+      "source": "evergreen backlog"
+    },
+    {
+      "id": "mars-without-suit",
+      "title": "What If You Stood on Mars Without a Spacesuit?",
+      "series": "Human Limits",
+      "status": "todo",
+      "source": "evergreen backlog"
+    },
+    {
+      "id": "light-speed-baseball",
+      "title": "What If You Threw a Baseball at 90% the Speed of Light?",
+      "series": "Scale Shock",
+      "status": "todo",
+      "source": "evergreen backlog"
+    },
+    {
+      "id": "earth-size-of-jupiter",
+      "title": "What If Earth Were as Big as Jupiter?",
+      "series": "Planet Breakers",
+      "status": "todo",
+      "source": "evergreen backlog"
+    },
+    {
+      "id": "asteroid-ocean-impact",
+      "title": "What If a 1 km Asteroid Hit the Ocean?",
+      "series": "Planet Breakers",
+      "status": "todo",
+      "source": "evergreen backlog"
+    },
+    {
+      "id": "ice-melted",
+      "title": "What If All the Ice on Earth Melted?",
+      "series": "Planet Breakers",
+      "status": "todo",
+      "source": "evergreen backlog"
+    },
+    {
+      "id": "drop-penny-space",
+      "title": "What If You Dropped a Penny From Space?",
+      "series": "Scale Shock",
+      "status": "todo",
+      "source": "evergreen backlog"
+    },
+    {
+      "id": "fall-into-sun",
+      "title": "What If You Fell Into the Sun?",
+      "series": "Fall Into…",
+      "status": "todo",
+      "source": "evergreen backlog"
+    }
+  ]
+}

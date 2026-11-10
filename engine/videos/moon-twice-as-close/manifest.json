@@ -1,0 +1,117 @@
+{
+  "video_id": "moon-twice-as-close",
+  "stages": {
+    "research": {
+      "status": "done",
+      "updated": "2026-11-09T23:45:03+00:00",
+      "outputs": [
+        "research.md",
+        "research.json"
+      ],
+      "facts": 22,
+      "sources": 13,
+      "urls_reachable": "not probed"
+    },
+    "calc": {
+      "status": "done",
+      "updated": "2026-11-09T23:45:13+00:00",
+      "outputs": [
+        "calc.json"
+      ],
+      "values": 50,
+      "cards": 12,
+      "self_checks": "11/11 passed"
+    },
+    "script": {
+      "status": "done",
+      "updated": "2026-11-09T23:46:31+00:00",
+      "outputs": [
+        "script.json"
+      ],
+      "sections": 10,
+      "beats": 47,
+      "words": 1259,
+      "est_minutes": 8.13,
+      "warnings": []
+    },
+    "factcheck": {
+      "status": "done",
+      "updated": "2026-11-10T00:29:32+00:00",
+      "outputs": [
+        "factcheck.md"
+      ],
+      "numbers_checked": 84,
+      "comparisons": 10,
+      "beats_reviewed": 47,
+      "fixes": 4,
+      "warnings": []
+    },
+    "voice": {
+      "status": "done",
+      "updated": "2026-11-10T00:06:28+00:00",
+      "provider": "kokoro",
+      "voice": "kokoro-v1.0:am_michael@1.12",
+      "duration_s": 507.5,
+      "outputs": [
+        "audio/narration.wav",
+        "timing.json"
+      ],
+      "warnings": [],
+      "note": null
+    },
+    "captions": {
+      "status": "done",
+      "updated": "2026-11-10T00:06:28+00:00",
+      "outputs": [
+        "captions.srt",
+        "captions.json"
+      ],
+      "cues": 140,
+      "note": null
+    },
+    "render": {
+      "status": "done",
+      "updated": "2026-11-10T00:29:16+00:00",
+      "renders": {
+        "low": {
+          "file": "renders/moon-twice-as-close_540p.mp4",
+          "duration_s": 507.54,
+          "resolution": "960x540",
+          "audio": true,
+          "size_mb": 21.2,
+          "problems": []
+        }
+      },
+      "note": null
+    },
+    "thumbnail": {
+      "status": "done",
+      "updated": "2026-11-10T00:05:04+00:00",
+      "outputs": [
+        "thumbnail.png"
+      ],
+      "size": "1280x720",
+      "bytes": 538487,
+      "headline": "MoonTwiceas Close",
+      "number": "8× tides"
+    },
+    "metadata": {
+      "status": "done",
+      "updated": "2026-11-10T00:29:32+00:00",
+      "outputs": [
+        "metadata.json"
+      ],
+      "chapters": 10,
+      "description_chars": 2819,
+      "sources_cited": 13,
+      "shorts": 3
+    },
+    "upload": {
+      "status": "pending"
+    },
+    "shorts": {
+      "status": "pending"
+    }
+  },
+  "updated": "2026-11-10T00:29:32+00:00"
+}

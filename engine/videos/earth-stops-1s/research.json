@@ -1,0 +1,413 @@
+{
+  "facts": {
+    "F01": {
+      "fact": "Earth equatorial radius (WGS84 semi-major axis)",
+      "value": 6378.137,
+      "unit": "km",
+      "sources": [
+        "S1",
+        "S2"
+      ]
+    },
+    "F02": {
+      "fact": "Earth sidereal rotation period",
+      "value": 23.9345,
+      "unit": "h",
+      "sources": [
+        "S1"
+      ]
+    },
+    "F03": {
+      "fact": "WGS84 inverse flattening",
+      "value": 298.257223563,
+      "unit": "-",
+      "sources": [
+        "S2"
+      ]
+    },
+    "F04": {
+      "fact": "Standard gravity g (exact, CODATA)",
+      "value": 9.80665,
+      "unit": "m/s^2",
+      "sources": [
+        "S3"
+      ]
+    },
+    "F05": {
+      "fact": "Sea-level air density, US Standard Atmosphere 1976",
+      "value": 1.225,
+      "unit": "kg/m^3",
+      "sources": [
+        "S4"
+      ]
+    },
+    "F06": {
+      "fact": "Sea-level temperature, US Standard Atmosphere 1976",
+      "value": 288.15,
+      "unit": "K",
+      "sources": [
+        "S4"
+      ]
+    },
+    "F07": {
+      "fact": "Sea-level pressure (standard atmosphere)",
+      "value": 101325.0,
+      "unit": "Pa",
+      "sources": [
+        "S4"
+      ]
+    },
+    "F08": {
+      "fact": "Ratio of specific heats for air (gamma)",
+      "value": 1.4,
+      "unit": "-",
+      "sources": [
+        "S5"
+      ]
+    },
+    "F09": {
+      "fact": "Specific gas constant for dry air",
+      "value": 287.05,
+      "unit": "J/(kg K)",
+      "sources": [
+        "S5"
+      ]
+    },
+    "F10": {
+      "fact": "Category 5 hurricane threshold (1-min sustained wind)",
+      "value": 157.0,
+      "unit": "mph",
+      "sources": [
+        "S6"
+      ]
+    },
+    "F33": {
+      "fact": "Category 5 threshold as published in km/h",
+      "value": 252.0,
+      "unit": "km/h",
+      "sources": [
+        "S6"
+      ]
+    },
+    "F34": {
+      "fact": "Joukowsky water-hammer relation dp = rho c dv",
+      "value": "qualitative",
+      "unit": "-",
+      "sources": [
+        "S26"
+      ]
+    },
+    "F35": {
+      "fact": "City coordinates (latitudes listed below)",
+      "value": "qualitative",
+      "unit": "-",
+      "sources": [
+        "S25"
+      ]
+    },
+    "F11": {
+      "fact": "Average depth of the world ocean",
+      "value": 3682.0,
+      "unit": "m",
+      "sources": [
+        "S7"
+      ]
+    },
+    "F12": {
+      "fact": "Typical seawater density",
+      "value": 1025.0,
+      "unit": "kg/m^3",
+      "sources": [
+        "S8"
+      ]
+    },
+    "F13": {
+      "fact": "Speed of sound in seawater (typical)",
+      "value": 1500.0,
+      "unit": "m/s",
+      "sources": [
+        "S9"
+      ]
+    },
+    "F14": {
+      "fact": "Challenger Deep depth (Mariana Trench)",
+      "value": 10935.0,
+      "unit": "m",
+      "sources": [
+        "S10"
+      ]
+    },
+    "F15": {
+      "fact": "Tsunamis in the deep ocean can move as fast as a jet plane (500+ mph)",
+      "value": 500.0,
+      "unit": "mph",
+      "sources": [
+        "S11"
+      ]
+    },
+    "F16": {
+      "fact": "Leap seconds inserted into UTC since 1972 (last: 2016-12-31)",
+      "value": 27.0,
+      "unit": "count",
+      "sources": [
+        "S12",
+        "S13"
+      ]
+    },
+    "F17": {
+      "fact": "UTC is kept within 0.9 s of UT1 (Earth-rotation time)",
+      "value": 0.9,
+      "unit": "s",
+      "sources": [
+        "S13"
+      ]
+    },
+    "F18": {
+      "fact": "ISS orbital speed",
+      "value": 17500.0,
+      "unit": "mph",
+      "sources": [
+        "S14"
+      ]
+    },
+    "F19": {
+      "fact": "Energy of 1 kg TNT (conventional definition)",
+      "value": 4.184,
+      "unit": "MJ",
+      "sources": [
+        "S15"
+      ]
+    },
+    "F20": {
+      "fact": "Height of Mount Everest (2020 survey)",
+      "value": 8848.86,
+      "unit": "m",
+      "sources": [
+        "S16"
+      ]
+    },
+    "F21": {
+      "fact": "Mass of Earth's atmosphere",
+      "value": 5.148e+18,
+      "unit": "kg",
+      "sources": [
+        "S17"
+      ]
+    },
+    "F22": {
+      "fact": "World primary energy consumption per year (approx., 2023)",
+      "value": 620.0,
+      "unit": "EJ",
+      "sources": [
+        "S18"
+      ]
+    },
+    "F23": {
+      "fact": "Young's modulus of structural steel",
+      "value": 200.0,
+      "unit": "GPa",
+      "sources": [
+        "S19"
+      ]
+    },
+    "F24": {
+      "fact": "Density of steel",
+      "value": 7850.0,
+      "unit": "kg/m^3",
+      "sources": [
+        "S19"
+      ]
+    },
+    "F25": {
+      "fact": "Minimum yield strength, ASTM A36 structural steel",
+      "value": 250.0,
+      "unit": "MPa",
+      "sources": [
+        "S20"
+      ]
+    },
+    "F26": {
+      "fact": "Static friction coefficient, rubber on dry concrete (typical)",
+      "value": 0.7,
+      "unit": "-",
+      "sources": [
+        "S21"
+      ]
+    },
+    "F27": {
+      "fact": "Olympic pool nominal volume (50 m x 25 m x 2 m)",
+      "value": 2500.0,
+      "unit": "m^3",
+      "sources": [
+        "S22"
+      ]
+    },
+    "F28": {
+      "fact": "Assumed adult body mass (round number, ICRP reference adult male is 73 kg)",
+      "value": 70.0,
+      "unit": "kg",
+      "sources": [
+        "S23"
+      ]
+    },
+    "F29": {
+      "fact": "Assumed height of a standing person's centre of mass",
+      "value": 1.0,
+      "unit": "m",
+      "sources": [
+        "S23"
+      ]
+    },
+    "F30": {
+      "fact": "Jupiter has no solid surface (gas giant)",
+      "value": "qualitative",
+      "unit": "-",
+      "sources": [
+        "S24"
+      ]
+    },
+    "F31": {
+      "fact": "Shear modulus (modulus of rigidity) of structural steel",
+      "value": 79.3,
+      "unit": "GPa",
+      "sources": [
+        "S27"
+      ]
+    },
+    "F32": {
+      "fact": "Typical cruise speed of a jet airliner (approx.)",
+      "value": 900.0,
+      "unit": "km/h",
+      "sources": [
+        "S28"
+      ]
+    }
+  },
+  "sources": {
+    "S1": {
+      "title": "NASA NSSDC, Earth Fact Sheet",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html"
+    },
+    "S2": {
+      "title": "NGA, World Geodetic System 1984 (WGS 84), NGA.STND.0036",
+      "url": "https://earth-info.nga.mil/index.php?dir=wgs84&action=wgs84"
+    },
+    "S3": {
+      "title": "NIST CODATA, standard acceleration of gravity",
+      "url": "https://physics.nist.gov/cgi-bin/cuu/Value?gn"
+    },
+    "S4": {
+      "title": "NOAA/NASA/USAF, U.S. Standard Atmosphere 1976 (NASA-TM-X-74335)",
+      "url": "https://ntrs.nasa.gov/citations/19770009539"
+    },
+    "S5": {
+      "title": "NASA Glenn Research Center, Speed of Sound / Normal Shock (Beginner's Guide to Aeronautics)",
+      "url": "https://www.grc.nasa.gov/www/k-12/airplane/sound.html"
+    },
+    "S6": {
+      "title": "NOAA National Hurricane Center, The Saffir-Simpson Hurricane Wind Scale",
+      "url": "https://www.nhc.noaa.gov/aboutsshws.php"
+    },
+    "S7": {
+      "title": "NOAA Ocean Exploration, How deep is the ocean?",
+      "url": "https://oceanexplorer.noaa.gov/facts/ocean-depth.html"
+    },
+    "S8": {
+      "title": "NOAA National Ocean Service / TEOS-10 (seawater density ~1,020-1,030 kg/m^3)",
+      "url": "https://www.teos-10.org/"
+    },
+    "S9": {
+      "title": "DOSITS (Univ. of Rhode Island), How fast does sound travel?",
+      "url": "https://dosits.org/science/sounds-in-the-sea/how-fast-does-sound-travel/"
+    },
+    "S10": {
+      "title": "NOAA Ocean Exploration, How deep is the Mariana Trench?",
+      "url": "https://oceanexplorer.noaa.gov/facts/mariana-trench.html"
+    },
+    "S11": {
+      "title": "NOAA JetStream, Tsunami propagation",
+      "url": "https://www.noaa.gov/jetstream/tsunamis/tsunami-propagation"
+    },
+    "S12": {
+      "title": "IERS Earth Orientation Center, leap-seconds list (Bulletin C)",
+      "url": "https://hpiers.obspm.fr/iers/bul/bulc/ntp/leap-seconds.list"
+    },
+    "S13": {
+      "title": "NIST Time and Frequency Division, Leap seconds",
+      "url": "https://www.nist.gov/pml/time-and-frequency-division/leap-seconds-faqs"
+    },
+    "S14": {
+      "title": "NASA, International Space Station facts and figures",
+      "url": "https://www.nasa.gov/international-space-station/space-station-facts-and-figures/"
+    },
+    "S15": {
+      "title": "NIST SP 811, Guide for the Use of the International System of Units (TNT equivalent)",
+      "url": "https://www.nist.gov/pml/special-publication-811"
+    },
+    "S16": {
+      "title": "Encyclopaedia Britannica, Mount Everest (8,848.86 m, 2020 China-Nepal survey)",
+      "url": "https://www.britannica.com/place/Mount-Everest"
+    },
+    "S17": {
+      "title": "Trenberth & Smith (2005), The Mass of the Atmosphere, Journal of Climate 18:864",
+      "url": "https://doi.org/10.1175/JCLI-3299.1"
+    },
+    "S18": {
+      "title": "Energy Institute, Statistical Review of World Energy 2024",
+      "url": "https://www.energyinst.org/statistical-review"
+    },
+    "S19": {
+      "title": "Engineering ToolBox, Young's modulus / densities of metals (steel E = 200 GPa, 7,850 kg/m^3)",
+      "url": "https://www.engineeringtoolbox.com/young-modulus-d_417.html"
+    },
+    "S20": {
+      "title": "ASTM A36/A36M, Standard Specification for Carbon Structural Steel",
+      "url": "https://www.astm.org/a0036_a0036m-19.html"
+    },
+    "S21": {
+      "title": "Engineering ToolBox, Friction and friction coefficients",
+      "url": "https://www.engineeringtoolbox.com/friction-coefficients-d_778.html"
+    },
+    "S22": {
+      "title": "World Aquatics (FINA) Facilities Rules, FR 2 (50 m competition pool)",
+      "url": "https://www.worldaquatics.com/rules/competition-regulations"
+    },
+    "S23": {
+      "title": "ICRP Publication 89, Basic anatomical and physiological data (reference adult)",
+      "url": "https://www.icrp.org/publication.asp?id=ICRP%20Publication%2089"
+    },
+    "S24": {
+      "title": "NASA Science, Jupiter facts",
+      "url": "https://science.nasa.gov/jupiter/jupiter-facts/"
+    },
+    "S25": {
+      "title": "GeoNames geographical database",
+      "url": "https://www.geonames.org/"
+    },
+    "S27": {
+      "title": "Engineering ToolBox, Modulus of rigidity (shear modulus) of materials",
+      "url": "https://www.engineeringtoolbox.com/modulus-rigidity-d_946.html"
+    },
+    "S28": {
+      "title": "Boeing, 787 Dreamliner technical characteristics (cruise Mach 0.85)",
+      "url": "https://www.boeing.com/commercial/787"
+    },
+    "S26": {
+      "title": "Ghidaoui et al. (2005), A Review of Water Hammer Theory and Practice, Applied Mechanics Reviews 58(1):49",
+      "url": "https://doi.org/10.1115/1.1828050"
+    }
+  },
+  "cities": {
+    "Quito": -0.18,
+    "Singapore": 1.35,
+    "Mumbai": 19.08,
+    "Cairo": 30.04,
+    "Tehran": 35.69,
+    "New York": 40.71,
+    "London": 51.51,
+    "Reykjavik": 64.15,
+    "North Pole": 90.0
+  },
+  "generated": "2026-11-09T23:37:30+00:00",
+  "url_probe": {}
+}

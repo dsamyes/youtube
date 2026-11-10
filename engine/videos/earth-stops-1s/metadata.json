@@ -1,0 +1,147 @@
+{
+  "video_id": "earth-stops-1s",
+  "generated": "2026-11-10T00:16:16+00:00",
+  "title": "What If Earth Stopped Spinning for 1 Second?",
+  "alt_titles": [
+    "Earth Stops Spinning for ONE Second. Here's the Real Math",
+    "1 Second Without Earth's Spin: Mach 1.37 Winds, Tsunamis & More"
+  ],
+  "description": "Right now Earth's spin carries you at up to 1,670 km/h (465 m/s). What if, for one second, the ground stopped and nothing else did?\n\nWe run the scenario through real physics and show every calculation on screen: the supersonic wind, the shear wave through every building, water hammer on the coasts, ocean-wide tsunamis, the restart, and the one permanent change (Earth ends up exactly one second late).\n\n⏱ Chapters\n0:00 Intro\n0:13 How fast are we spinning?\n1:29 The rules\n1:56 Second zero: you\n3:12 The buildings\n4:01 A supersonic wind\n5:39 The oceans\n7:23 Who's safe?\n7:53 Second one: the restart\n8:27 Earth is one second late\n9:08 What we learned\n\n🧮 The numbers (computed in code, rounded)\n• Equator speed: 2πR ÷ T(sidereal) = 465 m/s ≈ 1,670 km/h\n• Wind if the ground stops: Mach 1.37, ram pressure ≥ 132 kPa (≈ 44× a minimum Cat-5 wind)\n• Your kinetic energy at the equator (70 kg): 7.6 MJ ≈ 1.8 kg TNT ≈ the energy of a 11 km fall\n• Shear wave in steel: τ = ρ c Δv ≈ 12 GPa ≈ 80× shear yield\n• Water hammer: Δp = ρ c Δv ≈ 720 MPa, more than 6× the Challenger Deep pressure\n• Tsunami speed √(g·d) at 3.7 km depth: 684 km/h\n• Rotation lost: 15 arcseconds = 1 leap second\n\n📚 Sources\n[S1] NASA NSSDC, Earth Fact Sheet: https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html\n[S2] NGA, World Geodetic System 1984, NGA.STND.0036: https://earth-info.nga.mil/index.php?dir=wgs84&action=wgs84\n[S3] NIST CODATA, standard acceleration of gravity: https://physics.nist.gov/cgi-bin/cuu/Value?gn\n[S4] NOAA/NASA/USAF, U.S. Standard Atmosphere 1976: https://ntrs.nasa.gov/citations/19770009539\n[S5] NASA Glenn Research Center, Speed of Sound / Normal Shock: https://www.grc.nasa.gov/www/k-12/airplane/sound.html\n[S6] NOAA National Hurricane Center, The Saffir-Simpson Hurricane Wind S...: https://www.nhc.noaa.gov/aboutsshws.php\n[S7] NOAA Ocean Exploration, How deep is the ocean?: https://oceanexplorer.noaa.gov/facts/ocean-depth.html\n[S8] NOAA National Ocean Service / TEOS-10: https://www.teos-10.org/\n[S9] DOSITS, How fast does sound travel?: https://dosits.org/science/sounds-in-the-sea/how-fast-does-sound-travel/\n[S10] NOAA Ocean Exploration, How deep is the Mariana Trench?: https://oceanexplorer.noaa.gov/facts/mariana-trench.html\n[S11] NOAA JetStream, Tsunami propagation: https://www.noaa.gov/jetstream/tsunamis/tsunami-propagation\n[S12] IERS Earth Orientation Center, leap-seconds list: https://hpiers.obspm.fr/iers/bul/bulc/ntp/leap-seconds.list\n[S13] NIST Time and Frequency Division, Leap seconds: https://www.nist.gov/pml/time-and-frequency-division/leap-seconds-faqs\n[S14] NASA, International Space Station facts and figures: https://www.nasa.gov/international-space-station/space-station-facts-and-figures/\n[S15] NIST SP 811, Guide for the Use of the International System of Units: https://www.nist.gov/pml/special-publication-811\n[S16] Encyclopaedia Britannica, Mount Everest: https://www.britannica.com/place/Mount-Everest\n[S17] Trenberth & Smith, The Mass of the Atmosphere, Journal of Climate 1...: https://doi.org/10.1175/JCLI-3299.1\n[S18] Energy Institute, Statistical Review of World Energy 2024: https://www.energyinst.org/statistical-review\n[S19] Engineering ToolBox, Young's modulus / densities of metals: https://www.engineeringtoolbox.com/young-modulus-d_417.html\n[S20] ASTM A36/A36M, Standard Specification for Carbon Structural Steel: https://www.astm.org/a0036_a0036m-19.html\n[S21] Engineering ToolBox, Friction and friction coefficients: https://www.engineeringtoolbox.com/friction-coefficients-d_778.html\n[S22] World Aquatics Facilities Rules, FR 2: https://www.worldaquatics.com/rules/competition-regulations\n[S23] ICRP Publication 89, Basic anatomical and physiological data: https://www.icrp.org/publication.asp?id=ICRP%20Publication%2089\n[S24] NASA Science, Jupiter facts: https://science.nasa.gov/jupiter/jupiter-facts/\n[S25] GeoNames geographical database: https://www.geonames.org/\n[S26] Ghidaoui et al., A Review of Water Hammer Theory and Practice, Appl...: https://doi.org/10.1115/1.1828050\n[S27] Engineering ToolBox, Modulus of rigidity of materials: https://www.engineeringtoolbox.com/modulus-rigidity-d_946.html\n[S28] Boeing, 787 Dreamliner technical characteristics: https://www.boeing.com/commercial/787\n\nAssumptions: the solid Earth stops instantly, holds for exactly 1 s, then resumes. Wave heights are not estimated (they need coastline-resolving simulations).\n\nHow this video was made: animations are generated from code; the narration voice is synthetic (text-to-speech); every number is computed by our calculation script and checked against the sources above.\n\nNext: What If You Fell Into Jupiter?\n\n#science #physics #whatif #space #earth",
+  "tags": [
+    "what if earth stopped spinning",
+    "earth stopped spinning",
+    "earth stops spinning for 1 second",
+    "what if",
+    "physics",
+    "science explained",
+    "earth rotation",
+    "hypothetical scenario",
+    "planet breakers",
+    "the if engine",
+    "supersonic wind",
+    "tsunami",
+    "leap second",
+    "space",
+    "earth science",
+    "thought experiment",
+    "real physics",
+    "science documentary"
+  ],
+  "categoryId": "28",
+  "category": "Science & Technology",
+  "defaultLanguage": "en",
+  "defaultAudioLanguage": "en",
+  "playlist": "Planet Breakers",
+  "shorts_playlist": "Shorts: 60-Second Ifs",
+  "madeForKids": false,
+  "containsSyntheticMedia": false,
+  "containsSyntheticMedia_rationale": "Stylised, clearly animated vector graphics; generic TTS narrator not imitating any real person. AI voice disclosed in description.",
+  "chapters": [
+    {
+      "t": 0.0,
+      "label": "Intro"
+    },
+    {
+      "t": 13.78,
+      "label": "How fast are we spinning?"
+    },
+    {
+      "t": 89.22,
+      "label": "The rules"
+    },
+    {
+      "t": 116.33,
+      "label": "Second zero: you"
+    },
+    {
+      "t": 192.35,
+      "label": "The buildings"
+    },
+    {
+      "t": 241.71,
+      "label": "A supersonic wind"
+    },
+    {
+      "t": 339.37,
+      "label": "The oceans"
+    },
+    {
+      "t": 443.05,
+      "label": "Who's safe?"
+    },
+    {
+      "t": 473.93,
+      "label": "Second one: the restart"
+    },
+    {
+      "t": 507.88,
+      "label": "Earth is one second late"
+    },
+    {
+      "t": 548.49,
+      "label": "What we learned"
+    }
+  ],
+  "license": "youtube",
+  "embeddable": true,
+  "human_review_required": true,
+  "shorts": [
+    {
+      "id": "short1",
+      "file": "shorts/earth-stops-1s_short1.mp4",
+      "title": "Could friction save you if Earth stopped? #Shorts",
+      "description": "Can friction save you?\n\nThe full explanation, with every calculation on screen: {{LONG_URL}}\n\n#science #physics #whatif #space #earth #Shorts",
+      "tags": [
+        "what if earth stopped spinning",
+        "earth stopped spinning",
+        "earth stops spinning for 1 second",
+        "what if",
+        "physics",
+        "science explained",
+        "earth rotation",
+        "hypothetical scenario",
+        "planet breakers",
+        "the if engine",
+        "shorts"
+      ]
+    },
+    {
+      "id": "short2",
+      "file": "shorts/earth-stops-1s_short2.mp4",
+      "title": "Earth stops: a Mach 1.37 wind #Shorts",
+      "description": "The atmosphere isn't bolted to anything.\n\nThe full explanation, with every calculation on screen: {{LONG_URL}}\n\n#science #physics #whatif #space #earth #Shorts",
+      "tags": [
+        "what if earth stopped spinning",
+        "earth stopped spinning",
+        "earth stops spinning for 1 second",
+        "what if",
+        "physics",
+        "science explained",
+        "earth rotation",
+        "hypothetical scenario",
+        "planet breakers",
+        "the if engine",
+        "shorts"
+      ]
+    },
+    {
+      "id": "short3",
+      "file": "shorts/earth-stops-1s_short3.mp4",
+      "title": "Earth stops for 1 second: the strangest side effect #Shorts",
+      "description": "Once the dust settles, there's one strange, permanent change.\n\nThe full explanation, with every calculation on screen: {{LONG_URL}}\n\n#science #physics #whatif #space #earth #Shorts",
+      "tags": [
+        "what if earth stopped spinning",
+        "earth stopped spinning",
+        "earth stops spinning for 1 second",
+        "what if",
+        "physics",
+        "science explained",
+        "earth rotation",
+        "hypothetical scenario",
+        "planet breakers",
+        "the if engine",
+        "shorts"
+      ]
+    }
+  ]
+}

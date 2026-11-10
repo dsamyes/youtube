@@ -1,0 +1,34 @@
+<!doctype html>
+<!-- Derived from /home/user/channel-kit/thumb-template.html (brand thumbnail template).
+     Placeholders: {{HEADLINE}} (may contain <em>), {{NUMBER}}, {{BADGE}}, art: {{P1..3}} {{LAND}} {{WINDS}} {{MOON}}, {{FONTDIR}} -->
+<html><head><meta charset="utf-8"><title>thumb</title><style>
+@font-face{font-family:'Inter Display';font-weight:900;src:url('{{FONTDIR}}/InterDisplay-Black.otf')}
+@font-face{font-family:'Inter';font-weight:900;src:url('{{FONTDIR}}/Inter-Black.otf')}
+@font-face{font-family:'Inter';font-weight:700;src:url('{{FONTDIR}}/Inter-Bold.otf')}
+body{margin:0;width:1280px;height:720px;font-family:'Inter Display','Inter',sans-serif;overflow:hidden;position:relative;
+background:radial-gradient(circle at 70% 45%,#3a1d6e 0%,#11153A 50%,#070920 100%)}
+.img{position:absolute;right:-60px;top:40px;width:720px;height:720px;border-radius:50%;
+background:radial-gradient(circle at 35% 35%,{{P1}},{{P2}} 45%,{{P3}} 75%);box-shadow:0 0 160px #3DE0FF88}
+.moon{position:absolute;left:560px;top:70px;width:150px;height:150px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#F4F6FF,#9A9DB5 60%,#4B4E6B);box-shadow:0 0 60px #F4F6FF55}
+.land{position:absolute;border-radius:46% 54% 40% 60%;background:#3FAF8A;opacity:.95}
+.crack{position:absolute;right:120px;top:120px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,#FFB547 0%,#ff5e3a 40%,transparent 70%);mix-blend-mode:screen}
+.wind{position:absolute;height:10px;border-radius:5px;background:#3DE0FF;box-shadow:0 0 18px #3DE0FF}
+h1{position:absolute;left:56px;top:150px;margin:0;width:660px;color:#fff;font-size:112px;font-weight:900;line-height:.95;letter-spacing:-3px;text-transform:uppercase;text-shadow:0 8px 30px #000a}
+h1 em{font-style:normal;color:#FFB547}
+.num{position:absolute;left:56px;bottom:70px;background:#3DE0FF;color:#070920;font-weight:900;font-size:56px;padding:8px 22px;border-radius:14px}
+.stop{position:absolute;right:250px;top:300px;background:#FF5E5E;color:#fff;font-weight:900;font-size:64px;padding:6px 26px;border-radius:16px;transform:rotate(-8deg);box-shadow:0 10px 40px #000a;letter-spacing:2px}
+.badge{position:absolute;left:40px;top:40px;width:84px;height:84px}
+</style></head><body><div class="img"></div>
+{{LAND}}
+<div class="crack"></div>
+{{WINDS}}{{MOON}}
+<div class="stop">{{BADGE}}</div>
+<svg class="badge" viewBox="0 0 512 512"><circle cx="256" cy="256" r="256" fill="#11153A"/><g fill="#F4F6FF"><rect x="172" y="236" width="48" height="150" rx="12"/><path d="M262 386 V214 C262 170 292 144 334 144 C346 144 357 146 366 150 V194 C358 191 349 190 341 190 C319 190 310 199 310 220 V386 Z"/><rect x="240" y="236" width="112" height="40" rx="10"/></g><circle cx="196" cy="186" r="27" fill="#FFB547"/></svg>
+<h1 id="h">{{HEADLINE}}</h1><div class="num" id="n">{{NUMBER}}</div>
+<script>
+// self-check hook read by thumbnail.py: flags text that overflows its box or collides with the number badge
+const h=document.getElementById('h').getBoundingClientRect(), n=document.getElementById('n').getBoundingClientRect();
+const bad=[]; if(h.bottom>n.top-10) bad.push('headline overlaps number badge'); if(h.right>1280||n.right>1280) bad.push('overflow right');
+document.title = bad.length ? 'FAIL:'+bad.join(',') : 'OK';
+</script>
+</body></html>
