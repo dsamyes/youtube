@@ -125,14 +125,46 @@
     },
     "upload": {
       "status": "done",
-      "updated": "2026-11-09T23:27:04+00:00",
+      "updated": "2026-11-10T00:31:49+00:00",
       "youtube_id": "KDFkzbBbN78",
       "url": "https://youtu.be/KDFkzbBbN78",
       "privacy": "private",
       "publish_at": null,
       "title_variant": 0,
       "thumbnail": true,
-      "warnings": []
+      "warnings": [],
+      "shorts": {
+        "short1": {
+          "youtube_id": "cA9WcEfrrY4",
+          "url": "https://youtu.be/cA9WcEfrrY4",
+          "privacy": "private",
+          "publish_at": null,
+          "title_variant": 0,
+          "playlist_id": "PLb0tGLssYOf4",
+          "playlist": true,
+          "warnings": []
+        },
+        "short2": {
+          "youtube_id": "Dt5QuapLbrY",
+          "url": "https://youtu.be/Dt5QuapLbrY",
+          "privacy": "private",
+          "publish_at": null,
+          "title_variant": 0,
+          "playlist_id": "PLb0tGLssYOf4",
+          "playlist": true,
+          "warnings": []
+        },
+        "short3": {
+          "youtube_id": "r0JsfHT73Jc",
+          "url": "https://youtu.be/r0JsfHT73Jc",
+          "privacy": "private",
+          "publish_at": null,
+          "title_variant": 0,
+          "playlist_id": "PLb0tGLssYOf4",
+          "playlist": true,
+          "warnings": []
+        }
+      }
     },
     "shorts": {
       "status": "done",
@@ -175,5 +207,5 @@
       "source": "renders/earth-stops-1s_1080p.mp4"
     }
   },
-  "updated": "2026-11-10T00:29:32+00:00"
+  "updated": "2026-11-10T00:31:49+00:00"
 }
