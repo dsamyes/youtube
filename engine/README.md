@@ -58,13 +58,21 @@ cd engine
 .venv/bin/python -B pipeline/tts.py <id> --provider silent && .venv/bin/python -B pipeline/captions.py <id>
 .venv/bin/python -B pipeline/render.py <id> --stills                          # contact sheets in videos/<id>/renders/stills
 .venv/bin/python -B pipeline/run_pipeline.py <id> --from voice --render full   # everything; upload is a dry run
+.venv/bin/python -B pipeline/render.py <id> --mode full --chunk 1800           # resumable long render (60 s chunks)
+.venv/bin/python -B pipeline/shorts.py <id> --stills                          # QA frames of the native Shorts
 .venv/bin/python -B pipeline/run_pipeline.py <id> --status
 .venv/bin/python -B pipeline/get_token.py                                     # once, on your machine
 .venv/bin/python -B pipeline/upload.py <id> --publish-at 2026-11-17T15:00:00Z --confirm-reviewed
 .venv/bin/python -B pipeline/upload.py <id> --short 1 --related-id <longVideoId> --publish-at ... --confirm-reviewed
 ```
 
-Videos: `earth-stops-1s` (published privately, youtu.be/KDFkzbBbN78) and `moon-twice-as-close`
-(validation draft from the playbook: passes factcheck, 540p only, not uploaded).
+Videos: `earth-stops-1s` (published privately, youtu.be/KDFkzbBbN78), `moon-twice-as-close`
+(validation draft from the playbook: passes factcheck, 540p only, not uploaded) and `light-speed-nines`
+(the reference for the current quality bar: story-driven second-person escalation, a computed
+relativistic star field, a persistent HUD, native vertical Shorts and a scene thumbnail).
+
+Shorts are NATIVE: each script `shorts[]` entry has its own beats; `shorts.py` voices them and renders
+the composition `IfEngineShort` (1080x1920) with word-by-word captions. `shorts.py <id> --stills`
+renders QA frames. Thumbnails can be a real frame of a scene (`IfEngineThumb`, see PRODUCER.md).
 
 Fonts: Inter / Inter Display (SIL Open Font License 1.1, rsms.me/inter) in `remotion/public/fonts`.

@@ -1,0 +1,3066 @@
+{
+  "generated": "2026-11-10T22:01:28+00:00",
+  "video_id": "light-speed-nines",
+  "values": {
+    "c_kms": {
+      "value": 299792.458,
+      "unit": "km/s",
+      "display": "299,792",
+      "derivation": "c in km/s",
+      "facts": [
+        "F01"
+      ]
+    },
+    "ship_mass_t": {
+      "value": 419.725,
+      "unit": "t",
+      "display": "420",
+      "derivation": "ISS mass",
+      "facts": [
+        "F10"
+      ]
+    },
+    "density": {
+      "value": 1.0,
+      "unit": "atoms/cm^3",
+      "display": "1",
+      "derivation": "typical interstellar density",
+      "facts": [
+        "F08"
+      ]
+    },
+    "world_ej": {
+      "value": 592.0,
+      "unit": "EJ/yr",
+      "display": "592",
+      "derivation": "world primary energy 2024",
+      "facts": [
+        "F09"
+      ]
+    },
+    "d_ac": {
+      "value": 4.37,
+      "unit": "ly",
+      "display": "4.37",
+      "derivation": "distance Alpha Centauri",
+      "facts": [
+        "F05"
+      ]
+    },
+    "d_gc": {
+      "value": 26000.0,
+      "unit": "ly",
+      "display": "26,000",
+      "derivation": "distance galactic center",
+      "facts": [
+        "F06"
+      ]
+    },
+    "d_m31_mly": {
+      "value": 2.5,
+      "unit": "Mly",
+      "display": "2.5",
+      "derivation": "distance Andromeda",
+      "facts": [
+        "F07"
+      ]
+    },
+    "cmb_t": {
+      "value": 2.725,
+      "unit": "K",
+      "display": "2.725",
+      "derivation": "CMB temperature",
+      "facts": [
+        "F20"
+      ]
+    },
+    "sun_t": {
+      "value": 5772.0,
+      "unit": "K",
+      "display": "5,772",
+      "derivation": "Sun effective temperature",
+      "facts": [
+        "F21"
+      ]
+    },
+    "moon_deg": {
+      "value": 0.5266666666666666,
+      "unit": "deg",
+      "display": "0.53",
+      "derivation": "Moon apparent diameter",
+      "facts": [
+        "F23"
+      ]
+    },
+    "psp_pct": {
+      "value": 0.06412009204047422,
+      "unit": "%",
+      "display": "0.064",
+      "derivation": "Parker probe speed / c",
+      "facts": [
+        "F28",
+        "F33",
+        "F01"
+      ]
+    },
+    "psp_kms": {
+      "value": 192.2272,
+      "unit": "km/s",
+      "display": "192",
+      "derivation": "430,000 mph in km/s",
+      "facts": [
+        "F28",
+        "F33"
+      ]
+    },
+    "pct_10": {
+      "value": 10.0,
+      "unit": "%",
+      "display": "10",
+      "derivation": "scenario speed",
+      "facts": []
+    },
+    "g_10": {
+      "value": 1.005037815259212,
+      "unit": "-",
+      "display": "1.005",
+      "derivation": "gamma = 1/sqrt(1-b^2)",
+      "facts": [
+        "F01"
+      ]
+    },
+    "kms_10": {
+      "value": 29979.2458,
+      "unit": "km/s",
+      "display": "30,000",
+      "derivation": "beta * c",
+      "facts": [
+        "F01"
+      ]
+    },
+    "xdays_10": {
+      "value": 1.8400620234272185,
+      "unit": "days",
+      "display": "1.8",
+      "derivation": "(gamma-1) * 365.25 d per ship year",
+      "facts": [
+        "F02"
+      ]
+    },
+    "ey_10": {
+      "value": 1.005037815259212,
+      "unit": "yr",
+      "display": "1.005",
+      "derivation": "Earth years per ship year = gamma",
+      "facts": []
+    },
+    "side_10": {
+      "value": 84.26082952273322,
+      "unit": "deg",
+      "display": "84",
+      "derivation": "cos(theta') = beta for theta = 90 deg",
+      "facts": [
+        "F31"
+      ]
+    },
+    "circle_10": {
+      "value": 168.52165904546644,
+      "unit": "deg",
+      "display": "170",
+      "derivation": "half the sky fits in a cone of 2*acos(beta)",
+      "facts": [
+        "F31"
+      ]
+    },
+    "moons_10": {
+      "value": 319.9778336306325,
+      "unit": "moons",
+      "display": "320",
+      "derivation": "circle / Moon diameter",
+      "facts": [
+        "F31",
+        "F23"
+      ]
+    },
+    "dmax_10": {
+      "value": 1.1055415967851334,
+      "unit": "-",
+      "display": "1.11",
+      "derivation": "D ahead = sqrt((1+b)/(1-b))",
+      "facts": [
+        "F31"
+      ]
+    },
+    "tfront_10": {
+      "value": 6381.18609664379,
+      "unit": "K",
+      "display": "6,400",
+      "derivation": "Sun-like star ahead: T*D",
+      "facts": [
+        "F21",
+        "F31"
+      ]
+    },
+    "tback_10": {
+      "value": 5220.970442708554,
+      "unit": "K",
+      "display": "5,200",
+      "derivation": "Sun-like star behind: T/D",
+      "facts": [
+        "F21",
+        "F31"
+      ]
+    },
+    "cmbf_10": {
+      "value": 3.0126008512394886,
+      "unit": "K",
+      "display": "3.01",
+      "derivation": "CMB dead ahead: T*D",
+      "facts": [
+        "F20",
+        "F31"
+      ]
+    },
+    "ep_10": {
+      "value": 4.726841443025246,
+      "unit": "MeV",
+      "display": "4.7",
+      "derivation": "(gamma-1) m_p c^2",
+      "facts": [
+        "F03"
+      ]
+    },
+    "epg_10": {
+      "value": 0.004726841443025246,
+      "unit": "GeV",
+      "display": "0.00473",
+      "derivation": "proton KE in GeV",
+      "facts": [
+        "F03"
+      ]
+    },
+    "heat_10": {
+      "value": 22.703987094711287,
+      "unit": "W/m^2",
+      "display": "23",
+      "derivation": "n v (gamma-1) m_p c^2",
+      "facts": [
+        "F08",
+        "F01",
+        "F03",
+        "F04"
+      ]
+    },
+    "heatkw_10": {
+      "value": 0.022703987094711286,
+      "unit": "kW/m^2",
+      "display": "0.0227",
+      "derivation": "heat flux in kW/m^2",
+      "facts": [
+        "F08",
+        "F01",
+        "F03",
+        "F04"
+      ]
+    },
+    "heatmw_10": {
+      "value": 2.2703987094711286e-05,
+      "unit": "MW/m^2",
+      "display": "0.000023",
+      "derivation": "heat flux in MW/m^2",
+      "facts": [
+        "F08",
+        "F01",
+        "F03",
+        "F04"
+      ]
+    },
+    "suns_10": {
+      "value": 0.01668184209751013,
+      "unit": "x",
+      "display": "0.017",
+      "derivation": "heat / solar constant",
+      "facts": [
+        "F22"
+      ]
+    },
+    "dose_10": {
+      "value": 0.9567983787439964,
+      "unit": "Gy/s",
+      "display": "0.96",
+      "derivation": "lower bound n v S_min",
+      "facts": [
+        "F08",
+        "F01",
+        "F17",
+        "F04"
+      ]
+    },
+    "tlethal_10": {
+      "value": 4.180609090549317,
+      "unit": "s",
+      "display": "4.2",
+      "derivation": "LD50/30 / dose rate",
+      "facts": [
+        "F19",
+        "F17"
+      ]
+    },
+    "ke_10": {
+      "value": 1.9004151378669414e+20,
+      "unit": "J",
+      "display": "1.90e+20",
+      "derivation": "(gamma-1) M c^2",
+      "facts": [
+        "F10",
+        "F01"
+      ]
+    },
+    "kew_10": {
+      "value": 0.321016070585632,
+      "unit": "yr",
+      "display": "0.32",
+      "derivation": "KE / world energy per year",
+      "facts": [
+        "F10",
+        "F01",
+        "F09"
+      ]
+    },
+    "kemo_10": {
+      "value": 3.8521928470275837,
+      "unit": "months",
+      "display": "3.9",
+      "derivation": "KE / world energy, in months",
+      "facts": [
+        "F10",
+        "F01",
+        "F09"
+      ]
+    },
+    "te_ac_10": {
+      "value": 43.699999999999996,
+      "unit": "yr",
+      "display": "43.7",
+      "derivation": "Earth time = d/v to ac",
+      "facts": [
+        "F05"
+      ]
+    },
+    "ts_ac_10": {
+      "value": 43.48095100155928,
+      "unit": "yr",
+      "display": "43.5",
+      "derivation": "ship time = d/(gamma v) to ac",
+      "facts": [
+        "F05"
+      ]
+    },
+    "tsd_ac_10": {
+      "value": 15881.417353319528,
+      "unit": "days",
+      "display": "15,900",
+      "derivation": "ship time in days",
+      "facts": [
+        "F05",
+        "F02"
+      ]
+    },
+    "tsm_ac_10": {
+      "value": 521.7714120187114,
+      "unit": "months",
+      "display": "520",
+      "derivation": "ship time in months",
+      "facts": [
+        "F05"
+      ]
+    },
+    "te_gc_10": {
+      "value": 260000.0,
+      "unit": "yr",
+      "display": "260,000",
+      "derivation": "Earth time = d/v to gc",
+      "facts": [
+        "F06"
+      ]
+    },
+    "ts_gc_10": {
+      "value": 258696.73364772118,
+      "unit": "yr",
+      "display": "259,000",
+      "derivation": "ship time = d/(gamma v) to gc",
+      "facts": [
+        "F06"
+      ]
+    },
+    "tsd_gc_10": {
+      "value": 94488981.96483016,
+      "unit": "days",
+      "display": "94,500,000",
+      "derivation": "ship time in days",
+      "facts": [
+        "F05",
+        "F02"
+      ]
+    },
+    "tsm_gc_10": {
+      "value": 3104360.8037726544,
+      "unit": "months",
+      "display": "3,100,000",
+      "derivation": "ship time in months",
+      "facts": [
+        "F05"
+      ]
+    },
+    "te_m31_10": {
+      "value": 25000000.0,
+      "unit": "yr",
+      "display": "25,000,000",
+      "derivation": "Earth time = d/v to m31",
+      "facts": [
+        "F07"
+      ]
+    },
+    "ts_m31_10": {
+      "value": 24874685.927665498,
+      "unit": "yr",
+      "display": "24,900,000",
+      "derivation": "ship time = d/(gamma v) to m31",
+      "facts": [
+        "F07"
+      ]
+    },
+    "tsd_m31_10": {
+      "value": 9085479035.079823,
+      "unit": "days",
+      "display": "9,090,000,000",
+      "derivation": "ship time in days",
+      "facts": [
+        "F05",
+        "F02"
+      ]
+    },
+    "tsm_m31_10": {
+      "value": 298496231.13198596,
+      "unit": "months",
+      "display": "300,000,000",
+      "derivation": "ship time in months",
+      "facts": [
+        "F05"
+      ]
+    },
+    "pct_50": {
+      "value": 50.0,
+      "unit": "%",
+      "display": "50",
+      "derivation": "scenario speed",
+      "facts": []
+    },
+    "g_50": {
+      "value": 1.1547005383792517,
+      "unit": "-",
+      "display": "1.15",
+      "derivation": "gamma = 1/sqrt(1-b^2)",
+      "facts": [
+        "F01"
+      ]
+    },
+    "kms_50": {
+      "value": 149896.229,
+      "unit": "km/s",
+      "display": "150,000",
+      "derivation": "beta * c",
+      "facts": [
+        "F01"
+      ]
+    },
+    "xdays_50": {
+      "value": 56.50437164302168,
+      "unit": "days",
+      "display": "57",
+      "derivation": "(gamma-1) * 365.25 d per ship year",
+      "facts": [
+        "F02"
+      ]
+    },
+    "ey_50": {
+      "value": 1.1547005383792517,
+      "unit": "yr",
+      "display": "1.15",
+      "derivation": "Earth years per ship year = gamma",
+      "facts": []
+    },
+    "side_50": {
+      "value": 60.00000000000001,
+      "unit": "deg",
+      "display": "60",
+      "derivation": "cos(theta') = beta for theta = 90 deg",
+      "facts": [
+        "F31"
+      ]
+    },
+    "circle_50": {
+      "value": 120.00000000000001,
+      "unit": "deg",
+      "display": "120",
+      "derivation": "half the sky fits in a cone of 2*acos(beta)",
+      "facts": [
+        "F31"
+      ]
+    },
+    "moons_50": {
+      "value": 227.84810126582283,
+      "unit": "moons",
+      "display": "230",
+      "derivation": "circle / Moon diameter",
+      "facts": [
+        "F31",
+        "F23"
+      ]
+    },
+    "dmax_50": {
+      "value": 1.7320508075688772,
+      "unit": "-",
+      "display": "1.73",
+      "derivation": "D ahead = sqrt((1+b)/(1-b))",
+      "facts": [
+        "F31"
+      ]
+    },
+    "tfront_50": {
+      "value": 9997.397261287559,
+      "unit": "K",
+      "display": "10,000",
+      "derivation": "Sun-like star ahead: T*D",
+      "facts": [
+        "F21",
+        "F31"
+      ]
+    },
+    "tback_50": {
+      "value": 3332.4657537625203,
+      "unit": "K",
+      "display": "3,300",
+      "derivation": "Sun-like star behind: T/D",
+      "facts": [
+        "F21",
+        "F31"
+      ]
+    },
+    "cmbf_50": {
+      "value": 4.719838450625191,
+      "unit": "K",
+      "display": "4.72",
+      "derivation": "CMB dead ahead: T*D",
+      "facts": [
+        "F20",
+        "F31"
+      ]
+    },
+    "ep_50": {
+      "value": 145.1511971845767,
+      "unit": "MeV",
+      "display": "145",
+      "derivation": "(gamma-1) m_p c^2",
+      "facts": [
+        "F03"
+      ]
+    },
+    "epg_50": {
+      "value": 0.1451511971845767,
+      "unit": "GeV",
+      "display": "0.145",
+      "derivation": "proton KE in GeV",
+      "facts": [
+        "F03"
+      ]
+    },
+    "heat_50": {
+      "value": 3485.9545717608717,
+      "unit": "W/m^2",
+      "display": "3,500",
+      "derivation": "n v (gamma-1) m_p c^2",
+      "facts": [
+        "F08",
+        "F01",
+        "F03",
+        "F04"
+      ]
+    },
+    "heatkw_50": {
+      "value": 3.4859545717608715,
+      "unit": "kW/m^2",
+      "display": "3.49",
+      "derivation": "heat flux in kW/m^2",
+      "facts": [
+        "F08",
+        "F01",
+        "F03",
+        "F04"
+      ]
+    },
+    "heatmw_50": {
+      "value": 0.0034859545717608716,
+      "unit": "MW/m^2",
+      "display": "0.0035",
+      "derivation": "heat flux in MW/m^2",
+      "facts": [
+        "F08",
+        "F01",
+        "F03",
+        "F04"
+      ]
+    },
+    "suns_50": {
+      "value": 2.5613185685237854,
+      "unit": "x",
+      "display": "2.6",
+      "derivation": "heat / solar constant",
+      "facts": [
+        "F22"
+      ]
+    },
+    "dose_50": {
+      "value": 4.783991893719982,
+      "unit": "Gy/s",
+      "display": "4.8",
+      "derivation": "lower bound n v S_min",
+      "facts": [
+        "F08",
+        "F01",
+        "F17",
+        "F04"
+      ]
+    },
+    "tlethal_50": {
+      "value": 0.8361218181098635,
+      "unit": "s",
+      "display": "0.84",
+      "derivation": "LD50/30 / dose rate",
+      "facts": [
+        "F19",
+        "F17"
+      ]
+    },
+    "ke_50": {
+      "value": 5.835768678386905e+21,
+      "unit": "J",
+      "display": "5.84e+21",
+      "derivation": "(gamma-1) M c^2",
+      "facts": [
+        "F10",
+        "F01"
+      ]
+    },
+    "kew_50": {
+      "value": 9.857717362140043,
+      "unit": "yr",
+      "display": "9.9",
+      "derivation": "KE / world energy per year",
+      "facts": [
+        "F10",
+        "F01",
+        "F09"
+      ]
+    },
+    "kemo_50": {
+      "value": 118.29260834568052,
+      "unit": "months",
+      "display": "120",
+      "derivation": "KE / world energy, in months",
+      "facts": [
+        "F10",
+        "F01",
+        "F09"
+      ]
+    },
+    "te_ac_50": {
+      "value": 8.74,
+      "unit": "yr",
+      "display": "8.74",
+      "derivation": "Earth time = d/v to ac",
+      "facts": [
+        "F05"
+      ]
+    },
+    "ts_ac_50": {
+      "value": 7.569062029075993,
+      "unit": "yr",
+      "display": "7.57",
+      "derivation": "ship time = d/(gamma v) to ac",
+      "facts": [
+        "F05"
+      ]
+    },
+    "tsd_ac_50": {
+      "value": 2764.5999061200064,
+      "unit": "days",
+      "display": "2,760",
+      "derivation": "ship time in days",
+      "facts": [
+        "F05",
+        "F02"
+      ]
+    },
+    "tsm_ac_50": {
+      "value": 90.82874434891191,
+      "unit": "months",
+      "display": "91",
+      "derivation": "ship time in months",
+      "facts": [
+        "F05"
+      ]
+    },
+    "te_gc_50": {
+      "value": 52000.0,
+      "unit": "yr",
+      "display": "52,000",
+      "derivation": "Earth time = d/v to gc",
+      "facts": [
+        "F06"
+      ]
+    },
+    "ts_gc_50": {
+      "value": 45033.320996790804,
+      "unit": "yr",
+      "display": "45,000",
+      "derivation": "ship time = d/(gamma v) to gc",
+      "facts": [
+        "F06"
+      ]
+    },
+    "tsd_gc_50": {
+      "value": 16448420.49407784,
+      "unit": "days",
+      "display": "16,400,000",
+      "derivation": "ship time in days",
+      "facts": [
+        "F05",
+        "F02"
+      ]
+    },
+    "tsm_gc_50": {
+      "value": 540399.8519614897,
+      "unit": "months",
+      "display": "540,000",
+      "derivation": "ship time in months",
+      "facts": [
+        "F05"
+      ]
+    },
+    "te_m31_50": {
+      "value": 5000000.0,
+      "unit": "yr",
+      "display": "5,000,000",
+      "derivation": "Earth time = d/v to m31",
+      "facts": [
+        "F07"
+      ]
+    },
+    "ts_m31_50": {
+      "value": 4330127.018922193,
+      "unit": "yr",
+      "display": "4,330,000",
+      "derivation": "ship time = d/(gamma v) to m31",
+      "facts": [
+        "F07"
+      ]
+    },
+    "tsd_m31_50": {
+      "value": 1581578893.661331,
+      "unit": "days",
+      "display": "1,580,000,000",
+      "derivation": "ship time in days",
+      "facts": [
+        "F05",
+        "F02"
+      ]
+    },
+    "tsm_m31_50": {
+      "value": 51961524.227066316,
+      "unit": "months",
+      "display": "52,000,000",
+      "derivation": "ship time in months",
+      "facts": [
+        "F05"
+      ]
+    },
+    "pct_90": {
+      "value": 90.0,
+      "unit": "%",
+      "display": "90",
+      "derivation": "scenario speed",
+      "facts": []
+    },
+    "g_90": {
+      "value": 2.294157338705618,
+      "unit": "-",
+      "display": "2.29",
+      "derivation": "gamma = 1/sqrt(1-b^2)",
+      "facts": [
+        "F01"
+      ]
+    },
+    "kms_90": {
+      "value": 269813.2122,
+      "unit": "km/s",
+      "display": "270,000",
+      "derivation": "beta * c",
+      "facts": [
+        "F01"
+      ]
+    },
+    "xdays_90": {
+      "value": 472.690967962227,
+      "unit": "days",
+      "display": "470",
+      "derivation": "(gamma-1) * 365.25 d per ship year",
+      "facts": [
+        "F02"
+      ]
+    },
+    "ey_90": {
+      "value": 2.294157338705618,
+      "unit": "yr",
+      "display": "2.29",
+      "derivation": "Earth years per ship year = gamma",
+      "facts": []
+    },
+    "side_90": {
+      "value": 25.841932763167126,
+      "unit": "deg",
+      "display": "26",
+      "derivation": "cos(theta') = beta for theta = 90 deg",
+      "facts": [
+        "F31"
+      ]
+    },
+    "circle_90": {
+      "value": 51.68386552633425,
+      "unit": "deg",
+      "display": "52",
+      "derivation": "half the sky fits in a cone of 2*acos(beta)",
+      "facts": [
+        "F31"
+      ]
+    },
+    "moons_90": {
+      "value": 98.13392188544479,
+      "unit": "moons",
+      "display": "98",
+      "derivation": "circle / Moon diameter",
+      "facts": [
+        "F31",
+        "F23"
+      ]
+    },
+    "dmax_90": {
+      "value": 4.358898943540674,
+      "unit": "-",
+      "display": "4.36",
+      "derivation": "D ahead = sqrt((1+b)/(1-b))",
+      "facts": [
+        "F31"
+      ]
+    },
+    "tfront_90": {
+      "value": 25159.56470211677,
+      "unit": "K",
+      "display": "25,000",
+      "derivation": "Sun-like star ahead: T*D",
+      "facts": [
+        "F21",
+        "F31"
+      ]
+    },
+    "tback_90": {
+      "value": 1324.1876159008823,
+      "unit": "K",
+      "display": "1,300",
+      "derivation": "Sun-like star behind: T/D",
+      "facts": [
+        "F21",
+        "F31"
+      ]
+    },
+    "cmbf_90": {
+      "value": 11.877999621148337,
+      "unit": "K",
+      "display": "11.9",
+      "derivation": "CMB dead ahead: T*D",
+      "facts": [
+        "F20",
+        "F31"
+      ]
+    },
+    "ep_90": {
+      "value": 1214.2717085949084,
+      "unit": "MeV",
+      "display": "1,210",
+      "derivation": "(gamma-1) m_p c^2",
+      "facts": [
+        "F03"
+      ]
+    },
+    "epg_90": {
+      "value": 1.2142717085949084,
+      "unit": "GeV",
+      "display": "1.21",
+      "derivation": "proton KE in GeV",
+      "facts": [
+        "F03"
+      ]
+    },
+    "heat_90": {
+      "value": 52491.560337574294,
+      "unit": "W/m^2",
+      "display": "52,000",
+      "derivation": "n v (gamma-1) m_p c^2",
+      "facts": [
+        "F08",
+        "F01",
+        "F03",
+        "F04"
+      ]
+    },
+    "heatkw_90": {
+      "value": 52.49156033757429,
+      "unit": "kW/m^2",
+      "display": "52.5",
+      "derivation": "heat flux in kW/m^2",
+      "facts": [
+        "F08",
+        "F01",
+        "F03",
+        "F04"
+      ]
+    },
+    "heatmw_90": {
+      "value": 0.052491560337574295,
+      "unit": "MW/m^2",
+      "display": "0.052",
+      "derivation": "heat flux in MW/m^2",
+      "facts": [
+        "F08",
+        "F01",
+        "F03",
+        "F04"
+      ]
+    },
+    "suns_90": {
+      "value": 38.56837644200903,
+      "unit": "x",
+      "display": "39",
+      "derivation": "heat / solar constant",
+      "facts": [
+        "F22"
+      ]
+    },
+    "dose_90": {
+      "value": 8.611185408695968,
+      "unit": "Gy/s",
+      "display": "8.6",
+      "derivation": "lower bound n v S_min",
+      "facts": [
+        "F08",
+        "F01",
+        "F17",
+        "F04"
+      ]
+    },
+    "tlethal_90": {
+      "value": 0.4645121211721463,
+      "unit": "s",
+      "display": "0.46",
+      "derivation": "LD50/30 / dose rate",
+      "facts": [
+        "F19",
+        "F17"
+      ]
+    },
+    "ke_90": {
+      "value": 4.881949953921894e+22,
+      "unit": "J",
+      "display": "4.88e+22",
+      "derivation": "(gamma-1) M c^2",
+      "facts": [
+        "F10",
+        "F01"
+      ]
+    },
+    "kew_90": {
+      "value": 82.46537084327522,
+      "unit": "yr",
+      "display": "82",
+      "derivation": "KE / world energy per year",
+      "facts": [
+        "F10",
+        "F01",
+        "F09"
+      ]
+    },
+    "kemo_90": {
+      "value": 989.5844501193027,
+      "unit": "months",
+      "display": "990",
+      "derivation": "KE / world energy, in months",
+      "facts": [
+        "F10",
+        "F01",
+        "F09"
+      ]
+    },
+    "te_ac_90": {
+      "value": 4.855555555555555,
+      "unit": "yr",
+      "display": "4.86",
+      "derivation": "Earth time = d/v to ac",
+      "facts": [
+        "F05"
+      ]
+    },
+    "ts_ac_90": {
+      "value": 2.1164875981414153,
+      "unit": "yr",
+      "display": "2.12",
+      "derivation": "ship time = d/(gamma v) to ac",
+      "facts": [
+        "F05"
+      ]
+    },
+    "tsd_ac_90": {
+      "value": 773.047095221152,
+      "unit": "days",
+      "display": "773",
+      "derivation": "ship time in days",
+      "facts": [
+        "F05",
+        "F02"
+      ]
+    },
+    "tsm_ac_90": {
+      "value": 25.397851177696985,
+      "unit": "months",
+      "display": "25",
+      "derivation": "ship time in months",
+      "facts": [
+        "F05"
+      ]
+    },
+    "te_gc_90": {
+      "value": 28888.888888888887,
+      "unit": "yr",
+      "display": "28,900",
+      "derivation": "Earth time = d/v to gc",
+      "facts": [
+        "F06"
+      ]
+    },
+    "ts_gc_90": {
+      "value": 12592.374725784166,
+      "unit": "yr",
+      "display": "12,600",
+      "derivation": "ship time = d/(gamma v) to gc",
+      "facts": [
+        "F06"
+      ]
+    },
+    "tsd_gc_90": {
+      "value": 4599364.868592666,
+      "unit": "days",
+      "display": "4,600,000",
+      "derivation": "ship time in days",
+      "facts": [
+        "F05",
+        "F02"
+      ]
+    },
+    "tsm_gc_90": {
+      "value": 151108.49670940998,
+      "unit": "months",
+      "display": "150,000",
+      "derivation": "ship time in months",
+      "facts": [
+        "F05"
+      ]
+    },
+    "te_m31_90": {
+      "value": 2777777.7777777775,
+      "unit": "yr",
+      "display": "2,780,000",
+      "derivation": "Earth time = d/v to m31",
+      "facts": [
+        "F07"
+      ]
+    },
+    "ts_m31_90": {
+      "value": 1210805.2620946313,
+      "unit": "yr",
+      "display": "1,210,000",
+      "derivation": "ship time = d/(gamma v) to m31",
+      "facts": [
+        "F07"
+      ]
+    },
+    "tsd_m31_90": {
+      "value": 442246621.9800641,
+      "unit": "days",
+      "display": "442,000,000",
+      "derivation": "ship time in days",
+      "facts": [
+        "F05",
+        "F02"
+      ]
+    },
+    "tsm_m31_90": {
+      "value": 14529663.145135576,
+      "unit": "months",
+      "display": "15,000,000",
+      "derivation": "ship time in months",
+      "facts": [
+        "F05"
+      ]
+    },
+    "pct_99": {
+      "value": 99.0,
+      "unit": "%",
+      "display": "99",
+      "derivation": "scenario speed",
+      "facts": []
+    },
+    "g_99": {
+      "value": 7.088812050083354,
+      "unit": "-",
+      "display": "7.09",
+      "derivation": "gamma = 1/sqrt(1-b^2)",
+      "facts": [
+        "F01"
+      ]
+    },
+    "kms_99": {
+      "value": 296794.53342,
+      "unit": "km/s",
+      "display": "297,000",
+      "derivation": "beta * c",
+      "facts": [
+        "F01"
+      ]
+    },
+    "xdays_99": {
+      "value": 2223.9386012929453,
+      "unit": "days",
+      "display": "2,200",
+      "derivation": "(gamma-1) * 365.25 d per ship year",
+      "facts": [
+        "F02"
+      ]
+    },
+    "ey_99": {
+      "value": 7.088812050083354,
+      "unit": "yr",
+      "display": "7.09",
+      "derivation": "Earth years per ship year = gamma",
+      "facts": []
+    },
+    "side_99": {
+      "value": 8.109614455994183,
+      "unit": "deg",
+      "display": "8.1",
+      "derivation": "cos(theta') = beta for theta = 90 deg",
+      "facts": [
+        "F31"
+      ]
+    },
+    "circle_99": {
+      "value": 16.219228911988367,
+      "unit": "deg",
+      "display": "16",
+      "derivation": "half the sky fits in a cone of 2*acos(beta)",
+      "facts": [
+        "F31"
+      ]
+    },
+    "moons_99": {
+      "value": 30.796004263269054,
+      "unit": "moons",
+      "display": "31",
+      "derivation": "circle / Moon diameter",
+      "facts": [
+        "F31",
+        "F23"
+      ]
+    },
+    "dmax_99": {
+      "value": 14.106735979665878,
+      "unit": "-",
+      "display": "14.1",
+      "derivation": "D ahead = sqrt((1+b)/(1-b))",
+      "facts": [
+        "F31"
+      ]
+    },
+    "tfront_99": {
+      "value": 81424.08007463145,
+      "unit": "K",
+      "display": "81,000",
+      "derivation": "Sun-like star ahead: T*D",
+      "facts": [
+        "F21",
+        "F31"
+      ]
+    },
+    "tback_99": {
+      "value": 409.1662315308117,
+      "unit": "K",
+      "display": "410",
+      "derivation": "Sun-like star behind: T/D",
+      "facts": [
+        "F21",
+        "F31"
+      ]
+    },
+    "cmbf_99": {
+      "value": 38.44085554458952,
+      "unit": "K",
+      "display": "38.4",
+      "derivation": "CMB dead ahead: T*D",
+      "facts": [
+        "F20",
+        "F31"
+      ]
+    },
+    "ep_99": {
+      "value": 5712.962396645479,
+      "unit": "MeV",
+      "display": "5,710",
+      "derivation": "(gamma-1) m_p c^2",
+      "facts": [
+        "F03"
+      ]
+    },
+    "epg_99": {
+      "value": 5.712962396645479,
+      "unit": "GeV",
+      "display": "5.71",
+      "derivation": "proton KE in GeV",
+      "facts": [
+        "F03"
+      ]
+    },
+    "heat_99": {
+      "value": 271661.2262724123,
+      "unit": "W/m^2",
+      "display": "270,000",
+      "derivation": "n v (gamma-1) m_p c^2",
+      "facts": [
+        "F08",
+        "F01",
+        "F03",
+        "F04"
+      ]
+    },
+    "heatkw_99": {
+      "value": 271.6612262724123,
+      "unit": "kW/m^2",
+      "display": "272",
+      "derivation": "heat flux in kW/m^2",
+      "facts": [
+        "F08",
+        "F01",
+        "F03",
+        "F04"
+      ]
+    },
+    "heatmw_99": {
+      "value": 0.2716612262724123,
+      "unit": "MW/m^2",
+      "display": "0.27",
+      "derivation": "heat flux in MW/m^2",
+      "facts": [
+        "F08",
+        "F01",
+        "F03",
+        "F04"
+      ]
+    },
+    "suns_99": {
+      "value": 199.60413392535804,
+      "unit": "x",
+      "display": "200",
+      "derivation": "heat / solar constant",
+      "facts": [
+        "F22"
+      ]
+    },
+    "dose_99": {
+      "value": 9.472303949565564,
+      "unit": "Gy/s",
+      "display": "9.5",
+      "derivation": "lower bound n v S_min",
+      "facts": [
+        "F08",
+        "F01",
+        "F17",
+        "F04"
+      ]
+    },
+    "tlethal_99": {
+      "value": 0.42228374652013306,
+      "unit": "s",
+      "display": "0.42",
+      "derivation": "LD50/30 / dose rate",
+      "facts": [
+        "F19",
+        "F17"
+      ]
+    },
+    "ke_99": {
+      "value": 2.2968826755697215e+23,
+      "unit": "J",
+      "display": "2.30e+23",
+      "derivation": "(gamma-1) M c^2",
+      "facts": [
+        "F10",
+        "F01"
+      ]
+    },
+    "kew_99": {
+      "value": 387.98693844083135,
+      "unit": "yr",
+      "display": "390",
+      "derivation": "KE / world energy per year",
+      "facts": [
+        "F10",
+        "F01",
+        "F09"
+      ]
+    },
+    "kemo_99": {
+      "value": 4655.843261289976,
+      "unit": "months",
+      "display": "4,700",
+      "derivation": "KE / world energy, in months",
+      "facts": [
+        "F10",
+        "F01",
+        "F09"
+      ]
+    },
+    "te_ac_99": {
+      "value": 4.414141414141414,
+      "unit": "yr",
+      "display": "4.41",
+      "derivation": "Earth time = d/v to ac",
+      "facts": [
+        "F05"
+      ]
+    },
+    "ts_ac_99": {
+      "value": 0.6226912750620198,
+      "unit": "yr",
+      "display": "0.623",
+      "derivation": "ship time = d/(gamma v) to ac",
+      "facts": [
+        "F05"
+      ]
+    },
+    "tsd_ac_99": {
+      "value": 227.43798821640274,
+      "unit": "days",
+      "display": "227",
+      "derivation": "ship time in days",
+      "facts": [
+        "F05",
+        "F02"
+      ]
+    },
+    "tsm_ac_99": {
+      "value": 7.472295300744237,
+      "unit": "months",
+      "display": "7.5",
+      "derivation": "ship time in months",
+      "facts": [
+        "F05"
+      ]
+    },
+    "te_gc_99": {
+      "value": 26262.62626262626,
+      "unit": "yr",
+      "display": "26,300",
+      "derivation": "Earth time = d/v to gc",
+      "facts": [
+        "F06"
+      ]
+    },
+    "ts_gc_99": {
+      "value": 3704.799348195083,
+      "unit": "yr",
+      "display": "3,700",
+      "derivation": "ship time = d/(gamma v) to gc",
+      "facts": [
+        "F06"
+      ]
+    },
+    "tsd_gc_99": {
+      "value": 1353177.961928254,
+      "unit": "days",
+      "display": "1,350,000",
+      "derivation": "ship time in days",
+      "facts": [
+        "F05",
+        "F02"
+      ]
+    },
+    "tsm_gc_99": {
+      "value": 44457.592178340994,
+      "unit": "months",
+      "display": "44,000",
+      "derivation": "ship time in months",
+      "facts": [
+        "F05"
+      ]
+    },
+    "te_m31_99": {
+      "value": 2525252.525252525,
+      "unit": "yr",
+      "display": "2,530,000",
+      "derivation": "Earth time = d/v to m31",
+      "facts": [
+        "F07"
+      ]
+    },
+    "ts_m31_99": {
+      "value": 356230.70655721956,
+      "unit": "yr",
+      "display": "356,000",
+      "derivation": "ship time = d/(gamma v) to m31",
+      "facts": [
+        "F07"
+      ]
+    },
+    "tsd_m31_99": {
+      "value": 130113265.57002445,
+      "unit": "days",
+      "display": "130,000,000",
+      "derivation": "ship time in days",
+      "facts": [
+        "F05",
+        "F02"
+      ]
+    },
+    "tsm_m31_99": {
+      "value": 4274768.478686634,
+      "unit": "months",
+      "display": "4,300,000",
+      "derivation": "ship time in months",
+      "facts": [
+        "F05"
+      ]
+    },
+    "pct_999": {
+      "value": 99.9,
+      "unit": "%",
+      "display": "99.9",
+      "derivation": "scenario speed",
+      "facts": []
+    },
+    "g_999": {
+      "value": 22.36627204212937,
+      "unit": "-",
+      "display": "22.4",
+      "derivation": "gamma = 1/sqrt(1-b^2)",
+      "facts": [
+        "F01"
+      ]
+    },
+    "kms_999": {
+      "value": 299492.665542,
+      "unit": "km/s",
+      "display": "299,000",
+      "derivation": "beta * c",
+      "facts": [
+        "F01"
+      ]
+    },
+    "xdays_999": {
+      "value": 7804.030863387753,
+      "unit": "days",
+      "display": "7,800",
+      "derivation": "(gamma-1) * 365.25 d per ship year",
+      "facts": [
+        "F02"
+      ]
+    },
+    "ey_999": {
+      "value": 22.36627204212937,
+      "unit": "yr",
+      "display": "22.4",
+      "derivation": "Earth years per ship year = gamma",
+      "facts": []
+    },
+    "side_999": {
+      "value": 2.562558733123139,
+      "unit": "deg",
+      "display": "2.6",
+      "derivation": "cos(theta') = beta for theta = 90 deg",
+      "facts": [
+        "F31"
+      ]
+    },
+    "circle_999": {
+      "value": 5.125117466246278,
+      "unit": "deg",
+      "display": "5.1",
+      "derivation": "half the sky fits in a cone of 2*acos(beta)",
+      "facts": [
+        "F31"
+      ]
+    },
+    "moons_999": {
+      "value": 9.731235695404328,
+      "unit": "moons",
+      "display": "9.7",
+      "derivation": "circle / Moon diameter",
+      "facts": [
+        "F31",
+        "F23"
+      ]
+    },
+    "dmax_999": {
+      "value": 44.710177812216294,
+      "unit": "-",
+      "display": "44.7",
+      "derivation": "D ahead = sqrt((1+b)/(1-b))",
+      "facts": [
+        "F31"
+      ]
+    },
+    "tfront_999": {
+      "value": 258067.14633211246,
+      "unit": "K",
+      "display": "260,000",
+      "derivation": "Sun-like star ahead: T*D",
+      "facts": [
+        "F21",
+        "F31"
+      ]
+    },
+    "tback_999": {
+      "value": 129.0981222271699,
+      "unit": "K",
+      "display": "130",
+      "derivation": "Sun-like star behind: T/D",
+      "facts": [
+        "F21",
+        "F31"
+      ]
+    },
+    "cmbf_999": {
+      "value": 121.8352345382894,
+      "unit": "K",
+      "display": "122",
+      "derivation": "CMB dead ahead: T*D",
+      "facts": [
+        "F20",
+        "F31"
+      ]
+    },
+    "ep_999": {
+      "value": 20047.37668516335,
+      "unit": "MeV",
+      "display": "20,000",
+      "derivation": "(gamma-1) m_p c^2",
+      "facts": [
+        "F03"
+      ]
+    },
+    "epg_999": {
+      "value": 20.047376685163353,
+      "unit": "GeV",
+      "display": "20",
+      "derivation": "proton KE in GeV",
+      "facts": [
+        "F03"
+      ]
+    },
+    "heat_999": {
+      "value": 961953.62514679,
+      "unit": "W/m^2",
+      "display": "960,000",
+      "derivation": "n v (gamma-1) m_p c^2",
+      "facts": [
+        "F08",
+        "F01",
+        "F03",
+        "F04"
+      ]
+    },
+    "heatkw_999": {
+      "value": 961.9536251467899,
+      "unit": "kW/m^2",
+      "display": "962",
+      "derivation": "heat flux in kW/m^2",
+      "facts": [
+        "F08",
+        "F01",
+        "F03",
+        "F04"
+      ]
+    },
+    "heatmw_999": {
+      "value": 0.96195362514679,
+      "unit": "MW/m^2",
+      "display": "0.96",
+      "derivation": "heat flux in MW/m^2",
+      "facts": [
+        "F08",
+        "F01",
+        "F03",
+        "F04"
+      ]
+    },
+    "suns_999": {
+      "value": 706.799136772072,
+      "unit": "x",
+      "display": "710",
+      "derivation": "heat / solar constant",
+      "facts": [
+        "F22"
+      ]
+    },
+    "dose_999": {
+      "value": 9.558415803652526,
+      "unit": "Gy/s",
+      "display": "9.6",
+      "derivation": "lower bound n v S_min",
+      "facts": [
+        "F08",
+        "F01",
+        "F17",
+        "F04"
+      ]
+    },
+    "tlethal_999": {
+      "value": 0.418479388443375,
+      "unit": "s",
+      "display": "0.42",
+      "derivation": "LD50/30 / dose rate",
+      "facts": [
+        "F19",
+        "F17"
+      ]
+    },
+    "ke_999": {
+      "value": 8.059999174125405e+23,
+      "unit": "J",
+      "display": "8.06e+23",
+      "derivation": "(gamma-1) M c^2",
+      "facts": [
+        "F10",
+        "F01"
+      ]
+    },
+    "kew_999": {
+      "value": 1361.4863469806428,
+      "unit": "yr",
+      "display": "1,400",
+      "derivation": "KE / world energy per year",
+      "facts": [
+        "F10",
+        "F01",
+        "F09"
+      ]
+    },
+    "kemo_999": {
+      "value": 16337.836163767714,
+      "unit": "months",
+      "display": "16,000",
+      "derivation": "KE / world energy, in months",
+      "facts": [
+        "F10",
+        "F01",
+        "F09"
+      ]
+    },
+    "te_ac_999": {
+      "value": 4.374374374374375,
+      "unit": "yr",
+      "display": "4.37",
+      "derivation": "Earth time = d/v to ac",
+      "facts": [
+        "F05"
+      ]
+    },
+    "ts_ac_999": {
+      "value": 0.1955790560954795,
+      "unit": "yr",
+      "display": "0.196",
+      "derivation": "ship time = d/(gamma v) to ac",
+      "facts": [
+        "F05"
+      ]
+    },
+    "tsd_ac_999": {
+      "value": 71.43525023887388,
+      "unit": "days",
+      "display": "71.4",
+      "derivation": "ship time in days",
+      "facts": [
+        "F05",
+        "F02"
+      ]
+    },
+    "tsm_ac_999": {
+      "value": 2.3469486731457536,
+      "unit": "months",
+      "display": "2.3",
+      "derivation": "ship time in months",
+      "facts": [
+        "F05"
+      ]
+    },
+    "te_gc_999": {
+      "value": 26026.026026026026,
+      "unit": "yr",
+      "display": "26,000",
+      "derivation": "Earth time = d/v to gc",
+      "facts": [
+        "F06"
+      ]
+    },
+    "ts_gc_999": {
+      "value": 1163.6282513689855,
+      "unit": "yr",
+      "display": "1,160",
+      "derivation": "ship time = d/(gamma v) to gc",
+      "facts": [
+        "F06"
+      ]
+    },
+    "tsd_gc_999": {
+      "value": 425015.21881252195,
+      "unit": "days",
+      "display": "425,000",
+      "derivation": "ship time in days",
+      "facts": [
+        "F05",
+        "F02"
+      ]
+    },
+    "tsm_gc_999": {
+      "value": 13963.539016427825,
+      "unit": "months",
+      "display": "14,000",
+      "derivation": "ship time in months",
+      "facts": [
+        "F05"
+      ]
+    },
+    "te_m31_999": {
+      "value": 2502502.5025025024,
+      "unit": "yr",
+      "display": "2,500,000",
+      "derivation": "Earth time = d/v to m31",
+      "facts": [
+        "F07"
+      ]
+    },
+    "ts_m31_999": {
+      "value": 111887.33186240244,
+      "unit": "yr",
+      "display": "112,000",
+      "derivation": "ship time = d/(gamma v) to m31",
+      "facts": [
+        "F07"
+      ]
+    },
+    "tsd_m31_999": {
+      "value": 40866847.96274249,
+      "unit": "days",
+      "display": "40,900,000",
+      "derivation": "ship time in days",
+      "facts": [
+        "F05",
+        "F02"
+      ]
+    },
+    "tsm_m31_999": {
+      "value": 1342647.9823488293,
+      "unit": "months",
+      "display": "1,300,000",
+      "derivation": "ship time in months",
+      "facts": [
+        "F05"
+      ]
+    },
+    "pct_9999": {
+      "value": 99.99,
+      "unit": "%",
+      "display": "99.99",
+      "derivation": "scenario speed",
+      "facts": []
+    },
+    "g_9999": {
+      "value": 70.71244595191452,
+      "unit": "-",
+      "display": "70.7",
+      "derivation": "gamma = 1/sqrt(1-b^2)",
+      "facts": [
+        "F01"
+      ]
+    },
+    "kms_9999": {
+      "value": 299762.4787542,
+      "unit": "km/s",
+      "display": "300,000",
+      "derivation": "beta * c",
+      "facts": [
+        "F01"
+      ]
+    },
+    "xdays_9999": {
+      "value": 25462.470883936778,
+      "unit": "days",
+      "display": "25,000",
+      "derivation": "(gamma-1) * 365.25 d per ship year",
+      "facts": [
+        "F02"
+      ]
+    },
+    "ey_9999": {
+      "value": 70.71244595191452,
+      "unit": "yr",
+      "display": "70.7",
+      "derivation": "Earth years per ship year = gamma",
+      "facts": []
+    },
+    "side_9999": {
+      "value": 0.8102914370656549,
+      "unit": "deg",
+      "display": "0.81",
+      "derivation": "cos(theta') = beta for theta = 90 deg",
+      "facts": [
+        "F31"
+      ]
+    },
+    "circle_9999": {
+      "value": 1.6205828741313097,
+      "unit": "deg",
+      "display": "1.6",
+      "derivation": "half the sky fits in a cone of 2*acos(beta)",
+      "facts": [
+        "F31"
+      ]
+    },
+    "moons_9999": {
+      "value": 3.07705609012274,
+      "unit": "moons",
+      "display": "3.1",
+      "derivation": "circle / Moon diameter",
+      "facts": [
+        "F31",
+        "F23"
+      ]
+    },
+    "dmax_9999": {
+      "value": 141.41782065921606,
+      "unit": "-",
+      "display": "141",
+      "derivation": "D ahead = sqrt((1+b)/(1-b))",
+      "facts": [
+        "F31"
+      ]
+    },
+    "tfront_9999": {
+      "value": 816263.660844995,
+      "unit": "K",
+      "display": "820,000",
+      "derivation": "Sun-like star ahead: T*D",
+      "facts": [
+        "F21",
+        "F31"
+      ]
+    },
+    "tback_9999": {
+      "value": 40.815223803435444,
+      "unit": "K",
+      "display": "41",
+      "derivation": "Sun-like star behind: T/D",
+      "facts": [
+        "F21",
+        "F31"
+      ]
+    },
+    "cmbf_9999": {
+      "value": 385.3635612963638,
+      "unit": "K",
+      "display": "385",
+      "derivation": "CMB dead ahead: T*D",
+      "facts": [
+        "F20",
+        "F31"
+      ]
+    },
+    "ep_9999": {
+      "value": 65409.24223404397,
+      "unit": "MeV",
+      "display": "65,400",
+      "derivation": "(gamma-1) m_p c^2",
+      "facts": [
+        "F03"
+      ]
+    },
+    "epg_9999": {
+      "value": 65.40924223404397,
+      "unit": "GeV",
+      "display": "65.4",
+      "derivation": "proton KE in GeV",
+      "facts": [
+        "F03"
+      ]
+    },
+    "heat_9999": {
+      "value": 3141425.6314615547,
+      "unit": "W/m^2",
+      "display": "3,100,000",
+      "derivation": "n v (gamma-1) m_p c^2",
+      "facts": [
+        "F08",
+        "F01",
+        "F03",
+        "F04"
+      ]
+    },
+    "heatkw_9999": {
+      "value": 3141.4256314615545,
+      "unit": "kW/m^2",
+      "display": "3,140",
+      "derivation": "heat flux in kW/m^2",
+      "facts": [
+        "F08",
+        "F01",
+        "F03",
+        "F04"
+      ]
+    },
+    "heatmw_9999": {
+      "value": 3.1414256314615545,
+      "unit": "MW/m^2",
+      "display": "3.1",
+      "derivation": "heat flux in MW/m^2",
+      "facts": [
+        "F08",
+        "F01",
+        "F03",
+        "F04"
+      ]
+    },
+    "suns_9999": {
+      "value": 2308.1746006330304,
+      "unit": "x",
+      "display": "2,300",
+      "derivation": "heat / solar constant",
+      "facts": [
+        "F22"
+      ]
+    },
+    "dose_9999": {
+      "value": 9.56702698906122,
+      "unit": "Gy/s",
+      "display": "9.6",
+      "derivation": "lower bound n v S_min",
+      "facts": [
+        "F08",
+        "F01",
+        "F17",
+        "F04"
+      ]
+    },
+    "tlethal_9999": {
+      "value": 0.4181027193268644,
+      "unit": "s",
+      "display": "0.42",
+      "derivation": "LD50/30 / dose rate",
+      "facts": [
+        "F19",
+        "F17"
+      ]
+    },
+    "ke_9999": {
+      "value": 2.6297627199110376e+24,
+      "unit": "J",
+      "display": "2.63e+24",
+      "derivation": "(gamma-1) M c^2",
+      "facts": [
+        "F10",
+        "F01"
+      ]
+    },
+    "kew_9999": {
+      "value": 4442.1667566064825,
+      "unit": "yr",
+      "display": "4,400",
+      "derivation": "KE / world energy per year",
+      "facts": [
+        "F10",
+        "F01",
+        "F09"
+      ]
+    },
+    "kemo_9999": {
+      "value": 53306.00107927779,
+      "unit": "months",
+      "display": "53,000",
+      "derivation": "KE / world energy, in months",
+      "facts": [
+        "F10",
+        "F01",
+        "F09"
+      ]
+    },
+    "te_ac_9999": {
+      "value": 4.370437043704371,
+      "unit": "yr",
+      "display": "4.37",
+      "derivation": "Earth time = d/v to ac",
+      "facts": [
+        "F05"
+      ]
+    },
+    "ts_ac_9999": {
+      "value": 0.06180576820488335,
+      "unit": "yr",
+      "display": "0.0618",
+      "derivation": "ship time = d/(gamma v) to ac",
+      "facts": [
+        "F05"
+      ]
+    },
+    "tsd_ac_9999": {
+      "value": 22.574556836833644,
+      "unit": "days",
+      "display": "22.6",
+      "derivation": "ship time in days",
+      "facts": [
+        "F05",
+        "F02"
+      ]
+    },
+    "tsm_ac_9999": {
+      "value": 0.7416692184586002,
+      "unit": "months",
+      "display": "0.74",
+      "derivation": "ship time in months",
+      "facts": [
+        "F05"
+      ]
+    },
+    "te_gc_9999": {
+      "value": 26002.600260026004,
+      "unit": "yr",
+      "display": "26,000",
+      "derivation": "Earth time = d/v to gc",
+      "facts": [
+        "F06"
+      ]
+    },
+    "ts_gc_9999": {
+      "value": 367.7231060244776,
+      "unit": "yr",
+      "display": "368",
+      "derivation": "ship time = d/(gamma v) to gc",
+      "facts": [
+        "F06"
+      ]
+    },
+    "tsd_gc_9999": {
+      "value": 134310.86447544044,
+      "unit": "days",
+      "display": "134,000",
+      "derivation": "ship time in days",
+      "facts": [
+        "F05",
+        "F02"
+      ]
+    },
+    "tsm_gc_9999": {
+      "value": 4412.677272293731,
+      "unit": "months",
+      "display": "4,400",
+      "derivation": "ship time in months",
+      "facts": [
+        "F05"
+      ]
+    },
+    "te_m31_9999": {
+      "value": 2500250.0250025,
+      "unit": "yr",
+      "display": "2,500,000",
+      "derivation": "Earth time = d/v to m31",
+      "facts": [
+        "F07"
+      ]
+    },
+    "ts_m31_9999": {
+      "value": 35357.99096389207,
+      "unit": "yr",
+      "display": "35,400",
+      "derivation": "ship time = d/(gamma v) to m31",
+      "facts": [
+        "F07"
+      ]
+    },
+    "tsd_m31_9999": {
+      "value": 12914506.19956158,
+      "unit": "days",
+      "display": "12,900,000",
+      "derivation": "ship time in days",
+      "facts": [
+        "F05",
+        "F02"
+      ]
+    },
+    "tsm_m31_9999": {
+      "value": 424295.89156670484,
+      "unit": "months",
+      "display": "420,000",
+      "derivation": "ship time in months",
+      "facts": [
+        "F05"
+      ]
+    },
+    "pct_999999": {
+      "value": 99.9999,
+      "unit": "%",
+      "display": "99.9999",
+      "derivation": "scenario speed",
+      "facts": []
+    },
+    "g_999999": {
+      "value": 707.1069579492319,
+      "unit": "-",
+      "display": "707",
+      "derivation": "gamma = 1/sqrt(1-b^2)",
+      "facts": [
+        "F01"
+      ]
+    },
+    "kms_999999": {
+      "value": 299792.15820754203,
+      "unit": "km/s",
+      "display": "300,000",
+      "derivation": "beta * c",
+      "facts": [
+        "F01"
+      ]
+    },
+    "xdays_999999": {
+      "value": 257905.56639095693,
+      "unit": "days",
+      "display": "260,000",
+      "derivation": "(gamma-1) * 365.25 d per ship year",
+      "facts": [
+        "F02"
+      ]
+    },
+    "ey_999999": {
+      "value": 707.1069579492319,
+      "unit": "yr",
+      "display": "707",
+      "derivation": "Earth years per ship year = gamma",
+      "facts": []
+    },
+    "side_999999": {
+      "value": 0.08102847520767846,
+      "unit": "deg",
+      "display": "0.081",
+      "derivation": "cos(theta') = beta for theta = 90 deg",
+      "facts": [
+        "F31"
+      ]
+    },
+    "circle_999999": {
+      "value": 0.16205695041535692,
+      "unit": "deg",
+      "display": "0.16",
+      "derivation": "half the sky fits in a cone of 2*acos(beta)",
+      "facts": [
+        "F31"
+      ]
+    },
+    "moons_999999": {
+      "value": 0.3077030704089056,
+      "unit": "moons",
+      "display": "0.31",
+      "derivation": "circle / Moon diameter",
+      "facts": [
+        "F31",
+        "F23"
+      ]
+    },
+    "dmax_999999": {
+      "value": 1414.2132087993268,
+      "unit": "-",
+      "display": "1,410",
+      "derivation": "D ahead = sqrt((1+b)/(1-b))",
+      "facts": [
+        "F31"
+      ]
+    },
+    "tfront_999999": {
+      "value": 8162838.641189714,
+      "unit": "K",
+      "display": "8,200,000",
+      "derivation": "Sun-like star ahead: T*D",
+      "facts": [
+        "F21",
+        "F31"
+      ]
+    },
+    "tback_999999": {
+      "value": 4.081421361422902,
+      "unit": "K",
+      "display": "4.1",
+      "derivation": "Sun-like star behind: T/D",
+      "facts": [
+        "F21",
+        "F31"
+      ]
+    },
+    "cmbf_999999": {
+      "value": 3853.7309939781658,
+      "unit": "K",
+      "display": "3,850",
+      "derivation": "CMB dead ahead: T*D",
+      "facts": [
+        "F20",
+        "F31"
+      ]
+    },
+    "ep_999999": {
+      "value": 662520.4498993311,
+      "unit": "MeV",
+      "display": "663,000",
+      "derivation": "(gamma-1) m_p c^2",
+      "facts": [
+        "F03"
+      ]
+    },
+    "epg_999999": {
+      "value": 662.5204498993311,
+      "unit": "GeV",
+      "display": "663",
+      "derivation": "proton KE in GeV",
+      "facts": [
+        "F03"
+      ]
+    },
+    "heat_999999": {
+      "value": 31822181.64909291,
+      "unit": "W/m^2",
+      "display": "32,000,000",
+      "derivation": "n v (gamma-1) m_p c^2",
+      "facts": [
+        "F08",
+        "F01",
+        "F03",
+        "F04"
+      ]
+    },
+    "heatkw_999999": {
+      "value": 31822.18164909291,
+      "unit": "kW/m^2",
+      "display": "31,800",
+      "derivation": "heat flux in kW/m^2",
+      "facts": [
+        "F08",
+        "F01",
+        "F03",
+        "F04"
+      ]
+    },
+    "heatmw_999999": {
+      "value": 31.822181649092908,
+      "unit": "MW/m^2",
+      "display": "32",
+      "derivation": "heat flux in MW/m^2",
+      "facts": [
+        "F08",
+        "F01",
+        "F03",
+        "F04"
+      ]
+    },
+    "suns_999999": {
+      "value": 23381.47071939229,
+      "unit": "x",
+      "display": "23,000",
+      "derivation": "heat / solar constant",
+      "facts": [
+        "F22"
+      ]
+    },
+    "dose_999999": {
+      "value": 9.567974219456177,
+      "unit": "Gy/s",
+      "display": "9.6",
+      "derivation": "lower bound n v S_min",
+      "facts": [
+        "F08",
+        "F01",
+        "F17",
+        "F04"
+      ]
+    },
+    "tlethal_999999": {
+      "value": 0.4180613271162588,
+      "unit": "s",
+      "display": "0.42",
+      "derivation": "LD50/30 / dose rate",
+      "facts": [
+        "F19",
+        "F17"
+      ]
+    },
+    "ke_999999": {
+      "value": 2.663647400301387e+25,
+      "unit": "J",
+      "display": "2.66e+25",
+      "derivation": "(gamma-1) M c^2",
+      "facts": [
+        "F10",
+        "F01"
+      ]
+    },
+    "kew_999999": {
+      "value": 44994.043924009915,
+      "unit": "yr",
+      "display": "45,000",
+      "derivation": "KE / world energy per year",
+      "facts": [
+        "F10",
+        "F01",
+        "F09"
+      ]
+    },
+    "kemo_999999": {
+      "value": 539928.527088119,
+      "unit": "months",
+      "display": "540,000",
+      "derivation": "KE / world energy, in months",
+      "facts": [
+        "F10",
+        "F01",
+        "F09"
+      ]
+    },
+    "te_ac_999999": {
+      "value": 4.37000437000437,
+      "unit": "yr",
+      "display": "4.37",
+      "derivation": "Earth time = d/v to ac",
+      "facts": [
+        "F05"
+      ]
+    },
+    "ts_ac_999999": {
+      "value": 0.006180117902782853,
+      "unit": "yr",
+      "display": "0.00618",
+      "derivation": "ship time = d/(gamma v) to ac",
+      "facts": [
+        "F05"
+      ]
+    },
+    "tsd_ac_999999": {
+      "value": 2.257288063991437,
+      "unit": "days",
+      "display": "2.26",
+      "derivation": "ship time in days",
+      "facts": [
+        "F05",
+        "F02"
+      ]
+    },
+    "tsm_ac_999999": {
+      "value": 0.07416141483339424,
+      "unit": "months",
+      "display": "0.074",
+      "derivation": "ship time in months",
+      "facts": [
+        "F05"
+      ]
+    },
+    "te_gc_999999": {
+      "value": 26000.026000026002,
+      "unit": "yr",
+      "display": "26,000",
+      "derivation": "Earth time = d/v to gc",
+      "facts": [
+        "F06"
+      ]
+    },
+    "ts_gc_999999": {
+      "value": 36.769580199623384,
+      "unit": "yr",
+      "display": "36.8",
+      "derivation": "ship time = d/(gamma v) to gc",
+      "facts": [
+        "F06"
+      ]
+    },
+    "tsd_gc_999999": {
+      "value": 13430.089167912442,
+      "unit": "days",
+      "display": "13,400",
+      "derivation": "ship time in days",
+      "facts": [
+        "F05",
+        "F02"
+      ]
+    },
+    "tsm_gc_999999": {
+      "value": 441.2349623954806,
+      "unit": "months",
+      "display": "440",
+      "derivation": "ship time in months",
+      "facts": [
+        "F05"
+      ]
+    },
+    "te_m31_999999": {
+      "value": 2500002.5000025,
+      "unit": "yr",
+      "display": "2,500,000",
+      "derivation": "Earth time = d/v to m31",
+      "facts": [
+        "F07"
+      ]
+    },
+    "ts_m31_999999": {
+      "value": 3535.536557656095,
+      "unit": "yr",
+      "display": "3,540",
+      "derivation": "ship time = d/(gamma v) to m31",
+      "facts": [
+        "F07"
+      ]
+    },
+    "tsd_m31_999999": {
+      "value": 1291354.7276838887,
+      "unit": "days",
+      "display": "1,290,000",
+      "derivation": "ship time in days",
+      "facts": [
+        "F05",
+        "F02"
+      ]
+    },
+    "tsm_m31_999999": {
+      "value": 42426.43869187314,
+      "unit": "months",
+      "display": "42,000",
+      "derivation": "ship time in months",
+      "facts": [
+        "F05"
+      ]
+    },
+    "xdays_10_round": {
+      "value": 2,
+      "unit": "days",
+      "display": "2",
+      "derivation": "1.84 days rounds to about 2",
+      "facts": [
+        "F02"
+      ]
+    },
+    "range5_mm": {
+      "value": 0.36229999999999996,
+      "unit": "mm",
+      "display": "0.36",
+      "derivation": "CSDA range 5 MeV in water",
+      "facts": [
+        "F15"
+      ]
+    },
+    "range5_half_mm": {
+      "value": 0.5,
+      "unit": "mm",
+      "display": "half",
+      "derivation": "upper bound used in words",
+      "facts": [
+        "F15"
+      ]
+    },
+    "range150_cm": {
+      "value": 15.76,
+      "unit": "cm",
+      "display": "16",
+      "derivation": "CSDA range 150 MeV in water",
+      "facts": [
+        "F16"
+      ]
+    },
+    "therapy_lo": {
+      "value": 70.0,
+      "unit": "MeV",
+      "display": "70",
+      "derivation": "therapy beams low",
+      "facts": [
+        "F13"
+      ]
+    },
+    "therapy_hi": {
+      "value": 250.0,
+      "unit": "MeV",
+      "display": "250",
+      "derivation": "therapy beams high",
+      "facts": [
+        "F14"
+      ]
+    },
+    "lambda_int_cm": {
+      "value": 83.3,
+      "unit": "cm",
+      "display": "83.3",
+      "derivation": "nuclear interaction length water",
+      "facts": [
+        "F18"
+      ]
+    },
+    "ld50": {
+      "value": 4.0,
+      "unit": "Sv",
+      "display": "4",
+      "derivation": "LD50/30 lower end",
+      "facts": [
+        "F19"
+      ]
+    },
+    "psp_ratio_10": {
+      "value": 155.95735567078955,
+      "unit": "x",
+      "display": "156",
+      "derivation": "10% c / Parker speed",
+      "facts": [
+        "F28",
+        "F33",
+        "F01"
+      ]
+    },
+    "rest_mev": {
+      "value": 938.27208816,
+      "unit": "MeV",
+      "display": "938",
+      "derivation": "proton rest energy",
+      "facts": [
+        "F03"
+      ]
+    },
+    "mosq_frac_999999": {
+      "value": 0.6625204498993311,
+      "unit": "-",
+      "display": "0.66",
+      "derivation": "proton KE / 1 TeV",
+      "facts": [
+        "F12",
+        "F03"
+      ]
+    },
+    "lhc_tev": {
+      "value": 6.8,
+      "unit": "TeV",
+      "display": "6.8",
+      "derivation": "LHC proton energy",
+      "facts": [
+        "F11"
+      ]
+    },
+    "lhc_pct": {
+      "value": 99.99999904832221,
+      "unit": "%",
+      "display": "99.999999",
+      "derivation": "LHC beta from gamma (8 nines, truncated)",
+      "facts": [
+        "F11",
+        "F03"
+      ]
+    },
+    "dust_j_999999": {
+      "value": 63461728519.89724,
+      "unit": "J",
+      "display": "6.35e+10",
+      "derivation": "(gamma-1) m c^2, m = 1 microgram",
+      "facts": [
+        "F30",
+        "F01"
+      ]
+    },
+    "dust_t_999999": {
+      "value": 15.167717141466836,
+      "unit": "t TNT",
+      "display": "15",
+      "derivation": "/ 4.184e9 J per tonne",
+      "facts": [
+        "F30",
+        "F29"
+      ]
+    },
+    "dust_t_9999": {
+      "value": 1.4974766209773822,
+      "unit": "t TNT",
+      "display": "1.5",
+      "derivation": "1 ug at 99.99%",
+      "facts": [
+        "F30",
+        "F29"
+      ]
+    },
+    "g1_ts_ac": {
+      "value": 3.582393722747833,
+      "unit": "yr",
+      "display": "3.58",
+      "derivation": "2 (c/a) acosh(1 + a d / 2c^2)",
+      "facts": [
+        "F05",
+        "F24",
+        "F32"
+      ]
+    },
+    "g1_te_ac": {
+      "value": 6.00250277725247,
+      "unit": "yr",
+      "display": "6",
+      "derivation": "2 (c/a) sinh(a tau_half / c)",
+      "facts": [
+        "F05",
+        "F24",
+        "F32"
+      ]
+    },
+    "g1_gmax_ac": {
+      "value": 3.2555651770846086,
+      "unit": "-",
+      "display": "3.26",
+      "derivation": "1 + a d / 2c^2",
+      "facts": [
+        "F05",
+        "F24",
+        "F32"
+      ]
+    },
+    "g1_ts_gc": {
+      "value": 19.757352991415402,
+      "unit": "yr",
+      "display": "19.8",
+      "derivation": "2 (c/a) acosh(1 + a d / 2c^2)",
+      "facts": [
+        "F06",
+        "F24",
+        "F32"
+      ]
+    },
+    "g1_te_gc": {
+      "value": 26001.937357979237,
+      "unit": "yr",
+      "display": "26,000",
+      "derivation": "2 (c/a) sinh(a tau_half / c)",
+      "facts": [
+        "F06",
+        "F24",
+        "F32"
+      ]
+    },
+    "g1_gmax_gc": {
+      "value": 13420.838582196753,
+      "unit": "-",
+      "display": "13,400",
+      "derivation": "1 + a d / 2c^2",
+      "facts": [
+        "F06",
+        "F24",
+        "F32"
+      ]
+    },
+    "g1_ts_m31": {
+      "value": 28.603418344136223,
+      "unit": "yr",
+      "display": "28.6",
+      "derivation": "2 (c/a) acosh(1 + a d / 2c^2)",
+      "facts": [
+        "F07",
+        "F24",
+        "F32"
+      ]
+    },
+    "g1_te_m31": {
+      "value": 2500001.9374294067,
+      "unit": "yr",
+      "display": "2,500,000",
+      "derivation": "2 (c/a) sinh(a tau_half / c)",
+      "facts": [
+        "F07",
+        "F24",
+        "F32"
+      ]
+    },
+    "g1_gmax_m31": {
+      "value": 1290370.0944419957,
+      "unit": "-",
+      "display": "1,290,000",
+      "derivation": "1 + a d / 2c^2",
+      "facts": [
+        "F07",
+        "F24",
+        "F32"
+      ]
+    },
+    "g1_te_m31_my": {
+      "value": 2.5000019374294067,
+      "unit": "Myr",
+      "display": "2.5",
+      "derivation": "Earth time to M31 in million years",
+      "facts": [
+        "F07",
+        "F24",
+        "F32"
+      ]
+    },
+    "rt_ship_m31": {
+      "value": 57.206836688272446,
+      "unit": "yr",
+      "display": "57",
+      "derivation": "round trip ship time",
+      "facts": [
+        "F07",
+        "F24",
+        "F32"
+      ]
+    },
+    "rt_earth_m31_my": {
+      "value": 5.000003874858813,
+      "unit": "Myr",
+      "display": "5",
+      "derivation": "round trip Earth time (million years)",
+      "facts": [
+        "F07",
+        "F24",
+        "F32"
+      ]
+    },
+    "age_leave": {
+      "value": 25,
+      "unit": "yr",
+      "display": "25",
+      "derivation": "scenario: you leave at 25",
+      "facts": []
+    },
+    "age_return": {
+      "value": 82.20683668827245,
+      "unit": "yr",
+      "display": "82",
+      "derivation": "25 + round-trip ship time",
+      "facts": [
+        "F07",
+        "F24",
+        "F32"
+      ]
+    },
+    "m31_nines": {
+      "value": 12.522458574281153,
+      "unit": "nines",
+      "display": "12",
+      "derivation": "number of nines in peak speed",
+      "facts": [
+        "F07",
+        "F24",
+        "F32"
+      ]
+    },
+    "m31_pct": {
+      "value": 99.99999999996997,
+      "unit": "%",
+      "display": "99.99999999997",
+      "derivation": "peak beta at midpoint (1 - 1/(2 gamma^2))",
+      "facts": [
+        "F07",
+        "F24",
+        "F32"
+      ]
+    },
+    "kew_m31_my": {
+      "value": 82.2239790443793,
+      "unit": "Myr",
+      "display": "82",
+      "derivation": "peak KE / world energy, million years",
+      "facts": [
+        "F10",
+        "F09"
+      ]
+    },
+    "homo_my": {
+      "value": 2.8,
+      "unit": "Myr",
+      "display": "2.8",
+      "derivation": "oldest Homo fossil",
+      "facts": [
+        "F25"
+      ]
+    },
+    "t1g_999999": {
+      "value": 7.027377525638038,
+      "unit": "yr",
+      "display": "7",
+      "derivation": "ship time to reach 99.9999% at 1 g: (c/a) atanh(b)",
+      "facts": [
+        "F24",
+        "F32"
+      ]
+    },
+    "c_over_g_yr": {
+      "value": 0.9687150795722889,
+      "unit": "yr",
+      "display": "0.969",
+      "derivation": "c/g in years",
+      "facts": [
+        "F24",
+        "F01"
+      ]
+    },
+    "fade_999": {
+      "value": 0.5820446502055697,
+      "unit": "x",
+      "display": "0.58",
+      "derivation": "D^-2 V(DT)/V(T), visible 400-700 nm",
+      "facts": [
+        "F21",
+        "F31"
+      ]
+    }
+  },
+  "cards": {
+    "lorentz": {
+      "title": "Your clock vs Earth's",
+      "formula": "γ = 1 ÷ √(1 − v²/c²)",
+      "sub": "v = 0.999999 c → γ = 707",
+      "result": "1 ship year = 707 Earth years",
+      "note": "Special relativity, constant cruise speed",
+      "src": "Einstein 1905"
+    },
+    "psp": {
+      "title": "How fast is 10%?",
+      "formula": "v = 0.1 × c",
+      "sub": "0.1 × 299,792 km/s = 30,000 km/s",
+      "result": "≈ 156× Parker Solar Probe",
+      "note": "Parker: 192 km/s, fastest human-made object",
+      "src": "NASA, NIST"
+    },
+    "hits50": {
+      "title": "What one atom carries",
+      "formula": "E = (γ − 1) × mₚc²",
+      "sub": "(1.15 − 1) × 938 MeV",
+      "result": "145 MeV per proton",
+      "note": "Proton therapy uses 70–250 MeV",
+      "src": "NIST, MD Anderson"
+    },
+    "aberration": {
+      "title": "Where the stars go",
+      "formula": "cos θ′ = (cos θ + β) ÷ (1 + β cos θ)",
+      "sub": "β = 0.9, θ = 90° → cos θ′ = 0.9",
+      "result": "θ′ = 26°",
+      "note": "A star beside you appears ahead",
+      "src": "Einstein 1905"
+    },
+    "heat99": {
+      "title": "Heat on your bow",
+      "formula": "P = n · v · (γ − 1) mₚc²",
+      "sub": "1 atom/cm³ × 0.99c × 5.71 GeV",
+      "result": "272 kW per m²",
+      "note": "≈ 200× the sunlight on Earth",
+      "src": "NASA, NIST"
+    },
+    "energy": {
+      "title": "The bill for one more nine",
+      "formula": "E = (γ − 1) M c²",
+      "sub": "(22.4 − 1) × 420 t × c²",
+      "result": "8.06e+23 J ≈ 1,400 yr of world energy",
+      "note": "World: 592 EJ per year (2024)",
+      "src": "NASA, Energy Institute"
+    },
+    "cmb": {
+      "title": "The dark ahead heats up",
+      "formula": "T′ = T × √((1 + β) ÷ (1 − β))",
+      "sub": "2.725 K × 141",
+      "result": "385 K",
+      "note": "Hotter than boiling water",
+      "src": "NASA WMAP"
+    },
+    "proton6": {
+      "title": "One hydrogen atom",
+      "formula": "E = (γ − 1) × mₚc²",
+      "sub": "(707 − 1) × 938 MeV",
+      "result": "663 GeV",
+      "note": "≈ 0.66 of a flying mosquito, in one proton",
+      "src": "NIST, CERN"
+    },
+    "rocket": {
+      "title": "Andromeda at a steady 1 g",
+      "formula": "τ = 2 (c/g) · arcosh(1 + g·d ÷ 2c²)",
+      "sub": "d = 2.5 million ly, g = 9.81 m/s²",
+      "result": "τ = 28.6 years on your clock",
+      "note": "Earth: 2.5 million years",
+      "src": "Gibbs & Baez, NASA"
+    }
+  },
+  "extra": {
+    "levels": [
+      {
+        "key": "0",
+        "beta": 0.0,
+        "gamma": 1.0,
+        "pct": "0",
+        "rapidity": 0.0,
+        "g_disp": "1"
+      },
+      {
+        "key": "10",
+        "beta": 0.1,
+        "gamma": 1.005037815259212,
+        "pct": "10",
+        "rapidity": 0.10033534773107558,
+        "g_disp": "1.005"
+      },
+      {
+        "key": "50",
+        "beta": 0.5,
+        "gamma": 1.1547005383792517,
+        "pct": "50",
+        "rapidity": 0.5493061443340548,
+        "g_disp": "1.15"
+      },
+      {
+        "key": "90",
+        "beta": 0.9,
+        "gamma": 2.294157338705618,
+        "pct": "90",
+        "rapidity": 1.4722194895832204,
+        "g_disp": "2.29"
+      },
+      {
+        "key": "99",
+        "beta": 0.99,
+        "gamma": 7.088812050083354,
+        "pct": "99",
+        "rapidity": 2.6466524123622457,
+        "g_disp": "7.09"
+      },
+      {
+        "key": "999",
+        "beta": 0.999,
+        "gamma": 22.36627204212937,
+        "pct": "99.9",
+        "rapidity": 3.8002011672501994,
+        "g_disp": "22.4"
+      },
+      {
+        "key": "9999",
+        "beta": 0.9999,
+        "gamma": 70.71244595191452,
+        "pct": "99.99",
+        "rapidity": 4.951718775643098,
+        "g_disp": "70.7"
+      },
+      {
+        "key": "999999",
+        "beta": 0.999999,
+        "gamma": 707.1069579492319,
+        "pct": "99.9999",
+        "rapidity": 7.254328619247669,
+        "g_disp": "707"
+      }
+    ],
+    "vis_note": "visible band 400-700 nm; stars: HYG v4.0 to mag 8; T from B-V (Ballesteros 2012)"
+  },
+  "checks": [
+    {
+      "check": "gamma(99.9999%) ~ 707",
+      "pass": true
+    },
+    {
+      "check": "gamma(90%) = 2.294",
+      "pass": true
+    },
+    {
+      "check": "10% is ~156x the Parker Solar Probe",
+      "pass": true
+    },
+    {
+      "check": "proton KE at 99.9999% is ~662 GeV",
+      "pass": true
+    },
+    {
+      "check": "90% proton KE exceeds its rest energy",
+      "pass": true
+    },
+    {
+      "check": "10% proton (4.73 MeV) is below 5 MeV, so range < 0.36 mm",
+      "pass": true
+    },
+    {
+      "check": "50% proton (145 MeV) is inside therapy band 70-250 MeV and below 150 MeV",
+      "pass": true
+    },
+    {
+      "check": "CMB ahead at 99.9999% is ~3,850 K (visible glow)",
+      "pass": true
+    },
+    {
+      "check": "CMB ahead at 99.99% is ~385 K (above boiling water 373 K)",
+      "pass": true
+    },
+    {
+      "check": "1 g to Andromeda takes ~28-29 yr ship time",
+      "pass": true
+    },
+    {
+      "check": "Galactic center at 99.9999% in under 40 ship years",
+      "pass": true
+    },
+    {
+      "check": "Alpha Centauri at 99.9999% ~2.26 days",
+      "pass": true
+    },
+    {
+      "check": "Dose rate lower bound at 90% is ~8.6 Gy/s",
+      "pass": true
+    },
+    {
+      "check": "energy at 99.9999% ~45,000 yr of world energy",
+      "pass": true
+    },
+    {
+      "check": "LHC protons faster than 99.9999%",
+      "pass": true
+    },
+    {
+      "check": "peak speed to M31 has 12 nines",
+      "pass": true
+    },
+    {
+      "check": "Andromeda round trip ~5 Myr, more than oldest Homo",
+      "pass": true
+    },
+    {
+      "check": "Sun-like star dead ahead is dimmer in visible light at 99.9% (ratio < 1)",
+      "pass": true
+    },
+    {
+      "check": "at 50% a Sun-like star behind is dimmer (visible ratio < 1)",
+      "pass": true
+    },
+    {
+      "check": "aberration sanity: 90-degree star at 90% appears at ~25.8 deg",
+      "pass": true
+    }
+  ]
+}

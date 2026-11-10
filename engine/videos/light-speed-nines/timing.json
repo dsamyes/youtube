@@ -1,0 +1,612 @@
+{
+  "provider": "kokoro",
+  "voice": "kokoro-v1.0:am_michael@1.05",
+  "sample_rate": 24000,
+  "generated": "2026-11-10T22:09:55+00:00",
+  "beats": [
+    {
+      "id": "b01",
+      "section": "hook",
+      "start": 0.6,
+      "end": 12.321,
+      "words": 31,
+      "wpm": 159
+    },
+    {
+      "id": "b02",
+      "section": "hook",
+      "start": 12.721,
+      "end": 15.578,
+      "words": 10,
+      "wpm": 210
+    },
+    {
+      "id": "b03",
+      "section": "dial",
+      "start": 16.878,
+      "end": 27.694,
+      "words": 32,
+      "wpm": 178
+    },
+    {
+      "id": "b04",
+      "section": "dial",
+      "start": 28.094,
+      "end": 35.28,
+      "words": 16,
+      "wpm": 134
+    },
+    {
+      "id": "b05",
+      "section": "dial",
+      "start": 35.68,
+      "end": 43.993,
+      "words": 27,
+      "wpm": 195
+    },
+    {
+      "id": "b06",
+      "section": "dial",
+      "start": 44.393,
+      "end": 55.779,
+      "words": 30,
+      "wpm": 158
+    },
+    {
+      "id": "b07",
+      "section": "dial",
+      "start": 56.179,
+      "end": 66.852,
+      "words": 33,
+      "wpm": 186
+    },
+    {
+      "id": "b08",
+      "section": "s10",
+      "start": 68.152,
+      "end": 73.192,
+      "words": 11,
+      "wpm": 131
+    },
+    {
+      "id": "b09",
+      "section": "s10",
+      "start": 73.592,
+      "end": 80.77,
+      "words": 19,
+      "wpm": 159
+    },
+    {
+      "id": "b10",
+      "section": "s10",
+      "start": 81.17,
+      "end": 87.708,
+      "words": 19,
+      "wpm": 174
+    },
+    {
+      "id": "b11",
+      "section": "s10",
+      "start": 88.108,
+      "end": 96.622,
+      "words": 24,
+      "wpm": 169
+    },
+    {
+      "id": "b12",
+      "section": "s10",
+      "start": 97.022,
+      "end": 105.572,
+      "words": 23,
+      "wpm": 161
+    },
+    {
+      "id": "b13",
+      "section": "s10",
+      "start": 105.972,
+      "end": 114.881,
+      "words": 25,
+      "wpm": 168
+    },
+    {
+      "id": "b14",
+      "section": "s10",
+      "start": 115.281,
+      "end": 123.046,
+      "words": 23,
+      "wpm": 178
+    },
+    {
+      "id": "b15",
+      "section": "s10",
+      "start": 123.446,
+      "end": 136.256,
+      "words": 34,
+      "wpm": 159
+    },
+    {
+      "id": "b16",
+      "section": "s50",
+      "start": 137.556,
+      "end": 140.493,
+      "words": 10,
+      "wpm": 204
+    },
+    {
+      "id": "b17",
+      "section": "s50",
+      "start": 140.893,
+      "end": 149.384,
+      "words": 22,
+      "wpm": 155
+    },
+    {
+      "id": "b18",
+      "section": "s50",
+      "start": 149.784,
+      "end": 161.428,
+      "words": 34,
+      "wpm": 175
+    },
+    {
+      "id": "b19",
+      "section": "s50",
+      "start": 161.828,
+      "end": 172.904,
+      "words": 31,
+      "wpm": 168
+    },
+    {
+      "id": "b20",
+      "section": "s50",
+      "start": 173.304,
+      "end": 184.262,
+      "words": 25,
+      "wpm": 137
+    },
+    {
+      "id": "b21",
+      "section": "s50",
+      "start": 184.662,
+      "end": 195.275,
+      "words": 29,
+      "wpm": 164
+    },
+    {
+      "id": "b22",
+      "section": "s50",
+      "start": 195.675,
+      "end": 208.261,
+      "words": 33,
+      "wpm": 157
+    },
+    {
+      "id": "b23",
+      "section": "s90",
+      "start": 209.561,
+      "end": 212.582,
+      "words": 10,
+      "wpm": 199
+    },
+    {
+      "id": "b24",
+      "section": "s90",
+      "start": 212.982,
+      "end": 223.168,
+      "words": 28,
+      "wpm": 165
+    },
+    {
+      "id": "b25",
+      "section": "s90",
+      "start": 223.568,
+      "end": 237.376,
+      "words": 37,
+      "wpm": 161
+    },
+    {
+      "id": "b26",
+      "section": "s90",
+      "start": 237.776,
+      "end": 243.11,
+      "words": 16,
+      "wpm": 180
+    },
+    {
+      "id": "b27",
+      "section": "s90",
+      "start": 243.51,
+      "end": 253.096,
+      "words": 31,
+      "wpm": 194
+    },
+    {
+      "id": "b28",
+      "section": "s90",
+      "start": 253.496,
+      "end": 261.623,
+      "words": 27,
+      "wpm": 199
+    },
+    {
+      "id": "b29",
+      "section": "s90",
+      "start": 262.023,
+      "end": 272.809,
+      "words": 28,
+      "wpm": 156
+    },
+    {
+      "id": "b30",
+      "section": "s90",
+      "start": 273.209,
+      "end": 283.208,
+      "words": 27,
+      "wpm": 162
+    },
+    {
+      "id": "b31",
+      "section": "s90",
+      "start": 283.608,
+      "end": 290.992,
+      "words": 21,
+      "wpm": 171
+    },
+    {
+      "id": "b32",
+      "section": "s99",
+      "start": 292.292,
+      "end": 294.406,
+      "words": 5,
+      "wpm": 142
+    },
+    {
+      "id": "b33",
+      "section": "s99",
+      "start": 294.806,
+      "end": 303.994,
+      "words": 26,
+      "wpm": 170
+    },
+    {
+      "id": "b34",
+      "section": "s99",
+      "start": 304.394,
+      "end": 313.026,
+      "words": 22,
+      "wpm": 153
+    },
+    {
+      "id": "b35",
+      "section": "s99",
+      "start": 313.426,
+      "end": 323.365,
+      "words": 28,
+      "wpm": 169
+    },
+    {
+      "id": "b36",
+      "section": "s99",
+      "start": 323.765,
+      "end": 332.04,
+      "words": 21,
+      "wpm": 152
+    },
+    {
+      "id": "b37",
+      "section": "s999",
+      "start": 333.34,
+      "end": 339.188,
+      "words": 15,
+      "wpm": 154
+    },
+    {
+      "id": "b38",
+      "section": "s999",
+      "start": 339.588,
+      "end": 350.754,
+      "words": 32,
+      "wpm": 172
+    },
+    {
+      "id": "b39",
+      "section": "s999",
+      "start": 351.154,
+      "end": 359.213,
+      "words": 20,
+      "wpm": 149
+    },
+    {
+      "id": "b40",
+      "section": "s999",
+      "start": 359.613,
+      "end": 370.37,
+      "words": 31,
+      "wpm": 173
+    },
+    {
+      "id": "b41",
+      "section": "s9999",
+      "start": 371.67,
+      "end": 375.391,
+      "words": 9,
+      "wpm": 145
+    },
+    {
+      "id": "b42",
+      "section": "s9999",
+      "start": 375.791,
+      "end": 393.853,
+      "words": 43,
+      "wpm": 143
+    },
+    {
+      "id": "b43",
+      "section": "s9999",
+      "start": 394.253,
+      "end": 409.61,
+      "words": 41,
+      "wpm": 160
+    },
+    {
+      "id": "b44",
+      "section": "s9999",
+      "start": 410.01,
+      "end": 416.83,
+      "words": 21,
+      "wpm": 185
+    },
+    {
+      "id": "b45",
+      "section": "s9999",
+      "start": 417.23,
+      "end": 430.159,
+      "words": 31,
+      "wpm": 144
+    },
+    {
+      "id": "b46",
+      "section": "s999999",
+      "start": 431.459,
+      "end": 438.864,
+      "words": 21,
+      "wpm": 170
+    },
+    {
+      "id": "b47",
+      "section": "s999999",
+      "start": 439.264,
+      "end": 455.954,
+      "words": 46,
+      "wpm": 165
+    },
+    {
+      "id": "b48",
+      "section": "s999999",
+      "start": 456.354,
+      "end": 459.884,
+      "words": 9,
+      "wpm": 153
+    },
+    {
+      "id": "b49",
+      "section": "s999999",
+      "start": 460.284,
+      "end": 477.582,
+      "words": 43,
+      "wpm": 149
+    },
+    {
+      "id": "b50",
+      "section": "s999999",
+      "start": 477.982,
+      "end": 486.302,
+      "words": 23,
+      "wpm": 166
+    },
+    {
+      "id": "b51",
+      "section": "s999999",
+      "start": 486.702,
+      "end": 493.27,
+      "words": 16,
+      "wpm": 146
+    },
+    {
+      "id": "b52",
+      "section": "s999999",
+      "start": 493.67,
+      "end": 505.76,
+      "words": 34,
+      "wpm": 169
+    },
+    {
+      "id": "b53",
+      "section": "s999999",
+      "start": 506.16,
+      "end": 514.138,
+      "words": 21,
+      "wpm": 158
+    },
+    {
+      "id": "b54",
+      "section": "beyond",
+      "start": 515.438,
+      "end": 526.725,
+      "words": 33,
+      "wpm": 175
+    },
+    {
+      "id": "b55",
+      "section": "beyond",
+      "start": 527.125,
+      "end": 536.029,
+      "words": 27,
+      "wpm": 182
+    },
+    {
+      "id": "b56",
+      "section": "beyond",
+      "start": 536.429,
+      "end": 544.184,
+      "words": 19,
+      "wpm": 147
+    },
+    {
+      "id": "b57",
+      "section": "beyond",
+      "start": 544.584,
+      "end": 558.98,
+      "words": 38,
+      "wpm": 158
+    },
+    {
+      "id": "b58",
+      "section": "beyond",
+      "start": 559.38,
+      "end": 571.787,
+      "words": 31,
+      "wpm": 150
+    },
+    {
+      "id": "b59",
+      "section": "return",
+      "start": 573.087,
+      "end": 583.442,
+      "words": 27,
+      "wpm": 156
+    },
+    {
+      "id": "b60",
+      "section": "return",
+      "start": 583.842,
+      "end": 586.212,
+      "words": 7,
+      "wpm": 177
+    },
+    {
+      "id": "b61",
+      "section": "return",
+      "start": 586.612,
+      "end": 597.671,
+      "words": 33,
+      "wpm": 179
+    },
+    {
+      "id": "b62",
+      "section": "return",
+      "start": 598.071,
+      "end": 603.776,
+      "words": 19,
+      "wpm": 200
+    },
+    {
+      "id": "b63",
+      "section": "return",
+      "start": 604.176,
+      "end": 613.622,
+      "words": 29,
+      "wpm": 184
+    }
+  ],
+  "sections": [
+    {
+      "id": "hook",
+      "chapter": "The Sky at 99.9999%",
+      "start": 0.6,
+      "end": 16.878,
+      "clock": null
+    },
+    {
+      "id": "dial",
+      "chapter": "The Ship and the Dial",
+      "start": 16.878,
+      "end": 68.152,
+      "clock": null
+    },
+    {
+      "id": "s10",
+      "chapter": "10%: Nothing Feels Different",
+      "start": 68.152,
+      "end": 137.556,
+      "clock": null
+    },
+    {
+      "id": "s50",
+      "chapter": "50%: The Sky Starts Sliding",
+      "start": 137.556,
+      "end": 209.561,
+      "clock": null
+    },
+    {
+      "id": "s90",
+      "chapter": "90%: The Speed That Kills",
+      "start": 209.561,
+      "end": 292.292,
+      "clock": null
+    },
+    {
+      "id": "s99",
+      "chapter": "99%: Half the Universe in a Circle",
+      "start": 292.292,
+      "end": 333.34,
+      "clock": null
+    },
+    {
+      "id": "s999",
+      "chapter": "99.9%: The Stars Ahead Fade",
+      "start": 333.34,
+      "end": 371.67,
+      "clock": null
+    },
+    {
+      "id": "s9999",
+      "chapter": "99.99%: The Starbow Myth",
+      "start": 371.67,
+      "end": 431.459,
+      "clock": null
+    },
+    {
+      "id": "s999999",
+      "chapter": "99.9999%: One Year, 707 Years",
+      "start": 431.459,
+      "end": 515.438,
+      "clock": null
+    },
+    {
+      "id": "beyond",
+      "chapter": "Beyond: The Andromeda Trip",
+      "start": 515.438,
+      "end": 573.087,
+      "clock": null
+    },
+    {
+      "id": "return",
+      "chapter": "Coming Home",
+      "start": 573.087,
+      "end": 614.922,
+      "clock": null
+    }
+  ],
+  "total": 618.922,
+  "retention_gaps": [
+    12.7,
+    31.7,
+    52.6,
+    26.4,
+    26.3,
+    59.8,
+    28.2,
+    35.4,
+    60.1,
+    26.3,
+    16.2,
+    55.7,
+    62.2,
+    65.7,
+    24.5,
+    35.1
+  ],
+  "hook_end": 15.578,
+  "qa_issues": []
+}

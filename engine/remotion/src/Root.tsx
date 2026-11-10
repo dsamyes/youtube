@@ -1,7 +1,9 @@
 import { CalculateMetadataFunction, Composition, continueRender, delayRender } from "remotion";
 import { fontsReady } from "./brand";
 import { IfEngineVideo } from "./IfEngineVideo";
-import { VideoProps } from "./types";
+import { IfEngineShort } from "./ShortVideo";
+import { IfEngineThumb } from "./ThumbStill";
+import { ShortProps, ThumbProps, VideoProps } from "./types";
 // Written by pipeline/render.py from the video's script.json / timing.json / calc.json.
 import generated from "./generated/props.json";
 
@@ -15,6 +17,16 @@ const calculateMetadata: CalculateMetadataFunction<VideoProps> = ({ props }) => 
   defaultOutName: props.videoId,
 });
 
+const calculateShort: CalculateMetadataFunction<ShortProps> = ({ props }) => ({
+  durationInFrames: Math.ceil(props.timing.total * FPS),
+  defaultOutName: `${props.videoId}_${props.shortId}`,
+});
+
+const base = generated as unknown as VideoProps;
+// Shorts and thumbnails get their real props with --props (pipeline/shorts.py, thumbnail.py)
+const shortDefaults: ShortProps = { ...base, shortId: "preview", hook: "", end: "", words: [] };
+const thumbDefaults: ThumbProps = { ...base, thumb: { scene: "title", params: {}, headline: "" } };
+
 export const RemotionRoot: React.FC = () => {
   return (
     <>
@@ -25,8 +37,27 @@ export const RemotionRoot: React.FC = () => {
         fps={FPS}
         width={1920}
         height={1080}
-        defaultProps={generated as unknown as VideoProps}
+        defaultProps={base}
         calculateMetadata={calculateMetadata}
+      />
+      <Composition
+        id="IfEngineShort"
+        component={IfEngineShort}
+        durationInFrames={300}
+        fps={FPS}
+        width={1080}
+        height={1920}
+        defaultProps={shortDefaults}
+        calculateMetadata={calculateShort}
+      />
+      <Composition
+        id="IfEngineThumb"
+        component={IfEngineThumb}
+        durationInFrames={1}
+        fps={FPS}
+        width={1280}
+        height={720}
+        defaultProps={thumbDefaults}
       />
     </>
   );

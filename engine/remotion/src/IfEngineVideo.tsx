@@ -2,18 +2,18 @@ import { Audio } from "@remotion/media";
 import React from "react";
 import { AbsoluteFill, Sequence, interpolate, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import { Background, Hud, Kinetic, MathCard } from "./components/Overlays";
-import { VIDEO_SCENES } from "./generated/registry";
+import { VIDEO_OVERLAY, VIDEO_SCENES } from "./generated/registry";
 import { SHARED_SCENES } from "./scenes/shared";
 import { buildRuns, buildSlots, clamp } from "./timeline";
 import { SceneEntry, SceneRun, Slot, VideoProps } from "./types";
 
 // per-video scenes (src/videos/<id>/scenes.tsx, selected by render.py via generated/registry.ts) win
-const SCENES: Record<string, SceneEntry> = { ...SHARED_SCENES, ...VIDEO_SCENES };
+export const SCENES: Record<string, SceneEntry> = { ...SHARED_SCENES, ...VIDEO_SCENES };
 
 const FADE = 0.4;
 
 /** Renders one scene run; owns the frame subscription for that run only. */
-const RunView: React.FC<{ run: SceneRun; data: VideoProps; cardShift: (t: number) => number }> = ({ run, data, cardShift }) => {
+export const RunView: React.FC<{ run: SceneRun; data: VideoProps; cardShift: (t: number) => number; noFadeIn?: boolean }> = ({ run, data, cardShift, noFadeIn }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const t = frame / fps;
@@ -23,7 +23,7 @@ const RunView: React.FC<{ run: SceneRun; data: VideoProps; cardShift: (t: number
   const slot = run.slots[idx];
   const phaseStart = idx === 0 ? run.start : slot.start;
   const len = run.end - run.start;
-  const opacity = Math.min(interpolate(t, [0, FADE], [0, 1], clamp), interpolate(t, [len - FADE, len], [1, 0], clamp));
+  const opacity = Math.min(noFadeIn ? 1 : interpolate(t, [0, FADE], [0, 1], clamp), interpolate(t, [len - FADE, len], [1, 0], clamp));
   const entry = SCENES[run.scene];
   if (!entry) throw new Error(`Unknown scene "${run.scene}" - add it to SCENES`);
   const shift = entry.shift ? cardShift(abs) : 0;
@@ -41,8 +41,10 @@ const Overlay: React.FC<{ slots: Slot[]; data: VideoProps; cardShift: (t: number
   const { fps } = useVideoConfig();
   const time = frame / fps;
   const cur = slots.find((s) => time >= s.start && time < s.showUntil);
+  const VO = VIDEO_OVERLAY;
   return (
     <AbsoluteFill>
+      {VO ? <VO data={data} time={time} slots={slots} slot={cur} /> : null}
       {cur?.kinetic ? (
         <Kinetic key={cur.id} text={cur.kinetic} t={time - cur.start} len={cur.showUntil - cur.start} shifted={0} />
       ) : null}
@@ -79,7 +81,7 @@ export const IfEngineVideo: React.FC<VideoProps> = (data) => {
       {runs.map((run, i) => (
         <Sequence key={i} name={`${run.scene} · ${run.slots[0].id}`} from={Math.round(run.start * fps)}
           durationInFrames={Math.max(1, Math.round((run.end - run.start) * fps))}>
-          <RunView run={run} data={data} cardShift={cardShift} />
+          <RunView run={run} data={data} cardShift={cardShift} noFadeIn={i === 0} />
         </Sequence>
       ))}
       <Overlay slots={slots} data={data} cardShift={cardShift} />

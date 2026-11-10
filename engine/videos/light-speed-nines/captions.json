@@ -1,0 +1,1060 @@
+{
+  "cues": [
+    {
+      "beat": "b01",
+      "start": 0.6,
+      "end": 4.759,
+      "text": "At 99.9999% of light speed,"
+    },
+    {
+      "beat": "b01",
+      "start": 4.759,
+      "end": 10.052,
+      "text": "the whole sky collapses into one patch\nof light ahead. You age one year."
+    },
+    {
+      "beat": "b01",
+      "start": 10.052,
+      "end": 12.321,
+      "text": "Earth ages 707."
+    },
+    {
+      "beat": "b02",
+      "start": 12.721,
+      "end": 15.578,
+      "text": "One speed on the way here\nkills you. Which one?"
+    },
+    {
+      "beat": "b03",
+      "start": 16.878,
+      "end": 21.948,
+      "text": "Here's the trip. You get a ship with the\nmass of the International Space Station,"
+    },
+    {
+      "beat": "b03",
+      "start": 21.948,
+      "end": 24.99,
+      "text": "about 420 tonnes, and one control:"
+    },
+    {
+      "beat": "b03",
+      "start": 24.99,
+      "end": 27.694,
+      "text": "a dial that adds nines to your speed."
+    },
+    {
+      "beat": "b04",
+      "start": 28.094,
+      "end": 33.034,
+      "text": "10%. 50%. 90%. Then 99, 99.9."
+    },
+    {
+      "beat": "b04",
+      "start": 33.034,
+      "end": 35.28,
+      "text": "One nine at a time."
+    },
+    {
+      "beat": "b05",
+      "start": 35.68,
+      "end": 37.835,
+      "text": "At every stop, we check four things."
+    },
+    {
+      "beat": "b05",
+      "start": 37.835,
+      "end": 39.067,
+      "text": "Your clock against Earth's."
+    },
+    {
+      "beat": "b05",
+      "start": 39.067,
+      "end": 40.914,
+      "text": "What you see out the window."
+    },
+    {
+      "beat": "b05",
+      "start": 40.914,
+      "end": 43.993,
+      "text": "What's hitting the front\nof the ship. And the bill."
+    },
+    {
+      "beat": "b06",
+      "start": 44.393,
+      "end": 47.05,
+      "text": "And this sky is not a painting."
+    },
+    {
+      "beat": "b06",
+      "start": 47.05,
+      "end": 51.225,
+      "text": "It's tens of thousands of real\nstars from a star catalog,"
+    },
+    {
+      "beat": "b06",
+      "start": 51.225,
+      "end": 55.779,
+      "text": "moved and recolored by the actual\nequations of relativity, frame by frame."
+    },
+    {
+      "beat": "b07",
+      "start": 56.179,
+      "end": 58.12,
+      "text": "One number runs the whole journey."
+    },
+    {
+      "beat": "b07",
+      "start": 58.12,
+      "end": 59.413,
+      "text": "Physicists call it gamma."
+    },
+    {
+      "beat": "b07",
+      "start": 59.413,
+      "end": 63.941,
+      "text": "It says how many seconds pass on\nEarth for every second on your clock,"
+    },
+    {
+      "beat": "b07",
+      "start": 63.941,
+      "end": 66.852,
+      "text": "and it lives in the corner of your screen."
+    },
+    {
+      "beat": "b08",
+      "start": 68.152,
+      "end": 73.192,
+      "text": "First stop. 10%. You're covering\n30,000 kilometers every second."
+    },
+    {
+      "beat": "b09",
+      "start": 73.592,
+      "end": 77.748,
+      "text": "That's 156 times faster\nthan the fastest thing"
+    },
+    {
+      "beat": "b09",
+      "start": 77.748,
+      "end": 80.77,
+      "text": "humans have ever built,\nNASA's Parker Solar Probe."
+    },
+    {
+      "beat": "b10",
+      "start": 81.17,
+      "end": 83.235,
+      "text": "And yet your clock barely notices."
+    },
+    {
+      "beat": "b10",
+      "start": 83.235,
+      "end": 87.708,
+      "text": "For every year you spend on board,\nEarth gets about 2 extra days."
+    },
+    {
+      "beat": "b11",
+      "start": 88.108,
+      "end": 92.01,
+      "text": "Out the window, the stars have\ncrept a few degrees forward."
+    },
+    {
+      "beat": "b11",
+      "start": 92.01,
+      "end": 94.139,
+      "text": "Ahead, they look a touch bluer."
+    },
+    {
+      "beat": "b11",
+      "start": 94.139,
+      "end": 95.558,
+      "text": "Behind, a touch redder."
+    },
+    {
+      "beat": "b11",
+      "start": 95.558,
+      "end": 96.622,
+      "text": "Nothing dramatic yet."
+    },
+    {
+      "beat": "b12",
+      "start": 97.022,
+      "end": 98.509,
+      "text": "So what's hitting you?"
+    },
+    {
+      "beat": "b12",
+      "start": 98.509,
+      "end": 99.624,
+      "text": "Space isn't empty."
+    },
+    {
+      "beat": "b12",
+      "start": 99.624,
+      "end": 102.97,
+      "text": "There's about 1 hydrogen atom\nin every cubic centimeter,"
+    },
+    {
+      "beat": "b12",
+      "start": 102.97,
+      "end": 105.572,
+      "text": "and you're plowing into all of them."
+    },
+    {
+      "beat": "b13",
+      "start": 105.972,
+      "end": 109.536,
+      "text": "Each one arrives with 4.7\nmillion electron volts,"
+    },
+    {
+      "beat": "b13",
+      "start": 109.536,
+      "end": 113.099,
+      "text": "and stops in less than\nhalf a millimeter of water."
+    },
+    {
+      "beat": "b13",
+      "start": 113.099,
+      "end": 114.881,
+      "text": "Your hull shrugs it off."
+    },
+    {
+      "beat": "b14",
+      "start": 115.281,
+      "end": 119.332,
+      "text": "The bill. Getting this ship\nto 10% takes as much energy"
+    },
+    {
+      "beat": "b14",
+      "start": 119.332,
+      "end": 123.046,
+      "text": "as the entire world uses\nin about 3.9 months."
+    },
+    {
+      "beat": "b15",
+      "start": 123.446,
+      "end": 128.344,
+      "text": "And Alpha Centauri, the nearest\nstar system, is 43.7 years away."
+    },
+    {
+      "beat": "b15",
+      "start": 128.344,
+      "end": 131.735,
+      "text": "You'd step off the ship as an old person."
+    },
+    {
+      "beat": "b15",
+      "start": 131.735,
+      "end": 133.242,
+      "text": "Keep that in mind."
+    },
+    {
+      "beat": "b15",
+      "start": 133.242,
+      "end": 136.256,
+      "text": "The destinations are\nabout to get much closer."
+    },
+    {
+      "beat": "b16",
+      "start": 137.556,
+      "end": 139.024,
+      "text": "Turn the dial. 50%."
+    },
+    {
+      "beat": "b16",
+      "start": 139.024,
+      "end": 140.493,
+      "text": "Half the speed of light."
+    },
+    {
+      "beat": "b17",
+      "start": 140.893,
+      "end": 142.823,
+      "text": "Now the clocks really split."
+    },
+    {
+      "beat": "b17",
+      "start": 142.823,
+      "end": 147.068,
+      "text": "For every year you live, Earth lives 1.15."
+    },
+    {
+      "beat": "b17",
+      "start": 147.068,
+      "end": 149.384,
+      "text": "That's 57 extra days, every year."
+    },
+    {
+      "beat": "b18",
+      "start": 149.784,
+      "end": 152.866,
+      "text": "Look at a star that was right beside you."
+    },
+    {
+      "beat": "b18",
+      "start": 152.866,
+      "end": 154.236,
+      "text": "It isn't there anymore."
+    },
+    {
+      "beat": "b18",
+      "start": 154.236,
+      "end": 158.688,
+      "text": "It has slid forward, and now appears\njust 60 degrees from straight ahead."
+    },
+    {
+      "beat": "b18",
+      "start": 158.688,
+      "end": 161.428,
+      "text": "The whole sky is sliding toward your nose."
+    },
+    {
+      "beat": "b19",
+      "start": 161.828,
+      "end": 166.473,
+      "text": "Ahead, a star like our Sun now\nglows at 10,000 kelvin, blue-white."
+    },
+    {
+      "beat": "b19",
+      "start": 166.473,
+      "end": 168.974,
+      "text": "Behind you, the same kind of star"
+    },
+    {
+      "beat": "b19",
+      "start": 168.974,
+      "end": 172.904,
+      "text": "looks like a dim red ember, at 3,300."
+    },
+    {
+      "beat": "b20",
+      "start": 173.304,
+      "end": 179.44,
+      "text": "And the hydrogen? Each atom now\ncarries 145 million electron volts."
+    },
+    {
+      "beat": "b20",
+      "start": 179.44,
+      "end": 184.262,
+      "text": "That's the same energy hospitals\nuse to fire protons into tumors."
+    },
+    {
+      "beat": "b21",
+      "start": 184.662,
+      "end": 187.224,
+      "text": "Those reach deep inside a human body."
+    },
+    {
+      "beat": "b21",
+      "start": 187.224,
+      "end": 191.981,
+      "text": "But a tank of water, less than 16\ncentimeters thick, stops them cold."
+    },
+    {
+      "beat": "b21",
+      "start": 191.981,
+      "end": 195.275,
+      "text": "Line the bow with it.\nProblem solved. For now."
+    },
+    {
+      "beat": "b22",
+      "start": 195.675,
+      "end": 200.633,
+      "text": "The bill jumps to about 9.9 years\nof everything humanity uses."
+    },
+    {
+      "beat": "b22",
+      "start": 200.633,
+      "end": 204.447,
+      "text": "And Alpha Centauri is now 7.57 years"
+    },
+    {
+      "beat": "b22",
+      "start": 204.447,
+      "end": 208.261,
+      "text": "away on your clock, 8.74 on Earth's."
+    },
+    {
+      "beat": "b23",
+      "start": 209.561,
+      "end": 212.582,
+      "text": "90%. This is the one I warned you about."
+    },
+    {
+      "beat": "b24",
+      "start": 212.982,
+      "end": 217.711,
+      "text": "Each hydrogen atom now hits with\n1.21 billion electron volts."
+    },
+    {
+      "beat": "b24",
+      "start": 217.711,
+      "end": 220.258,
+      "text": "That's more energy than its own mass."
+    },
+    {
+      "beat": "b24",
+      "start": 220.258,
+      "end": 223.168,
+      "text": "And these don't stop in a water tank."
+    },
+    {
+      "beat": "b25",
+      "start": 223.568,
+      "end": 226.927,
+      "text": "They cross about 83.3\ncentimeters of water,"
+    },
+    {
+      "beat": "b25",
+      "start": 226.927,
+      "end": 229.912,
+      "text": "on average, before they\neven hit a nucleus."
+    },
+    {
+      "beat": "b25",
+      "start": 229.912,
+      "end": 233.644,
+      "text": "Then they shatter it into\na spray of new particles."
+    },
+    {
+      "beat": "b25",
+      "start": 233.644,
+      "end": 237.376,
+      "text": "A thin shield doesn't stop\nthe beam. It multiplies it."
+    },
+    {
+      "beat": "b26",
+      "start": 237.776,
+      "end": 240.443,
+      "text": "Unshielded, that beam\nwould give you a lethal"
+    },
+    {
+      "beat": "b26",
+      "start": 240.443,
+      "end": 243.11,
+      "text": "dose of radiation in under half a second."
+    },
+    {
+      "beat": "b27",
+      "start": 243.51,
+      "end": 246.602,
+      "text": "So what kills you isn't\na planet, or a wall."
+    },
+    {
+      "beat": "b27",
+      "start": 246.602,
+      "end": 248.767,
+      "text": "It's the emptiest place in the universe."
+    },
+    {
+      "beat": "b27",
+      "start": 248.767,
+      "end": 253.096,
+      "text": "One atom in a space the size of\na sugar cube, hit hard enough."
+    },
+    {
+      "beat": "b28",
+      "start": 253.496,
+      "end": 257.108,
+      "text": "From here on, you need meters\nof shielding in front of you,"
+    },
+    {
+      "beat": "b28",
+      "start": 257.108,
+      "end": 258.914,
+      "text": "and we'll assume you have it."
+    },
+    {
+      "beat": "b28",
+      "start": 258.914,
+      "end": 261.623,
+      "text": "Because the view is about\nto get very strange."
+    },
+    {
+      "beat": "b29",
+      "start": 262.023,
+      "end": 265.105,
+      "text": "A star that sits right beside you now"
+    },
+    {
+      "beat": "b29",
+      "start": 265.105,
+      "end": 267.801,
+      "text": "appears just 26 degrees\nfrom straight ahead."
+    },
+    {
+      "beat": "b29",
+      "start": 267.801,
+      "end": 272.809,
+      "text": "Half of the entire sky is squeezed\ninto a circle 52 degrees wide."
+    },
+    {
+      "beat": "b30",
+      "start": 273.209,
+      "end": 275.801,
+      "text": "And behind you, the sky goes black."
+    },
+    {
+      "beat": "b30",
+      "start": 275.801,
+      "end": 279.875,
+      "text": "Sunlike stars there are\nshifted to 1,300 kelvin,"
+    },
+    {
+      "beat": "b30",
+      "start": 279.875,
+      "end": 283.208,
+      "text": "deep into the infrared,\nwhere your eyes can't follow."
+    },
+    {
+      "beat": "b31",
+      "start": 283.608,
+      "end": 286.069,
+      "text": "The bill: 82 years of world energy."
+    },
+    {
+      "beat": "b31",
+      "start": 286.069,
+      "end": 290.992,
+      "text": "But Alpha Centauri is now\njust 2.12 years away for you."
+    },
+    {
+      "beat": "b32",
+      "start": 292.292,
+      "end": 294.406,
+      "text": "Add a nine. 99%."
+    },
+    {
+      "beat": "b33",
+      "start": 294.806,
+      "end": 297.633,
+      "text": "Spend one year out here, then come home,"
+    },
+    {
+      "beat": "b33",
+      "start": 297.633,
+      "end": 300.46,
+      "text": "and your friends are\nabout seven years older."
+    },
+    {
+      "beat": "b33",
+      "start": 300.46,
+      "end": 303.994,
+      "text": "Every year aboard is 7.09 on Earth."
+    },
+    {
+      "beat": "b34",
+      "start": 304.394,
+      "end": 310.279,
+      "text": "Out the window, half of the universe\nnow fits in a circle 16 degrees across."
+    },
+    {
+      "beat": "b34",
+      "start": 310.279,
+      "end": 313.026,
+      "text": "About 31 full Moons, side by side."
+    },
+    {
+      "beat": "b35",
+      "start": 313.426,
+      "end": 316.266,
+      "text": "And every square meter of your bow absorbs"
+    },
+    {
+      "beat": "b35",
+      "start": 316.266,
+      "end": 319.815,
+      "text": "272 kilowatts from the gas you're hitting."
+    },
+    {
+      "beat": "b35",
+      "start": 319.815,
+      "end": 323.365,
+      "text": "About 200 times the sunlight\nthat warms the Earth."
+    },
+    {
+      "beat": "b36",
+      "start": 323.765,
+      "end": 326.523,
+      "text": "Alpha Centauri? 7.5 months away."
+    },
+    {
+      "beat": "b36",
+      "start": 326.523,
+      "end": 332.04,
+      "text": "The center of the galaxy is\nstill 3,700 years. Not yet."
+    },
+    {
+      "beat": "b37",
+      "start": 333.34,
+      "end": 339.188,
+      "text": "99.9%. You'd think the stars ahead\nwould only get brighter. They don't."
+    },
+    {
+      "beat": "b38",
+      "start": 339.588,
+      "end": 344.124,
+      "text": "A Sun-like star dead ahead\nnow looks 260,000 kelvin."
+    },
+    {
+      "beat": "b38",
+      "start": 344.124,
+      "end": 347.614,
+      "text": "Most of its light has been\npushed into the ultraviolet,"
+    },
+    {
+      "beat": "b38",
+      "start": 347.614,
+      "end": 350.754,
+      "text": "past what your eyes can see, so it fades."
+    },
+    {
+      "beat": "b39",
+      "start": 351.154,
+      "end": 355.586,
+      "text": "Each year aboard is now\n22.4 years on Earth."
+    },
+    {
+      "beat": "b39",
+      "start": 355.586,
+      "end": 359.213,
+      "text": "And Alpha Centauri is 71.4 days away."
+    },
+    {
+      "beat": "b40",
+      "start": 359.613,
+      "end": 362.736,
+      "text": "And here's the bill for\nthat one extra nine."
+    },
+    {
+      "beat": "b40",
+      "start": 362.736,
+      "end": 366.9,
+      "text": "About 1,400 years of all\nthe energy humanity uses."
+    },
+    {
+      "beat": "b40",
+      "start": 366.9,
+      "end": 370.37,
+      "text": "Every nine costs more than\nall the nines before it."
+    },
+    {
+      "beat": "b41",
+      "start": 371.67,
+      "end": 375.391,
+      "text": "99.99%. Now look straight ahead."
+    },
+    {
+      "beat": "b42",
+      "start": 375.791,
+      "end": 378.311,
+      "text": "Science fiction promised a starbow here:"
+    },
+    {
+      "beat": "b42",
+      "start": 378.311,
+      "end": 381.672,
+      "text": "a rainbow ring of stars around your nose."
+    },
+    {
+      "beat": "b42",
+      "start": 381.672,
+      "end": 387.552,
+      "text": "But in 1979, two physicists ran the\nnumbers properly, and the ring vanished."
+    },
+    {
+      "beat": "b42",
+      "start": 387.552,
+      "end": 388.812,
+      "text": "This simulation agrees."
+    },
+    {
+      "beat": "b42",
+      "start": 388.812,
+      "end": 393.853,
+      "text": "Every star piles up dead ahead,\nbluest and densest at the center."
+    },
+    {
+      "beat": "b43",
+      "start": 394.253,
+      "end": 396.126,
+      "text": "And something else lights up."
+    },
+    {
+      "beat": "b43",
+      "start": 396.126,
+      "end": 398.748,
+      "text": "The faint afterglow of the Big Bang,"
+    },
+    {
+      "beat": "b43",
+      "start": 398.748,
+      "end": 401.37,
+      "text": "normally 2.725 kelvin,"
+    },
+    {
+      "beat": "b43",
+      "start": 401.37,
+      "end": 405.115,
+      "text": "is heated dead ahead to 385 kelvin."
+    },
+    {
+      "beat": "b43",
+      "start": 405.115,
+      "end": 406.614,
+      "text": "Hotter than boiling water."
+    },
+    {
+      "beat": "b43",
+      "start": 406.614,
+      "end": 409.61,
+      "text": "The darkness in front of you is warm."
+    },
+    {
+      "beat": "b44",
+      "start": 410.01,
+      "end": 413.258,
+      "text": "A single speck of dust,\none millionth of a gram,"
+    },
+    {
+      "beat": "b44",
+      "start": 413.258,
+      "end": 416.83,
+      "text": "would now hit you like 1.5 tonnes of TNT."
+    },
+    {
+      "beat": "b45",
+      "start": 417.23,
+      "end": 420.984,
+      "text": "Each year aboard is 70.7 on Earth."
+    },
+    {
+      "beat": "b45",
+      "start": 420.984,
+      "end": 424.32,
+      "text": "Alpha Centauri is 22.6 days away."
+    },
+    {
+      "beat": "b45",
+      "start": 424.32,
+      "end": 430.159,
+      "text": "The center of the galaxy, 368\nyears. Closer. Not close enough."
+    },
+    {
+      "beat": "b46",
+      "start": 431.459,
+      "end": 435.338,
+      "text": "Let's skip a nine. 99.9999%."
+    },
+    {
+      "beat": "b46",
+      "start": 435.338,
+      "end": 438.864,
+      "text": "This is the sky from the\nbeginning of the video."
+    },
+    {
+      "beat": "b47",
+      "start": 439.264,
+      "end": 442.167,
+      "text": "Half of the universe fits inside a circle"
+    },
+    {
+      "beat": "b47",
+      "start": 442.167,
+      "end": 446.158,
+      "text": "smaller than the Moon,\njust 0.16 degrees wide."
+    },
+    {
+      "beat": "b47",
+      "start": 446.158,
+      "end": 447.609,
+      "text": "And at its center,"
+    },
+    {
+      "beat": "b47",
+      "start": 447.609,
+      "end": 452.689,
+      "text": "the Big Bang's afterglow is\nblueshifted to 3,850 kelvin."
+    },
+    {
+      "beat": "b47",
+      "start": 452.689,
+      "end": 455.954,
+      "text": "Hot enough to glow orange,\nright where you're heading."
+    },
+    {
+      "beat": "b48",
+      "start": 456.354,
+      "end": 459.884,
+      "text": "Your clock: one year. Earth's: 707."
+    },
+    {
+      "beat": "b49",
+      "start": 460.284,
+      "end": 465.916,
+      "text": "And one hydrogen atom now hits\nwith 663 billion electron volts."
+    },
+    {
+      "beat": "b49",
+      "start": 465.916,
+      "end": 469.939,
+      "text": "CERN compares that kind of\nenergy to a flying mosquito."
+    },
+    {
+      "beat": "b49",
+      "start": 469.939,
+      "end": 473.961,
+      "text": "You're taking two-thirds of a\nmosquito, packed into one proton,"
+    },
+    {
+      "beat": "b49",
+      "start": 473.961,
+      "end": 477.582,
+      "text": "trillions of times a second,\non every square meter."
+    },
+    {
+      "beat": "b50",
+      "start": 477.982,
+      "end": 481.961,
+      "text": "Your bow is soaking up 32\nmegawatts on every square meter."
+    },
+    {
+      "beat": "b50",
+      "start": 481.961,
+      "end": 486.302,
+      "text": "And a speck of dust now\nhits like 15 tonnes of TNT."
+    },
+    {
+      "beat": "b51",
+      "start": 486.702,
+      "end": 490.807,
+      "text": "The bill: about 45,000 years\nof humanity's total energy,"
+    },
+    {
+      "beat": "b51",
+      "start": 490.807,
+      "end": 493.27,
+      "text": "for one ship, at one speed."
+    },
+    {
+      "beat": "b52",
+      "start": 493.67,
+      "end": 496.159,
+      "text": "But here's what you get for it."
+    },
+    {
+      "beat": "b52",
+      "start": 496.159,
+      "end": 499.715,
+      "text": "The center of the Milky Way,\n26,000 light-years away,"
+    },
+    {
+      "beat": "b52",
+      "start": 499.715,
+      "end": 503.271,
+      "text": "is now 36.8 years away on your clock."
+    },
+    {
+      "beat": "b52",
+      "start": 503.271,
+      "end": 505.76,
+      "text": "You could get there in one lifetime."
+    },
+    {
+      "beat": "b53",
+      "start": 506.16,
+      "end": 511.099,
+      "text": "When you arrive, Earth's calendar\nhas moved on by about 26,000 years."
+    },
+    {
+      "beat": "b53",
+      "start": 511.099,
+      "end": 512.238,
+      "text": "Remember that number."
+    },
+    {
+      "beat": "b53",
+      "start": 512.238,
+      "end": 514.138,
+      "text": "It's about to look small."
+    },
+    {
+      "beat": "b54",
+      "start": 515.438,
+      "end": 518.174,
+      "text": "Real ships can't just jump to a speed."
+    },
+    {
+      "beat": "b54",
+      "start": 518.174,
+      "end": 521.595,
+      "text": "So for the last trip,\npicture an engine that pushes"
+    },
+    {
+      "beat": "b54",
+      "start": 521.595,
+      "end": 524.673,
+      "text": "at exactly 1 g, Earth's\ngravity, the whole way."
+    },
+    {
+      "beat": "b54",
+      "start": 524.673,
+      "end": 526.725,
+      "text": "On board, you'd feel at home."
+    },
+    {
+      "beat": "b55",
+      "start": 527.125,
+      "end": 531.412,
+      "text": "Speed up for half the trip, flip\naround, brake for the other half."
+    },
+    {
+      "beat": "b55",
+      "start": 531.412,
+      "end": 536.029,
+      "text": "On that ship, the center of\nthe galaxy is 19.8 years away."
+    },
+    {
+      "beat": "b56",
+      "start": 536.429,
+      "end": 540.511,
+      "text": "And the Andromeda Galaxy,\n2.5 million light-years away,"
+    },
+    {
+      "beat": "b56",
+      "start": 540.511,
+      "end": 544.184,
+      "text": "takes just 28.6 years on your clock."
+    },
+    {
+      "beat": "b57",
+      "start": 544.584,
+      "end": 547.236,
+      "text": "At the halfway point, you'd be moving"
+    },
+    {
+      "beat": "b57",
+      "start": 547.236,
+      "end": 552.919,
+      "text": "at 99.99999999997%"
+    },
+    {
+      "beat": "b57",
+      "start": 552.919,
+      "end": 555.57,
+      "text": "of the speed of light. 12 nines."
+    },
+    {
+      "beat": "b57",
+      "start": 555.57,
+      "end": 558.98,
+      "text": "Faster than any proton in\nthe Large Hadron Collider."
+    },
+    {
+      "beat": "b58",
+      "start": 559.38,
+      "end": 561.381,
+      "text": "Could anyone build that engine?"
+    },
+    {
+      "beat": "b58",
+      "start": 561.381,
+      "end": 564.583,
+      "text": "Not with anything we know how to make."
+    },
+    {
+      "beat": "b58",
+      "start": 564.583,
+      "end": 569.386,
+      "text": "The energy alone is about 82 million\nyears of humanity's total supply."
+    },
+    {
+      "beat": "b58",
+      "start": 569.386,
+      "end": 571.787,
+      "text": "But relativity itself doesn't say no."
+    },
+    {
+      "beat": "b59",
+      "start": 573.087,
+      "end": 576.155,
+      "text": "So here's your life. You leave at 25."
+    },
+    {
+      "beat": "b59",
+      "start": 576.155,
+      "end": 579.607,
+      "text": "You fly to Andromeda,\nturn around, and fly home."
+    },
+    {
+      "beat": "b59",
+      "start": 579.607,
+      "end": 581.524,
+      "text": "On your clock, 57 years."
+    },
+    {
+      "beat": "b59",
+      "start": 581.524,
+      "end": 583.442,
+      "text": "You step out at 82."
+    },
+    {
+      "beat": "b60",
+      "start": 583.842,
+      "end": 586.212,
+      "text": "On Earth, 5 million years have passed."
+    },
+    {
+      "beat": "b61",
+      "start": 586.612,
+      "end": 589.628,
+      "text": "For scale: the oldest\nfossil of our own genus,"
+    },
+    {
+      "beat": "b61",
+      "start": 589.628,
+      "end": 592.644,
+      "text": "Homo, is about 2.8 million years old."
+    },
+    {
+      "beat": "b61",
+      "start": 592.644,
+      "end": 597.671,
+      "text": "You'd come home further into the future\nthan the first humans are in the past."
+    },
+    {
+      "beat": "b62",
+      "start": 598.071,
+      "end": 600.773,
+      "text": "You could cross to another\ngalaxy in one lifetime."
+    },
+    {
+      "beat": "b62",
+      "start": 600.773,
+      "end": 603.776,
+      "text": "You just can't come back\nto the world you left."
+    },
+    {
+      "beat": "b63",
+      "start": 604.176,
+      "end": 608.085,
+      "text": "If you'd rather fall than fly,\nthe next trip goes straight down."
+    },
+    {
+      "beat": "b63",
+      "start": 608.085,
+      "end": 610.039,
+      "text": "What If You Fell Into Jupiter?"
+    },
+    {
+      "beat": "b63",
+      "start": 610.039,
+      "end": 611.668,
+      "text": "This was The If Engine."
+    },
+    {
+      "beat": "b63",
+      "start": 611.668,
+      "end": 613.622,
+      "text": "Run the impossible. Do the math."
+    }
+  ]
+}

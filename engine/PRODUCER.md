@@ -26,6 +26,8 @@ Python: `engine/.venv/bin/python -B`. Run pipeline scripts from `engine/pipeline
 
 ## 1. Budget (Claude Pro plan)
 
+Quality beats speed: spend turns on the script and the stills, not on extra research.
+
 - Aim for at most ~100 turns. Batch independent tool calls. Don't re-read files you just wrote.
   Read big files (e.g. `script.json`, `calc.json`) only with `grep` or partial reads.
 - Research: about 6–10 searches and at most 6 fetches. Stop when every number has a source.
@@ -74,7 +76,7 @@ WHITELIST = {"5": "Category 5 is a scale name"}     # optional label-like number
 ```
 - **Every** number that appears in narration, kinetic text, visual params, titles or the thumbnail
   is a `c.put` value. Display strings are rounded sensibly (`fmt(x, 2–3)`).
-- Write 8–14 Math Cards for the key derivations.
+- Write Math Cards for the key derivations (the script may use at most one per section).
 
 Run: `python -B calc.py <id>`. Fix it until it passes.
 
@@ -89,7 +91,7 @@ Each beat has:
 - `visual` `{scene, phase, ...params}`, plus optional `kinetic` (≤ 6 words), `card` and `retention`.
 
 Requirements, which `build_script.py` checks:
-- 8–10 minutes: about 1,350–1,550 words at about 176 wpm.
+- 9–12 minutes: about 1,450–1,800 words (Kokoro `am_michael` at speed 1.05 runs about 165 wpm).
 - The hook (first section) ≤ 15 s.
 - A retention beat every 60–90 s: open loops, reveals, reversals, honest "we can't know" beats.
 - The ending sets up `next_video`, which is the next `todo` topic in topics.json. The last line ends
@@ -97,14 +99,71 @@ Requirements, which `build_script.py` checks:
 - The narration is conversational, with no unsupported claims. Say "about" and "up to" when the
   value depends on assumptions.
 - **Be genuinely different** (YouTube's inauthentic-content policy). Use your own narrative
-  structure, hook formula, chapter names and visual metaphors. Do not reuse earth sentences, its
-  "rules" framing, or its section order unless the topic truly needs them. At least 5
-  video-specific scenes.
-- `shorts`: 3 self-contained beat ranges, each ≤ 55 s (check after running `tts.py --provider silent`).
-- `metadata`: `alt_titles` (exactly 2), `hook`, `summary`, `key_numbers[]`, `assumptions`,
-  `tags[]` (≤ 500 chars total) and `hashtags`. Numbers appear only as `{{keys}}`.
-- `thumbnail`: `headline` (≤ 3 short lines, `<br>`, `<em>` for the amber word), `number`
-  (≤ 14 chars), `badge`, and `art {planet: [3 colours], land, winds, moon}`.
+  structure, hook formula, chapter names and visual metaphors. Do not reuse earlier videos'
+  sentences or section order unless the topic truly needs them. At least 5 video-specific scenes.
+- `shorts`: 3 NATIVE Shorts (see "Native Shorts" below), each 25–45 s.
+- `metadata`: `alt_titles` (exactly 2), `hook`, `learn[]`, `key_numbers[]` (4–5), `assumptions`,
+  `image_credits[]` (when images are used), `tags[]` (≤ 500 chars total) and `hashtags`. Numbers
+  appear only as `{{keys}}`.
+- `thumbnail`: a scene thumbnail (see "Packaging" below). The old HTML template (`headline`,
+  `number`, `badge`, `art`) still works as a fallback.
+
+### Storytelling rules (the first video was "dry": dense numbers, a lecture, a formula-dump description)
+These are the quality bar. The owner rejected the earlier style; follow these, not the earth example.
+- **Second person, a journey.** "You" are in the scenario (a ship, a fall, a city), moving through
+  it step by step. Winning formats on this niche escalate: every layer, every planet, every nine.
+  Pick a ladder of 6–9 rungs and give each rung the SAME 3–4 recurring questions (e.g. your clock,
+  the view, what hits you, the bill). Repetition is the structure viewers learn and wait for.
+- **Story first, numbers second.** At most ~2 numbers per beat. Translate every big number into a
+  felt comparison (156× the fastest probe, 31 full Moons, 200× sunlight, two-thirds of a flying
+  mosquito, a speck of dust = 15 t of TNT). Exact values stay in calc.json and on screen.
+- **At most ONE Math Card per section**, with a light formula. The derivations live in calc.json
+  and the fact-check report, not in the narration.
+- **Open loops with named payoffs**: plant one in the hook ("one of these speeds kills you. Which?")
+  and pay it off explicitly later ("This is the one I warned you about"). Plant a second one for
+  the ending twist. Call back to the hook visual near the end.
+- **End on a twist that reframes the whole video** (e.g. you could reach another galaxy in your
+  lifetime, but you would come home to an Earth 5 million years older).
+- **Let the computation surprise you, and say so.** When the honest simulation contradicts the
+  popular picture (the "starbow" ring does not appear), make that a beat and cite the source. It is
+  the channel's differentiator: real physics, simulated, where competitors fake it.
+- **A persistent on-screen device** that changes with each rung keeps people watching (e.g. a HUD
+  with speed, gamma, your clock and Earth's clock). Export it as `OVERLAY` from scenes.tsx.
+- Hooks: write 5 hooks against the 21 formulas and score them (`python3
+  ~/.claude/skills/yt-script/hookscore.py hooks.txt` if the yt-script skill is installed; otherwise
+  apply its rules: confirm the title in the first sentence, one open question, "you" in the first six
+  words, a specific number, 9–24 words). Keep the best (≥ 70) as the first section.
+- Keep caption-friendly sentences: no fragments under ~3 words on their own ("Yet."), and no
+  sentence that is mostly numbers.
+
+### Native Shorts (never cut a 16:9 frame into a vertical box)
+Each entry of `shorts` is its OWN short script, voiced and rendered natively at 1080×1920 by
+`shorts.py` with the video's scenes laid out vertically:
+```json
+{"id": "short1", "title": "≤ 60 chars, numbers as {{keys}}", "hook": "2–5 WORDS ON THE FIRST FRAME",
+ "end": "Full trip: link below",
+ "beats": [{"id": "s1b01", "text": "...", "visual": {"scene": "...", ...}, "claims": [...]}, ...]}
+```
+- One idea per Short, 5–7 beats, 25–45 s. The first line is a new hook written for a viewer with no
+  context (score it like a video hook); the on-screen `hook` uses different words from the spoken line.
+- The first frame must already show the striking visual (scenes do not fade in at t = 0).
+- End on a line that loops into the first line, or that points to the full video.
+- Short beats are fact-checked exactly like long-form beats (ids `s1b01`…, review entries required).
+- Scenes must handle `useVideoConfig().height > width`: keep text inside x 70–960, y 240–1450
+  (captions sit at y ≈ 1235–1450; the Shorts UI covers the bottom ~22% and a right-hand column).
+
+### Packaging (title + thumbnail as one unit; description for search)
+- Title: write 10, lint them (`python3 ~/.claude/skills/yt-package/title.py titles.txt` if
+  installed): ≤ 60 chars, a number or name, the search phrase people type ("speed of light"), an
+  open question. Put the best in `title`, two more in `alt_titles`.
+- Thumbnail = ONE strong frame from the video's own scene + 2–4 big words that do NOT repeat the
+  title (they state the consequence, e.g. "EARTH +707 YEARS"):
+  `"thumbnail": {"scene": "sky", "params": {...visual params...}, "t": 2, "kicker": "EARTH",
+  "headline": "+{{key}} YEARS"}`. `thumbnail.py` renders it with Remotion (IfEngineThumb).
+- Description (built by metadata.py): `hook` = 2–3 lines that front-load the words of the 3 search
+  queries the video should win; `learn` = 4–5 short "what you'll learn" bullets; chapters; 4–5 key
+  numbers in plain words (no formulas); sources and `image_credits` at the bottom; the AI-tools note
+  is added automatically.
 
 Run: `python -B build_script.py <id>`.
 
@@ -137,6 +196,15 @@ export const SCENES: Record<string, SceneEntry> = { my_scene: { C: MyScene, shif
   - Animate only with `t`/`pt` (`interpolate`, `prog` from `../../timeline`). No CSS animations.
   - On-screen numbers come from `data.values` or params only; never type digits for measurements.
   - Full-bleed shapes must extend from x −600 to 2600 (scenes are shifted and scaled).
+  - Scenes used by Shorts must lay out for 1080×1920 too (`const { width, height } = useVideoConfig()`).
+  - Optional `export const OVERLAY: React.FC<OverlayProps>` in scenes.tsx is drawn above every scene
+    (e.g. a persistent HUD); keep it clear of the Math Card and kinetic text.
+  - Real imagery (NASA public domain; ESA/Hubble/Webb CC BY 4.0) lives in `remotion/src/videos/<id>/assets/`
+    and is imported; credit each image on screen and in `metadata.image_credits`. The headless run
+    cannot download files: reuse assets already in the repo or leave imagery for a human run.
+  - Avoid static frames longer than ~6 s: slow push-ins, counters, particles, and ramps between states.
+  - Example of a computed visual: `remotion/src/videos/light-speed-nines/Starfield.tsx` renders a real
+    star catalogue through relativistic aberration, Doppler colour and beaming on a canvas, per frame.
 
 Type-check: `cd engine/remotion && npx tsc --noEmit`.
 
@@ -163,6 +231,8 @@ REMOTION_CHROME=${REMOTION_CHROME:-bundled} python -B render.py <id> --stills
 - Fix any of these: overlapping text, text cut off at the edges, empty frames, elements hidden by
   the Math Card or the kinetic text, unreadably small labels, wrong numbers. Re-render, at most twice.
 - Check the hook frames especially.
+- Shorts: `python -B shorts.py <id> --stills` renders one vertical frame per Short beat (silent timing)
+  into `renders/stills/shorts/`. Check the first frame of each Short, the caption zone and the safe area.
 
 ## 9. Finish
 

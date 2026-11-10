@@ -254,8 +254,8 @@ def main() -> None:
         warn.append(f"hook ends at {hook_end:.1f}s (>15s)")
     if any(g > 95 for g in gaps):
         warn.append(f"retention gap > 95s: {gaps}")
-    if not (480 <= t <= 600):
-        warn.append(f"duration {t / 60:.2f} min outside 8-10 min")
+    if not (480 <= t <= 720):
+        warn.append(f"duration {t / 60:.2f} min outside 8-12 min")
     status = "done" if prov and not qa_issues else ("degraded" if not prov else "failed")
     if status == "failed":
         fail(vdir, STAGE, "audio QA: " + "; ".join(qa_issues))

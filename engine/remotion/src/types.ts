@@ -56,3 +56,17 @@ export type SceneProps = {
 };
 
 export type SceneEntry = { C: React.FC<SceneProps>; shift: boolean };
+
+/** props of an optional per-video OVERLAY (drawn above every scene, below captions) */
+export type OverlayProps = { data: VideoProps; time: number; slots: Slot[]; slot: Slot | undefined };
+
+/** a word of a native Short's narration with its time (seconds), for word-by-word captions */
+export type Word = { w: string; start: number; end: number };
+
+/** props of a native vertical Short (IfEngineShort): a VideoProps run plus caption words */
+export type ShortProps = VideoProps & { shortId: string; hook: string; end: string; words: Word[] };
+
+/** props of the thumbnail still (IfEngineThumb) */
+export type ThumbProps = VideoProps & {
+  thumb: { scene: string; params: Record<string, unknown>; t?: number; kicker?: string; headline: string; sub?: string };
+};

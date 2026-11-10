@@ -72,6 +72,8 @@ def main() -> None:
         disp_index.setdefault(norm(v["display"]), []).append(k)
 
     beats = [b for s in script["sections"] for b in s["beats"]]
+    # native Shorts have their own narration: same tracing + review rules as long-form beats
+    beats += [b for sh in script.get("shorts", []) for b in sh.get("beats", []) if isinstance(b, dict)]
     for b in beats:
         claims = b.get("claims", [])
         allowed = {norm(V[c]["display"]): c for c in claims if c in V}
@@ -106,9 +108,10 @@ def main() -> None:
         rows.append((b, found))
 
     for sh in script.get("shorts", []):
-        for n in numbers_in(sh["title"]):
-            if norm(n) not in disp_index and norm(n) not in WHITELIST:
-                errors.append(f"short {sh['id']} title number '{n}' unsourced")
+        for field in ("title", "hook", "end"):
+            for n in numbers_in(sh.get(field) or ""):
+                if norm(n) not in disp_index and norm(n) not in WHITELIST:
+                    errors.append(f"short {sh['id']} {field} number '{n}' unsourced")
 
     # ---- B. worded comparisons, re-derived ----
     text = {b["id"]: b["text"] for b in beats}

@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
-"""Stage 8 - thumbnail (1280x720 PNG) from pipeline/templates/thumbnail.html (brand template).
+"""Stage 8 - thumbnail (1280x720 PNG).
 
-Uses headless Chrome (CHROME env or google-chrome). Self-checks: layout script in the template
-reports overlap/overflow; output must be 1280x720 and under YouTube's 2 MB limit.
+Preferred: script.json "thumbnail" names a video scene ({"scene", "params", "kicker", "headline", "sub"}):
+the thumbnail is ONE real frame of the video's own visual rendered by Remotion (composition
+IfEngineThumb) with 2-4 big words. Fallback: the brand HTML template (pipeline/templates/thumbnail.html)
+rendered with headless Chrome (CHROME env or google-chrome).
+Self-checks: numbers come from calc.json; output 1280x720 and under YouTube's 2 MB limit.
 """
 from __future__ import annotations
 
@@ -26,6 +29,39 @@ def chrome(args):
                            "--force-device-scale-factor=1", *args], capture_output=True, text=True, timeout=120)
 
 
+def remotion_thumb(vdir, vid, T):
+    from lib import REMOTION, write_json
+    from render import build_props
+    props = build_props(vdir, vid)
+    props["thumb"] = {k: T.get(k) for k in ("scene", "params", "t", "kicker", "headline", "sub") if T.get(k) is not None}
+    props["thumb"].setdefault("params", {})
+    build = vdir / "build"
+    build.mkdir(exist_ok=True)
+    pp = build / "thumb_props.json"
+    write_json(pp, props)
+    out = vdir / "thumbnail.png"
+    r = subprocess.run(["npx", "remotion", "still", "IfEngineThumb", str(out), f"--props={pp}", "--image-format=png", "--log=error"],
+                       cwd=REMOTION, capture_output=True, text=True)
+    if r.returncode or not out.exists():
+        fail(vdir, STAGE, f"remotion still failed: {(r.stdout + r.stderr)[-400:]}")
+    im = Image.open(out)
+    problems = []
+    if im.size != (1280, 720):
+        problems.append(f"size {im.size}")
+    if out.stat().st_size > 2_000_000:
+        im.convert("RGB").save(out, optimize=True)
+    if out.stat().st_size > 2_000_000:
+        problems.append("PNG > 2MB")
+    words = re.sub(r"<.*?>", " ", " ".join(str(T.get(k, "")) for k in ("kicker", "headline", "sub"))).split()
+    if len(words) > 4:
+        problems.append(f"{len(words)} words on the thumbnail (max 4 for feed size)")
+    if problems:
+        fail(vdir, STAGE, "; ".join(problems))
+    set_stage(vdir, STAGE, "done", outputs=["thumbnail.png"], size="1280x720", bytes=out.stat().st_size,
+              headline=" ".join(words), source=f"remotion scene {T['scene']}")
+    log(STAGE, f"OK: {out} (scene {T['scene']}) {out.stat().st_size // 1024} KB, words: {' '.join(words)}")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("video_id", nargs="?", default="earth-stops-1s")
@@ -39,10 +75,12 @@ def main():
     calc = read_json(vdir / "calc.json")["values"]
     disp = {v["display"].replace(",", "") for v in calc.values()}
     from lib import numbers_in
-    bad = [n for n in numbers_in(re.sub("<.*?>", " ", f"{headline} {number} {badge}"))
+    bad = [n for n in numbers_in(re.sub("<.*?>", " ", f"{headline} {number} {badge} {T.get('kicker', '')} {T.get('sub', '')}"))
            if n.replace(",", "") not in disp and n not in {"1", "2", "3"}]
     if bad:
         fail(vdir, STAGE, f"thumbnail numbers not from calc.json: {bad} (use {{{{keys}}}} in the template)")
+    if T.get("scene"):
+        return remotion_thumb(vdir, a.video_id, T)
     art = T.get("art", {})
     p1, p2, p3 = art.get("planet", ["#9be7ff", "#2b7bd6", "#0d2a66"])
     land = "" if not art.get("land", True) else (

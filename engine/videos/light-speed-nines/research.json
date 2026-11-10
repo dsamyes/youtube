@@ -1,0 +1,398 @@
+{
+  "facts": {
+    "F01": {
+      "fact": "Speed of light in vacuum (exact)",
+      "value": 299792458.0,
+      "unit": "m/s",
+      "sources": [
+        "S1"
+      ]
+    },
+    "F02": {
+      "fact": "Julian year used for the light-year",
+      "value": 365.25,
+      "unit": "days",
+      "sources": [
+        "S2"
+      ]
+    },
+    "F03": {
+      "fact": "Proton rest energy",
+      "value": 938.27208816,
+      "unit": "MeV",
+      "sources": [
+        "S3"
+      ]
+    },
+    "F04": {
+      "fact": "Electron volt",
+      "value": 1.602176634e-19,
+      "unit": "J",
+      "sources": [
+        "S4"
+      ]
+    },
+    "F05": {
+      "fact": "Distance to Alpha Centauri A and B",
+      "value": 4.37,
+      "unit": "ly",
+      "sources": [
+        "S5"
+      ]
+    },
+    "F06": {
+      "fact": "Distance to the Milky Way's center (Sagittarius A*)",
+      "value": 26000.0,
+      "unit": "ly",
+      "sources": [
+        "S6"
+      ]
+    },
+    "F07": {
+      "fact": "Distance to the Andromeda Galaxy (M31)",
+      "value": 2500000.0,
+      "unit": "ly",
+      "sources": [
+        "S7"
+      ]
+    },
+    "F08": {
+      "fact": "Typical interstellar gas density (about one atom per cubic centimetre)",
+      "value": 1.0,
+      "unit": "atoms/cm^3",
+      "sources": [
+        "S8"
+      ]
+    },
+    "F09": {
+      "fact": "World primary energy supply, 2024 (record)",
+      "value": 592.0,
+      "unit": "EJ/yr",
+      "sources": [
+        "S9"
+      ]
+    },
+    "F10": {
+      "fact": "Mass of the International Space Station",
+      "value": 419725.0,
+      "unit": "kg",
+      "sources": [
+        "S10"
+      ]
+    },
+    "F11": {
+      "fact": "LHC proton beam energy (Run 3)",
+      "value": 6.8,
+      "unit": "TeV",
+      "sources": [
+        "S11"
+      ]
+    },
+    "F12": {
+      "fact": "1 TeV is about the kinetic energy of a flying mosquito",
+      "value": 1.0,
+      "unit": "TeV",
+      "sources": [
+        "S12"
+      ]
+    },
+    "F13": {
+      "fact": "Proton therapy beam energies, lower end",
+      "value": 70.0,
+      "unit": "MeV",
+      "sources": [
+        "S13"
+      ]
+    },
+    "F14": {
+      "fact": "Proton therapy beam energies, upper end",
+      "value": 250.0,
+      "unit": "MeV",
+      "sources": [
+        "S13"
+      ]
+    },
+    "F15": {
+      "fact": "CSDA range of a 5 MeV proton in liquid water",
+      "value": 0.03623,
+      "unit": "g/cm^2",
+      "sources": [
+        "S14"
+      ]
+    },
+    "F16": {
+      "fact": "CSDA range of a 150 MeV proton in liquid water",
+      "value": 15.76,
+      "unit": "g/cm^2",
+      "sources": [
+        "S14"
+      ]
+    },
+    "F17": {
+      "fact": "Minimum ionization stopping power of liquid water",
+      "value": 1.992,
+      "unit": "MeV cm^2/g",
+      "sources": [
+        "S15"
+      ]
+    },
+    "F18": {
+      "fact": "Nuclear interaction length of liquid water",
+      "value": 83.3,
+      "unit": "g/cm^2",
+      "sources": [
+        "S15"
+      ]
+    },
+    "F19": {
+      "fact": "Radiation dose lethal to 50% within 30 days (LD50/30), lower end of 4-5 Sv",
+      "value": 4.0,
+      "unit": "Sv",
+      "sources": [
+        "S16"
+      ]
+    },
+    "F20": {
+      "fact": "Cosmic microwave background temperature",
+      "value": 2.725,
+      "unit": "K",
+      "sources": [
+        "S17"
+      ]
+    },
+    "F21": {
+      "fact": "Sun effective temperature",
+      "value": 5772.0,
+      "unit": "K",
+      "sources": [
+        "S18"
+      ]
+    },
+    "F22": {
+      "fact": "Solar constant (sunlight at Earth's distance)",
+      "value": 1361.0,
+      "unit": "W/m^2",
+      "sources": [
+        "S18"
+      ]
+    },
+    "F23": {
+      "fact": "Moon apparent diameter seen from Earth (mean)",
+      "value": 1896.0,
+      "unit": "arcsec",
+      "sources": [
+        "S19"
+      ]
+    },
+    "F24": {
+      "fact": "Standard gravity g (exact)",
+      "value": 9.80665,
+      "unit": "m/s^2",
+      "sources": [
+        "S20"
+      ]
+    },
+    "F25": {
+      "fact": "Oldest known fossil of the genus Homo (Ledi-Geraru jaw)",
+      "value": 2.8,
+      "unit": "million years",
+      "sources": [
+        "S21"
+      ]
+    },
+    "F26": {
+      "fact": "B-V colour index to temperature formula (Ballesteros 2012)",
+      "value": "qualitative",
+      "unit": "-",
+      "sources": [
+        "S22"
+      ]
+    },
+    "F27": {
+      "fact": "Star catalogue: HYG v4.0 (Hipparcos, Yale BSC, Gliese) positions, magnitudes, B-V",
+      "value": "qualitative",
+      "unit": "-",
+      "sources": [
+        "S23"
+      ]
+    },
+    "F28": {
+      "fact": "Parker Solar Probe top speed (fastest human-made object)",
+      "value": 430000.0,
+      "unit": "mph",
+      "sources": [
+        "S24"
+      ]
+    },
+    "F29": {
+      "fact": "Energy of one tonne of TNT (by definition)",
+      "value": 4184000000.0,
+      "unit": "J",
+      "sources": [
+        "S25"
+      ]
+    },
+    "F30": {
+      "fact": "Hypothetical speck of dust, one microgram (scenario choice)",
+      "value": 1e-09,
+      "unit": "kg",
+      "sources": [
+        "S25"
+      ]
+    },
+    "F31": {
+      "fact": "Relativistic aberration and Doppler formulas",
+      "value": "qualitative",
+      "unit": "-",
+      "sources": [
+        "S26"
+      ]
+    },
+    "F32": {
+      "fact": "Constant-acceleration (relativistic rocket) trip formulas",
+      "value": "qualitative",
+      "unit": "-",
+      "sources": [
+        "S27"
+      ]
+    },
+    "F33": {
+      "fact": "Mile (international) in metres (exact)",
+      "value": 1609.344,
+      "unit": "m",
+      "sources": [
+        "S25"
+      ]
+    },
+    "F34": {
+      "fact": "The 'starbow' (a rainbow ring of stars ahead of a fast ship) does not appear when the starfield is computed properly (McKinley and Doherty, 1979)",
+      "value": "qualitative",
+      "unit": "-",
+      "sources": [
+        "S28",
+        "S29"
+      ]
+    }
+  },
+  "sources": {
+    "S1": {
+      "title": "NIST CODATA, Speed of light in vacuum",
+      "url": "https://physics.nist.gov/cgi-bin/cuu/Value?c"
+    },
+    "S2": {
+      "title": "IAU, Measuring the Universe: the light-year (Julian year of 365.25 days)",
+      "url": "https://www.iau.org/public/themes/measuring/"
+    },
+    "S3": {
+      "title": "NIST CODATA, Proton mass energy equivalent in MeV",
+      "url": "https://physics.nist.gov/cgi-bin/cuu/Value?mpc2mev"
+    },
+    "S4": {
+      "title": "NIST CODATA, Electron volt-joule relationship",
+      "url": "https://physics.nist.gov/cgi-bin/cuu/Value?evj"
+    },
+    "S5": {
+      "title": "NASA Science, Sun: Facts (nearest stars: Alpha Centauri A and B at 4.37 light-years)",
+      "url": "https://science.nasa.gov/sun/facts/"
+    },
+    "S6": {
+      "title": "NASA Science, Galactic Center (Chandra, Hubble, Spitzer): 26,000 light-years",
+      "url": "https://science.nasa.gov/asset/webb/galactic-center-chandra-hubble-spitzer/"
+    },
+    "S7": {
+      "title": "NASA Science, Hubble Messier Catalog: Messier 31 (2.5 million light-years)",
+      "url": "https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-31/"
+    },
+    "S8": {
+      "title": "NASA Genesis mission, Interstellar Clouds fact sheet (typical density about one particle per cm3)",
+      "url": "https://solarsystem.nasa.gov/genesismission/educate/kitchen/resource/factsheets/Interstellarclouds.pdf"
+    },
+    "S9": {
+      "title": "Energy Institute, Statistical Review of World Energy 2025 (2024 primary energy 592 EJ)",
+      "url": "https://www.energyinst.org/statistical-review"
+    },
+    "S10": {
+      "title": "NASA, Space Station Facts and Figures (mass 419,725 kg)",
+      "url": "https://www.nasa.gov/international-space-station/space-station-facts-and-figures/"
+    },
+    "S11": {
+      "title": "CERN, Facts and figures about the LHC (6.8 TeV per proton)",
+      "url": "https://home.cern/resources/faqs/facts-and-figures-about-lhc"
+    },
+    "S12": {
+      "title": "CERN LHC Machine Outreach, LHC Glossary (1 TeV, energy of a flying mosquito)",
+      "url": "https://lhc-machine-outreach.web.cern.ch/lhc_glossary.htm"
+    },
+    "S13": {
+      "title": "MD Anderson Cancer Center, What is proton therapy (70 to 250 million electron volts)",
+      "url": "https://www.mdanderson.org/patients-family/diagnosis-treatment/care-centers-clinics/proton-therapy-center/what-is-proton-therapy.html"
+    },
+    "S14": {
+      "title": "NIST PSTAR, Stopping power and range tables for protons (liquid water)",
+      "url": "https://physics.nist.gov/PhysRefData/Star/Text/PSTAR.html"
+    },
+    "S15": {
+      "title": "Particle Data Group, Atomic and nuclear properties: water (liquid)",
+      "url": "https://pdg.lbl.gov/2010/AtomicNuclearProperties/HTML_PAGES/276.html"
+    },
+    "S16": {
+      "title": "U.S. NRC, Glossary: Lethal dose (LD), LD50/30 of 4 to 5 sieverts",
+      "url": "https://www.nrc.gov/reading-rm/basic-ref/glossary/lethal-dose-ld.html"
+    },
+    "S17": {
+      "title": "NASA WMAP, Tests of Big Bang: the CMB (2.725 K)",
+      "url": "https://map.gsfc.nasa.gov/universe/bb_cosmo_fluct.html"
+    },
+    "S18": {
+      "title": "NASA NSSDC, Sun Fact Sheet (effective temperature 5772 K, solar constant 1361 W/m2)",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/sunfact.html"
+    },
+    "S19": {
+      "title": "NASA NSSDC, Moon Fact Sheet (apparent diameter 1896 arcsec)",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/moonfact.html"
+    },
+    "S20": {
+      "title": "NIST CODATA, Standard acceleration of gravity",
+      "url": "https://physics.nist.gov/cgi-bin/cuu/Value?gn"
+    },
+    "S21": {
+      "title": "NPR, Jaw fossil in Ethiopia likely oldest ever found in human line (2.8 million years)",
+      "url": "https://www.npr.org/2015/03/05/390717001/jaw-fossil-in-ethiopia-likely-oldest-ever-found-in-human-line"
+    },
+    "S22": {
+      "title": "Ballesteros, New insights into black bodies, EPL 97 (2012), arXiv:1201.1809",
+      "url": "https://arxiv.org/abs/1201.1809"
+    },
+    "S23": {
+      "title": "Astronexus, HYG star database v4.0 (CC BY-SA 4.0)",
+      "url": "https://github.com/astronexus/HYG-Database"
+    },
+    "S24": {
+      "title": "NASA Science, Parker Solar Probe (about 430,000 mph)",
+      "url": "https://science.nasa.gov/mission/parker-solar-probe/"
+    },
+    "S25": {
+      "title": "NIST, Special Publication 811, Guide for the Use of the SI (TNT equivalent, unit conversions)",
+      "url": "https://www.nist.gov/pml/special-publication-811"
+    },
+    "S26": {
+      "title": "Einstein, On the Electrodynamics of Moving Bodies (1905), section 7: aberration and Doppler",
+      "url": "https://www.fourmilab.ch/etexts/einstein/specrel/www/"
+    },
+    "S28": {
+      "title": "McKinley and Doherty, In search of the starbow: the appearance of the starfield from a relativistic spaceship, Am. J. Phys. 47, 309 (1979)",
+      "url": "https://doi.org/10.1119/1.11834"
+    },
+    "S29": {
+      "title": "Optics and Photonics News, A Brief History of the Starbow (Optica)",
+      "url": "https://www.optica-opn.org/home/articles/volume_20/issue_4/departments/light_touch/a_brief_history_of_the_starbow"
+    },
+    "S27": {
+      "title": "Gibbs and Baez, The Relativistic Rocket (UC Riverside Physics FAQ)",
+      "url": "https://math.ucr.edu/home/baez/physics/Relativity/SR/Rocket/rocket.html"
+    }
+  },
+  "cities": {},
+  "generated": "2026-11-10T21:56:08+00:00",
+  "url_probe": {}
+}

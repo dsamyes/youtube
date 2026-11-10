@@ -1,0 +1,32 @@
+{
+  "source": "native (IfEngineShort)",
+  "shorts": [
+    {
+      "id": "short1",
+      "title": "The real sky at 99.9999% of light speed",
+      "file": "shorts/light-speed-nines_short1.mp4",
+      "duration_s": 44.5,
+      "audio": true,
+      "native": true,
+      "words": 99
+    },
+    {
+      "id": "short2",
+      "title": "You age 1 year. Earth ages 707.",
+      "file": "shorts/light-speed-nines_short2.mp4",
+      "duration_s": 44.9,
+      "audio": true,
+      "native": true,
+      "words": 91
+    },
+    {
+      "id": "short3",
+      "title": "At 99.9999% light speed, one hydrogen atom hits like this",
+      "file": "shorts/light-speed-nines_short3.mp4",
+      "duration_s": 42.9,
+      "audio": true,
+      "native": true,
+      "words": 89
+    }
+  ]
+}

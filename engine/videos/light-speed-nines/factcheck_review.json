@@ -1,0 +1,442 @@
+{
+  "reviewer": "editorial fact-check pass (agent), 2026-11-10",
+  "beats": {
+    "b01": {
+      "verdict": "fixed",
+      "note": "gamma(0.999999)=707 (calc). Draft said 'every star crowds into one ring'; our own simulation and McKinley & Doherty 1979 show no ring, so reworded to 'one patch of light ahead' (aberration puts all but the rearmost stars within ~1 deg).",
+      "hash": "20f85a8a34e1"
+    },
+    "b02": {
+      "verdict": "rhetoric",
+      "note": "Open loop; payoff in b23-b27 (unshielded lethal dose at 90%, a lower bound). Trimmed 'But' for hook length.",
+      "hash": "9b54c24838b5"
+    },
+    "b03": {
+      "verdict": "ok",
+      "note": "ISS mass 419,725 kg (NASA) -> 'about 420 tonnes'. The dial is the scenario device.",
+      "hash": "bde21794c0ab"
+    },
+    "b04": {
+      "verdict": "rhetoric",
+      "note": "Lists the scenario speeds (definitions, not measurements). Shortened for captions.",
+      "hash": "6d24c8c3c6d4"
+    },
+    "b05": {
+      "verdict": "rhetoric",
+      "note": "Structure of each level.",
+      "hash": "3fa01a1dbe9a"
+    },
+    "b06": {
+      "verdict": "ok",
+      "note": "Star field = HYG v4.0 catalogue (~28,500 stars to V=7.6) transformed per frame with aberration, Doppler and beaming (physics.ts). 'tens of thousands' true; diffuse glow stand-in disclosed in research.md.",
+      "hash": "877234a4c312"
+    },
+    "b07": {
+      "verdict": "ok",
+      "note": "gamma = dt_Earth / dt_ship for constant cruise speed (special relativity). HUD shows it.",
+      "hash": "8374b2899348"
+    },
+    "b08": {
+      "verdict": "ok",
+      "note": "0.1 c = 29,979 km/s -> '30,000 kilometers every second'.",
+      "hash": "e5cfe8f01e4a"
+    },
+    "b09": {
+      "verdict": "ok",
+      "note": "Parker Solar Probe ~430,000 mph = 192 km/s (NASA), the fastest human-made object; 29,979/192 = 156.",
+      "hash": "4dbc3f63f3d6"
+    },
+    "b10": {
+      "verdict": "ok",
+      "note": "(gamma-1)*365.25 d = 1.84 d per ship year -> 'about 2 extra days'.",
+      "hash": "eddf6d1ee1a7"
+    },
+    "b11": {
+      "verdict": "ok",
+      "note": "At 0.1c a sideways star appears at acos(0.1)=84 deg (6 deg forward); D ahead 1.11 (bluer), behind 0.90 (redder). Reworded into shorter sentences for captions; meaning unchanged.",
+      "hash": "435de5960e56"
+    },
+    "b12": {
+      "verdict": "ok",
+      "note": "Typical interstellar density ~1 atom/cm3 (NASA Genesis). 'about' because the local medium is less dense (stated in assumptions).",
+      "hash": "1b73beec3163"
+    },
+    "b13": {
+      "verdict": "ok",
+      "note": "(gamma-1) m_p c^2 = 4.73 MeV; NIST PSTAR CSDA range of a 5 MeV proton in water is 0.36 mm, so a 4.7 MeV proton stops in under half a millimetre.",
+      "hash": "580cee5e6dc7"
+    },
+    "b14": {
+      "verdict": "ok",
+      "note": "KE = (gamma-1) M c^2 = 1.9e20 J; 592 EJ/yr world (Energy Institute 2025) -> 0.32 yr = 3.9 months. Minimum: perfect engine, no fuel (stated).",
+      "hash": "211d6d924d4a"
+    },
+    "b15": {
+      "verdict": "ok",
+      "note": "4.37 ly / 0.1c = 43.7 yr Earth time (ship 43.5 yr). 'old person' is rhetoric for a 43-year trip.",
+      "hash": "19d08abbea5e"
+    },
+    "b16": {
+      "verdict": "rhetoric",
+      "note": "Scenario speed.",
+      "hash": "0f664f3dc9af"
+    },
+    "b17": {
+      "verdict": "ok",
+      "note": "gamma(0.5)=1.155 -> 1.15; extra days 0.155*365.25 = 56.5 -> 57.",
+      "hash": "7d869cc86d8c"
+    },
+    "b18": {
+      "verdict": "fixed",
+      "note": "Aberration: theta=90 deg -> cos theta' = beta = 0.5 -> 60 deg. Draft said '60 degrees ahead of you', which could read as 'moved by 60 deg'; reworded to '60 degrees from straight ahead'.",
+      "hash": "129340d20dde"
+    },
+    "b19": {
+      "verdict": "ok",
+      "note": "Sun T_eff 5772 K (NASA) x D_ahead 1.732 = 9,997 K -> 10,000; behind /1.732 = 3,333 -> 3,300. Visible flux behind drops (calc check).",
+      "hash": "bcaff18f5aa4"
+    },
+    "b20": {
+      "verdict": "ok",
+      "note": "(1.155-1) x 938.3 MeV = 145 MeV, inside the 70-250 MeV proton-therapy band (MD Anderson).",
+      "hash": "1a88e72b66f8"
+    },
+    "b21": {
+      "verdict": "fixed",
+      "note": "Draft said 'straight through a human body': wrong, a 145 MeV proton stops after ~15 cm of water (PSTAR, 150 MeV -> 15.76 cm). Now 'reach deep inside'. 'less than 16 centimeters' holds since 145 < 150 MeV.",
+      "hash": "af78558e138c"
+    },
+    "b22": {
+      "verdict": "ok",
+      "note": "KE/world = 9.9 yr; Alpha Cen 8.74 yr Earth, 7.57 yr ship (d/v, d/(gamma v)).",
+      "hash": "0662cf7fc758"
+    },
+    "b23": {
+      "verdict": "rhetoric",
+      "note": "Payoff of the b02 open loop begins.",
+      "hash": "cf3982a819c0"
+    },
+    "b24": {
+      "verdict": "ok",
+      "note": "(2.294-1) x 938.3 = 1.21 GeV > rest energy 938 MeV ('more energy than its own mass', mass meaning rest-mass energy). 'don't stop in a water tank' consistent with the 83 cm interaction length (b25).",
+      "hash": "6ba267b7f640"
+    },
+    "b25": {
+      "verdict": "ok",
+      "note": "PDG: nuclear interaction length of water 83.3 g/cm2 = mean free path before an inelastic nuclear collision; hadronic collisions produce secondaries (showers). 'multiplies' is rhetoric for secondary production.",
+      "hash": "3323e53e7ee5"
+    },
+    "b26": {
+      "verdict": "ok",
+      "note": "Dose rate >= n v S_min = 1e6/m3 x 0.9c x 1.992 MeV cm2/g = 8.6 Gy/s (lower bound; showers add more). LD50/30 lower end 4 Sv (NRC) -> 0.46 s < 0.5 s. Unshielded is stated.",
+      "hash": "0d2bdd5c004e"
+    },
+    "b27": {
+      "verdict": "rhetoric",
+      "note": "Interpretation of b26; sugar cube ~1 cm3 matches the 1 atom/cm3 density.",
+      "hash": "ccfb8063e988"
+    },
+    "b28": {
+      "verdict": "rhetoric",
+      "note": "Scenario assumption (shielding assumed from here), consistent with b25.",
+      "hash": "253892e8083e"
+    },
+    "b29": {
+      "verdict": "fixed",
+      "note": "cos theta' = 0.9 -> 25.8 deg -> 26; half sky = cone of 2 x 25.8 = 52 deg. Same wording fix as b18.",
+      "hash": "d551a11796cd"
+    },
+    "b30": {
+      "verdict": "ok",
+      "note": "5772 K / D, D_behind = sqrt(0.1/1.9) = 0.229 -> 1,324 K -> 1,300 K; peak ~2.2 um (infrared).",
+      "hash": "ead778ce381a"
+    },
+    "b31": {
+      "verdict": "ok",
+      "note": "KE/world = 82 yr; ship time to Alpha Cen = 4.86/2.294 = 2.12 yr.",
+      "hash": "08c26d8ddbdf"
+    },
+    "b32": {
+      "verdict": "rhetoric",
+      "note": "Scenario speed.",
+      "hash": "5cf1ead543dd"
+    },
+    "b33": {
+      "verdict": "ok",
+      "note": "gamma(0.99)=7.09 -> 'about seven years older' (comparison re-derived).",
+      "hash": "c5ca39d81c62"
+    },
+    "b34": {
+      "verdict": "ok",
+      "note": "2 acos(0.99) = 16.2 deg; Moon 1896 arcsec = 0.527 deg (NASA) -> 30.8 -> 31 Moons.",
+      "hash": "00d8432dd646"
+    },
+    "b35": {
+      "verdict": "ok",
+      "note": "P = n v (gamma-1) m_p c^2 = 1e6 x 0.99c x 5.71 GeV = 272 kW/m2; / 1361 W/m2 (NASA solar constant) = 200.",
+      "hash": "0d97a784a803"
+    },
+    "b36": {
+      "verdict": "ok",
+      "note": "Ship time to Alpha Cen 0.623 yr = 7.5 months; galactic centre 26,000 ly / 0.99c / 7.09 = 3,700 yr.",
+      "hash": "281d82aa07c3"
+    },
+    "b37": {
+      "verdict": "ok",
+      "note": "Reversal claim checked in calc: visible-band flux of a Sun-like star dead ahead at 99.9% is 0.58x its rest value (fade_999 < 1).",
+      "hash": "3962c7cd7485"
+    },
+    "b38": {
+      "verdict": "ok",
+      "note": "5772 K x D 44.7 = 258,000 K -> 260,000; Wien peak ~11 nm (UV); visible ratio 0.58 (fades).",
+      "hash": "82981f2ff13e"
+    },
+    "b39": {
+      "verdict": "ok",
+      "note": "gamma 22.4; ship time to Alpha Cen 0.196 yr = 71.4 days.",
+      "hash": "0969df6bec7a"
+    },
+    "b40": {
+      "verdict": "ok",
+      "note": "KE = 21.4 x 420 t x c^2 = 8.06e23 J = 1,360 yr -> 'about 1,400'; exceeds the sum of all previous levels (480 yr): comparison re-derived.",
+      "hash": "e7a048d69aa0"
+    },
+    "b41": {
+      "verdict": "rhetoric",
+      "note": "Scenario speed.",
+      "hash": "2995c8dec01a"
+    },
+    "b42": {
+      "verdict": "ok",
+      "note": "McKinley & Doherty, Am. J. Phys. 47, 309 (1979): a properly computed starfield shows no 'starbow'; our render agrees. Brightness/blueness rises toward the centre because D is largest there.",
+      "hash": "ad91ce5c0d9c"
+    },
+    "b43": {
+      "verdict": "ok",
+      "note": "CMB 2.725 K (NASA WMAP) x D_ahead 141.4 = 385 K > 373 K (boiling water). Blackbody stays blackbody at T x D.",
+      "hash": "5787655139fe"
+    },
+    "b44": {
+      "verdict": "ok",
+      "note": "Hypothetical 1 ug grain (stated): 69.7 x 1e-9 kg x c^2 = 6.3e9 J / 4.184e9 J/t = 1.5 t TNT.",
+      "hash": "7f92f3733fbc"
+    },
+    "b45": {
+      "verdict": "ok",
+      "note": "gamma 70.7; Alpha Cen 22.6 days ship time; galactic centre 368 yr ship time.",
+      "hash": "672a13ec1d0b"
+    },
+    "b46": {
+      "verdict": "rhetoric",
+      "note": "Callback to the hook sky (same level).",
+      "hash": "28e5228647ab"
+    },
+    "b47": {
+      "verdict": "ok",
+      "note": "2 acos(0.999999) = 0.162 deg < Moon 0.527 deg; CMB x 1414 = 3,854 K -> 3,850 K, a visibly orange blackbody.",
+      "hash": "079e059d6c27"
+    },
+    "b48": {
+      "verdict": "ok",
+      "note": "gamma(0.999999) = 707.",
+      "hash": "47cf3248e383"
+    },
+    "b49": {
+      "verdict": "ok",
+      "note": "706 x 938.3 MeV = 663 GeV = 0.66 TeV; CERN: 1 TeV ~ kinetic energy of a flying mosquito. Flux n v = 3e14 per m2 per s ('trillions').",
+      "hash": "2a37d92694c0"
+    },
+    "b50": {
+      "verdict": "ok",
+      "note": "n v (gamma-1) m_p c^2 = 3.18e7 W/m2 -> 32 MW/m2; 1 ug dust: 706 x 1e-9 x c^2 = 6.3e10 J = 15 t TNT.",
+      "hash": "0d5d29edb1c8"
+    },
+    "b51": {
+      "verdict": "ok",
+      "note": "KE = 706 x 420 t x c^2 = 2.66e25 J / 592 EJ = 44,900 -> 'about 45,000 years'.",
+      "hash": "641bf5f2d53b"
+    },
+    "b52": {
+      "verdict": "ok",
+      "note": "26,000 ly (NASA) / 0.999999c / 707 = 36.8 yr ship time: within a human lifetime.",
+      "hash": "8f60e209489f"
+    },
+    "b53": {
+      "verdict": "ok",
+      "note": "Earth time = d/v = 26,000 yr. 'about to look small' sets up b60.",
+      "hash": "f80e66f276b2"
+    },
+    "b54": {
+      "verdict": "ok",
+      "note": "Constant proper acceleration of 1 g (9.80665 m/s2) is felt as Earth gravity.",
+      "hash": "53a9f5ff6bcd"
+    },
+    "b55": {
+      "verdict": "ok",
+      "note": "Relativistic rocket (Gibbs & Baez), accelerate to midpoint then decelerate: tau = 2(c/g) acosh(1 + g d / 2c^2) = 19.8 yr for 26,000 ly.",
+      "hash": "11634bcebae9"
+    },
+    "b56": {
+      "verdict": "ok",
+      "note": "Same formula for 2.5 million ly: tau = 28.6 yr.",
+      "hash": "4729f73e25d6"
+    },
+    "b57": {
+      "verdict": "ok",
+      "note": "gamma_max = 1 + g d / 2c^2 = 1.29e6 -> 1 - beta = 3.0e-13 -> 99.99999999997%, 12 nines; LHC 6.8 TeV protons gamma 7,250 -> 99.999999%; so faster.",
+      "hash": "875c5d3b44f3"
+    },
+    "b58": {
+      "verdict": "ok",
+      "note": "(gamma_max - 1) M c^2 / world = 82 million years (minimum, perfect engine). 'Not with anything we know how to make' is an honest limit; relativity allows it.",
+      "hash": "a6d77721f673"
+    },
+    "b59": {
+      "verdict": "ok",
+      "note": "Round trip = 2 x 28.6 = 57 yr ship time; 25 + 57 = 82 (leaving age is a scenario choice).",
+      "hash": "be5aa84167c4"
+    },
+    "b60": {
+      "verdict": "ok",
+      "note": "Earth time round trip = 2 x 2(c/g) sinh(g tau_half/c) = 5.0 million yr.",
+      "hash": "156227462638"
+    },
+    "b61": {
+      "verdict": "ok",
+      "note": "Ledi-Geraru jaw ~2.8 million years (NPR/Science 2015) < 5 million: comparison re-derived.",
+      "hash": "b2e24a0105f9"
+    },
+    "b62": {
+      "verdict": "rhetoric",
+      "note": "Summary of b56-b61.",
+      "hash": "3f4941720abf"
+    },
+    "b63": {
+      "verdict": "rhetoric",
+      "note": "Next-video setup and tagline.",
+      "hash": "1237d2cc627b"
+    },
+    "s1b01": {
+      "verdict": "rhetoric",
+      "note": "Short 1 hook. 'Movies show streaks' is a description of common depictions; the claim about real physics is checked in s1b05.",
+      "hash": "968b5c36ef54"
+    },
+    "s1b02": {
+      "verdict": "ok",
+      "note": "At rest the sky is the catalogue as seen from Earth (no aberration).",
+      "hash": "0ad7d60110b3"
+    },
+    "s1b03": {
+      "verdict": "ok",
+      "note": "At 90% half the sky is within 26 deg of ahead; behind, D=0.23 shifts stars into infrared (see b29, b30). Shortened for length.",
+      "hash": "d543f82f79d0"
+    },
+    "s1b04": {
+      "verdict": "ok",
+      "note": "2 acos(0.9999) = 1.62 deg -> 1.6.",
+      "hash": "0cde2c42742f"
+    },
+    "s1b05": {
+      "verdict": "ok",
+      "note": "Same source and render as b42 (McKinley & Doherty 1979). Centre is blue-white because D is largest there. Shortened for length.",
+      "hash": "5c9ed1c4e985"
+    },
+    "s1b06": {
+      "verdict": "ok",
+      "note": "At 99.9999% the CMB ahead is 3,850 K (b47): an orange glow. Loops to the first frame.",
+      "hash": "5d0c58bf5d3e"
+    },
+    "s2b01": {
+      "verdict": "rhetoric",
+      "note": "Short 2 hook; 707 = gamma(0.999999). 'Watch never skips' = proper time runs normally for you.",
+      "hash": "f14833e7d080"
+    },
+    "s2b02": {
+      "verdict": "ok",
+      "note": "Time dilation relative to Earth's frame; your own clock runs normally.",
+      "hash": "bfbc427291f6"
+    },
+    "s2b03": {
+      "verdict": "ok",
+      "note": "gamma(0.9)=2.29, gamma(0.99)=7.09.",
+      "hash": "3eeec6289cbd"
+    },
+    "s2b04": {
+      "verdict": "ok",
+      "note": "Ship time 36.8 yr to the galactic centre at 99.9999% (b52).",
+      "hash": "6982c3b7c7c4"
+    },
+    "s2b05": {
+      "verdict": "ok",
+      "note": "Earth time 26,000 yr (b53).",
+      "hash": "93bafddc3df2"
+    },
+    "s2b06": {
+      "verdict": "rhetoric",
+      "note": "Loop back to the hook line.",
+      "hash": "74d2a3c3d7b9"
+    },
+    "s3b01": {
+      "verdict": "rhetoric",
+      "note": "Short 3 hook; the answer is in s3b02 and s3b05-06.",
+      "hash": "92d626b9c07d"
+    },
+    "s3b02": {
+      "verdict": "ok",
+      "note": "663 GeV = 0.66 TeV vs CERN's 1 TeV ~ flying mosquito: two-thirds, in one proton.",
+      "hash": "8f8eb486df32"
+    },
+    "s3b04": {
+      "verdict": "ok",
+      "note": "145 MeV at 50%, inside the 70-250 MeV band hospitals use for proton therapy (MD Anderson).",
+      "hash": "e82340aa045f"
+    },
+    "s3b05": {
+      "verdict": "ok",
+      "note": "Lower-bound dose 8.6 Gy/s; LD50/30 4 Sv -> 0.46 s (b26).",
+      "hash": "85c798667518"
+    },
+    "s3b06": {
+      "verdict": "ok",
+      "note": "32 MW/m2 and 15 t TNT for a 1 ug grain (b50).",
+      "hash": "afa88753d145"
+    },
+    "s3b07": {
+      "verdict": "rhetoric",
+      "note": "Closing line, loops to the hook ('empty space turns deadly').",
+      "hash": "3ef00d01105d"
+    }
+  },
+  "fixes": [
+    {
+      "beat": "b01, b42, s1b01, s1b05",
+      "issue": "Draft promised a 'starbow' ring of stars. Our own simulation shows no ring, and McKinley & Doherty (Am. J. Phys. 1979) showed the starbow does not appear when the starfield is computed properly.",
+      "fix": "Reworded the hook to 'one patch of light ahead' and turned the starbow into a myth-busting beat with the 1979 source (F34, S28, S29)."
+    },
+    {
+      "beat": "b21",
+      "issue": "'Those go straight through a human body' overstates: a 145 MeV proton stops after ~15 cm of water.",
+      "fix": "'Those reach deep inside a human body.'"
+    },
+    {
+      "beat": "b18, b29",
+      "issue": "'slid forward to 60 degrees ahead of you' is ambiguous (could mean moved by 60 degrees).",
+      "fix": "'now appears just 60 degrees from straight ahead' (and 26 degrees at 90%)."
+    },
+    {
+      "beat": "b43, b47",
+      "issue": "CMB temperature ahead was rounded to 2 significant figures (390 K for 385 K).",
+      "fix": "3 significant figures: 385 K and 3,850 K."
+    },
+    {
+      "beat": "b37, b38",
+      "issue": "'the stars ahead fade' was asserted without a computed check.",
+      "fix": "Added calc value fade_999 (visible-band flux ratio 0.58) and a self-check."
+    },
+    {
+      "beat": "b26",
+      "issue": "Dose figure depends on shielding and secondary showers.",
+      "fix": "Stated as 'unshielded'; computed as a lower bound with the minimum stopping power of water."
+    }
+  ]
+}

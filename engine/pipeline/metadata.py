@@ -51,29 +51,45 @@ def main():
 
     title = script["title"]
     alt_titles = M["alt_titles"]
-    lines = [M["hook"], "", M["summary"], "", "⏱ Chapters"]
-    lines += [f"{fmt_ts(t)} {name}" for t, name in chapters]
-    lines += ["", "🧮 The numbers (computed in code, rounded)"] + [f"• {k}" for k in M["key_numbers"]]
+    # Description style (see PRODUCER.md): a 2-3 line hook that front-loads the search words, a short
+    # "what you'll learn", chapters, a FEW key numbers (no formulas), then sources and image credits.
+    lines = [M["hook"], ""]
+    if M.get("learn"):
+        lines += ["In this video:"] + [f"• {x}" for x in M["learn"]] + [""]
+    elif M.get("summary"):
+        lines += [M["summary"], ""]
+    lines += ["⏱ Chapters"] + [f"{fmt_ts(t)} {name}" for t, name in chapters]
+    lines += ["", "🧮 Key numbers"] + [f"• {k}" for k in M["key_numbers"]]
     lines += ["", "📚 Sources"] + [f"[{k}] {short_title(sources[k]['title'])}: {sources[k]['url']}" for k in used_list]
+    if M.get("image_credits"):
+        lines += ["", "🖼 Image credits"] + [f"• {x}" for x in M["image_credits"]]
     tail = ["", M.get("assumptions", ""),
-            "", "How this video was made: animations are generated from code; the narration voice is synthetic "
-            "(text-to-speech); every number is computed by our calculation script and checked against the sources above.",
+            "", "How this was made: the narration is an AI voice (text-to-speech) and the script and visuals are made "
+            "with AI tools and code. Every number is computed in code from the sources above and fact-checked before upload.",
             "", f"Next: {script['next_video']}", "", M.get("hashtags", "#science #physics #whatif")]
     further = (["", "Further reading"] + [f"[{k}] {sources[k]['url']}" for k in other]) if other else []
     description = "\n".join(lines + further + tail)
     if len(description) > 4900:
+        description = "\n".join(lines + tail)
+    if len(description) > 4900:
+        # compact source lines: publisher only ("[S6] NASA Science: url")
+        compact = [f"[{k}] {short_title(sources[k]['title']).split(',')[0]}: {sources[k]['url']}" for k in used_list]
+        i0 = lines.index("📚 Sources") + 1
+        lines = lines[:i0] + compact + lines[i0 + len(used_list):]
         description = "\n".join(lines + tail)
 
     # ---- Shorts ----
     beats = {b["id"]: b for s in script["sections"] for b in s["beats"]}
     shorts_md = []
     for sh in script.get("shorts", []):
-        first = re.split(r"(?<=[.?!])\s", beats[sh["beats"][0]]["text"])[0]
+        native = isinstance(sh["beats"][0], dict)
+        first_text = sh["beats"][0]["text"] if native else beats[sh["beats"][0]]["text"]
+        first = re.split(r"(?<=[.?!])\s", first_text)[0] if not native else first_text
         st = sh["title"] if len(sh["title"]) <= 90 else sh["title"][:90]
         shorts_md.append({
             "id": sh["id"], "file": f"shorts/{vid}_{sh['id']}.mp4",
             "title": f"{st} #Shorts",
-            "description": f"{first}\n\nThe full explanation, with every calculation on screen: {LONG_URL}\n\n"
+            "description": f"{first}\n\nFull video (every number computed in code, sources listed): {LONG_URL}\n\n"
                            f"{M.get('hashtags', '')} #Shorts".strip(),
             "tags": M["tags"][:10] + ["shorts"],
         })
@@ -98,7 +114,7 @@ def main():
     }
     errs = []
     # links are only allowed in the generated Sources list (from research.md), never in free text
-    free = " ".join([M["hook"], M["summary"], M.get("assumptions", ""), M.get("hashtags", ""), *M["key_numbers"],
+    free = " ".join([M["hook"], M.get("summary", ""), M.get("assumptions", ""), M.get("hashtags", ""), *M["key_numbers"], *M.get("learn", []),
                      *alt_titles, *[s["title"] for s in script.get("shorts", [])]])
     if re.search(r"https?://|www\.|\.[a-z]{2,6}/", free, re.I):
         errs.append("links/domains are not allowed in metadata free text (hook, summary, key_numbers, titles)")

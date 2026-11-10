@@ -87,7 +87,9 @@ export const Kinetic: React.FC<{ text: string; t: number; len: number; shifted: 
 export const Hud: React.FC<{ data: VideoProps; time: number; slot: Slot | undefined }> = ({ data, time, slot }) => {
   const total = data.timing.total;
   const secs = data.timing.sections;
-  const cur = secs.findIndex((s) => time >= s.start && time < s.end);
+  const found = secs.findIndex((s) => time >= s.start && time < s.end);
+  // after the last section (the closing tail) stay on the last chapter
+  const cur = found >= 0 ? found : secs.length && time >= secs[secs.length - 1].start ? secs.length - 1 : found;
   const sec = secs[Math.max(0, cur)];
   const clock = sec?.clock;
   const clockIn = sec ? prog(time, sec.start, sec.start + 0.5) : 0;

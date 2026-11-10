@@ -7,7 +7,8 @@ Validates structure and pacing *before* any audio exists (estimates at WPM_EST):
   * no unresolved placeholders, every card id / claim key exists
   * hook (first section) <= 15 s
   * retention beats no more than ~90 s apart
-  * total length within the 8-10 minute target
+  * total length within the 8-12 minute target
+  * native Shorts (own beats) are rendered and checked like long-form beats
   * ending sets up the next video
 """
 from __future__ import annotations
@@ -22,6 +23,14 @@ WPM_EST = 176          # measured: Kokoro am_michael @ speed 1.12 ~ 176 wpm
 BEAT_GAP = 0.4        # seconds of silence between beats
 SECTION_GAP = 0.9      # extra silence between sections
 PH = re.compile(r"\{\{(\w+)\}\}")
+SHORT_GAP = 0.25       # pause between native-Short beats (shorts.py uses the same)
+SHORT_PAD = 1.6        # lead-in + end card tail of a native Short
+SHORT_MIN, SHORT_MAX = 25.0, 50.0
+
+
+def is_native(sh: dict) -> bool:
+    """A native Short carries its own beats (dicts); a legacy cut lists two long-form beat ids."""
+    return bool(sh.get("beats")) and isinstance(sh["beats"][0], dict)
 
 
 def main() -> None:
@@ -104,19 +113,51 @@ def main() -> None:
         if tt - prev > 95:
             warnings.append(f"retention gap {tt - prev:.0f}s before {bid} (target 60-90s)")
         prev = tt
-    if not (8 * 60 <= t <= 10 * 60):
-        warnings.append(f"estimated length {t / 60:.1f} min outside 8-10 min target")
+    if not (8 * 60 <= t <= 12 * 60):
+        warnings.append(f"estimated length {t / 60:.1f} min outside 8-12 min target")
     last = out["sections"][-1]["beats"][-1]["text"].lower()
     nv = tpl["next_video"].lower()
     if not any(w in last for w in re.findall(r"[a-z]{5,}", nv)):
         errors.append("ending does not set up the next video")
     if "do the math" not in last:
         warnings.append("ending lacks the channel tagline")
+    out["shorts"] = []
     for sh in tpl.get("shorts", []):
         for k in PH.findall(sh["title"]):
             if k not in values:
                 errors.append(f"short {sh['id']}: unknown placeholder {k}")
-    out["shorts"] = [dict(sh, title=render(sh["title"], sh["id"])) for sh in tpl.get("shorts", [])]
+        s_out = dict(sh, title=render(sh["title"], sh["id"]))
+        if is_native(sh):
+            # NATIVE vertical Short: its own script (beats with text/visual/claims), voiced and rendered
+            # at 1080x1920 by shorts.py. Same rules as long-form beats.
+            s_out["hook"] = render(sh.get("hook", ""), sh["id"] + ".hook")
+            s_out["end"] = render(sh.get("end", ""), sh["id"] + ".end")
+            st, beats = 0.0, []
+            for b in sh["beats"]:
+                nb = dict(b)
+                nb["template_text"] = b["text"]
+                nb["text"] = render(b["text"], b["id"])
+                nb["kinetic"] = render(b.get("kinetic"), b["id"] + ".kinetic")
+                nb["visual"] = render_any(b.get("visual", {}), b["id"] + ".visual")
+                nb["spoken"] = spoken(nb["text"])
+                if not nb["visual"].get("scene"):
+                    errors.append(f"{b['id']}: visual.scene missing")
+                for c in b.get("claims", []):
+                    if c not in values and c not in facts:
+                        errors.append(f"{b['id']}: claim key {c} not in calc.json or research.json")
+                for k in PH.findall(b["text"]):
+                    if k not in b.get("claims", []):
+                        warnings.append(f"{b['id']}: placeholder {k} not listed in claims")
+                st += spoken_word_count(nb["text"]) / WPM_EST * 60 + SHORT_GAP
+                beats.append(nb)
+            s_out["beats"] = beats
+            s_out["est_s"] = round(st + SHORT_PAD, 1)
+            if not (SHORT_MIN <= st + SHORT_PAD <= SHORT_MAX):
+                warnings.append(f"short {sh['id']}: est {st + SHORT_PAD:.0f}s outside {SHORT_MIN}-{SHORT_MAX}s")
+            if beats and spoken_word_count(beats[0]["text"]) > 25:
+                warnings.append(f"short {sh['id']}: first line is long ({spoken_word_count(beats[0]['text'])} words); "
+                                "the hook must land in the first 2-3 s")
+        out["shorts"].append(s_out)
     for key in ("metadata", "thumbnail"):
         if key not in tpl:
             errors.append(f"template lacks a '{key}' block")

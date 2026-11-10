@@ -1,0 +1,195 @@
+{
+  "video_id": "light-speed-nines",
+  "stages": {
+    "research": {
+      "status": "done",
+      "updated": "2026-11-10T21:56:08+00:00",
+      "outputs": [
+        "research.md",
+        "research.json"
+      ],
+      "facts": 34,
+      "sources": 29,
+      "urls_reachable": "not probed"
+    },
+    "calc": {
+      "status": "done",
+      "updated": "2026-11-10T22:01:28+00:00",
+      "outputs": [
+        "calc.json"
+      ],
+      "values": 294,
+      "cards": 9,
+      "self_checks": "20/20 passed"
+    },
+    "script": {
+      "status": "done",
+      "updated": "2026-11-10T23:21:11+00:00",
+      "outputs": [
+        "script.json"
+      ],
+      "sections": 11,
+      "beats": 63,
+      "words": 1433,
+      "est_minutes": 9.6,
+      "warnings": [
+        "short short1: first line is long (26 words); the hook must land in the first 2-3 s"
+      ]
+    },
+    "factcheck": {
+      "status": "done",
+      "updated": "2026-11-10T23:21:11+00:00",
+      "outputs": [
+        "factcheck.md"
+      ],
+      "numbers_checked": 113,
+      "comparisons": 19,
+      "beats_reviewed": 81,
+      "fixes": 6,
+      "warnings": []
+    },
+    "voice": {
+      "status": "done",
+      "updated": "2026-11-10T22:10:04+00:00",
+      "provider": "kokoro",
+      "voice": "kokoro-v1.0:am_michael@1.05",
+      "duration_s": 618.9,
+      "outputs": [
+        "audio/narration.wav",
+        "timing.json"
+      ],
+      "warnings": [
+        "hook ends at 15.6s (>15s)"
+      ],
+      "note": null
+    },
+    "captions": {
+      "status": "done",
+      "updated": "2026-11-10T22:10:04+00:00",
+      "outputs": [
+        "captions.srt",
+        "captions.json"
+      ],
+      "cues": 176,
+      "note": null
+    },
+    "render": {
+      "status": "done",
+      "updated": "2026-11-10T23:11:21+00:00",
+      "renders": {
+        "full": {
+          "file": "renders/light-speed-nines_1080p.mp4",
+          "duration_s": 618.92,
+          "resolution": "1920x1080",
+          "audio": true,
+          "size_mb": 438.9,
+          "problems": []
+        }
+      },
+      "note": null
+    },
+    "thumbnail": {
+      "status": "done",
+      "updated": "2026-11-10T22:13:10+00:00",
+      "outputs": [
+        "thumbnail.png"
+      ],
+      "size": "1280x720",
+      "bytes": 1313732,
+      "headline": "EARTH +707 YEARS",
+      "source": "remotion scene sky"
+    },
+    "metadata": {
+      "status": "done",
+      "updated": "2026-11-10T22:12:43+00:00",
+      "outputs": [
+        "metadata.json"
+      ],
+      "chapters": 11,
+      "description_chars": 4844,
+      "sources_cited": 28,
+      "shorts": 3
+    },
+    "upload": {
+      "status": "done",
+      "updated": "2026-11-10T23:38:09+00:00",
+      "youtube_id": "01pWmcs6RDo",
+      "url": "https://youtu.be/01pWmcs6RDo",
+      "privacy": "private",
+      "publish_at": null,
+      "title_variant": 0,
+      "thumbnail": true,
+      "captions": true,
+      "playlist_id": "PLHOmR__WvGS8",
+      "playlist": true,
+      "warnings": [],
+      "shorts": {
+        "short1": {
+          "youtube_id": "i8Y08GA0y-k",
+          "url": "https://youtu.be/i8Y08GA0y-k",
+          "privacy": "private",
+          "publish_at": null,
+          "title_variant": 0,
+          "playlist_id": "PLb0tGLssYOf4",
+          "playlist": true,
+          "warnings": []
+        },
+        "short2": {
+          "youtube_id": "zuFEMf_5qcA",
+          "url": "https://youtu.be/zuFEMf_5qcA",
+          "privacy": "private",
+          "publish_at": null,
+          "title_variant": 0,
+          "playlist_id": "PLb0tGLssYOf4",
+          "playlist": true,
+          "warnings": []
+        },
+        "short3": {
+          "youtube_id": "MFEEbDU7jtw",
+          "url": "https://youtu.be/MFEEbDU7jtw",
+          "privacy": "private",
+          "publish_at": null,
+          "title_variant": 0,
+          "playlist_id": "PLb0tGLssYOf4",
+          "playlist": true,
+          "warnings": []
+        }
+      }
+    },
+    "shorts": {
+      "status": "done",
+      "updated": "2026-11-10T23:36:24+00:00",
+      "shorts": [
+        {
+          "id": "short1",
+          "title": "The real sky at 99.9999% of light speed",
+          "file": "shorts/light-speed-nines_short1.mp4",
+          "duration_s": 44.5,
+          "audio": true,
+          "native": true,
+          "words": 99
+        },
+        {
+          "id": "short2",
+          "title": "You age 1 year. Earth ages 707.",
+          "file": "shorts/light-speed-nines_short2.mp4",
+          "duration_s": 44.9,
+          "audio": true,
+          "native": true,
+          "words": 91
+        },
+        {
+          "id": "short3",
+          "title": "At 99.9999% light speed, one hydrogen atom hits like this",
+          "file": "shorts/light-speed-nines_short3.mp4",
+          "duration_s": 42.9,
+          "audio": true,
+          "native": true,
+          "words": 89
+        }
+      ],
+      "source": "native"
+    }
+  },
+  "updated": "2026-11-10T23:38:09+00:00"
+}

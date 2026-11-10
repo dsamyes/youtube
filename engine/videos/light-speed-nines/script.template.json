@@ -1,0 +1,1314 @@
+{
+  "video_id": "light-speed-nines",
+  "title": "What If You Traveled at 99.9999% the Speed of Light?",
+  "series": "Human Limits",
+  "next_video": "What If You Fell Into Jupiter?",
+  "voice_style": "second person, a journey told as a story; calm, curious, concrete; numbers translated into felt comparisons",
+  "sections": [
+    {
+      "id": "hook",
+      "chapter": "The Sky at 99.9999%",
+      "clock": null,
+      "beats": [
+        {
+          "id": "b01",
+          "text": "At {{pct_999999}}% of light speed, the whole sky collapses into one patch of light ahead. You age one year. Earth ages {{ey_999999}}.",
+          "visual": {
+            "scene": "sky",
+            "level": "l999999",
+            "from": "l999999",
+            "fov": 0.5,
+            "mark": "none",
+            "hud": true,
+            "fov0": 8,
+            "zoom": 6
+          },
+          "kinetic": "{{pct_999999}}% light speed",
+          "claims": [
+            "pct_999999",
+            "ey_999999"
+          ]
+        },
+        {
+          "id": "b02",
+          "text": "One speed on the way here kills you. Which one?",
+          "visual": {
+            "scene": "sky",
+            "level": "l999999",
+            "fov": 0.35,
+            "mark": "none"
+          },
+          "kinetic": "one speed kills you",
+          "retention": "Open loop: which speed kills you",
+          "claims": []
+        }
+      ]
+    },
+    {
+      "id": "dial",
+      "chapter": "The Ship and the Dial",
+      "clock": null,
+      "beats": [
+        {
+          "id": "b03",
+          "text": "Here's the trip. You get a ship with the mass of the International Space Station, about {{ship_mass_t}} tonnes, and one control: a dial that adds nines to your speed.",
+          "visual": {
+            "scene": "sky",
+            "level": "l0",
+            "from": "l0",
+            "fov": 100,
+            "panel": "iss",
+            "hud": false
+          },
+          "claims": [
+            "ship_mass_t"
+          ]
+        },
+        {
+          "id": "b04",
+          "text": "{{pct_10}}%. {{pct_50}}%. {{pct_90}}%. Then {{pct_99}}, {{pct_999}}. One nine at a time.",
+          "visual": {
+            "scene": "sky",
+            "level": "l0",
+            "fov": 100,
+            "panel": "nines"
+          },
+          "claims": [
+            "pct_10",
+            "pct_50",
+            "pct_90",
+            "pct_99",
+            "pct_999"
+          ]
+        },
+        {
+          "id": "b05",
+          "text": "At every stop, we check four things. Your clock against Earth's. What you see out the window. What's hitting the front of the ship. And the bill.",
+          "visual": {
+            "scene": "sky",
+            "level": "l0",
+            "fov": 100,
+            "panel": "four"
+          },
+          "claims": []
+        },
+        {
+          "id": "b06",
+          "text": "And this sky is not a painting. It's tens of thousands of real stars from a star catalog, moved and recolored by the actual equations of relativity, frame by frame.",
+          "visual": {
+            "scene": "sky",
+            "level": "l0",
+            "fov": 380,
+            "panel": "none",
+            "mark": "catalog"
+          },
+          "retention": "Promise: the real simulated sky",
+          "claims": [
+            "F27",
+            "F31"
+          ]
+        },
+        {
+          "id": "b07",
+          "text": "One number runs the whole journey. Physicists call it gamma. It says how many seconds pass on Earth for every second on your clock, and it lives in the corner of your screen.",
+          "visual": {
+            "scene": "sky",
+            "level": "l0",
+            "fov": 380,
+            "hud": true,
+            "clock_reset": true
+          },
+          "card": "lorentz",
+          "claims": [
+            "g_999999",
+            "ey_999999"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "chapter": "10%: Nothing Feels Different",
+      "clock": null,
+      "beats": [
+        {
+          "id": "b08",
+          "text": "First stop. {{pct_10}}%. You're covering {{kms_10}} kilometers every second.",
+          "visual": {
+            "scene": "sky",
+            "level": "l10",
+            "from": "l0",
+            "fov": 110,
+            "ramp": 3.5,
+            "panel": "level",
+            "clock_reset": true
+          },
+          "claims": [
+            "pct_10",
+            "kms_10"
+          ]
+        },
+        {
+          "id": "b09",
+          "text": "That's {{psp_ratio_10}} times faster than the fastest thing humans have ever built, NASA's Parker Solar Probe.",
+          "visual": {
+            "scene": "sky",
+            "level": "l10",
+            "fov": 110
+          },
+          "card": "psp",
+          "claims": [
+            "psp_ratio_10",
+            "psp_kms",
+            "kms_10"
+          ]
+        },
+        {
+          "id": "b10",
+          "text": "And yet your clock barely notices. For every year you spend on board, Earth gets about {{xdays_10_round}} extra days.",
+          "visual": {
+            "scene": "clocks",
+            "level": "l10"
+          },
+          "kinetic": "+{{xdays_10_round}} days a year",
+          "claims": [
+            "xdays_10_round",
+            "xdays_10",
+            "g_10"
+          ]
+        },
+        {
+          "id": "b11",
+          "text": "Out the window, the stars have crept a few degrees forward. Ahead, they look a touch bluer. Behind, a touch redder. Nothing dramatic yet.",
+          "visual": {
+            "scene": "sky",
+            "level": "l10",
+            "from": "l0",
+            "ramp": 5,
+            "fov": 380,
+            "mark": "split"
+          },
+          "claims": [
+            "side_10",
+            "dmax_10"
+          ]
+        },
+        {
+          "id": "b12",
+          "text": "So what's hitting you? Space isn't empty. There's about {{density}} hydrogen atom in every cubic centimeter, and you're plowing into all of them.",
+          "visual": {
+            "scene": "beam",
+            "level": "l10"
+          },
+          "retention": "New thread: what hits you",
+          "claims": [
+            "density"
+          ]
+        },
+        {
+          "id": "b13",
+          "text": "Each one arrives with {{ep_10}} million electron volts, and stops in less than half a millimeter of water. Your hull shrugs it off.",
+          "visual": {
+            "scene": "beam",
+            "level": "l10",
+            "phase": "stop"
+          },
+          "kinetic": "{{ep_10}} MeV per atom",
+          "claims": [
+            "ep_10",
+            "range5_mm"
+          ]
+        },
+        {
+          "id": "b14",
+          "text": "The bill. Getting this ship to {{pct_10}}% takes as much energy as the entire world uses in about {{kemo_10}} months.",
+          "visual": {
+            "scene": "bill",
+            "level": "l10"
+          },
+          "claims": [
+            "pct_10",
+            "kemo_10",
+            "kew_10"
+          ]
+        },
+        {
+          "id": "b15",
+          "text": "And Alpha Centauri, the nearest star system, is {{te_ac_10}} years away. You'd step off the ship as an old person. Keep that in mind. The destinations are about to get much closer.",
+          "visual": {
+            "scene": "galaxy",
+            "mode": "ac",
+            "level": "l10"
+          },
+          "retention": "Open loop: where you can reach in a lifetime",
+          "claims": [
+            "te_ac_10",
+            "ts_ac_10",
+            "d_ac"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s50",
+      "chapter": "50%: The Sky Starts Sliding",
+      "clock": null,
+      "beats": [
+        {
+          "id": "b16",
+          "text": "Turn the dial. {{pct_50}}%. Half the speed of light.",
+          "visual": {
+            "scene": "sky",
+            "level": "l50",
+            "from": "l10",
+            "fov": 110,
+            "ramp": 3.5,
+            "panel": "level"
+          },
+          "claims": [
+            "pct_50",
+            "kms_50"
+          ]
+        },
+        {
+          "id": "b17",
+          "text": "Now the clocks really split. For every year you live, Earth lives {{ey_50}}. That's {{xdays_50}} extra days, every year.",
+          "visual": {
+            "scene": "clocks",
+            "level": "l50"
+          },
+          "claims": [
+            "ey_50",
+            "xdays_50"
+          ]
+        },
+        {
+          "id": "b18",
+          "text": "Look at a star that was right beside you. It isn't there anymore. It has slid forward, and now appears just {{side_50}} degrees from straight ahead. The whole sky is sliding toward your nose.",
+          "visual": {
+            "scene": "sky",
+            "level": "l50",
+            "from": "l0",
+            "ramp": 6,
+            "fov": 380,
+            "mark": "side"
+          },
+          "kinetic": "90° → {{side_50}}°",
+          "retention": "Visual reveal: the sky moves",
+          "claims": [
+            "side_50"
+          ]
+        },
+        {
+          "id": "b19",
+          "text": "Ahead, a star like our Sun now glows at {{tfront_50}} kelvin, blue-white. Behind you, the same kind of star looks like a dim red ember, at {{tback_50}}.",
+          "visual": {
+            "scene": "sky",
+            "level": "l50",
+            "fov": 380,
+            "mark": "split"
+          },
+          "claims": [
+            "tfront_50",
+            "tback_50",
+            "sun_t"
+          ]
+        },
+        {
+          "id": "b20",
+          "text": "And the hydrogen? Each atom now carries {{ep_50}} million electron volts. That's the same energy hospitals use to fire protons into tumors.",
+          "visual": {
+            "scene": "beam",
+            "level": "l50"
+          },
+          "card": "hits50",
+          "claims": [
+            "ep_50",
+            "therapy_lo",
+            "therapy_hi",
+            "rest_mev",
+            "g_50"
+          ]
+        },
+        {
+          "id": "b21",
+          "text": "Those reach deep inside a human body. But a tank of water, less than 16 centimeters thick, stops them cold. Line the bow with it. Problem solved. For now.",
+          "visual": {
+            "scene": "beam",
+            "level": "l50",
+            "phase": "stop"
+          },
+          "claims": [
+            "range150_cm",
+            "ep_50"
+          ]
+        },
+        {
+          "id": "b22",
+          "text": "The bill jumps to about {{kew_50}} years of everything humanity uses. And Alpha Centauri is now {{ts_ac_50}} years away on your clock, {{te_ac_50}} on Earth's.",
+          "visual": {
+            "scene": "bill",
+            "level": "l50"
+          },
+          "claims": [
+            "kew_50",
+            "ts_ac_50",
+            "te_ac_50"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s90",
+      "chapter": "90%: The Speed That Kills",
+      "clock": null,
+      "beats": [
+        {
+          "id": "b23",
+          "text": "{{pct_90}}%. This is the one I warned you about.",
+          "visual": {
+            "scene": "sky",
+            "level": "l90",
+            "from": "l50",
+            "fov": 110,
+            "ramp": 3,
+            "panel": "level"
+          },
+          "retention": "Payoff begins: the speed that kills",
+          "claims": [
+            "pct_90",
+            "kms_90"
+          ]
+        },
+        {
+          "id": "b24",
+          "text": "Each hydrogen atom now hits with {{epg_90}} billion electron volts. That's more energy than its own mass. And these don't stop in a water tank.",
+          "visual": {
+            "scene": "beam",
+            "level": "l90"
+          },
+          "kinetic": "{{epg_90}} GeV per atom",
+          "claims": [
+            "epg_90",
+            "rest_mev"
+          ]
+        },
+        {
+          "id": "b25",
+          "text": "They cross about {{lambda_int_cm}} centimeters of water, on average, before they even hit a nucleus. Then they shatter it into a spray of new particles. A thin shield doesn't stop the beam. It multiplies it.",
+          "visual": {
+            "scene": "beam",
+            "level": "l90",
+            "phase": "shower"
+          },
+          "claims": [
+            "lambda_int_cm"
+          ]
+        },
+        {
+          "id": "b26",
+          "text": "Unshielded, that beam would give you a lethal dose of radiation in under half a second.",
+          "visual": {
+            "scene": "beam",
+            "level": "l90",
+            "phase": "dose"
+          },
+          "kinetic": "lethal in {{tlethal_90}} s",
+          "retention": "Reveal: the killer is near-empty space",
+          "claims": [
+            "tlethal_90",
+            "dose_90",
+            "ld50"
+          ]
+        },
+        {
+          "id": "b27",
+          "text": "So what kills you isn't a planet, or a wall. It's the emptiest place in the universe. One atom in a space the size of a sugar cube, hit hard enough.",
+          "visual": {
+            "scene": "sky",
+            "level": "l90",
+            "fov": 110
+          },
+          "claims": []
+        },
+        {
+          "id": "b28",
+          "text": "From here on, you need meters of shielding in front of you, and we'll assume you have it. Because the view is about to get very strange.",
+          "visual": {
+            "scene": "sky",
+            "level": "l90",
+            "fov": 380
+          },
+          "claims": []
+        },
+        {
+          "id": "b29",
+          "text": "A star that sits right beside you now appears just {{side_90}} degrees from straight ahead. Half of the entire sky is squeezed into a circle {{circle_90}} degrees wide.",
+          "visual": {
+            "scene": "sky",
+            "level": "l90",
+            "from": "l50",
+            "ramp": 5,
+            "fov": 380,
+            "mark": "half"
+          },
+          "card": "aberration",
+          "claims": [
+            "side_90",
+            "circle_90"
+          ]
+        },
+        {
+          "id": "b30",
+          "text": "And behind you, the sky goes black. Sunlike stars there are shifted to {{tback_90}} kelvin, deep into the infrared, where your eyes can't follow.",
+          "visual": {
+            "scene": "sky",
+            "level": "l90",
+            "fov": 120,
+            "look": 180,
+            "mark": "back"
+          },
+          "claims": [
+            "tback_90"
+          ],
+          "retention": "Visual reveal: the sky behind you goes dark"
+        },
+        {
+          "id": "b31",
+          "text": "The bill: {{kew_90}} years of world energy. But Alpha Centauri is now just {{ts_ac_90}} years away for you.",
+          "visual": {
+            "scene": "galaxy",
+            "mode": "ac",
+            "level": "l90"
+          },
+          "claims": [
+            "kew_90",
+            "ts_ac_90",
+            "te_ac_90"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s99",
+      "chapter": "99%: Half the Universe in a Circle",
+      "clock": null,
+      "beats": [
+        {
+          "id": "b32",
+          "text": "Add a nine. {{pct_99}}%.",
+          "visual": {
+            "scene": "sky",
+            "level": "l99",
+            "from": "l90",
+            "fov": 90,
+            "ramp": 3,
+            "panel": "level"
+          },
+          "claims": [
+            "pct_99",
+            "kms_99"
+          ]
+        },
+        {
+          "id": "b33",
+          "text": "Spend one year out here, then come home, and your friends are about seven years older. Every year aboard is {{ey_99}} on Earth.",
+          "visual": {
+            "scene": "clocks",
+            "level": "l99"
+          },
+          "claims": [
+            "ey_99"
+          ]
+        },
+        {
+          "id": "b34",
+          "text": "Out the window, half of the universe now fits in a circle {{circle_99}} degrees across. About {{moons_99}} full Moons, side by side.",
+          "visual": {
+            "scene": "sky",
+            "level": "l99",
+            "from": "l90",
+            "ramp": 4,
+            "fov": 60,
+            "mark": "half"
+          },
+          "kinetic": "half the sky = {{moons_99}} Moons",
+          "claims": [
+            "circle_99",
+            "moons_99",
+            "moon_deg"
+          ]
+        },
+        {
+          "id": "b35",
+          "text": "And every square meter of your bow absorbs {{heatkw_99}} kilowatts from the gas you're hitting. About 200 times the sunlight that warms the Earth.",
+          "visual": {
+            "scene": "beam",
+            "level": "l99",
+            "phase": "heat"
+          },
+          "card": "heat99",
+          "claims": [
+            "heatkw_99",
+            "suns_99",
+            "epg_99"
+          ]
+        },
+        {
+          "id": "b36",
+          "text": "Alpha Centauri? {{tsm_ac_99}} months away. The center of the galaxy is still {{ts_gc_99}} years. Not yet.",
+          "visual": {
+            "scene": "galaxy",
+            "mode": "gc",
+            "level": "l99"
+          },
+          "claims": [
+            "tsm_ac_99",
+            "ts_gc_99",
+            "d_gc"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s999",
+      "chapter": "99.9%: The Stars Ahead Fade",
+      "clock": null,
+      "beats": [
+        {
+          "id": "b37",
+          "text": "{{pct_999}}%. You'd think the stars ahead would only get brighter. They don't.",
+          "visual": {
+            "scene": "sky",
+            "level": "l999",
+            "from": "l99",
+            "fov": 40,
+            "ramp": 3,
+            "panel": "level"
+          },
+          "retention": "Reversal: forward stars dim",
+          "claims": [
+            "pct_999"
+          ]
+        },
+        {
+          "id": "b38",
+          "text": "A Sun-like star dead ahead now looks {{tfront_999}} kelvin. Most of its light has been pushed into the ultraviolet, past what your eyes can see, so it fades.",
+          "visual": {
+            "scene": "sky",
+            "level": "l999",
+            "fov": 20,
+            "mark": "center"
+          },
+          "claims": [
+            "tfront_999",
+            "fade_999",
+            "dmax_999"
+          ]
+        },
+        {
+          "id": "b39",
+          "text": "Each year aboard is now {{ey_999}} years on Earth. And Alpha Centauri is {{tsd_ac_999}} days away.",
+          "visual": {
+            "scene": "clocks",
+            "level": "l999"
+          },
+          "claims": [
+            "ey_999",
+            "tsd_ac_999"
+          ]
+        },
+        {
+          "id": "b40",
+          "text": "And here's the bill for that one extra nine. About {{kew_999}} years of all the energy humanity uses. Every nine costs more than all the nines before it.",
+          "visual": {
+            "scene": "bill",
+            "level": "l999"
+          },
+          "card": "energy",
+          "claims": [
+            "kew_999",
+            "ke_999",
+            "g_999",
+            "ship_mass_t",
+            "world_ej"
+          ],
+          "retention": "Escalation: each nine costs more than all before it"
+        }
+      ]
+    },
+    {
+      "id": "s9999",
+      "chapter": "99.99%: The Starbow Myth",
+      "clock": null,
+      "beats": [
+        {
+          "id": "b41",
+          "text": "{{pct_9999}}%. Now look straight ahead.",
+          "visual": {
+            "scene": "sky",
+            "level": "l9999",
+            "from": "l999",
+            "fov": 14,
+            "ramp": 3.5,
+            "panel": "level"
+          },
+          "claims": [
+            "pct_9999",
+            "kms_9999"
+          ]
+        },
+        {
+          "id": "b42",
+          "text": "Science fiction promised a starbow here: a rainbow ring of stars around your nose. But in 1979, two physicists ran the numbers properly, and the ring vanished. This simulation agrees. Every star piles up dead ahead, bluest and densest at the center.",
+          "visual": {
+            "scene": "sky",
+            "level": "l9999",
+            "fov": 8,
+            "mark": "patch"
+          },
+          "kinetic": "no starbow",
+          "retention": "Myth busted: no starbow",
+          "claims": [
+            "F31",
+            "F34"
+          ]
+        },
+        {
+          "id": "b43",
+          "text": "And something else lights up. The faint afterglow of the Big Bang, normally {{cmb_t}} kelvin, is heated dead ahead to {{cmbf_9999}} kelvin. Hotter than boiling water. The darkness in front of you is warm.",
+          "visual": {
+            "scene": "sky",
+            "level": "l9999",
+            "fov": 6,
+            "mark": "cmb"
+          },
+          "card": "cmb",
+          "claims": [
+            "cmb_t",
+            "cmbf_9999",
+            "dmax_9999"
+          ]
+        },
+        {
+          "id": "b44",
+          "text": "A single speck of dust, one millionth of a gram, would now hit you like {{dust_t_9999}} tonnes of TNT.",
+          "visual": {
+            "scene": "beam",
+            "level": "l9999",
+            "phase": "dust"
+          },
+          "kinetic": "dust = {{dust_t_9999}} t TNT",
+          "claims": [
+            "dust_t_9999"
+          ]
+        },
+        {
+          "id": "b45",
+          "text": "Each year aboard is {{ey_9999}} on Earth. Alpha Centauri is {{tsd_ac_9999}} days away. The center of the galaxy, {{ts_gc_9999}} years. Closer. Not close enough.",
+          "visual": {
+            "scene": "galaxy",
+            "mode": "gc",
+            "level": "l9999"
+          },
+          "claims": [
+            "ey_9999",
+            "tsd_ac_9999",
+            "ts_gc_9999"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s999999",
+      "chapter": "99.9999%: One Year, 707 Years",
+      "clock": null,
+      "beats": [
+        {
+          "id": "b46",
+          "text": "Let's skip a nine. {{pct_999999}}%. This is the sky from the beginning of the video.",
+          "visual": {
+            "scene": "sky",
+            "level": "l999999",
+            "from": "l9999",
+            "fov": 9,
+            "ramp": 4,
+            "panel": "level",
+            "mark": "patch"
+          },
+          "retention": "Callback to the hook",
+          "claims": [
+            "pct_999999"
+          ]
+        },
+        {
+          "id": "b47",
+          "text": "Half of the universe fits inside a circle smaller than the Moon, just {{circle_999999}} degrees wide. And at its center, the Big Bang's afterglow is blueshifted to {{cmbf_999999}} kelvin. Hot enough to glow orange, right where you're heading.",
+          "visual": {
+            "scene": "sky",
+            "level": "l999999",
+            "fov": 0.4,
+            "mark": "cmb"
+          },
+          "claims": [
+            "circle_999999",
+            "moon_deg",
+            "cmbf_999999"
+          ]
+        },
+        {
+          "id": "b48",
+          "text": "Your clock: one year. Earth's: {{ey_999999}}.",
+          "visual": {
+            "scene": "clocks",
+            "level": "l999999"
+          },
+          "kinetic": "1 year = {{ey_999999}} years",
+          "claims": [
+            "ey_999999"
+          ]
+        },
+        {
+          "id": "b49",
+          "text": "And one hydrogen atom now hits with {{epg_999999}} billion electron volts. CERN compares that kind of energy to a flying mosquito. You're taking two-thirds of a mosquito, packed into one proton, trillions of times a second, on every square meter.",
+          "visual": {
+            "scene": "beam",
+            "level": "l999999"
+          },
+          "card": "proton6",
+          "claims": [
+            "epg_999999",
+            "mosq_frac_999999",
+            "rest_mev",
+            "g_999999"
+          ]
+        },
+        {
+          "id": "b50",
+          "text": "Your bow is soaking up {{heatmw_999999}} megawatts on every square meter. And a speck of dust now hits like {{dust_t_999999}} tonnes of TNT.",
+          "visual": {
+            "scene": "beam",
+            "level": "l999999",
+            "phase": "dust"
+          },
+          "claims": [
+            "heatmw_999999",
+            "dust_t_999999"
+          ]
+        },
+        {
+          "id": "b51",
+          "text": "The bill: about {{kew_999999}} years of humanity's total energy, for one ship, at one speed.",
+          "visual": {
+            "scene": "bill",
+            "level": "l999999"
+          },
+          "claims": [
+            "kew_999999"
+          ]
+        },
+        {
+          "id": "b52",
+          "text": "But here's what you get for it. The center of the Milky Way, {{d_gc}} light-years away, is now {{ts_gc_999999}} years away on your clock. You could get there in one lifetime.",
+          "visual": {
+            "scene": "galaxy",
+            "mode": "gc",
+            "level": "l999999"
+          },
+          "retention": "Payoff: the galaxy in a lifetime",
+          "claims": [
+            "d_gc",
+            "ts_gc_999999"
+          ]
+        },
+        {
+          "id": "b53",
+          "text": "When you arrive, Earth's calendar has moved on by about {{te_gc_999999}} years. Remember that number. It's about to look small.",
+          "visual": {
+            "scene": "galaxy",
+            "mode": "gc",
+            "level": "l999999",
+            "phase": "earth"
+          },
+          "claims": [
+            "te_gc_999999"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "beyond",
+      "chapter": "Beyond: The Andromeda Trip",
+      "clock": null,
+      "beats": [
+        {
+          "id": "b54",
+          "text": "Real ships can't just jump to a speed. So for the last trip, picture an engine that pushes at exactly 1 g, Earth's gravity, the whole way. On board, you'd feel at home.",
+          "visual": {
+            "scene": "sky",
+            "level": "l90",
+            "from": "l0",
+            "fov": 110,
+            "ramp": 10,
+            "hud": false
+          },
+          "claims": [
+            "F24"
+          ]
+        },
+        {
+          "id": "b55",
+          "text": "Speed up for half the trip, flip around, brake for the other half. On that ship, the center of the galaxy is {{g1_ts_gc}} years away.",
+          "visual": {
+            "scene": "galaxy",
+            "mode": "gc1g"
+          },
+          "claims": [
+            "g1_ts_gc",
+            "g1_te_gc"
+          ]
+        },
+        {
+          "id": "b56",
+          "text": "And the Andromeda Galaxy, {{d_m31_mly}} million light-years away, takes just {{g1_ts_m31}} years on your clock.",
+          "visual": {
+            "scene": "galaxy",
+            "mode": "m31"
+          },
+          "card": "rocket",
+          "claims": [
+            "d_m31_mly",
+            "g1_ts_m31",
+            "g1_te_m31_my"
+          ]
+        },
+        {
+          "id": "b57",
+          "text": "At the halfway point, you'd be moving at {{m31_pct}}% of the speed of light. {{m31_nines}} nines. Faster than any proton in the Large Hadron Collider.",
+          "visual": {
+            "scene": "galaxy",
+            "mode": "m31",
+            "phase": "peak"
+          },
+          "kinetic": "{{m31_nines}} nines",
+          "claims": [
+            "m31_pct",
+            "m31_nines",
+            "lhc_pct",
+            "lhc_tev"
+          ]
+        },
+        {
+          "id": "b58",
+          "text": "Could anyone build that engine? Not with anything we know how to make. The energy alone is about {{kew_m31_my}} million years of humanity's total supply. But relativity itself doesn't say no.",
+          "visual": {
+            "scene": "galaxy",
+            "mode": "m31",
+            "phase": "peak"
+          },
+          "retention": "Honest limit: physics yes, engineering no",
+          "claims": [
+            "kew_m31_my"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "return",
+      "chapter": "Coming Home",
+      "clock": null,
+      "beats": [
+        {
+          "id": "b59",
+          "text": "So here's your life. You leave at {{age_leave}}. You fly to Andromeda, turn around, and fly home. On your clock, {{rt_ship_m31}} years. You step out at {{age_return}}.",
+          "visual": {
+            "scene": "home",
+            "phase": "leave"
+          },
+          "claims": [
+            "age_leave",
+            "rt_ship_m31",
+            "age_return"
+          ]
+        },
+        {
+          "id": "b60",
+          "text": "On Earth, {{rt_earth_m31_my}} million years have passed.",
+          "visual": {
+            "scene": "home",
+            "phase": "return"
+          },
+          "kinetic": "+{{rt_earth_m31_my}} million years",
+          "retention": "Twist payoff",
+          "claims": [
+            "rt_earth_m31_my"
+          ]
+        },
+        {
+          "id": "b61",
+          "text": "For scale: the oldest fossil of our own genus, Homo, is about {{homo_my}} million years old. You'd come home further into the future than the first humans are in the past.",
+          "visual": {
+            "scene": "deeptime"
+          },
+          "claims": [
+            "homo_my",
+            "rt_earth_m31_my"
+          ]
+        },
+        {
+          "id": "b62",
+          "text": "You could cross to another galaxy in one lifetime. You just can't come back to the world you left.",
+          "visual": {
+            "scene": "sky",
+            "level": "l9999",
+            "from": "l999999",
+            "fov": 12,
+            "ramp": 8,
+            "mark": "none",
+            "hud": false
+          },
+          "claims": []
+        },
+        {
+          "id": "b63",
+          "text": "If you'd rather fall than fly, the next trip goes straight down. What If You Fell Into Jupiter? This was The If Engine. Run the impossible. Do the math.",
+          "visual": {
+            "scene": "endcard"
+          },
+          "claims": []
+        }
+      ]
+    }
+  ],
+  "shorts": [
+    {
+      "id": "short1",
+      "title": "The real sky at {{pct_999999}}% of light speed",
+      "hook": "NOT STREAKS. NOT A RING.",
+      "end": "Full trip: link below",
+      "beats": [
+        {
+          "id": "s1b01",
+          "text": "Movies show streaks. Science fiction promised a rainbow ring. This is what real physics shows at {{pct_999999}}% of light speed.",
+          "visual": {
+            "scene": "sky",
+            "level": "l999999",
+            "from": "l999999",
+            "fov": 0.55,
+            "mark": "none",
+            "hud": true,
+            "fov0": 0.9,
+            "zoom": 5
+          },
+          "claims": [
+            "pct_999999"
+          ]
+        },
+        {
+          "id": "s1b02",
+          "text": "Start at rest. Every star is where you'd expect it.",
+          "visual": {
+            "scene": "sky",
+            "level": "l0",
+            "from": "l0",
+            "fov": 380,
+            "hud": true,
+            "clock_reset": true
+          },
+          "claims": []
+        },
+        {
+          "id": "s1b03",
+          "text": "At {{pct_90}}%, the sky slides toward your nose. Behind you, it goes dark.",
+          "visual": {
+            "scene": "sky",
+            "level": "l90",
+            "from": "l0",
+            "ramp": 5,
+            "fov": 380
+          },
+          "claims": [
+            "pct_90"
+          ]
+        },
+        {
+          "id": "s1b04",
+          "text": "At {{pct_9999}}%, half of the universe fits in a circle just {{circle_9999}} degrees wide.",
+          "visual": {
+            "scene": "sky",
+            "level": "l9999",
+            "from": "l90",
+            "ramp": 4,
+            "fov": 20,
+            "mark": "half"
+          },
+          "claims": [
+            "pct_9999",
+            "circle_9999"
+          ]
+        },
+        {
+          "id": "s1b05",
+          "text": "No rainbow ring. That old starbow idea fails the math. Every star piles into one patch ahead, blue-white at the center.",
+          "visual": {
+            "scene": "sky",
+            "level": "l999999",
+            "from": "l9999",
+            "ramp": 4,
+            "fov": 7,
+            "mark": "patch"
+          },
+          "claims": [
+            "F31",
+            "F34"
+          ]
+        },
+        {
+          "id": "s1b06",
+          "text": "And dead center, the Big Bang's afterglow glows orange. That's the sky you were looking at from the very first second.",
+          "visual": {
+            "scene": "sky",
+            "level": "l999999",
+            "fov": 0.55,
+            "mark": "cmb"
+          },
+          "claims": [
+            "cmbf_999999"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "short2",
+      "title": "You age 1 year. Earth ages {{ey_999999}}.",
+      "hook": "YOU: 1 YEAR. EARTH: {{ey_999999}}.",
+      "end": "Full trip: link below",
+      "beats": [
+        {
+          "id": "s2b01",
+          "text": "You age one year. Earth ages {{ey_999999}}. And your watch never skips a second. How?",
+          "visual": {
+            "scene": "clocks",
+            "level": "l999999"
+          },
+          "claims": [
+            "ey_999999"
+          ]
+        },
+        {
+          "id": "s2b02",
+          "text": "At {{pct_999999}}% of the speed of light, time itself runs slower for you. Not your watch. Time.",
+          "visual": {
+            "scene": "sky",
+            "level": "l999999",
+            "from": "l999999",
+            "fov": 8,
+            "mark": "patch",
+            "hud": true,
+            "clock_reset": true
+          },
+          "claims": [
+            "pct_999999"
+          ]
+        },
+        {
+          "id": "s2b03",
+          "text": "At {{pct_90}}%, one of your years is {{ey_90}} on Earth. At {{pct_99}}%, it's {{ey_99}}.",
+          "visual": {
+            "scene": "clocks",
+            "level": "l90",
+            "phase": "climb"
+          },
+          "claims": [
+            "pct_90",
+            "ey_90",
+            "pct_99",
+            "ey_99"
+          ]
+        },
+        {
+          "id": "s2b04",
+          "text": "Push to {{pct_999999}}%, and the center of our galaxy is {{ts_gc_999999}} years away on your clock. You could make it.",
+          "visual": {
+            "scene": "galaxy",
+            "mode": "gc",
+            "level": "l999999"
+          },
+          "claims": [
+            "pct_999999",
+            "ts_gc_999999"
+          ]
+        },
+        {
+          "id": "s2b05",
+          "text": "But when you land, Earth's calendar has jumped about {{te_gc_999999}} years.",
+          "visual": {
+            "scene": "galaxy",
+            "mode": "gc",
+            "level": "l999999",
+            "phase": "earth"
+          },
+          "claims": [
+            "te_gc_999999"
+          ]
+        },
+        {
+          "id": "s2b06",
+          "text": "So, would you take the deal? You age one year, and Earth ages {{ey_999999}}.",
+          "visual": {
+            "scene": "clocks",
+            "level": "l999999"
+          },
+          "claims": [
+            "ey_999999"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "short3",
+      "title": "At {{pct_999999}}% light speed, one hydrogen atom hits like this",
+      "hook": "ONE ATOM. ONE PROTON.",
+      "end": "Full trip: link below",
+      "beats": [
+        {
+          "id": "s3b01",
+          "text": "At {{pct_999999}}% of light speed, empty space turns deadly. How does one hydrogen atom hit this hard?",
+          "visual": {
+            "scene": "beam",
+            "level": "l999999"
+          },
+          "claims": [
+            "pct_999999"
+          ]
+        },
+        {
+          "id": "s3b02",
+          "text": "Each one carries two-thirds of the energy of a flying mosquito. Packed into a single proton.",
+          "visual": {
+            "scene": "beam",
+            "level": "l999999",
+            "phase": "zoom"
+          },
+          "claims": [
+            "mosq_frac_999999",
+            "epg_999999"
+          ]
+        },
+        {
+          "id": "s3b04",
+          "text": "At {{pct_50}}%, each atom hits like a hospital's proton therapy beam.",
+          "visual": {
+            "scene": "beam",
+            "level": "l50"
+          },
+          "claims": [
+            "pct_50",
+            "ep_50"
+          ]
+        },
+        {
+          "id": "s3b05",
+          "text": "At {{pct_90}}%, unshielded, you'd take a lethal dose of radiation in under half a second.",
+          "visual": {
+            "scene": "beam",
+            "level": "l90",
+            "phase": "dose"
+          },
+          "claims": [
+            "pct_90",
+            "tlethal_90"
+          ]
+        },
+        {
+          "id": "s3b06",
+          "text": "At {{pct_999999}}%, every square meter of your ship absorbs {{heatmw_999999}} megawatts, and a speck of dust hits like {{dust_t_999999}} tonnes of TNT.",
+          "visual": {
+            "scene": "beam",
+            "level": "l999999",
+            "phase": "dust"
+          },
+          "claims": [
+            "pct_999999",
+            "heatmw_999999",
+            "dust_t_999999"
+          ]
+        },
+        {
+          "id": "s3b07",
+          "text": "The emptiest place in the universe, turned deadly.",
+          "visual": {
+            "scene": "beam",
+            "level": "l999999"
+          },
+          "claims": []
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "alt_titles": [
+      "What You'd See at {{pct_999999}}% the Speed of Light",
+      "What If You Flew at {{pct_999999}}% Light Speed?"
+    ],
+    "hook": "What would you actually see, feel and survive if you traveled at {{pct_999999}}% of the speed of light? We turn the dial one nine at a time, from {{pct_10}}% to {{pct_999999}}%, with a real star catalog bent by relativity on screen.",
+    "learn": [
+      "Why the whole sky collapses into one patch ahead of you, and why the famous starbow ring is a myth",
+      "How fast your clock runs compared to Earth's at every speed",
+      "Which speed turns empty space into a lethal radiation beam",
+      "What each extra nine costs in energy",
+      "How far you could really get in one lifetime, and what you'd come home to"
+    ],
+    "summary": "Every level shows your clock against Earth's, what you see out the window, what hits the front of the ship, and the energy bill, all computed in code from the sources below.",
+    "key_numbers": [
+      "At {{pct_999999}}% of light speed: 1 year on board = {{ey_999999}} years on Earth",
+      "At {{pct_90}}%: each hydrogen atom carries {{epg_90}} GeV; unshielded, a lethal dose in under half a second",
+      "At {{pct_9999}}%: half the sky fits in a circle {{circle_9999}}° wide, and the cosmic microwave background ahead reaches {{cmbf_9999}} K",
+      "Energy for an ISS-mass ship at {{pct_999999}}%: about {{kew_999999}} years of world energy use",
+      "1 g ship to Andromeda: {{g1_ts_m31}} years on board; round trip {{rt_ship_m31}} years for you, {{rt_earth_m31_my}} million years on Earth"
+    ],
+    "assumptions": "Assumptions: an ISS-mass ship cruising at a fixed speed (energy is the minimum, perfect engine, no fuel); typical interstellar gas of about 1 hydrogen atom per cm³; dose figures are unshielded lower bounds; the Andromeda trip uses constant 1 g acceleration with a midpoint flip.",
+    "image_credits": [
+      "Star field: computed from the HYG star database v4.0 (astronexus, CC BY-SA 4.0), with relativistic aberration, Doppler colour and beaming applied in code",
+      "International Space Station: NASA/ESA, photographed by Thomas Pesquet from Crew Dragon (iss066e081130)",
+      "Milky Way illustration: NASA/JPL-Caltech/R. Hurt (SSC/Caltech), PIA10748",
+      "Andromeda Galaxy: NASA/JPL/California Institute of Technology (GALEX), PIA04921",
+      "Earth: NASA, Apollo 17 crew (AS17-148-22727)"
+    ],
+    "tags": [
+      "speed of light",
+      "what if you traveled at the speed of light",
+      "99.9999% speed of light",
+      "near light speed travel",
+      "time dilation",
+      "special relativity",
+      "starbow",
+      "relativistic aberration",
+      "twin paradox",
+      "interstellar travel",
+      "andromeda",
+      "what if",
+      "the if engine",
+      "physics explained"
+    ],
+    "hashtags": "#speedoflight #relativity #space #physics #whatif"
+  },
+  "thumbnail": {
+    "scene": "sky",
+    "params": {
+      "level": "l9999",
+      "from": "l90",
+      "ramp": 3,
+      "fov": 60,
+      "mark": "none",
+      "cx": 0.7,
+      "streak": 5
+    },
+    "t": 1.6,
+    "kicker": "EARTH",
+    "headline": "+{{ey_999999}} YEARS",
+    "number": "{{ey_999999}}",
+    "badge": "",
+    "art": {}
+  }
+}
