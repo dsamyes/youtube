@@ -1,0 +1,256 @@
+# The If Engine: build a STYLE SAMPLE (NASA + Pixabay footage + our 3D) and upload it PRIVATE.
+#
+#   build    Trusted pipeline code only (no Claude in this workflow). Fetches footage at run time
+#            (never committed), renders, uploads the MP4 as a 1-day artifact. Only the footage step
+#            sees PIXABAY_API_KEY.
+#   publish  Fresh checkout, no build tools. Uploads the sample as PRIVATE to YouTube. Sees ONLY the
+#            YouTube OAuth secrets (written umask 077, shredded after). Commits nothing.
+#
+# Trigger: push to main that adds/changes engine/samples/<id>.json (a request file), or run manually.
+name: sample
+
+on:
+  workflow_dispatch:
+    inputs:
+      request:
+        description: "Request file (engine/samples/<id>.json)"
+        required: false
+        default: "engine/samples/jupiter-style-sample.json"
+        type: string
+      upload:
+        description: "Upload the result PRIVATE to YouTube"
+        required: false
+        default: true
+        type: boolean
+  push:
+    branches: [main]
+    paths: ["engine/samples/*.json"]
+
+permissions: {}
+
+concurrency:
+  group: if-engine-sample
+  cancel-in-progress: false
+
+env:
+  PYTHONDONTWRITEBYTECODE: "1"
+  PIP_DISABLE_PIP_VERSION_CHECK: "1"
+
+jobs:
+  build:
+    if: github.repository == 'dsamyes/youtube'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    permissions:
+      contents: read
+    outputs:
+      sample: ${{ steps.req.outputs.sample }}
+      upload: ${{ steps.req.outputs.upload }}
+    env:
+      REMOTION_CHROME: bundled           # Remotion downloads its own headless shell
+      REMOTION_GL: swangle               # software WebGL (SwiftShader via ANGLE); runners have no GPU
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          fetch-depth: 2
+
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: "3.12"
+
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: "20"
+
+      - name: System packages (ffmpeg)
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg >/dev/null
+
+      # same caches (and keys) as produce.yml
+      - name: Restore venv cache
+        id: c-venv
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: engine/.venv
+          key: venv-${{ runner.os }}-py312-${{ hashFiles('engine/requirements.txt') }}
+      - name: Restore node_modules cache
+        id: c-node
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: engine/remotion/node_modules
+          key: node-${{ runner.os }}-n20-${{ hashFiles('engine/remotion/package-lock.json') }}
+      - name: Restore Kokoro model cache
+        id: c-models
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: engine/models
+          key: kokoro-v1.0
+
+      - name: Setup engine
+        run: engine/setup.sh
+
+      - name: Save venv cache
+        if: steps.c-venv.outputs.cache-hit != 'true'
+        uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: engine/.venv
+          key: ${{ steps.c-venv.outputs.cache-primary-key }}
+      - name: Save node_modules cache
+        if: steps.c-node.outputs.cache-hit != 'true'
+        uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: engine/remotion/node_modules
+          key: ${{ steps.c-node.outputs.cache-primary-key }}
+      - name: Save Kokoro model cache
+        if: steps.c-models.outputs.cache-hit != 'true'
+        uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: engine/models
+          key: ${{ steps.c-models.outputs.cache-primary-key }}
+
+      - name: Read request
+        id: req
+        env:
+          EVENT: ${{ github.event_name }}
+          INPUT_REQUEST: ${{ inputs.request }}
+          INPUT_UPLOAD: ${{ inputs.upload }}
+          BEFORE: ${{ github.event.before }}
+        run: |
+          set -euo pipefail
+          if [ "$EVENT" = "workflow_dispatch" ]; then
+            f="$INPUT_REQUEST"
+          else
+            base="$BEFORE"
+            git cat-file -e "${base}^{commit}" 2>/dev/null || base="HEAD~1"
+            f=$(git diff --name-only --diff-filter=AM "$base" HEAD -- 'engine/samples/*.json' | tail -1)
+          fi
+          [[ "$f" =~ ^engine/samples/[a-z0-9][a-z0-9-]{2,60}\.json$ ]] || { echo "::error::bad request path '$f'"; exit 1; }
+          [ -f "$f" ] || { echo "::error::request $f not found"; exit 1; }
+          python3 - "$f" "$EVENT" "$INPUT_UPLOAD" >> "$GITHUB_OUTPUT" <<'PY'
+          import json, os, re, sys
+          d = json.load(open(sys.argv[1]))
+          sid = d.get("sample", "")
+          assert isinstance(sid, str) and re.fullmatch(r"[a-z0-9][a-z0-9-]{2,60}", sid), "bad sample id"
+          assert os.path.isfile(f"engine/videos/{sid}/build.py"), "no build.py for this sample"
+          up = d.get("upload", "none") == "private"
+          if sys.argv[2] == "workflow_dispatch":
+              up = up and sys.argv[3] == "true"
+          print(f"sample={sid}")
+          print(f"pixabay={'true' if d.get('pixabay') is True else 'false'}")
+          print(f"upload={'true' if up else 'false'}")
+          PY
+          cat "$GITHUB_OUTPUT"
+
+      - name: Voice (Kokoro, free)
+        run: engine/.venv/bin/python -B "engine/videos/${{ steps.req.outputs.sample }}/build.py" --stage voice
+
+      # The ONLY step that sees the Pixabay key. Footage is downloaded into git-ignored folders
+      # (engine/videos/<id>/build/, engine/remotion/public/<id>/) and is never committed.
+      - name: Fetch footage (NASA + Pixabay)
+        env:
+          PIXABAY_API_KEY: ${{ steps.req.outputs.pixabay == 'true' && secrets.PIXABAY_API_KEY || '' }}
+        run: |
+          if [ -z "$PIXABAY_API_KEY" ]; then echo "no Pixabay key for this run: NASA + 3D fallbacks only"; fi
+          engine/.venv/bin/python -B "engine/videos/${{ steps.req.outputs.sample }}/build.py" --stage footage \
+            $([ -n "$PIXABAY_API_KEY" ] && echo --pixabay)
+
+      - name: Edit, sound, render (1080p), QA
+        env:
+          SID: ${{ steps.req.outputs.sample }}
+        run: |
+          set -euo pipefail
+          for st in edit audio render qa; do
+            engine/.venv/bin/python -B "engine/videos/${SID}/build.py" --stage "$st"
+          done
+          cat "engine/videos/${SID}/build/render.json" "engine/videos/${SID}/build/qa/summary.json"
+
+      - name: Verify outputs, nothing to commit
+        env:
+          SID: ${{ steps.req.outputs.sample }}
+        run: |
+          set -euo pipefail
+          f="engine/videos/${SID}/renders/${SID}_1080p.mp4"
+          head -c 12 "$f" | grep -q ftyp || { echo "::error::$f is not an MP4"; exit 1; }
+          ffprobe -v error -show_entries stream=codec_type,width,height -show_entries format=duration -of compact "$f"
+          dirty=$(git status --porcelain=v1 --untracked-files=all | grep -Ev '^\?\? engine/(videos/[^/]+/(build|renders)/|remotion/public/[^/]+/)' || true)
+          [ -z "$dirty" ] || { echo "::warning::unexpected working-tree changes:"; echo "$dirty"; }
+
+      - name: Upload sample (1-day artifact)
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: sample-${{ steps.req.outputs.sample }}
+          retention-days: 1
+          if-no-files-found: error
+          path: |
+            engine/videos/${{ steps.req.outputs.sample }}/renders/${{ steps.req.outputs.sample }}_1080p.mp4
+            engine/videos/${{ steps.req.outputs.sample }}/build/credits.json
+            engine/videos/${{ steps.req.outputs.sample }}/build/render.json
+            engine/videos/${{ steps.req.outputs.sample }}/build/qa/summary.json
+            engine/videos/${{ steps.req.outputs.sample }}/build/qa/contact_sheet.jpg
+
+  publish:
+    needs: build
+    if: github.repository == 'dsamyes/youtube' && needs.build.outputs.upload == 'true'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    permissions:
+      contents: read
+    env:
+      SID: ${{ needs.build.outputs.sample }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: "3.12"
+
+      - name: Install upload dependencies only
+        run: |
+          grep -E '^(google-api-python-client|google-auth-oauthlib|google-auth-httplib2)==' engine/requirements.txt > "$RUNNER_TEMP/req-upload.txt"
+          python -m pip install -q -r "$RUNNER_TEMP/req-upload.txt"
+
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: sample-${{ needs.build.outputs.sample }}
+          path: ${{ runner.temp }}/art
+
+      - name: Verify artifact
+        run: |
+          set -euo pipefail
+          [[ "$SID" =~ ^[a-z0-9][a-z0-9-]{2,60}$ ]] || { echo "::error::bad sample id"; exit 1; }
+          A="$RUNNER_TEMP/art/engine/videos/${SID}"
+          d="engine/videos/${SID}"
+          mkdir -p "$d/renders" "$d/build/qa"
+          cp "$A/renders/${SID}_1080p.mp4" "$d/renders/"
+          cp "$A/build/credits.json" "$d/build/"
+          cp "$A/build/qa/summary.json" "$d/build/qa/" 2>/dev/null || true
+          head -c 12 "$d/renders/${SID}_1080p.mp4" | grep -q ftyp || { echo "::error::not an MP4"; exit 1; }
+          python -c 'import json,sys; json.load(open(sys.argv[1]))' "$d/build/credits.json"
+
+      - name: Write YouTube credentials (umask 077)
+        env:
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_TOKEN: ${{ secrets.YOUTUBE_TOKEN }}
+        run: |
+          umask 077
+          if [ -z "$YOUTUBE_CLIENT_SECRET" ] || [ -z "$YOUTUBE_TOKEN" ]; then
+            echo "::error::YOUTUBE_CLIENT_SECRET / YOUTUBE_TOKEN secrets are missing"; exit 1
+          fi
+          mkdir -p engine/secrets
+          printf '%s' "$YOUTUBE_CLIENT_SECRET" > engine/secrets/client_secret.json
+          printf '%s' "$YOUTUBE_TOKEN" > engine/secrets/token.json
+          python -c 'import json; [json.load(open(f)) for f in ("engine/secrets/client_secret.json","engine/secrets/token.json")]' \
+            || { echo "::error::YouTube secrets are not valid JSON"; exit 1; }
+
+      - name: Upload PRIVATE to YouTube
+        run: python -B "engine/videos/${SID}/upload_sample.py"
+
+      - name: Remove credentials
+        if: always()
+        run: |
+          shred -u engine/secrets/client_secret.json engine/secrets/token.json 2>/dev/null || true
+          rm -f engine/secrets/*.json

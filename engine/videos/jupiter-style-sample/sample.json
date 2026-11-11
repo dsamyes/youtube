@@ -1,0 +1,1112 @@
+{
+ "id": "jupiter-style-sample",
+ "title": "What If You Fell Into Jupiter? (style sample)",
+ "voice": {
+  "provider": "kokoro",
+  "voice": "am_michael",
+  "speed": 1.12
+ },
+ "lead_in": 0.25,
+ "gap": 0.26,
+ "tail": 1.6,
+ "facts_note": "Every number comes from engine/videos/fall-into-jupiter (calc.json / research.json, fact-checked): v_kmh 206,513 (said 210,000), gal_min 58, start_km 1,000,000, fall_h 27.2, size_earths 11.2, v_kms 57.4, x_rifle 57, F19 (as hot as the Sun's surface), tnt_per_kg 393 (said 390). GRS 'wider than the whole Earth' (~16,000 km vs 12,742 km) is a softer form of F40. galileo_kms 47.4 (said 47).",
+ "clips": {
+  "grs_io": {
+   "provider": "nasa_images",
+   "nasa_id": "GSFC_20180313_Jupiter_m12878_GreatRedSpot",
+   "in": 33.3,
+   "out": 41.6
+  },
+  "grs_io_b": {
+   "provider": "nasa_images",
+   "nasa_id": "GSFC_20180313_Jupiter_m12878_GreatRedSpot",
+   "in": 36.0,
+   "out": 41.6
+  },
+  "crescent": {
+   "provider": "nasa_images",
+   "nasa_id": "GSFC_20180313_Jupiter_m12878_GreatRedSpot",
+   "in": 0.6,
+   "out": 14.6
+  },
+  "limb_sweep": {
+   "provider": "nasa_images",
+   "nasa_id": "GSFC_20180313_Jupiter_m12878_GreatRedSpot",
+   "in": 16.3,
+   "out": 20.7
+  },
+  "grs_zoom": {
+   "provider": "nasa_images",
+   "nasa_id": "GSFC_20180313_Jupiter_m12878_GreatRedSpot",
+   "in": 28.3,
+   "out": 31.7
+  },
+  "grs_swoop": {
+   "provider": "nasa_images",
+   "nasa_id": "GSFC_20180313_Jupiter_m12878_GreatRedSpot",
+   "in": 42.4,
+   "out": 46.7
+  },
+  "grs_bulge": {
+   "provider": "nasa_images",
+   "nasa_id": "GSFC_20180313_Jupiter_m12878_GreatRedSpot",
+   "in": 73.3,
+   "out": 77.8
+  },
+  "hubble_grs": {
+   "provider": "nasa_svs",
+   "svs_id": 14550,
+   "file": "14550_JUPITER_WIDE_MP4.mp4",
+   "in": 12.2,
+   "out": 17.8
+  },
+  "hubble_spin": {
+   "provider": "nasa_svs",
+   "svs_id": 12021,
+   "file": "Jupiter01-H264_1920x1080.mp4",
+   "in": 2.0,
+   "out": 22.0
+  },
+  "io_rise": {
+   "provider": "nasa_svs",
+   "svs_id": 11204,
+   "file": "G2012-099_Jupiter_Spots_MASTER_youtube_hq.mov",
+   "in": 6.3,
+   "out": 8.9
+  },
+  "callisto_in": {
+   "provider": "nasa_svs",
+   "svs_id": 3616,
+   "file": "orbit_callisto10a.mp4",
+   "in": 4.0,
+   "out": 27.6,
+   "crop": "1280:720:80:0"
+  },
+  "sun_surface": {
+   "provider": "nasa_svs",
+   "svs_id": 11136,
+   "file": "Jan_7_2014_X1pt2_Flare_1600_MPEG4_1920x1080_29.97.mp4",
+   "in": 0.2,
+   "out": 8.0
+  },
+  "juno_strip": {
+   "provider": "nasa_svs",
+   "svs_id": 30904,
+   "file": "PIA21967.tif",
+   "kind": "image",
+   "frames": 11
+  },
+  "juno_close": {
+   "provider": "nasa_svs",
+   "svs_id": 30905,
+   "file": "PIA21780.tif",
+   "kind": "image",
+   "frames": 4
+  },
+  "juno_storm": {
+   "provider": "nasa_svs",
+   "svs_id": 30907,
+   "file": "PIA21776.tif",
+   "kind": "image",
+   "y": 0.62
+  }
+ },
+ "stock_slots": [
+  {
+   "id": "rocket",
+   "queries": [
+    "rocket launch",
+    "space shuttle launch"
+   ],
+   "any": [
+    "rocket",
+    "launch",
+    "shuttle",
+    "space",
+    "spacex",
+    "nasa"
+   ],
+   "avoid": [
+    "toy",
+    "firework",
+    "fireworks",
+    "cartoon",
+    "animation",
+    "logo"
+   ],
+   "min_duration": 4
+  },
+  {
+   "id": "parachute",
+   "queries": [
+    "skydiver freefall",
+    "skydiving parachute"
+   ],
+   "any": [
+    "skydiving",
+    "skydiver",
+    "parachute",
+    "freefall",
+    "paragliding"
+   ],
+   "avoid": [
+    "cartoon",
+    "animation",
+    "toy"
+   ],
+   "min_duration": 4
+  },
+  {
+   "id": "bullet",
+   "queries": [
+    "bullet slow motion",
+    "gun shot slow motion"
+   ],
+   "any": [
+    "bullet",
+    "slow",
+    "motion",
+    "shot",
+    "gun",
+    "rifle"
+   ],
+   "avoid": [
+    "person",
+    "people",
+    "man",
+    "woman",
+    "blood",
+    "war",
+    "soldier",
+    "cartoon"
+   ],
+   "min_duration": 3
+  },
+  {
+   "id": "explosion",
+   "queries": [
+    "explosion slow motion",
+    "fire explosion"
+   ],
+   "any": [
+    "explosion",
+    "fire",
+    "blast",
+    "fireball",
+    "detonation"
+   ],
+   "avoid": [
+    "people",
+    "war",
+    "soldier",
+    "car",
+    "cartoon",
+    "logo"
+   ],
+   "min_duration": 3
+  },
+  {
+   "id": "meteor",
+   "queries": [
+    "meteor atmosphere",
+    "fireball sky",
+    "meteor"
+   ],
+   "any": [
+    "meteor",
+    "meteorite",
+    "fireball",
+    "asteroid",
+    "comet",
+    "atmosphere"
+   ],
+   "avoid": [
+    "cartoon",
+    "logo",
+    "text"
+   ],
+   "min_duration": 4
+  }
+ ],
+ "lines": [
+  {
+   "id": "l01",
+   "text": "You are falling into Jupiter at 210,000 kilometers an hour.",
+   "spoken": "You are falling into Jupiter at two hundred and ten thousand kilometers an hour.",
+   "shots": [
+    {
+     "at": 0,
+     "kind": "3d",
+     "scene": "meteor",
+     "seed": 1,
+     "why": "money shot: you as a meteor over the limb, frame 1"
+    },
+    {
+     "at": 6,
+     "kind": "clip",
+     "clip": "grs_io",
+     "speed": [
+      1.6,
+      1.0
+     ],
+     "push": [
+      1.04,
+      1.16
+     ],
+     "fx": 0.55,
+     "fy": 0.5,
+     "why": "real Juno-era GRS + Io shadow, punch on the number"
+    }
+   ],
+   "kw": [
+    {
+     "at": 6,
+     "text": "210,000 KM/H",
+     "style": "num"
+    }
+   ],
+   "sfx": [
+    {
+     "name": "boom",
+     "at": 0.0,
+     "gain": -2
+    },
+    {
+     "name": "whoosh",
+     "word": 6,
+     "dt": -0.35
+    }
+   ]
+  },
+  {
+   "id": "l02",
+   "text": "NASA's toughest probe went silent here after 58 minutes.",
+   "spoken": "NASA's toughest probe went silent here after fifty-eight minutes.",
+   "shots": [
+    {
+     "at": 0,
+     "kind": "photo",
+     "photo": "galileo_probe_art",
+     "move": "diag",
+     "fx": 0.45,
+     "fy": 0.45,
+     "stars": true,
+     "why": "the real probe (art), parallax push"
+    },
+    {
+     "at": 3,
+     "kind": "card",
+     "card": "signal",
+     "why": "data-viz beat: telemetry flatlines"
+    }
+   ],
+   "kw": [
+    {
+     "at": 7,
+     "text": "58 MINUTES",
+     "style": "num"
+    }
+   ],
+   "sfx": [
+    {
+     "name": "beep",
+     "word": 3,
+     "dt": 0.0
+    },
+    {
+     "name": "impact",
+     "word": 7,
+     "dt": -0.05,
+     "gain": -6
+    }
+   ]
+  },
+  {
+   "id": "l03",
+   "text": "There is no ground.",
+   "shots": [
+    {
+     "at": 0,
+     "kind": "3d",
+     "scene": "dive",
+     "seed": 2,
+     "why": "POV straight down through cloud decks"
+    }
+   ],
+   "kw": [
+    {
+     "at": 2,
+     "text": "NO GROUND",
+     "style": "big"
+    }
+   ],
+   "sfx": [
+    {
+     "name": "whoosh",
+     "word": 0,
+     "dt": -0.3
+    }
+   ]
+  },
+  {
+   "id": "l04",
+   "text": "So what stops you?",
+   "shots": [
+    {
+     "at": 0,
+     "kind": "clip",
+     "clip": "grs_swoop",
+     "speed": [
+      2.4,
+      1.0
+     ],
+     "push": [
+      1.02,
+      1.12
+     ],
+     "why": "speed-ramped swoop past the GRS"
+    }
+   ],
+   "kw": [
+    {
+     "at": 1,
+     "text": "WHAT STOPS YOU?",
+     "style": "question"
+    }
+   ],
+   "sfx": [
+    {
+     "name": "riser",
+     "word": 0,
+     "dt": -0.6,
+     "dur": 1.6,
+     "gain": -4
+    }
+   ]
+  },
+  {
+   "id": "l05",
+   "text": "Here are the rules.",
+   "shots": [
+    {
+     "at": 0,
+     "kind": "clip",
+     "clip": "crescent",
+     "speed": [
+      3.0,
+      3.0
+     ],
+     "push": [
+      1.0,
+      1.1
+     ],
+     "fx": 0.6,
+     "why": "breath: dark crescent, chapter feel"
+    }
+   ],
+   "kw": [
+    {
+     "at": 1,
+     "text": "THE RULES",
+     "style": "title"
+    }
+   ],
+   "sfx": [
+    {
+     "name": "impact",
+     "word": 1,
+     "dt": -0.05,
+     "gain": -8
+    }
+   ]
+  },
+  {
+   "id": "l06",
+   "text": "You let go 1,000,000 kilometers out.",
+   "spoken": "You let go one million kilometers out.",
+   "shots": [
+    {
+     "at": 0,
+     "kind": "3d",
+     "scene": "far",
+     "seed": 3,
+     "why": "Jupiter tiny, the moons between you and it"
+    }
+   ],
+   "kw": [
+    {
+     "at": 3,
+     "text": "1,000,000 KM",
+     "style": "num"
+    }
+   ],
+   "sfx": [
+    {
+     "name": "whoosh",
+     "word": 0,
+     "dt": -0.3
+    }
+   ]
+  },
+  {
+   "id": "l07",
+   "text": "No rocket. No parachute. Only gravity.",
+   "shots": [
+    {
+     "at": 0,
+     "kind": "card",
+     "card": "nope",
+     "label": "ROCKET",
+     "stock": "rocket",
+     "why": "stock: real launch (Pixabay), else strike card"
+    },
+    {
+     "at": 2,
+     "kind": "card",
+     "card": "nope",
+     "label": "PARACHUTE",
+     "stock": "parachute",
+     "why": "stock: skydiver (Pixabay), else strike card"
+    },
+    {
+     "at": 4,
+     "kind": "clip",
+     "clip": "hubble_spin",
+     "speed": [
+      1.0,
+      1.0
+     ],
+     "push": [
+      1.18,
+      1.32
+     ],
+     "why": "the only thing pulling: Jupiter"
+    }
+   ],
+   "kw": [
+    {
+     "at": 4,
+     "text": "ONLY GRAVITY",
+     "style": "big"
+    }
+   ],
+   "sfx": [
+    {
+     "name": "impact",
+     "word": 1,
+     "dt": -0.05,
+     "gain": -10
+    },
+    {
+     "name": "impact",
+     "word": 3,
+     "dt": -0.05,
+     "gain": -10
+    },
+    {
+     "name": "boom",
+     "word": 4,
+     "dt": -0.05,
+     "gain": -6
+    }
+   ]
+  },
+  {
+   "id": "l08",
+   "text": "At first, Jupiter is a striped coin hanging in the dark.",
+   "shots": [
+    {
+     "at": 0,
+     "kind": "clip",
+     "clip": "io_rise",
+     "speed": [
+      1.0,
+      1.0
+     ],
+     "push": [
+      1.0,
+      1.08
+     ],
+     "why": "real moon horizon, Jupiter hanging"
+    },
+    {
+     "at": 5,
+     "kind": "photo",
+     "photo": "juno_strip",
+     "move": "flip",
+     "why": "Juno's real approach sequence as a flipbook"
+    }
+   ]
+  },
+  {
+   "id": "l09",
+   "text": "But the pull never lets go.",
+   "shots": [
+    {
+     "at": 0,
+     "kind": "3d",
+     "scene": "fall",
+     "seed": 4,
+     "why": "3D: the planet starts to grow"
+    }
+   ],
+   "sfx": [
+    {
+     "name": "rumble",
+     "word": 0,
+     "dt": -0.2,
+     "dur": 3.0,
+     "gain": -4
+    }
+   ]
+  },
+  {
+   "id": "l10",
+   "text": "For 27 hours you fall,",
+   "spoken": "For twenty-seven hours you fall,",
+   "shots": [
+    {
+     "at": 0,
+     "kind": "clip",
+     "clip": "callisto_in",
+     "speed": [
+      9.0,
+      1.4
+     ],
+     "push": [
+      1.0,
+      1.06
+     ],
+     "why": "speed ramp: 23 s of NASA flight compressed into the line"
+    }
+   ],
+   "kw": [
+    {
+     "at": 1,
+     "text": "27 HOURS",
+     "style": "clock"
+    }
+   ],
+   "sfx": [
+    {
+     "name": "whoosh",
+     "word": 0,
+     "dt": -0.3,
+     "dur": 2.0
+    }
+   ]
+  },
+  {
+   "id": "l11",
+   "text": "and Jupiter swells until it fills the whole sky.",
+   "shots": [
+    {
+     "at": 0,
+     "kind": "clip",
+     "clip": "limb_sweep",
+     "speed": [
+      1.3,
+      1.0
+     ],
+     "push": [
+      1.0,
+      1.1
+     ],
+     "why": "the limb sweeps across the frame"
+    },
+    {
+     "at": 5,
+     "kind": "photo",
+     "photo": "juno_close",
+     "move": "flip",
+     "why": "Juno close approach frames, fills the frame"
+    }
+   ],
+   "sfx": [
+    {
+     "name": "whoosh",
+     "word": 5,
+     "dt": -0.3
+    }
+   ]
+  },
+  {
+   "id": "l12",
+   "text": "It is 11 Earths wide.",
+   "spoken": "It is eleven Earths wide.",
+   "shots": [
+    {
+     "at": 0,
+     "kind": "3d",
+     "scene": "scale",
+     "seed": 5,
+     "why": "scale: eleven Earths across the disc"
+    }
+   ],
+   "kw": [
+    {
+     "at": 2,
+     "text": "11 EARTHS",
+     "style": "numTop"
+    }
+   ],
+   "sfx": [
+    {
+     "name": "impact",
+     "word": 2,
+     "dt": -0.05,
+     "gain": -9
+    }
+   ]
+  },
+  {
+   "id": "l13",
+   "text": "The Great Red Spot alone, a single storm, is wider than the whole Earth.",
+   "shots": [
+    {
+     "at": 0,
+     "kind": "clip",
+     "clip": "grs_zoom",
+     "speed": [
+      1.2,
+      1.0
+     ],
+     "push": [
+      1.0,
+      1.08
+     ],
+     "why": "zoom into the storm"
+    },
+    {
+     "at": 5,
+     "kind": "clip",
+     "clip": "hubble_grs",
+     "speed": [
+      1.4,
+      1.4
+     ],
+     "push": [
+      1.04,
+      1.12
+     ],
+     "why": "Hubble close-up"
+    },
+    {
+     "at": 9,
+     "kind": "clip",
+     "clip": "grs_bulge",
+     "speed": [
+      1.0,
+      1.0
+     ],
+     "push": [
+      1.0,
+      1.06
+     ],
+     "earth": true,
+     "why": "Earth disc dropped next to the storm"
+    }
+   ],
+   "kw": [
+    {
+     "at": 9,
+     "text": "WIDER THAN EARTH",
+     "style": "big"
+    }
+   ],
+   "sfx": [
+    {
+     "name": "whoosh",
+     "word": 5,
+     "dt": -0.3
+    },
+    {
+     "name": "impact",
+     "word": 9,
+     "dt": -0.05,
+     "gain": -9
+    }
+   ]
+  },
+  {
+   "id": "l14",
+   "text": "By the end, you are doing 57 kilometers per second.",
+   "spoken": "By the end, you are doing fifty-seven kilometers per second.",
+   "shots": [
+    {
+     "at": 0,
+     "kind": "3d",
+     "scene": "fall",
+     "seed": 6,
+     "fast": true,
+     "why": "3D: final plunge, speed readout"
+    }
+   ],
+   "kw": [
+    {
+     "at": 6,
+     "text": "57 KM/S",
+     "style": "speed"
+    }
+   ],
+   "sfx": [
+    {
+     "name": "riser",
+     "word": 0,
+     "dt": 0.0,
+     "dur": 3.2,
+     "gain": -3
+    }
+   ]
+  },
+  {
+   "id": "l15",
+   "text": "57 times faster than a rifle bullet.",
+   "spoken": "Fifty-seven times faster than a rifle bullet.",
+   "shots": [
+    {
+     "at": 0,
+     "kind": "card",
+     "card": "bullet",
+     "stock": "bullet",
+     "why": "comparison: bullet vs you"
+    }
+   ],
+   "kw": [
+    {
+     "at": 0,
+     "text": "×57",
+     "style": "num"
+    }
+   ],
+   "sfx": [
+    {
+     "name": "whoosh",
+     "word": 0,
+     "dt": -0.25,
+     "dur": 0.9
+    }
+   ]
+  },
+  {
+   "id": "l15b",
+   "text": "Faster even than NASA's Galileo probe, which hit at 47 kilometers per second.",
+   "spoken": "Faster even than NASA's Galileo probe, which hit at forty-seven kilometers per second.",
+   "shots": [
+    {
+     "at": 0,
+     "kind": "photo",
+     "photo": "galileo_probe_art",
+     "move": "push",
+     "fx": 0.82,
+     "fy": 0.86,
+     "why": "the probe that came first"
+    },
+    {
+     "at": 7,
+     "kind": "card",
+     "card": "race",
+     "why": "data-viz: bullet vs Galileo vs you"
+    }
+   ],
+   "kw": [],
+   "sfx": [
+    {
+     "name": "whoosh",
+     "word": 0,
+     "dt": -0.3
+    }
+   ]
+  },
+  {
+   "id": "l16",
+   "text": "Then the air arrives.",
+   "shots": [
+    {
+     "at": 0,
+     "kind": "photo",
+     "photo": "juno_storm",
+     "move": "rush",
+     "why": "cloud tops rushing up at you"
+    }
+   ],
+   "sfx": [
+    {
+     "name": "riser",
+     "word": 0,
+     "dt": -0.8,
+     "dur": 1.9,
+     "gain": -2
+    }
+   ]
+  },
+  {
+   "id": "l17",
+   "text": "At that speed, even thin hydrogen hits like a wall.",
+   "shots": [
+    {
+     "at": 0,
+     "kind": "3d",
+     "scene": "plasma",
+     "seed": 7,
+     "heat": 0.45,
+     "why": "entry starts to glow"
+    },
+    {
+     "at": 6,
+     "kind": "3d",
+     "scene": "plasma",
+     "seed": 8,
+     "heat": 1.0,
+     "flash": true,
+     "why": "impact: white flash, heavy shake"
+    }
+   ],
+   "kw": [
+    {
+     "at": 6,
+     "text": "LIKE A WALL",
+     "style": "big"
+    }
+   ],
+   "sfx": [
+    {
+     "name": "impact",
+     "word": 6,
+     "dt": -0.06,
+     "gain": 0
+    },
+    {
+     "name": "roar",
+     "word": 0,
+     "dt": 0.0,
+     "dur": 9.0,
+     "gain": -6
+    }
+   ]
+  },
+  {
+   "id": "l18",
+   "text": "The gas ahead of you becomes plasma, as hot as the surface of the Sun.",
+   "shots": [
+    {
+     "at": 0,
+     "kind": "3d",
+     "scene": "window",
+     "seed": 9,
+     "why": "POV through the glowing shock"
+    },
+    {
+     "at": 7,
+     "kind": "clip",
+     "clip": "sun_surface",
+     "speed": [
+      1.0,
+      1.0
+     ],
+     "push": [
+      1.05,
+      1.18
+     ],
+     "why": "real SDO: the Sun's surface"
+    }
+   ],
+   "kw": [
+    {
+     "at": 6,
+     "text": "PLASMA",
+     "style": "hot"
+    },
+    {
+     "at": 14,
+     "text": "SUN-HOT",
+     "style": "hot"
+    }
+   ],
+   "sfx": [
+    {
+     "name": "whoosh",
+     "word": 7,
+     "dt": -0.3
+    }
+   ]
+  },
+  {
+   "id": "l19",
+   "text": "Every kilogram of you carries the energy of 390 kilograms of TNT.",
+   "spoken": "Every kilogram of you carries the energy of three hundred and ninety kilograms of TNT.",
+   "shots": [
+    {
+     "at": 0,
+     "kind": "card",
+     "card": "tnt",
+     "why": "energy card: the grid fills"
+    },
+    {
+     "at": 11,
+     "kind": "3d",
+     "scene": "plasma",
+     "seed": 14,
+     "heat": 1.0,
+     "flash": true,
+     "stock": "explosion",
+     "why": "stock: real explosion (Pixabay), else plasma flash"
+    }
+   ],
+   "kw": [
+    {
+     "at": 8,
+     "text": "390 KG OF TNT",
+     "style": "num"
+    }
+   ],
+   "sfx": [
+    {
+     "name": "boom",
+     "word": 10,
+     "dt": -0.05,
+     "gain": -2
+    }
+   ]
+  },
+  {
+   "id": "l20",
+   "text": "So honestly? You do not survive the entry.",
+   "shots": [
+    {
+     "at": 0,
+     "kind": "3d",
+     "scene": "meteor",
+     "seed": 10,
+     "wide": true,
+     "stock": "meteor",
+     "why": "you, a streak of light"
+    }
+   ],
+   "kw": [
+    {
+     "at": 2,
+     "text": "YOU DON'T SURVIVE",
+     "style": "big"
+    }
+   ],
+   "sfx": [
+    {
+     "name": "whoosh",
+     "word": 0,
+     "dt": -0.3
+    }
+   ]
+  },
+  {
+   "id": "l21",
+   "text": "But this is The If Engine. So we cheat, exactly once.",
+   "shots": [
+    {
+     "at": 0,
+     "kind": "clip",
+     "clip": "grs_io_b",
+     "speed": [
+      1.0,
+      1.0
+     ],
+     "push": [
+      1.12,
+      1.0
+     ],
+     "why": "calm: back to the storm"
+    },
+    {
+     "at": 6,
+     "kind": "card",
+     "card": "end",
+     "why": "end card: the cheat"
+    }
+   ],
+   "kw": [
+    {
+     "at": 7,
+     "text": "WE CHEAT ONCE",
+     "style": "title"
+    }
+   ],
+   "sfx": [
+    {
+     "name": "boom",
+     "word": 7,
+     "dt": -0.05,
+     "gain": -6
+    }
+   ]
+  },
+  {
+   "id": "l22",
+   "text": "Put yourself in an indestructible pod, your size and your weight.",
+   "shots": [
+    {
+     "at": 0,
+     "kind": "3d",
+     "scene": "pod",
+     "seed": 11,
+     "why": "the one cheat: the pod"
+    },
+    {
+     "at": 6,
+     "kind": "3d",
+     "scene": "pod",
+     "seed": 19,
+     "why": "second angle on the pod"
+    }
+   ],
+   "kw": [
+    {
+     "at": 4,
+     "text": "INDESTRUCTIBLE POD",
+     "style": "titleTop"
+    }
+   ],
+   "sfx": [
+    {
+     "name": "whoosh",
+     "word": 0,
+     "dt": -0.3
+    },
+    {
+     "name": "impact",
+     "word": 4,
+     "dt": -0.05,
+     "gain": -8
+    }
+   ]
+  },
+  {
+   "id": "l23",
+   "text": "Everything outside it stays real.",
+   "shots": [
+    {
+     "at": 0,
+     "kind": "3d",
+     "scene": "dive",
+     "seed": 12,
+     "calm": true,
+     "why": "the real fall begins (cliffhanger)"
+    }
+   ],
+   "kw": [
+    {
+     "at": 3,
+     "text": "EVERYTHING ELSE IS REAL",
+     "style": "title"
+    }
+   ],
+   "sfx": [
+    {
+     "name": "boom",
+     "word": 3,
+     "dt": -0.05,
+     "gain": -5
+    }
+   ]
+  }
+ ]
+}
