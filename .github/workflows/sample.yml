@@ -222,7 +222,7 @@ jobs:
         run: |
           set -euo pipefail
           [[ "$SID" =~ ^[a-z0-9][a-z0-9-]{2,60}$ ]] || { echo "::error::bad sample id"; exit 1; }
-          A="$RUNNER_TEMP/art/engine/videos/${SID}"
+          A="$RUNNER_TEMP/art"   # upload-artifact strips the common parent (engine/videos/<id>/)
           d="engine/videos/${SID}"
           mkdir -p "$d/renders" "$d/build/qa"
           cp "$A/renders/${SID}_1080p.mp4" "$d/renders/"

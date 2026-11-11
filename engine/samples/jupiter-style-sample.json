@@ -2,5 +2,6 @@
   "sample": "jupiter-style-sample",
   "pixabay": true,
   "upload": "private",
-  "note": "Request file for .github/workflows/sample.yml: committing/changing it on main builds this sample (NASA + Pixabay + 3D) and uploads it PRIVATE to YouTube."
+  "note": "Request file for .github/workflows/sample.yml: committing/changing it on main builds this sample (NASA + Pixabay + 3D) and uploads it PRIVATE to YouTube.",
+  "rev": 2
 }
