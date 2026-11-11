@@ -51,6 +51,8 @@ def main():
 
     title = script["title"]
     alt_titles = M["alt_titles"]
+    cinematic = any(b["visual"].get("scene") in ("space", "descent", "cutaway")
+                    for s in script["sections"] for b in s["beats"])
     # Description style (see PRODUCER.md): a 2-3 line hook that front-loads the search words, a short
     # "what you'll learn", chapters, a FEW key numbers (no formulas), then sources and image credits.
     lines = [M["hook"], ""]
@@ -64,8 +66,9 @@ def main():
     if M.get("image_credits"):
         lines += ["", "🖼 Image credits"] + [f"• {x}" for x in M["image_credits"]]
     tail = ["", M.get("assumptions", ""),
-            "", "How this was made: the narration is an AI voice (text-to-speech) and the script and visuals are made "
-            "with AI tools and code. Every number is computed in code from the sources above and fact-checked before upload.",
+            "", "How this was made: the narration is an AI voice (text-to-speech), the script and visuals are made with AI "
+            "tools and code, and the music and sound effects are synthesised in code. Every number is computed in code "
+            "from the sources above and fact-checked before upload.",
             "", f"Next: {script['next_video']}", "", M.get("hashtags", "#science #physics #whatif")]
     further = (["", "Further reading"] + [f"[{k}] {sources[k]['url']}" for k in other]) if other else []
     description = "\n".join(lines + further + tail)
@@ -101,12 +104,14 @@ def main():
         "defaultLanguage": "en", "defaultAudioLanguage": "en",
         "playlist": script.get("series", "Planet Breakers"), "shorts_playlist": SHORTS_PLAYLIST,
         "madeForKids": False,
-        # YouTube "altered or synthetic content" (status.containsSyntheticMedia) is for REALISTIC content
-        # a viewer could mistake for real people/places/events. Stylised vector animation + a generic
-        # synthetic narrator (no cloned/real voice) does not meet that bar; the TTS voice is disclosed in
-        # the description. Set True if photoreal generated footage or a cloned voice is ever used.
-        "containsSyntheticMedia": False,
-        "containsSyntheticMedia_rationale": "Stylised, clearly animated vector graphics; generic TTS narrator not imitating any real person. AI voice disclosed in description.",
+        # YouTube "altered or synthetic content" (status.containsSyntheticMedia) covers REALISTIC generated
+        # scenes of real places/events. The cinematic 3D scenes (space, descent, cutaway) render real
+        # places (Jupiter, Earth...) semi-realistically from NASA maps, so we disclose; old vector-only
+        # videos did not need it. The TTS voice is a library voice (no cloning) and disclosed in text.
+        "containsSyntheticMedia": cinematic,
+        "containsSyntheticMedia_rationale": ("Computer-generated, semi-realistic 3D depictions of real planets (NASA maps) in an "
+                                             "impossible scenario; disclosed to be safe." if cinematic else
+                                             "Stylised, clearly animated vector graphics; generic TTS narrator. AI voice disclosed in description."),
         "chapters": [{"t": round(t, 2), "label": n} for t, n in chapters],
         "license": "youtube", "embeddable": True,
         "human_review_required": True,

@@ -19,7 +19,10 @@ from lib import fail, log, read_json, set_stage, video_arg, video_dir, write_jso
 from textnorm import spoken, spoken_word_count
 
 STAGE = "script"
-WPM_EST = 176          # measured: Kokoro am_michael @ speed 1.12 ~ 176 wpm
+import os as _os
+# measured speaking rates (spoken words per minute inside a beat): ElevenLabs "Max" on
+# eleven_multilingual_v2 at speed 1.06 ~ 140 wpm; Kokoro am_michael @ 1.12 ~ 176 wpm
+WPM_EST = float(_os.environ.get("IF_ENGINE_WPM") or (176 if _os.environ.get("TTS_PROVIDER") == "kokoro" else 140))
 BEAT_GAP = 0.4        # seconds of silence between beats
 SECTION_GAP = 0.9      # extra silence between sections
 PH = re.compile(r"\{\{(\w+)\}\}")

@@ -55,7 +55,8 @@ export type SceneProps = {
   params: Record<string, any>;
 };
 
-export type SceneEntry = { C: React.FC<SceneProps>; shift: boolean };
+/** opaque: the scene paints every pixel (3D/photo) - the starry Background is skipped under it (render speed) */
+export type SceneEntry = { C: React.FC<SceneProps>; shift: boolean; opaque?: boolean };
 
 /** props of an optional per-video OVERLAY (drawn above every scene, below captions) */
 export type OverlayProps = { data: VideoProps; time: number; slots: Slot[]; slot: Slot | undefined };

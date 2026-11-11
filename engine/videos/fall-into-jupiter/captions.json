@@ -1,0 +1,814 @@
+{
+  "cues": [
+    {
+      "beat": "b01",
+      "start": 0.6,
+      "end": 4.628,
+      "text": "You fall into Jupiter at\n210,000 kilometers an hour,"
+    },
+    {
+      "beat": "b01",
+      "start": 4.628,
+      "end": 7.775,
+      "text": "and there is no ground to stop you."
+    },
+    {
+      "beat": "b01",
+      "start": 7.775,
+      "end": 9.53,
+      "text": "So where do you actually stop?"
+    },
+    {
+      "beat": "b02",
+      "start": 10.83,
+      "end": 12.198,
+      "text": "Here are the rules."
+    },
+    {
+      "beat": "b02",
+      "start": 12.198,
+      "end": 18.247,
+      "text": "You start at rest, 1,000,000 kilometers\nfrom Jupiter's center, and you let go."
+    },
+    {
+      "beat": "b02",
+      "start": 18.247,
+      "end": 21.771,
+      "text": "No rocket, no parachute. Only gravity."
+    },
+    {
+      "beat": "b03",
+      "start": 22.171,
+      "end": 24.787,
+      "text": "At first, nothing seems to happen."
+    },
+    {
+      "beat": "b03",
+      "start": 24.787,
+      "end": 27.98,
+      "text": "Jupiter is a striped\ncoin hanging in the dark."
+    },
+    {
+      "beat": "b03",
+      "start": 27.98,
+      "end": 31.283,
+      "text": "But it is pulling, and\nthe pull never lets go."
+    },
+    {
+      "beat": "b04",
+      "start": 31.683,
+      "end": 35.611,
+      "text": "For 27 hours you fall,\nwhile Jupiter spins about"
+    },
+    {
+      "beat": "b04",
+      "start": 35.611,
+      "end": 40.638,
+      "text": "2.7 times beneath you and\nswells to fill the sky."
+    },
+    {
+      "beat": "b04",
+      "start": 40.638,
+      "end": 44.771,
+      "text": "By the end you are moving\nat 57 kilometers per second."
+    },
+    {
+      "beat": "b04",
+      "start": 44.771,
+      "end": 48.417,
+      "text": "That is 57 times faster\nthan a rifle bullet,"
+    },
+    {
+      "beat": "b04",
+      "start": 48.417,
+      "end": 54.098,
+      "text": "and faster than NASA's Galileo probe,\nwhich hit this atmosphere at 47.4."
+    },
+    {
+      "beat": "b05",
+      "start": 54.498,
+      "end": 58.411,
+      "text": "For scale: Jupiter is 11 Earths wide."
+    },
+    {
+      "beat": "b05",
+      "start": 58.411,
+      "end": 61.232,
+      "text": "The Great Red Spot alone, a storm,"
+    },
+    {
+      "beat": "b05",
+      "start": 61.232,
+      "end": 63.794,
+      "text": "is about twice as wide\nas our whole planet."
+    },
+    {
+      "beat": "b06",
+      "start": 64.194,
+      "end": 66.052,
+      "text": "And there is no ground."
+    },
+    {
+      "beat": "b06",
+      "start": 66.052,
+      "end": 69.43,
+      "text": "Jupiter has no surface at all."
+    },
+    {
+      "beat": "b06",
+      "start": 69.43,
+      "end": 72.739,
+      "text": "So on the way down we\nwill track three things:"
+    },
+    {
+      "beat": "b06",
+      "start": 72.739,
+      "end": 77.485,
+      "text": "how deep you are, how hot it is,\nand what you see out the window."
+    },
+    {
+      "beat": "b07",
+      "start": 78.785,
+      "end": 82.721,
+      "text": "Then the air arrives, and not gently."
+    },
+    {
+      "beat": "b07",
+      "start": 82.721,
+      "end": 88.177,
+      "text": "At 57 kilometers per second even\nthin hydrogen hits like a wall."
+    },
+    {
+      "beat": "b07",
+      "start": 88.177,
+      "end": 91.997,
+      "text": "The gas ahead of you is\ncrushed into glowing plasma,"
+    },
+    {
+      "beat": "b07",
+      "start": 91.997,
+      "end": 94.144,
+      "text": "as hot as the surface of the Sun."
+    },
+    {
+      "beat": "b08",
+      "start": 94.544,
+      "end": 96.75,
+      "text": "Every kilogram of you carries the"
+    },
+    {
+      "beat": "b08",
+      "start": 96.75,
+      "end": 101.173,
+      "text": "energy of about 390 kilograms of TNT."
+    },
+    {
+      "beat": "b08",
+      "start": 101.173,
+      "end": 107.082,
+      "text": "For a whole person, that is about\n28 tonnes, released in moments."
+    },
+    {
+      "beat": "b09",
+      "start": 107.482,
+      "end": 113.635,
+      "text": "Galileo survived this behind a heat\nshield and still felt more than 200 g."
+    },
+    {
+      "beat": "b09",
+      "start": 113.635,
+      "end": 119.626,
+      "text": "The most any human has\nsurvived on purpose is 46.2 g."
+    },
+    {
+      "beat": "b09",
+      "start": 119.626,
+      "end": 122.529,
+      "text": "Galileo took more than four times that."
+    },
+    {
+      "beat": "b10",
+      "start": 122.929,
+      "end": 126.563,
+      "text": "So honestly? You do not survive the entry."
+    },
+    {
+      "beat": "b10",
+      "start": 126.563,
+      "end": 130.406,
+      "text": "You become a meteor, a streak\nof light above the clouds."
+    },
+    {
+      "beat": "b10",
+      "start": 130.406,
+      "end": 134.864,
+      "text": "But this is The If Engine,\nso we cheat exactly once."
+    },
+    {
+      "beat": "b10",
+      "start": 134.864,
+      "end": 139.647,
+      "text": "Put yourself in an indestructible\npod, your size and your weight."
+    },
+    {
+      "beat": "b10",
+      "start": 139.647,
+      "end": 141.61,
+      "text": "Everything outside it stays real."
+    },
+    {
+      "beat": "b11",
+      "start": 142.91,
+      "end": 146.832,
+      "text": "The pod slows to a fall\nyou could almost call calm:"
+    },
+    {
+      "beat": "b11",
+      "start": 146.832,
+      "end": 150.13,
+      "text": "about 690 kilometers an hour."
+    },
+    {
+      "beat": "b11",
+      "start": 150.13,
+      "end": 156.492,
+      "text": "The thicker the air, the slower you\nfall, and from here it only gets thicker."
+    },
+    {
+      "beat": "b12",
+      "start": 156.892,
+      "end": 158.703,
+      "text": "First rung."
+    },
+    {
+      "beat": "b12",
+      "start": 158.703,
+      "end": 164.38,
+      "text": "Depth: just above the 1 bar level,\nJupiter's version of sea level."
+    },
+    {
+      "beat": "b12",
+      "start": 164.38,
+      "end": 169.071,
+      "text": "Temperature: about 120 degrees below zero."
+    },
+    {
+      "beat": "b12",
+      "start": 169.071,
+      "end": 170.881,
+      "text": "Out the window: white."
+    },
+    {
+      "beat": "b13",
+      "start": 171.281,
+      "end": 174.532,
+      "text": "These high white clouds are ammonia ice,"
+    },
+    {
+      "beat": "b13",
+      "start": 174.532,
+      "end": 177.341,
+      "text": "a snow made of the chemical\nin household cleaner,"
+    },
+    {
+      "beat": "b13",
+      "start": 177.341,
+      "end": 180.523,
+      "text": "at about 0.70 bar."
+    },
+    {
+      "beat": "b13",
+      "start": 180.523,
+      "end": 184.401,
+      "text": "The winds up here reach\n539 kilometers an hour."
+    },
+    {
+      "beat": "b14",
+      "start": 184.801,
+      "end": 186.739,
+      "text": "Here is the first surprise."
+    },
+    {
+      "beat": "b14",
+      "start": 186.739,
+      "end": 191.708,
+      "text": "A study in 2025 suggests most\nof the color you see from space"
+    },
+    {
+      "beat": "b14",
+      "start": 191.708,
+      "end": 196.375,
+      "text": "comes from deeper, from a\nrust-colored layer below this one."
+    },
+    {
+      "beat": "b14",
+      "start": 196.375,
+      "end": 198.941,
+      "text": "So let's go and look."
+    },
+    {
+      "beat": "b15",
+      "start": 200.241,
+      "end": 206.232,
+      "text": "Second rung. Depth: about 18 kilometers."
+    },
+    {
+      "beat": "b15",
+      "start": 206.232,
+      "end": 210.358,
+      "text": "Pressure: 2 bar, double the\nair on a beach on Earth."
+    },
+    {
+      "beat": "b16",
+      "start": 210.758,
+      "end": 215.077,
+      "text": "Temperature: about 72 degrees below zero."
+    },
+    {
+      "beat": "b16",
+      "start": 215.077,
+      "end": 218.304,
+      "text": "These are crystals of\nammonium hydrosulfide,"
+    },
+    {
+      "beat": "b16",
+      "start": 218.304,
+      "end": 221.497,
+      "text": "stained by a haze the color of rust."
+    },
+    {
+      "beat": "b16",
+      "start": 221.497,
+      "end": 223.273,
+      "text": "The sunlight is fading fast."
+    },
+    {
+      "beat": "b17",
+      "start": 223.673,
+      "end": 226.608,
+      "text": "And somewhere below\nyou, something flashes."
+    },
+    {
+      "beat": "b18",
+      "start": 227.908,
+      "end": 229.522,
+      "text": "Third rung."
+    },
+    {
+      "beat": "b18",
+      "start": 229.522,
+      "end": 233.098,
+      "text": "About 49 kilometers down, 5 bar,"
+    },
+    {
+      "beat": "b18",
+      "start": 233.098,
+      "end": 237.033,
+      "text": "12 degrees below zero and rising."
+    },
+    {
+      "beat": "b18",
+      "start": 237.033,
+      "end": 239.193,
+      "text": "These are water clouds."
+    },
+    {
+      "beat": "b18",
+      "start": 239.193,
+      "end": 242.714,
+      "text": "Real water ice and droplets,\nlike the storms at home."
+    },
+    {
+      "beat": "b19",
+      "start": 243.114,
+      "end": 246.028,
+      "text": "And they are electric."
+    },
+    {
+      "beat": "b19",
+      "start": 246.028,
+      "end": 250.022,
+      "text": "NASA's Juno spacecraft found\nlightning even higher up,"
+    },
+    {
+      "beat": "b19",
+      "start": 250.022,
+      "end": 252.634,
+      "text": "where it is 88 degrees below zero,"
+    },
+    {
+      "beat": "b19",
+      "start": 252.634,
+      "end": 258.446,
+      "text": "fed by slushy hailstones of ammonia and\nwater that scientists call mushballs."
+    },
+    {
+      "beat": "b20",
+      "start": 258.846,
+      "end": 264.593,
+      "text": "All three cloud layers together\nare only about 71 kilometers thick."
+    },
+    {
+      "beat": "b20",
+      "start": 264.593,
+      "end": 268.378,
+      "text": "About 36 minutes after you\npassed the 1 bar level,"
+    },
+    {
+      "beat": "b20",
+      "start": 268.378,
+      "end": 271.466,
+      "text": "you are already 100 kilometers down."
+    },
+    {
+      "beat": "b20",
+      "start": 271.466,
+      "end": 273.895,
+      "text": "You have fallen through\nJupiter's entire weather."
+    },
+    {
+      "beat": "b21",
+      "start": 274.295,
+      "end": 277.128,
+      "text": "Then the temperature\ndoes something strange."
+    },
+    {
+      "beat": "b22",
+      "start": 278.428,
+      "end": 282.375,
+      "text": "About 65 kilometers down, at 7.5 bar,"
+    },
+    {
+      "beat": "b22",
+      "start": 282.375,
+      "end": 285.813,
+      "text": "the air outside is a\ncomfortable 20 degrees Celsius."
+    },
+    {
+      "beat": "b23",
+      "start": 286.213,
+      "end": 290.135,
+      "text": "When the Galileo probe\nreached this level in 1995,"
+    },
+    {
+      "beat": "b23",
+      "start": 290.135,
+      "end": 292.701,
+      "text": "NASA logged it in its timeline:"
+    },
+    {
+      "beat": "b23",
+      "start": 292.701,
+      "end": 295.97,
+      "text": "room temperature, about\n30 minutes after entry."
+    },
+    {
+      "beat": "b24",
+      "start": 296.37,
+      "end": 299.609,
+      "text": "It is the most Earth-like\nmoment of the whole trip,"
+    },
+    {
+      "beat": "b24",
+      "start": 299.609,
+      "end": 302.442,
+      "text": "and you could not breathe\nfor a second of it."
+    },
+    {
+      "beat": "b24",
+      "start": 302.442,
+      "end": 306.499,
+      "text": "There is no oxygen to breathe\nhere, only hydrogen and helium."
+    },
+    {
+      "beat": "b25",
+      "start": 307.799,
+      "end": 310.98,
+      "text": "Galileo kept talking for 58 minutes."
+    },
+    {
+      "beat": "b25",
+      "start": 310.98,
+      "end": 314.184,
+      "text": "It sank about 160 kilometers."
+    },
+    {
+      "beat": "b25",
+      "start": 314.184,
+      "end": 315.786,
+      "text": "Then its signal stopped."
+    },
+    {
+      "beat": "b26",
+      "start": 316.186,
+      "end": 321.614,
+      "text": "Within about 10 hours, NASA estimates,\nthe probe was completely vaporized."
+    },
+    {
+      "beat": "b26",
+      "start": 321.614,
+      "end": 325.279,
+      "text": "No working instrument has ever\nreported back from below this depth."
+    },
+    {
+      "beat": "b27",
+      "start": 325.679,
+      "end": 329.893,
+      "text": "You keep sinking. Your pod\nis indestructible, remember."
+    },
+    {
+      "beat": "b27",
+      "start": 329.893,
+      "end": 333.736,
+      "text": "But from here, the question\nis not whether you survive."
+    },
+    {
+      "beat": "b27",
+      "start": 333.736,
+      "end": 336.128,
+      "text": "It is what is left of the sky."
+    },
+    {
+      "beat": "b28",
+      "start": 337.428,
+      "end": 341.387,
+      "text": "Fourth rung. 1,000 kilometers down."
+    },
+    {
+      "beat": "b28",
+      "start": 341.387,
+      "end": 343.697,
+      "text": "The sunlight is long gone."
+    },
+    {
+      "beat": "b28",
+      "start": 343.697,
+      "end": 348.643,
+      "text": "Temperature: about 1,900 degrees Celsius."
+    },
+    {
+      "beat": "b28",
+      "start": 348.643,
+      "end": 351.802,
+      "text": "Pressure: around 8,000 atmospheres."
+    },
+    {
+      "beat": "b29",
+      "start": 352.202,
+      "end": 357.972,
+      "text": "At that temperature the hull of your\npod glows orange, like steel in a forge."
+    },
+    {
+      "beat": "b29",
+      "start": 357.972,
+      "end": 360.534,
+      "text": "Down here, heat is the\nonly light there is."
+    },
+    {
+      "beat": "b30",
+      "start": 360.934,
+      "end": 363.999,
+      "text": "It took you about 21\nhours to sink this far,"
+    },
+    {
+      "beat": "b30",
+      "start": 363.999,
+      "end": 365.891,
+      "text": "and the gas is now so thick"
+    },
+    {
+      "beat": "b30",
+      "start": 365.891,
+      "end": 370.392,
+      "text": "that you are falling at 27 kilometers\nan hour, the speed of a bicycle."
+    },
+    {
+      "beat": "b31",
+      "start": 370.792,
+      "end": 375.979,
+      "text": "And somewhere around here, the line\nbetween gas and liquid simply disappears."
+    },
+    {
+      "beat": "b32",
+      "start": 377.279,
+      "end": 380.139,
+      "text": "There is no splash and no surface."
+    },
+    {
+      "beat": "b32",
+      "start": 380.139,
+      "end": 383.726,
+      "text": "The hydrogen just gets\ndenser and denser until,"
+    },
+    {
+      "beat": "b32",
+      "start": 383.726,
+      "end": 388.858,
+      "text": "without any line you could point\nto, it behaves like a liquid."
+    },
+    {
+      "beat": "b32",
+      "start": 388.858,
+      "end": 393.247,
+      "text": "NASA calls it the largest\nocean in the solar system."
+    },
+    {
+      "beat": "b33",
+      "start": 393.647,
+      "end": 399.684,
+      "text": "Fifth rung. Thousands of kilometers\ndeep, sinking slower every hour."
+    },
+    {
+      "beat": "b33",
+      "start": 399.684,
+      "end": 405.35,
+      "text": "Jupiter's jet streams reach\ndown about 3,200 kilometers."
+    },
+    {
+      "beat": "b33",
+      "start": 405.35,
+      "end": 406.694,
+      "text": "You are already below them."
+    },
+    {
+      "beat": "b34",
+      "start": 407.094,
+      "end": 411.342,
+      "text": "And then, about 14,000\nkilometers down, you stop."
+    },
+    {
+      "beat": "b35",
+      "start": 411.742,
+      "end": 414.192,
+      "text": "Not because you hit anything."
+    },
+    {
+      "beat": "b35",
+      "start": 414.192,
+      "end": 417.129,
+      "text": "The liquid around you is\nnow as dense as you are,"
+    },
+    {
+      "beat": "b35",
+      "start": 417.129,
+      "end": 420.31,
+      "text": "so you float, like a\nswimmer who stopped kicking,"
+    },
+    {
+      "beat": "b35",
+      "start": 420.31,
+      "end": 426.277,
+      "text": "in a sea of hot, crushing hydrogen,\nunder about 2 million atmospheres."
+    },
+    {
+      "beat": "b36",
+      "start": 427.577,
+      "end": 431.606,
+      "text": "That is the answer to the\nquestion from the start."
+    },
+    {
+      "beat": "b36",
+      "start": 431.606,
+      "end": 436.192,
+      "text": "Jupiter has no ground, so\nwhat stops you is buoyancy."
+    },
+    {
+      "beat": "b36",
+      "start": 436.192,
+      "end": 438.804,
+      "text": "In a simple model of Jupiter's interior,"
+    },
+    {
+      "beat": "b36",
+      "start": 438.804,
+      "end": 442.763,
+      "text": "you come to rest about 20\npercent of the way to the center."
+    },
+    {
+      "beat": "b37",
+      "start": 443.163,
+      "end": 445.845,
+      "text": "Getting here took about 78 days."
+    },
+    {
+      "beat": "b37",
+      "start": 445.845,
+      "end": 449.943,
+      "text": "You crossed 1,000,000\nkilometers of space in 27 hours,"
+    },
+    {
+      "beat": "b37",
+      "start": 449.943,
+      "end": 453.731,
+      "text": "then spent 78 days\nsinking the last 14,000."
+    },
+    {
+      "beat": "b38",
+      "start": 454.131,
+      "end": 458.896,
+      "text": "And below you, out of reach,\nis the strangest layer."
+    },
+    {
+      "beat": "b38",
+      "start": 458.896,
+      "end": 461.984,
+      "text": "NASA thinks that perhaps\nhalfway to the center,"
+    },
+    {
+      "beat": "b38",
+      "start": 461.984,
+      "end": 464.352,
+      "text": "hydrogen is squeezed so hard that it"
+    },
+    {
+      "beat": "b38",
+      "start": 464.352,
+      "end": 466.233,
+      "text": "turns into a liquid metal,"
+    },
+    {
+      "beat": "b38",
+      "start": 466.233,
+      "end": 470.529,
+      "text": "and its churning powers Jupiter's\nenormous magnetic field."
+    },
+    {
+      "beat": "b39",
+      "start": 471.829,
+      "end": 477.204,
+      "text": "Deeper still, NASA's Juno found\nthat the core is not a solid ball."
+    },
+    {
+      "beat": "b39",
+      "start": 477.204,
+      "end": 481.523,
+      "text": "It is dilute, partly\ndissolved, with no clear edge."
+    },
+    {
+      "beat": "b39",
+      "start": 481.523,
+      "end": 486.364,
+      "text": "Even at the very bottom,\nJupiter refuses to have a floor."
+    },
+    {
+      "beat": "b40",
+      "start": 486.764,
+      "end": 488.505,
+      "text": "So here is the twist."
+    },
+    {
+      "beat": "b40",
+      "start": 488.505,
+      "end": 492.523,
+      "text": "You set out to fall into Jupiter,\nand you never touched it."
+    },
+    {
+      "beat": "b40",
+      "start": 492.523,
+      "end": 496.029,
+      "text": "No surface at the top,\nno floor at the bottom."
+    },
+    {
+      "beat": "b40",
+      "start": 496.029,
+      "end": 498.92,
+      "text": "Just a world that gets\nthicker and thicker,"
+    },
+    {
+      "beat": "b40",
+      "start": 498.92,
+      "end": 502.145,
+      "text": "until it holds you,\nsuspended, in the dark."
+    },
+    {
+      "beat": "b41",
+      "start": 502.545,
+      "end": 505.48,
+      "text": "And Jupiter is the gentle one."
+    },
+    {
+      "beat": "b41",
+      "start": 505.48,
+      "end": 510.042,
+      "text": "Next, we visit every planet\nand ask a simpler question:"
+    },
+    {
+      "beat": "b41",
+      "start": 510.042,
+      "end": 513.142,
+      "text": "how long could you survive on each one?"
+    },
+    {
+      "beat": "b41",
+      "start": 513.142,
+      "end": 515.58,
+      "text": "This was The If Engine."
+    },
+    {
+      "beat": "b41",
+      "start": 515.58,
+      "end": 518.171,
+      "text": "Run the impossible. Do the math."
+    }
+  ]
+}

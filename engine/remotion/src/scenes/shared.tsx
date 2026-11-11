@@ -5,6 +5,7 @@
  * hard-coded here, so factcheck.py can trace them.
  *
  * Scenes: title, rules, recap, outro, bars, number, compare, clock, globe, blank
+ * + the cinematic 3D scenes of ./cinematic.tsx: space, descent, cutaway, photo
  */
 import React from "react";
 import { Img, interpolate, staticFile } from "remotion";
@@ -13,6 +14,7 @@ import { Globe } from "../components/Globe";
 import { Panel, T } from "../components/Svg";
 import { clamp, prog } from "../timeline";
 import { SceneEntry, SceneProps } from "../types";
+import { CINEMATIC_SCENES } from "./cinematic";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 type P = Record<string, any>;
@@ -296,4 +298,5 @@ export const SHARED_SCENES: Record<string, SceneEntry> = {
   clock: { C: Clock, shift: true },
   globe: { C: GlobeScene, shift: true },
   blank: { C: Blank, shift: false },
+  ...CINEMATIC_SCENES,
 };

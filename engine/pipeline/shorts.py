@@ -19,7 +19,7 @@ import os
 import subprocess
 import textwrap
 
-from lib import ROOT, fail, log, read_json, require, set_stage, video_dir, write_json
+from lib import ROOT, fail, gl_flag, log, read_json, require, set_stage, video_dir, write_json
 
 STAGE = "shorts"
 MAX_LEN = 59.0
@@ -137,7 +137,7 @@ def render_native(vdir, vid, sh, prov, base_props, stills: bool = False) -> dict
     import numpy as np
     import soundfile as sf
     from lib import REMOTION
-    from tts import SR, trim
+    from tts import SR, ElevenLabsQuotaError, loud, pick, synth_beats
     out_dir = vdir / "shorts"
     adir = out_dir / sh["id"]
     adir.mkdir(parents=True, exist_ok=True)
@@ -145,27 +145,31 @@ def render_native(vdir, vid, sh, prov, base_props, stills: bool = False) -> dict
     t = LEAD
     pieces = [np.zeros(int(LEAD * SR), dtype=np.float32)]
     beats_t, words, qa = [], [], []
-    for b in sh["beats"]:
+    voiced = None
+    if prov:
+        cache_f = adir / "cache.json"
+        cache = read_json(cache_f) if cache_f.exists() else {}
+        items = [{"id": b["id"], "text": b["text"], "spoken": b["spoken"]} for b in sh["beats"]]
+        try:
+            voiced, qa = synth_beats(prov, items, adir, cache)
+        except ElevenLabsQuotaError as e:
+            loud(f"ElevenLabs credits ran out on {sh['id']} ({e}): this Short uses KOKORO")
+            prov = pick("kokoro", os.environ.get("KOKORO_VOICE", "am_michael"), float(os.environ.get("KOKORO_SPEED", "1.12")))
+            phon = lambda x: prov.k.tokenizer.phonemize(x, "en-us")  # noqa: E731
+            voiced, qa = synth_beats(prov, items, adir, cache)
+        write_json(cache_f, cache)
+    for k, b in enumerate(sh["beats"]):
         text = b["spoken"]
-        if prov:
-            wav = adir / f"{b['id']}.wav"
-            prov.synth(text, wav)
-            x, sr = sf.read(wav, dtype="float32")
-            if x.ndim > 1:
-                x = x.mean(axis=1)
-            x = trim(x)
-            pk = float(np.max(np.abs(x))) if len(x) else 0.0
-            if pk > 0.95:
-                x = x * (0.95 / pk)
-            dur = len(x) / SR
-            wpm = len(text.split()) / dur * 60 if dur else 0
-            if not (110 <= wpm <= 240):
-                qa.append(f"{b['id']}: {wpm:.0f} wpm")
+        if voiced:
+            x, dur = voiced[k]["x"], voiced[k]["dur"]
         else:
             dur = len(text.split()) / 160 * 60
             x = np.zeros(int(dur * SR), dtype=np.float32)
         beats_t.append({"id": b["id"], "section": sh["id"], "start": round(t, 3), "end": round(t + dur, 3)})
-        words += word_times(b["text"], x, SR, t, phon)
+        if voiced and voiced[k]["words"]:
+            words += [{"w": w["w"], "start": round(t + w["start"], 3), "end": round(t + w["end"], 3)} for w in voiced[k]["words"]]
+        else:
+            words += word_times(b["text"], x, SR, t, phon)
         pieces += [x, np.zeros(int(SHORT_GAP * SR), dtype=np.float32)]
         t += dur + SHORT_GAP
     pieces.append(np.zeros(int(TAIL * SR), dtype=np.float32))
@@ -175,9 +179,17 @@ def render_native(vdir, vid, sh, prov, base_props, stills: bool = False) -> dict
     pub = REMOTION / "public" / vid
     pub.mkdir(parents=True, exist_ok=True)
     narr = pub / f"{sh['id']}.wav"
+    mixinfo = None
     if prov:
+        voice_wav = adir / "narration.wav"
         subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(raw), "-af",
-                        "highpass=f=70,loudnorm=I=-14:TP=-1.5:LRA=11", "-ar", "48000", "-ac", "1", str(narr)], check=True)
+                        "highpass=f=70,loudnorm=I=-16:TP=-1.5:LRA=11", "-ar", "48000", "-ac", "1", str(voice_wav)], check=True)
+        if os.environ.get("IF_ENGINE_NO_SOUND") == "1":
+            subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(voice_wav), "-af", "loudnorm=I=-14:TP=-1.5:LRA=11",
+                            "-ar", "48000", str(narr)], check=True)
+        else:
+            from sound import mix_short
+            mixinfo = mix_short(vdir, sh, beats_t, voice_wav, total, narr)
     raw.unlink()
     props = dict(base_props, shortId=sh["id"], hook=sh.get("hook", ""), end=sh.get("end", ""), hasAudio=bool(prov),
                  audioFile=f"{vid}/{sh['id']}.wav",
@@ -191,19 +203,20 @@ def render_native(vdir, vid, sh, prov, base_props, stills: bool = False) -> dict
     write_json(pp, props)
     out = out_dir / f"{vid}_{sh['id']}.mp4"
     cmd = ["npx", "remotion", "render", "IfEngineShort", str(out), f"--props={pp}", "--codec=h264", "--audio-codec=aac",
-           "--audio-bitrate=192k", "--crf=18", f"--concurrency={os.environ.get('REMOTION_CONCURRENCY', '4')}", "--log=error"]
+           "--audio-bitrate=192k", "--crf=18", f"--concurrency={os.environ.get('REMOTION_CONCURRENCY', '4')}", "--log=error", gl_flag()]
     if stills:
         # QA frames: the first frame plus every beat midpoint, half size
         out = vdir / "renders" / "stills" / "shorts" / sh["id"]
         out.mkdir(parents=True, exist_ok=True)
         frames = sorted({1} | {int((b["start"] + b["end"]) / 2 * 30) for b in beats_t})
         cmd = ["npx", "remotion", "render", "IfEngineShort", str(out), f"--props={pp}", f"--frames={','.join(map(str, frames))}",
-               "--image-format=png", "--sequence", "--scale=0.5", "--log=error"]
+               "--image-format=png", "--sequence", "--scale=0.5", "--log=error", gl_flag()]
     log(STAGE, " ".join(cmd[:4]) + " ...")
     r = subprocess.run(cmd, cwd=REMOTION, capture_output=True, text=True)
     if r.returncode:
         raise RuntimeError((r.stdout + r.stderr)[-800:])
-    return {"file": out, "total": total, "qa": qa, "words": len(words)}
+    return {"file": out, "total": total, "qa": qa, "words": len(words), "loudness": mixinfo,
+            "voice": prov.voice_label if prov else None, "credits": sum(v["cost"] for v in voiced) if voiced else 0}
 
 
 def main():
@@ -213,8 +226,13 @@ def main():
     ap.add_argument("--only", help="native shorts: render just this id (e.g. short2)")
     ap.add_argument("--provider", choices=["elevenlabs", "kokoro", "piper", "silent"])
     ap.add_argument("--stills", action="store_true", help="native shorts: QA frames only (silent timing), no mp4")
+    ap.add_argument("--voice-only", action="store_true",
+                    help="native shorts: synthesise + cache the Shorts' narration only (CI runs this in the Voice step, "
+                         "the only step that sees the TTS key; the render step then reuses the cache)")
     a = ap.parse_args()
     vdir = video_dir(a.video_id)
+    if a.voice_only:
+        return voice_only(a, vdir, read_json(vdir / "script.json"))
     require(vdir, "captions")
     script = read_json(vdir / "script.json")
     if any(is_native(sh) for sh in script.get("shorts", [])):
@@ -277,15 +295,69 @@ def probe_short(out):
     return v["width"], v["height"], float(info["format"]["duration"]), any(s["codec_type"] == "audio" for s in info["streams"])
 
 
-def main_native(a, vdir, script):
-    from render import build_props
+class CachedVoice:
+    """Stands in for a TTS provider whose clips are all cached (no API key needed). Used by the render
+    step in CI: the Shorts were voiced in the Voice step by `shorts.py --voice-only`."""
+    def __init__(self, name: str, label: str):
+        self.name, self.voice_label = name, label
+
+    def synth(self, *a, **k):
+        raise RuntimeError("cached voice: clip missing from the cache")
+
+
+def short_provider(a, vdir):
+    """same voice as the long-form (provider, voice and speed recorded by tts.py)"""
     from tts import pick
     voice = read_json(vdir / "manifest.json")["stages"].get("voice", {})
-    # same voice as the long-form (provider and speed recorded by tts.py)
     label = voice.get("voice") or ""
     speed = float(label.rsplit("@", 1)[1]) if "@" in label else float(os.environ.get("KOKORO_SPEED", "1.12"))
     vname = label.split(":")[1].split("@")[0] if label.startswith("kokoro") else os.environ.get("KOKORO_VOICE", "am_michael")
-    prov = None if a.stills else pick(a.provider or voice.get("provider"), vname, speed)
+    name = a.provider or voice.get("provider")
+    if name == "elevenlabs" and not os.environ.get("ELEVENLABS_API_KEY"):
+        return CachedVoice("elevenlabs", label)
+    return pick(name, vname, speed)
+
+
+def all_cached(vdir, script, prov) -> bool:
+    import hashlib
+    for sh in script["shorts"]:
+        adir = vdir / "shorts" / sh["id"]
+        cache = read_json(adir / "cache.json") if (adir / "cache.json").exists() else {}
+        for b in sh["beats"]:
+            h = hashlib.sha1(f"v3|{prov.voice_label}|{b['spoken']}".encode()).hexdigest()[:16]
+            if cache.get(b["id"]) != h or not (adir / f"{b['id']}.wav").exists():
+                return False
+    return True
+
+
+def voice_only(a, vdir, script):
+    from tts import synth_beats
+    prov = short_provider(a, vdir)
+    if prov is None or isinstance(prov, CachedVoice):
+        log(STAGE, "voice-only: nothing to do (silent provider or no key)")
+        return
+    credits = 0
+    for sh in script.get("shorts", []):
+        if not is_native(sh):
+            continue
+        adir = vdir / "shorts" / sh["id"]
+        adir.mkdir(parents=True, exist_ok=True)
+        cache_f = adir / "cache.json"
+        cache = read_json(cache_f) if cache_f.exists() else {}
+        voiced, qa = synth_beats(prov, [{"id": b["id"], "text": b["text"], "spoken": b["spoken"]} for b in sh["beats"]], adir, cache)
+        write_json(cache_f, cache)
+        credits += sum(v["cost"] for v in voiced)
+        log(STAGE, f"voice-only {sh['id']}: {len(voiced)} clips" + (f", QA {qa}" if qa else ""))
+    log(STAGE, f"voice-only done ({prov.voice_label}, {credits} credits)")
+
+
+def main_native(a, vdir, script):
+    from render import build_props
+    from tts import loud, pick
+    prov = None if a.stills else short_provider(a, vdir)
+    if isinstance(prov, CachedVoice) and not all_cached(vdir, script, prov):
+        loud("Shorts narration is not cached and there is no ELEVENLABS_API_KEY here: Shorts use KOKORO")
+        prov = pick("kokoro", os.environ.get("KOKORO_VOICE", "am_michael"), float(os.environ.get("KOKORO_SPEED", "1.12")))
     base = build_props(vdir, a.video_id)
     if a.stills:
         for sh in script["shorts"]:
@@ -313,7 +385,8 @@ def main_native(a, vdir, script):
         if r["qa"]:
             problems.append(f"{sh['id']}: voice QA {r['qa']}")
         results.append({"id": sh["id"], "title": sh["title"], "file": str(r["file"].relative_to(vdir)), "duration_s": round(d, 1),
-                        "audio": has_a, "native": True, "words": r["words"]})
+                        "audio": has_a, "native": True, "words": r["words"], "voice": r["voice"], "loudness": r["loudness"],
+                        "credits": r["credits"]})
         log(STAGE, f"{r['file'].name}: native {d:.1f}s {w}x{h} audio={has_a}")
     write_json(out_dir / "shorts.json", {"source": "native (IfEngineShort)", "shorts": results})
     if problems:

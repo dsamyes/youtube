@@ -3,6 +3,7 @@ import { fontsReady } from "./brand";
 import { IfEngineVideo } from "./IfEngineVideo";
 import { IfEngineShort } from "./ShortVideo";
 import { IfEngineThumb } from "./ThumbStill";
+import { IfEngineLab, LabProps, labToVideo } from "./lab/Lab";
 import { ShortProps, ThumbProps, VideoProps } from "./types";
 // Written by pipeline/render.py from the video's script.json / timing.json / calc.json.
 import generated from "./generated/props.json";
@@ -23,6 +24,13 @@ const calculateShort: CalculateMetadataFunction<ShortProps> = ({ props }) => ({
 });
 
 const base = generated as unknown as VideoProps;
+
+const calculateLab: CalculateMetadataFunction<LabProps> = ({ props }) => {
+  const v = labToVideo(props);
+  const vertical = (props as LabProps & { vertical?: boolean }).vertical;
+  return { durationInFrames: Math.ceil(v.timing.total * FPS), ...(vertical ? { width: 1080, height: 1920 } : {}) };
+};
+const labDefaults: LabProps = { base, shots: [{ scene: "space", seconds: 6, shot: "approach" }] };
 // Shorts and thumbnails get their real props with --props (pipeline/shorts.py, thumbnail.py)
 const shortDefaults: ShortProps = { ...base, shortId: "preview", hook: "", end: "", words: [] };
 const thumbDefaults: ThumbProps = { ...base, thumb: { scene: "title", params: {}, headline: "" } };
@@ -58,6 +66,16 @@ export const RemotionRoot: React.FC = () => {
         width={1280}
         height={720}
         defaultProps={thumbDefaults}
+      />
+      <Composition
+        id="IfEngineLab"
+        component={IfEngineLab}
+        durationInFrames={300}
+        fps={FPS}
+        width={1920}
+        height={1080}
+        defaultProps={labDefaults}
+        calculateMetadata={calculateLab}
       />
     </>
   );

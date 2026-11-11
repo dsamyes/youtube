@@ -1,0 +1,808 @@
+{
+  "generated": "2026-11-11T14:37:21+00:00",
+  "video_id": "fall-into-jupiter",
+  "values": {
+    "start_km": {
+      "value": 1000000,
+      "unit": "km",
+      "display": "1,000,000",
+      "derivation": "scenario: start at rest this far from Jupiter's centre",
+      "facts": []
+    },
+    "fall_h": {
+      "value": 27.184374821738306,
+      "unit": "h",
+      "display": "27",
+      "derivation": "radial infall time from rest at r0 to R",
+      "facts": [
+        "F02",
+        "F03"
+      ]
+    },
+    "v_kms": {
+      "value": 57.36475267184542,
+      "unit": "km/s",
+      "display": "57",
+      "derivation": "v = sqrt(2GM(1/R - 1/r0))",
+      "facts": [
+        "F02",
+        "F03"
+      ]
+    },
+    "v_kmh": {
+      "value": 206513.10961864353,
+      "unit": "km/h",
+      "display": "210,000",
+      "derivation": "arrival speed in km/h",
+      "facts": [
+        "F02",
+        "F03"
+      ]
+    },
+    "v_esc": {
+      "value": 59.5,
+      "unit": "km/s",
+      "display": "59.5",
+      "derivation": "escape velocity (NASA)",
+      "facts": [
+        "F07"
+      ]
+    },
+    "spin_kms": {
+      "value": 12.571997872400868,
+      "unit": "km/s",
+      "display": "12.6",
+      "derivation": "equatorial speed of the 1-bar level",
+      "facts": [
+        "F03",
+        "F08"
+      ]
+    },
+    "x_rifle": {
+      "value": 57.36475267184542,
+      "unit": "x",
+      "display": "57",
+      "derivation": "arrival speed / rifle bullet speed",
+      "facts": [
+        "F02",
+        "F03",
+        "F42"
+      ]
+    },
+    "fall_turns": {
+      "value": 2.738979830905623,
+      "unit": "turns",
+      "display": "2.7",
+      "derivation": "Jupiter rotations during the fall",
+      "facts": [
+        "F02",
+        "F03",
+        "F08"
+      ]
+    },
+    "galileo_kms": {
+      "value": 47.38624,
+      "unit": "km/s",
+      "display": "47.4",
+      "derivation": "Galileo probe entry speed in km/s",
+      "facts": [
+        "F17",
+        "F41"
+      ]
+    },
+    "galileo_mph": {
+      "value": 106000.0,
+      "unit": "mph",
+      "display": "106,000",
+      "derivation": "Galileo probe entry speed (NASA)",
+      "facts": [
+        "F17"
+      ]
+    },
+    "size_earths": {
+      "value": 11.221472296342803,
+      "unit": "x",
+      "display": "11",
+      "derivation": "Jupiter equatorial radius / Earth mean radius",
+      "facts": [
+        "F03",
+        "F16"
+      ]
+    },
+    "weight_x": {
+      "value": 2.639511201629328,
+      "unit": "x",
+      "display": "2.6",
+      "derivation": "gravity ratio at 1 bar",
+      "facts": [
+        "F06",
+        "F43"
+      ]
+    },
+    "tnt_per_kg": {
+      "value": 393.2498624643878,
+      "unit": "kg TNT per kg",
+      "display": "390",
+      "derivation": "1/2 v^2 / TNT energy per kg",
+      "facts": [
+        "F02",
+        "F03",
+        "F35"
+      ]
+    },
+    "tnt_you": {
+      "value": 27.527490372507145,
+      "unit": "t TNT",
+      "display": "28",
+      "derivation": "for a 70 kg person, tonnes of TNT",
+      "facts": [
+        "F02",
+        "F03",
+        "F35"
+      ]
+    },
+    "galileo_g": {
+      "value": 200.0,
+      "unit": "g",
+      "display": "200",
+      "derivation": "Galileo probe deceleration, more than",
+      "facts": [
+        "F18"
+      ]
+    },
+    "stapp_g": {
+      "value": 46.2,
+      "unit": "g",
+      "display": "46.2",
+      "derivation": "John Stapp's 1954 record",
+      "facts": [
+        "F32"
+      ]
+    },
+    "g_ratio": {
+      "value": 4.329004329004329,
+      "unit": "x",
+      "display": "4.3",
+      "derivation": "Galileo deceleration / Stapp record",
+      "facts": [
+        "F18",
+        "F32"
+      ]
+    },
+    "shield_f": {
+      "value": 16000.0,
+      "unit": "°F",
+      "display": "16,000",
+      "derivation": "Galileo heat shield temperature",
+      "facts": [
+        "F19"
+      ]
+    },
+    "shield_c": {
+      "value": 8871.111111111111,
+      "unit": "°C",
+      "display": "8,900",
+      "derivation": "16,000 °F in °C",
+      "facts": [
+        "F19"
+      ]
+    },
+    "lapse": {
+      "value": 1.9773599894108893,
+      "unit": "K/km",
+      "display": "2",
+      "derivation": "dry adiabatic lapse rate g/cp",
+      "facts": [
+        "F06",
+        "F11",
+        "F36"
+      ]
+    },
+    "t1_c": {
+      "value": -108.14999999999998,
+      "unit": "°C",
+      "display": "-108",
+      "derivation": "temperature at 1 bar",
+      "facts": [
+        "F09"
+      ]
+    },
+    "p_nh3": {
+      "value": 0.7,
+      "unit": "bar",
+      "display": "0.70",
+      "derivation": "cloud level pressure (F28)",
+      "facts": [
+        "F28"
+      ]
+    },
+    "t_nh3": {
+      "value": -124.1362852426418,
+      "unit": "°C",
+      "display": "-120",
+      "derivation": "adiabat T = T0 (P/1 bar)^(2/7)",
+      "facts": [
+        "F09",
+        "F28"
+      ]
+    },
+    "c_nh3": {
+      "value": 124.1362852426418,
+      "unit": "°C below zero",
+      "display": "120",
+      "derivation": "degrees below 0 C (positive)",
+      "facts": [
+        "F09",
+        "F28"
+      ]
+    },
+    "z_nh3": {
+      "value": -8.08466102695068,
+      "unit": "km",
+      "display": "8.1",
+      "derivation": "depth below (+) / height above (-) the 1-bar level",
+      "facts": [
+        "F06",
+        "F09",
+        "F11",
+        "F36",
+        "F28"
+      ]
+    },
+    "p_nh4sh": {
+      "value": 2.0,
+      "unit": "bar",
+      "display": "2",
+      "derivation": "cloud level pressure (F29)",
+      "facts": [
+        "F29"
+      ]
+    },
+    "t_nh4sh": {
+      "value": -72.01274705626153,
+      "unit": "°C",
+      "display": "-72",
+      "derivation": "adiabat T = T0 (P/1 bar)^(2/7)",
+      "facts": [
+        "F09",
+        "F29"
+      ]
+    },
+    "c_nh4sh": {
+      "value": 72.01274705626153,
+      "unit": "°C below zero",
+      "display": "72",
+      "derivation": "degrees below 0 C (positive)",
+      "facts": [
+        "F09",
+        "F29"
+      ]
+    },
+    "z_nh4sh": {
+      "value": 18.27550528849567,
+      "unit": "km",
+      "display": "18",
+      "derivation": "depth below (+) / height above (-) the 1-bar level",
+      "facts": [
+        "F06",
+        "F09",
+        "F11",
+        "F36",
+        "F29"
+      ]
+    },
+    "p_h2o": {
+      "value": 5.0,
+      "unit": "bar",
+      "display": "5",
+      "derivation": "cloud level pressure (F30)",
+      "facts": [
+        "F30"
+      ]
+    },
+    "t_h2o": {
+      "value": -11.81976455351446,
+      "unit": "°C",
+      "display": "-12",
+      "derivation": "adiabat T = T0 (P/1 bar)^(2/7)",
+      "facts": [
+        "F09",
+        "F30"
+      ]
+    },
+    "c_h2o": {
+      "value": 11.81976455351446,
+      "unit": "°C below zero",
+      "display": "12",
+      "derivation": "degrees below 0 C (positive)",
+      "facts": [
+        "F09",
+        "F30"
+      ]
+    },
+    "z_h2o": {
+      "value": 48.71658977745625,
+      "unit": "km",
+      "display": "49",
+      "derivation": "depth below (+) / height above (-) the 1-bar level",
+      "facts": [
+        "F06",
+        "F09",
+        "F11",
+        "F36",
+        "F30"
+      ]
+    },
+    "room_c": {
+      "value": 20,
+      "unit": "°C",
+      "display": "20",
+      "derivation": "room temperature (definition used here)",
+      "facts": []
+    },
+    "p_room": {
+      "value": 7.475165976795008,
+      "unit": "bar",
+      "display": "7.5",
+      "derivation": "pressure where the adiabat reaches 20 C",
+      "facts": [
+        "F09"
+      ]
+    },
+    "z_room": {
+      "value": 64.80863408092901,
+      "unit": "km",
+      "display": "65",
+      "derivation": "depth of room temperature",
+      "facts": [
+        "F06",
+        "F09",
+        "F11",
+        "F36"
+      ]
+    },
+    "room_min": {
+      "value": 30.0,
+      "unit": "min",
+      "display": "30",
+      "derivation": "Galileo: entry to room temperature",
+      "facts": [
+        "F22"
+      ]
+    },
+    "gal_min": {
+      "value": 58.0,
+      "unit": "min",
+      "display": "58",
+      "derivation": "Galileo data return",
+      "facts": [
+        "F20"
+      ]
+    },
+    "gal_miles": {
+      "value": 97.0,
+      "unit": "miles",
+      "display": "97",
+      "derivation": "Galileo descent distance",
+      "facts": [
+        "F21"
+      ]
+    },
+    "gal_km": {
+      "value": 156.106368,
+      "unit": "km",
+      "display": "160",
+      "derivation": "Galileo descent distance in km",
+      "facts": [
+        "F21",
+        "F41"
+      ]
+    },
+    "vapor_h": {
+      "value": 10.0,
+      "unit": "h",
+      "display": "10",
+      "derivation": "Galileo probe vaporized within",
+      "facts": [
+        "F23"
+      ]
+    },
+    "clouds_km": {
+      "value": 71.0,
+      "unit": "km",
+      "display": "71",
+      "derivation": "three cloud layers span",
+      "facts": [
+        "F24"
+      ]
+    },
+    "wind_kmh": {
+      "value": 539.0,
+      "unit": "km/h",
+      "display": "539",
+      "derivation": "fastest prevailing winds",
+      "facts": [
+        "F15"
+      ]
+    },
+    "lightning_c": {
+      "value": -88.0,
+      "unit": "°C",
+      "display": "-88",
+      "derivation": "shallow lightning altitude temperature",
+      "facts": [
+        "F31"
+      ]
+    },
+    "c_lightning": {
+      "value": 88.0,
+      "unit": "°C below zero",
+      "display": "88",
+      "derivation": "same, as degrees below zero",
+      "facts": [
+        "F31"
+      ]
+    },
+    "c_1bar": {
+      "value": 108.14999999999998,
+      "unit": "°C below zero",
+      "display": "108",
+      "derivation": "1-bar temperature as degrees below zero",
+      "facts": [
+        "F09"
+      ]
+    },
+    "grs_km": {
+      "value": 500.0,
+      "unit": "km",
+      "display": "500",
+      "derivation": "Great Red Spot depth",
+      "facts": [
+        "F25"
+      ]
+    },
+    "jets_km": {
+      "value": 3200.0,
+      "unit": "km",
+      "display": "3,200",
+      "derivation": "jet stream depth",
+      "facts": [
+        "F26"
+      ]
+    },
+    "vt_1bar": {
+      "value": 191.32684301835246,
+      "unit": "m/s",
+      "display": "190",
+      "derivation": "terminal speed of the pod at 1 bar",
+      "facts": [
+        "F06",
+        "F09",
+        "F11",
+        "F33",
+        "F36"
+      ]
+    },
+    "vt_1bar_kmh": {
+      "value": 688.7766348660689,
+      "unit": "km/h",
+      "display": "690",
+      "derivation": "same, km/h",
+      "facts": [
+        "F06",
+        "F09",
+        "F11",
+        "F33",
+        "F36"
+      ]
+    },
+    "rho_c": {
+      "value": 4362.365145281497,
+      "unit": "kg/m^3",
+      "display": "4,400",
+      "derivation": "polytrope central density pi^2/3 * mean density",
+      "facts": [
+        "F05",
+        "F34"
+      ]
+    },
+    "float_km": {
+      "value": 13733.096944182322,
+      "unit": "km",
+      "display": "14,000",
+      "derivation": "depth where the polytrope density equals a human body's",
+      "facts": [
+        "F01",
+        "F04",
+        "F05",
+        "F33",
+        "F34",
+        "F37"
+      ]
+    },
+    "float_frac": {
+      "value": 0.19643685463206537,
+      "unit": "-",
+      "display": "0.2",
+      "derivation": "fraction of the radius",
+      "facts": [
+        "F04",
+        "F05",
+        "F33",
+        "F34"
+      ]
+    },
+    "float_pct": {
+      "value": 19.643685463206538,
+      "unit": "%",
+      "display": "20",
+      "derivation": "percent of the way to the centre",
+      "facts": [
+        "F04",
+        "F05",
+        "F33",
+        "F34"
+      ]
+    },
+    "float_matm": {
+      "value": 2.0495582356746964,
+      "unit": "million atm",
+      "display": "2",
+      "derivation": "P = K rho^2 at rho = 1000",
+      "facts": [
+        "F01",
+        "F04",
+        "F33",
+        "F34",
+        "F37",
+        "F44"
+      ]
+    },
+    "metal_frac": {
+      "value": 0.5,
+      "unit": "-",
+      "display": "halfway",
+      "derivation": "metallic hydrogen perhaps halfway (NASA)",
+      "facts": [
+        "F27"
+      ]
+    },
+    "center_matm": {
+      "value": 39.00356392800558,
+      "unit": "million atm",
+      "display": "39",
+      "derivation": "polytrope central pressure",
+      "facts": [
+        "F04",
+        "F05",
+        "F34",
+        "F37",
+        "F44"
+      ]
+    },
+    "sink_days": {
+      "value": 77.7818842149392,
+      "unit": "days",
+      "display": "78",
+      "derivation": "time to sink to within 100 km of the float depth",
+      "facts": [
+        "F04",
+        "F05",
+        "F06",
+        "F09",
+        "F11",
+        "F33",
+        "F34",
+        "F36",
+        "F37"
+      ]
+    },
+    "t100_min": {
+      "value": 36.21127900413854,
+      "unit": "min",
+      "display": "36",
+      "derivation": "time to sink 100 km below 1 bar",
+      "facts": [
+        "F06",
+        "F09",
+        "F11",
+        "F33",
+        "F36"
+      ]
+    },
+    "t1000_h": {
+      "value": 20.571149268968185,
+      "unit": "h",
+      "display": "21",
+      "derivation": "time to sink 1,000 km",
+      "facts": [
+        "F06",
+        "F09",
+        "F11",
+        "F33",
+        "F36"
+      ]
+    },
+    "d100": {
+      "value": 100,
+      "unit": "km",
+      "display": "100",
+      "derivation": "depth chosen for the timing beat",
+      "facts": []
+    },
+    "d1000": {
+      "value": 1000,
+      "unit": "km",
+      "display": "1,000",
+      "derivation": "depth chosen for the 'black heat' rung",
+      "facts": []
+    },
+    "v1000_kmh": {
+      "value": 26.57294441301024,
+      "unit": "km/h",
+      "display": "27",
+      "derivation": "terminal speed 1,000 km down",
+      "facts": [
+        "F06",
+        "F09",
+        "F11",
+        "F33",
+        "F36"
+      ]
+    },
+    "t1000_c": {
+      "value": 1869.2099894108892,
+      "unit": "°C",
+      "display": "1,900",
+      "derivation": "adiabat temperature 1,000 km down",
+      "facts": [
+        "F06",
+        "F09",
+        "F11",
+        "F36"
+      ]
+    },
+    "p1000_atm": {
+      "value": 7784.1850905521105,
+      "unit": "atm",
+      "display": "8,000",
+      "derivation": "adiabat pressure 1,000 km down (ideal gas: rough)",
+      "facts": [
+        "F06",
+        "F09",
+        "F11",
+        "F36",
+        "F44"
+      ]
+    },
+    "p1000_round": {
+      "value": 8000,
+      "unit": "atm",
+      "display": "8,000",
+      "derivation": "rounded to about 8,000 atmospheres",
+      "facts": [
+        "F06",
+        "F09",
+        "F11",
+        "F36",
+        "F44"
+      ]
+    }
+  },
+  "cards": {
+    "fall": {
+      "title": "Falling from 1 million km",
+      "formula": "v = √(2GM (1/R − 1/r₀))",
+      "sub": "GM = 126,687,000 km³/s², R = 71,492 km",
+      "result": "57.4 km/s",
+      "note": "after 27.2 hours of falling",
+      "src": "NASA Jupiter Fact Sheet"
+    },
+    "entry": {
+      "title": "Energy you bring",
+      "formula": "E/m = ½ v²",
+      "sub": "½ × (57,400 m/s)²",
+      "result": "≈ 390 kg of TNT per kg",
+      "note": "TNT: 4.184 MJ per kg",
+      "src": "NASA, NIST"
+    },
+    "adiabat": {
+      "title": "Why it heats up as you fall",
+      "formula": "T = T₀ (P / 1 bar)^(2/7)",
+      "sub": "T₀ = 165 K at 1 bar",
+      "result": "≈ 20 °C near 7.5 bar",
+      "note": "ideal H₂/He gas, no heat exchange (a model)",
+      "src": "NASA; textbook adiabat"
+    },
+    "terminal": {
+      "title": "Terminal speed",
+      "formula": "v = √(2mg / ρ C A)",
+      "sub": "m = 80 kg, A = 0.7 m², ρ = 0.16 kg/m³",
+      "result": "≈ 690 km/h at 1 bar",
+      "note": "the thicker the air, the slower you fall",
+      "src": "NASA; drag law"
+    },
+    "float": {
+      "title": "Where you stop sinking",
+      "formula": "ρ(r) = ρc · sin(kr) / kr = ρyou",
+      "sub": "ρc = 4,400 kg/m³, ρyou ≈ 1,000 kg/m³",
+      "result": "≈ 14,000 km down",
+      "note": "index-1 polytrope (a simple model of Jupiter)",
+      "src": "NASA; Dewberry & Lai 2023"
+    }
+  },
+  "extra": {
+    "layers": [
+      {
+        "r": 1.0,
+        "label": "Clouds + hydrogen gas"
+      },
+      {
+        "r": 0.8036,
+        "label": "Liquid hydrogen ocean"
+      },
+      {
+        "r": 0.5,
+        "label": "Metallic hydrogen"
+      }
+    ]
+  },
+  "checks": [
+    {
+      "check": "GM consistent with G*M within 0.1%",
+      "pass": true
+    },
+    {
+      "check": "mean density from M and mean radius within 1%",
+      "pass": true
+    },
+    {
+      "check": "arrival speed below escape velocity",
+      "pass": true
+    },
+    {
+      "check": "fall takes about a day",
+      "pass": true
+    },
+    {
+      "check": "Galileo entered slower than our free fall",
+      "pass": true
+    },
+    {
+      "check": "entry energy far above TNT",
+      "pass": true
+    },
+    {
+      "check": "adiabat density at 1 bar matches NASA (0.16 kg/m3) within 10%",
+      "pass": true
+    },
+    {
+      "check": "room temperature is below the water clouds",
+      "pass": true
+    },
+    {
+      "check": "model room-temperature depth within Galileo's descent",
+      "pass": true
+    },
+    {
+      "check": "polytrope mass equals Jupiter's mass within 1%",
+      "pass": true
+    },
+    {
+      "check": "float depth is shallower than the metallic layer (NASA: perhaps halfway)",
+      "pass": true
+    },
+    {
+      "check": "float depth below the deepest jet streams",
+      "pass": true
+    },
+    {
+      "check": "rounded pressure within 5% of model",
+      "pass": true
+    },
+    {
+      "check": "sinking takes days, not years",
+      "pass": true
+    }
+  ]
+}

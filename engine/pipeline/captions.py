@@ -3,8 +3,9 @@
 
 Builds captions.srt (+ captions.json for Shorts) from script.json and the real narration timing in
 timing.json. Each beat is split into caption cues of <= 2 lines x 42 chars at sentence / clause
-boundaries; cue durations inside a beat are proportional to the *spoken* word count (numbers
-expanded), which tracks TTS timing far better than character counts.
+boundaries. With ElevenLabs, cue boundaries come from the exact word times of the with-timestamps
+alignment (timing.json beats[].word_times); otherwise cue durations inside a beat are proportional to
+the *spoken* word count (numbers expanded).
 Self-checks: monotonic, non-overlapping cues, every cue 0.8-7 s, line length limits, and the
 caption text reassembles exactly to the narration.
 """
@@ -81,6 +82,31 @@ def main() -> None:
         for b in s["beats"]:
             t0, t1 = tb[b["id"]]["start"], tb[b["id"]]["end"]
             chunks = split_chunks(b["text"])
+            wt = tb[b["id"]].get("word_times")
+            if wt and len(wt) == len(b["text"].split()):
+                # exact timing from the TTS alignment (ElevenLabs with-timestamps); a cue longer than
+                # 7 s (slow, pause-rich delivery) is split at its longest pause
+                toks = b["text"].split()
+                ranges, k = [], 0
+                for c in chunks:
+                    n = len(c.split())
+                    ranges.append((k, k + n))
+                    k += n
+
+                def emit(i, j, first, last):
+                    a = t0 if first else wt[i]["start"]
+                    e = t1 if last else wt[j]["start"]
+                    if e - a > 7.0 and j - i >= 4:
+                        m = max(range(i + 2, j - 1), key=lambda q: wt[q]["start"] - wt[q - 1]["end"])
+                        emit(i, m, first, False)
+                        emit(m, j, False, last)
+                        return
+                    a = max(a, cues[-1]["end"] if cues else 0.0)
+                    cues.append({"beat": b["id"], "start": round(a, 3), "end": round(max(e, a + 0.6), 3), "text": wrap(" ".join(toks[i:j]))})
+
+                for q, (i, j) in enumerate(ranges):
+                    emit(i, j, q == 0, q == len(ranges) - 1)
+                continue
             w = [max(1, spoken_word_count(c)) for c in chunks]
             tot = sum(w)
             t = t0

@@ -20,8 +20,9 @@ import os
 import re
 import shutil
 import subprocess
+import time
 
-from lib import REMOTION, fail, get_stage, log, read_json, require, set_stage, video_dir, write_json
+from lib import REMOTION, fail, get_stage, gl_flag, log, read_json, require, set_stage, video_dir, write_json
 
 STAGE = "render"
 
@@ -42,6 +43,12 @@ def write_registry(vid):
         encoding="utf-8")
 
 
+def audio_track(vdir):
+    """the final soundtrack: the sound-designed mix (sound.py) when present, else the bare narration"""
+    mix = vdir / "audio" / "mix.wav"
+    return mix if mix.exists() else vdir / "audio" / "narration.wav"
+
+
 def build_props(vdir, vid):
     script = read_json(vdir / "script.json")
     timing = read_json(vdir / "timing.json")
@@ -52,7 +59,9 @@ def build_props(vdir, vid):
     vscenes = REMOTION / "src" / "videos" / vid / "scenes.tsx"
     if not vscenes.exists():
         raise SystemExit(f"[render] missing {vscenes} (export const SCENES: Record<string, SceneEntry> = {{...}})")
-    keys = set(re.findall(r"^\s+(\w+): \{ C:", (REMOTION / "src" / "scenes" / "shared.tsx").read_text(), re.M))
+    keys = set()
+    for f in (REMOTION / "src" / "scenes").glob("*.tsx"):
+        keys |= set(re.findall(r"^\s+(\w+): \{ C:", f.read_text(), re.M))
     keys |= set(re.findall(r"^\s+(\w+): \{ C:", vscenes.read_text(), re.M))
     missing = sorted({b["visual"]["scene"] for s in script["sections"] for b in s["beats"]} - keys)
     if missing:
@@ -79,7 +88,7 @@ def build_props(vdir, vid):
         "sources": src_names,
     }
     if has_audio:
-        shutil.copy(vdir / "audio" / "narration.wav", pub / "narration.wav")
+        shutil.copy(audio_track(vdir), pub / "narration.wav")
     write_json(REMOTION / "src" / "generated" / "props.json", props)
     return props
 
@@ -110,7 +119,19 @@ def render_chunked(vdir, out, extra, a, n_frames, has_audio):
     survives a restart), then concatenate the video losslessly and mux the narration."""
     cdir = vdir / "renders" / "chunks" / a.mode
     cdir.mkdir(parents=True, exist_ok=True)
+    # chunks are only reusable for the same props (timing, script, calc) and code
+    import hashlib
+    src_hash = hashlib.sha1((REMOTION / "src" / "generated" / "props.json").read_bytes()).hexdigest()[:16]
+    stamp = cdir / "props.sha1"
+    if not stamp.exists() or stamp.read_text().strip() != src_hash:
+        for old in cdir.glob("c*.mp4"):
+            old.unlink()
+        stamp.write_text(src_hash)
+    # bundle once (props.json is baked in), then every chunk renders from the bundle
+    bundle = vdir / "build" / "bundle"
+    run(["npx", "remotion", "bundle", "--out-dir", str(bundle), "--log=error"])
     parts = []
+    speeds = []
     for i, f0 in enumerate(range(0, n_frames, a.chunk)):
         f1 = min(n_frames, f0 + a.chunk) - 1
         part = cdir / f"c{i:03d}_{f0}-{f1}.mp4"
@@ -118,10 +139,12 @@ def render_chunked(vdir, out, extra, a, n_frames, has_audio):
         if part.exists():
             continue
         tmp = part.with_name(part.stem + ".partial.mp4")
-        run(["npx", "remotion", "render", "IfEngineVideo", str(tmp), "--codec=h264", "--muted", f"--frames={f0}-{f1}",
-             f"--concurrency={a.concurrency}", "--log=error", *extra])
+        t_chunk = time.time()
+        run(["npx", "remotion", "render", str(bundle), "IfEngineVideo", str(tmp), "--codec=h264", "--muted", f"--frames={f0}-{f1}",
+             f"--concurrency={a.concurrency}", "--log=error", gl_flag(), *extra])
+        speeds.append((f1 - f0 + 1) / (time.time() - t_chunk))
         tmp.replace(part)
-        log(STAGE, f"chunk {i + 1}/{-(-n_frames // a.chunk)} done ({f0}-{f1})")
+        log(STAGE, f"chunk {i + 1}/{-(-n_frames // a.chunk)} done ({f0}-{f1}) at {speeds[-1]:.2f} fps")
     lst = cdir / "list.txt"
     lst.write_text("".join(f"file '{p.name}'\n" for p in parts), encoding="utf-8")
     video = cdir / "video.mp4"
@@ -129,9 +152,10 @@ def render_chunked(vdir, out, extra, a, n_frames, has_audio):
                    check=True, cwd=cdir)
     cmd = ["ffmpeg", "-y", "-loglevel", "error", "-i", str(video)]
     if has_audio:
-        cmd += ["-i", str(vdir / "audio" / "narration.wav"), "-map", "0:v", "-map", "1:a", "-c:a", "aac", "-b:a", "192k", "-shortest"]
+        cmd += ["-i", str(audio_track(vdir)), "-map", "0:v", "-map", "1:a", "-c:a", "aac", "-b:a", "192k", "-shortest"]
     cmd += ["-c:v", "copy", "-movflags", "+faststart", str(out)]
     subprocess.run(cmd, check=True)
+    return speeds
 
 
 def main():
@@ -141,8 +165,9 @@ def main():
     ap.add_argument("--seconds", type=int, default=90)
     ap.add_argument("--stills", action="store_true")
     ap.add_argument("--concurrency", default=os.environ.get("REMOTION_CONCURRENCY", "4"))
-    ap.add_argument("--chunk", type=int, default=0,
-                    help="full/low: render in resumable chunks of N frames (renders/chunks/), then concat + mux audio")
+    ap.add_argument("--chunk", type=int, default=1800,
+                    help="full/low: render in resumable chunks of N frames (renders/chunks/), then concat + mux audio "
+                         "(default 1800 = 60 s; 0 = one Remotion call)")
     a = ap.parse_args()
     vdir = video_dir(a.video_id)
     require(vdir, "factcheck", "voice")
@@ -154,12 +179,15 @@ def main():
 
     if a.stills:
         sd = out_dir / "stills"
+        shutil.rmtree(sd / "f", ignore_errors=True)
+        for old in sd.glob("sheet_*.png"):
+            old.unlink()
         sd.mkdir(exist_ok=True)
         # one frame in the middle of every beat window
         tb = props["timing"]["beats"]
         frames = sorted({int(((b["start"] + b["end"]) / 2) * fps) for b in tb})
         run(["npx", "remotion", "render", "IfEngineVideo", str(sd / "f"), f"--frames={','.join(map(str, frames))}",
-             "--image-format=png", "--sequence", f"--concurrency={a.concurrency}", "--scale=0.5"])
+             "--image-format=png", "--sequence", f"--concurrency={a.concurrency}", "--scale=0.5", gl_flag()])
         # contact sheets (12 frames each) for visual QA
         from PIL import Image, ImageDraw
         pngs = sorted((sd / "f").glob("*.png"))
@@ -180,12 +208,14 @@ def main():
     else:
         out = out_dir / f"{a.video_id}_preview{a.seconds}s_1080p.mp4"
         extra, exp_w = ["--crf=20", f"--frames=0-{a.seconds * fps - 1}"], 1920
+    t_start = time.time()
+    speeds = []
     try:
         if a.chunk and a.mode != "preview":
-            render_chunked(vdir, out, extra, a, int(round(total * fps)), props["hasAudio"])
+            speeds = render_chunked(vdir, out, extra, a, int(round(total * fps)), props["hasAudio"])
         else:
             run(["npx", "remotion", "render", "IfEngineVideo", str(out), "--codec=h264", "--audio-codec=aac",
-                 "--audio-bitrate=192k", f"--concurrency={a.concurrency}", "--log=error", *extra])
+                 "--audio-bitrate=192k", f"--concurrency={a.concurrency}", "--log=error", gl_flag(), *extra])
     except RuntimeError as e:
         fail(vdir, STAGE, f"remotion render failed ({a.mode}): {e}")
 
@@ -207,7 +237,9 @@ def main():
     renders = dict(get_stage(vdir, STAGE).get("renders", {}))
     renders[a.mode] = {"file": str(out.relative_to(vdir)), "duration_s": round(dur, 2),
                        "resolution": f"{vstreams[0]['width']}x{vstreams[0]['height']}", "audio": has_a,
-                       "size_mb": round(out.stat().st_size / 1e6, 1), "problems": problems}
+                       "size_mb": round(out.stat().st_size / 1e6, 1), "problems": problems,
+                       "render_min": round((time.time() - t_start) / 60, 1),
+                       "fps_chunks": [round(x, 2) for x in speeds] or None}
     status = "failed" if problems else ("done" if props["hasAudio"] else "degraded")
     set_stage(vdir, STAGE, status, renders=renders,
               note=None if props["hasAudio"] else "rendered without narration (no TTS available)")

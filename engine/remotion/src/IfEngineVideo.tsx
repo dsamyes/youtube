@@ -13,7 +13,7 @@ export const SCENES: Record<string, SceneEntry> = { ...SHARED_SCENES, ...VIDEO_S
 const FADE = 0.4;
 
 /** Renders one scene run; owns the frame subscription for that run only. */
-export const RunView: React.FC<{ run: SceneRun; data: VideoProps; cardShift: (t: number) => number; noFadeIn?: boolean }> = ({ run, data, cardShift, noFadeIn }) => {
+export const RunView: React.FC<{ run: SceneRun; data: VideoProps; cardShift: (t: number) => number; noFadeIn?: boolean; bg?: boolean }> = ({ run, data, cardShift, noFadeIn, bg }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const t = frame / fps;
@@ -30,6 +30,7 @@ export const RunView: React.FC<{ run: SceneRun; data: VideoProps; cardShift: (t:
   const S = entry.C;
   return (
     <AbsoluteFill style={{ opacity, translate: `${-shift * 330}px 0px`, scale: 1 - shift * 0.1 }}>
+      {bg && !entry.opaque ? <Background /> : null}
       <S t={t} phase={slot.visual.phase ?? "default"} pt={abs - phaseStart} idx={idx} run={run} data={data}
         params={Object.assign({}, ...run.slots.slice(0, idx + 1).map((s) => s.visual))} />
     </AbsoluteFill>
@@ -77,11 +78,10 @@ export const IfEngineVideo: React.FC<VideoProps> = (data) => {
   return (
     <AbsoluteFill>
       <style>{"svg { overflow: visible; }"}</style>
-      <Background />
       {runs.map((run, i) => (
         <Sequence key={i} name={`${run.scene} · ${run.slots[0].id}`} from={Math.round(run.start * fps)}
           durationInFrames={Math.max(1, Math.round((run.end - run.start) * fps))}>
-          <RunView run={run} data={data} cardShift={cardShift} noFadeIn={i === 0} />
+          <RunView run={run} data={data} cardShift={cardShift} noFadeIn={i === 0} bg />
         </Sequence>
       ))}
       <Overlay slots={slots} data={data} cardShift={cardShift} />

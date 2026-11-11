@@ -1,0 +1,347 @@
+{
+  "reviewer": "editorial fact-check pass (agent), 2026-11-11",
+  "beats": {
+    "b01": {
+      "verdict": "rhetoric",
+      "note": "Arrival speed 57 km/s = about 210,000 km/h from radial free fall (calc v_kmh, scenario start 1,000,000 km). 'No ground': NASA S2, Jupiter has no true surface. Open loop answered in b34-b36.",
+      "hash": "37dc9b858e08"
+    },
+    "b02": {
+      "verdict": "ok",
+      "note": "Scenario definition (start at rest 1,000,000 km from the centre), stated as a rule, not a measurement.",
+      "hash": "25daada2ca6b"
+    },
+    "b03": {
+      "verdict": "rhetoric",
+      "note": "Scene-setting; no numbers. Gravity always pulls (Newtonian free fall).",
+      "hash": "bac5fd416e1f"
+    },
+    "b04": {
+      "verdict": "ok",
+      "note": "Fall time 27 h and arrival 57 km/s from the radial-infall formula with NASA GM and 1-bar radius (S1). 2.7 rotations = 27 h / 9.925 h. 57x a 1 km/s rifle bullet (S15). Galileo 106,000 mph = 47.4 km/s (S3); comparison 'faster than' re-derived.",
+      "hash": "292dee4131b4"
+    },
+    "b05": {
+      "verdict": "ok",
+      "note": "71,492 km / 6,371 km = 11.2 Earth radii, so about 11 Earths wide (S1). GRS about twice as wide as Earth (NASA S2).",
+      "hash": "ce8bf5ed05ed"
+    },
+    "b06": {
+      "verdict": "ok",
+      "note": "NASA S2: Jupiter doesn't have a true surface. Gauge: 0 km = 1-bar reference; -108 C at 1 bar (S1). The three recurring questions are the video's structure.",
+      "hash": "e1a385868fc2"
+    },
+    "b07": {
+      "verdict": "rhetoric",
+      "note": "Plasma/shock-layer heating at entry: NASA S3 reports Galileo's heat-shield temperatures as hot as the Sun's surface at a lower speed (47.4 km/s); 'hits like a wall' is a figure of speech.",
+      "hash": "02f4c49ea197"
+    },
+    "b08": {
+      "verdict": "fixed",
+      "note": "1/2 v^2 = 1.6 GJ/kg = 390 kg TNT (4.184 MJ/kg, S13) per kg; 70 kg person = 28 t. Draft said 'released in seconds'; the entry deceleration lasts tens of seconds to minutes, so changed to 'in moments'.",
+      "hash": "094e27a987f7"
+    },
+    "b09": {
+      "verdict": "fixed",
+      "note": "Galileo: more than 200 g (NASA S3). Stapp 46.2 g (S10). 200/46.2 = 4.3 and Galileo's peak was above 200, so 'more than four times' (draft said 'about four times').",
+      "hash": "d55e43875263"
+    },
+    "b10": {
+      "verdict": "rhetoric",
+      "note": "States the single non-physical device (indestructible pod, human size and density). An unprotected human cannot survive entry (b07-b09).",
+      "hash": "f00a8bcdd239"
+    },
+    "b11": {
+      "verdict": "ok",
+      "note": "Terminal speed sqrt(2mg/(rho Cd A)) with m 80 kg, A 0.7 m2, Cd 1 (scenario), rho at 1 bar 0.16 kg/m3 (adiabat check vs NASA S1 within 10%), g 25.92 (S1): 190 m/s = 690 km/h; buoyancy term included. Thicker air -> slower terminal speed (drag law).",
+      "hash": "b5bc46586523"
+    },
+    "b12": {
+      "verdict": "fixed",
+      "note": "Ammonia ice condensation level 0.7 bar (S6) lies about 8 km above the 1-bar level in the adiabat model; -120 C from T = 165 K (0.7)^(2/7). Added 'about' (model value).",
+      "hash": "ac75e7d3c383"
+    },
+    "b13": {
+      "verdict": "ok",
+      "note": "Ammonia ice clouds (S2, S6: high, bright clouds); household cleaners contain ammonia (rhetorical comparison). Winds up to 539 km/h (NASA S2).",
+      "hash": "a83677f96cc5"
+    },
+    "b14": {
+      "verdict": "ok",
+      "note": "Oxford-led 2025 study (S6): main reflecting deck at 2-3 bar is ammonium hydrosulfide mixed with smog. 'suggests' keeps it tentative.",
+      "hash": "d6c77479bb2b"
+    },
+    "b15": {
+      "verdict": "ok",
+      "note": "2 bar (S6); depth 18 km from the adiabat model; 2 bar is about twice Earth's sea-level pressure (1.013 bar, S13).",
+      "hash": "97c33c4b33bb"
+    },
+    "b16": {
+      "verdict": "fixed",
+      "note": "-72 C from the adiabat at 2 bar (model, added 'about'). Ammonium hydrosulfide crystals tinted by haze (S6). Light fading with depth: qualitative.",
+      "hash": "988e49b80a93"
+    },
+    "b17": {
+      "verdict": "rhetoric",
+      "note": "Tease for lightning in the water clouds (S9).",
+      "hash": "7a7895cf1675"
+    },
+    "b18": {
+      "verdict": "ok",
+      "note": "Water cloud base near 5 bar (S8, S7); depth 49 km and -12 C from the adiabat model (stated 'about' via 'about 49 kilometers'); water ice and droplets as on Earth (S8).",
+      "hash": "dfe2d17671cf"
+    },
+    "b19": {
+      "verdict": "ok",
+      "note": "JPL S9 (2020): Juno found shallow lightning at altitudes where temperatures are about -88 C; mushballs = slushy ammonia-water hail.",
+      "hash": "fc4a9a2520cf"
+    },
+    "b20": {
+      "verdict": "ok",
+      "note": "Three cloud layers span about 71 km (NASA S2). 36 min to reach 100 km below 1 bar at terminal speed (model integration in calc).",
+      "hash": "a670f57e8a31"
+    },
+    "b21": {
+      "verdict": "rhetoric",
+      "note": "Tease for the room-temperature level.",
+      "hash": "855325173323"
+    },
+    "b22": {
+      "verdict": "ok",
+      "note": "Adiabat reaches 20 C at 7.5 bar, about 65 km below 1 bar (model); consistent with NASA timeline S5 (room temperature reached after the water clouds).",
+      "hash": "84411138e0ca"
+    },
+    "b23": {
+      "verdict": "ok",
+      "note": "NSSDC timeline S5: entry 5:04 p.m., 'atmospheric temperature equal to room temperature on Earth' at 5:34 p.m. = 30 minutes; 1995 entry date (S5).",
+      "hash": "e3da3201cbe1"
+    },
+    "b24": {
+      "verdict": "fixed",
+      "note": "Atmosphere 89.8% H2, 10.2% He (S1); trace water vapour contains oxygen atoms, so changed 'no oxygen' to 'no oxygen to breathe'.",
+      "hash": "d78c6f7c3235"
+    },
+    "b25": {
+      "verdict": "ok",
+      "note": "NASA S3: data for 58 minutes during a descent of 97 miles (156 km, shown as about 160).",
+      "hash": "ae11a36964c4"
+    },
+    "b26": {
+      "verdict": "fixed",
+      "note": "NSSDC S5: probe estimated completely vaporized by 3:00 a.m., 10 hours after the 5:04 p.m. entry. Draft claimed nothing built by humans had been below; spacecraft that later dove in (Galileo orbiter 2003) burned up higher, but to avoid an unverifiable claim it now says no working instrument has reported back from below this depth (Galileo probe was the only in-situ probe).",
+      "hash": "43da5461eb89"
+    },
+    "b27": {
+      "verdict": "rhetoric",
+      "note": "Transition; pod device restated.",
+      "hash": "eeb31aaf2dea"
+    },
+    "b28": {
+      "verdict": "ok",
+      "note": "Adiabat at 1,000 km: T = 165 K + 1.98 K/km x 1,000 km = 2,140 K = about 1,900 C; P = (T/T0)^3.5 = about 8,000 atm (ideal gas, rough; 'about'/'around' used; model stated in description).",
+      "hash": "ddadd0cac3b8"
+    },
+    "b29": {
+      "verdict": "fixed",
+      "note": "A hull at about 2,100 K glows orange (incandescence, like hot steel). Draft said 'the only light for a thousand kilometers'; the hot gas itself also emits, so reworded to 'heat is the only light there is' (no sunlight reaches this depth).",
+      "hash": "6f8211dacb34"
+    },
+    "b30": {
+      "verdict": "ok",
+      "note": "Model: 21 h to sink 1,000 km; terminal speed there 27 km/h (rho about 98 kg/m3 from the adiabat, buoyancy included) ~ bicycle speed.",
+      "hash": "93da9ab5f3be"
+    },
+    "b31": {
+      "verdict": "rhetoric",
+      "note": "Tease: supercritical hydrogen (NASA S2: gas compressed into a liquid).",
+      "hash": "bc5fc97af9d5"
+    },
+    "b32": {
+      "verdict": "ok",
+      "note": "NASA S2: pressure compresses hydrogen gas into a liquid, the largest ocean in the solar system; no sharp surface (supercritical fluid).",
+      "hash": "b5280c5df48a"
+    },
+    "b33": {
+      "verdict": "ok",
+      "note": "NASA S2: jet streams reach about 3,200 km; pod is deeper (sinking to 14,000 km).",
+      "hash": "440467b1dbf0"
+    },
+    "b34": {
+      "verdict": "ok",
+      "note": "Index-1 polytrope (S12, mass and mean radius S1): density equals about 1,000 kg/m3 (S11) at about 14,000 km depth ('about', model). Pays off the hook.",
+      "hash": "ddccca2576fe"
+    },
+    "b35": {
+      "verdict": "fixed",
+      "note": "Neutral buoyancy: fluid density = pod density. P = K rho^2 = about 2 million atm in the polytrope (model). Draft said 'in total darkness'; matter at thousands of kelvin glows, so changed to 'a sea of hot, crushing hydrogen'.",
+      "hash": "8a7af2ea1884"
+    },
+    "b36": {
+      "verdict": "ok",
+      "note": "14,000 km / 69,911 km = 20% of the way to the centre in the index-1 polytrope (S12); 'simple model' stated.",
+      "hash": "447ca79c84d7"
+    },
+    "b37": {
+      "verdict": "ok",
+      "note": "Sinking time about 78 days (to within 100 km of the float depth; terminal-speed integration through the stated hybrid model); fall 27 h from 1,000,000 km.",
+      "hash": "f45426214641"
+    },
+    "b38": {
+      "verdict": "ok",
+      "note": "NASA S2: 'at depths perhaps halfway to the planet's center' hydrogen becomes electrically conducting like a metal; its motion drives the magnetic field (dynamo).",
+      "hash": "f365fa7bc591"
+    },
+    "b39": {
+      "verdict": "ok",
+      "note": "NASA S2: Juno data suggest a dilute, 'fuzzy' core, partially dissolved with no clear separation from the metallic hydrogen.",
+      "hash": "5296d0a46d32"
+    },
+    "b40": {
+      "verdict": "rhetoric",
+      "note": "Twist summary: no solid surface at the top (S2) and no sharp core boundary (S2); 'suspended' = neutral buoyancy (b35).",
+      "hash": "1553dc2a7e4e"
+    },
+    "b41": {
+      "verdict": "rhetoric",
+      "note": "Next video set-up and channel tagline.",
+      "hash": "3c378b8f26fa"
+    },
+    "s1b01": {
+      "verdict": "fixed",
+      "note": "From 1,000,000 km: 57 km/s; from very far: up to 59.5 km/s (escape velocity S1). Added 'about'.",
+      "hash": "c37699af6f8f"
+    },
+    "s1b02": {
+      "verdict": "ok",
+      "note": "57 km/s / 1 km/s rifle bullet (S15) = 57x.",
+      "hash": "a18068e3b563"
+    },
+    "s1b03": {
+      "verdict": "rhetoric",
+      "note": "NASA S3: Galileo's heat-shield temperatures as hot as the Sun's surface at entry.",
+      "hash": "08849a6bdce2"
+    },
+    "s1b04": {
+      "verdict": "ok",
+      "note": "1/2 v^2 / 4.184 MJ/kg = 390 kg TNT per kg (S13).",
+      "hash": "d7a03494dc2f"
+    },
+    "s1b05": {
+      "verdict": "ok",
+      "note": "Galileo more than 200 g (S3); Stapp 46.2 g (S10).",
+      "hash": "986af8a99889"
+    },
+    "s1b06": {
+      "verdict": "rhetoric",
+      "note": "An unprotected body entering at 57 km/s burns up like a meteor (b07-b10).",
+      "hash": "93a441c98d91"
+    },
+    "s2b01": {
+      "verdict": "fixed",
+      "note": "Room-temperature level about 65 km below 1 bar, below the water clouds; draft said 'deep inside the clouds', changed to 'below the cloud tops'.",
+      "hash": "021c8429822d"
+    },
+    "s2b02": {
+      "verdict": "ok",
+      "note": "165 K = -108 C at 1 bar (NASA S1).",
+      "hash": "4e623c522696"
+    },
+    "s2b03": {
+      "verdict": "ok",
+      "note": "Order of the cloud layers: ammonia ice, ammonium hydrosulfide, water (S2, S6, S8); lightning (S9).",
+      "hash": "a04099a186d1"
+    },
+    "s2b04": {
+      "verdict": "ok",
+      "note": "Adiabat model: 20 C at about 65 km below 1 bar.",
+      "hash": "88e125342938"
+    },
+    "s2b05": {
+      "verdict": "ok",
+      "note": "NSSDC timeline S5: room temperature 30 minutes after entry, December 1995.",
+      "hash": "26a66e0657af"
+    },
+    "s2b06": {
+      "verdict": "fixed",
+      "note": "89.8% H2 / 10.2% He (S1); 'no oxygen to breathe' (trace H2O exists).",
+      "hash": "8c5c0fd60ba1"
+    },
+    "s3b01": {
+      "verdict": "ok",
+      "note": "NASA S2: no true surface.",
+      "hash": "1a083cd2abf3"
+    },
+    "s3b02": {
+      "verdict": "ok",
+      "note": "Cloud layers span about 71 km (S2).",
+      "hash": "dd7bd4b0d28f"
+    },
+    "s3b03": {
+      "verdict": "ok",
+      "note": "Adiabat at 1,000 km: about 1,900 C (model).",
+      "hash": "559337a1307b"
+    },
+    "s3b04": {
+      "verdict": "ok",
+      "note": "Polytrope density equals a human's (about 1,000 kg/m3, S11) at about 14,000 km (model).",
+      "hash": "b29b51abcdf3"
+    },
+    "s3b05": {
+      "verdict": "fixed",
+      "note": "About 2 million atm (polytrope). 'Total darkness' replaced: hot matter glows.",
+      "hash": "afab791de947"
+    },
+    "s3b06": {
+      "verdict": "ok",
+      "note": "Sinking time about 78 days (model). No solid surface or sharp core (S2).",
+      "hash": "397f2861ce16"
+    }
+  },
+  "fixes": [
+    {
+      "beat": "b08",
+      "issue": "'released in seconds' overstated the timescale",
+      "fix": "'released in moments'"
+    },
+    {
+      "beat": "b09",
+      "issue": "Galileo's peak was MORE than 200 g, so 'about four times' understated",
+      "fix": "'more than four times'"
+    },
+    {
+      "beat": "b12/b16",
+      "issue": "temperatures are adiabat-model values",
+      "fix": "added 'about'"
+    },
+    {
+      "beat": "b24/s2b06",
+      "issue": "'no oxygen' is wrong (trace water vapour)",
+      "fix": "'no oxygen to breathe'"
+    },
+    {
+      "beat": "b26",
+      "issue": "claim that nothing humans built went deeper was unverifiable",
+      "fix": "'No working instrument has ever reported back from below this depth.'"
+    },
+    {
+      "beat": "b29",
+      "issue": "'only light for a thousand kilometers' ignores glowing hot gas",
+      "fix": "'heat is the only light there is'"
+    },
+    {
+      "beat": "b35/s3b05",
+      "issue": "'total darkness' is wrong at thousands of kelvin",
+      "fix": "'a sea of hot, crushing hydrogen'"
+    },
+    {
+      "beat": "s1b01",
+      "issue": "speed depends on the starting distance",
+      "fix": "added 'about'"
+    },
+    {
+      "beat": "s2b01",
+      "issue": "room-temperature level is below the water clouds, not inside them",
+      "fix": "'Below Jupiter's cloud tops'"
+    }
+  ]
+}

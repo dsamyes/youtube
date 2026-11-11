@@ -1,0 +1,53 @@
+{
+  "source": "native (IfEngineShort)",
+  "shorts": [
+    {
+      "id": "short1",
+      "title": "You'd hit Jupiter at 210,000 km/h",
+      "file": "shorts/fall-into-jupiter_short1.mp4",
+      "duration_s": 37.3,
+      "audio": true,
+      "native": true,
+      "words": 85,
+      "voice": "elevenlabs:Gfpl8Yo74Is0W6cPUWWT:eleven_multilingual_v2@1.05",
+      "loudness": {
+        "I": -13.8,
+        "LRA": 2.5,
+        "TP": -1.1
+      },
+      "credits": 0
+    },
+    {
+      "id": "short2",
+      "title": "Jupiter has a room-temperature layer",
+      "file": "shorts/fall-into-jupiter_short2.mp4",
+      "duration_s": 35.3,
+      "audio": true,
+      "native": true,
+      "words": 74,
+      "voice": "elevenlabs:Gfpl8Yo74Is0W6cPUWWT:eleven_multilingual_v2@1.05",
+      "loudness": {
+        "I": -13.8,
+        "LRA": 2.4,
+        "TP": -1.1
+      },
+      "credits": 0
+    },
+    {
+      "id": "short3",
+      "title": "Where you'd finally stop inside Jupiter",
+      "file": "shorts/fall-into-jupiter_short3.mp4",
+      "duration_s": 38.9,
+      "audio": true,
+      "native": true,
+      "words": 77,
+      "voice": "elevenlabs:Gfpl8Yo74Is0W6cPUWWT:eleven_multilingual_v2@1.05",
+      "loudness": {
+        "I": -13.9,
+        "LRA": 2.7,
+        "TP": -2.7
+      },
+      "credits": 0
+    }
+  ]
+}

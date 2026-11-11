@@ -11,7 +11,7 @@ name: produce
 
 on:
   schedule:
-    - cron: "7 1 * * 1,4"          # Mon + Thu ~01:07 UTC (videos publish Tue/Fri 15:00 UTC)
+    - cron: "7 1 1-29/2 * *"       # every 2 days ~01:07 UTC (odd days 1-29; the long-form publishes the same day 15:00 UTC)
   workflow_dispatch:
     inputs:
       topic:
@@ -45,7 +45,11 @@ jobs:
       queue_file: ${{ steps.queue.outputs.file }}
     env:
       REMOTION_CHROME: bundled           # Remotion downloads its own headless shell (set a path to use another Chrome)
-      TTS_PROVIDER: ${{ vars.TTS_PROVIDER || 'kokoro' }}
+      REMOTION_GL: swangle               # 3D scenes: software WebGL (SwiftShader via ANGLE); runners have no GPU
+      TTS_PROVIDER: ${{ vars.TTS_PROVIDER || 'elevenlabs' }}
+      ELEVENLABS_VOICE_ID: ${{ vars.ELEVENLABS_VOICE_ID }}   # optional overrides; empty -> defaults in pipeline/tts.py
+      ELEVENLABS_MODEL: ${{ vars.ELEVENLABS_MODEL }}
+      ELEVENLABS_SPEED: ${{ vars.ELEVENLABS_SPEED }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -230,8 +234,10 @@ jobs:
           if [ "$prov" = "elevenlabs" ] && [ -z "${ELEVENLABS_API_KEY}" ]; then echo "no ELEVENLABS_API_KEY, using kokoro"; prov=kokoro; fi
           [ "$prov" = "elevenlabs" ] || unset ELEVENLABS_API_KEY
           engine/.venv/bin/python -B engine/pipeline/tts.py "${{ steps.detect.outputs.video_id }}" --provider "$prov"
+          # the Shorts are voiced here too (only this step sees the key); the render step reuses the cache
+          engine/.venv/bin/python -B engine/pipeline/shorts.py "${{ steps.detect.outputs.video_id }}" --voice-only
 
-      - name: Captions, full 1080p render, thumbnail, metadata, Shorts
+      - name: Captions, sound design, full 1080p render, thumbnail, metadata, Shorts
         run: engine/.venv/bin/python -B engine/pipeline/run_pipeline.py "${{ steps.detect.outputs.video_id }}" --from captions --render full
 
       - name: Integrity check (final) + text patch
@@ -340,14 +346,15 @@ jobs:
           python - <<'PY' >> "$GITHUB_OUTPUT"
           import datetime as dt
           now = dt.datetime.now(dt.timezone.utc)
+          # long-form: the next 15:00 UTC at least 3 h ahead. Shorts: +6 h, +24 h, +42 h, i.e. before the
+          # next run's long-form (2 days later, 15:00 UTC) and its Shorts.
           t = now.replace(hour=15, minute=0, second=0, microsecond=0)
-          while t.weekday() not in (1, 4) or t < now + dt.timedelta(hours=3):   # Tue=1, Fri=4
+          while t < now + dt.timedelta(hours=3):
               t += dt.timedelta(days=1)
-              t = t.replace(hour=15, minute=0)
           f = lambda x: x.strftime("%Y-%m-%dT%H:%M:%SZ")
           print(f"long={f(t)}")
-          for n in (1, 2, 3):
-              print(f"short{n}={f(t + dt.timedelta(days=n))}")
+          for n, h in ((1, 6), (2, 24), (3, 42)):
+              print(f"short{n}={f(t + dt.timedelta(hours=h))}")
           PY
           cat "$GITHUB_OUTPUT"
 
@@ -360,7 +367,7 @@ jobs:
           [ -n "$yid" ] || { echo "::error::no youtube id recorded"; exit 1; }
           echo "yid=$yid" >> "$GITHUB_OUTPUT"
 
-      - name: Upload Shorts (one per day after the long-form)
+      - name: Upload Shorts (spread over the 2 days after the long-form)
         id: shorts
         continue-on-error: true
         env:

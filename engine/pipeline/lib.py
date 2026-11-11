@@ -14,7 +14,7 @@ REMOTION = ROOT / "remotion"
 SECRETS = Path(os.environ.get("IF_ENGINE_SECRETS", ROOT / "secrets"))
 
 STAGES = [
-    "research", "calc", "script", "factcheck", "voice", "captions",
+    "research", "calc", "script", "factcheck", "voice", "captions", "sound",
     "render", "thumbnail", "metadata", "upload", "shorts",
 ]
 
@@ -109,3 +109,8 @@ def video_arg() -> str:
     ap.add_argument("video_id", nargs="?", default="earth-stops-1s")
     a, _ = ap.parse_known_args()
     return a.video_id
+
+
+def gl_flag() -> str:
+    """Remotion --gl value for WebGL (3D scenes): swangle = SwiftShader via ANGLE (CPU, no GPU needed)"""
+    return f"--gl={os.environ.get('REMOTION_GL') or 'swangle'}"

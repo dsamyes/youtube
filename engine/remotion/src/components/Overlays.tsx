@@ -36,17 +36,17 @@ export const MathCard: React.FC<{ card: Card; t: number; len: number }> = ({ car
   const row = (i: number) => prog(t, 0.35 + i * 0.45, 0.85 + i * 0.45);
   return (
     <div style={{
-      position: "absolute", right: 80, top: 190, width: 660, padding: "34px 40px 30px",
-      background: "linear-gradient(160deg, rgba(27,33,87,0.94), rgba(10,13,44,0.94))",
-      border: `2px solid ${C.cyan}`, borderRadius: 28, boxShadow: `0 0 60px ${C.cyan}33, 0 30px 60px #0008`,
+      position: "absolute", right: 80, top: 200, width: 640, padding: "30px 38px 28px",
+      background: "linear-gradient(160deg, rgba(10,14,40,0.72), rgba(4,6,20,0.78))",
+      border: "1px solid rgba(244,246,255,0.18)", borderLeft: `3px solid ${C.cyan}`, borderRadius: 18, boxShadow: "0 30px 60px #0007",
       fontFamily: FONT, color: C.white, opacity: enter * (1 - exit),
       translate: `${interpolate(enter, [0, 1], [80, 0])}px 0px`,
     }}>
       <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 18 }}>
-        <div style={{ background: C.cyan, color: C.deep, fontWeight: 900, fontSize: 22, padding: "6px 14px", borderRadius: 10, letterSpacing: 2 }}>MATH CARD</div>
+        <div style={{ color: C.cyan, fontWeight: 800, fontSize: 18, letterSpacing: 4 }}>THE MATH</div>
         <div style={{ fontSize: 30, fontWeight: 700, lineHeight: 1.15 }}>{card.title}</div>
       </div>
-      <div style={{ fontFamily: DISPLAY, fontSize: 54, fontWeight: 800, color: C.cyan, opacity: row(0), margin: "8px 0 14px" }}>{card.formula}</div>
+      <div style={{ fontFamily: DISPLAY, fontSize: 46, fontWeight: 700, color: C.white, opacity: row(0), margin: "8px 0 14px" }}>{card.formula}</div>
       <div style={{ fontSize: 30, fontWeight: 500, color: C.dim, opacity: row(1), marginBottom: 16 }}>{card.sub}</div>
       <div style={{ height: 2, background: `linear-gradient(90deg, ${C.cyan}, ${C.purple})`, opacity: row(2), marginBottom: 16 }} />
       <div style={{ fontFamily: DISPLAY, fontSize: 46, fontWeight: 900, color: C.amber, opacity: row(2), scale: interpolate(row(2), [0, 1], [0.9, 1]), transformOrigin: "left center" }}>
@@ -98,8 +98,8 @@ export const Hud: React.FC<{ data: VideoProps; time: number; slot: Slot | undefi
     <AbsoluteFill style={{ fontFamily: FONT, color: C.white }}>
       {/* logo bug */}
       <div style={{ position: "absolute", left: 60, top: 44, display: "flex", alignItems: "center", gap: 16, opacity: 0.9 }}>
-        <Img src={staticFile("logo.svg")} style={{ width: 62, height: 62 }} />
-        <div style={{ fontFamily: DISPLAY, fontWeight: 800, fontSize: 26, letterSpacing: 3 }}>THE IF ENGINE</div>
+        <Img src={staticFile("logo.svg")} style={{ width: 46, height: 46 }} />
+        <div style={{ fontFamily: DISPLAY, fontWeight: 800, fontSize: 20, letterSpacing: 4, opacity: 0.85 }}>THE IF ENGINE</div>
       </div>
       {/* scenario clock */}
       {clock ? (
@@ -113,17 +113,17 @@ export const Hud: React.FC<{ data: VideoProps; time: number; slot: Slot | undefi
         </div>
       ) : null}
       {/* chapter progress */}
-      <div style={{ position: "absolute", left: 160, bottom: 46, width: barW }}>
-        <div style={{ fontSize: 22, fontWeight: 700, color: C.dim, letterSpacing: 2, marginBottom: 10, textTransform: "uppercase" }}>
+      <div style={{ position: "absolute", left: 160, bottom: 40, width: barW, opacity: 0.8 }}>
+        <div style={{ fontSize: 17, fontWeight: 700, color: C.dim, letterSpacing: 3, marginBottom: 8, textTransform: "uppercase", textShadow: "0 1px 6px #000" }}>
           {String(Math.max(1, cur + 1)).padStart(2, "0")} / {String(secs.length).padStart(2, "0")} · {sec?.chapter}
         </div>
-        <div style={{ display: "flex", gap: 6, height: 8 }}>
+        <div style={{ display: "flex", gap: 6, height: 3 }}>
           {secs.map((s, i) => {
             const w = ((s.end - s.start) / total) * (barW - 6 * secs.length);
             const fill = interpolate(time, [s.start, s.end], [0, 1], clamp);
             return (
-              <div key={s.id} style={{ width: w, height: 8, borderRadius: 4, background: C.faint, overflow: "hidden" }}>
-                <div style={{ width: `${fill * 100}%`, height: "100%", background: i === cur ? C.cyan : C.purple }} />
+              <div key={s.id} style={{ width: w, height: 3, borderRadius: 2, background: "rgba(244,246,255,0.18)", overflow: "hidden" }}>
+                <div style={{ width: `${fill * 100}%`, height: "100%", background: i === cur ? C.amber : "rgba(244,246,255,0.7)" }} />
               </div>
             );
           })}

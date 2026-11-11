@@ -40,7 +40,8 @@ def remotion_thumb(vdir, vid, T):
     pp = build / "thumb_props.json"
     write_json(pp, props)
     out = vdir / "thumbnail.png"
-    r = subprocess.run(["npx", "remotion", "still", "IfEngineThumb", str(out), f"--props={pp}", "--image-format=png", "--log=error"],
+    from lib import gl_flag
+    r = subprocess.run(["npx", "remotion", "still", "IfEngineThumb", str(out), f"--props={pp}", "--image-format=png", "--log=error", gl_flag()],
                        cwd=REMOTION, capture_output=True, text=True)
     if r.returncode or not out.exists():
         fail(vdir, STAGE, f"remotion still failed: {(r.stdout + r.stderr)[-400:]}")

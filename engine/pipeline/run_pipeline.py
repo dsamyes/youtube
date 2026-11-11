@@ -6,7 +6,7 @@
   python pipeline/run_pipeline.py earth-stops-1s --from voice        # resume from a stage
   python pipeline/run_pipeline.py earth-stops-1s --upload private    # real upload at the end
 
-Stage order: research -> calc -> script -> factcheck -> voice -> captions -> render -> thumbnail
+Stage order: research -> calc -> script -> factcheck -> voice -> captions -> sound -> render -> thumbnail
              -> metadata -> shorts -> upload(dry-run unless --upload)
 Every stage writes its status to videos/<id>/manifest.json; print it with --status.
 """
@@ -57,6 +57,7 @@ def main():
         ("factcheck", [["factcheck.py", vid]]),
         ("voice", [["tts.py", vid] + (["--provider", a.tts] if a.tts else [])]),
         ("captions", [["captions.py", vid]]),
+        ("sound", [["sound.py", vid]]),
         ("render", [["render.py", vid, *r] for r in renders] + ([["render.py", vid, "--stills"]] if renders else [])),
         ("thumbnail", [["thumbnail.py", vid]]),
         ("metadata", [["metadata.py", vid]]),

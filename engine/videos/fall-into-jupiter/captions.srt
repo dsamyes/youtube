@@ -1,0 +1,616 @@
+1
+00:00:00,600 --> 00:00:04,628
+You fall into Jupiter at
+210,000 kilometers an hour,
+
+2
+00:00:04,628 --> 00:00:07,775
+and there is no ground to stop you.
+
+3
+00:00:07,775 --> 00:00:09,530
+So where do you actually stop?
+
+4
+00:00:10,830 --> 00:00:12,198
+Here are the rules.
+
+5
+00:00:12,198 --> 00:00:18,247
+You start at rest, 1,000,000 kilometers
+from Jupiter's center, and you let go.
+
+6
+00:00:18,247 --> 00:00:21,771
+No rocket, no parachute. Only gravity.
+
+7
+00:00:22,171 --> 00:00:24,787
+At first, nothing seems to happen.
+
+8
+00:00:24,787 --> 00:00:27,980
+Jupiter is a striped
+coin hanging in the dark.
+
+9
+00:00:27,980 --> 00:00:31,283
+But it is pulling, and
+the pull never lets go.
+
+10
+00:00:31,683 --> 00:00:35,611
+For 27 hours you fall,
+while Jupiter spins about
+
+11
+00:00:35,611 --> 00:00:40,638
+2.7 times beneath you and
+swells to fill the sky.
+
+12
+00:00:40,638 --> 00:00:44,771
+By the end you are moving
+at 57 kilometers per second.
+
+13
+00:00:44,771 --> 00:00:48,417
+That is 57 times faster
+than a rifle bullet,
+
+14
+00:00:48,417 --> 00:00:54,098
+and faster than NASA's Galileo probe,
+which hit this atmosphere at 47.4.
+
+15
+00:00:54,498 --> 00:00:58,411
+For scale: Jupiter is 11 Earths wide.
+
+16
+00:00:58,411 --> 00:01:01,232
+The Great Red Spot alone, a storm,
+
+17
+00:01:01,232 --> 00:01:03,794
+is about twice as wide
+as our whole planet.
+
+18
+00:01:04,194 --> 00:01:06,052
+And there is no ground.
+
+19
+00:01:06,052 --> 00:01:09,430
+Jupiter has no surface at all.
+
+20
+00:01:09,430 --> 00:01:12,739
+So on the way down we
+will track three things:
+
+21
+00:01:12,739 --> 00:01:17,485
+how deep you are, how hot it is,
+and what you see out the window.
+
+22
+00:01:18,785 --> 00:01:22,721
+Then the air arrives, and not gently.
+
+23
+00:01:22,721 --> 00:01:28,177
+At 57 kilometers per second even
+thin hydrogen hits like a wall.
+
+24
+00:01:28,177 --> 00:01:31,997
+The gas ahead of you is
+crushed into glowing plasma,
+
+25
+00:01:31,997 --> 00:01:34,144
+as hot as the surface of the Sun.
+
+26
+00:01:34,544 --> 00:01:36,750
+Every kilogram of you carries the
+
+27
+00:01:36,750 --> 00:01:41,173
+energy of about 390 kilograms of TNT.
+
+28
+00:01:41,173 --> 00:01:47,082
+For a whole person, that is about
+28 tonnes, released in moments.
+
+29
+00:01:47,482 --> 00:01:53,635
+Galileo survived this behind a heat
+shield and still felt more than 200 g.
+
+30
+00:01:53,635 --> 00:01:59,626
+The most any human has
+survived on purpose is 46.2 g.
+
+31
+00:01:59,626 --> 00:02:02,529
+Galileo took more than four times that.
+
+32
+00:02:02,929 --> 00:02:06,563
+So honestly? You do not survive the entry.
+
+33
+00:02:06,563 --> 00:02:10,406
+You become a meteor, a streak
+of light above the clouds.
+
+34
+00:02:10,406 --> 00:02:14,864
+But this is The If Engine,
+so we cheat exactly once.
+
+35
+00:02:14,864 --> 00:02:19,647
+Put yourself in an indestructible
+pod, your size and your weight.
+
+36
+00:02:19,647 --> 00:02:21,610
+Everything outside it stays real.
+
+37
+00:02:22,910 --> 00:02:26,832
+The pod slows to a fall
+you could almost call calm:
+
+38
+00:02:26,832 --> 00:02:30,130
+about 690 kilometers an hour.
+
+39
+00:02:30,130 --> 00:02:36,492
+The thicker the air, the slower you
+fall, and from here it only gets thicker.
+
+40
+00:02:36,892 --> 00:02:38,703
+First rung.
+
+41
+00:02:38,703 --> 00:02:44,380
+Depth: just above the 1 bar level,
+Jupiter's version of sea level.
+
+42
+00:02:44,380 --> 00:02:49,071
+Temperature: about 120 degrees below zero.
+
+43
+00:02:49,071 --> 00:02:50,881
+Out the window: white.
+
+44
+00:02:51,281 --> 00:02:54,532
+These high white clouds are ammonia ice,
+
+45
+00:02:54,532 --> 00:02:57,341
+a snow made of the chemical
+in household cleaner,
+
+46
+00:02:57,341 --> 00:03:00,523
+at about 0.70 bar.
+
+47
+00:03:00,523 --> 00:03:04,401
+The winds up here reach
+539 kilometers an hour.
+
+48
+00:03:04,801 --> 00:03:06,739
+Here is the first surprise.
+
+49
+00:03:06,739 --> 00:03:11,708
+A study in 2025 suggests most
+of the color you see from space
+
+50
+00:03:11,708 --> 00:03:16,375
+comes from deeper, from a
+rust-colored layer below this one.
+
+51
+00:03:16,375 --> 00:03:18,941
+So let's go and look.
+
+52
+00:03:20,241 --> 00:03:26,232
+Second rung. Depth: about 18 kilometers.
+
+53
+00:03:26,232 --> 00:03:30,358
+Pressure: 2 bar, double the
+air on a beach on Earth.
+
+54
+00:03:30,758 --> 00:03:35,077
+Temperature: about 72 degrees below zero.
+
+55
+00:03:35,077 --> 00:03:38,304
+These are crystals of
+ammonium hydrosulfide,
+
+56
+00:03:38,304 --> 00:03:41,497
+stained by a haze the color of rust.
+
+57
+00:03:41,497 --> 00:03:43,273
+The sunlight is fading fast.
+
+58
+00:03:43,673 --> 00:03:46,608
+And somewhere below
+you, something flashes.
+
+59
+00:03:47,908 --> 00:03:49,522
+Third rung.
+
+60
+00:03:49,522 --> 00:03:53,098
+About 49 kilometers down, 5 bar,
+
+61
+00:03:53,098 --> 00:03:57,033
+12 degrees below zero and rising.
+
+62
+00:03:57,033 --> 00:03:59,193
+These are water clouds.
+
+63
+00:03:59,193 --> 00:04:02,714
+Real water ice and droplets,
+like the storms at home.
+
+64
+00:04:03,114 --> 00:04:06,028
+And they are electric.
+
+65
+00:04:06,028 --> 00:04:10,022
+NASA's Juno spacecraft found
+lightning even higher up,
+
+66
+00:04:10,022 --> 00:04:12,634
+where it is 88 degrees below zero,
+
+67
+00:04:12,634 --> 00:04:18,446
+fed by slushy hailstones of ammonia and
+water that scientists call mushballs.
+
+68
+00:04:18,846 --> 00:04:24,593
+All three cloud layers together
+are only about 71 kilometers thick.
+
+69
+00:04:24,593 --> 00:04:28,378
+About 36 minutes after you
+passed the 1 bar level,
+
+70
+00:04:28,378 --> 00:04:31,466
+you are already 100 kilometers down.
+
+71
+00:04:31,466 --> 00:04:33,895
+You have fallen through
+Jupiter's entire weather.
+
+72
+00:04:34,295 --> 00:04:37,128
+Then the temperature
+does something strange.
+
+73
+00:04:38,428 --> 00:04:42,375
+About 65 kilometers down, at 7.5 bar,
+
+74
+00:04:42,375 --> 00:04:45,813
+the air outside is a
+comfortable 20 degrees Celsius.
+
+75
+00:04:46,213 --> 00:04:50,135
+When the Galileo probe
+reached this level in 1995,
+
+76
+00:04:50,135 --> 00:04:52,701
+NASA logged it in its timeline:
+
+77
+00:04:52,701 --> 00:04:55,970
+room temperature, about
+30 minutes after entry.
+
+78
+00:04:56,370 --> 00:04:59,609
+It is the most Earth-like
+moment of the whole trip,
+
+79
+00:04:59,609 --> 00:05:02,442
+and you could not breathe
+for a second of it.
+
+80
+00:05:02,442 --> 00:05:06,499
+There is no oxygen to breathe
+here, only hydrogen and helium.
+
+81
+00:05:07,799 --> 00:05:10,980
+Galileo kept talking for 58 minutes.
+
+82
+00:05:10,980 --> 00:05:14,184
+It sank about 160 kilometers.
+
+83
+00:05:14,184 --> 00:05:15,786
+Then its signal stopped.
+
+84
+00:05:16,186 --> 00:05:21,614
+Within about 10 hours, NASA estimates,
+the probe was completely vaporized.
+
+85
+00:05:21,614 --> 00:05:25,279
+No working instrument has ever
+reported back from below this depth.
+
+86
+00:05:25,679 --> 00:05:29,893
+You keep sinking. Your pod
+is indestructible, remember.
+
+87
+00:05:29,893 --> 00:05:33,736
+But from here, the question
+is not whether you survive.
+
+88
+00:05:33,736 --> 00:05:36,128
+It is what is left of the sky.
+
+89
+00:05:37,428 --> 00:05:41,387
+Fourth rung. 1,000 kilometers down.
+
+90
+00:05:41,387 --> 00:05:43,697
+The sunlight is long gone.
+
+91
+00:05:43,697 --> 00:05:48,643
+Temperature: about 1,900 degrees Celsius.
+
+92
+00:05:48,643 --> 00:05:51,802
+Pressure: around 8,000 atmospheres.
+
+93
+00:05:52,202 --> 00:05:57,972
+At that temperature the hull of your
+pod glows orange, like steel in a forge.
+
+94
+00:05:57,972 --> 00:06:00,534
+Down here, heat is the
+only light there is.
+
+95
+00:06:00,934 --> 00:06:03,999
+It took you about 21
+hours to sink this far,
+
+96
+00:06:03,999 --> 00:06:05,891
+and the gas is now so thick
+
+97
+00:06:05,891 --> 00:06:10,392
+that you are falling at 27 kilometers
+an hour, the speed of a bicycle.
+
+98
+00:06:10,792 --> 00:06:15,979
+And somewhere around here, the line
+between gas and liquid simply disappears.
+
+99
+00:06:17,279 --> 00:06:20,139
+There is no splash and no surface.
+
+100
+00:06:20,139 --> 00:06:23,726
+The hydrogen just gets
+denser and denser until,
+
+101
+00:06:23,726 --> 00:06:28,858
+without any line you could point
+to, it behaves like a liquid.
+
+102
+00:06:28,858 --> 00:06:33,247
+NASA calls it the largest
+ocean in the solar system.
+
+103
+00:06:33,647 --> 00:06:39,684
+Fifth rung. Thousands of kilometers
+deep, sinking slower every hour.
+
+104
+00:06:39,684 --> 00:06:45,350
+Jupiter's jet streams reach
+down about 3,200 kilometers.
+
+105
+00:06:45,350 --> 00:06:46,694
+You are already below them.
+
+106
+00:06:47,094 --> 00:06:51,342
+And then, about 14,000
+kilometers down, you stop.
+
+107
+00:06:51,742 --> 00:06:54,192
+Not because you hit anything.
+
+108
+00:06:54,192 --> 00:06:57,129
+The liquid around you is
+now as dense as you are,
+
+109
+00:06:57,129 --> 00:07:00,310
+so you float, like a
+swimmer who stopped kicking,
+
+110
+00:07:00,310 --> 00:07:06,277
+in a sea of hot, crushing hydrogen,
+under about 2 million atmospheres.
+
+111
+00:07:07,577 --> 00:07:11,606
+That is the answer to the
+question from the start.
+
+112
+00:07:11,606 --> 00:07:16,192
+Jupiter has no ground, so
+what stops you is buoyancy.
+
+113
+00:07:16,192 --> 00:07:18,804
+In a simple model of Jupiter's interior,
+
+114
+00:07:18,804 --> 00:07:22,763
+you come to rest about 20
+percent of the way to the center.
+
+115
+00:07:23,163 --> 00:07:25,845
+Getting here took about 78 days.
+
+116
+00:07:25,845 --> 00:07:29,943
+You crossed 1,000,000
+kilometers of space in 27 hours,
+
+117
+00:07:29,943 --> 00:07:33,731
+then spent 78 days
+sinking the last 14,000.
+
+118
+00:07:34,131 --> 00:07:38,896
+And below you, out of reach,
+is the strangest layer.
+
+119
+00:07:38,896 --> 00:07:41,984
+NASA thinks that perhaps
+halfway to the center,
+
+120
+00:07:41,984 --> 00:07:44,352
+hydrogen is squeezed so hard that it
+
+121
+00:07:44,352 --> 00:07:46,233
+turns into a liquid metal,
+
+122
+00:07:46,233 --> 00:07:50,529
+and its churning powers Jupiter's
+enormous magnetic field.
+
+123
+00:07:51,829 --> 00:07:57,204
+Deeper still, NASA's Juno found
+that the core is not a solid ball.
+
+124
+00:07:57,204 --> 00:08:01,523
+It is dilute, partly
+dissolved, with no clear edge.
+
+125
+00:08:01,523 --> 00:08:06,364
+Even at the very bottom,
+Jupiter refuses to have a floor.
+
+126
+00:08:06,764 --> 00:08:08,505
+So here is the twist.
+
+127
+00:08:08,505 --> 00:08:12,523
+You set out to fall into Jupiter,
+and you never touched it.
+
+128
+00:08:12,523 --> 00:08:16,029
+No surface at the top,
+no floor at the bottom.
+
+129
+00:08:16,029 --> 00:08:18,920
+Just a world that gets
+thicker and thicker,
+
+130
+00:08:18,920 --> 00:08:22,145
+until it holds you,
+suspended, in the dark.
+
+131
+00:08:22,545 --> 00:08:25,480
+And Jupiter is the gentle one.
+
+132
+00:08:25,480 --> 00:08:30,042
+Next, we visit every planet
+and ask a simpler question:
+
+133
+00:08:30,042 --> 00:08:33,142
+how long could you survive on each one?
+
+134
+00:08:33,142 --> 00:08:35,580
+This was The If Engine.
+
+135
+00:08:35,580 --> 00:08:38,171
+Run the impossible. Do the math.

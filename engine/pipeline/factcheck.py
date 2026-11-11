@@ -34,7 +34,9 @@ def h(text: str) -> str:
 
 
 # visual params that are layout/styling, not claims (not scanned for numbers)
-LAYOUT_KEYS = {"scene", "phase", "speed", "spin", "r", "dist", "color", "colors", "art", "spot", "x", "y", "size"}
+LAYOUT_KEYS = {"scene", "phase", "speed", "spin", "r", "dist", "color", "colors", "art", "spot", "x", "y", "size",
+               # cinematic scenes (camera, look and sound cues; never shown as text)
+               "body", "shot", "palette", "look", "pov", "photo", "move", "sfx", "moons", "nebula", "quality", "fit"}
 
 
 def strings_in(o) -> list[str]:

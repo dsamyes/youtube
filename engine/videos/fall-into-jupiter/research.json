@@ -1,0 +1,422 @@
+{
+  "facts": {
+    "F01": {
+      "fact": "Jupiter mass",
+      "value": 1.89813e+27,
+      "unit": "kg",
+      "sources": [
+        "S1"
+      ]
+    },
+    "F02": {
+      "fact": "Jupiter GM",
+      "value": 126687000.0,
+      "unit": "km^3/s^2",
+      "sources": [
+        "S1"
+      ]
+    },
+    "F03": {
+      "fact": "Jupiter equatorial radius at the 1 bar level",
+      "value": 71492.0,
+      "unit": "km",
+      "sources": [
+        "S1"
+      ]
+    },
+    "F04": {
+      "fact": "Jupiter volumetric mean radius",
+      "value": 69911.0,
+      "unit": "km",
+      "sources": [
+        "S1"
+      ]
+    },
+    "F05": {
+      "fact": "Jupiter mean density",
+      "value": 1326.0,
+      "unit": "kg/m^3",
+      "sources": [
+        "S1"
+      ]
+    },
+    "F06": {
+      "fact": "Jupiter gravity (mean, 1 bar)",
+      "value": 25.92,
+      "unit": "m/s^2",
+      "sources": [
+        "S1"
+      ]
+    },
+    "F07": {
+      "fact": "Jupiter escape velocity",
+      "value": 59.5,
+      "unit": "km/s",
+      "sources": [
+        "S1"
+      ]
+    },
+    "F08": {
+      "fact": "Jupiter sidereal rotation period",
+      "value": 9.925,
+      "unit": "h",
+      "sources": [
+        "S1"
+      ]
+    },
+    "F09": {
+      "fact": "Temperature at 1 bar",
+      "value": 165.0,
+      "unit": "K",
+      "sources": [
+        "S1"
+      ]
+    },
+    "F10": {
+      "fact": "Atmospheric density at 1 bar",
+      "value": 0.16,
+      "unit": "kg/m^3",
+      "sources": [
+        "S1"
+      ]
+    },
+    "F11": {
+      "fact": "Mean molecular weight of the atmosphere",
+      "value": 2.22,
+      "unit": "g/mol",
+      "sources": [
+        "S1"
+      ]
+    },
+    "F12": {
+      "fact": "Molecular hydrogen fraction by volume",
+      "value": 89.8,
+      "unit": "%",
+      "sources": [
+        "S1"
+      ]
+    },
+    "F13": {
+      "fact": "Helium fraction by volume",
+      "value": 10.2,
+      "unit": "%",
+      "sources": [
+        "S1"
+      ]
+    },
+    "F14": {
+      "fact": "Wind speeds up to (latitudes below 30 degrees)",
+      "value": 150.0,
+      "unit": "m/s",
+      "sources": [
+        "S1"
+      ]
+    },
+    "F15": {
+      "fact": "Fastest prevailing winds at the equator",
+      "value": 539.0,
+      "unit": "km/h",
+      "sources": [
+        "S2"
+      ]
+    },
+    "F16": {
+      "fact": "Earth volumetric mean radius",
+      "value": 6371.0,
+      "unit": "km",
+      "sources": [
+        "S1"
+      ]
+    },
+    "F17": {
+      "fact": "Galileo probe entry speed",
+      "value": 106000.0,
+      "unit": "mph",
+      "sources": [
+        "S3"
+      ]
+    },
+    "F18": {
+      "fact": "Galileo probe peak deceleration (more than)",
+      "value": 200.0,
+      "unit": "g",
+      "sources": [
+        "S3"
+      ]
+    },
+    "F19": {
+      "fact": "Galileo probe heat shield temperature (as hot as the Sun's surface)",
+      "value": 16000.0,
+      "unit": "°F",
+      "sources": [
+        "S3"
+      ]
+    },
+    "F20": {
+      "fact": "Galileo probe data return during descent",
+      "value": 58.0,
+      "unit": "min",
+      "sources": [
+        "S3"
+      ]
+    },
+    "F21": {
+      "fact": "Galileo probe descent distance while returning data",
+      "value": 97.0,
+      "unit": "miles",
+      "sources": [
+        "S3"
+      ]
+    },
+    "F22": {
+      "fact": "Galileo probe: entry 5:04 p.m., room temperature reached 5:34 p.m. EST",
+      "value": 30.0,
+      "unit": "min",
+      "sources": [
+        "S5"
+      ]
+    },
+    "F23": {
+      "fact": "Galileo probe completely vaporized by 3:00 a.m., entry 5:04 p.m. (hours later)",
+      "value": 10.0,
+      "unit": "h",
+      "sources": [
+        "S5"
+      ]
+    },
+    "F24": {
+      "fact": "Three cloud layers span about",
+      "value": 71.0,
+      "unit": "km",
+      "sources": [
+        "S2"
+      ]
+    },
+    "F25": {
+      "fact": "Great Red Spot extends below the cloud tops about",
+      "value": 500.0,
+      "unit": "km",
+      "sources": [
+        "S2"
+      ]
+    },
+    "F26": {
+      "fact": "Jet streams reach depths of about",
+      "value": 3200.0,
+      "unit": "km",
+      "sources": [
+        "S2"
+      ]
+    },
+    "F27": {
+      "fact": "Metallic hydrogen at depths perhaps this fraction of the way to the centre",
+      "value": 0.5,
+      "unit": "-",
+      "sources": [
+        "S2"
+      ]
+    },
+    "F28": {
+      "fact": "Expected ammonia ice condensation level",
+      "value": 0.7,
+      "unit": "bar",
+      "sources": [
+        "S6"
+      ]
+    },
+    "F29": {
+      "fact": "Main reflecting cloud deck (ammonium hydrosulfide + smog), upper end of 2-3 bar",
+      "value": 2.0,
+      "unit": "bar",
+      "sources": [
+        "S6"
+      ]
+    },
+    "F30": {
+      "fact": "Base of the water cloud",
+      "value": 5.0,
+      "unit": "bar",
+      "sources": [
+        "S8",
+        "S7"
+      ]
+    },
+    "F31": {
+      "fact": "Shallow-lightning altitude temperature",
+      "value": -88.0,
+      "unit": "°C",
+      "sources": [
+        "S9"
+      ]
+    },
+    "F32": {
+      "fact": "Highest deceleration survived voluntarily (John Stapp, 1954)",
+      "value": 46.2,
+      "unit": "g",
+      "sources": [
+        "S10"
+      ]
+    },
+    "F33": {
+      "fact": "Average density of a human body (close to water)",
+      "value": 1000.0,
+      "unit": "kg/m^3",
+      "sources": [
+        "S11"
+      ]
+    },
+    "F34": {
+      "fact": "Index-1 polytrope is a good leading-order model of Jupiter's interior",
+      "value": "qualitative",
+      "unit": "-",
+      "sources": [
+        "S12"
+      ]
+    },
+    "F35": {
+      "fact": "Energy of 1 kg of TNT",
+      "value": 4184000.0,
+      "unit": "J/kg",
+      "sources": [
+        "S13"
+      ]
+    },
+    "F36": {
+      "fact": "Molar gas constant",
+      "value": 8.314462618,
+      "unit": "J/(mol K)",
+      "sources": [
+        "S14"
+      ]
+    },
+    "F37": {
+      "fact": "Newtonian constant of gravitation",
+      "value": 6.6743e-11,
+      "unit": "m^3/(kg s^2)",
+      "sources": [
+        "S14"
+      ]
+    },
+    "F38": {
+      "fact": "Jupiter's core is dilute (\"fuzzy\"), no clear edge to the metallic hydrogen",
+      "value": "qualitative",
+      "unit": "-",
+      "sources": [
+        "S2"
+      ]
+    },
+    "F39": {
+      "fact": "Deep in the atmosphere hydrogen is compressed into a liquid: the largest ocean in the solar system",
+      "value": "qualitative",
+      "unit": "-",
+      "sources": [
+        "S2"
+      ]
+    },
+    "F40": {
+      "fact": "Great Red Spot is about twice as wide as Earth",
+      "value": 2.0,
+      "unit": "-",
+      "sources": [
+        "S2"
+      ]
+    },
+    "F41": {
+      "fact": "Mile",
+      "value": 1.609344,
+      "unit": "km",
+      "sources": [
+        "S13"
+      ]
+    },
+    "F42": {
+      "fact": "Speed of a rifle bullet, typical (for scale)",
+      "value": 1.0,
+      "unit": "km/s",
+      "sources": [
+        "S15"
+      ]
+    },
+    "F43": {
+      "fact": "Earth gravity (mean)",
+      "value": 9.82,
+      "unit": "m/s^2",
+      "sources": [
+        "S1"
+      ]
+    },
+    "F44": {
+      "fact": "Standard atmosphere",
+      "value": 101325.0,
+      "unit": "Pa",
+      "sources": [
+        "S13"
+      ]
+    }
+  },
+  "sources": {
+    "S1": {
+      "title": "NASA Goddard (NSSDCA), Jupiter Fact Sheet (updated 2 Oct 2024)",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/jupiterfact.html"
+    },
+    "S2": {
+      "title": "NASA Science, Jupiter: Facts",
+      "url": "https://science.nasa.gov/jupiter/jupiter-facts/"
+    },
+    "S3": {
+      "title": "NASA History, 30 Years Ago: Galileo Off to Orbit Jupiter",
+      "url": "https://www.nasa.gov/history/30-years-ago-galileo-off-to-orbit-jupiter/"
+    },
+    "S4": {
+      "title": "NASA JPL, Galileo Probe Suggests Planetary Science Reappraisal",
+      "url": "https://www.jpl.nasa.gov/news/galileo-probe-suggests-planetary-science-reappraisal/"
+    },
+    "S5": {
+      "title": "NASA Goddard (NSSDCA), Galileo Probe Entry Timeline",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/galileo_probe_time.html"
+    },
+    "S6": {
+      "title": "Sci.News, Jovian Clouds Consist of Ammonium Hydrosulfide, Study Suggests (Oxford-led, 2025)",
+      "url": "https://www.sci.news/space/jovian-clouds-ammonium-hydrosulfide-13575.html"
+    },
+    "S7": {
+      "title": "Bolton et al., Microwave observations reveal the deep extent and structure of Jupiter's atmospheric vortices, Science (2021)",
+      "url": "https://weizmann.ac.il/EPS/kaspi/sites/EPS.kaspi/files/publications/Bolton-etal-2021_1.pdf"
+    },
+    "S8": {
+      "title": "Bjoraker et al., The Gas Composition and Deep Cloud Structure of Jupiter's Great Red Spot (2018)",
+      "url": "https://arxiv.org/abs/1808.01402"
+    },
+    "S9": {
+      "title": "NASA JPL, Shallow Lightning and Mushballs Reveal Ammonia to NASA's Juno Scientists (2020)",
+      "url": "https://www.jpl.nasa.gov/news/shallow-lightning-and-mushballs-reveal-ammonia-to-nasas-juno-scientists/"
+    },
+    "S10": {
+      "title": "Smithsonian National Air and Space Museum, The Man Behind High-Speed Safety Standards",
+      "url": "https://airandspace.si.edu/stories/editorial/man-behind-high-speed-safety-standards"
+    },
+    "S11": {
+      "title": "Body Physics (Open Oregon), Body Density from Hydrostatic Weighing",
+      "url": "https://openoregon.pressbooks.pub/bodyphysics2ed/chapter/body-density-from-hydrostatic-weighing/"
+    },
+    "S12": {
+      "title": "Dewberry and Lai, Dynamical tides in Jupiter and the role of interior structure (2023), index-1 polytrope as leading-order model",
+      "url": "https://arxiv.org/abs/2301.02418"
+    },
+    "S13": {
+      "title": "NIST, Guide to the SI, Appendix B.9 (conversion factors: ton of TNT, mile)",
+      "url": "https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b9"
+    },
+    "S14": {
+      "title": "NIST, CODATA fundamental physical constants",
+      "url": "https://physics.nist.gov/cuu/Constants/"
+    },
+    "S15": {
+      "title": "Britannica, Ballistics (muzzle velocities of rifles, about 1 km/s)",
+      "url": "https://www.britannica.com/technology/ballistics"
+    }
+  },
+  "cities": {},
+  "generated": "2026-11-11T14:33:46+00:00",
+  "url_probe": {}
+}

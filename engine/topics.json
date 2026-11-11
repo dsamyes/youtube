@@ -21,7 +21,7 @@
       "id": "light-speed-nines",
       "title": "What If You Traveled at 99.9999% the Speed of Light?",
       "series": "Human Limits",
-      "status": "produced",
+      "status": "published",
       "video_id": "light-speed-nines",
       "produced": "2026-11-10",
       "source": "owner request (yt-viral research: second-person escalation format)",
@@ -35,10 +35,19 @@
     },
     {
       "id": "fall-into-jupiter",
-      "title": "What If You Fell Into Jupiter? (Every Layer, Explained)",
+      "title": "What If You Fell Into Jupiter? You'd Sink for 78 Days",
       "series": "Fall Into…",
-      "status": "todo",
-      "source": "CHANNEL-SETUP.md #2"
+      "status": "published",
+      "source": "queue/2026-11-10-fall-into-jupiter.json (CHANNEL-SETUP.md #2)",
+      "video_id": "fall-into-jupiter",
+      "produced": "2026-11-11",
+      "youtube_id": "VKAQ3ZT74vo",
+      "shorts": [
+        "ido5dbAr0KQ",
+        "mV5MLlN-Ppo",
+        "4bJMUmJdBxw"
+      ],
+      "note": "First video with the cinematic method (ElevenLabs voice, 3D library, generated score). Uploaded PRIVATE 2026-11-11; the owner publishes by hand."
     },
     {
       "id": "moon-twice-as-close",

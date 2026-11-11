@@ -1,0 +1,1431 @@
+{
+  "video_id": "fall-into-jupiter",
+  "title": "What If You Fell Into Jupiter? You'd Sink for 78 Days",
+  "series": "Fall Into…",
+  "next_video": "How Long Could You Survive on Every Planet?",
+  "voice_style": "calm cinematic documentary narrator (ElevenLabs)",
+  "sections": [
+    {
+      "id": "hook",
+      "chapter": "No Ground",
+      "clock": null,
+      "tension": 0.7,
+      "beats": [
+        {
+          "id": "b01",
+          "text": "You fall into Jupiter at {{v_kmh}} kilometers an hour, and there is no ground to stop you. So where do you actually stop?",
+          "visual": {
+            "scene": "space",
+            "shot": "fall",
+            "dist": 2.6,
+            "dist2": 1.12,
+            "az": 20,
+            "el": 6,
+            "sun": 70,
+            "fov": 40,
+            "frame": 0,
+            "sfx": [
+              {
+                "name": "boom",
+                "at": 0.1,
+                "gain": -4
+              }
+            ]
+          },
+          "claims": [
+            "v_kmh"
+          ],
+          "kinetic": "{{v_kmh}} km/h"
+        }
+      ]
+    },
+    {
+      "id": "drop",
+      "chapter": "The Long Drop",
+      "clock": null,
+      "tension": 0.35,
+      "beats": [
+        {
+          "id": "b02",
+          "text": "Here are the rules. You start at rest, {{start_km}} kilometers from Jupiter's center, and you let go. No rocket, no parachute. Only gravity.",
+          "visual": {
+            "scene": "space",
+            "shot": "approach",
+            "dist": 9,
+            "dist2": 7.5,
+            "az": 35,
+            "el": 4,
+            "sun": 80,
+            "fov": 32,
+            "moons": "galilean",
+            "label": "The drop",
+            "sub": "Start: at rest",
+            "sfx": [
+              {
+                "name": "whoosh",
+                "at": 0.2
+              }
+            ]
+          },
+          "claims": [
+            "start_km"
+          ]
+        },
+        {
+          "id": "b03",
+          "text": "At first, nothing seems to happen. Jupiter is a striped coin hanging in the dark. But it is pulling, and the pull never lets go.",
+          "visual": {
+            "scene": "space",
+            "dist": 7.5,
+            "dist2": 6
+          },
+          "claims": []
+        },
+        {
+          "id": "b04",
+          "text": "For {{fall_h}} hours you fall, while Jupiter spins about {{fall_turns}} times beneath you and swells to fill the sky. By the end you are moving at {{v_kms}} kilometers per second. That is {{x_rifle}} times faster than a rifle bullet, and faster than NASA's Galileo probe, which hit this atmosphere at {{galileo_kms}}.",
+          "visual": {
+            "scene": "space",
+            "shot": "fall",
+            "dist": 6,
+            "dist2": 1.6,
+            "az": 15,
+            "el": 3,
+            "sun": 75,
+            "readout": [
+              {
+                "label": "Speed",
+                "value": "{{v_kms}} km/s",
+                "accent": true
+              },
+              {
+                "label": "Fall time",
+                "value": "{{fall_h}} h"
+              }
+            ]
+          },
+          "claims": [
+            "fall_h",
+            "fall_turns",
+            "v_kms",
+            "x_rifle",
+            "galileo_kms"
+          ],
+          "card": "fall"
+        },
+        {
+          "id": "b05",
+          "text": "For scale: Jupiter is {{size_earths}} Earths wide. The Great Red Spot alone, a storm, is about twice as wide as our whole planet.",
+          "visual": {
+            "scene": "photo",
+            "photo": "jupiter_grs",
+            "move": "in",
+            "fx": 0.6,
+            "fy": 0.5,
+            "label": "Great Red Spot",
+            "sub": "NASA Juno"
+          },
+          "claims": [
+            "size_earths",
+            "F40"
+          ]
+        },
+        {
+          "id": "b06",
+          "text": "And there is no ground. Jupiter has no surface at all. So on the way down we will track three things: how deep you are, how hot it is, and what you see out the window.",
+          "visual": {
+            "scene": "space",
+            "shot": "limb",
+            "dist": 1.25,
+            "az": 30,
+            "el": 4,
+            "tilt": 12,
+            "label": "No surface",
+            "gauge": {
+              "frac": 0.0,
+              "items": [
+                {
+                  "label": "Depth",
+                  "value": "0 km"
+                },
+                {
+                  "label": "Temp",
+                  "value": "{{t1_c}} °C"
+                }
+              ]
+            }
+          },
+          "claims": [
+            "t1_c"
+          ],
+          "retention": "Sets the 3 recurring questions + open loop (where do you stop?)"
+        }
+      ]
+    },
+    {
+      "id": "entry",
+      "chapter": "Entry",
+      "clock": null,
+      "tension": 0.95,
+      "beats": [
+        {
+          "id": "b07",
+          "text": "Then the air arrives, and not gently. At {{v_kms}} kilometers per second even thin hydrogen hits like a wall. The gas ahead of you is crushed into glowing plasma, as hot as the surface of the Sun.",
+          "visual": {
+            "scene": "descent",
+            "palette": "space",
+            "look": "ahead",
+            "speed": 90,
+            "heat": 1,
+            "shake": 0.9,
+            "pov": "window",
+            "label": "Entry",
+            "sfx": [
+              "impact"
+            ],
+            "gauge": {
+              "hide": true
+            }
+          },
+          "claims": [
+            "v_kms",
+            "F19"
+          ],
+          "kinetic": "plasma"
+        },
+        {
+          "id": "b08",
+          "text": "Every kilogram of you carries the energy of about {{tnt_per_kg}} kilograms of TNT. For a whole person, that is about {{tnt_you}} tonnes, released in moments.",
+          "visual": {
+            "scene": "descent",
+            "speed": 70,
+            "heat": 0.9
+          },
+          "claims": [
+            "tnt_per_kg",
+            "tnt_you"
+          ],
+          "card": "entry"
+        },
+        {
+          "id": "b09",
+          "text": "Galileo survived this behind a heat shield and still felt more than {{galileo_g}} g. The most any human has survived on purpose is {{stapp_g}} g. Galileo took more than four times that.",
+          "visual": {
+            "scene": "photo",
+            "photo": "galileo_probe_art",
+            "move": "in",
+            "fx": 0.55,
+            "fy": 0.45,
+            "label": "Galileo probe",
+            "sub": "Entry: December 7, 1995",
+            "readout": [
+              {
+                "label": "Galileo",
+                "value": "{{galileo_g}}+ g",
+                "accent": true
+              },
+              {
+                "label": "Human record",
+                "value": "{{stapp_g}} g"
+              }
+            ]
+          },
+          "claims": [
+            "galileo_g",
+            "stapp_g",
+            "g_ratio"
+          ]
+        },
+        {
+          "id": "b10",
+          "text": "So honestly? You do not survive the entry. You become a meteor, a streak of light above the clouds. But this is The If Engine, so we cheat exactly once. Put yourself in an indestructible pod, your size and your weight. Everything outside it stays real.",
+          "visual": {
+            "scene": "descent",
+            "palette": "haze",
+            "look": "down",
+            "speed": 40,
+            "heat": 0.25,
+            "shake": 0.5,
+            "pov": "visor",
+            "label": "The one cheat",
+            "sub": "An indestructible pod",
+            "sfx": [
+              {
+                "name": "whoosh",
+                "at": 0
+              },
+              "beep"
+            ]
+          },
+          "claims": [],
+          "retention": "Rule change: one cheat (indestructible pod)"
+        }
+      ]
+    },
+    {
+      "id": "ammonia",
+      "chapter": "The White Ceiling",
+      "clock": null,
+      "tension": 0.45,
+      "beats": [
+        {
+          "id": "b11",
+          "text": "The pod slows to a fall you could almost call calm: about {{vt_1bar_kmh}} kilometers an hour. The thicker the air, the slower you fall, and from here it only gets thicker.",
+          "visual": {
+            "scene": "descent",
+            "palette": "ammonia",
+            "look": "down",
+            "speed": 18,
+            "shake": 0.25,
+            "heat": 0,
+            "pov": "none",
+            "gauge": {
+              "frac": 0.04,
+              "items": [
+                {
+                  "label": "Speed",
+                  "value": "{{vt_1bar_kmh}} km/h"
+                }
+              ]
+            }
+          },
+          "claims": [
+            "vt_1bar_kmh"
+          ],
+          "card": "terminal"
+        },
+        {
+          "id": "b12",
+          "text": "First rung. Depth: just above the 1 bar level, Jupiter's version of sea level. Temperature: about {{c_nh3}} degrees below zero. Out the window: white.",
+          "visual": {
+            "scene": "descent",
+            "look": "ahead",
+            "speed": 16,
+            "label": "Ammonia ice clouds",
+            "sub": "{{p_nh3}} bar",
+            "gauge": {
+              "frac": 0.05,
+              "items": [
+                {
+                  "label": "Height",
+                  "value": "+{{z_nh3}} km"
+                },
+                {
+                  "label": "Temp",
+                  "value": "{{t_nh3}} °C"
+                }
+              ]
+            }
+          },
+          "claims": [
+            "c_nh3",
+            "p_nh3",
+            "z_nh3"
+          ]
+        },
+        {
+          "id": "b13",
+          "text": "These high white clouds are ammonia ice, a snow made of the chemical in household cleaner, at about {{p_nh3}} bar. The winds up here reach {{wind_kmh}} kilometers an hour.",
+          "visual": {
+            "scene": "descent",
+            "look": "down",
+            "speed": 18,
+            "readout": [
+              {
+                "label": "Wind",
+                "value": "{{wind_kmh}} km/h"
+              }
+            ]
+          },
+          "claims": [
+            "p_nh3",
+            "wind_kmh"
+          ]
+        },
+        {
+          "id": "b14",
+          "text": "Here is the first surprise. A study in 2025 suggests most of the color you see from space comes from deeper, from a rust-colored layer below this one. So let's go and look.",
+          "visual": {
+            "scene": "photo",
+            "photo": "jupiter_clouds",
+            "move": "left",
+            "label": "Belts and storms",
+            "sub": "NASA Juno",
+            "sfx": [
+              {
+                "name": "whoosh",
+                "at": 3
+              }
+            ]
+          },
+          "claims": [
+            "F29"
+          ],
+          "retention": "Tease: the colour comes from deeper"
+        }
+      ]
+    },
+    {
+      "id": "rust",
+      "chapter": "The Rust Layer",
+      "clock": null,
+      "tension": 0.5,
+      "beats": [
+        {
+          "id": "b15",
+          "text": "Second rung. Depth: about {{z_nh4sh}} kilometers. Pressure: {{p_nh4sh}} bar, double the air on a beach on Earth.",
+          "visual": {
+            "scene": "descent",
+            "palette": "nh4sh",
+            "look": "ahead",
+            "speed": 15,
+            "label": "Ammonium hydrosulfide",
+            "sub": "{{p_nh4sh}} bar",
+            "gauge": {
+              "frac": 0.3,
+              "items": [
+                {
+                  "label": "Depth",
+                  "value": "{{z_nh4sh}} km"
+                },
+                {
+                  "label": "Temp",
+                  "value": "{{t_nh4sh}} °C"
+                }
+              ]
+            }
+          },
+          "claims": [
+            "z_nh4sh",
+            "p_nh4sh"
+          ]
+        },
+        {
+          "id": "b16",
+          "text": "Temperature: about {{c_nh4sh}} degrees below zero. These are crystals of ammonium hydrosulfide, stained by a haze the color of rust. The sunlight is fading fast.",
+          "visual": {
+            "scene": "descent",
+            "look": "down",
+            "speed": 15
+          },
+          "claims": [
+            "c_nh4sh"
+          ]
+        },
+        {
+          "id": "b17",
+          "text": "And somewhere below you, something flashes.",
+          "visual": {
+            "scene": "descent",
+            "palette": "water",
+            "look": "down",
+            "speed": 15,
+            "blend": 4,
+            "sfx": [
+              "thunder"
+            ]
+          },
+          "claims": [],
+          "retention": "Tease: lightning below"
+        }
+      ]
+    },
+    {
+      "id": "storm",
+      "chapter": "The Storm Floor",
+      "clock": null,
+      "tension": 0.75,
+      "beats": [
+        {
+          "id": "b18",
+          "text": "Third rung. About {{z_h2o}} kilometers down, {{p_h2o}} bar, {{c_h2o}} degrees below zero and rising. These are water clouds. Real water ice and droplets, like the storms at home.",
+          "visual": {
+            "scene": "descent",
+            "palette": "water",
+            "look": "ahead",
+            "speed": 14,
+            "shake": 0.45,
+            "label": "Water clouds",
+            "sub": "{{p_h2o}} bar",
+            "gauge": {
+              "frac": 0.41,
+              "items": [
+                {
+                  "label": "Depth",
+                  "value": "{{z_h2o}} km"
+                },
+                {
+                  "label": "Temp",
+                  "value": "{{t_h2o}} °C"
+                }
+              ]
+            }
+          },
+          "claims": [
+            "z_h2o",
+            "p_h2o",
+            "c_h2o"
+          ]
+        },
+        {
+          "id": "b19",
+          "text": "And they are electric. NASA's Juno spacecraft found lightning even higher up, where it is {{c_lightning}} degrees below zero, fed by slushy hailstones of ammonia and water that scientists call mushballs.",
+          "visual": {
+            "scene": "descent",
+            "look": "up",
+            "speed": 14,
+            "shake": 0.5
+          },
+          "claims": [
+            "c_lightning"
+          ],
+          "kinetic": "mushballs"
+        },
+        {
+          "id": "b20",
+          "text": "All three cloud layers together are only about {{clouds_km}} kilometers thick. About {{t100_min}} minutes after you passed the 1 bar level, you are already {{d100}} kilometers down. You have fallen through Jupiter's entire weather.",
+          "visual": {
+            "scene": "descent",
+            "look": "down",
+            "speed": 16,
+            "readout": [
+              {
+                "label": "Cloud layers",
+                "value": "{{clouds_km}} km"
+              }
+            ]
+          },
+          "claims": [
+            "clouds_km",
+            "t100_min",
+            "d100"
+          ]
+        },
+        {
+          "id": "b21",
+          "text": "Then the temperature does something strange.",
+          "visual": {
+            "scene": "descent",
+            "palette": {
+              "top": "#9a8f80",
+              "bottom": "#3a332b",
+              "haze": "#4a4239",
+              "sky": "#2a241e",
+              "glow": "#000000",
+              "glowK": 0,
+              "cover": 0.5,
+              "light": 0.25,
+              "lightning": 0.3,
+              "streak": "#e8dccb",
+              "scale": 0.022,
+              "map": 0
+            },
+            "look": "down",
+            "speed": 12,
+            "blend": 3
+          },
+          "claims": [],
+          "retention": "Open loop: something strange"
+        }
+      ]
+    },
+    {
+      "id": "room",
+      "chapter": "Room Temperature",
+      "clock": null,
+      "tension": 0.35,
+      "beats": [
+        {
+          "id": "b22",
+          "text": "About {{z_room}} kilometers down, at {{p_room}} bar, the air outside is a comfortable {{room_c}} degrees Celsius.",
+          "visual": {
+            "scene": "descent",
+            "look": "ahead",
+            "speed": 12,
+            "shake": 0.15,
+            "label": "Room temperature",
+            "gauge": {
+              "frac": 0.44,
+              "items": [
+                {
+                  "label": "Depth",
+                  "value": "{{z_room}} km"
+                },
+                {
+                  "label": "Temp",
+                  "value": "{{room_c}} °C"
+                }
+              ]
+            }
+          },
+          "claims": [
+            "z_room",
+            "p_room",
+            "room_c"
+          ],
+          "kinetic": "{{room_c}} °C"
+        },
+        {
+          "id": "b23",
+          "text": "When the Galileo probe reached this level in 1995, NASA logged it in its timeline: room temperature, about {{room_min}} minutes after entry.",
+          "visual": {
+            "scene": "photo",
+            "photo": "galileo_probe_art",
+            "move": "out",
+            "fx": 0.5,
+            "fy": 0.6,
+            "label": "Galileo probe timeline",
+            "sub": "NASA, December 7, 1995"
+          },
+          "claims": [
+            "room_min"
+          ]
+        },
+        {
+          "id": "b24",
+          "text": "It is the most Earth-like moment of the whole trip, and you could not breathe for a second of it. There is no oxygen to breathe here, only hydrogen and helium.",
+          "visual": {
+            "scene": "descent",
+            "look": "up",
+            "speed": 10,
+            "pov": "visor",
+            "sfx": [
+              "breath"
+            ]
+          },
+          "claims": [
+            "F12",
+            "F13"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "signal",
+      "chapter": "The Last Signal",
+      "clock": null,
+      "tension": 0.6,
+      "beats": [
+        {
+          "id": "b25",
+          "text": "Galileo kept talking for {{gal_min}} minutes. It sank about {{gal_km}} kilometers. Then its signal stopped.",
+          "visual": {
+            "scene": "descent",
+            "palette": "dark",
+            "look": "down",
+            "speed": 10,
+            "shake": 0.3,
+            "pov": "none",
+            "label": "Last signal",
+            "sub": "Galileo probe",
+            "gauge": {
+              "frac": 0.53,
+              "items": [
+                {
+                  "label": "Depth",
+                  "value": "{{gal_km}} km"
+                }
+              ]
+            },
+            "sfx": [
+              "beep",
+              {
+                "name": "beep",
+                "at": 1.2
+              }
+            ]
+          },
+          "claims": [
+            "gal_min",
+            "gal_km"
+          ]
+        },
+        {
+          "id": "b26",
+          "text": "Within about {{vapor_h}} hours, NASA estimates, the probe was completely vaporized. No working instrument has ever reported back from below this depth.",
+          "visual": {
+            "scene": "descent",
+            "speed": 9,
+            "sfx": [
+              "creak"
+            ]
+          },
+          "claims": [
+            "vapor_h"
+          ]
+        },
+        {
+          "id": "b27",
+          "text": "You keep sinking. Your pod is indestructible, remember. But from here, the question is not whether you survive. It is what is left of the sky.",
+          "visual": {
+            "scene": "descent",
+            "look": "ahead",
+            "speed": 8
+          },
+          "claims": [],
+          "retention": "Open loop: what is left of the sky"
+        }
+      ]
+    },
+    {
+      "id": "dark",
+      "chapter": "Black Heat",
+      "clock": null,
+      "tension": 0.8,
+      "beats": [
+        {
+          "id": "b28",
+          "text": "Fourth rung. {{d1000}} kilometers down. The sunlight is long gone. Temperature: about {{t1000_c}} degrees Celsius. Pressure: around {{p1000_round}} atmospheres.",
+          "visual": {
+            "scene": "descent",
+            "palette": "hot",
+            "look": "down",
+            "speed": 7,
+            "shake": 0.5,
+            "label": "Black heat",
+            "gauge": {
+              "frac": 0.72,
+              "items": [
+                {
+                  "label": "Depth",
+                  "value": "{{d1000}} km"
+                },
+                {
+                  "label": "Temp",
+                  "value": "{{t1000_c}} °C"
+                }
+              ]
+            }
+          },
+          "claims": [
+            "d1000",
+            "t1000_c",
+            "p1000_round"
+          ]
+        },
+        {
+          "id": "b29",
+          "text": "At that temperature the hull of your pod glows orange, like steel in a forge. Down here, heat is the only light there is.",
+          "visual": {
+            "scene": "descent",
+            "look": "ahead",
+            "speed": 7,
+            "heat": 0.5,
+            "pov": "window"
+          },
+          "claims": [
+            "t1000_c"
+          ]
+        },
+        {
+          "id": "b30",
+          "text": "It took you about {{t1000_h}} hours to sink this far, and the gas is now so thick that you are falling at {{v1000_kmh}} kilometers an hour, the speed of a bicycle.",
+          "visual": {
+            "scene": "descent",
+            "look": "down",
+            "speed": 5,
+            "pov": "none",
+            "readout": [
+              {
+                "label": "Sinking",
+                "value": "{{v1000_kmh}} km/h"
+              }
+            ]
+          },
+          "claims": [
+            "t1000_h",
+            "v1000_kmh"
+          ]
+        },
+        {
+          "id": "b31",
+          "text": "And somewhere around here, the line between gas and liquid simply disappears.",
+          "visual": {
+            "scene": "descent",
+            "palette": "fluid",
+            "look": "down",
+            "speed": 5,
+            "blend": 5
+          },
+          "claims": [],
+          "retention": "Tease: gas becomes liquid"
+        }
+      ]
+    },
+    {
+      "id": "ocean",
+      "chapter": "The Hydrogen Ocean",
+      "clock": null,
+      "tension": 0.65,
+      "beats": [
+        {
+          "id": "b32",
+          "text": "There is no splash and no surface. The hydrogen just gets denser and denser until, without any line you could point to, it behaves like a liquid. NASA calls it the largest ocean in the solar system.",
+          "visual": {
+            "scene": "descent",
+            "palette": "fluid",
+            "look": "ahead",
+            "speed": 4,
+            "shake": 0.2,
+            "label": "Liquid hydrogen ocean",
+            "gauge": {
+              "frac": 0.85,
+              "items": [
+                {
+                  "label": "Depth",
+                  "value": "{{d1000}}+ km"
+                }
+              ]
+            }
+          },
+          "claims": [
+            "F39"
+          ],
+          "kinetic": "an ocean of hydrogen"
+        },
+        {
+          "id": "b33",
+          "text": "Fifth rung. Thousands of kilometers deep, sinking slower every hour. Jupiter's jet streams reach down about {{jets_km}} kilometers. You are already below them.",
+          "visual": {
+            "scene": "descent",
+            "look": "down",
+            "speed": 3
+          },
+          "claims": [
+            "jets_km"
+          ]
+        },
+        {
+          "id": "b34",
+          "text": "And then, about {{float_km}} kilometers down, you stop.",
+          "visual": {
+            "scene": "descent",
+            "look": "ahead",
+            "speed": 0.6,
+            "shake": 0.05,
+            "streaks": 0.2,
+            "gauge": {
+              "frac": 1.0,
+              "items": [
+                {
+                  "label": "Depth",
+                  "value": "{{float_km}} km"
+                }
+              ]
+            },
+            "sfx": [
+              "boom"
+            ]
+          },
+          "claims": [
+            "float_km"
+          ],
+          "kinetic": "you stop",
+          "retention": "Payoff of the hook: where you stop"
+        },
+        {
+          "id": "b35",
+          "text": "Not because you hit anything. The liquid around you is now as dense as you are, so you float, like a swimmer who stopped kicking, in a sea of hot, crushing hydrogen, under about {{float_matm}} million atmospheres.",
+          "visual": {
+            "scene": "descent",
+            "look": "up",
+            "speed": 0.4,
+            "streaks": 0.1,
+            "label": "Neutral buoyancy",
+            "readout": [
+              {
+                "label": "Pressure",
+                "value": "{{float_matm}} million atm",
+                "accent": true
+              }
+            ]
+          },
+          "claims": [
+            "float_matm",
+            "F33"
+          ],
+          "card": "float"
+        }
+      ]
+    },
+    {
+      "id": "float",
+      "chapter": "Suspended",
+      "clock": null,
+      "tension": 0.45,
+      "beats": [
+        {
+          "id": "b36",
+          "text": "That is the answer to the question from the start. Jupiter has no ground, so what stops you is buoyancy. In a simple model of Jupiter's interior, you come to rest about {{float_pct}} percent of the way to the center.",
+          "visual": {
+            "scene": "cutaway",
+            "layers": [
+              {
+                "r": 1.0,
+                "color": "#c9a27a",
+                "label": "Clouds and hydrogen gas"
+              },
+              {
+                "r": 0.95,
+                "color": "#3c5f93",
+                "label": "Liquid hydrogen ocean"
+              },
+              {
+                "r": 0.5,
+                "color": "#7f7fd6",
+                "label": "Metallic hydrogen (perhaps)"
+              },
+              {
+                "r": 0.25,
+                "color": "#c9773e",
+                "label": "Dilute, fuzzy core"
+              }
+            ],
+            "hi": 1,
+            "marker": 0.8,
+            "label": "Where you stop",
+            "sub": "Schematic: boundaries are uncertain",
+            "gauge": {
+              "hide": true
+            }
+          },
+          "claims": [
+            "float_pct"
+          ]
+        },
+        {
+          "id": "b37",
+          "text": "Getting here took about {{sink_days}} days. You crossed {{start_km}} kilometers of space in {{fall_h}} hours, then spent {{sink_days}} days sinking the last {{float_km}}.",
+          "visual": {
+            "scene": "cutaway",
+            "readout": [
+              {
+                "label": "Fall",
+                "value": "{{fall_h}} h"
+              },
+              {
+                "label": "Sink",
+                "value": "{{sink_days}} days",
+                "accent": true
+              }
+            ]
+          },
+          "claims": [
+            "sink_days",
+            "start_km",
+            "fall_h",
+            "float_km"
+          ],
+          "kinetic": "{{sink_days}} days to sink"
+        },
+        {
+          "id": "b38",
+          "text": "And below you, out of reach, is the strangest layer. NASA thinks that perhaps halfway to the center, hydrogen is squeezed so hard that it turns into a liquid metal, and its churning powers Jupiter's enormous magnetic field.",
+          "visual": {
+            "scene": "cutaway",
+            "hi": 2,
+            "az": 20
+          },
+          "claims": [
+            "F27"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "core",
+      "chapter": "No Floor at All",
+      "clock": null,
+      "tension": 0.4,
+      "beats": [
+        {
+          "id": "b39",
+          "text": "Deeper still, NASA's Juno found that the core is not a solid ball. It is dilute, partly dissolved, with no clear edge. Even at the very bottom, Jupiter refuses to have a floor.",
+          "visual": {
+            "scene": "cutaway",
+            "layers": [
+              {
+                "r": 1.0,
+                "color": "#c9a27a",
+                "label": "Clouds and hydrogen gas"
+              },
+              {
+                "r": 0.95,
+                "color": "#3c5f93",
+                "label": "Liquid hydrogen ocean"
+              },
+              {
+                "r": 0.5,
+                "color": "#7f7fd6",
+                "label": "Metallic hydrogen (perhaps)"
+              },
+              {
+                "r": 0.25,
+                "color": "#c9773e",
+                "label": "Dilute, fuzzy core"
+              }
+            ],
+            "hi": 3,
+            "az": 30,
+            "marker": 0.8
+          },
+          "claims": [
+            "F38"
+          ]
+        },
+        {
+          "id": "b40",
+          "text": "So here is the twist. You set out to fall into Jupiter, and you never touched it. No surface at the top, no floor at the bottom. Just a world that gets thicker and thicker, until it holds you, suspended, in the dark.",
+          "visual": {
+            "scene": "space",
+            "shot": "drift",
+            "dist": 3.2,
+            "az": 25,
+            "el": 10,
+            "sun": 60,
+            "moons": "galilean",
+            "sfx": [
+              {
+                "name": "riser",
+                "at": 1
+              }
+            ]
+          },
+          "claims": [],
+          "retention": "Twist + callback to the hook shot"
+        },
+        {
+          "id": "b41",
+          "text": "And Jupiter is the gentle one. Next, we visit every planet and ask a simpler question: how long could you survive on each one? This was The If Engine. Run the impossible. Do the math.",
+          "visual": {
+            "scene": "space",
+            "shot": "orbit",
+            "dist": 4.2,
+            "orbit": 25,
+            "az": 0,
+            "el": 14,
+            "sun": 70,
+            "label": "Next",
+            "sub": "How Long Could You Survive on Every Planet?"
+          },
+          "claims": []
+        }
+      ]
+    }
+  ],
+  "shorts": [
+    {
+      "id": "short1",
+      "title": "You'd hit Jupiter at {{v_kmh}} km/h",
+      "hook": "NO GROUND. NO BRAKES.",
+      "end": "Full fall: link below",
+      "tension": 0.8,
+      "beats": [
+        {
+          "id": "s1b01",
+          "text": "Fall into Jupiter from far away and you hit the clouds at about {{v_kms}} kilometers per second.",
+          "visual": {
+            "scene": "space",
+            "shot": "fall",
+            "dist": 2.4,
+            "dist2": 1.15,
+            "az": 20,
+            "el": 6,
+            "sun": 70,
+            "fov": 40,
+            "frame": 0,
+            "sfx": [
+              {
+                "name": "boom",
+                "at": 0.1,
+                "gain": -4
+              }
+            ]
+          },
+          "claims": [
+            "v_kms"
+          ]
+        },
+        {
+          "id": "s1b02",
+          "text": "That is {{x_rifle}} times faster than a rifle bullet.",
+          "visual": {
+            "scene": "space",
+            "shot": "fall",
+            "dist": 1.7,
+            "dist2": 1.2,
+            "az": 35,
+            "el": 2,
+            "sun": 80,
+            "fov": 40,
+            "frame": 0
+          },
+          "claims": [
+            "x_rifle"
+          ]
+        },
+        {
+          "id": "s1b03",
+          "text": "The air ahead of you turns into plasma as hot as the surface of the Sun.",
+          "visual": {
+            "scene": "descent",
+            "palette": "space",
+            "look": "ahead",
+            "speed": 90,
+            "heat": 1,
+            "shake": 0.9,
+            "pov": "window",
+            "sfx": [
+              "impact"
+            ]
+          },
+          "claims": [
+            "F19"
+          ]
+        },
+        {
+          "id": "s1b04",
+          "text": "Every kilogram of you carries the energy of {{tnt_per_kg}} kilograms of TNT.",
+          "visual": {
+            "scene": "descent",
+            "speed": 70,
+            "heat": 0.9,
+            "readout": [
+              {
+                "label": "Per kg of you",
+                "value": "{{tnt_per_kg}} kg TNT",
+                "accent": true
+              }
+            ]
+          },
+          "claims": [
+            "tnt_per_kg"
+          ]
+        },
+        {
+          "id": "s1b05",
+          "text": "NASA's Galileo probe felt more than {{galileo_g}} g, behind a heat shield. The human record is {{stapp_g}} g.",
+          "visual": {
+            "scene": "photo",
+            "photo": "galileo_probe_art",
+            "move": "in",
+            "fx": 0.55,
+            "fy": 0.45
+          },
+          "claims": [
+            "galileo_g",
+            "stapp_g"
+          ]
+        },
+        {
+          "id": "s1b06",
+          "text": "So you would not land on Jupiter. You would become a shooting star.",
+          "visual": {
+            "scene": "descent",
+            "palette": "haze",
+            "look": "down",
+            "speed": 40,
+            "heat": 0.3
+          },
+          "claims": []
+        }
+      ]
+    },
+    {
+      "id": "short2",
+      "title": "Jupiter has a room-temperature layer",
+      "hook": "20 °C INSIDE JUPITER?",
+      "end": "Every layer: full video",
+      "tension": 0.5,
+      "beats": [
+        {
+          "id": "s2b01",
+          "text": "Below Jupiter's cloud tops, there is a layer at room temperature.",
+          "visual": {
+            "scene": "descent",
+            "palette": "water",
+            "look": "ahead",
+            "speed": 14,
+            "shake": 0.4
+          },
+          "claims": []
+        },
+        {
+          "id": "s2b02",
+          "text": "Up top it is {{c_1bar}} degrees below zero, at the 1 bar level.",
+          "visual": {
+            "scene": "descent",
+            "palette": "ammonia",
+            "look": "down",
+            "speed": 18
+          },
+          "claims": [
+            "c_1bar"
+          ]
+        },
+        {
+          "id": "s2b03",
+          "text": "Fall through the white ammonia clouds, the rust-colored layer and the water clouds with their lightning.",
+          "visual": {
+            "scene": "descent",
+            "palette": "water",
+            "look": "up",
+            "speed": 16,
+            "blend": 3
+          },
+          "claims": []
+        },
+        {
+          "id": "s2b04",
+          "text": "About {{z_room}} kilometers down, the air hits {{room_c}} degrees Celsius.",
+          "visual": {
+            "scene": "descent",
+            "palette": {
+              "top": "#9a8f80",
+              "bottom": "#3a332b",
+              "haze": "#4a4239",
+              "sky": "#2a241e",
+              "glow": "#000000",
+              "glowK": 0,
+              "cover": 0.5,
+              "light": 0.25,
+              "lightning": 0.3,
+              "streak": "#e8dccb",
+              "scale": 0.022,
+              "map": 0
+            },
+            "look": "ahead",
+            "speed": 12,
+            "readout": [
+              {
+                "label": "Temp",
+                "value": "{{room_c}} °C",
+                "accent": true
+              }
+            ]
+          },
+          "claims": [
+            "z_room",
+            "room_c"
+          ]
+        },
+        {
+          "id": "s2b05",
+          "text": "NASA's Galileo probe logged it in 1995, about {{room_min}} minutes after entry.",
+          "visual": {
+            "scene": "photo",
+            "photo": "galileo_probe_art",
+            "move": "out",
+            "fx": 0.5,
+            "fy": 0.6
+          },
+          "claims": [
+            "room_min"
+          ]
+        },
+        {
+          "id": "s2b06",
+          "text": "Comfortable, except there is no oxygen to breathe. Only hydrogen and helium.",
+          "visual": {
+            "scene": "descent",
+            "palette": "dark",
+            "look": "up",
+            "speed": 10,
+            "pov": "visor"
+          },
+          "claims": [
+            "F12",
+            "F13"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "short3",
+      "title": "Where you'd finally stop inside Jupiter",
+      "hook": "NOT THE CORE.",
+      "end": "Full fall: link below",
+      "tension": 0.6,
+      "beats": [
+        {
+          "id": "s3b01",
+          "text": "Jupiter has no surface. So if you fell in, where would you finally stop?",
+          "visual": {
+            "scene": "space",
+            "shot": "fall",
+            "dist": 2.2,
+            "dist2": 1.2,
+            "az": 25,
+            "el": 6,
+            "sun": 70,
+            "fov": 40,
+            "frame": 0
+          },
+          "claims": []
+        },
+        {
+          "id": "s3b02",
+          "text": "Not in the clouds. Those are only about {{clouds_km}} kilometers thick.",
+          "visual": {
+            "scene": "descent",
+            "palette": "ammonia",
+            "look": "down",
+            "speed": 18
+          },
+          "claims": [
+            "clouds_km"
+          ]
+        },
+        {
+          "id": "s3b03",
+          "text": "Not at {{d1000}} kilometers, where it is about {{t1000_c}} degrees Celsius.",
+          "visual": {
+            "scene": "descent",
+            "palette": "hot",
+            "look": "down",
+            "speed": 8
+          },
+          "claims": [
+            "d1000",
+            "t1000_c"
+          ]
+        },
+        {
+          "id": "s3b04",
+          "text": "The hydrogen keeps getting denser, until about {{float_km}} kilometers down it is as dense as you.",
+          "visual": {
+            "scene": "descent",
+            "palette": "fluid",
+            "look": "ahead",
+            "speed": 3
+          },
+          "claims": [
+            "float_km",
+            "F33"
+          ]
+        },
+        {
+          "id": "s3b05",
+          "text": "And there, you float, in hot, crushing hydrogen, under about {{float_matm}} million atmospheres.",
+          "visual": {
+            "scene": "cutaway",
+            "layers": [
+              {
+                "r": 1.0,
+                "color": "#c9a27a",
+                "label": "Clouds and hydrogen gas"
+              },
+              {
+                "r": 0.95,
+                "color": "#3c5f93",
+                "label": "Liquid hydrogen ocean"
+              },
+              {
+                "r": 0.5,
+                "color": "#7f7fd6",
+                "label": "Metallic hydrogen (perhaps)"
+              },
+              {
+                "r": 0.25,
+                "color": "#c9773e",
+                "label": "Dilute, fuzzy core"
+              }
+            ],
+            "hi": 1,
+            "marker": 0.8
+          },
+          "claims": [
+            "float_matm"
+          ]
+        },
+        {
+          "id": "s3b06",
+          "text": "Getting there takes about {{sink_days}} days. Jupiter never lets you touch it.",
+          "visual": {
+            "scene": "cutaway",
+            "hi": 1,
+            "az": 20,
+            "readout": [
+              {
+                "label": "Sinking time",
+                "value": "{{sink_days}} days",
+                "accent": true
+              }
+            ]
+          },
+          "claims": [
+            "sink_days"
+          ]
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "alt_titles": [
+      "What Happens If You Fall Into Jupiter?",
+      "You Fall Into Jupiter at {{v_kmh}} km/h. Where Do You Stop?"
+    ],
+    "hook": "What if you fell into Jupiter? Falling into Jupiter from 1 million km, you hit the clouds at {{v_kmh}} km/h, then sink through every layer inside Jupiter: ammonia, rust-colored and water clouds, past the depth where NASA's Galileo probe went silent, into an ocean of hydrogen. Jupiter has no surface, so where do you actually stop?",
+    "learn": [
+      "How fast you hit Jupiter if you fall from far away, and how long the fall takes",
+      "Why an unprotected entry is fatal, compared with NASA's Galileo probe",
+      "Jupiter's three cloud layers, its lightning and its room-temperature level",
+      "What lies below the deepest point any probe has reached",
+      "Where you finally stop inside a planet with no surface, and why"
+    ],
+    "key_numbers": [
+      "Arrival speed from 1 million km: about {{v_kms}} km/s after {{fall_h}} hours of falling",
+      "Entry energy: about {{tnt_per_kg}} kg of TNT for every kilogram of you",
+      "Galileo probe: more than {{galileo_g}} g on entry, data for {{gal_min}} minutes",
+      "Room temperature about {{z_room}} km below the 1-bar level (simple adiabat model)",
+      "Neutral buoyancy about {{float_km}} km down, after about {{sink_days}} days of sinking (index-1 polytrope model)"
+    ],
+    "assumptions": "Assumptions: you start at rest 1,000,000 km from Jupiter's centre; after the entry you ride an indestructible human-sized pod with the density of a human body. Upper atmosphere: ideal-gas dry adiabat (about); interior: index-1 polytrope (a simple model). Depths are measured below the 1-bar level. Layer boundaries in the cutaway are schematic.",
+    "image_credits": [
+      "Jupiter texture: NASA/JPL/Space Science Institute, Cassini global map (PIA07782)",
+      "Great Red Spot: NASA/JPL-Caltech/SwRI/MSSS, enhanced by Gerald Eichstädt (PIA21773)",
+      "Jupiter clouds: NASA/JPL-Caltech/SwRI/MSSS, enhanced by Kevin M. Gill (PIA21984), CC BY",
+      "Galileo probe descent painting: NASA Ames Research Center (AC89-0146-2)",
+      "Moon maps: Io NASA/JPL/University of Arizona (PIA00585), Ganymede NASA/JPL/USGS (PIA03781); Milky Way: NASA/Goddard SVS Deep Star Maps 2020 with ESA/Gaia/DPAC data (CC BY-SA 3.0 IGO); stars: HYG v4.0 (CC BY-SA 4.0)",
+      "Clouds, lighting, music and sound effects: generated in code"
+    ],
+    "tags": [
+      "what if you fell into jupiter",
+      "falling into jupiter",
+      "jupiter",
+      "inside jupiter",
+      "what is inside jupiter",
+      "jupiter no surface",
+      "jupiter layers",
+      "jupiter atmosphere",
+      "metallic hydrogen",
+      "galileo probe",
+      "great red spot",
+      "gas giant",
+      "what if",
+      "space documentary",
+      "planets",
+      "the if engine"
+    ],
+    "hashtags": "#jupiter #space #whatif"
+  },
+  "thumbnail": {
+    "scene": "space",
+    "params": {
+      "shot": "drift",
+      "dist": 2.3,
+      "az": 10,
+      "el": 8,
+      "sun": 60,
+      "fov": 42,
+      "frame": -0.5,
+      "mw": 0.8
+    },
+    "t": 2,
+    "kicker": "NO",
+    "headline": "GROUND",
+    "number": "{{float_km}}",
+    "badge": "",
+    "art": {}
+  }
+}

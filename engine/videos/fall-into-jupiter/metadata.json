@@ -1,0 +1,149 @@
+{
+  "video_id": "fall-into-jupiter",
+  "generated": "2026-11-11T15:48:22+00:00",
+  "title": "What If You Fell Into Jupiter? You'd Sink for 78 Days",
+  "alt_titles": [
+    "What Happens If You Fall Into Jupiter?",
+    "You Fall Into Jupiter at 210,000 km/h. Where Do You Stop?"
+  ],
+  "description": "What if you fell into Jupiter? Falling into Jupiter from 1 million km, you hit the clouds at 210,000 km/h, then sink through every layer inside Jupiter: ammonia, rust-colored and water clouds, past the depth where NASA's Galileo probe went silent, into an ocean of hydrogen. Jupiter has no surface, so where do you actually stop?\n\nIn this video:\n• How fast you hit Jupiter if you fall from far away, and how long the fall takes\n• Why an unprotected entry is fatal, compared with NASA's Galileo probe\n• Jupiter's three cloud layers, its lightning and its room-temperature level\n• What lies below the deepest point any probe has reached\n• Where you finally stop inside a planet with no surface, and why\n\n⏱ Chapters\n0:00 No Ground\n0:10 The Long Drop\n1:18 Entry\n2:22 The White Ceiling\n3:20 The Rust Layer\n3:47 The Storm Floor\n4:38 Room Temperature\n5:07 The Last Signal\n5:37 Black Heat\n6:17 The Hydrogen Ocean\n7:07 Suspended\n7:51 No Floor at All\n\n🧮 Key numbers\n• Arrival speed from 1 million km: about 57 km/s after 27 hours of falling\n• Entry energy: about 390 kg of TNT for every kilogram of you\n• Galileo probe: more than 200 g on entry, data for 58 minutes\n• Room temperature about 65 km below the 1-bar level (simple adiabat model)\n• Neutral buoyancy about 14,000 km down, after about 78 days of sinking (index-1 polytrope model)\n\n📚 Sources\n[S1] NASA Goddard, Jupiter Fact Sheet: https://nssdc.gsfc.nasa.gov/planetary/factsheet/jupiterfact.html\n[S2] NASA Science, Jupiter: Facts: https://science.nasa.gov/jupiter/jupiter-facts/\n[S3] NASA History, 30 Years Ago: Galileo Off to Orbit Jupiter: https://www.nasa.gov/history/30-years-ago-galileo-off-to-orbit-jupiter/\n[S5] NASA Goddard, Galileo Probe Entry Timeline: https://nssdc.gsfc.nasa.gov/planetary/galileo_probe_time.html\n[S6] Sci.News, Jovian Clouds Consist of Ammonium Hydrosulfide, Study Sug...: https://www.sci.news/space/jovian-clouds-ammonium-hydrosulfide-13575.html\n[S7] Bolton et al., Microwave observations reveal the deep extent and st...: https://weizmann.ac.il/EPS/kaspi/sites/EPS.kaspi/files/publications/Bolton-etal-2021_1.pdf\n[S8] Bjoraker et al., The Gas Composition and Deep Cloud Structure of Ju...: https://arxiv.org/abs/1808.01402\n[S9] NASA JPL, Shallow Lightning and Mushballs Reveal Ammonia to NASA's...: https://www.jpl.nasa.gov/news/shallow-lightning-and-mushballs-reveal-ammonia-to-nasas-juno-scientists/\n[S10] Smithsonian National Air and Space Museum, The Man Behind High-Spee...: https://airandspace.si.edu/stories/editorial/man-behind-high-speed-safety-standards\n[S11] Body Physics, Body Density from Hydrostatic Weighing: https://openoregon.pressbooks.pub/bodyphysics2ed/chapter/body-density-from-hydrostatic-weighing/\n[S12] Dewberry and Lai, Dynamical tides in Jupiter and the role of interi...: https://arxiv.org/abs/2301.02418\n[S13] NIST, Guide to the SI, Appendix B.9: https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b9\n[S14] NIST, CODATA fundamental physical constants: https://physics.nist.gov/cuu/Constants/\n[S15] Britannica, Ballistics: https://www.britannica.com/technology/ballistics\n\n🖼 Image credits\n• Jupiter texture: NASA/JPL/Space Science Institute, Cassini global map (PIA07782)\n• Great Red Spot: NASA/JPL-Caltech/SwRI/MSSS, enhanced by Gerald Eichstädt (PIA21773)\n• Jupiter clouds: NASA/JPL-Caltech/SwRI/MSSS, enhanced by Kevin M. Gill (PIA21984), CC BY\n• Galileo probe descent painting: NASA Ames Research Center (AC89-0146-2)\n• Moon maps: Io NASA/JPL/University of Arizona (PIA00585), Ganymede NASA/JPL/USGS (PIA03781); Milky Way: NASA/Goddard SVS Deep Star Maps 2020 with ESA/Gaia/DPAC data (CC BY-SA 3.0 IGO); stars: HYG v4.0 (CC BY-SA 4.0)\n• Clouds, lighting, music and sound effects: generated in code\n\nFurther reading\n[S4] https://www.jpl.nasa.gov/news/galileo-probe-suggests-planetary-science-reappraisal/\n\nAssumptions: you start at rest 1,000,000 km from Jupiter's centre; after the entry you ride an indestructible human-sized pod with the density of a human body. Upper atmosphere: ideal-gas dry adiabat (about); interior: index-1 polytrope (a simple model). Depths are measured below the 1-bar level. Layer boundaries in the cutaway are schematic.\n\nHow this was made: the narration is an AI voice (text-to-speech), the script and visuals are made with AI tools and code, and the music and sound effects are synthesised in code. Every number is computed in code from the sources above and fact-checked before upload.\n\nNext: How Long Could You Survive on Every Planet?\n\n#jupiter #space #whatif",
+  "tags": [
+    "what if you fell into jupiter",
+    "falling into jupiter",
+    "jupiter",
+    "inside jupiter",
+    "what is inside jupiter",
+    "jupiter no surface",
+    "jupiter layers",
+    "jupiter atmosphere",
+    "metallic hydrogen",
+    "galileo probe",
+    "great red spot",
+    "gas giant",
+    "what if",
+    "space documentary",
+    "planets",
+    "the if engine"
+  ],
+  "categoryId": "28",
+  "category": "Science & Technology",
+  "defaultLanguage": "en",
+  "defaultAudioLanguage": "en",
+  "playlist": "Fall Into…",
+  "shorts_playlist": "Shorts: 60-Second Ifs",
+  "madeForKids": false,
+  "containsSyntheticMedia": true,
+  "containsSyntheticMedia_rationale": "Computer-generated, semi-realistic 3D depictions of real planets (NASA maps) in an impossible scenario; disclosed to be safe.",
+  "chapters": [
+    {
+      "t": 0.0,
+      "label": "No Ground"
+    },
+    {
+      "t": 10.83,
+      "label": "The Long Drop"
+    },
+    {
+      "t": 78.78,
+      "label": "Entry"
+    },
+    {
+      "t": 142.91,
+      "label": "The White Ceiling"
+    },
+    {
+      "t": 200.24,
+      "label": "The Rust Layer"
+    },
+    {
+      "t": 227.91,
+      "label": "The Storm Floor"
+    },
+    {
+      "t": 278.43,
+      "label": "Room Temperature"
+    },
+    {
+      "t": 307.8,
+      "label": "The Last Signal"
+    },
+    {
+      "t": 337.43,
+      "label": "Black Heat"
+    },
+    {
+      "t": 377.28,
+      "label": "The Hydrogen Ocean"
+    },
+    {
+      "t": 427.58,
+      "label": "Suspended"
+    },
+    {
+      "t": 471.83,
+      "label": "No Floor at All"
+    }
+  ],
+  "license": "youtube",
+  "embeddable": true,
+  "human_review_required": true,
+  "shorts": [
+    {
+      "id": "short1",
+      "file": "shorts/fall-into-jupiter_short1.mp4",
+      "title": "You'd hit Jupiter at 210,000 km/h #Shorts",
+      "description": "Fall into Jupiter from far away and you hit the clouds at about 57 kilometers per second.\n\nFull video (every number computed in code, sources listed): {{LONG_URL}}\n\n#jupiter #space #whatif #Shorts",
+      "tags": [
+        "what if you fell into jupiter",
+        "falling into jupiter",
+        "jupiter",
+        "inside jupiter",
+        "what is inside jupiter",
+        "jupiter no surface",
+        "jupiter layers",
+        "jupiter atmosphere",
+        "metallic hydrogen",
+        "galileo probe",
+        "shorts"
+      ]
+    },
+    {
+      "id": "short2",
+      "file": "shorts/fall-into-jupiter_short2.mp4",
+      "title": "Jupiter has a room-temperature layer #Shorts",
+      "description": "Below Jupiter's cloud tops, there is a layer at room temperature.\n\nFull video (every number computed in code, sources listed): {{LONG_URL}}\n\n#jupiter #space #whatif #Shorts",
+      "tags": [
+        "what if you fell into jupiter",
+        "falling into jupiter",
+        "jupiter",
+        "inside jupiter",
+        "what is inside jupiter",
+        "jupiter no surface",
+        "jupiter layers",
+        "jupiter atmosphere",
+        "metallic hydrogen",
+        "galileo probe",
+        "shorts"
+      ]
+    },
+    {
+      "id": "short3",
+      "file": "shorts/fall-into-jupiter_short3.mp4",
+      "title": "Where you'd finally stop inside Jupiter #Shorts",
+      "description": "Jupiter has no surface. So if you fell in, where would you finally stop?\n\nFull video (every number computed in code, sources listed): {{LONG_URL}}\n\n#jupiter #space #whatif #Shorts",
+      "tags": [
+        "what if you fell into jupiter",
+        "falling into jupiter",
+        "jupiter",
+        "inside jupiter",
+        "what is inside jupiter",
+        "jupiter no surface",
+        "jupiter layers",
+        "jupiter atmosphere",
+        "metallic hydrogen",
+        "galileo probe",
+        "shorts"
+      ]
+    }
+  ]
+}

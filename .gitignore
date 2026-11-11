@@ -8,6 +8,7 @@ engine/remotion/out/
 engine/remotion/src/generated/
 engine/remotion/public/*/
 !engine/remotion/public/fonts/
+!engine/remotion/public/lib/
 __pycache__/
 *.pyc
 # credentials: never committed (engine/secrets keeps only README + .gitignore)
@@ -22,6 +23,7 @@ engine/videos/*/renders/
 engine/videos/*/build/
 engine/videos/*/shorts/*.mp4
 engine/videos/*/shorts/*.ass
+engine/videos/*/shorts/*/
 engine/videos/*/thumbnail.png
 engine/videos/*/thumbnail.jpg
 *.mp4
