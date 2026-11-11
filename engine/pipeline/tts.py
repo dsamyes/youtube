@@ -261,7 +261,7 @@ def pick(name: str | None, voice: str, speed: float):
     if name == "elevenlabs" and not os.environ.get("ELEVENLABS_API_KEY"):
         loud("TTS_PROVIDER=elevenlabs but ELEVENLABS_API_KEY is missing: FALLING BACK TO KOKORO")
         name = "kokoro"
-    order = [name] if name else ["elevenlabs", "kokoro", "piper", "silent"]
+    order = [name] if name else ["kokoro", "piper", "elevenlabs", "silent"]  # owner choice: free Kokoro first
     for p in order:
         if p == "elevenlabs" and os.environ.get("ELEVENLABS_API_KEY"):
             return ElevenLabs()

@@ -46,7 +46,7 @@ jobs:
     env:
       REMOTION_CHROME: bundled           # Remotion downloads its own headless shell (set a path to use another Chrome)
       REMOTION_GL: swangle               # 3D scenes: software WebGL (SwiftShader via ANGLE); runners have no GPU
-      TTS_PROVIDER: ${{ vars.TTS_PROVIDER || 'elevenlabs' }}
+      TTS_PROVIDER: ${{ vars.TTS_PROVIDER || 'kokoro' }}   # owner choice: free Kokoro voice
       ELEVENLABS_VOICE_ID: ${{ vars.ELEVENLABS_VOICE_ID }}   # optional overrides; empty -> defaults in pipeline/tts.py
       ELEVENLABS_MODEL: ${{ vars.ELEVENLABS_MODEL }}
       ELEVENLABS_SPEED: ${{ vars.ELEVENLABS_SPEED }}

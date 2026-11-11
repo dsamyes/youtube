@@ -48,7 +48,7 @@ Repo secrets:
 - `YOUTUBE_CLIENT_SECRET` and `YOUTUBE_TOKEN` (the JSON contents of `secrets/client_secret.json` and
   `secrets/token.json`, which `pipeline/get_token.py` produces);
 - `ELEVENLABS_API_KEY` (the `sk_...` key; without it the run falls back to Kokoro). Optional repo
-  variables: `TTS_PROVIDER` (default elevenlabs), `ELEVENLABS_VOICE_ID`, `ELEVENLABS_MODEL`,
+  variables: `TTS_PROVIDER` (default kokoro, the free voice), `ELEVENLABS_VOICE_ID`, `ELEVENLABS_MODEL`,
   `ELEVENLABS_SPEED`.
 
 `YOUTUBE_API_KEY` is not used. Until the Google API audit passes, YouTube forces API uploads to
