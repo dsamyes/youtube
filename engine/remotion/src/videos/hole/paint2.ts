@@ -57,47 +57,48 @@ export const pitHD = () => ctex("pitHD", 512, 1024, (g, r) => {
   g.fillStyle = sh; g.fillRect(0, 0, 512, 1024);
 });
 
-/** shaft wall mask, tileable 1024 x 1024 (data, NoColorSpace): r = strata value, g = dark cracks / gaps,
- *  b = bright veins and specks. The shaft shader colours it by depth and stretches it along the fall. */
+/** shaft wall mask, tileable 1024 x 1024 (data, NoColorSpace). The shader samples it twice:
+ *  layer A (strata, slow in v): r = band value, g = jagged dark seams between bands + a few buried boulders;
+ *  layer B (streaks, stretched along the fall): b = straight bright dashes and specks, also g for hairline cracks. */
 export const rockMask = () => {
-  const t = ctex("rockMask", 1024, 1024, (g, r) => {
+  const t = ctex("rockMask2", 1024, 1024, (g, r) => {
     const S = 1024;
-    g.fillStyle = "rgb(110,0,0)"; g.fillRect(0, 0, S, S);
+    g.fillStyle = "rgb(0,0,0)"; g.fillRect(0, 0, S, S);
     g.globalCompositeOperation = "lighter";
-    // strata: broad horizontal bands with wobbling edges (r)
-    for (let i = 0; i < 26; i++) {
-      const y = U(r, 0, S), h = U(r, 18, 70), v = Math.round(U(r, 20, 110));
-      g.fillStyle = `rgb(${v},0,0)`;
-      for (const oy of [-S, 0, S]) { g.beginPath(); g.moveTo(0, y + oy); for (let x = 0; x <= S; x += 64) g.lineTo(x, y + oy + 10 * Math.sin((x / S) * TAU * 2 + i)); for (let x = S; x >= 0; x -= 64) g.lineTo(x, y + oy + h + 8 * Math.sin((x / S) * TAU * 3 + i * 2)); g.closePath(); g.fill(); }
-    }
-    // embedded stones (r up) with a crack ring (g)
-    for (let i = 0; i < 70; i++) {
-      const x = U(r, 0, S), y = U(r, 0, S), a = U(r, 14, 46), b = a * U(r, 0.5, 0.9), rot = U(r, 0, 3);
-      for (const ox of [-S, 0, S]) for (const oy of [-S, 0, S]) {
-        g.fillStyle = "rgb(60,0,0)"; g.beginPath(); g.ellipse(x + ox, y + oy, a, b, rot, 0, TAU); g.fill();
-        g.strokeStyle = "rgb(0,150,0)"; g.lineWidth = 5; g.beginPath(); g.ellipse(x + ox, y + oy, a, b, rot, 0, TAU); g.stroke();
-      }
-    }
-    // long cracks (g)
-    g.lineCap = "round";
-    for (let i = 0; i < 26; i++) {
-      let x = U(r, 0, S), y = U(r, 0, S); const n = 5 + Math.floor(r() * 5);
-      g.strokeStyle = "rgb(0,200,0)"; g.lineWidth = U(r, 4, 9);
-      for (const ox of [-S, 0, S]) for (const oy of [-S, 0, S]) {
-        const rr = rng(i * 77 + 5); let xx = x + ox, yy = y + oy;
-        g.beginPath(); g.moveTo(xx, yy);
-        for (let k = 0; k < n; k++) { xx += (rr() - 0.5) * 70; yy += 30 + rr() * 60; g.lineTo(xx, yy); }
+    // strata: 9 bands with wobbling, stepped edges (tileable in x and y)
+    const edges: number[] = []; let y = 0;
+    while (y < S - 60) { edges.push(y); y += U(r, 70, 170); }
+    const wob = edges.map(() => [U(r, 0, TAU), U(r, 0, TAU), U(r, 8, 20), Math.floor(U(r, 2, 5))]);
+    const edgeY = (i: number, x: number) => { const w = wob[i % edges.length]; return edges[i % edges.length] + (i >= edges.length ? S : 0) + w[2] * Math.sin((x / S) * TAU * w[3] + w[0]) + 0.45 * w[2] * Math.sign(Math.sin((x / S) * TAU * (w[3] * 2 + 1) + w[1])); };
+    for (let i = 0; i < edges.length; i++) {
+      const v = Math.round(40 + 190 * ((i * 0.37 + r() * 0.3) % 1));
+      for (const oy of [-S, 0]) {
+        g.fillStyle = `rgb(${v},0,0)`; g.beginPath();
+        for (let x = 0; x <= S; x += 8) g.lineTo(x, edgeY(i, x) + oy + (i === 0 ? S : 0) * 0);
+        for (let x = S; x >= 0; x -= 8) g.lineTo(x, edgeY(i + 1, x) + oy);
+        g.closePath(); g.fill();
+        g.strokeStyle = "rgb(0,210,0)"; g.lineWidth = 7; g.beginPath();
+        for (let x = 0; x <= S; x += 8) { const yy = edgeY(i, x) + oy; if (x) g.lineTo(x, yy); else g.moveTo(x, yy); }
         g.stroke();
       }
-      x += 0; y += 0;
     }
-    // bright veins + specks (b)
-    for (let i = 0; i < 34; i++) {
-      const x = U(r, 0, S), y = U(r, 0, S), len = U(r, 60, 260), w = U(r, 3, 8);
-      g.strokeStyle = "rgb(0,0,230)"; g.lineWidth = w;
-      for (const ox of [-S, 0, S]) for (const oy of [-S, 0, S]) { g.beginPath(); g.moveTo(x + ox, y + oy); g.quadraticCurveTo(x + ox + 30, y + oy + len / 2, x + ox - 10, y + oy + len); g.stroke(); }
+    // buried boulders: angular, a little lighter, with a dark rim
+    for (let i = 0; i < 16; i++) {
+      const cx = U(r, 0, S), cy = U(r, 0, S), rad = U(r, 26, 60), n = 6 + Math.floor(r() * 3), pts: [number, number][] = [];
+      for (let k = 0; k < n; k++) { const a2 = (k / n) * TAU + U(r, -0.25, 0.25), rr = rad * U(r, 0.7, 1.1); pts.push([rr * Math.cos(a2), rr * 0.5 * Math.sin(a2)]); }
+      for (const ox of [-S, 0, S]) for (const oy of [-S, 0, S]) {
+        g.beginPath(); pts.forEach(([px, py], k) => (k ? g.lineTo(cx + ox + px, cy + oy + py) : g.moveTo(cx + ox + px, cy + oy + py))); g.closePath();
+        g.fillStyle = "rgb(45,0,0)"; g.fill(); g.strokeStyle = "rgb(0,170,0)"; g.lineWidth = 5; g.stroke();
+      }
     }
-    for (let i = 0; i < 220; i++) { g.fillStyle = "rgb(0,0,200)"; g.beginPath(); g.arc(U(r, 0, S), U(r, 0, S), U(r, 2, 6), 0, TAU); g.fill(); }
+    // layer B: straight bright dashes + specks (b), hairline cracks (g, thin)
+    g.lineCap = "round";
+    for (let i = 0; i < 150; i++) {
+      const x = U(r, 0, S), y0 = U(r, 0, S), len = U(r, 30, 260), w = r() < 0.15 ? U(r, 14, 30) : U(r, 3, 8), v = Math.round(w > 12 ? U(r, 60, 110) : U(r, 150, 255));
+      g.strokeStyle = `rgb(0,0,${v})`; g.lineWidth = w;
+      for (const oy of [-S, 0, S]) { g.beginPath(); g.moveTo(x, y0 + oy); g.lineTo(x, y0 + oy + len); g.stroke(); }
+    }
+    for (let i = 0; i < 260; i++) { g.fillStyle = "rgb(0,0,210)"; g.beginPath(); g.arc(U(r, 0, S), U(r, 0, S), U(r, 2, 5), 0, TAU); g.fill(); }
     g.globalCompositeOperation = "source-over";
   });
   t.colorSpace = THREE.NoColorSpace; t.anisotropy = 4; t.needsUpdate = true;
