@@ -8,7 +8,7 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { staticFile } from "remotion";
 import { V, Kit, Ray } from "./build";
 import { ctex, cloudHD } from "./paint";
-import { starsHD, moonTex } from "./paint2";
+import { moonTex } from "./paint2";
 import { LIGHTS, LOOK, LightPreset, LightName } from "./lights";
 import { TONE, CHAR, untone } from "./shade";
 import { CARD_K } from "./cardshade";
@@ -53,7 +53,7 @@ const SUN_SHOT: Record<number, { az?: number; el?: number; abs?: [number, number
   15: { az: -30, el: 18 },             // park: ringed by trees and houses (template)
   4: { az: 118 }, 5: { az: 105 }, 6: { az: 110 }, 13: { az: 112 }, // character shots: the sun over the lens's right shoulder (front-lit sets)
   20: { az: -84, el: 19 }, 21: { az: -84, el: 19 }, // evening garden: low sun from the open west side (screen left)
-  3: { abs: [-0.5, 0.48, 0.72] }, 10: { abs: [-0.5, 0.48, 0.72] }, 14: { abs: [-0.5, 0.48, 0.72] },
+  3: { abs: [0.62, 0.45, 0.64] }, 10: { abs: [0.62, 0.45, 0.64] }, 14: { abs: [0.62, 0.45, 0.64] }, // space: the sun lights the surface crescent
   16: { az: -55, el: 38 }, 17: { az: -55, el: 38 }, 18: { az: -55, el: 38 },
 };
 for (const id of [1, 7, 8, 9, 11, 12, 19]) SUN_SHOT[id] = { abs: [0.12, -1, 0.2] }; // shaft: the glow below is the key
@@ -96,7 +96,6 @@ export class World {
   private swing: Actor;
   private hemi: THREE.HemisphereLight; private sun: THREE.DirectionalLight;
   private sky: THREE.Mesh; private skyMat: THREE.ShaderMaterial;
-  private stars: THREE.Mesh;
   private fog = new THREE.Fog("#bccbec", 25, 420);
   private sunDisc: THREE.Sprite; private sunHalo: THREE.Sprite;
   private sunCache = new Map<number, THREE.Vector3>();
@@ -113,23 +112,28 @@ export class World {
     // sky: 5 colour stops by elevation, written as tone-map-inverted linear values
     this.skyMat = new THREE.ShaderMaterial({
       uniforms: { c0: { value: new THREE.Color() }, c1: { value: new THREE.Color() }, c2: { value: new THREE.Color() },
-        c3: { value: new THREE.Color() }, c4: { value: new THREE.Color() }, e: { value: new THREE.Vector4() } },
+        c3: { value: new THREE.Color() }, c4: { value: new THREE.Color() }, e: { value: new THREE.Vector4() }, uStar: { value: 0 } },
       vertexShader: "varying vec3 vP; void main(){ vP = normalize(position); gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }",
-      fragmentShader: `uniform vec3 c0, c1, c2, c3, c4; uniform vec4 e; varying vec3 vP;
-        void main(){ float el = asin(clamp(normalize(vP).y, -1.0, 1.0));
+      fragmentShader: `uniform vec3 c0, c1, c2, c3, c4; uniform vec4 e; uniform float uStar; varying vec3 vP;
+        float h21(vec2 p){ return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }
+        void main(){ vec3 d = normalize(vP); float el = asin(clamp(d.y, -1.0, 1.0));
           vec3 c = mix(c0, c1, smoothstep(0.0, e.x, el));
           c = mix(c, c2, smoothstep(e.x, e.y, el));
           c = mix(c, c3, smoothstep(e.y, e.z, el));
           c = mix(c, c4, smoothstep(e.z, e.w, el));
+          if (uStar > 0.0) {   // painted star dots: one per sky cell, fixed in the world, the same at every output size
+            vec2 uv = vec2(atan(d.z, d.x), el) * 27.0, id = floor(uv), fr = fract(uv) - 0.5;
+            vec2 off = (vec2(h21(id + 1.3), h21(id + 2.7)) - 0.5) * 0.7;
+            float sz = mix(0.03, 0.075, h21(id + 5.1));
+            float star = (1.0 - smoothstep(sz * 0.6, sz, length(fr - off))) * step(0.66, h21(id));
+            c += vec3(0.86, 0.92, 1.0) * star * uStar * (0.45 + 0.55 * h21(id + 9.9));
+          }
           gl_FragColor = vec4(c, 1.0); }`,
       side: THREE.BackSide, depthWrite: false, fog: false,
     });
     this.sky = new THREE.Mesh(new THREE.SphereGeometry(1100, 48, 24), this.skyMat);
     this.sky.renderOrder = -1; this.sky.frustumCulled = false; this.sky.layers.set(NOINK);
-    this.stars = new THREE.Mesh(new THREE.SphereGeometry(1000, 48, 24), new THREE.MeshBasicMaterial({ map: starsHD(), side: THREE.BackSide, depthWrite: false, fog: false,
-      transparent: true, blending: THREE.AdditiveBlending }));
-    this.stars.renderOrder = -0.9; this.stars.frustumCulled = false; this.stars.layers.set(NOINK);
-    R.add(this.sky, this.stars);
+    R.add(this.sky);
     this.discMap = discTex(); this.moonMap = moonTex();
     this.sunDisc = new THREE.Sprite(new THREE.SpriteMaterial({ map: this.discMap, color: new THREE.Color(6.0, 4.4, 2.4), fog: false, depthWrite: false, transparent: true }));
     this.sunHalo = new THREE.Sprite(new THREE.SpriteMaterial({ map: haloTex(), color: new THREE.Color(1, 1, 1), fog: false, depthWrite: false, depthTest: true,
@@ -222,11 +226,9 @@ export class World {
     K.sky.c.forEach((hx, i) => untone(hx, su["c" + i].value));
     const e = K.sky.e.map((deg) => THREE.MathUtils.degToRad(deg));
     su.e.value.set(e[1], e[2], e[3], e[4]);
-    this.sky.position.copy(cam.position); this.stars.position.copy(cam.position);
+    this.sky.position.copy(cam.position);
     this.sky.visible = s.place !== "shaft";
-    this.stars.visible = s.light === "night" || s.light === "space";
-    (this.stars.material as THREE.MeshBasicMaterial).color.setScalar(s.light === "space" ? 1.15 : 0.9);
-    this.stars.rotation.set(0.3, s.light === "space" ? 1.1 : 2.2, 0);
+    su.uStar.value = s.light === "space" ? 1.0 : s.light === "night" ? 0.8 : 0;
     untone(L.fog, this.fog.color); this.fog.near = L.fogNear; this.fog.far = L.fogFar;
     scene.fog = this.fog; scene.background = null;
     const golden = s.light === "golden", night = s.light === "night";

@@ -222,7 +222,7 @@ export const figure = (p: Pen, lk: Look, o: Pose): Anchors => {
     let pa: P2 = Hd;
     if (A.a.prop) pa = drawProp(p, A.a.prop, hx, hy, A.side, u, A.a.arg ?? 0);
     p.dot(hx, hy, 5.5 * u);
-    if (A.a.hand === "thumb") { p.stroke([[hx - A.side * 1 * u, hy - 3 * u], [hx - A.side * 2.5 * u, hy - 12 * u]], 5 * u); p.dot(hx, hy, 6.5 * u); }
+    if (A.a.hand === "thumb") { p.stroke([[hx - A.side * 1 * u, hy - 4 * u], [hx - A.side * 3 * u, hy - 17 * u]], 7 * u); p.dot(hx, hy, 8.5 * u); }
     if (A.a.hand === "point") { const dx = Hd[0] - E[0], dy = Hd[1] - E[1], L = Math.hypot(dx, dy) || 1; p.stroke([Hd, [hx + (dx / L) * 12 * u, hy + (dy / L) * 12 * u]], 3.6 * u); }
     anchors[key] = p.P(hx, hy);
     anchors[key === "L" ? "propL" : "propR"] = p.P(pa[0], pa[1]);

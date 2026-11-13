@@ -105,10 +105,10 @@ export const gardenGusY = (f: number) =>
 
 // ---------------- the ocean (water y = 0, pipe at the origin) ----------------
 export const PIPE_H = 0.95;                 // rim height over the water
-export const BOAT: V3 = [2.05, 0, 0.55];    // rowboat centre
-export const FISHER: V3 = [2.2, 0.2, 0.55]; // fisherman's seat (card base)
+export const BOAT: V3 = [1.45, 0, 0.35];    // rowboat centre (bow toward the lens)
+export const FISHER: V3 = [1.45, 0.06, 0.3];  // fisherman's seat (card base)
 export const POP_SEA = 1342, STOP_SEA = 1442, SINK_SEA = 1560, GONE_SEA = 1598;
-export const SEA_TOP = 0.82;                // soles over the rim when he hangs
+export const SEA_TOP = 0.5;                 // soles over the rim when he hangs
 /** height of Gus's soles over the WATER (shots 16-18) */
 export const seaGusY = (f: number) => {
   if (f < SINK_SEA) { const u = clamp01((f - (POP_SEA - 1)) / (STOP_SEA - POP_SEA + 1)); return PIPE_H - 1.78 + (1.78 + SEA_TOP) * (1 - (1 - u) ** 3); }
@@ -127,12 +127,12 @@ export const swingTheta = (f: number) => {
   return 2.5 * Math.PI + r0 * t - (r0 * t * t) / (2 * 43);
 };
 /** amplitude in degrees: grows with each push */
-export const swingAmp = (f: number) => 15 + 15 * smooth((f - PUSHES[0]) / 9) + 13 * smooth((f - PUSHES[1]) / 9);
+export const swingAmp = (f: number) => 13 + 13 * smooth((f - PUSHES[0]) / 9) + 11 * smooth((f - PUSHES[1]) / 9);
 export const swingAngle = (f: number) => -((swingAmp(f) * Math.PI) / 180) * Math.cos(swingTheta(f));
 
 // ---------------- the Earth cutaway (globe radius EARTH_R at the origin, cut face toward the camera) ----------------
 export const EARTH_R = 5;
-export const EARTH_YAW = -0.42, EARTH_ROLL = 0.16; // the cut face is turned so a crescent of the surface shows
+export const EARTH_YAW = -0.6, EARTH_ROLL = 0.16; // the cut face is turned so a crescent of the surface shows
 export const LAYERS = { crust: 0.965, mantle: 0.55, outer: 0.2 }; // outer radius of mantle / outer core / inner core (x EARTH_R)
 /** world position of the tunnel point s (-1 = the garden, 0 = the centre, +1 = the far side), `lift` m off the cut face */
 export const earthPoint = (s: number, lift = 0, side = 0): V3 => {
@@ -224,11 +224,12 @@ const S1a = (f: number) => dolly([1.0, 0.75, 3.05], [0, 0.12, 0], pushK(f, 0, 0.
 const S1b = (f: number) => dolly([-0.75, 0.55, 2.55], [0, 0.2, 0], pushK(f, 40, 0.002), { fov: 46, roll: 0.06 });
 const S1c = (f: number): Shot => ({ pos: [0.5, 1.9, 1.35], look: [0.05, -40, -0.1], fov: 56 - 0.05 * Math.max(0, f - 96), roll: 0.02 });
 // ---- shot 2: over the west fence into the garden, then the hero framing: hole in front, Gus, the mound behind ----
-const G2L: V3 = [-0.62, 0.74, -0.55];
+const G2L: V3 = [-0.42, 0.74, -0.55];
 const S2a = (f: number) => zoom([-9.3, 2.75, 5.4], [-0.6, 0.95, -0.7], 46, pushK(f, 118, 0.0015));
 const S2b = (f: number) => dolly([1.0, 2.15, 5.5], G2L, pushK(f, 150, 0.001, 0.004, 26, 176), { fov: 42 });
 // ---- shot 3: the Earth cutaway ----
 const S3a = (f: number) => dolly([0.6, 0.8, 36.5], [0, -0.15, 0], pushK(f, 229, 0.0022), { fov: 31, roll: -0.03 });
+const S3b = (f: number) => dolly([0.9, -3.2, 27], [0.75, -3.4, 0], pushK(f, 240, 0.002), { fov: 31, roll: 0.02 }); // down to the far side for the flag
 // ---- shot 4: the neighbor over the fence ----
 const N_EYE: V3 = [NEIGH[0], NEIGH[1] + 1.42, NEIGH[2]];
 const S4a = (f: number) => dolly([-0.1, 1.82, -1.1], add(N_EYE, [0.1, 0.02, 0]), pushK(f, 264, 0.0022, 0.006, 26, 281), { fov: 40, roll: 0.035 });
@@ -238,12 +239,12 @@ const S5b = (f: number) => dolly([0.6, 1.42, 4.05], [1.6, 0.7, 0.8], pushK(f, 34
 // ---- shot 6: the clipboard, the salute, the hop; the lens tilts down into the hole after him ----
 const S6a = (f: number) => dolly([0.2, 1.45, 2.75], [-0.74, 1.14, -0.5], pushK(f, 393, 0.002), { fov: 38 });
 const S6b = (f: number): Shot => { // rides up with the hop, then tips into the hole after him
-  const h = hopAt(f), k = smooth((f - 434) / 9), ly = lerp(Math.max(0.2, h.y + 0.95), -0.3, k);
+  const h = hopAt(f), k = smooth((f - 436) / 10), ly = lerp(Math.max(0.2, h.y + 0.95), -0.3, k);
   return dolly([0.6, 2.55, 3.0], [lerp(h.x, 0, k) * 0.7, ly, lerp(h.z, 0.05, k)], pushK(f, 426, 0.002), { fov: 44, roll: 0.04 });
 };
 // ---- shot 7: crust, the feather ----
 const S7a = (f: number) => dolly([0.55, 0.42, 2.95], [0.18, 0.1, 0], pushK(f, 448, 0.0016), { fov: 46, roll: 0.05 });
-const S7b = (f: number) => dolly([0.75, 0.38, 2.3], [0.34, 0.3, 0], pushK(f, 496, 0.0016), { fov: 42, roll: 0.02 });
+const S7b = (f: number) => dolly([0.42, 0.62, 2.95], [0.2, 0.45, 0], pushK(f, 496, 0.0014), { fov: 44, roll: 0.02 });
 // ---- shot 8: the bullet ----
 const S8a = (f: number) => dolly([-0.5, 0.2, 3.0], [0.3, 0.12, 0], pushK(f, 537, 0.0018), { fov: 46, roll: -0.05 });
 // ---- shot 9: mantle ----
@@ -258,18 +259,18 @@ const S12b = (f: number) => dolly([0.0, 0.4, 2.2], [-0.02, 0.32, 0], pushK(f, 82
 // ---- shot 13: listening over the hole ----
 const S13a = (f: number) => dolly([0.08, 0.72, 5.5], [0, 0.98, -0.1], pushK(f, 861, 0.0016, 0.004, 20, 893), { fov: 44 });
 // ---- shot 14: the explanation ----
-const S14a = (f: number) => dolly([0.4, 0.5, 37.5], [0, -0.1, 0], pushK(f, 911, 0.0011), { fov: 31, roll: -0.02 });
+const S14a = (f: number) => dolly([0.4, 0.5, 36], [0.15, -0.1, 0], pushK(f, 911, 0.0014), { fov: 31, roll: -0.02 });
 // ---- shot 15: the park swing (the template's two framings) ----
-const S15a = (f: number) => dolly([PARK[0] + 0.55, 1.5, PARK[2] - 8], [PARK[0] + 0.55, 1.75, PARK[2]], pushK(f, 1119, 0.001), { fov: 40 });
-const S15b = (f: number) => dolly([PARK[0] - 1.6, 1.9, PARK[2] - 9.5], [PARK[0] + 0.4, 1.95, PARK[2]], pushK(f, 1186, 0.0012), { fov: 42 });
+const S15a = (f: number) => dolly([PARK[0] + 0.1, 1.5, PARK[2] - 8.8], [PARK[0] + 0.0, 1.75, PARK[2]], pushK(f, 1119, 0.001), { fov: 40 });
+const S15b = (f: number) => dolly([PARK[0] - 1.3, 1.9, PARK[2] - 10.4], [PARK[0] - 0.1, 1.95, PARK[2]], pushK(f, 1186, 0.0009, 0.004, 28, 1236), { fov: 42 });
 // ---- shot 16: night ocean; the lens tilts up with Gus as he rises ----
-const seaLook = (f: number): V3 => { const y = seaGusY(Math.min(f, STOP_SEA)); return [0.85, Math.max(1.05, 0.7 + 0.62 * (y + 0.9)), 0.2]; };
-const S16a = (f: number) => dolly([-0.9, 1.25, 8.6], [1.0, 1.15, 0.2], pushK(f, 1264, 0.0012), { fov: 42 });
-const S16b = (f: number) => dolly([-0.6, 1.2, 7.4], seaLook(f), pushK(f, 1342, 0.0009), { fov: 44, roll: -0.03 });
+const seaLook = (f: number): V3 => { const y = seaGusY(Math.min(f, STOP_SEA)); return [0.7, 1.35 + 0.4 * smooth((y - PIPE_H + 1.2) / (SEA_TOP + 1.2)), 0.2]; };
+const S16a = (f: number) => dolly([0.3, 1.35, 8.7], [0.72, 1.35, 0.2], pushK(f, 1264, 0.0011), { fov: 42 });
+const S16b = (f: number) => dolly([0.3, 1.3, 7.7], seaLook(f), pushK(f, 1342, 0.0006), { fov: 44, roll: -0.03 });
 // ---- shots 17-18: the two-shot (one camera, closer on "Unluckily") ----
-const TWO: V3 = [1.0, 2.05, 0.25];
-const S17a = (f: number) => dolly([0.1, 1.75, 5.9], TWO, pushK(f, 1465, 0.0016), { fov: 38, roll: 0.03 });
-const S18a = (f: number) => dolly([0.5, 1.7, 5.3], [TWO[0], TWO[1] - 0.12, TWO[2]], pushK(f, 1532, 0.0014), { fov: 38, roll: -0.035 });
+const TWO: V3 = [0.76, 1.92, 0.2];
+const S17a = (f: number) => dolly([0.55, 1.98, 6.25], TWO, pushK(f, 1465, 0.0006), { fov: 42, roll: 0.03 });
+const S18a = (f: number) => dolly([0.95, 1.72, 5.95], [0.8, 1.72, 0.2], pushK(f, 1532, 0.0005), { fov: 42, roll: -0.035 });
 // ---- shot 19: the way back (mirrored framing) ----
 const S19a = (f: number) => dolly([-0.6, 0.5, 2.9], [-0.1, 0.1, 0], pushK(f, 1614, 0.0016), { fov: 46, roll: -0.06 });
 // ---- shots 20-21: the evening garden ----
@@ -288,7 +289,7 @@ const CAMS: Record<number, Key[]> = {
     { f: 118, s: S2a },
     { f: 130, dur: 40, s: S2b },  // crane over the fence, centred on 150
   ],
-  3: [{ f: 229, s: S3a }],
+  3: [{ f: 229, s: S3a }, { f: 234, dur: 18, s: S3b }], // centred on 243, lands as the flag pops
   4: [{ f: 264, s: S4a }],
   5: [
     { f: 319, s: S5a },
@@ -389,6 +390,5 @@ export const dofAt = (f: number) => {
 /** near framing objects: visible while a <= f < b; kit = a name accepted by build.ts kitClone() */
 export type Fg = { a: number; b: number; kit: string; pos: V3; s?: number; yaw?: number };
 export const FOREGROUND: Fg[] = [
-  // park swing (focus 7-9.5 m): a bush in the bottom-right corner, below the kid's arc (the template's placement)
-  { a: 1119, b: 1268, kit: "plant_bushDetailed", pos: [PARK[0] - 0.35, 0, PARK[2] - 4.4], s: 1.2, yaw: 0.4 },
+  // (none: the park bush of the template sat in the middle of this short's wider swing framing)
 ];

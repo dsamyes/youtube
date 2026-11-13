@@ -245,8 +245,8 @@ const shaft = (c: Ctx) => {
     const g = put(c, GUS, pose, drift, { face: true, roll: 0.1 * Math.sin(f * 0.05) + 0.06 });
     if (f >= 496) {
       const hp = g.at(g.A.head), k = 1 - feather;
-      fx(c, "feather", 220, 420, fxFeather, [hp[0] + 0.72 + 1.3 * k, hp[1] + 0.08 + 1.5 * k * k, hp[2] + 0.05], 0.2, 0.38, { rot: -0.35 });
-      if (f >= 513 && f < 523) { const u = (f - 513) / 10; fx(c, "sparkle", 200, 200, fxSparkle, [hp[0] + 0.93, hp[1] + 0.3, hp[2] + 0.06], 0.16 * Math.sin(Math.PI * u), 0.16 * Math.sin(Math.PI * u), { rot: u }); }
+      fx(c, "feather", 220, 420, fxFeather, [hp[0] + 0.6 + 1.3 * k, hp[1] + 0.06 + 1.5 * k * k, hp[2] + 0.05], 0.22, 0.42, { rot: -0.35 });
+      if (f >= 513 && f < 523) { const u = (f - 513) / 10; fx(c, "sparkle", 200, 200, fxSparkle, [hp[0] + 0.8, hp[1] + 0.3, hp[2] + 0.06], 0.16 * Math.sin(Math.PI * u), 0.16 * Math.sin(Math.PI * u), { rot: u }); }
     }
     speedLines(c, 8, 0.9);
   } else if (id === 8) {
@@ -255,7 +255,7 @@ const shaft = (c: Ctx) => {
       flap: (f * 0.15) % 1 };
     if (wave) pose.R = { h: [0.6 + 0.1 * Math.sin((f - 578) * 1.1), -0.62], bend: -0.25 };
     put(c, GUS, pose, drift, { face: true, roll: -0.05 });
-    fx(c, "bullet", 160, 320, fxBullet, [0.92, by, 0.05], 0.17, 0.34);
+    fx(c, "bullet", 160, 320, fxBullet, [0.74, by, 0.05], 0.25, 0.5);
     speedLines(c, 9, 1.0);
   } else if (id === 9) {
     const fl = (f * 0.31) % 1, sh = 0.012 * Math.sin(f * 2.3);
@@ -273,7 +273,7 @@ const shaft = (c: Ctx) => {
     const lower = sm(f, 812, 826), calm = f >= 822, thumb = sm(f, 831, 836);
     const R: Arm = armMix({ h: [0.86, -0.3], bend: 0.1, front: true, prop: "thermo", arg: lvl }, { h: [0.42, 0.75], bend: 0.1, front: true, prop: "thermo", arg: lvl }, lower);
     const pose: Pose = { mode: "air", expr: f >= 801 && f < 809 ? "shock" : calm ? "smile_closed" : "neutral", facing: calm ? 0 : 1, look: calm ? 0 : 1, blink: lidAt(f, 3, [801, 822]),
-      R: { ...R, prop: "thermo", arg: lvl, front: true }, L: f >= 831 ? armMix(HANG, { h: [0.62, -0.08], bend: -0.25, front: true, hand: "thumb" }, thumb) : { h: [0.3, 0.8], bend: 0.1 },
+      R: { ...R, prop: "thermo", arg: lvl, front: true }, L: f >= 831 ? armMix(HANG, { h: [0.36, 0.12], bend: -0.3, front: true, hand: "thumb" }, thumb) : { h: [0.3, 0.8], bend: 0.1 },
       legs: [[-0.3, 1.2], [0.36, 1.16]], flap: (f * 0.17) % 1 };
     if (f >= 831) pose.L = { ...pose.L!, hand: "thumb", front: true };
     const g = put(c, GUS, pose, drift, { face: true, roll: 0.03 });
@@ -316,7 +316,7 @@ const NEIGH_BASE: Pose = { mode: "stand" };
 const neighbor = (c: Ctx, pose: Pose, pos: V3 = NEIGH, o: PutOpt = {}) => put(c, NEIGHBOR, { ...NEIGH_BASE, ...pose }, pos, { noBlob: pos === NEIGH, ...o });
 const sausageFire = (c: Ctx, at: V3, f: number, f0: number, f1: number) => {
   // poof on f0, burns, dies by f1
-  if (f < f0 || f >= f1 + 3) return;
+  if (f < f0 || (f1 > 0 && f >= f1 + 3)) return;
   const grow = clamp01((f - f0 + 1) / 4), die = f1 > 0 ? 1 - clamp01((f - (f1 - 3)) / 6) : 1, k = Math.max(0.05, grow * die), t = q(((f * 0.19) % 1), 24);
   fx(c, `flame${t}|${q(k, 20)}`, 300, 420, (p) => fxFlame(p, t, q(k, 20)), [at[0], at[1] + 0.2 * k + 0.02, at[2]], 0.34, 0.48, { gain: 1.5 });
   if (f < f0 + 6) { const u = (f - f0) / 6; fx(c, `poof${q(u, 30)}`, 500, 500, (p) => fxBurst(p, q(u, 30), "#ffb52e", 10, 34, 220), [at[0], at[1] + 0.05, at[2]], 0.85, 0.85, { gain: 1.4 }); }
@@ -358,7 +358,7 @@ const garden = (c: Ctx) => {
     if (f < 337) fx(c, "cake0.2", 300, 300, (p) => fxPancake(p, 0.2), [pan[0], pan[1] + 0.02, pan[2]], 0.34, 0.34);
     else if (!landed) {
       const u = (f - 337) / 14, p0: V3 = [pan[0], WIFE5[1] + 0.86, pan[2]];
-      const pos: V3 = [lerp(p0[0], PANCAKE_AT[0], u), lerp(p0[1], 0.05, u) + 1.75 * 4 * u * (1 - u), lerp(p0[2], PANCAKE_AT[2], u)];
+      const pos: V3 = [lerp(p0[0], PANCAKE_AT[0], u), lerp(p0[1], 0.05, u) + 1.05 * 4 * u * (1 - u), lerp(p0[2], PANCAKE_AT[2], u)];
       const sq = q(Math.cos(u * Math.PI * 3), 20);
       fx(c, `cake${sq}`, 300, 300, (p) => fxPancake(p, sq), pos, 0.36, 0.36, { rot: 0.3 * Math.sin(u * 5) });
     } else {
@@ -421,17 +421,20 @@ const garden = (c: Ctx) => {
       const seen = f >= POP2 + 3, jaw = f >= DROP2 + 5, fire = f >= 1905;
       const pose: Pose = { expr: jaw ? "jawdrop" : seen ? "shock" : "neutral", facing: -1, look: -1, blink: jaw || seen ? 0 : lidAt(f, 13), headTilt: jaw ? 3 : 0,
         L: { h: [0.45, 0.4], bend: 0.25, front: true }, R: { h: [0.5, jaw ? 0.02 : -0.12], bend: -0.3, front: true, prop: "fork", arg: fire ? 1 : 0 } };
-      const g = neighbor(c, pose);
-      sausageFire(c, g.at(g.A.propR, 0.04), f, 1905, 0);
+      // he comes up behind his fence while Gus drops away (the lens is on its way over to him from f1880)
+      if (f >= 1870) {
+        const g = neighbor(c, pose, [NEIGH[0], NEIGH[1] - 0.9 * (1 - sm(f, 1870, 1880)), NEIGH[2]], { noBlob: true });
+        sausageFire(c, g.at(g.A.propR, 0.04), f, 1905, 0);
+      }
     }
   }
 };
 
 // ---------------- the Earth cutaway ----------------
 const mini = (c: Ctx, s: number, size: number, arms: number, expr: "o" | "smile" | "flat", trail: number, dirDown: boolean) => {
-  const p = earthPoint(s, 0.34), rot = EARTH_ROLL + (dirDown ? 0 : 0);
+  const p = earthPoint(s, 0.8), rot = EARTH_ROLL + (dirDown ? 0 : 0);
   if (trail > 0.05) {
-    const t = earthPoint(s + (dirDown ? -1 : 1) * (0.09 + 0.1 * trail) * (size / 1.0), 0.3);
+    const t = earthPoint(s + (dirDown ? -1 : 1) * (0.09 + 0.1 * trail) * (size / 1.0), 0.76);
     fx(c, `trail${q(trail, 10)}`, 200, 400, (pp) => fxTrail(pp, q(trail, 10)), t, 0.5 * size, 1.0 * size * (0.5 + 0.5 * trail), { rot: rot + (dirDown ? 0 : Math.PI), soft: false });
   }
   fx(c, `mini|${arms}|${expr}`, 300, 400, (pp) => miniGus(pp, arms, expr), p, 0.82 * size, 1.09 * size, { rot });
@@ -441,29 +444,29 @@ const earth = (c: Ctx) => {
   if (id === 3) {
     if (f >= FLAG_POP - 1) {
       const u = (f - (FLAG_POP - 1)) / 6, s = u < 1 ? 1.3 * Math.sin((Math.PI / 2) * u) : 1 + 0.3 * Math.exp(-(u - 1) * 0.9) * Math.cos((u - 1) * 1.9);
-      const base = earthPoint(1.0, 0.1), tip = earthPoint(1.0 + 0.13 * s, 0.1);
+      const base = earthPoint(1.0, 0.25), tip = earthPoint(1.0 + 0.28 * s, 0.25);
       const w = q(((f * 0.07) % 1), 16);
-      fx(c, `flag${w}`, 300, 400, (p) => fxFlag(p, w), [(base[0] + tip[0]) / 2 + (tip[0] - base[0]) * 0.5, (base[1] + tip[1]) / 2 + (tip[1] - base[1]) * 0.5, base[2]], 1.0 * s, 1.33 * s, { rot: Math.PI + EARTH_ROLL });
-      if (u < 1) fx(c, `popE${q(u, 20)}`, 500, 500, (p) => fxBurst(p, q(u, 20), "#fff6d8", 9, 50, 230), earthPoint(1.02, 0.2), 2.2, 2.2);
+      fx(c, `flag${w}`, 300, 400, (p) => fxFlag(p, w), [(base[0] + tip[0]) / 2 + (tip[0] - base[0]) * 0.5, (base[1] + tip[1]) / 2 + (tip[1] - base[1]) * 0.5, base[2]], 2.1 * s, 2.8 * s, { rot: Math.PI + EARTH_ROLL });
+      if (u < 1) fx(c, `popE${q(u, 20)}`, 500, 500, (p) => fxBurst(p, q(u, 20), "#fff6d8", 9, 50, 230), earthPoint(1.02, 0.5), 2.6, 2.6);
     }
   } else if (id === 10) {
     const s = earthGusS(id, f);
-    mini(c, s, 1.15, 1, "o", 1, true);
-    if (Math.abs(s) < 0.1) { const u = clamp01((s + 0.1) / 0.2); fx(c, `coreFlash${q(u, 12)}`, 500, 500, (p) => fxBurst(p, q(u, 12), "#ffffff", 12, 60, 240), earthPoint(0, 0.2), 3.2, 3.2, { gain: 1.6 }); }
+    mini(c, s, 1.7, 1, "o", 1, true);
+    if (Math.abs(s) < 0.1) { const u = clamp01((s + 0.1) / 0.2); fx(c, `coreFlash${q(u, 12)}`, 500, 500, (p) => fxBurst(p, q(u, 12), "#ffffff", 12, 60, 240), earthPoint(0, 0.7), 3.2, 3.2, { gain: 1.6 }); }
   } else if (id === 14) {
     const s = earthGusS(id, f), speed = Math.sqrt(Math.max(0, 1 - (s / 0.93) ** 2));
-    mini(c, s, 1.0, s < 0.6 ? 1 : 0, f > 1080 ? "smile" : "o", speed * 0.9, true);
+    mini(c, s, 1.9, s < 0.6 ? 1 : 0, f > 1080 ? "smile" : "o", speed * 0.9, true);
     if (f >= ARROW_POP - 1) {
       const u = (f - (ARROW_POP - 1)) / 6, pop = u < 1 ? 1.25 * Math.sin((Math.PI / 2) * u) : 1 + 0.25 * Math.exp(-(u - 1) * 1.0) * Math.cos((u - 1) * 2.0);
       const flip = clamp01((f - (PASS - 3)) / 6), dir = flip < 0.5 ? 1 : -1, sq = Math.abs(Math.cos(Math.PI * flip)); // squash through zero as it flips
       const kick = f >= PASS && f < PASS + 8 ? 1 + 0.25 * Math.sin(Math.PI * (f - PASS) / 8) : 1;
-      const size = (0.62 + 0.55 * Math.abs(s)) * pop * kick, len = 1.75 * size * Math.max(0.08, sq);
+      const size = (0.75 + 0.6 * Math.abs(s)) * pop * kick, len = 1.75 * size * Math.max(0.08, sq);
       // the arrow sits beside the tunnel, between Gus and the centre, always pointing AT the centre
-      const mid = s * 0.5, p = earthPoint(mid + (s < 0 ? 0.0 : 0.0), 0.4, 1.25);
+      const mid = s * 0.5, p = earthPoint(mid, 0.85, 1.75);
       fx(c, "arrow", 300, 520, (pp) => fxArrow(pp), p, 1.0 * size, len, { rot: EARTH_ROLL + (dir > 0 ? 0 : Math.PI) });
       // the middle: a pulsing ring that the arrow points at
       const r = q(((f * 0.035) % 1), 30);
-      fx(c, `ring${r}`, 600, 600, (pp) => fxRing(pp, r), earthPoint(0, 0.25), 1.7, 1.7);
+      fx(c, `ring${r}`, 600, 600, (pp) => fxRing(pp, r), earthPoint(0, 0.6), 1.7, 1.7);
     }
   }
 };

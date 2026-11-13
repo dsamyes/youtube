@@ -82,7 +82,7 @@ export class Shaft {
     // rock ledges: arcs of a squashed ring hugging the wall, on the far side from the cameras (which sit at +z)
     this.ledgeMat = lam("shaftLedge", () => ({ color: "#8a6243", side: THREE.DoubleSide }));
     for (let i = 0; i < LEDGES; i++) {
-      const start = Math.PI * (0.83 + 0.8 * hash(i, 3)), arc = Math.min(0.9 + 1.2 * hash(i, 1), Math.PI * 2.14 - start), th = 0.34 + 0.3 * hash(i, 2);
+      const start = Math.PI * (0.83 + 0.8 * hash(i, 3)), arc = Math.min(0.9 + 1.2 * hash(i, 1), Math.PI * 2.14 - start), th = 0.2 + 0.2 * hash(i, 2);
       const g = ledgeGeo(start, arc, th, i * 1.7);
       const m = new THREE.Mesh(g, this.ledgeMat);
       m.frustumCulled = false;

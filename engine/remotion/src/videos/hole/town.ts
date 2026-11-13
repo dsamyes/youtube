@@ -125,7 +125,7 @@ export class Town {
     prop(b, kit, "stump_round", -3.6, 0, -6.9, 0.4, 0.4);
     for (const [x, z] of [[2.4, 4.4], [3.1, 5.6], [2.2, 6.9]] as const) prop(b, kit, "path_stone", x, 0.0, z, 0.06, x * 2);
     // ---- washing line (north-east corner): two T posts, a sagging line, four things drying ----
-    const A = V(3.3, 1.92, -1.5), B = V(5.2, 1.92, -3.9), along = B.clone().sub(A), L = along.length(), yaw = Math.atan2(-along.z, along.x);
+    const A = V(4.45, 1.92, -2.2), B = V(5.95, 1.92, -4.25), along = B.clone().sub(A), L = along.length(), yaw = Math.atan2(-along.z, along.x);
     for (const p of [A, B]) {
       b.add(cyl(V(p.x, 0, p.z), V(p.x, 2.02, p.z), 0.045, 0.04), M.white); // plain posts (a T bar behind a head reads as a propeller)
       b.add(new THREE.SphereGeometry(0.06, 12, 8).translate(p.x, 2.05, p.z), M.white);
@@ -141,14 +141,18 @@ export class Town {
     });
     void L;
     // ---- the neighbor's kettle grill ----
-    const [gx, , gz] = GRILL;
-    for (let i = 0; i < 3; i++) { const a = (i / 3) * TAU + 0.5; b.add(cyl(V(gx + Math.cos(a) * 0.3, 0, gz + Math.sin(a) * 0.3), V(gx + Math.cos(a) * 0.16, 0.72, gz + Math.sin(a) * 0.16), 0.016), M.steel); }
-    b.add(new THREE.SphereGeometry(0.34, 22, 10, 0, TAU, Math.PI / 2, Math.PI / 2).scale(1, 0.72, 1), M.iron, new THREE.Matrix4().makeTranslation(gx, 0.95, gz));
-    b.add(new THREE.TorusGeometry(0.34, 0.018, 6, 26).rotateX(Math.PI / 2), M.steel, new THREE.Matrix4().makeTranslation(gx, 0.95, gz));
+    const [gx, , gz] = GRILL, GH = 1.2; // rim height: the bowl shows over the fence
+    for (let i = 0; i < 3; i++) { const a = (i / 3) * TAU + 0.5; b.add(cyl(V(gx + Math.cos(a) * 0.34, 0, gz + Math.sin(a) * 0.34), V(gx + Math.cos(a) * 0.16, GH - 0.22, gz + Math.sin(a) * 0.16), 0.018), M.steel); }
+    b.add(new THREE.SphereGeometry(0.36, 22, 10, 0, TAU, Math.PI / 2, Math.PI / 2).scale(1, 0.72, 1), M.iron, new THREE.Matrix4().makeTranslation(gx, GH, gz));
+    b.add(new THREE.TorusGeometry(0.36, 0.02, 6, 26).rotateX(Math.PI / 2), M.steel, new THREE.Matrix4().makeTranslation(gx, GH, gz));
+    for (let i = -3; i <= 3; i++) { const x = i * 0.095, hw = Math.sqrt(Math.max(0.001, 0.35 * 0.35 - x * x)); b.add(cyl(V(gx + x, GH + 0.02, gz - hw), V(gx + x, GH + 0.02, gz + hw), 0.008, 0.008, 5), M.iron); }
+    const saus = lam("sausage", () => ({ color: "#c9603a" }));
+    for (const [sx, sz, ry] of [[-0.13, 0.02, 0.2], [0.05, -0.08, -0.15], [0.12, 0.12, 0.4]] as const)
+      b.add(new THREE.CapsuleGeometry(0.035, 0.2, 4, 10).rotateZ(Math.PI / 2).rotateY(ry), saus, new THREE.Matrix4().makeTranslation(gx + sx, GH + 0.06, gz + sz));
     // the lid leans against a leg
-    b.add(new THREE.SphereGeometry(0.34, 22, 10, 0, TAU, 0, Math.PI / 2).scale(1, 0.6, 1), M.enamel, new THREE.Matrix4().compose(V(gx + 0.55, 0.3, gz + 0.1), new THREE.Quaternion().setFromAxisAngle(V(0, 0, 1), -1.2), V(1, 1, 1)));
-    this.coals = new THREE.Mesh(new THREE.CircleGeometry(0.3, 20).rotateX(-Math.PI / 2), new THREE.MeshBasicMaterial({ color: new THREE.Color(1.5, 0.42, 0.08) }));
-    this.coals.position.set(gx, 0.93, gz); this.coals.layers.set(NOINK); R.add(this.coals);
+    b.add(new THREE.SphereGeometry(0.36, 22, 10, 0, TAU, 0, Math.PI / 2).scale(1, 0.6, 1), M.enamel, new THREE.Matrix4().compose(V(gx + 0.6, 0.32, gz + 0.1), new THREE.Quaternion().setFromAxisAngle(V(0, 0, 1), -1.2), V(1, 1, 1)));
+    this.coals = new THREE.Mesh(new THREE.CircleGeometry(0.32, 20).rotateX(-Math.PI / 2), new THREE.MeshBasicMaterial({ color: new THREE.Color(1.5, 0.42, 0.08) }));
+    this.coals.position.set(gx, GH - 0.03, gz); this.coals.layers.set(NOINK); R.add(this.coals);
     const puff = glowTex();
     for (let k = 0; k < 6; k++) {
       const mat = new THREE.MeshBasicMaterial({ map: puff, transparent: true, depthWrite: false, color: "#cfd2dc", fog: false });
@@ -165,8 +169,8 @@ export class Town {
     for (let x = px - 20; x < px + 22; x += 3.2) prop(b, kit, "hedge", x, 0, pz + 18, 1.5);
     for (const [dx, dz] of [[-8, -1], [7, 4], [-4, -7], [5, -5], [-13, 2]] as const) prop(b, kit, r() < 0.5 ? "plant_bushLarge" : "plant_bushDetailed", px + dx, 0, pz + dz, 1.3);
     for (let i = 0; i < 26; i++) { const x = px - 14 + r() * 30, z = pz - 17 + r() * 32; if (Math.hypot(x - px, z - pz) > 4) prop(b, kit, FL[Math.floor(r() * 3)], x, 0, z, 0.5); }
-    { let x = px - 36; while (x < px + 40) { const w = r() < 0.5 ? 7 : 9, h = [7, 8.4, 9.8][Math.floor(r() * 3)]; house(b, x + w / 2, pz + 25.5, Math.PI, w, 8, h, Math.floor(r() * 8)); x += w + (r() < 0.25 ? 2.5 : 0.25); } }
-    for (const [dx, dz, h] of [[-30, 14, 9], [34, 16, 10], [-22, 30, 11], [8, 36, 12], [28, 34, 11], [-8, 38, 10]] as const) prop(b, kit, "tree_default", px + dx, 0, pz + dz, h, dx);
+    { let x = px - 36; while (x < px + 40) { const w = r() < 0.5 ? 7 : 9, h = [7, 8.4, 9.8][Math.floor(r() * 3)]; house(b, x + w / 2, pz + 37, Math.PI, w, 8, h, Math.floor(r() * 8)); x += w + (r() < 0.25 ? 2.5 : 0.25); } }
+    for (const [dx, dz, h] of [[-30, 14, 9], [34, 16, 10], [-24, 27, 8], [30, 28, 8], [-40, 44, 11], [42, 46, 11]] as const) prop(b, kit, "tree_default", px + dx, 0, pz + dz, h, dx);
     // ---- hills and far trees around the valley (template) ----
     const hill = new THREE.SphereGeometry(1, 28, 14, 0, TAU, 0, Math.PI / 2);
     const hm = [lam("hillA", () => ({ color: "#78b257" })), lam("hillB", () => ({ color: "#6aa24e" })), lam("hillC", () => ({ color: "#8bbf63" }))];
@@ -238,7 +242,7 @@ export class Town {
     (this.coals.material as THREE.MeshBasicMaterial).color.setRGB(1.5 + 0.3 * Math.sin(t * 7), 0.42 + 0.08 * Math.sin(t * 9 + 1), 0.08);
     for (const s of this.smoke) {
       const u = (t * 0.22 + s.k) % 1, sz = 0.3 + u * 0.9;
-      s.m.position.set(GRILL[0] + 0.25 * u * Math.sin(s.k * 9 + u * 3), 1.05 + u * 2.0, GRILL[2] - 0.1 * u);
+      s.m.position.set(GRILL[0] + 0.25 * u * Math.sin(s.k * 9 + u * 3), 1.3 + u * 2.0, GRILL[2] - 0.1 * u);
       s.m.scale.set(sz, sz, 1); s.m.quaternion.copy(cam.quaternion);
       s.mat.opacity = 0.5 * Math.sin(Math.PI * Math.min(1, u * 1.15)) ** 0.8 * (1 - u);
     }

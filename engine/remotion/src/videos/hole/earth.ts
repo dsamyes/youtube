@@ -15,12 +15,14 @@ const TUNNEL_W = 0.4;
 
 export class Earth {
   group = new THREE.Group();
+  private globe = new THREE.Group();
   private tunnel: THREE.Mesh;
   private core!: THREE.MeshBasicMaterial;
 
   constructor() {
-    const G = this.group, R = EARTH_R;
+    const G = this.globe, R = EARTH_R;
     G.rotation.set(0, EARTH_YAW, EARTH_ROLL, "ZYX");
+    this.group.add(G);
     // back half of the globe (z <= 0), two-tone lit
     const shell = new THREE.Mesh(new THREE.SphereGeometry(R, 64, 40, Math.PI, Math.PI), lam("earthSurface", () => ({ map: earthSurface() })));
     shell.receiveShadow = false;
@@ -68,8 +70,8 @@ export class Earth {
     const tr2 = tr.clone(); tr2.scale.setScalar(0.8); stand(tr2, 0.25, 0.3);
     // thin blue air glow behind the globe
     const halo = new THREE.Sprite(new THREE.SpriteMaterial({ map: glowTex(), color: new THREE.Color(0.35, 0.6, 1.4), transparent: true, depthWrite: false, fog: false, blending: THREE.AdditiveBlending }));
-    halo.scale.setScalar(R * 3.3); halo.position.set(0, 0, -R * 1.3); halo.layers.set(NOINK); halo.renderOrder = -0.4;
-    G.add(halo);
+    halo.scale.setScalar(R * 3.2); halo.position.set(0, 0, -R * 1.4); halo.layers.set(NOINK); halo.renderOrder = -0.4;
+    this.group.add(halo);
     G.traverse((o) => { const m = o as THREE.Mesh; if (m.isMesh) { m.castShadow = false; m.receiveShadow = false; } });
     void TAU;
   }
