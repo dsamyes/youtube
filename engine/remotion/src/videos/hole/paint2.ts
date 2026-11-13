@@ -2,7 +2,7 @@
 // template's paint.ts): fence boards, soil, the shaft's rock mask, the Earth's surface and cut face, stars, the moon,
 // washing, deck-chair canvas, the sea pipe.
 import * as THREE from "three";
-import { ctex, rng, jit } from "./paint";
+import { ctex, rng, jit, grassHD } from "./paint";
 
 type G2 = CanvasRenderingContext2D;
 const TAU = Math.PI * 2;
@@ -212,4 +212,11 @@ export const glowTex = () => ctex("glowSoft", 256, 256, (g) => {
     const i = (y * 256 + x) * 4; im.data[i] = im.data[i + 1] = im.data[i + 2] = 255; im.data[i + 3] = Math.round(255 * a);
   }
   g.putImageData(im, 0, 0);
+});
+
+/** the garden lawn: the template's grass painting, pulled from lemon-lime toward the reference lawn green
+ *  (on screen ~#7fc24a under the day light instead of ~#90d311) */
+export const lawnHD = () => ctex("lawnHD", 1024, 1024, (g) => {
+  g.drawImage(grassHD().image as HTMLCanvasElement, 0, 0);
+  g.fillStyle = "rgba(96,158,120,0.42)"; g.fillRect(0, 0, 1024, 1024);
 });

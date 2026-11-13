@@ -74,9 +74,9 @@ export const FENCE_N = -4.6;                      // the neighbor's fence (z), 1
 export const FENCE_H = 1.15;
 export const NEIGH: V3 = [0.75, 0.3, -5.08];     // neighbor behind the fence (standing on his log pile)
 export const GRILL: V3 = [2.0, 0, -6.6];
-export const WIFE5: V3 = [2.55, 0, 0.35];        // wife with the pan (shot 5)
-export const PANCAKE_AT: V3 = [1.72, 0.02, 1.75]; // where the pancake lands
-export const CHAIR: V3 = [-1.08, 0, 0.42];       // deck chair by the hole (shots 20-21)
+export const WIFE5: V3 = [1.8, 0, 0.4];        // wife with the pan (shot 5)
+export const PANCAKE_AT: V3 = [1.2, 0.02, 1.5]; // where the pancake lands
+export const CHAIR: V3 = [-1.04, 0, 0.42];       // deck chair by the hole (shots 20-21)
 export const PARK: V3 = [60, 0, 46];             // swing pivot base
 
 /** shovel (shot 2): 0 = held upright beside Gus, 1 = planted in the mound; the thrust lands on f181 */
@@ -225,7 +225,7 @@ const S1b = (f: number) => dolly([-0.75, 0.55, 2.55], [0, 0.2, 0], pushK(f, 40, 
 const S1c = (f: number): Shot => ({ pos: [0.5, 1.9, 1.35], look: [0.05, -40, -0.1], fov: 56 - 0.05 * Math.max(0, f - 96), roll: 0.02 });
 // ---- shot 2: over the west fence into the garden, then the hero framing: hole in front, Gus, the mound behind ----
 const G2L: V3 = [-0.62, 0.74, -0.55];
-const S2a = (f: number) => zoom([-7.7, 3.7, 5.7], [-0.6, 0.7, -0.7], 46, pushK(f, 118, 0.0015));
+const S2a = (f: number) => zoom([-9.3, 2.75, 5.4], [-0.6, 0.95, -0.7], 46, pushK(f, 118, 0.0015));
 const S2b = (f: number) => dolly([1.0, 2.15, 5.5], G2L, pushK(f, 150, 0.001, 0.004, 26, 176), { fov: 42 });
 // ---- shot 3: the Earth cutaway ----
 const S3a = (f: number) => dolly([0.6, 0.8, 36.5], [0, -0.15, 0], pushK(f, 229, 0.0022), { fov: 31, roll: -0.03 });
@@ -233,11 +233,14 @@ const S3a = (f: number) => dolly([0.6, 0.8, 36.5], [0, -0.15, 0], pushK(f, 229, 
 const N_EYE: V3 = [NEIGH[0], NEIGH[1] + 1.42, NEIGH[2]];
 const S4a = (f: number) => dolly([-0.1, 1.82, -1.1], add(N_EYE, [0.1, 0.02, 0]), pushK(f, 264, 0.0022, 0.006, 26, 281), { fov: 40, roll: 0.035 });
 // ---- shot 5: the wife and the pancake ----
-const S5a = (f: number) => dolly([0.35, 1.5, 4.55], [2.3, 0.82, 0.6], pushK(f, 319, 0.0018), { fov: 40 });
-const S5b = (f: number) => dolly([0.55, 1.42, 4.3], [2.2, 0.72, 0.75], pushK(f, 345, 0.0016), { fov: 38, roll: -0.035 });
+const S5a = (f: number) => dolly([0.5, 1.5, 4.25], [1.66, 0.8, 0.7], pushK(f, 319, 0.0018), { fov: 40 });
+const S5b = (f: number) => dolly([0.6, 1.42, 4.05], [1.6, 0.7, 0.8], pushK(f, 345, 0.0016), { fov: 38, roll: -0.035 });
 // ---- shot 6: the clipboard, the salute, the hop; the lens tilts down into the hole after him ----
 const S6a = (f: number) => dolly([0.2, 1.45, 2.75], [-0.74, 1.14, -0.5], pushK(f, 393, 0.002), { fov: 38 });
-const S6b = (f: number) => dolly([0.55, 2.75, 2.5], [-0.02, -0.25, 0.05], pushK(f, 426, 0.002), { fov: 42, roll: 0.04 });
+const S6b = (f: number): Shot => { // rides up with the hop, then tips into the hole after him
+  const h = hopAt(f), k = smooth((f - 434) / 9), ly = lerp(Math.max(0.2, h.y + 0.95), -0.3, k);
+  return dolly([0.6, 2.55, 3.0], [lerp(h.x, 0, k) * 0.7, ly, lerp(h.z, 0.05, k)], pushK(f, 426, 0.002), { fov: 44, roll: 0.04 });
+};
 // ---- shot 7: crust, the feather ----
 const S7a = (f: number) => dolly([0.55, 0.42, 2.95], [0.18, 0.1, 0], pushK(f, 448, 0.0016), { fov: 46, roll: 0.05 });
 const S7b = (f: number) => dolly([0.75, 0.38, 2.3], [0.34, 0.3, 0], pushK(f, 496, 0.0016), { fov: 42, roll: 0.02 });
@@ -253,7 +256,7 @@ const S11a = (f: number) => dolly([0.2, 0.74, 1.42], [0, 0.63, 0], pushK(f, 685,
 const S12a = (f: number) => dolly([0.3, 0.35, 2.65], [0.22, 0.2, 0], pushK(f, 743, 0.0015, 0.005, 22, 790), { fov: 42, roll: 0.03 });
 const S12b = (f: number) => dolly([0.0, 0.4, 2.2], [-0.02, 0.32, 0], pushK(f, 820, 0.0018), { fov: 40, roll: -0.03 });
 // ---- shot 13: listening over the hole ----
-const S13a = (f: number) => dolly([0.1, 1.3, 5.0], [0, 0.72, -0.1], pushK(f, 861, 0.0018, 0.005, 20, 893), { fov: 44 });
+const S13a = (f: number) => dolly([0.08, 0.72, 5.5], [0, 0.98, -0.1], pushK(f, 861, 0.0016, 0.004, 20, 893), { fov: 44 });
 // ---- shot 14: the explanation ----
 const S14a = (f: number) => dolly([0.4, 0.5, 37.5], [0, -0.1, 0], pushK(f, 911, 0.0011), { fov: 31, roll: -0.02 });
 // ---- shot 15: the park swing (the template's two framings) ----
@@ -270,10 +273,10 @@ const S18a = (f: number) => dolly([0.5, 1.7, 5.3], [TWO[0], TWO[1] - 0.12, TWO[2
 // ---- shot 19: the way back (mirrored framing) ----
 const S19a = (f: number) => dolly([-0.6, 0.5, 2.9], [-0.1, 0.1, 0], pushK(f, 1614, 0.0016), { fov: 46, roll: -0.06 });
 // ---- shots 20-21: the evening garden ----
-const E_L: V3 = [-0.42, 0.78, 0.1];
-const S20a = (f: number) => dolly([-0.2, 1.22, 4.5], E_L, pushK(f, 1703, 0.0018), { fov: 40 });
-const S21a = (f: number) => dolly([-0.3, 1.18, 4.25], [-0.45, 0.8, 0.1], pushK(f, 1753, 0.0012), { fov: 40 });
-const S21b = (f: number) => dolly([-0.55, 1.75, 5.6], [-0.05, 1.0, -1.6], pushK(f, 1884, 0.0016, 0.004, 20, 1901), { fov: 42, roll: 0.02 });
+const E_L: V3 = [-0.52, 0.8, 0.1];
+const S20a = (f: number) => dolly([-0.5, 1.25, 5.45], E_L, pushK(f, 1703, 0.0012), { fov: 44 });
+const S21a = (f: number) => dolly([-0.56, 1.2, 5.1], [-0.54, 0.82, 0.1], pushK(f, 1753, 0.0006), { fov: 44 });
+const S21b = (f: number) => dolly([0.05, 1.86, -0.9], add(N_EYE, [0.1, 0.0, 0]), pushK(f, 1884, 0.0016, 0.005, 18, 1903), { fov: 40, roll: -0.03 });
 
 const CAMS: Record<number, Key[]> = {
   1: [
@@ -293,7 +296,7 @@ const CAMS: Record<number, Key[]> = {
   ],
   6: [
     { f: 393, s: S6a },
-    { f: 426, dur: 18, s: S6b },  // tilt down after him, centred on 435
+    { f: 424, dur: 14, s: S6b },  // up with the hop, then down after him
   ],
   7: [
     { f: 448, s: S7a },
@@ -374,7 +377,7 @@ export const DOF: Dof[] = [
   { f: 1465, cInf: 9, focus: at(TWO) },                           // two-shot
   { f: 1614, cInf: 0 },                                           // shaft
   { f: 1703, cInf: 9, focus: () => [0, 1.0, 0] },                 // evening garden: Gus and his wife
-  { f: 1880, dur: 34, cInf: 5, focus: () => [0.2, 1.2, -2.6] },   // final: wife to neighbor, both readable
+  { f: 1880, dur: 34, cInf: 12, focus: at(N_EYE) },                // final: over to the neighbor at the fence
 ];
 export const dofAt = (f: number) => {
   let i = 0; while (i + 1 < DOF.length && f >= DOF[i + 1].f) i++;

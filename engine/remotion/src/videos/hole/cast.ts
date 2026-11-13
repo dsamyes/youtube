@@ -8,7 +8,7 @@ import * as THREE from "three";
 import { Pen, bodySide, swingKid, KID, PARENT, fxBurst, fxRing, fxShadow, fxContact, fxPuff, Expr, SideOpts, P2 } from "./toon";
 import {
   figure, anchorsOf, Look, Pose, Arm, GUS, WIFE, NEIGHBOR, FISHER, miniGus, fxFeather, fxBullet, fxFlame, fxSoot, fxQuestion, fxArrow,
-  fxFlag, fxPancake, fxSplat, fxStreak, fxSparkle, fxBird, fxTrail, fxShards, fxBubble, fxCrumbs,
+  fxFlag, fxPancake, fxSplat, fxStreak, fxSparkle, fxBird, fxTrail, fxShards, fxBubble, fxCrumbs, fxPop,
 } from "./people";
 import {
   FPS, SHOTS, V3, smooth, clamp01, lerp, lin, hash, PARK, GUS_STAND, NEIGH, WIFE5, PANCAKE_AT, CHAIR, hopAt, gardenGusY, HANG_Y,
@@ -303,7 +303,7 @@ const birds = (c: Ctx, f: number) => {
 /** the shovel in shot 2: handle top and blade tip (world), for the 3D prop and Gus's hand */
 export const shovelAt = (f: number): { top: V3; tip: V3; grip: V3 } => {
   // held: standing on the lawn beside him; planted: stuck in the mound's near slope, leaning his way
-  const H0: V3 = [-1.4, 1.3, -0.5], T0: V3 = [-1.44, 0.02, -0.5], H1: V3 = [-1.26, 1.8, -1.02], T1: V3 = [-1.52, 0.55, -1.27];
+  const H0: V3 = [-1.44, 1.3, -0.5], T0: V3 = [-1.48, 0.02, -0.5], H1: V3 = [-1.42, 1.82, -1.05], T1: V3 = [-1.72, 0.58, -1.3];
   const k = shovelK(f), u = Math.max(0, k), w = Math.max(0, -k) / 0.35;
   const lift = 0.5 * w + 0.5 * (u < 1 ? 1 - u * u : 0) * (k > 0 ? 1 : 0);
   const mix3 = (a: V3, b: V3): V3 => [lerp(a[0], b[0], u), lerp(a[1], b[1], u) + lift, lerp(a[2], b[2], u)];
@@ -327,7 +327,7 @@ const garden = (c: Ctx) => {
     const sh = shovelAt(f), planted = f >= SHOVEL_HIT, look = f >= 170 && f < 190;
     const proud = f >= 190;
     const L: Arm = { h: reach(c, GUS_STAND, -1, sh.grip), bend: 0.12, front: !planted };
-    const pose: Pose = { expr: proud ? "relief_open" : look ? "stern" : "smile_closed", facing: look ? -1 : 0, look: look ? -1 : 0, blink: lidAt(f, 5, [170, 190]),
+    const pose: Pose = { expr: proud ? "relief_open" : look ? "grin" : "smile_closed", facing: look ? -1 : 0, look: look ? -1 : 0, blink: lidAt(f, 5, [170, 190]),
       L, R: HIP, tilt: look ? -4 * sm(f, 170, 176) * (1 - sm(f, 184, 192)) : 0, headTilt: proud ? -4 : 0 };
     put(c, GUS, pose, GUS_STAND);
     if (f >= SHOVEL_HIT && f < SHOVEL_HIT + 10) {
@@ -364,7 +364,7 @@ const garden = (c: Ctx) => {
     } else {
       const u = Math.min(1, (f - 351) / 8), s = 0.62 * (0.75 + 0.25 * Math.min(1, (f - 350) / 2));
       fx(c, `splat${q(u, 16)}`, 400, 400, (p) => fxSplat(p, q(u, 16)), PANCAKE_AT, s, s, { flat: true, rot: 0.4 });
-      if (f < 358) for (let i = 0; i < 5; i++) { const a = 0.4 + i * 0.6, r = 0.2 + 0.5 * u; fx(c, "drop", 60, 60, (p) => p.ell(30, 30, 20, 20, "#f0c46a", 8), [PANCAKE_AT[0] + Math.cos(a) * r, 0.05 + 0.55 * Math.sin(Math.PI * u) * (0.6 + 0.1 * i), PANCAKE_AT[2] + 0.2], 0.07, 0.07); }
+      if (f < 359) for (let i = 0; i < 6; i++) { const a = 0.25 + i * 0.52, r = 0.16 + (0.4 + 0.25 * hash(i, 5)) * u; fx(c, "drop", 60, 60, (p) => p.ell(30, 30, 20, 20, "#f0c46a", 8), [PANCAKE_AT[0] + Math.cos(a) * r, 0.05 + (0.3 + 0.5 * hash(i, 6)) * Math.sin(Math.PI * u), PANCAKE_AT[2] + 0.15], 0.06, 0.06); }
     }
   } else if (id === 6) {
     const hp = hopAt(f), up = sm(f, 404, 411), sal = sm(f, 417, 421) * (1 - sm(f, 425, 428));
@@ -378,8 +378,8 @@ const garden = (c: Ctx) => {
     if (f >= 411 && f < 417) { const u = (f - 411) / 6; fx(c, "sparkle", 200, 200, fxSparkle, [GUS_STAND[0] + 0.52, 1.72, GUS_STAND[2] + 0.1], 0.2 * Math.sin(Math.PI * u), 0.2 * Math.sin(Math.PI * u), { rot: u }); }
   } else if (id === 13) {
     const q0 = f >= 895, bob = 0.01 * Math.sin(f * 0.2);
-    put(c, WIFE, { expr: "neutral", facing: 1, look: 1, tilt: 13 + bob * 40, headTilt: 9, blink: lidAt(f, 9, [895]), R: { h: [0.34, -0.56], bend: -0.4 }, L: HIP }, [-1.02, 0, -0.18]);
-    neighbor(c, { expr: q0 ? "wow" : "neutral", facing: -1, look: -1, tilt: -13 - bob * 40, headTilt: -9, blink: lidAt(f, 10, [895]), L: { h: [0.34, -0.56], bend: -0.4 }, R: HIP }, [1.02, 0, -0.18]);
+    put(c, WIFE, { expr: "neutral", facing: 1, look: 1, tilt: 15 + bob * 40, headTilt: 9, blink: lidAt(f, 9, [895]), R: { h: [0.34, -0.56], bend: -0.4 }, L: HIP }, [-0.84, 0, -0.18]);
+    neighbor(c, { expr: q0 ? "wow" : "neutral", facing: -1, look: -1, tilt: -15 - bob * 40, headTilt: -9, blink: lidAt(f, 10, [895]), L: { h: [0.34, -0.56], bend: -0.4 }, R: HIP }, [0.84, 0, -0.18]);
     if (f >= 895) {
       const u = (f - 895) / 6, s = u < 1 ? 1.25 * Math.sin((Math.PI / 2) * u) : 1 + 0.25 * Math.exp(-(u - 1) * 1.2) * Math.cos((u - 1) * 2.2);
       fx(c, "what", 300, 420, fxQuestion, [0, 1.62 + 0.03 * Math.sin(f * 0.25), 0.05], 0.5 * s, 0.7 * s, { rot: 0.1 * Math.sin(f * 0.2) });
@@ -401,7 +401,7 @@ const garden = (c: Ctx) => {
           : { expr: top1 ? "relief_open" : "smile", facing: -1, look: -1, blink: lidAt(f, 11, [HANG1 - 6]), L: armMix(HANG, up, sm(f, POP1 + 6, HANG1 - 4)), R: armMix(HANG, up, sm(f, POP1 + 6, HANG1 - 4)) };
       put(c, GUS, pose, [0, y, 0], { noBlob: true });
     }
-    for (const f0 of [POP1, POP2]) if (f >= f0 && f < f0 + 6) { const u = (f - f0) / 6; fx(c, `pop${q(u, 30)}`, 500, 500, (p) => fxBurst(p, q(u, 30), "#fff6d8", 8, 60, 230), [0, 0.12, 0.3], 1.5, 0.6); }
+    for (const f0 of [POP1, POP2]) if (f >= f0 && f < f0 + 7) { const u = (f - f0) / 7; fx(c, `pop${q(u, 28)}`, 500, 300, (p) => fxPop(p, q(u, 28)), [0, 0.2, 0.2], 1.9, 1.14); }
     // --- his wife in the deck chair ---
     const wind = f >= 1786 && f < 1812, offer = sm(f, 1812, 1826), rewind = f >= 1893 && f < 1922;
     const lookUp = (f >= POP1 && f < DROP1 + 8) || (f >= POP2 - 2 && f < DROP2 + 6);
@@ -522,7 +522,7 @@ const ocean = (c: Ctx) => {
     }
     put(c, GUS, pose, [0, y, 0]);
   }
-  if (f >= POP_SEA && f < POP_SEA + 7) { const u = (f - POP_SEA) / 7; fx(c, `popS${q(u, 30)}`, 500, 500, (p) => fxBurst(p, q(u, 30), "#eaf4ff", 9, 60, 230), [0, PIPE_H + 0.12, 0.35], 1.7, 0.75); }
+  if (f >= POP_SEA && f < POP_SEA + 7) { const u = (f - POP_SEA) / 7; fx(c, `pop${q(u, 28)}`, 500, 300, (p) => fxPop(p, q(u, 28)), [0, PIPE_H + 0.2, 0.3], 2.0, 1.2); }
   // --- the fisherman ---
   const awake = f >= POP_SEA + 3, follow = clamp01((y - PIPE_H) / 1.6);
   let fp: Pose;

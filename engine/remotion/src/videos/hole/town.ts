@@ -3,8 +3,8 @@
 // and the park with the swing, on one ground plane with the template's houses, cartoon vegetation and hills.
 import * as THREE from "three";
 import { Batch, V, lam, boxGeo, quad, house, prop, setSight, Kit, Ray, rng, kitClone } from "./build";
-import { grassHD, beam, rep } from "./paint";
-import { fenceHD, soilHD, pitHD, clothTex, slingTex, glowTex } from "./paint2";
+import { beam, rep } from "./paint";
+import { fenceHD, soilHD, pitHD, clothTex, slingTex, glowTex, lawnHD } from "./paint2";
 import { twoTone } from "./shade";
 import { NOINK } from "./ink";
 import { HOLE_R, MOUND, FENCE_N, FENCE_H, GRILL, CHAIR, PARK, V3, FOREGROUND, hash } from "./story";
@@ -47,7 +47,7 @@ export class Town {
   constructor(kit: Kit, rays: Ray[]) {
     const R = this.group, b = new Batch(), r = rng(23);
     const M = {
-      grass: lam("grassHD", () => ({ map: grassHD() })),
+      grass: lam("lawnHD", () => ({ map: lawnHD() })),
       wood: lam("wood", () => ({ map: beam() })),
       fence: lam("fenceHD", () => ({ map: fenceHD(), side: THREE.DoubleSide })),
       soil: lam("soilHD", () => ({ map: soilHD() })),
@@ -105,14 +105,15 @@ export class Town {
     // ---- houses: the row behind the neighbor's yard (backs to us), a second row, side neighbors, Gus's own house ----
     for (const [x, w, h, si] of [[1.2, 9, 7, 1], [-8.4, 9, 8.4, 0], [10.8, 9, 7, 2], [-18.2, 9, 7, 4], [20.4, 9, 8.4, 6], [-27.8, 7, 7, 5], [29.5, 7, 7, 3]] as const) house(b, x, -15.2, Math.PI, w, 8, h, si);
     for (const [x, w, h, si] of [[-4, 9, 9.8, 6], [6, 9, 9.8, 4], [-14, 9, 8.4, 2], [16, 7, 9.8, 0], [-24, 9, 9.8, 1], [26, 9, 8.4, 5]] as const) house(b, x, -33, 0, w, 8, h, si);
-    for (const [x, z, yaw, si, h] of [[16.5, -3, -Math.PI / 2, 3, 7], [16.5, 7, -Math.PI / 2, 0, 8.4], [-16.5, -3, Math.PI / 2, 5, 8.4], [-16.5, 7, Math.PI / 2, 2, 7]] as const) house(b, x, z, yaw, 9, 8, h, si);
+    // (nothing tall to the west: the evening sun comes in low from there)
+    for (const [x, z, yaw, si, h] of [[16.5, -3, -Math.PI / 2, 3, 7], [16.5, 7, -Math.PI / 2, 0, 8.4]] as const) house(b, x, z, yaw, 9, 8, h, si);
     house(b, 0.5, 15, 0, 9, 8, 7, 4);
     house(b, -9.5, 15, 0, 9, 8, 8.4, 6); house(b, 10.5, 15, 0, 9, 8, 7, 1);
     // ---- trees and bushes ----
-    for (const [n, x, z, h] of [["tree_oak", -4.9, -8.6, 6.8], ["tree_fat", 6.6, -9.2, 6.2], ["tree_default", -3.4, -21, 10], ["tree_oak", 6.0, -22, 10.5], ["tree_detailed", -13.5, -9.5, 8],
-      ["tree_fat", 15.5, -10.5, 8], ["tree_default", 10.2, -0.6, 7], ["tree_oak", 10.8, 5.5, 7.5], ["tree_oak", -10.4, -1.2, 7.5], ["tree_default", -10, 5.2, 7],
+    for (const [n, x, z, h] of [["tree_oak", -7.4, -9.0, 6.8], ["tree_fat", 6.6, -9.2, 6.2], ["tree_default", -3.4, -21, 10], ["tree_oak", 6.0, -22, 10.5], ["tree_detailed", -13.5, -9.5, 8],
+      ["tree_fat", 15.5, -10.5, 8], ["tree_default", 10.2, -0.6, 7], ["tree_oak", 10.8, 5.5, 7.5],
       ["tree-high-round", -23, -22, 11], ["tree-high-round", 24, -23, 11.5], ["tree_cone", -9.5, -24, 10], ["tree_cone", 14, -25, 11]] as const) prop(b, kit, n, x, 0, z, h, x * 1.7);
-    for (const [x, z, h] of [[-5.3, -3.85, 1.15], [-3.9, -4.0, 0.9], [4.6, -3.9, 1.1], [5.7, -3.3, 0.85], [-5.9, -0.9, 0.95], [-5.95, 2.3, 1.1], [5.95, 1.4, 1.0], [5.9, 4.2, 1.1],
+    for (const [x, z, h] of [[-5.3, -3.85, 1.15], [-3.9, -4.0, 0.9], [4.6, -3.9, 1.1], [5.7, -3.3, 0.85], [-5.9, -1.9, 0.95], [5.95, 1.4, 1.0], [5.9, 4.2, 1.1],
       [-4.2, -6.3, 1.2], [5.2, -7.6, 1.3], [-1.9, -9.9, 1.1]] as const) prop(b, kit, x * z > 0 ? "plant_bushLarge" : "plant_bush", x, 0, z, h, x);
     // flower beds along the fences (kit flowers; none on the camera's side of the hole)
     const FL = ["flower_redA", "flower_yellowA", "flower_purpleA", "flower_redB", "flower_yellowB", "flower_purpleB", "flower_redC", "flower_yellowC", "flower_purpleC"];
@@ -124,11 +125,10 @@ export class Town {
     prop(b, kit, "stump_round", -3.6, 0, -6.9, 0.4, 0.4);
     for (const [x, z] of [[2.4, 4.4], [3.1, 5.6], [2.2, 6.9]] as const) prop(b, kit, "path_stone", x, 0.0, z, 0.06, x * 2);
     // ---- washing line (north-east corner): two T posts, a sagging line, four things drying ----
-    const A = V(3.4, 1.92, -1.2), B = V(5.7, 1.92, -3.5), along = B.clone().sub(A), L = along.length(), yaw = Math.atan2(-along.z, along.x);
+    const A = V(3.3, 1.92, -1.5), B = V(5.2, 1.92, -3.9), along = B.clone().sub(A), L = along.length(), yaw = Math.atan2(-along.z, along.x);
     for (const p of [A, B]) {
-      b.add(cyl(V(p.x, 0, p.z), V(p.x, 2.0, p.z), 0.045, 0.04), M.white);
-      const t = V(-along.z, 0, along.x).normalize().multiplyScalar(0.35);
-      b.add(cyl(V(p.x - t.x, 1.95, p.z - t.z), V(p.x + t.x, 1.95, p.z + t.z), 0.03), M.white);
+      b.add(cyl(V(p.x, 0, p.z), V(p.x, 2.02, p.z), 0.045, 0.04), M.white); // plain posts (a T bar behind a head reads as a propeller)
+      b.add(new THREE.SphereGeometry(0.06, 12, 8).translate(p.x, 2.05, p.z), M.white);
     }
     const sag = (u: number) => A.clone().lerp(B, u).add(V(0, -0.16 * 4 * u * (1 - u), 0));
     for (let i = 0; i < 10; i++) b.add(cyl(sag(i / 10), sag((i + 1) / 10), 0.008, 0.008, 5), M.iron);
@@ -147,7 +147,7 @@ export class Town {
     b.add(new THREE.TorusGeometry(0.34, 0.018, 6, 26).rotateX(Math.PI / 2), M.steel, new THREE.Matrix4().makeTranslation(gx, 0.95, gz));
     // the lid leans against a leg
     b.add(new THREE.SphereGeometry(0.34, 22, 10, 0, TAU, 0, Math.PI / 2).scale(1, 0.6, 1), M.enamel, new THREE.Matrix4().compose(V(gx + 0.55, 0.3, gz + 0.1), new THREE.Quaternion().setFromAxisAngle(V(0, 0, 1), -1.2), V(1, 1, 1)));
-    this.coals = new THREE.Mesh(new THREE.CircleGeometry(0.3, 20).rotateX(-Math.PI / 2), new THREE.MeshBasicMaterial({ color: new THREE.Color(2.4, 0.9, 0.25) }));
+    this.coals = new THREE.Mesh(new THREE.CircleGeometry(0.3, 20).rotateX(-Math.PI / 2), new THREE.MeshBasicMaterial({ color: new THREE.Color(1.5, 0.42, 0.08) }));
     this.coals.position.set(gx, 0.93, gz); this.coals.layers.set(NOINK); R.add(this.coals);
     const puff = glowTex();
     for (let k = 0; k < 6; k++) {
@@ -184,7 +184,7 @@ export class Town {
     setSight([]);
     // ---- the shovel (posed every frame) ----
     const sm = (g: THREE.BufferGeometry, mat: THREE.Material) => { const m = new THREE.Mesh(g, mat); m.castShadow = true; m.receiveShadow = true; this.shovel.add(m); };
-    sm(new THREE.CylinderGeometry(0.027, 0.03, 0.8, 10).translate(0, 0.74, 0), M.wood);
+    sm(new THREE.CylinderGeometry(0.032, 0.035, 0.8, 10).translate(0, 0.74, 0), M.wood);
     sm(new THREE.TorusGeometry(0.075, 0.024, 8, 18).translate(0, 1.2, 0), M.wood);
     sm(new THREE.CylinderGeometry(0.036, 0.042, 0.14, 10).translate(0, 0.36, 0), M.steel);
     { // blade: a shallow scoop with a rounded point
@@ -235,7 +235,7 @@ export class Town {
       for (let i = 0; i < p.count; i++) { const v = -p.getY(i) / c.h, x = p.getX(i); p.setZ(i, v * (0.06 * Math.sin(t * 1.6 + c.ph + x * 2.2) + 0.03 * Math.sin(t * 2.7 + x * 5 + c.ph)) + 0.015 * Math.sin(x * 9 + c.ph)); }
       p.needsUpdate = true; c.m.geometry.computeVertexNormals();
     }
-    (this.coals.material as THREE.MeshBasicMaterial).color.setRGB(2.2 + 0.4 * Math.sin(t * 7), 0.85 + 0.12 * Math.sin(t * 9 + 1), 0.25);
+    (this.coals.material as THREE.MeshBasicMaterial).color.setRGB(1.5 + 0.3 * Math.sin(t * 7), 0.42 + 0.08 * Math.sin(t * 9 + 1), 0.08);
     for (const s of this.smoke) {
       const u = (t * 0.22 + s.k) % 1, sz = 0.3 + u * 0.9;
       s.m.position.set(GRILL[0] + 0.25 * u * Math.sin(s.k * 9 + u * 3), 1.05 + u * 2.0, GRILL[2] - 0.1 * u);

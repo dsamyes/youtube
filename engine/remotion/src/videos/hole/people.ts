@@ -536,6 +536,15 @@ export const fxCrumbs = (p: Pen, t: number) => {
   }
 };
 
+/** "pop!" over a hole or a pipe mouth on a 500 x 300 canvas: short dashes flying up and out, no solid centre; t = 0..1 */
+export const fxPop = (p: Pen, t: number) => {
+  const e = 1 - (1 - t) ** 2.5;
+  for (let i = 0; i < 9; i++) {
+    const a = rad(-170 + i * 20), r0 = 70 + 110 * e, r1 = r0 + 60 * (1 - t) + 10;
+    p.stroke([[250 + r0 * Math.cos(a), 270 + r0 * 0.9 * Math.sin(a)], [250 + r1 * Math.cos(a), 270 + r1 * 0.9 * Math.sin(a)]], 12 * (1 - t) + 4);
+  }
+};
+
 /** moustache-free helper for cast.ts: darker limb colour from a cloth colour, like the template's arms */
 export const limbOf = (cloth: string, k = 0.5) => mix(cloth, INK, k);
 export { taper, WHITE };
