@@ -5,13 +5,13 @@
 // Design space 600 x 1000 units (soles at y = 975); the canvas transform scales it.
 export const INK = "#241726";
 export const SKIN = "#ffe2c2";
-const WHITE = "#ffffff";
-const MOUTH = "#5a1e28";
-const TONGUE = "#e86e78";
-type C3 = [number, number, number];
-const SH_SKIN: C3 = [0.96, 0.86, 0.84]; // measured shadow/lit ratio on skin heads
-const SH_CLOTH: C3 = [0.64, 0.66, 0.74]; // torsos: lit side -> far side ~0.65
-const SH_FELT: C3 = [0.62, 0.62, 0.7];
+export const WHITE = "#ffffff";
+export const MOUTH = "#5a1e28";
+export const TONGUE = "#e86e78";
+export type C3 = [number, number, number];
+export const SH_SKIN: C3 = [0.96, 0.86, 0.84]; // measured shadow/lit ratio on skin heads
+export const SH_CLOTH: C3 = [0.64, 0.66, 0.74]; // torsos: lit side -> far side ~0.65
+export const SH_FELT: C3 = [0.62, 0.62, 0.7];
 
 export type Build = "adult" | "stout" | "kid";
 export type Outfit = {
@@ -19,10 +19,10 @@ export type Outfit = {
   sash?: string; sword?: boolean; moustache?: string; skin?: string; head?: number; cap?: string; hair?: string; dress?: string;
   build?: Build;
 };
-type P2 = [number, number];
+export type P2 = [number, number];
 
-const rad = (d: number) => (d * Math.PI) / 180;
-const clamp = (x: number, a: number, b: number) => Math.max(a, Math.min(b, x));
+export const rad = (d: number) => (d * Math.PI) / 180;
+export const clamp = (x: number, a: number, b: number) => Math.max(a, Math.min(b, x));
 export const mul = (c: string, m: C3) => {
   const n = parseInt(c.slice(1), 16);
   const ch = (v: number, k: number) => Math.min(255, Math.round(v * k)).toString(16).padStart(2, "0");
@@ -35,13 +35,13 @@ export const mix = (a: string, b: string, t: number) => {
   return `#${ch(16)}${ch(8)}${ch(0)}`;
 };
 /** deterministic per-character random in [0, 1) */
-const rnd = (seed: number, k: number) => { const x = Math.sin(seed * 127.1 + k * 311.7) * 43758.5453; return x - Math.floor(x); };
-const rotPts = (pts: P2[], a: number, cx: number, cy: number): P2[] =>
+export const rnd = (seed: number, k: number) => { const x = Math.sin(seed * 127.1 + k * 311.7) * 43758.5453; return x - Math.floor(x); };
+export const rotPts = (pts: P2[], a: number, cx: number, cy: number): P2[] =>
   pts.map(([x, y]) => [cx + (x - cx) * Math.cos(a) - (y - cy) * Math.sin(a), cy + (x - cx) * Math.sin(a) + (y - cy) * Math.cos(a)]);
-const rotAbout = (q: P2, a: number, c: P2): P2 => rotPts([q], a, c[0], c[1])[0];
-const lerp2 = (a: P2, b: P2, t: number): P2 => [a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t];
+export const rotAbout = (q: P2, a: number, c: P2): P2 => rotPts([q], a, c[0], c[1])[0];
+export const lerp2 = (a: P2, b: P2, t: number): P2 => [a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t];
 /** smooth curve from a through (near) k to b, as a polyline */
-const curve = (a: P2, k: P2, b: P2, n = 10): P2[] => {
+export const curve = (a: P2, k: P2, b: P2, n = 10): P2[] => {
   const c: P2 = [2 * k[0] - (a[0] + b[0]) / 2, 2 * k[1] - (a[1] + b[1]) / 2], out: P2[] = [];
   for (let i = 0; i <= n; i++) {
     const t = i / n, s = 1 - t;
@@ -168,7 +168,7 @@ export class Pen {
   }
 }
 
-const ellPts = (cx: number, cy: number, rx: number, ry: number, a0 = 0, a1 = 360, rot = 0, n = 48): P2[] => {
+export const ellPts = (cx: number, cy: number, rx: number, ry: number, a0 = 0, a1 = 360, rot = 0, n = 48): P2[] => {
   const r = rad(rot), pts: P2[] = [];
   for (let i = 0; i <= n; i++) {
     const a = rad(a0 + ((a1 - a0) * i) / n), x = rx * Math.cos(a), y = ry * Math.sin(a);
@@ -177,7 +177,7 @@ const ellPts = (cx: number, cy: number, rx: number, ry: number, a0 = 0, a1 = 360
   return pts;
 };
 
-const rrect = (x0: number, y0: number, x1: number, y1: number, r: number, n = 8): P2[] => {
+export const rrect = (x0: number, y0: number, x1: number, y1: number, r: number, n = 8): P2[] => {
   const pts: P2[] = [];
   for (const [cx, cy, a] of [[x1 - r, y0 + r, -90], [x1 - r, y1 - r, 0], [x0 + r, y1 - r, 90], [x0 + r, y0 + r, 180]])
     for (let i = 0; i <= n; i++) pts.push([cx + r * Math.cos(rad(a + (90 * i) / n)), cy + r * Math.sin(rad(a + (90 * i) / n))]);
@@ -185,7 +185,7 @@ const rrect = (x0: number, y0: number, x1: number, y1: number, r: number, n = 8)
 };
 
 /** tapered stroke, thick end at a: brows, moustache halves */
-const taper = (p: Pen, a: P2, b: P2, wa: number, wb: number, col = INK) => {
+export const taper = (p: Pen, a: P2, b: P2, wa: number, wb: number, col = INK) => {
   const dx = b[0] - a[0], dy = b[1] - a[1], l = Math.hypot(dx, dy) || 1, nx = -dy / l, ny = dx / l;
   p.poly([[a[0] + nx * wa / 2, a[1] + ny * wa / 2], [b[0] + nx * wb / 2, b[1] + ny * wb / 2],
     [b[0] - nx * wb / 2, b[1] - ny * wb / 2], [a[0] - nx * wa / 2, a[1] - ny * wa / 2]], col, 0);
@@ -223,13 +223,14 @@ export const headBlob = (seed: number, a = 118, facing = 0): Blob => ({
 
 /** thickest outline direction: away from the light, pulled toward the ground (64 deg measured for upper-left light) */
 export const thickAngle = (light: number) => Math.atan2(-Math.sin(light) + 0.8, -Math.cos(light));
-const DEF_LIGHT = rad(-120);
+export const DEF_LIGHT = rad(-120);
 
 // ---------------- faces ----------------
 export type Expr = "neutral" | "stern" | "grin" | "laugh" | "whistle" | "nervous" | "shock" | "relief" | "relief_open" | "dazed"
-  | "pained" | "smile" | "smile_closed" | "lick";
-type EyeK = "dot" | "small" | "lid" | "slit" | "happy" | "dash" | "squeeze" | "shock" | "shockHalf" | "spiral";
-type MouthK = "dash" | "frown" | "smirk" | "smile" | "smileWide" | "grin" | "laugh" | "o" | "O" | "wave" | "teeth" | "lick";
+  | "pained" | "smile" | "smile_closed" | "lick"
+  | "wow" | "asleep" | "jawdrop" | "sad" | "bite" | "chew" | "flap";
+type EyeK = "dot" | "small" | "lid" | "slit" | "happy" | "dash" | "squeeze" | "shock" | "shockHalf" | "spiral" | "shut";
+type MouthK = "dash" | "frown" | "smirk" | "smile" | "smileWide" | "grin" | "laugh" | "o" | "O" | "wave" | "teeth" | "lick" | "oo" | "jaw" | "chew" | "flap";
 /** eyes [back, front], brows [inner, outer] offsets in u (+ = down), mouth kind */
 const FACE: Record<Expr, { eye: [EyeK, EyeK]; brow: [number, number]; mouth: MouthK }> = {
   neutral: { eye: ["lid", "lid"], brow: [0, -1], mouth: "dash" },
@@ -246,13 +247,21 @@ const FACE: Record<Expr, { eye: [EyeK, EyeK]; brow: [number, number]; mouth: Mou
   smile: { eye: ["dot", "dot"], brow: [0, -1], mouth: "smirk" },
   smile_closed: { eye: ["happy", "happy"], brow: [0, -1], mouth: "smile" },
   lick: { eye: ["dot", "dot"], brow: [0, -1], mouth: "lick" },
+  // hole short
+  wow: { eye: ["dot", "dot"], brow: [-7, -7], mouth: "oo" },
+  asleep: { eye: ["shut", "shut"], brow: [1, 0], mouth: "oo" },
+  jawdrop: { eye: ["shock", "shock"], brow: [-7, -6], mouth: "jaw" },
+  sad: { eye: ["dot", "dot"], brow: [-5, 3], mouth: "frown" },
+  bite: { eye: ["dot", "dot"], brow: [-4, -4], mouth: "O" },
+  chew: { eye: ["happy", "happy"], brow: [-1, -1], mouth: "chew" },
+  flap: { eye: ["squeeze", "squeeze"], brow: [-6, -6], mouth: "flap" },
 };
-const halfLid = (k: EyeK): EyeK => (k === "dot" || k === "small" ? "lid" : k === "lid" ? "slit" : k === "shock" ? "shockHalf" : k);
-const eyeKind = (k: EyeK, lid: number): EyeK =>
-  lid >= 1 && k !== "happy" && k !== "squeeze" && k !== "spiral" ? "dash" : lid > 0 ? halfLid(k) : k;
-const lidOf = (b: boolean | number | undefined) => (b === true ? 1 : Number(b) || 0);
+export const halfLid = (k: EyeK): EyeK => (k === "dot" || k === "small" ? "lid" : k === "lid" ? "slit" : k === "shock" ? "shockHalf" : k);
+export const eyeKind = (k: EyeK, lid: number): EyeK =>
+  k === "shut" ? k : lid >= 1 && k !== "happy" && k !== "squeeze" && k !== "spiral" ? "dash" : lid > 0 ? halfLid(k) : k;
+export const lidOf = (b: boolean | number | undefined) => (b === true ? 1 : Number(b) || 0);
 
-const eye = (p: Pen, kind: EyeK, x: number, ey: number, u: number, side: number, look: number, skin: string) => {
+export const eye = (p: Pen, kind: EyeK, x: number, ey: number, u: number, side: number, look: number, skin: string) => {
   const lx = x + look * 3 * u, lw = 3.8 * u;
   switch (kind) {
     case "dot": p.ell(lx, ey, 3.8 * u, 5.5 * u, INK, 0); break;
@@ -261,6 +270,7 @@ const eye = (p: Pen, kind: EyeK, x: number, ey: number, u: number, side: number,
     case "slit": p.ell(lx, ey, 7 * u, 2.6 * u, INK, 0, 0, 180); p.stroke([[x - 9 * u, ey], [x + 9 * u, ey]], lw); break;
     case "happy": p.arc(x, ey + 3 * u, 8 * u, 6 * u, 200, 340, lw); break;
     case "dash": p.stroke([[x - 8.5 * u, ey], [x + 8.5 * u, ey]], lw); break;
+    case "shut": p.arc(x, ey - 3 * u, 8 * u, 6 * u, 20, 160, lw); break;
     case "squeeze": p.stroke([[x + 6 * u * side, ey - 5 * u], [x - 6 * u * side, ey], [x + 6 * u * side, ey + 5 * u]], lw); break;
     case "shock": case "shockHalf":
       p.ell(x, ey, 11 * u, 11 * u, WHITE, 2.6 * u); p.dot(lx - side * 1.5 * u, ey + 1.5 * u, 3 * u);
@@ -275,14 +285,14 @@ const eye = (p: Pen, kind: EyeK, x: number, ey: number, u: number, side: number,
 };
 
 /** open "D" mouth with a white teeth band (+ tongue) */
-const dmouth = (p: Pen, mx: number, y: number, rx: number, ry: number, u: number, tongue = false) => {
+export const dmouth = (p: Pen, mx: number, y: number, rx: number, ry: number, u: number, tongue = false) => {
   p.ell(mx, y, rx, ry, MOUTH, 0, 0, 180);
   p.clip([[mx - rx, y], [mx + rx, y], [mx + rx, y + 3 * u], [mx - rx, y + 3 * u]], () => p.ell(mx, y, rx, ry, WHITE, 0, 0, 180));
   if (tongue) p.ell(mx + 2 * u, y + 0.62 * ry, 0.4 * rx, 0.28 * ry, TONGUE, 0);
   p.ell(mx, y, rx, ry, null, 3 * u, 0, 180);
 };
 
-const mouth = (p: Pen, kind: MouthK, mx: number, my: number, u: number, k = 1) => {
+export const mouth = (p: Pen, kind: MouthK, mx: number, my: number, u: number, k = 1, ph = 0) => {
   const mw = 4 * u;
   switch (kind) {
     case "dash": p.stroke([[mx - 5.5 * u * k, my], [mx + 5.5 * u * k, my - 0.8 * u]], mw); break;
@@ -300,13 +310,33 @@ const mouth = (p: Pen, kind: MouthK, mx: number, my: number, u: number, k = 1) =
       for (const j of [-1, 0, 1]) p.stroke([[mx + j * 6 * u * k, my - 4 * u], [mx + j * 6 * u * k, my + 4 * u]], 1.5 * u);
       break;
     case "lick": p.arc(mx, my - 3 * u, 8 * u * k, 4.5 * u, 20, 160, mw); p.ell(mx + 6 * u * k, my + 3 * u, 3.6 * u, 4.6 * u, TONGUE, 2.4 * u); break;
+    case "oo": p.ell(mx, my + u, 4.2 * u, 5 * u, MOUTH, 2.8 * u); break;
+    case "jaw":
+      p.ell(mx, my + 10 * u, 11 * u * k, 19 * u, MOUTH, 3.2 * u);
+      p.clip(ellPts(mx, my + 10 * u, 11 * u * k, 19 * u), () => p.ell(mx, my + 27 * u, 8 * u, 7 * u, TONGUE, 0));
+      break;
+    case "chew": p.arc(mx - 2 * u, my - 3 * u, 6 * u * k, 4 * u, 20, 160, mw); p.arc(mx + 12 * u, my - 2 * u, 6 * u, 7 * u, -70, 70, 3 * u); break;
+    case "flap": { // cheeks and lips flapping in the wind: a wide wobbling mouth, teeth, tongue
+      const pts: P2[] = [];
+      for (let i = 0; i < 40; i++) {
+        const a = (i / 40) * Math.PI * 2, r = 1 + 0.2 * Math.sin(3 * a + ph * Math.PI * 2) + 0.12 * Math.sin(5 * a - ph * Math.PI * 4);
+        pts.push([mx + 19 * u * k * r * Math.cos(a), my + 3 * u + 10.5 * u * r * Math.sin(a)]);
+      }
+      p.poly(pts, MOUTH, 0);
+      p.clip(pts, () => {
+        p.poly([[mx - 30 * u, my - 12 * u], [mx + 30 * u, my - 12 * u], [mx + 30 * u, my - 1.5 * u], [mx - 30 * u, my - 1.5 * u]], WHITE, 0);
+        p.ell(mx + 3 * u * Math.sin(ph * Math.PI * 2), my + 11 * u, 9 * u, 5 * u, TONGUE, 0);
+      });
+      p.poly(pts, null, 3 * u);
+      break;
+    }
   }
 };
 
 /** face v2 (front / 3-4). u = 1 % of the head path width W. Eyes 26u apart on the centre line, brows 20u up, mouth 20u
  *  down, everything slid toward the facing side. No blush, no catchlights. */
-const faceFront = (p: Pen, cx: number, cy: number, W: number, expr: Expr, facing: number, look: number, lid: number, brim: boolean,
-  skin: string, moustache?: string, stout = false) => {
+export const faceFront = (p: Pen, cx: number, cy: number, W: number, expr: Expr, facing: number, look: number, lid: number, brim: boolean,
+  skin: string, moustache?: string, stout = false, ph = 0, browCol = INK) => {
   const u = W / 100, F = FACE[expr], fx = cx + 7 * u * facing;
   const ex = (F.eye[0] === "shock" ? 12 : 13) * u, ey = cy;
   for (const side of [-1, 1]) {
@@ -315,10 +345,10 @@ const faceFront = (p: Pen, cx: number, cy: number, W: number, expr: Expr, facing
     eye(p, kind, x, ey, u, side, look, skin);
     const [dI, dO] = F.brow, by = ey - (brim ? 17 : 20) * u;
     if (kind === "shock" || kind === "shockHalf") p.arc(x, by - 6 * u, 9 * u, 3 * u, 200, 340, 4 * u);
-    else taper(p, [x - side * 8.5 * u, by + dI * u], [x + side * 8.5 * u, by + dO * u], 5 * u, 2.5 * u);
+    else taper(p, [x - side * 8.5 * u, by + dI * u], [x + side * 8.5 * u, by + dO * u], 5 * u, 2.5 * u, browCol);
   }
   const mx = cx + 8 * u * facing, my = cy + 20 * u;
-  mouth(p, F.mouth, mx, my, u);
+  mouth(p, F.mouth, mx, my, u, 1, ph);
   if (moustache) for (const s of [-1, 1])
     taper(p, [mx + s * 1.5 * u, cy + 12.5 * u], [mx + s * (stout ? 19 : 15) * u, cy + (stout ? 10.5 : 15) * u], stout ? 5.5 * u : 4.5 * u, 1.6 * u, moustache);
   if (expr === "nervous") p.ell(cx + 40 * u * (facing || 1), cy - 22 * u, 3 * u, 5 * u, "#9fd4ff", 2 * u);
@@ -341,14 +371,14 @@ const faceSide = (p: Pen, hx: number, hy: number, W: number, expr: Expr, lid: nu
 // ---------------- hats ----------------
 const BONNET = "#e9cf8f", BONNET_BRIM = "#d6b46a";
 /** parts of a hat that sit behind the head (bonnet) */
-const hatBehind = (p: Pen, o: Outfit, H: Blob, cx: number, hc: number, light: number, thick: number, ow: number, side: boolean) => {
+export const hatBehind = (p: Pen, o: Outfit, H: Blob, cx: number, hc: number, light: number, thick: number, ow: number, side: boolean) => {
   if (o.hat !== "bonnet") return;
   const bb = blobPts(cx - (side ? 12 : 0) * (H.a / 50), hc - 0.07 * 2 * H.b, { ...H, a: H.a * 1.17, b: H.b * 1.13, asym: 0, egg: 0.04, seed: H.seed + 3 });
   p.shadedFill(bb, BONNET, mul(BONNET, SH_CLOTH), light, H.a * 1.17);
   p.inkRing(bb, ow * 0.85, thick);
 };
 
-const hatOn = (p: Pen, o: Outfit, hp: P2[], H: Blob, cx: number, hc: number, light: number, seed: number, facing: number, side: boolean) => {
+export const hatOn = (p: Pen, o: Outfit, hp: P2[], H: Blob, cx: number, hc: number, light: number, seed: number, facing: number, side: boolean) => {
   const W = 2 * H.a, HH = 2 * H.b, u = W / 100, crown = hc - H.b, ow = 0.85 * 5 * u;
   const a = H.rot + rad(4 * (rnd(seed, 20) - 0.5)); // tilt with the head, +-2 deg extra
   const R = (pts: P2[]) => rotPts(pts, a, cx, hc);
@@ -426,7 +456,7 @@ export type Arms = [P2[], P2[]];
 /** held prop; for the hammer the number is the strike 0 (raised) .. 1 (struck) */
 export type Prop = null | "icecream" | "shako" | ["hammer", number];
 
-const BUILD: Record<Build, { a: number; torso: number; legs: number; tw: number }> = {
+export const BUILD: Record<Build, { a: number; torso: number; legs: number; tw: number }> = {
   adult: { a: 118, torso: 1.1, legs: 1.4, tw: 0.8 },
   stout: { a: 118, torso: 1.15, legs: 1.32, tw: 0.92 },
   kid: { a: 112, torso: 0.85, legs: 1.0, tw: 0.72 },
@@ -439,7 +469,7 @@ export type FrontOpts = {
   light?: number; facing?: -1 | 0 | 1; seed?: number;
 };
 
-const footStroke = (p: Pen, a: P2, b: P2, w: number, col: string) => {
+export const footStroke = (p: Pen, a: P2, b: P2, w: number, col: string) => {
   if (col !== INK) p.stroke([a, b], w + 3, INK);
   p.stroke([a, b], w, col);
 };

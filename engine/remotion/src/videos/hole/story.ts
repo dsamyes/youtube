@@ -224,14 +224,14 @@ const S1a = (f: number) => dolly([1.0, 0.75, 3.05], [0, 0.12, 0], pushK(f, 0, 0.
 const S1b = (f: number) => dolly([-0.75, 0.55, 2.55], [0, 0.2, 0], pushK(f, 40, 0.002), { fov: 46, roll: 0.06 });
 const S1c = (f: number): Shot => ({ pos: [0.5, 1.9, 1.35], look: [0.05, -40, -0.1], fov: 56 - 0.05 * Math.max(0, f - 96), roll: 0.02 });
 // ---- shot 2: over the west fence into the garden, then the hero framing: hole in front, Gus, the mound behind ----
-const G2L: V3 = [-0.7, 0.86, -0.75];
+const G2L: V3 = [-0.62, 0.74, -0.55];
 const S2a = (f: number) => zoom([-7.7, 3.7, 5.7], [-0.6, 0.7, -0.7], 46, pushK(f, 118, 0.0015));
-const S2b = (f: number) => dolly([0.62, 1.78, 4.05], G2L, pushK(f, 150, 0.0012, 0.005, 30, 176), { fov: 42 });
+const S2b = (f: number) => dolly([1.0, 2.15, 5.5], G2L, pushK(f, 150, 0.001, 0.004, 26, 176), { fov: 42 });
 // ---- shot 3: the Earth cutaway ----
 const S3a = (f: number) => dolly([0.6, 0.8, 36.5], [0, -0.15, 0], pushK(f, 229, 0.0022), { fov: 31, roll: -0.03 });
 // ---- shot 4: the neighbor over the fence ----
 const N_EYE: V3 = [NEIGH[0], NEIGH[1] + 1.42, NEIGH[2]];
-const S4a = (f: number) => dolly([-0.05, 1.58, -1.25], add(N_EYE, [0.12, -0.1, 0]), pushK(f, 264, 0.0022, 0.006, 26, 281), { fov: 38, roll: 0.035 });
+const S4a = (f: number) => dolly([-0.1, 1.82, -1.1], add(N_EYE, [0.1, 0.02, 0]), pushK(f, 264, 0.0022, 0.006, 26, 281), { fov: 40, roll: 0.035 });
 // ---- shot 5: the wife and the pancake ----
 const S5a = (f: number) => dolly([0.35, 1.5, 4.55], [2.3, 0.82, 0.6], pushK(f, 319, 0.0018), { fov: 40 });
 const S5b = (f: number) => dolly([0.55, 1.42, 4.3], [2.2, 0.72, 0.75], pushK(f, 345, 0.0016), { fov: 38, roll: -0.035 });

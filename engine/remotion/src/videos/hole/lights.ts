@@ -12,7 +12,8 @@ export type LightPreset = {
   sunCol: string; sunI: number; sky: string; ground: string; hemiI: number;         // three lights (unpatched mats only)
   bias: number; normalBias: number;
 };
-export const LIGHTS: Record<"day" | "golden", LightPreset> = {
+export type LightName = "day" | "golden" | "night" | "space" | "shaft";
+export const LIGHTS: Record<LightName, LightPreset> = {
   day: {
     az: 75, el: 48,
     lit: [1.58, 1.5, 1.33], shade: [0.3, 0.29, 0.36], lift: [0.05, 0.06, 0.11], lambert: 0.35, sideK: 0.84, term: 0.2,
@@ -31,6 +32,36 @@ export const LIGHTS: Record<"day" | "golden", LightPreset> = {
     sunCol: "#ffab5e", sunI: 5.5, sky: "#d8b0b8", ground: "#8a6a60", hemiI: 0.5,
     bias: -0.0006, normalBias: 0.03,
   },
+  // night ocean: the moon is the key (cool, low), deep blue shade that never goes black, no haze near the lens
+  night: {
+    az: -24, el: 30,
+    lit: [0.5, 0.66, 1.08], shade: [0.085, 0.12, 0.3], lift: [0.012, 0.02, 0.07], lambert: 0.35, sideK: 0.84, term: 0.2,
+    charTint: [0.72, 0.84, 1.0], charShade: 0.86, charGrad: 0.09, bodyGrad: 0.24, sideTint: [0.8, 0.84, 1.0],
+    blob: [0.55, 0.58, 0.75], actorShadow: false,
+    top: "#0b1440", hor: "#27408f", skyCurve: [0.0, 0.5, 0.6], fog: "#22397f", fogNear: 40, fogFar: 520, sunDisc: "#bcd3ff",
+    sunCol: "#bcd0ff", sunI: 1.4, sky: "#3a4c9a", ground: "#101a40", hemiI: 0.4,
+    bias: -0.00025, normalBias: 0.015,
+  },
+  // space (the Earth cutaway): one hard sun from the upper left, night-blue shade
+  space: {
+    az: -50, el: 32,
+    lit: [1.42, 1.4, 1.34], shade: [0.2, 0.24, 0.52], lift: [0.02, 0.03, 0.09], lambert: 0.4, sideK: 0.9, term: 0.25,
+    charTint: [1.0, 0.97, 0.94], charShade: 0.9, charGrad: 0.05, bodyGrad: 0.15, sideTint: [0.9, 0.9, 0.98],
+    blob: [0.6, 0.6, 0.7], actorShadow: false,
+    top: "#070b2c", hor: "#18246a", skyCurve: [0.0, 0.5, 0.6], fog: "#101a55", fogNear: 400, fogFar: 1400, sunDisc: "#000000",
+    sunCol: "#fff3e0", sunI: 2.6, sky: "#3a4c9a", ground: "#101a40", hemiI: 0.4,
+    bias: -0.00025, normalBias: 0.015,
+  },
+  // shaft: the glow from below is the key (world.ts blends the colours by depth: crust / mantle / core)
+  shaft: {
+    az: 0, el: -80,
+    lit: [1.3, 0.9, 0.6], shade: [0.3, 0.2, 0.2], lift: [0.03, 0.02, 0.02], lambert: 0.4, sideK: 0.9, term: 0.3,
+    charTint: [1.0, 0.93, 0.86], charShade: 0.9, charGrad: 0.07, bodyGrad: 0.2, sideTint: [0.95, 0.9, 0.9],
+    blob: [0.6, 0.5, 0.5], actorShadow: false,
+    top: "#120a0a", hor: "#120a0a", skyCurve: [0.0, 0.5, 0.6], fog: "#120a0a", fogNear: 400, fogFar: 1400, sunDisc: "#000000",
+    sunCol: "#ffd9a0", sunI: 2.0, sky: "#553322", ground: "#ffb060", hemiI: 0.4,
+    bias: -0.00025, normalBias: 0.015,
+  },
 };
 
 /** world-only look per light (sky stops by elevation in degrees, river colours, cloud palette). All colours are
@@ -42,7 +73,7 @@ export type WorldLook = {
   sat: number;                                                // shade.ts uSat: world albedo saturation (1 = as painted)
   cloud: { lit: string; mid: string; shade: string };
 };
-export const LOOK: Record<"day" | "golden", WorldLook> = {
+export const LOOK: Record<LightName, WorldLook> = {
   day: {
     // depth.md 2.2: horizon #9fb6e6 just above the skyline, upper sky #5e93d9 at ~20 deg (grade: frame top #5997e2)
     sky: { c: ["#b8d0ec", "#9cbfea", "#6a9fe0", "#4f8cdb", "#3373cc"], e: [0, 3, 8, 16, 40] },
@@ -59,5 +90,27 @@ export const LOOK: Record<"day" | "golden", WorldLook> = {
     cloud: { lit: "#ffd2a8", mid: "#f2a08f", shade: "#a98fc4" },
     bounce: [0.04, 0.02, 0.0],
     sat: 1.1,
+  },
+  night: {
+    // moonlit: indigo top, a lighter blue band at the horizon; water deep navy with pale moon crests
+    sky: { c: ["#2f4ea6", "#27408f", "#1b2d74", "#111e58", "#0a123c"], e: [0, 4, 12, 26, 55] },
+    water: { near: "#10245e", mid: "#17378a", far: "#3a5cb4", crest: "#8fb4f2", trough: "#0a1744", glint: "#eaf2ff", shade: [0.5, 0.56, 0.72] },
+    cloud: { lit: "#6f86cf", mid: "#4a5fb0", shade: "#2c3c86" },
+    bounce: [0, 0, 0],
+    sat: 1.0,
+  },
+  space: {
+    sky: { c: ["#18246a", "#141d58", "#0f1648", "#0b113a", "#080c2e"], e: [0, 10, 25, 45, 80] },
+    water: { near: "#10245e", mid: "#17378a", far: "#3a5cb4", crest: "#8fb4f2", trough: "#0a1744", glint: "#eaf2ff", shade: [0.5, 0.56, 0.72] },
+    cloud: { lit: "#6f86cf", mid: "#4a5fb0", shade: "#2c3c86" },
+    bounce: [0, 0, 0],
+    sat: 1.05,
+  },
+  shaft: {
+    sky: { c: ["#120a0a", "#120a0a", "#120a0a", "#120a0a", "#120a0a"], e: [0, 3, 8, 16, 40] },
+    water: { near: "#10245e", mid: "#17378a", far: "#3a5cb4", crest: "#8fb4f2", trough: "#0a1744", glint: "#eaf2ff", shade: [0.5, 0.56, 0.72] },
+    cloud: { lit: "#6f86cf", mid: "#4a5fb0", shade: "#2c3c86" },
+    bounce: [0, 0, 0],
+    sat: 1.0,
   },
 };
