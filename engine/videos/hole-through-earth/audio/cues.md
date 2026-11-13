@@ -14,7 +14,7 @@ Voice = `../voice/voice.wav`, gain only (no EQ, no compression, no pitch); the m
 ## Master loudness (own BS.1770-4 meter)
 - Integrated **-14.0 LUFS**, true peak **-1.2 dBTP**, LRA 1.3 LU, max momentary -9.4 LUFS, max short-term -12.9 LUFS
 - Stems: voice -14.3 LUFS, music -24.3 LUFS, sfx -29.2 LUFS (master gain +5.73 dB on everything; the voice file itself is -19.3 LUFS)
-- Master limiter (4x oversampled look-ahead, ceiling -1.2 dBTP): max gain reduction 6.11 dB, active (>0.1 dB) on 25.79 % of samples, >0.5 dB on 13.13 %, >3 dB on 1.460 %
+- Master limiter (4x oversampled look-ahead, ceiling -1.2 dBTP): max gain reduction 6.11 dB, active (>0.1 dB) on 25.78 % of samples, >0.5 dB on 13.12 %, >3 dB on 1.459 %
 
 ffmpeg ebur128 cross-check:
 ```
@@ -37,13 +37,13 @@ bed = music + sfx. margin = voice - bed (integrated over the section). speech me
 | section (shots) | frames | voice | music | sfx | bed | margin LU | speech median LU | speech p10 LU |
 |---|---|---|---|---|---|---|---|---|
 | hook (1) | 0-118 | -14.2 | - | -23.9 | -23.9 | 9.7 | 9.1 | 4.8 |
-| garden (2-6) | 118-448 | -14.1 | -23.2 | -31.7 | -22.8 | 8.6 | 8.5 | 4.6 |
+| garden (2-6) | 118-448 | -14.1 | -23.3 | -31.7 | -22.8 | 8.6 | 8.5 | 4.6 |
 | fall, crust (7-8) | 448-598 | -14.0 | -24.9 | -33.5 | -24.4 | 10.3 | 10.6 | 7.4 |
 | fall, mantle+core (9-11) | 598-743 | -14.7 | -25.1 | -29.6 | -23.7 | 9.0 | 9.1 | 5.8 |
 | fall, core (12) | 743-861 | -14.2 | -23.8 | -27.6 | -22.3 | 8.1 | 7.7 | 4.3 |
 | but wait (13) | 861-915 | -13.1 | - | -30.4 | -30.4 | 17.3 | 18.9 | 12.6 |
 | explanation (14) | 915-1123 | -14.3 | -25.5 | -32.2 | -25.2 | 10.8 | 10.8 | 6.6 |
-| swing (15) | 1123-1268 | -14.1 | -24.2 | -32.9 | -23.9 | 9.7 | 9.0 | 6.8 |
+| swing (15) | 1123-1268 | -14.1 | -24.2 | -32.7 | -23.8 | 9.6 | 9.0 | 6.5 |
 | ocean, rise (16) | 1268-1465 | -14.6 | -25.3 | -31.6 | -24.7 | 10.2 | 10.2 | 7.4 |
 | luckily / unluckily (17-18) | 1465-1614 | -14.2 | -25.0 | -32.8 | -24.3 | 10.1 | 9.9 | 7.6 |
 | return (19) | 1614-1707 | -14.2 | -23.4 | -31.0 | -22.7 | 8.6 | 8.8 | 3.7 |
@@ -122,32 +122,33 @@ Level convention: every EVENT has a naive level (LU vs the voice stem, as the ev
 | 31 | 1091 | 1115 | 36.367 | decel_whoosh | slowing down: air band + faint tone sinking in pitch and level | -10.0 | -16.0 | -29.6 | +0.00 |
 | 32 | 1126 |  | 37.533 | push_whoosh | push on the swing: hands on the back + chain jingle + soft whoosh | -9.0 | -15.0 | -28.6 | +0.10 |
 | 33 | 1130 | 1260 | 37.667 | swing_creak | swing ropes creak in rhythm with the swing: 5 creaks at f1130, 1144, 1179, 1215, 1236 (the push, every pass through the bottom, once on the way up) | -9.0 | -15.0 | -28.6 | +0.15 |
-| 34 | 1215 |  | 40.500 | whoosh | quick whoosh (ease-out burst): swing fastest at the bottom | -10.0 | -16.0 | -29.6 | +0.00 |
-| 35 | 1258 |  | 41.933 | ting | triangle 'ting': swing stops at the top | -9.0 | -15.0 | -28.6 | +0.00 |
-| 36 | 1268 | 1614 | 42.267 | amb_ocean_night (bed) | night ocean: slow swells, foam, water lapping on the boat, timber creaks | -21.0 | -21.0 | -34.6 | +0.00 |
-| 37 | 1342 |  | 44.733 | cork_pop | cork pop + a few drips: Gus pops out of the pipe | -3.0 | -9.0 | -22.6 | +0.00 |
-| 38 | 1344 | 1440 | 44.800 | slide_whistle_up_slowing | slide whistle rising 415 -> 1245 Hz, slower and slower, fading to nothing by f1440 | -9.0 | -15.0 | -28.6 | +0.00 |
-| 39 | 1442 |  | 48.067 | ting | triangle 'ting': he stops dead; music holds its breath | -9.0 | -15.0 | -28.6 | +0.00 |
-| 40 | 1482 |  | 49.400 | twinkle | sparkle run of five tiny bells: friendly wave | -9.0 | -15.0 | -28.6 | +0.00 |
-| 41 | 1560 |  | 52.000 | gulp | cartoon gulp: smile drops | -7.0 | -13.0 | -26.6 | +0.00 |
-| 42 | 1598 | 1614 | 53.267 | slide_whistle_down | slide whistle falling 1109 -> 262 Hz over 16 frames: drops back into the pipe | -7.0 | -13.0 | -26.6 | +0.00 |
-| 43 | 1614 | 1707 | 53.800 | wind_rush (bed) | return trip: rush up to top speed and down again (time-lapse) (noise band + faint whistle + flutter, follows the speed) | -15.5 | -15.5 | -29.1 | +0.00 |
-| 44 | 1707 | 1935 | 56.900 | amb_garden_evening (bed) | evening garden: soft breeze, blackbird phrases, crickets | -25.0 | -25.0 | -38.6 | +0.00 |
-| 45 | 1711 |  | 57.033 | cork_pop | cork pop: pops up in his own garden | -3.0 | -9.0 | -22.6 | +0.00 |
-| 46 | 1737 |  | 57.900 | ting | triangle 'ting': hangs at the top | -9.0 | -15.0 | -28.6 | +0.00 |
-| 47 | 1766 | 1782 | 58.867 | slide_whistle_down | slide whistle falling 1319 -> 349 Hz over 16 frames: drops again | -7.0 | -13.0 | -26.6 | +0.00 |
-| 48 | 1790 | 1832 | 59.667 | timer_ticks | egg timer: 13 tick-tocks, one every 3.5 frames, last one on f1832 | -14.0 | -20.0 | -33.6 | -0.15 |
-| 49 | 1834 |  | 61.133 | cork_pop | cork pop: back again | -3.0 | -9.0 | -22.6 | +0.00 |
-| 50 | 1834 |  | 61.133 | timer_ding | kitchen-timer bell (C7), rings about 1 s: the timer rings exactly as he arrives | -4.0 | -10.0 | -23.6 | -0.15 |
-| 51 | 1855 |  | 61.833 | chomp | one big bite: jaw snap + crunch + 'omp' | -5.0 | -11.0 | -24.6 | +0.00 |
-| 52 | 1877 | 1893 | 62.567 | slide_whistle_down | slide whistle falling 1319 -> 349 Hz over 16 frames: and gone | -7.0 | -13.0 | -26.6 | +0.00 |
-| 53 | 1905 |  | 63.500 | flame_poof | 'fwoomp' + flutter + crackle: neighbor's sausage catches fire again | -9.0 | -15.0 | -28.6 | +0.20 |
+| 34 | 1197 |  | 39.900 | push_whoosh | push on the swing: hands on the back + chain jingle + soft whoosh | -9.0 | -15.0 | -28.6 | +0.10 |
+| 35 | 1215 |  | 40.500 | whoosh | quick whoosh (ease-out burst): swing fastest at the bottom | -10.0 | -16.0 | -29.6 | +0.00 |
+| 36 | 1258 |  | 41.933 | ting | triangle 'ting': swing stops at the top | -9.0 | -15.0 | -28.6 | +0.00 |
+| 37 | 1268 | 1614 | 42.267 | amb_ocean_night (bed) | night ocean: slow swells, foam, water lapping on the boat, timber creaks | -21.0 | -21.0 | -34.6 | +0.00 |
+| 38 | 1342 |  | 44.733 | cork_pop | cork pop + a few drips: Gus pops out of the pipe | -3.0 | -9.0 | -22.6 | +0.00 |
+| 39 | 1344 | 1440 | 44.800 | slide_whistle_up_slowing | slide whistle rising 415 -> 1245 Hz, slower and slower, fading to nothing by f1440 | -9.0 | -15.0 | -28.6 | +0.00 |
+| 40 | 1442 |  | 48.067 | ting | triangle 'ting': he stops dead; music holds its breath | -9.0 | -15.0 | -28.6 | +0.00 |
+| 41 | 1482 |  | 49.400 | twinkle | sparkle run of five tiny bells: friendly wave | -9.0 | -15.0 | -28.6 | +0.00 |
+| 42 | 1560 |  | 52.000 | gulp | cartoon gulp: smile drops | -7.0 | -13.0 | -26.6 | +0.00 |
+| 43 | 1598 | 1614 | 53.267 | slide_whistle_down | slide whistle falling 1109 -> 262 Hz over 16 frames: drops back into the pipe | -7.0 | -13.0 | -26.6 | +0.00 |
+| 44 | 1614 | 1707 | 53.800 | wind_rush (bed) | return trip: rush up to top speed and down again (time-lapse) (noise band + faint whistle + flutter, follows the speed) | -15.5 | -15.5 | -29.1 | +0.00 |
+| 45 | 1707 | 1935 | 56.900 | amb_garden_evening (bed) | evening garden: soft breeze, blackbird phrases, crickets | -25.0 | -25.0 | -38.6 | +0.00 |
+| 46 | 1711 |  | 57.033 | cork_pop | cork pop: pops up in his own garden | -3.0 | -9.0 | -22.6 | +0.00 |
+| 47 | 1737 |  | 57.900 | ting | triangle 'ting': hangs at the top | -9.0 | -15.0 | -28.6 | +0.00 |
+| 48 | 1766 | 1782 | 58.867 | slide_whistle_down | slide whistle falling 1319 -> 349 Hz over 16 frames: drops again | -7.0 | -13.0 | -26.6 | +0.00 |
+| 49 | 1790 | 1832 | 59.667 | timer_ticks | egg timer: 13 tick-tocks, one every 3.5 frames, last one on f1832 | -14.0 | -20.0 | -33.6 | -0.15 |
+| 50 | 1834 |  | 61.133 | cork_pop | cork pop: back again | -3.0 | -9.0 | -22.6 | +0.00 |
+| 51 | 1834 |  | 61.133 | timer_ding | kitchen-timer bell (C7), rings about 1 s: the timer rings exactly as he arrives | -4.0 | -10.0 | -23.6 | -0.15 |
+| 52 | 1855 |  | 61.833 | chomp | one big bite: jaw snap + crunch + 'omp' | -5.0 | -11.0 | -24.6 | +0.00 |
+| 53 | 1877 | 1893 | 62.567 | slide_whistle_down | slide whistle falling 1319 -> 349 Hz over 16 frames: and gone | -7.0 | -13.0 | -26.6 | +0.00 |
+| 54 | 1905 |  | 63.500 | flame_poof | 'fwoomp' + flutter + crackle: neighbor's sausage catches fire again | -9.0 | -15.0 | -28.6 | +0.20 |
 
 ## Verification (measured from the written WAV files by `verify.py`; nobody listened)
 - **Result: all checks passed**
 - Files: `mix.wav` 3,096,000 samples, 48000 Hz, 2 ch, 24-bit, peak -1.21 dBFS, 0 clipped; `stem_voice.wav` 3,096,000 samples, 48000 Hz, 2 ch, 24-bit, peak -0.48 dBFS, 0 clipped; `stem_music.wav` 3,096,000 samples, 48000 Hz, 2 ch, 24-bit, peak -8.73 dBFS, 0 clipped; `stem_sfx.wav` 3,096,000 samples, 48000 Hz, 2 ch, 24-bit, peak -7.44 dBFS, 0 clipped
-- Loudness of `mix.wav`: **-14.01 LUFS** integrated, true peak **-1.2 dBTP** (sample peak -1.21 dBFS), LRA 1.32 LU, max momentary -9.44 LUFS. Stems minus mix: -126.6 dB.
-- Event onsets in `stem_sfx.wav` (52 events, tolerance 1 frame): matched 52/52 within tolerance (largest error 0.54 frame, largest lag 93 samples); blind band-flux detector resolved 47 of them, 47 within tolerance (largest error 0.56 frame). Not resolved blind (soft starts under louder sounds, placement confirmed by the matched test): amb_garden@118, flame_poof@287, wind_rush@448, wind_rush@1614, amb_garden_evening@1707.
+- Loudness of `mix.wav`: **-14.01 LUFS** integrated, true peak **-1.2 dBTP** (sample peak -1.21 dBFS), LRA 1.32 LU, max momentary -9.44 LUFS. Stems minus mix: -126.5 dB.
+- Event onsets in `stem_sfx.wav` (53 events, tolerance 1 frame): matched 53/53 within tolerance (largest error 0.54 frame, largest lag 93 samples); blind band-flux detector resolved 48 of them, 48 within tolerance (largest error 0.56 frame). Not resolved blind (soft starts under louder sounds, placement confirmed by the matched test): amb_garden@118, flame_poof@287, wind_rush@448, wind_rush@1614, amb_garden_evening@1707.
 - Voice minus bed (music + sfx) in 300-3000 Hz while the narrator speaks: **8.3 dB** over 52.13 s of speech (400 ms windows: median 7.09, 10th percentile 2.3, 90th 12.67 dB).
 - Silence gaps longer than 0.5 s (50 ms RMS): mix under -50 dBFS: none; score under -60 dBFS (frames): 0-117.9, 861-915, 1444.6-1464.4 (intended: no music under the hook, the dead stop, the held breath); unintended: none; bed (music + sfx) under -60 dBFS: none.
 - Spectrum of the mix: DC -67.6 dBFS, below 20 Hz -40.3 dB, above 12 kHz -45.2 dB of the total energy, centroid 840 Hz. Bands (dB of total): 0-20 Hz -40.3, 20-60 Hz -29.5, 60-300 Hz -3.9, 300-3000 Hz -2.9, 3000-8000 Hz -11.0, 8000-12000 Hz -24.0, 12000-16000 Hz -45.2, 16000-24000 Hz -68.4.
@@ -163,7 +164,7 @@ Level convention: every EVENT has a naive level (LU vs the voice stem, as the ev
 | fall3 | 743-861 | 8.3 | 6.93 | 2.47 |
 | stop | 861-915 | 17.18 | 16.91 | 8.86 |
 | explain | 915-1123 | 8.88 | 6.74 | 1.89 |
-| swing | 1123-1268 | 7.54 | 6.3 | 2.01 |
+| swing | 1123-1268 | 7.49 | 6.3 | 1.56 |
 | lullaby | 1268-1442 | 8.81 | 6.44 | 4.28 |
 | breath | 1442-1465 | 17.2 | 10.9 | 2.81 |
 | luckily | 1465-1614 | 9.05 | 8.09 | 3.74 |
@@ -204,10 +205,11 @@ err = detected onset minus the frame in shots.json, in frames. matched = cross-c
 | 897 | question_blip | 897.01 | +0.01 | 1 | 896.96 | -0.04 | 32.4 |
 | 950 | arrow_pop | 950.0 | +0.00 | 1 | 949.88 | -0.12 | 999.0 |
 | 1022 | flip_blip | 1022.01 | +0.00 | 1 | 1021.88 | -0.12 | 999.0 |
-| 1091-1115 | decel_whoosh | 1091.09 | +0.09 | 1 | 1090.94 | -0.06 | 189.7 |
+| 1091-1115 | decel_whoosh | 1091.09 | +0.09 | 1 | 1090.94 | -0.06 | 189.8 |
 | 1126 | push_whoosh | 1126.0 | +0.00 | 2 | 1125.92 | -0.08 | 28.2 |
 | 1130-1260 | swing_creak | 1130.0 | +0.00 | 1 | 1130.0 | +0.00 | 8.3 |
-| 1215 | whoosh | 1214.84 | -0.16 | 2 | 1214.84 | -0.16 | 82.7 |
+| 1197 | push_whoosh | 1197.0 | +0.00 | 2 | 1196.9 | -0.10 | 53.3 |
+| 1215 | whoosh | 1214.84 | -0.16 | 2 | 1214.84 | -0.16 | 43.2 |
 | 1258 | ting | 1258.0 | +0.00 | 2 | 1257.86 | -0.14 | 999.0 |
 | 1268-1614 | amb_ocean_night | 1268.16 | +0.16 | 2 | 1268.06 | +0.06 | 11.4 |
 | 1342 | cork_pop | 1342.0 | +0.00 | 1 | 1342.04 | +0.04 | 10.1 |
@@ -219,7 +221,7 @@ err = detected onset minus the frame in shots.json, in frames. matched = cross-c
 | 1614-1707 | wind_rush | 1614.06 | +0.06 | 1 | - | - | 3.8 |
 | 1707-1935 | amb_garden_evening | 1707.44 | +0.44 | 1 | - | - | 3.1 |
 | 1711 | cork_pop | 1711.0 | +0.00 | 1 | 1710.86 | -0.14 | 17.3 |
-| 1737 | ting | 1737.0 | +0.00 | 2 | 1736.9 | -0.10 | 270.8 |
+| 1737 | ting | 1737.0 | +0.00 | 2 | 1736.9 | -0.10 | 270.9 |
 | 1766-1782 | slide_whistle_down | 1766.02 | +0.02 | 1 | 1766.0 | +0.00 | 36.4 |
 | 1790-1832 | timer_ticks | 1790.0 | +0.00 | 2 | 1789.88 | -0.12 | 23.2 |
 | 1834 | cork_pop | 1834.0 | +0.00 | 1 | 1833.92 | -0.08 | 19.6 |

@@ -5,7 +5,7 @@
 // shared shading uniforms of THIS world right before its canvas is drawn (two canvases are alive during a crossfade).
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
-import { staticFile } from "remotion";
+import { getInputProps, staticFile } from "remotion";
 import { V, Kit, Ray } from "./build";
 import { ctex, cloudHD } from "./paint";
 import { moonTex } from "./paint2";
@@ -143,7 +143,7 @@ export class World {
     this.hemi = new THREE.HemisphereLight("#cfe6ff", "#6c5c8c", 1.1);
     this.sun = new THREE.DirectionalLight("#fff0d6", 2.6);
     this.sun.castShadow = true;
-    this.sun.shadow.mapSize.set(SHADOW_MAP, SHADOW_MAP);
+    { const sz = (getInputProps() as { post?: { shadow?: number } }).post?.shadow ?? SHADOW_MAP; this.sun.shadow.mapSize.set(sz, sz); } // post.shadow: test stills only
     R.add(this.hemi, this.sun, this.sun.target);
     this.cloudMaps = { day: [0, 1, 2, 3].map((k) => cloudHD(k, LOOK.day.cloud)), golden: [0, 1, 2, 3].map((k) => cloudHD(k, LOOK.golden.cloud)), night: [0, 1, 2, 3].map((k) => cloudHD(k, LOOK.night.cloud)) };
     for (let i = 0; i < 9; i++) {

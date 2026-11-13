@@ -7,7 +7,7 @@ import { beam, rep } from "./paint";
 import { fenceHD, soilHD, pitHD, clothTex, slingTex, glowTex, lawnHD } from "./paint2";
 import { twoTone } from "./shade";
 import { NOINK } from "./ink";
-import { HOLE_R, MOUND, FENCE_N, FENCE_H, GRILL, CHAIR, PARK, V3, FOREGROUND, hash } from "./story";
+import { HOLE_R, MOUND, FENCE_N, FENCE_H, GRILL, CHAIR, PARK, NEIGH, FOREGROUND, hash } from "./story";
 import { shovelAt } from "./cast";
 
 const TAU = Math.PI * 2;
@@ -87,7 +87,7 @@ export class Town {
       b.add(lump(s, s * 0.7, s, i * 2.1, 0.15, false, 10), M.soil, new THREE.Matrix4().makeTranslation(MOUND[0] + Math.cos(a) * d, s * 0.5, MOUND[2] + Math.sin(a) * d));
     }
     // ---- fences: painted board panels, cap rail, posts ----
-    const fence = (x0: number, z0: number, x1: number, z1: number, h = FENCE_H) => {
+    const fence = (x0: number, z0: number, x1: number, z1: number, h = FENCE_H, posts?: number[]) => {
       const a = V(x0, 0, z0), c = V(x1, 0, z1), len = a.distanceTo(c), dir = c.clone().sub(a).normalize(), nrm = V(-dir.z, 0, dir.x).multiplyScalar(0.025);
       for (const s of [1, -1]) {
         const p0 = a.clone().addScaledVector(nrm, s), p1 = c.clone().addScaledVector(nrm, s);
@@ -95,10 +95,10 @@ export class Town {
         b.add(quad(q0, q1, q1.clone().setY(h), q0.clone().setY(h), len / 2, 1), M.fence);
       }
       b.add(beamBetween(a.clone().setY(h + 0.02), c.clone().setY(h + 0.02), 0.085), M.wood);
-      const n = Math.max(1, Math.round(len / 2.2));
-      for (let i = 0; i <= n; i++) { const p = a.clone().lerp(c, i / n); b.add(boxGeo(V(p.x - 0.06, 0, p.z - 0.06), V(p.x + 0.06, h + 0.14, p.z + 0.06), 1), M.wood); }
+      const n = Math.max(1, Math.round(len / 2.2)), at = posts ?? Array.from({ length: n + 1 }, (_, i) => i / n);
+      for (const u of at) { const p = a.clone().lerp(c, u); b.add(boxGeo(V(p.x - 0.06, 0, p.z - 0.06), V(p.x + 0.06, h + 0.14, p.z + 0.06), 1), M.wood); }
     };
-    fence(-6.5, FENCE_N, 6.5, FENCE_N);
+    fence(-6.5, FENCE_N, 6.5, FENCE_N, FENCE_H, [-6.5, -4.3, -2.1, 0.1, 1.5, 4.7, 6.5].map((x) => (x + 6.5) / 13)); // no post in front of the neighbor or his grill
     fence(-6.5, FENCE_N, -6.5, 9.5);
     fence(6.5, 9.5, 6.5, FENCE_N);
     fence(-16, FENCE_N, -6.5, FENCE_N, 1.0); fence(6.5, FENCE_N, 16, FENCE_N, 1.0);
@@ -110,22 +110,22 @@ export class Town {
     house(b, 0.5, 15, 0, 9, 8, 7, 4);
     house(b, -9.5, 15, 0, 9, 8, 8.4, 6); house(b, 10.5, 15, 0, 9, 8, 7, 1);
     // ---- trees and bushes ----
-    for (const [n, x, z, h] of [["tree_oak", -7.4, -9.0, 6.8], ["tree_fat", 6.6, -9.2, 6.2], ["tree_default", -3.4, -21, 10], ["tree_oak", 6.0, -22, 10.5], ["tree_detailed", -13.5, -9.5, 8],
+    for (const [n, x, z, h] of [["tree_oak", -7.4, -9.0, 6.8], ["tree_fat", 8.6, -9.4, 6.2], ["tree_default", -3.4, -21, 10], ["tree_oak", 6.0, -22, 10.5], ["tree_detailed", -13.5, -9.5, 8],
       ["tree_fat", 15.5, -10.5, 8], ["tree_default", 10.2, -0.6, 7], ["tree_oak", 10.8, 5.5, 7.5],
       ["tree-high-round", -23, -22, 11], ["tree-high-round", 24, -23, 11.5], ["tree_cone", -9.5, -24, 10], ["tree_cone", 14, -25, 11]] as const) prop(b, kit, n, x, 0, z, h, x * 1.7);
     for (const [x, z, h] of [[-5.3, -3.85, 1.15], [-3.9, -4.0, 0.9], [4.6, -3.9, 1.1], [5.7, -3.3, 0.85], [-5.9, -1.9, 0.95], [5.95, 1.4, 1.0], [5.9, 4.2, 1.1],
-      [-4.2, -6.3, 1.2], [5.2, -7.6, 1.3], [-1.9, -9.9, 1.1]] as const) prop(b, kit, x * z > 0 ? "plant_bushLarge" : "plant_bush", x, 0, z, h, x);
+      [-4.2, -6.3, 1.2], [5.6, -7.9, 1.3], [-1.9, -9.9, 1.1]] as const) prop(b, kit, x * z > 0 ? "plant_bushLarge" : "plant_bush", x, 0, z, h, x);
     // flower beds along the fences (kit flowers; none on the camera's side of the hole)
     const FL = ["flower_redA", "flower_yellowA", "flower_purpleA", "flower_redB", "flower_yellowB", "flower_purpleB", "flower_redC", "flower_yellowC", "flower_purpleC"];
-    for (let i = 0; i < 34; i++) prop(b, kit, FL[Math.floor(r() * 9)], -6 + 12 * r(), 0, FENCE_N + 0.35 + 0.5 * r(), 0.3 + 0.14 * r(), r() * 6);
+    for (let i = 0; i < 34; i++) { const x = -6 + 12 * r(), z = FENCE_N + 0.35 + 0.5 * r(), h = 0.3 + 0.14 * r(), yw = r() * 6; if (x < 1.1 || x > 4.2) prop(b, kit, FL[Math.floor(r() * 9)], x, 0, z, h, yw); } // (bed left open where the last move passes low over it)
     for (let i = 0; i < 16; i++) { const s = i % 2 ? 1 : -1; prop(b, kit, FL[Math.floor(r() * 9)], s * (5.75 + 0.45 * r()), 0, -3.5 + 9 * r(), 0.3 + 0.14 * r(), r() * 6); }
     for (let i = 0; i < 18; i++) prop(b, kit, FL[Math.floor(r() * 9)], -6 + 12 * r(), 0, FENCE_N - 0.4 - 1.2 * r(), 0.3 + 0.14 * r(), r() * 6);
     for (const [x, z] of [[-4.6, 6.8], [4.9, 7.2], [-5.3, 5.9]] as const) prop(b, kit, "pot_large", x, 0, z, 0.42, x);
-    prop(b, kit, "log_stack", NEIGHBOR_BOX[0], 0, NEIGHBOR_BOX[2], 0.36, 1.57);
+    prop(b, kit, "log_stack", NEIGH[0], 0, NEIGH[2] - 0.04, 0.36, 1.57); // what the neighbor stands on
     prop(b, kit, "stump_round", -3.6, 0, -6.9, 0.4, 0.4);
     for (const [x, z] of [[2.4, 4.4], [3.1, 5.6], [2.2, 6.9]] as const) prop(b, kit, "path_stone", x, 0.0, z, 0.06, x * 2);
     // ---- washing line (north-east corner): two T posts, a sagging line, four things drying ----
-    const A = V(4.45, 1.92, -2.2), B = V(5.95, 1.92, -4.25), along = B.clone().sub(A), L = along.length(), yaw = Math.atan2(-along.z, along.x);
+    const A = V(5.0, 1.92, -2.9), B = V(6.15, 1.92, -4.3), along = B.clone().sub(A), L = along.length(), yaw = Math.atan2(-along.z, along.x);
     for (const p of [A, B]) {
       b.add(cyl(V(p.x, 0, p.z), V(p.x, 2.02, p.z), 0.045, 0.04), M.white); // plain posts (a T bar behind a head reads as a propeller)
       b.add(new THREE.SphereGeometry(0.06, 12, 8).translate(p.x, 2.05, p.z), M.white);
@@ -139,7 +139,6 @@ export class Town {
       this.cloths.push({ m, w, h, ph: i * 1.7 }); R.add(m);
       for (const s of [-1, 1]) b.add(boxGeo(V(-0.012, -0.05, -0.012), V(0.012, 0.03, 0.012)), M.wood, new THREE.Matrix4().makeTranslation(p.x + s * (w / 2 - 0.06) * (along.x / L), p.y, p.z + s * (w / 2 - 0.06) * (along.z / L)));
     });
-    void L;
     // ---- the neighbor's kettle grill ----
     const [gx, , gz] = GRILL, GH = 1.2; // rim height: the bowl shows over the fence
     for (let i = 0; i < 3; i++) { const a = (i / 3) * TAU + 0.5; b.add(cyl(V(gx + Math.cos(a) * 0.34, 0, gz + Math.sin(a) * 0.34), V(gx + Math.cos(a) * 0.16, GH - 0.22, gz + Math.sin(a) * 0.16), 0.018), M.steel); }
@@ -249,5 +248,3 @@ export class Town {
     for (const g of this.fgs) g.o.visible = f >= g.a && f < g.b && g.a < bEnd && g.b > a;
   }
 }
-/** what the neighbor stands on behind his fence */
-export const NEIGHBOR_BOX: V3 = [0.75, 0, -5.12];

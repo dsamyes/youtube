@@ -23,9 +23,11 @@ import { Kit } from "./build";
 import { TOTAL, FLASH_AT, SHOTS, layersAt, dofAt } from "./story";
 
 export const HOLE_FRAMES = TOTAL;
+/** MSAA samples of the main render (the template uses 4) */
+const MSAA = 4;
 
 /** A/B switches for test stills only (Remotion inputProps `{ post: { ink: false, ... } }`); everything is on by default. */
-type PostToggles = { ink: boolean; lens: boolean; pre: boolean; bloom: boolean; grade: boolean; grain: boolean };
+type PostToggles = { ink: boolean; lens: boolean; pre: boolean; bloom: boolean; grade: boolean; grain: boolean; msaa?: number };
 const toggles = (): PostToggles => ({ ink: true, lens: true, pre: true, bloom: true, grade: true, grain: false, ...((getInputProps() as { post?: Partial<PostToggles> }).post ?? {}) });
 
 /** Bloom for emissive sources only (depth.md 6.4). Its MIP chain always starts at 540x960 (half of 1080x1920),
@@ -88,7 +90,7 @@ const Inner: React.FC<{ id: number; kit: Kit }> = ({ id, kit }) => {
     return () => { clearTimeout(timer); if (live) { live = false; continueRender(hold); } };
   }, [f, advance]);
   const post = useMemo(() => (
-    <EffectComposer ref={compRef} multisampling={4}>
+    <EffectComposer ref={compRef} multisampling={on.msaa ?? MSAA}>
       {on.ink ? <primitive object={fx.ink} dispose={null} /> : null}
       {on.lens && on.pre ? <primitive object={fx.lens.pre} dispose={null} /> : null}
       {on.lens ? <primitive object={fx.lens.main} dispose={null} /> : null}

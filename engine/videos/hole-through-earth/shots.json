@@ -11,83 +11,493 @@
     "ocean": "open ocean at NIGHT on the far side of the world: moon, stars, a pipe rim sticking out of the waves (the far mouth of the tunnel), a fisherman in a rowboat with a lantern"
   },
   "shots": [
-    {"id": 1,  "a": 0,    "b": 118,  "place": "shaft",  "light": "shaft_hot", "line": 1,  "what": "HOOK. Camera falls with Gus (fishbowl helmet, pyjamas, slippers), arms and legs flailing, walls streaking up past him. On 'never hit the bottom' (f96-105) the camera tilts down past him to the endless glowing tunnel. 4-frame white flash at 118."},
-    {"id": 2,  "a": 118,  "b": 229,  "place": "garden", "light": "day",       "line": 2,  "what": "Glide over the fence into the garden: Gus stands proudly by the hole, plants the shovel in the dirt mound on 'dug' (f181). Sunday-morning calm: birds, washing line."},
-    {"id": 3,  "a": 229,  "b": 264,  "place": "earth",  "light": "space",     "line": 2,  "what": "'straight through the planet': hard cut to the Earth cutaway; the tunnel line punches through and a tiny flag pops out of the far side on 'planet' (f247)."},
-    {"id": 4,  "a": 264,  "b": 319,  "place": "garden", "light": "day",       "line": 3,  "what": "Neighbor leans over the fence laughing and pointing, holding a grill fork; the sausage on it bursts into flame on 'burn' (f287) and is a black crisp by 'crisp' (f305)."},
-    {"id": 5,  "a": 319,  "b": 393,  "place": "garden", "light": "day",       "line": 4,  "what": "Wife, deadpan, arms crossed, frying pan in hand; she flips a pancake that lands SPLAT on the lawn on 'splat' (f351)."},
-    {"id": 6,  "a": 393,  "b": 448,  "place": "garden", "light": "day",       "line": 5,  "what": "Gus holds up a clipboard full of scribbled sums on 'math' (f412), salutes, and hops into the hole on 'jumps' (f429). Camera tilts down after him."},
-    {"id": 7,  "a": 448,  "b": 537,  "place": "shaft",  "light": "shaft_crust", "line": 6, "what": "Falling through brown crust rock. No air: a white feather falls right beside him at exactly his speed (drifts into frame f504 on 'slows'); he looks at it, impressed."},
-    {"id": 8,  "a": 537,  "b": 598,  "place": "shaft",  "light": "shaft_crust", "line": 7, "what": "A bullet is travelling down the tunnel; Gus slides past it from behind and overtakes it on 'outrunning' (f564), gives it a little wave on 'bullet' (f581)."},
-    {"id": 9,  "a": 598,  "b": 654,  "place": "shaft",  "light": "shaft_mantle", "line": 8, "what": "Walls turn red then orange, streaks lengthen, his cheeks and pyjamas flap. Kick on 'shoots' (f633)."},
-    {"id": 10, "a": 654,  "b": 685,  "place": "earth",  "light": "space",     "line": 8,  "what": "Insert: Earth cutaway, tiny Gus streaks through the white-hot core with a speed trail on 'center of the Earth' (f654-673)."},
-    {"id": 11, "a": 685,  "b": 743,  "place": "shaft",  "light": "shaft_core", "line": 8, "what": "Close-up on his face inside the helmet, everything white-yellow, maximum speed lines on 'twenty-two thousand miles an hour'. Kick on 'hour' (f727)."},
-    {"id": 12, "a": 743,  "b": 861,  "place": "shaft",  "light": "shaft_core", "line": 9, "what": "Glowing white-hot walls. He holds out a thermometer: it shoots to the top and pops on 'Sun' (f801). Then on 'very good tunnel' he calmly gives a thumbs-up (f836)."},
-    {"id": 13, "a": 861,  "b": 915,  "place": "garden", "light": "day",       "line": 10, "what": "'But wait': hard cut to the quiet garden. Wife and neighbor lean over the hole, hands to their ears, waiting for the splat. A '?' fx card pops over the hole on 'splat?' (f897)."},
-    {"id": 14, "a": 915,  "b": 1123, "place": "earth",  "light": "space",     "line": 11, "what": "EXPLANATION (night-blue). Earth cutaway, slow push-in. Gus falls toward the centre; an arrow card from Gus to the centre pops on 'pulls' (f950). He crosses the centre on 'passes' (f1022): the arrow flips to point BACK at the centre. He visibly slows on 'slowing him down' (f1091-1109) as he climbs to the far side."},
-    {"id": 15, "a": 1123, "b": 1268, "place": "park",   "light": "golden",    "line": 12, "what": "The swing analogy: adult pushes kid on 'pushed' (f1126); the swing whooshes fast through the bottom on 'going down' (f1215) and slows to a dead stop at the top of the arc on 'back up' (f1258)."},
-    {"id": 16, "a": 1268, "b": 1465, "place": "ocean",  "light": "night",     "line": 13, "what": "Night ocean, moon. A fisherman in a rowboat dozes beside a pipe sticking out of the sea. On 'pops up' (f1342) Gus rises out of the pipe, slower and slower, and hangs perfectly still at the top on 'stops' (f1442). Fisherman's eyes go wide."},
-    {"id": 17, "a": 1465, "b": 1537, "place": "ocean",  "light": "night",     "line": 14, "what": "'Luckily': close two-shot. Gus, hovering, relieved, waves hello on 'stops' (f1482). The fisherman slowly waves back."},
-    {"id": 18, "a": 1537, "b": 1614, "place": "ocean",  "light": "night",     "line": 15, "what": "'Unluckily': same framing. Gus's smile drops as he starts to sink (f1560); he reaches for the fisherman's hand, misses, and drops back into the pipe on 'moment' (f1598). The fisherman is left mid-wave."},
-    {"id": 19, "a": 1614, "b": 1707, "place": "shaft",  "light": "shaft_mantle", "line": 16, "what": "'Then down he goes again': fast shaft streak the other way, Gus falling with arms folded, bored. Colours run mantle -> core -> mantle -> crust (time-lapse)."},
-    {"id": 20, "a": 1707, "b": 1753, "place": "garden", "light": "golden",    "line": 16, "what": "Evening garden. Gus pops up out of the hole on 'back' (f1711) and hangs at the top on 'garden' (f1737). Wife looks up from a deck chair."},
-    {"id": 21, "a": 1753, "b": 1935, "place": "garden", "light": "golden",    "line": 17, "what": "PAYOFF. He drops back in on 'never' (f1766). Wife winds an egg timer and holds out a sandwich on a plate. On 'home' (f1834) he pops up again, takes one bite on 'second' (f1855), and drops again on 'every' (f1877). Neighbor stares over the fence, jaw dropped, his forgotten sausage on fire (f1905). Ends on the last word."}
+    {
+      "id": 1,
+      "a": 0,
+      "b": 118,
+      "place": "shaft",
+      "light": "shaft_hot",
+      "line": 1,
+      "what": "HOOK. Camera falls with Gus (fishbowl helmet, pyjamas, slippers), arms and legs flailing, walls streaking up past him. On 'never hit the bottom' (f96-105) the camera tilts down past him to the endless glowing tunnel. 4-frame white flash at 118."
+    },
+    {
+      "id": 2,
+      "a": 118,
+      "b": 229,
+      "place": "garden",
+      "light": "day",
+      "line": 2,
+      "what": "Glide over the fence into the garden: Gus stands proudly by the hole, plants the shovel in the dirt mound on 'dug' (f181). Sunday-morning calm: birds, washing line."
+    },
+    {
+      "id": 3,
+      "a": 229,
+      "b": 264,
+      "place": "earth",
+      "light": "space",
+      "line": 2,
+      "what": "'straight through the planet': hard cut to the Earth cutaway; the tunnel line punches through and a tiny flag pops out of the far side on 'planet' (f247)."
+    },
+    {
+      "id": 4,
+      "a": 264,
+      "b": 319,
+      "place": "garden",
+      "light": "day",
+      "line": 3,
+      "what": "Neighbor leans over the fence laughing and pointing, holding a grill fork; the sausage on it bursts into flame on 'burn' (f287) and is a black crisp by 'crisp' (f305)."
+    },
+    {
+      "id": 5,
+      "a": 319,
+      "b": 393,
+      "place": "garden",
+      "light": "day",
+      "line": 4,
+      "what": "Wife, deadpan, arms crossed, frying pan in hand; she flips a pancake that lands SPLAT on the lawn on 'splat' (f351)."
+    },
+    {
+      "id": 6,
+      "a": 393,
+      "b": 448,
+      "place": "garden",
+      "light": "day",
+      "line": 5,
+      "what": "Gus holds up a clipboard full of scribbled sums on 'math' (f412), salutes, and hops into the hole on 'jumps' (f429). Camera tilts down after him."
+    },
+    {
+      "id": 7,
+      "a": 448,
+      "b": 537,
+      "place": "shaft",
+      "light": "shaft_crust",
+      "line": 6,
+      "what": "Falling through brown crust rock. No air: a white feather falls right beside him at exactly his speed (drifts into frame f504 on 'slows'); he looks at it, impressed."
+    },
+    {
+      "id": 8,
+      "a": 537,
+      "b": 598,
+      "place": "shaft",
+      "light": "shaft_crust",
+      "line": 7,
+      "what": "A bullet is travelling down the tunnel; Gus slides past it from behind and overtakes it on 'outrunning' (f564), gives it a little wave on 'bullet' (f581)."
+    },
+    {
+      "id": 9,
+      "a": 598,
+      "b": 654,
+      "place": "shaft",
+      "light": "shaft_mantle",
+      "line": 8,
+      "what": "Walls turn red then orange, streaks lengthen, his cheeks and pyjamas flap. Kick on 'shoots' (f633)."
+    },
+    {
+      "id": 10,
+      "a": 654,
+      "b": 685,
+      "place": "earth",
+      "light": "space",
+      "line": 8,
+      "what": "Insert: Earth cutaway, tiny Gus streaks through the white-hot core with a speed trail on 'center of the Earth' (f654-673)."
+    },
+    {
+      "id": 11,
+      "a": 685,
+      "b": 743,
+      "place": "shaft",
+      "light": "shaft_core",
+      "line": 8,
+      "what": "Close-up on his face inside the helmet, everything white-yellow, maximum speed lines on 'twenty-two thousand miles an hour'. Kick on 'hour' (f727)."
+    },
+    {
+      "id": 12,
+      "a": 743,
+      "b": 861,
+      "place": "shaft",
+      "light": "shaft_core",
+      "line": 9,
+      "what": "Glowing white-hot walls. He holds out a thermometer: it shoots to the top and pops on 'Sun' (f801). Then on 'very good tunnel' he calmly gives a thumbs-up (f836)."
+    },
+    {
+      "id": 13,
+      "a": 861,
+      "b": 915,
+      "place": "garden",
+      "light": "day",
+      "line": 10,
+      "what": "'But wait': hard cut to the quiet garden. Wife and neighbor lean over the hole, hands to their ears, waiting for the splat. A '?' fx card pops over the hole on 'splat?' (f897)."
+    },
+    {
+      "id": 14,
+      "a": 915,
+      "b": 1123,
+      "place": "earth",
+      "light": "space",
+      "line": 11,
+      "what": "EXPLANATION (night-blue). Earth cutaway, slow push-in. Gus falls toward the centre; an arrow card from Gus to the centre pops on 'pulls' (f950). He crosses the centre on 'passes' (f1022): the arrow flips to point BACK at the centre. He visibly slows on 'slowing him down' (f1091-1109) as he climbs to the far side."
+    },
+    {
+      "id": 15,
+      "a": 1123,
+      "b": 1268,
+      "place": "park",
+      "light": "golden",
+      "line": 12,
+      "what": "The swing analogy: adult pushes kid on 'pushed' (f1126); the swing whooshes fast through the bottom on 'going down' (f1215) and slows to a dead stop at the top of the arc on 'back up' (f1258)."
+    },
+    {
+      "id": 16,
+      "a": 1268,
+      "b": 1465,
+      "place": "ocean",
+      "light": "night",
+      "line": 13,
+      "what": "Night ocean, moon. A fisherman in a rowboat dozes beside a pipe sticking out of the sea. On 'pops up' (f1342) Gus rises out of the pipe, slower and slower, and hangs perfectly still at the top on 'stops' (f1442). Fisherman's eyes go wide."
+    },
+    {
+      "id": 17,
+      "a": 1465,
+      "b": 1537,
+      "place": "ocean",
+      "light": "night",
+      "line": 14,
+      "what": "'Luckily': close two-shot. Gus, hovering, relieved, waves hello on 'stops' (f1482). The fisherman slowly waves back."
+    },
+    {
+      "id": 18,
+      "a": 1537,
+      "b": 1614,
+      "place": "ocean",
+      "light": "night",
+      "line": 15,
+      "what": "'Unluckily': same framing. Gus's smile drops as he starts to sink (f1560); he reaches for the fisherman's hand, misses, and drops back into the pipe on 'moment' (f1598). The fisherman is left mid-wave."
+    },
+    {
+      "id": 19,
+      "a": 1614,
+      "b": 1707,
+      "place": "shaft",
+      "light": "shaft_mantle",
+      "line": 16,
+      "what": "'Then down he goes again': fast shaft streak the other way, Gus falling with arms folded, bored. Colours run mantle -> core -> mantle -> crust (time-lapse)."
+    },
+    {
+      "id": 20,
+      "a": 1707,
+      "b": 1753,
+      "place": "garden",
+      "light": "golden",
+      "line": 16,
+      "what": "Evening garden. Gus pops up out of the hole on 'back' (f1711) and hangs at the top on 'garden' (f1737). Wife looks up from a deck chair."
+    },
+    {
+      "id": 21,
+      "a": 1753,
+      "b": 1935,
+      "place": "garden",
+      "light": "golden",
+      "line": 17,
+      "what": "PAYOFF. He drops back in on 'never' (f1766). Wife winds an egg timer and holds out a sandwich on a plate. On 'home' (f1834) he pops up again, takes one bite on 'second' (f1855), and drops again on 'every' (f1877). Neighbor stares over the fence, jaw dropped, his forgotten sausage on fire (f1905). Ends on the last word."
+    }
   ],
-  "xfade": {"14": 8, "15": 8, "16": 8, "20": 8},
+  "xfade": {
+    "14": 8,
+    "15": 8,
+    "16": 8,
+    "20": 8
+  },
   "events": [
-    {"f": 0,    "to": 118,  "type": "wind_rush",      "note": "fast falling wind, rising"},
-    {"f": 103,  "type": "whoosh_big",     "note": "camera tilts down the tunnel"},
-    {"f": 118,  "type": "flash_hit",      "note": "white flash, music starts (playful Sunday theme)"},
-    {"f": 118,  "to": 229,  "type": "amb_garden",     "note": "birds, light breeze"},
-    {"f": 181,  "type": "shovel_thunk",   "note": "shovel planted in the dirt mound"},
-    {"f": 229,  "type": "whoosh",         "note": "cut to Earth cutaway"},
-    {"f": 247,  "type": "pop",            "note": "tunnel punches through, flag pops"},
-    {"f": 264,  "to": 448,  "type": "amb_garden",     "note": "birds"},
-    {"f": 287,  "type": "flame_poof",     "note": "sausage ignites"},
-    {"f": 305,  "type": "sizzle",         "note": "burnt crisp"},
-    {"f": 351,  "type": "splat",          "note": "pancake hits the lawn"},
-    {"f": 412,  "type": "paper_flick",    "note": "clipboard up"},
-    {"f": 429,  "type": "jump_boing",     "note": "Gus hops in"},
-    {"f": 431,  "to": 448,  "type": "slide_whistle_down", "note": "falling away"},
-    {"f": 448,  "to": 861,  "type": "wind_rush",      "note": "tunnel rush, pitch and level rising steadily to f743, holds to 861 (no air joke: keep it a stylised whoosh, not realistic wind)"},
-    {"f": 504,  "type": "twinkle",        "note": "feather drifts in"},
-    {"f": 564,  "type": "zip",            "note": "Gus overtakes the bullet"},
-    {"f": 581,  "type": "ricochet_ping",  "note": "little wave at the bullet"},
-    {"f": 633,  "type": "impact_kick",    "note": "'shoots': speed surge"},
-    {"f": 654,  "type": "zip",            "note": "streak through the core (Earth cutaway insert)"},
-    {"f": 727,  "type": "impact_kick",    "note": "'hour'"},
-    {"f": 765,  "type": "sizzle",         "note": "'hot'"},
-    {"f": 801,  "type": "glass_pop",      "note": "thermometer pops"},
-    {"f": 836,  "type": "ding",           "note": "thumbs-up"},
-    {"f": 861,  "type": "record_stop",    "note": "'But wait': rush and music cut dead"},
-    {"f": 861,  "to": 915,  "type": "amb_garden",     "note": "quiet, one cricket"},
-    {"f": 897,  "type": "question_blip",  "note": "'?' card"},
-    {"f": 915,  "type": "music_mystery",  "note": "explanation theme (soft, curious), crossfade"},
-    {"f": 950,  "type": "arrow_pop",      "note": "arrow toward the centre"},
-    {"f": 1022, "type": "flip_blip",      "note": "arrow flips as he passes the centre"},
-    {"f": 1091, "to": 1115, "type": "decel_whoosh",   "note": "falling pitch as he slows"},
-    {"f": 1126, "type": "push_whoosh",    "note": "push on the swing"},
-    {"f": 1130, "to": 1260, "type": "swing_creak",    "note": "rope creak in rhythm with the swing"},
-    {"f": 1215, "type": "whoosh",         "note": "swing fastest at the bottom"},
-    {"f": 1258, "type": "ting",           "note": "swing stops at the top"},
-    {"f": 1268, "to": 1614, "type": "amb_ocean_night","note": "soft waves, boat creak"},
-    {"f": 1342, "type": "cork_pop",       "note": "Gus pops out of the pipe"},
-    {"f": 1344, "to": 1440, "type": "slide_whistle_up_slowing", "note": "rising, slowing to nothing"},
-    {"f": 1442, "type": "ting",           "note": "he stops dead; music holds its breath"},
-    {"f": 1482, "type": "twinkle",        "note": "friendly wave"},
-    {"f": 1560, "type": "gulp",           "note": "smile drops"},
-    {"f": 1598, "to": 1614, "type": "slide_whistle_down", "note": "drops back into the pipe"},
-    {"f": 1614, "to": 1707, "type": "wind_rush",      "note": "return trip"},
-    {"f": 1711, "type": "cork_pop",       "note": "pops up in his own garden"},
-    {"f": 1737, "type": "ting",           "note": "hangs at the top"},
-    {"f": 1707, "to": 1935, "type": "amb_garden_evening", "note": "evening birds, crickets"},
-    {"f": 1766, "to": 1782, "type": "slide_whistle_down", "note": "drops again"},
-    {"f": 1790, "to": 1832, "type": "timer_ticks",    "note": "egg timer"},
-    {"f": 1834, "type": "cork_pop",       "note": "back again"},
-    {"f": 1834, "type": "timer_ding",     "note": "the timer rings exactly as he arrives"},
-    {"f": 1855, "type": "chomp",          "note": "one bite of sandwich"},
-    {"f": 1877, "to": 1893, "type": "slide_whistle_down", "note": "and gone"},
-    {"f": 1905, "type": "flame_poof",     "note": "neighbor's sausage catches fire again"},
-    {"f": 1925, "type": "music_button",   "note": "final stinger, ends by 1935"}
+    {
+      "f": 0,
+      "to": 118,
+      "type": "wind_rush",
+      "note": "fast falling wind, rising"
+    },
+    {
+      "f": 103,
+      "type": "whoosh_big",
+      "note": "camera tilts down the tunnel"
+    },
+    {
+      "f": 118,
+      "type": "flash_hit",
+      "note": "white flash, music starts (playful Sunday theme)"
+    },
+    {
+      "f": 118,
+      "to": 229,
+      "type": "amb_garden",
+      "note": "birds, light breeze"
+    },
+    {
+      "f": 181,
+      "type": "shovel_thunk",
+      "note": "shovel planted in the dirt mound"
+    },
+    {
+      "f": 229,
+      "type": "whoosh",
+      "note": "cut to Earth cutaway"
+    },
+    {
+      "f": 247,
+      "type": "pop",
+      "note": "tunnel punches through, flag pops"
+    },
+    {
+      "f": 264,
+      "to": 448,
+      "type": "amb_garden",
+      "note": "birds"
+    },
+    {
+      "f": 287,
+      "type": "flame_poof",
+      "note": "sausage ignites"
+    },
+    {
+      "f": 305,
+      "type": "sizzle",
+      "note": "burnt crisp"
+    },
+    {
+      "f": 351,
+      "type": "splat",
+      "note": "pancake hits the lawn"
+    },
+    {
+      "f": 412,
+      "type": "paper_flick",
+      "note": "clipboard up"
+    },
+    {
+      "f": 429,
+      "type": "jump_boing",
+      "note": "Gus hops in"
+    },
+    {
+      "f": 431,
+      "to": 448,
+      "type": "slide_whistle_down",
+      "note": "falling away"
+    },
+    {
+      "f": 448,
+      "to": 861,
+      "type": "wind_rush",
+      "note": "tunnel rush, pitch and level rising steadily to f743, holds to 861 (no air joke: keep it a stylised whoosh, not realistic wind)"
+    },
+    {
+      "f": 504,
+      "type": "twinkle",
+      "note": "feather drifts in"
+    },
+    {
+      "f": 564,
+      "type": "zip",
+      "note": "Gus overtakes the bullet"
+    },
+    {
+      "f": 581,
+      "type": "ricochet_ping",
+      "note": "little wave at the bullet"
+    },
+    {
+      "f": 633,
+      "type": "impact_kick",
+      "note": "'shoots': speed surge"
+    },
+    {
+      "f": 654,
+      "type": "zip",
+      "note": "streak through the core (Earth cutaway insert)"
+    },
+    {
+      "f": 727,
+      "type": "impact_kick",
+      "note": "'hour'"
+    },
+    {
+      "f": 765,
+      "type": "sizzle",
+      "note": "'hot'"
+    },
+    {
+      "f": 801,
+      "type": "glass_pop",
+      "note": "thermometer pops"
+    },
+    {
+      "f": 836,
+      "type": "ding",
+      "note": "thumbs-up"
+    },
+    {
+      "f": 861,
+      "type": "record_stop",
+      "note": "'But wait': rush and music cut dead"
+    },
+    {
+      "f": 861,
+      "to": 915,
+      "type": "amb_garden",
+      "note": "quiet, one cricket"
+    },
+    {
+      "f": 897,
+      "type": "question_blip",
+      "note": "'?' card"
+    },
+    {
+      "f": 915,
+      "type": "music_mystery",
+      "note": "explanation theme (soft, curious), crossfade"
+    },
+    {
+      "f": 950,
+      "type": "arrow_pop",
+      "note": "arrow toward the centre"
+    },
+    {
+      "f": 1022,
+      "type": "flip_blip",
+      "note": "arrow flips as he passes the centre"
+    },
+    {
+      "f": 1091,
+      "to": 1115,
+      "type": "decel_whoosh",
+      "note": "falling pitch as he slows"
+    },
+    {
+      "f": 1126,
+      "type": "push_whoosh",
+      "note": "push on the swing"
+    },
+    {
+      "f": 1130,
+      "to": 1260,
+      "type": "swing_creak",
+      "note": "rope creak in rhythm with the swing"
+    },
+    {
+      "f": 1197,
+      "type": "push_whoosh",
+      "note": "second push on the swing"
+    },
+    {
+      "f": 1215,
+      "type": "whoosh",
+      "note": "swing fastest at the bottom"
+    },
+    {
+      "f": 1258,
+      "type": "ting",
+      "note": "swing stops at the top"
+    },
+    {
+      "f": 1268,
+      "to": 1614,
+      "type": "amb_ocean_night",
+      "note": "soft waves, boat creak"
+    },
+    {
+      "f": 1342,
+      "type": "cork_pop",
+      "note": "Gus pops out of the pipe"
+    },
+    {
+      "f": 1344,
+      "to": 1440,
+      "type": "slide_whistle_up_slowing",
+      "note": "rising, slowing to nothing"
+    },
+    {
+      "f": 1442,
+      "type": "ting",
+      "note": "he stops dead; music holds its breath"
+    },
+    {
+      "f": 1482,
+      "type": "twinkle",
+      "note": "friendly wave"
+    },
+    {
+      "f": 1560,
+      "type": "gulp",
+      "note": "smile drops"
+    },
+    {
+      "f": 1598,
+      "to": 1614,
+      "type": "slide_whistle_down",
+      "note": "drops back into the pipe"
+    },
+    {
+      "f": 1614,
+      "to": 1707,
+      "type": "wind_rush",
+      "note": "return trip"
+    },
+    {
+      "f": 1707,
+      "to": 1935,
+      "type": "amb_garden_evening",
+      "note": "evening birds, crickets"
+    },
+    {
+      "f": 1711,
+      "type": "cork_pop",
+      "note": "pops up in his own garden"
+    },
+    {
+      "f": 1737,
+      "type": "ting",
+      "note": "hangs at the top"
+    },
+    {
+      "f": 1766,
+      "to": 1782,
+      "type": "slide_whistle_down",
+      "note": "drops again"
+    },
+    {
+      "f": 1790,
+      "to": 1832,
+      "type": "timer_ticks",
+      "note": "egg timer"
+    },
+    {
+      "f": 1834,
+      "type": "cork_pop",
+      "note": "back again"
+    },
+    {
+      "f": 1834,
+      "type": "timer_ding",
+      "note": "the timer rings exactly as he arrives"
+    },
+    {
+      "f": 1855,
+      "type": "chomp",
+      "note": "one bite of sandwich"
+    },
+    {
+      "f": 1877,
+      "to": 1893,
+      "type": "slide_whistle_down",
+      "note": "and gone"
+    },
+    {
+      "f": 1905,
+      "type": "flame_poof",
+      "note": "neighbor's sausage catches fire again"
+    },
+    {
+      "f": 1925,
+      "type": "music_button",
+      "note": "final stinger, ends by 1935"
+    }
   ]
 }

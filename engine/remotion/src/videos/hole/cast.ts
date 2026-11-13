@@ -151,8 +151,8 @@ const lidAt = (f: number, i: number, swaps: number[] = []) => {
 type Ctx = { id: number; f: number; cam: CamInfo; out: Stage; light: LightName };
 type PutOpt = { scale?: number; mirror?: boolean; face?: boolean; roll?: number; blob?: number; noBlob?: boolean };
 const PIVOT = 375; // design units from the soles to the body centre (the pivot of a tumbling card)
-/** place one puppet; returns a function that maps a design-space anchor (hands, props, mouth) to world space */
-const put = (c: Ctx, lk: Look, pose: Pose, pos: V3, o: PutOpt = {}) => {
+/** where a puppet's card stands and how a design-space anchor (hands, props, mouth) maps to world space */
+const where = (c: Ctx, lk: Look, pose: Pose, pos: V3, o: PutOpt = {}) => {
   const { cam } = c, scale = o.scale ?? 1, mirror = !!o.mirror, roll = o.roll ?? 0;
   let [x, y, z] = pos;
   const R = new THREE.Vector3(), U = new THREE.Vector3();
@@ -164,17 +164,22 @@ const put = (c: Ctx, lk: Look, pose: Pose, pos: V3, o: PutOpt = {}) => {
     const yaw = Math.atan2(cam.pos.x - x, cam.pos.z - z);
     R.set(Math.cos(yaw), 0, -Math.sin(yaw)); U.set(0, 1, 0);
   }
-  const d = cam.pos.distanceTo(tmp.set(x, y, z).addScaledVector(U, 1.2 * scale)) / scale;
-  const [w, h, k] = tier(d);
   const ps: Pose = { ...pose, light: light2D(cam, mirror) };
-  c.out.places.push({ key: `${lk.id}|${fkey(ps)}`, x, y, z, scale, mirror, face: o.face, roll, draw: (p) => { figure(p, lk, ps); }, size: [w, h, k] });
-  if (!o.face && !o.noBlob && (c.light === "day" || c.light === "golden")) blob(c, pos[0], pos[1], pos[2], scale, o.blob ?? 1);
   const A = anchorsOf(lk, ps);
   const at = (pt: P2, toCam = 0.02): V3 => {
     const ax = (pt[0] - 300) * SU * scale * (mirror ? -1 : 1), ay = (975 - pt[1]) * SU * scale;
     return [x + R.x * ax + U.x * ay - cam.fwd.x * toCam, y + R.y * ax + U.y * ay - cam.fwd.y * toCam, z + R.z * ax + U.z * ay - cam.fwd.z * toCam];
   };
-  return { A, at };
+  return { A, at, ps, x, y, z, U, scale, mirror, roll };
+};
+/** place one puppet; returns its anchors and the anchor-to-world map */
+const put = (c: Ctx, lk: Look, pose: Pose, pos: V3, o: PutOpt = {}) => {
+  const w = where(c, lk, pose, pos, o), { ps, x, y, z, scale } = w;
+  const d = c.cam.pos.distanceTo(tmp.set(x, y, z).addScaledVector(w.U, 1.2 * scale)) / scale;
+  const [cw, ch, k] = tier(d);
+  c.out.places.push({ key: `${lk.id}|${fkey(ps)}`, x, y, z, scale, mirror: w.mirror, face: o.face, roll: w.roll, draw: (p) => { figure(p, lk, ps); }, size: [cw, ch, k] });
+  if (!o.face && !o.noBlob && (c.light === "day" || c.light === "golden")) blob(c, pos[0], pos[1], pos[2], scale, o.blob ?? 1);
+  return { A: w.A, at: w.at };
 };
 /** hand target (head heights from the shoulder) that reaches the world point `to` for a standing adult card at `pos` */
 const reach = (c: Ctx, pos: V3, side: number, to: V3): [number, number] => {
@@ -269,13 +274,13 @@ const shaft = (c: Ctx) => {
     put(c, GUS, { mode: "air", expr: "flap", flap: fl, L: { h: [0.5, -0.7], bend: -0.12 }, R: { h: [0.52, -0.7], bend: -0.12 }, legs: [[-0.46, 0.82], [0.5, 0.74]] }, [jx, jy, 0], { face: true, roll: 0.03 });
     speedLines(c, 16, 1.4);
   } else if (id === 12) {
+    // the thermometer climbs to the top and pops on f801; he lowers what is left of it, then the calm thumbs-up on f836
     const lvl = f >= 801 ? 2 : lin([[745, 0.06], [765, 0.22], [786, 0.7], [800, 1.0]], f);
     const lower = sm(f, 812, 826), calm = f >= 822, thumb = sm(f, 831, 836);
-    const R: Arm = armMix({ h: [0.86, -0.3], bend: 0.1, front: true, prop: "thermo", arg: lvl }, { h: [0.42, 0.75], bend: 0.1, front: true, prop: "thermo", arg: lvl }, lower);
+    const R: Arm = { ...armMix({ h: [0.86, -0.3], bend: 0.1 }, { h: [0.42, 0.75], bend: 0.1 }, lower), front: true, prop: "thermo", arg: lvl };
+    const L: Arm = f >= 831 ? { ...armMix(HANG, { h: [0.36, 0.12], bend: -0.3 }, thumb), front: true, hand: "thumb" } : { h: [0.3, 0.8], bend: 0.1 };
     const pose: Pose = { mode: "air", expr: f >= 801 && f < 809 ? "shock" : calm ? "smile_closed" : "neutral", facing: calm ? 0 : 1, look: calm ? 0 : 1, blink: lidAt(f, 3, [801, 822]),
-      R: { ...R, prop: "thermo", arg: lvl, front: true }, L: f >= 831 ? armMix(HANG, { h: [0.36, 0.12], bend: -0.3, front: true, hand: "thumb" }, thumb) : { h: [0.3, 0.8], bend: 0.1 },
-      legs: [[-0.3, 1.2], [0.36, 1.16]], flap: (f * 0.17) % 1 };
-    if (f >= 831) pose.L = { ...pose.L!, hand: "thumb", front: true };
+      R, L, legs: [[-0.3, 1.2], [0.36, 1.16]], flap: (f * 0.17) % 1 };
     const g = put(c, GUS, pose, drift, { face: true, roll: 0.03 });
     if (f >= 801 && f < 815) {
       const u = (f - 801) / 14, at = g.at(g.A.propR, 0.05);
@@ -348,17 +353,20 @@ const garden = (c: Ctx) => {
     sausageFire(c, at, f, 287, 306);
     if (crisp) { const u = ((f - 305) % 14) / 14; fx(c, `soot${q(u, 14)}`, 300, 300, (p) => fxSoot(p, q(u, 14)), [at[0] + 0.02, at[1] + 0.2 + 0.25 * u, at[2]], 0.3, 0.3); }
   } else if (id === 5) {
-    const flick = lin([[333, 0], [337, 26], [341, -4], [346, 0]], f), up = lin([[333, 0], [337, 0.16], [342, 0]], f);
     const landed = f >= 351;
-    const pose: Pose = { expr: "neutral", facing: 0, look: f >= 337 && f < 349 ? 0 : landed && f < 372 ? -1 : 0, blink: lidAt(f, 7, [351, 372]),
-      headTilt: f >= 338 && f < 350 ? -5 : landed && f < 372 ? 4 : 0,
-      L: { h: [-0.42, 0.46], bend: 0.3, front: true }, R: { h: [0.5, 0.4 - up], bend: 0.12, front: true, prop: "pan", arg: flick } };
+    const wifePose = (ff: number): Pose => {
+      const flick = lin([[333, 0], [337, 26], [341, -4], [346, 0]], ff), up = lin([[333, 0], [337, 0.16], [342, 0]], ff);
+      return { expr: "neutral", look: ff >= 337 && ff < 372 ? 1 : 0, facing: ff >= 345 && ff < 372 ? 1 : 0, blink: lidAt(ff, 7, [351, 372]),
+        headTilt: ff >= 338 && ff < 350 ? -5 : ff >= 351 && ff < 372 ? 4 : 0,
+        L: { h: [-0.42, 0.46], bend: 0.3, front: true }, R: { h: [0.5, 0.4 - up], bend: 0.12, front: true, prop: "pan", arg: flick } };
+    };
+    const pose = wifePose(f);
     const g = put(c, WIFE, pose, WIFE5);
     const pan = g.at(g.A.propR, 0.05);
     if (f < 337) fx(c, "cake0.2", 300, 300, (p) => fxPancake(p, 0.2), [pan[0], pan[1] + 0.02, pan[2]], 0.34, 0.34);
     else if (!landed) {
-      const u = (f - 337) / 14, p0: V3 = [pan[0], WIFE5[1] + 0.86, pan[2]];
-      const pos: V3 = [lerp(p0[0], PANCAKE_AT[0], u), lerp(p0[1], 0.05, u) + 1.05 * 4 * u * (1 - u), lerp(p0[2], PANCAKE_AT[2], u)];
+      const rel = where(c, WIFE, wifePose(337), WIFE5), p0 = rel.at(rel.A.propR, 0.05), u = (f - 337) / 14; // leaves the pan where the flick tossed it
+      const pos: V3 = [lerp(p0[0], PANCAKE_AT[0], u), lerp(p0[1] + 0.03, 0.05, u) + 0.95 * 4 * u * (1 - u), lerp(p0[2], PANCAKE_AT[2], u)];
       const sq = q(Math.cos(u * Math.PI * 3), 20);
       fx(c, `cake${sq}`, 300, 300, (p) => fxPancake(p, sq), pos, 0.36, 0.36, { rot: 0.3 * Math.sin(u * 5) });
     } else {
@@ -401,7 +409,7 @@ const garden = (c: Ctx) => {
           : { expr: top1 ? "relief_open" : "smile", facing: -1, look: -1, blink: lidAt(f, 11, [HANG1 - 6]), L: armMix(HANG, up, sm(f, POP1 + 6, HANG1 - 4)), R: armMix(HANG, up, sm(f, POP1 + 6, HANG1 - 4)) };
       put(c, GUS, pose, [0, y, 0], { noBlob: true });
     }
-    for (const f0 of [POP1, POP2]) if (f >= f0 && f < f0 + 7) { const u = (f - f0) / 7; fx(c, `pop${q(u, 28)}`, 500, 300, (p) => fxPop(p, q(u, 28)), [0, 0.2, 0.2], 1.9, 1.14); }
+    for (const f0 of [POP1, POP2]) if (f >= f0 && f < f0 + 7) { const u = (f - f0) / 7; fx(c, `pop${q(u, 28)}`, 500, 300, (p) => fxPop(p, q(u, 28)), [0, 0.2, -0.15], 2.0, 1.2); }
     // --- his wife in the deck chair ---
     const wind = f >= 1786 && f < 1812, offer = sm(f, 1812, 1826), rewind = f >= 1893 && f < 1922;
     const lookUp = (f >= POP1 && f < DROP1 + 8) || (f >= POP2 - 2 && f < DROP2 + 6);
@@ -421,11 +429,9 @@ const garden = (c: Ctx) => {
       const seen = f >= POP2 + 3, jaw = f >= DROP2 + 5, fire = f >= 1905;
       const pose: Pose = { expr: jaw ? "jawdrop" : seen ? "shock" : "neutral", facing: -1, look: -1, blink: jaw || seen ? 0 : lidAt(f, 13), headTilt: jaw ? 3 : 0,
         L: { h: [0.45, 0.4], bend: 0.25, front: true }, R: { h: [0.5, jaw ? 0.02 : -0.12], bend: -0.3, front: true, prop: "fork", arg: fire ? 1 : 0 } };
-      // he comes up behind his fence while Gus drops away (the lens is on its way over to him from f1880)
-      if (f >= 1870) {
-        const g = neighbor(c, pose, [NEIGH[0], NEIGH[1] - 0.9 * (1 - sm(f, 1870, 1880)), NEIGH[2]], { noBlob: true });
-        sausageFire(c, g.at(g.A.propR, 0.04), f, 1905, 0);
-      }
+      // he stands at his fence the whole time, off to the right of the two-shot; the lens goes over to him from f1880
+      const g = neighbor(c, pose);
+      sausageFire(c, g.at(g.A.propR, 0.04), f, 1905, 0);
     }
   }
 };
@@ -525,7 +531,7 @@ const ocean = (c: Ctx) => {
     }
     put(c, GUS, pose, [0, y, 0]);
   }
-  if (f >= POP_SEA && f < POP_SEA + 7) { const u = (f - POP_SEA) / 7; fx(c, `pop${q(u, 28)}`, 500, 300, (p) => fxPop(p, q(u, 28)), [0, PIPE_H + 0.2, 0.3], 2.0, 1.2); }
+  if (f >= POP_SEA && f < POP_SEA + 7) { const u = (f - POP_SEA) / 7; fx(c, `pop${q(u, 28)}`, 500, 300, (p) => fxPop(p, q(u, 28)), [0, PIPE_H + 0.2, -0.15], 2.1, 1.26); }
   // --- the fisherman ---
   const awake = f >= POP_SEA + 3, follow = clamp01((y - PIPE_H) / 1.6);
   let fp: Pose;

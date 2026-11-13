@@ -9,7 +9,6 @@ import { earthSurface, earthCut, glowTex } from "./paint2";
 import { NOINK } from "./ink";
 import { EARTH_R, EARTH_YAW, EARTH_ROLL, LAYERS } from "./story";
 
-const TAU = Math.PI * 2;
 const STEP = 0.11; // how far each inner layer stands proud of the one around it (m)
 const TUNNEL_W = 0.4;
 
@@ -73,7 +72,6 @@ export class Earth {
     halo.scale.setScalar(R * 3.2); halo.position.set(0, 0, -R * 1.4); halo.layers.set(NOINK); halo.renderOrder = -0.4;
     this.group.add(halo);
     G.traverse((o) => { const m = o as THREE.Mesh; if (m.isMesh) { m.castShadow = false; m.receiveShadow = false; } });
-    void TAU;
   }
 
   /** k = how far the tunnel has been dug (0..1 from the garden end), pulse = core glow gain */

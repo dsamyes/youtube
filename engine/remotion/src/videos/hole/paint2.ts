@@ -156,16 +156,6 @@ export const earthCut = (rm: number, ro: number, ri: number) => ctex("earthCut",
   g.restore();
 });
 
-/** star field, equirectangular 2048 x 1024, black background (drawn additively) */
-export const starsHD = () => ctex("starsHD", 2048, 1024, (g, r) => {
-  g.fillStyle = "#000"; g.fillRect(0, 0, 2048, 1024);
-  for (let i = 0; i < 520; i++) {
-    const x = r() * 2048, y = r() * 1024, big = r() < 0.07, rad = big ? U(r, 2.6, 4) : U(r, 0.8, 1.9), b = Math.round(U(r, 150, 255));
-    g.fillStyle = `rgb(${b},${b},${Math.min(255, b + 20)})`; g.beginPath(); g.arc(x, y, rad, 0, TAU); g.fill();
-    if (big) { g.strokeStyle = "rgba(235,240,255,0.8)"; g.lineWidth = 1.2; g.beginPath(); g.moveTo(x - 9, y); g.lineTo(x + 9, y); g.moveTo(x, y - 9); g.lineTo(x, y + 9); g.stroke(); }
-  }
-});
-
 /** the moon: pale disc with a few flat craters and a soft rim (256 x 256, alpha) */
 export const moonTex = () => ctex("moon", 256, 256, (g) => {
   g.clearRect(0, 0, 256, 256);
