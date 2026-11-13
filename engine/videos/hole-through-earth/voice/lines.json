@@ -1,0 +1,144 @@
+{
+ "voice": "kokoro-v1.0:am_michael@1.2",
+ "duration_s": 64.008,
+ "words": 237,
+ "wps": 3.7,
+ "lines": [
+  {
+   "line": 1,
+   "text": "If you jumped into a hole through the middle of the Earth, you would never hit the bottom.",
+   "s": 0.0,
+   "e": 3.994,
+   "words": 18,
+   "wps": 4.51
+  },
+  {
+   "line": 2,
+   "text": "It's Sunday morning, and Gus has just dug a hole in his garden, straight through the planet.",
+   "s": 4.114,
+   "e": 8.678,
+   "words": 17,
+   "wps": 3.72
+  },
+  {
+   "line": 3,
+   "text": "His neighbor says he'll burn to a crisp.",
+   "s": 8.798,
+   "e": 10.522,
+   "words": 8,
+   "wps": 4.64
+  },
+  {
+   "line": 4,
+   "text": "His wife says he'll go splat on the other side.",
+   "s": 10.642,
+   "e": 12.976,
+   "words": 10,
+   "wps": 4.28
+  },
+  {
+   "line": 5,
+   "text": "Gus says he did the math, and jumps.",
+   "s": 13.096,
+   "e": 14.81,
+   "words": 8,
+   "wps": 4.67
+  },
+  {
+   "line": 6,
+   "text": "He's pumped out all the air, so nothing slows him down.",
+   "s": 14.93,
+   "e": 17.774,
+   "words": 11,
+   "wps": 3.87
+  },
+  {
+   "line": 7,
+   "text": "Two minutes in, he's outrunning a bullet.",
+   "s": 17.894,
+   "e": 19.808,
+   "words": 7,
+   "wps": 3.66
+  },
+  {
+   "line": 8,
+   "text": "Nineteen minutes in, he shoots through the center of the Earth at twenty-two thousand miles an hour.",
+   "s": 19.928,
+   "e": 24.662,
+   "words": 18,
+   "wps": 3.8
+  },
+  {
+   "line": 9,
+   "text": "The walls are as hot as the surface of the Sun. It's a very good tunnel.",
+   "s": 24.782,
+   "e": 28.576,
+   "words": 16,
+   "wps": 4.22
+  },
+  {
+   "line": 10,
+   "text": "But wait. Why doesn't he go splat?",
+   "s": 28.696,
+   "e": 30.37,
+   "words": 7,
+   "wps": 4.18
+  },
+  {
+   "line": 11,
+   "text": "You see, gravity only pulls Gus toward the middle. So the moment he passes it, the pull that sped him up starts slowing him down.",
+   "s": 30.49,
+   "e": 37.314,
+   "words": 25,
+   "wps": 3.66
+  },
+  {
+   "line": 12,
+   "text": "Ever pushed a kid on a swing? All the speed it gains going down, it spends going back up.",
+   "s": 37.434,
+   "e": 42.148,
+   "words": 19,
+   "wps": 4.03
+  },
+  {
+   "line": 13,
+   "text": "So thirty-eight minutes after he jumped, Gus pops up in the middle of the ocean, on the far side of the world, and stops.",
+   "s": 42.268,
+   "e": 48.712,
+   "words": 25,
+   "wps": 3.88
+  },
+  {
+   "line": 14,
+   "text": "Luckily, he stops for exactly one moment.",
+   "s": 48.832,
+   "e": 51.106,
+   "words": 7,
+   "wps": 3.08
+  },
+  {
+   "line": 15,
+   "text": "Unluckily, he stops for exactly one moment.",
+   "s": 51.226,
+   "e": 53.69,
+   "words": 7,
+   "wps": 2.84
+  },
+  {
+   "line": 16,
+   "text": "Then down he goes again, and thirty-eight minutes later, he's back in his own garden.",
+   "s": 53.81,
+   "e": 58.314,
+   "words": 16,
+   "wps": 3.55
+  },
+  {
+   "line": 17,
+   "text": "So Gus never did hit the bottom. He just comes home for one second, every seventy-six minutes.",
+   "s": 58.434,
+   "e": 64.008,
+   "words": 18,
+   "wps": 3.23
+  }
+ ]
+}

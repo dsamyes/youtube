@@ -1,0 +1,141 @@
+{
+  "model": "airless frictionless tunnel through the centre, non-rotating Earth",
+  "checks": {
+    "prem_mass_kg": 5.973179568062594e+24,
+    "prem_mass_error_pct": 0.019751642039422812,
+    "prem_surface_g": 9.821471551633026,
+    "klotz_2015_one_way": "38 min 11 s",
+    "prem_one_way": "38 min 11 s",
+    "uniform_analytic_one_way_s": 2531.740398097291,
+    "uniform_numeric_one_way_s": 2531.7500000004447
+  },
+  "uniform": {
+    "one_way": "42 min 12 s",
+    "one_way_min": 42.195833333340744,
+    "v_centre_kms": 7.905663161359964,
+    "v_centre_kmh": 28460.38738089587
+  },
+  "prem": {
+    "one_way": "38 min 11 s",
+    "one_way_min": 38.17916666665947,
+    "round_trip_min": 76.35833333331894,
+    "t_centre_min": 19.089166666658436,
+    "v_centre_kms": 9.918615601867643,
+    "v_centre_kmh": 35707.016166723515,
+    "v_centre_mph": 22187.347984441807,
+    "t_to_1_km_per_s_s": 101.69999999999636,
+    "g_max_ms2": 10.688786514245662,
+    "g_max_depth_km": 2891.000525,
+    "samples_t_s_depth_km_v_ms": [
+      [
+        30,
+        4,
+        295
+      ],
+      [
+        150,
+        111,
+        1477
+      ],
+      [
+        270,
+        359,
+        2666
+      ],
+      [
+        390,
+        751,
+        3866
+      ],
+      [
+        510,
+        1287,
+        5062
+      ],
+      [
+        630,
+        1966,
+        6257
+      ],
+      [
+        750,
+        2790,
+        7480
+      ],
+      [
+        870,
+        3761,
+        8654
+      ],
+      [
+        990,
+        4853,
+        9491
+      ],
+      [
+        1110,
+        6021,
+        9896
+      ],
+      [
+        1230,
+        5534,
+        9789
+      ],
+      [
+        1350,
+        4391,
+        9194
+      ],
+      [
+        1470,
+        3344,
+        8205
+      ],
+      [
+        1590,
+        2433,
+        6968
+      ],
+      [
+        1710,
+        1669,
+        5765
+      ],
+      [
+        1830,
+        1049,
+        4571
+      ],
+      [
+        1950,
+        572,
+        3372
+      ],
+      [
+        2070,
+        240,
+        2176
+      ],
+      [
+        2190,
+        50,
+        990
+      ]
+    ]
+  },
+  "comparisons": {
+    "rifle_bullet_ms": "about 900-1000 m/s (5.56 NATO ~940 m/s)",
+    "atlantic_NY_London_km": 5570,
+    "atlantic_at_centre_speed_min": 9.359505102289994,
+    "iss_speed_kms": 7.66,
+    "centre_speed_vs_iss": 1.294858433664183,
+    "gravity_train_any_chord_uniform_min": 42.19567330162151
+  },
+  "facts_with_sources": {
+    "inner_core_temp": "about 5,200-5,700 C at the inner-core boundary; NASA/ESRF 2013 estimate ~6,000 C (Anzellini et al., Science 340, 464). Sun's photosphere ~5,500 C (NASA Sun fact sheet).",
+    "antipodes": "about 15% of land is antipodal to other land (~4.4% of Earth's surface); for most places the antipode is ocean (Wikipedia: Antipodes).",
+    "prem": "Dziewonski & Anderson 1981, Phys. Earth Planet. Inter. 25, 297.",
+    "klotz": "A. R. Klotz 2015, 'The gravity tunnel in a non-uniform Earth', Am. J. Phys. 83, 231: 38 min 11 s with PREM vs 42 min 12 s uniform."
+  }
+}
