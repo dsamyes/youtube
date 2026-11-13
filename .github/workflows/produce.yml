@@ -10,8 +10,10 @@
 name: produce
 
 on:
-  schedule:
-    - cron: "7 1 1-29/2 * *"       # every 2 days ~01:07 UTC (odd days 1-29; the long-form publishes the same day 15:00 UTC)
+  # Schedule PAUSED on 2026-11-13: the owner rejected this production method and every run so far failed at
+  # the Claude step. The every-2-days schedule comes back with the cartoon-3d-short method once it is approved.
+  # schedule:
+  #   - cron: "7 1 1-29/2 * *"
   workflow_dispatch:
     inputs:
       topic:
