@@ -14,9 +14,10 @@
 name: produce
 
 on:
-  # Daily schedule: switched on after the first complete run on GitHub has succeeded.
-  # schedule:
-  #   - cron: "23 2 * * *"        # every day 02:23 UTC; the short goes public at 15:00 UTC
+  # Daily schedule (on since the first complete run succeeded, 2026-11-14): a run takes a little over two
+  # hours; the short is uploaded private and goes public at the next free 15:00 UTC slot.
+  schedule:
+    - cron: "23 2 * * *"        # every day 02:23 UTC
   workflow_dispatch:
     inputs:
       topic:
