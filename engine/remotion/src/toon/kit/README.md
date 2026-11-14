@@ -251,7 +251,8 @@ up as a pop in the QA.
 
 ## 7. Camera and depth of field
 
-- `dolly(pos, look, k, { fov, roll })`: the lens at `pos` looking at `look`, slid toward it by factor `k`.
+- `dolly(pos, look, k, { fov, roll })`: the lens at `pos` looking at `look`, slid toward it by factor `k` (1 = stays
+  at `pos`, 0 = sits on the look point; `pushK` starts at 1 and shrinks).
   `zoom(pos, look, fov, k)`: same push with the lens fixed (when it stands next to a wall).
 - `pushK(f, f0, rate, punch, n, p0)`: every hold creeps in, rate 0.001-0.0035 per frame. `punch` 0.004-0.007 for
   `n` frames from `p0` gives a push on a punch word.
