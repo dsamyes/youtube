@@ -60,11 +60,16 @@ export const fxHummer = (p: Pen, wing: number, lid = 0, fluff = 0, droop = 0) =>
   const bx = 196, by = 172, rx = 80 - 14 * fluff, ry = 50 + 22 * fluff, rot = -14 * (1 - fluff);
   // tail
   p.poly([[bx - 58, by + 4], [bx - 150, by + 44 + 20 * fluff], [bx - 128, by + 14], [bx - 156, by - 4], [bx - 60, by - 26]], GD, ol);
-  // far wing (behind the body) when hovering
+  // wings: a pointed blade from the shoulder; hovering draws the stroke's other end as a pale ghost, so the pair reads as a blur
+  const blade = (sx: number, sy: number, ang: number, len: number, wd: number): P2[] => {
+    const a = rad(ang), dx = Math.cos(a), dy = Math.sin(a), nx = -dy, ny = dx;
+    const tip: P2 = [sx + dx * len, sy + dy * len], m1: P2 = [sx + dx * len * 0.45 + nx * wd, sy + dy * len * 0.45 + ny * wd], m2: P2 = [sx + dx * len * 0.5 - nx * wd * 0.55, sy + dy * len * 0.5 - ny * wd * 0.55];
+    return [...curve([sx - nx * 8, sy - ny * 8], m2, tip, 10), ...curve(tip, m1, [sx + nx * 14, sy + ny * 14], 10)];
+  };
+  const UP = -112, DOWN = 118;
   if (wing) {
-    const up = wing > 0;
-    const far: P2[] = up ? [[bx - 6, by - 30], [bx - 70, by - 140], [bx - 30, by - 150], [bx + 26, by - 44]] : [[bx - 6, by - 10], [bx - 96, by + 76], [bx - 60, by + 96], [bx + 22, by + 4]];
-    p.poly(far, "#cfeee0", ol * 0.8);
+    const far = blade(bx + 6, by - 22, wing > 0 ? UP + 14 : DOWN - 14, 150, 30);
+    p.poly(far, "#bfe6d4", ol * 0.7);
   }
   const body = ellPts(bx, by, rx, ry, 0, 360, rot);
   p.poly(body, G, ol);
@@ -79,15 +84,15 @@ export const fxHummer = (p: Pen, wing: number, lid = 0, fluff = 0, droop = 0) =>
   p.stroke([[hx + 34, hy + 2], [hx + 138, hy - 8 + tilt * 2.4]], 10, INK);
   // eye
   if (lid > 0.6) p.arc(hx + 14, hy - 6, 10, 7, 20, 160, 6);
-  else { p.dot(hx + 14, hy - 8, 10, INK); p.dot(hx + 17, hy - 11, 3.4, "#ffffff"); if (lid > 0.2) p.poly([[hx + 2, hy - 20], [hx + 28, hy - 20], [hx + 28, hy - 20 + 16 * lid], [hx + 2, hy - 20 + 16 * lid]], G, 0); if (lid > 0.2) p.stroke([[hx + 3, hy - 20 + 16 * lid], [hx + 27, hy - 20 + 16 * lid]], 5); }
+  else { p.dot(hx + 14, hy - 8, 12, INK); p.dot(hx + 18, hy - 12, 4.2, "#ffffff"); if (lid > 0.2) p.poly([[hx + 2, hy - 20], [hx + 28, hy - 20], [hx + 28, hy - 20 + 16 * lid], [hx + 2, hy - 20 + 16 * lid]], G, 0); if (lid > 0.2) p.stroke([[hx + 3, hy - 20 + 16 * lid], [hx + 27, hy - 20 + 16 * lid]], 5); }
   // near wing
   if (wing) {
-    const up = wing > 0;
-    const near: P2[] = up ? [[bx + 6, by - 20], [bx - 36, by - 152], [bx + 14, by - 164], [bx + 50, by - 34]] : [[bx + 4, by - 4], [bx - 62, by + 98], [bx - 18, by + 118], [bx + 44, by + 10]];
-    p.poly(near, "#e4f7ee", ol * 0.8);
-    for (const k of [0.35, 0.6, 0.85]) p.stroke([[near[0][0] + (near[1][0] - near[0][0]) * k + 16, near[0][1] + (near[1][1] - near[0][1]) * k], [near[3][0] + (near[2][0] - near[3][0]) * k - 10, near[3][1] + (near[2][1] - near[3][1]) * k]], 4, "#9fd9c0");
-    // blur arcs between the two wing positions
-    for (const r of [96, 128]) p.arc(bx + 6, by - 14, r, r, up ? 205 : 110, up ? 240 : 140, 5, "#ffffff");
+    const ang = wing > 0 ? UP : DOWN, ghost = blade(bx + 16, by - 12, wing > 0 ? UP - 34 : DOWN + 34, 150, 30), near = blade(bx + 16, by - 12, ang, 172, 36);
+    p.poly(ghost, "#f4fbf7", 0);
+    p.poly(near, "#e2f6ec", ol * 0.8);
+    const a = rad(ang);
+    for (const k of [0.3, 0.5, 0.7]) p.stroke([[bx + 16 + Math.cos(a) * 172 * k - Math.sin(a) * -10, by - 12 + Math.sin(a) * 172 * k + Math.cos(a) * -10], [bx + 16 + Math.cos(a) * 172 * (k + 0.16) - Math.sin(a) * 14 * (1 - k), by - 12 + Math.sin(a) * 172 * (k + 0.16) + Math.cos(a) * 14 * (1 - k)]], 4, "#9fd9c0");
+    for (const r of [120, 150]) p.arc(bx + 16, by - 12, r, r, wing > 0 ? 196 : 128, wing > 0 ? 226 : 158, 5, "#ffffff");
   } else {
     p.ell(bx - 14, by + 6, 62 - 10 * fluff, 24 + 6 * fluff, GD, ol * 0.8, 0, 360, 18);
     // feet
@@ -113,19 +118,26 @@ export const fxFeeder = (p: Pen, level: number) => {
 };
 
 // ---------------- heat ----------------
-/** white steam on a 300 x 400 canvas (soft card): puffs rising and thinning; t = phase 0..1 (looping), a = strength */
+const softPuff = (p: Pen, x: number, y: number, r: number, a: number) => {
+  const g = p.g, gr = g.createRadialGradient(x, y, 0, x, y, r);
+  gr.addColorStop(0, `rgba(255,255,255,${a.toFixed(3)})`); gr.addColorStop(0.55, `rgba(255,255,255,${(a * 0.75).toFixed(3)})`); gr.addColorStop(1, "rgba(255,255,255,0)");
+  g.fillStyle = gr; g.beginPath(); g.arc(x, y, r, 0, TAU); g.fill();
+};
+/** white steam on a 300 x 400 canvas (soft card): a wavering column of soft puffs that rise, swell and thin out;
+ *  t = phase 0..1 (looping), a = strength */
 export const fxSteam = (p: Pen, t: number, a = 1) => {
-  for (let i = 0; i < 5; i++) {
-    const u = (t + i / 5) % 1, x = 150 + 44 * Math.sin(u * 5 + i * 2.1), y = 360 - 300 * u, r = 34 + 46 * u;
-    p.ell(x, y, r, r * 0.9, `rgba(255,255,255,${(0.85 * a * Math.sin(Math.PI * Math.min(1, u * 1.15)) ** 0.8).toFixed(3)})`, 0);
+  for (let i = 0; i < 7; i++) {
+    const u = (t + i / 7) % 1, x = 150 + (18 + 30 * u) * Math.sin(u * 6.5 + i * 2.4), y = 372 - 318 * u, r = 26 + 50 * u;
+    softPuff(p, x, y, r, 0.95 * a * Math.sin(Math.PI * Math.min(1, u * 1.1 + 0.08)) ** 0.9);
   }
 };
 /** one burst of steam on a 500 x 500 canvas (soft card): a cloud swelling and fading; t = 0..1 */
 export const fxSteamBurst = (p: Pen, t: number) => {
-  for (let i = 0; i < 9; i++) {
-    const a = (i / 9) * TAU + 0.4, d = 40 + 150 * (1 - (1 - t) ** 2), r = (70 + 40 * (i % 3)) * (0.6 + 0.6 * t);
-    p.ell(250 + d * Math.cos(a), 270 + d * 0.6 * Math.sin(a) - 90 * t, r, r * 0.85, `rgba(255,255,255,${(0.9 * (1 - t) ** 1.3).toFixed(3)})`, 0);
+  for (let i = 0; i < 11; i++) {
+    const a = (i / 11) * TAU + 0.4, d = 30 + 150 * (1 - (1 - t) ** 2), r = (76 + 40 * (i % 3)) * (0.6 + 0.6 * t);
+    softPuff(p, 250 + d * Math.cos(a), 280 + d * 0.6 * Math.sin(a) - 100 * t, r, 0.95 * (1 - t) ** 1.2);
   }
+  softPuff(p, 250, 290 - 100 * t, 120 * (0.6 + 0.6 * t), 0.95 * (1 - t) ** 1.2);
 };
 /** wavy heat lines rising on a 300 x 400 canvas (soft card); t = phase 0..1, a = strength */
 export const fxHeat = (p: Pen, t: number, a = 1) => {
@@ -144,13 +156,15 @@ export const fxGlow = (p: Pen, col = "255,140,50") => {
   gr.addColorStop(0, `rgba(${col},0.85)`); gr.addColorStop(0.5, `rgba(${col},0.35)`); gr.addColorStop(1, `rgba(${col},0)`);
   g.fillStyle = gr; g.fillRect(0, 0, 256, 256);
 };
-/** fog inside the fishbowl on a 300 x 300 canvas (soft card): fills the glass from the bottom up to k (0..1) */
+/** fog inside the fishbowl on a 300 x 300 canvas (soft card; the glass is the circle of radius 142 about the
+ *  centre, the collar cuts it off at y 262): fills the glass from the collar up to k (0..1) */
 export const fxFog = (p: Pen, k: number) => {
-  const g = p.g, top = 290 - 250 * k;
-  p.clip(ellPts(150, 150, 142, 142), () => {
-    const gr = g.createLinearGradient(0, top - 40, 0, top + 30);
-    gr.addColorStop(0, "rgba(255,255,255,0)"); gr.addColorStop(1, "rgba(255,255,255,0.93)");
-    g.fillStyle = gr; g.fillRect(0, top - 40, 300, 340);
+  const g = p.g, top = 262 - 232 * k;
+  const inside: P2[] = ellPts(150, 150, 134, 134).filter(([, y]) => y <= 262);
+  p.clip(inside, () => {
+    const gr = g.createLinearGradient(0, top - 34, 0, top + 26);
+    gr.addColorStop(0, "rgba(255,255,255,0)"); gr.addColorStop(1, "rgba(255,255,255,0.9)");
+    g.fillStyle = gr; g.fillRect(0, top - 34, 300, 340);
   });
 };
 /** space heater on a 300 x 420 canvas; glow 0..1 lights the coils */
@@ -175,33 +189,50 @@ export const fxHeart = (p: Pen, k: number) => {
 
 // ---------------- fry and potato ----------------
 const plate = (p: Pen, cx: number, cy: number, rx: number) => { p.ell(cx, cy, rx, rx * 0.2, "#f7f6f1", 8); p.ell(cx, cy - 3, rx * 0.72, rx * 0.12, "#e3e6e8", 0); };
-/** one french fry on a plate, 420 x 300 canvas; cold 0..1 turns it pale blue */
+/** one french fry on a plate, its red carton behind it, 420 x 300 canvas; cold 0..1 turns the fries pale blue */
 export const fxFry = (p: Pen, cold: number) => {
-  plate(p, 210, 236, 190);
   const c = (a: string, b: string) => toon.mix(a, b, cold);
-  const side: P2[] = [[76, 196], [318, 96], [338, 132], [96, 232]];
+  // the carton with the rest of the fries
+  for (const [x, h, r] of [[62, 62, -8], [82, 84, -3], [102, 70, 2], [122, 88, 6], [142, 60, 11]] as const) p.poly(rotBox(x, 104, 17, h, r), c("#f0bb2a", "#c3d0e2"), 7);
+  p.poly([[40, 96], [164, 96], [150, 214], [54, 214]], "#d6332e", 9);
+  p.poly(ellPts(102, 150, 26, 26), "#ffd84a", 0);
+  plate(p, 236, 240, 178);
+  // the fry: a long golden stick with a browned end and a few grains of salt
+  const side: P2[] = [[104, 208], [330, 118], [348, 152], [122, 242]];
   p.poly(side, c("#e9b021", "#b9c8dc"), 9);
-  p.poly([[76, 196], [318, 96], [326, 110], [84, 210]], c("#ffd95a", "#e1eaf5"), 0);
-  p.poly([[318, 96], [344, 104], [362, 140], [338, 132]], c("#c98f14", "#95a8c2"), 9);
+  p.poly([[104, 208], [330, 118], [337, 131], [111, 221]], c("#ffe06a", "#e6eef8"), 0);
+  p.poly([[330, 118], [354, 124], [372, 158], [348, 152]], c("#b97a12", "#8fa2bd"), 9);
   p.poly(side, null, 9);
-  if (cold > 0.5) for (const [x, y] of [[150, 150], [250, 110]] as const) for (let i = 0; i < 3; i++) { const a = rad(i * 60); p.stroke([[x - 13 * Math.cos(a), y - 13 * Math.sin(a)], [x + 13 * Math.cos(a), y + 13 * Math.sin(a)]], 4, "#ffffff"); }
+  for (const [x, y] of [[170, 196], [226, 170], [282, 150], [200, 204], [258, 178]] as const) p.dot(x, y, 3.5, "#ffffff");
 };
-/** a baked potato in foil on a plate, split open, 460 x 360 canvas; butter 0..1 = how far the pat has melted;
- *  rim 0..1 lights its outline */
+const rotBox = (x: number, yBase: number, w: number, h: number, deg: number): P2[] => {
+  const a = rad(deg), cs = Math.cos(a), sn = Math.sin(a), R = (dx: number, dy: number): P2 => [x + dx * cs - dy * sn, yBase + dx * sn + dy * cs];
+  return [R(-w / 2, 0), R(-w / 2, -h), R(w / 2, -h), R(w / 2, 0)];
+};
+/** a baked potato in foil on a plate, split open, 460 x 360 canvas; butter 0..1 = how far the pat has melted */
 export const fxPotato = (p: Pen, butter = 0) => {
-  plate(p, 230, 306, 212);
-  p.poly(ellPts(230, 232, 186, 92), "#c7d0d9", 9);
-  for (const [x0, y0, x1, y1] of [[70, 250, 110, 290], [150, 290, 180, 318], [300, 300, 330, 276], [366, 262, 396, 240]] as const) p.stroke([[x0, y0], [x1, y1]], 5, "#8e99a6");
-  const skin = ellPts(230, 204, 168, 92);
-  p.poly(skin, "#a9713a", 9);
-  p.clip(skin, () => p.ell(200, 150, 150, 40, "#c08a4e", 0));
+  plate(p, 230, 312, 214);
+  // crinkled foil cradle
+  const foil: P2[] = [];
+  for (let i = 0; i <= 18; i++) foil.push([34 + (392 * i) / 18, 232 + (i % 2 ? -13 : 9) - 26 * Math.sin((Math.PI * i) / 18)]);
+  for (let i = 0; i <= 16; i++) { const a = rad((180 * i) / 16); foil.push([230 + 204 * Math.cos(a), 240 + 78 * Math.sin(a)]); }
+  p.poly(foil, "#cfd6dd", 9);
+  for (const [x0, y0, x1, y1] of [[70, 262, 104, 296], [140, 284, 170, 312], [300, 296, 334, 274], [372, 268, 400, 246], [220, 300, 236, 318]] as const) p.stroke([[x0, y0], [x1, y1]], 5, "#8e99a6");
+  // the potato: a long brown oval with eyes and specks
+  const skin = ellPts(230, 196, 184, 80, 0, 360, -3);
+  p.poly(skin, "#a8672f", 9);
+  p.clip(skin, () => { p.ell(196, 140, 170, 34, "#c58a4c", 0); for (const [x, y, r] of [[78, 196, 6], [112, 232, 5], [350, 226, 6], [388, 190, 5], [150, 250, 4], [318, 252, 5], [66, 170, 4], [396, 164, 4]] as const) p.ell(x, y, r * 1.5, r, "#6f431c", 0); });
   p.poly(skin, null, 9);
-  const open: P2[] = [...curve([98, 190], [230, 118], [362, 190], 14), ...curve([362, 190], [230, 236], [98, 190], 14)];
-  p.poly(open, "#f7e08c", 8);
-  p.clip(open, () => p.ell(230, 196, 120, 22, "#fff3bf", 0));
+  // split open: fluffy flesh with a scalloped edge
+  const open: P2[] = [];
+  for (let i = 0; i <= 22; i++) { const t = i / 22; open.push([96 + 268 * t, 190 - 66 * Math.sin(Math.PI * t) + (i % 2 ? 7 : -4)]); }
+  for (let i = 22; i >= 0; i--) { const t = i / 22; open.push([96 + 268 * t, 190 + 40 * Math.sin(Math.PI * t) + (i % 2 ? -5 : 5)]); }
+  p.poly(open, "#fbe7a0", 8);
+  p.clip(open, () => { p.ell(230, 172, 110, 24, "#fff6cf", 0); for (const [x, y] of [[150, 190], [196, 206], [300, 200], [262, 150], [330, 180]] as const) p.arc(x, y, 12, 8, 200, 340, 4, "#e2c66a"); });
   const m = butter;
-  p.poly(rrect(196 - 22 * m, 150 + 20 * m, 264 + 22 * m, 190 + 6 * m, 8 + 10 * m), "#ffe24a", 7);
-  if (m > 0.3) p.ell(286, 196, 16 * m, 9 * m, "#ffe24a", 6);
+  p.poly(rrect(198 - 24 * m, 138 + 26 * m, 262 + 24 * m, 184 + 6 * m, 8 + 10 * m), "#ffdf3a", 7);
+  p.poly(rrect(206 - 20 * m, 144 + 26 * m, 244, 156 + 22 * m, 5), "#fff3a8", 0);
+  if (m > 0.3) p.ell(292, 196, 18 * m, 9 * m, "#ffdf3a", 6);
 };
 /** a pat of butter on a 220 x 200 canvas; melt 0..1: it slumps and drips */
 export const fxButter = (p: Pen, melt: number) => {

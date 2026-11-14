@@ -1,0 +1,39 @@
+{
+ "_doc": "Sound plan of hummingbird-metabolism, read by engine/toon/audio/build.py (manual: engine/toon/audio/README.md).",
+ "key": "G",
+ "tempo": 128,
+ "seed": 4127,
+ "theme": "hop",
+ "places": {
+  "garden": "outdoor",
+  "park": {"room": "outdoor", "send": 0.12},
+  "ocean": "water"
+ },
+ "sections": [
+  {"from": 0, "mood": "silence", "_why": "the hook: garden air and three chomps only"},
+  {"from": 131, "mood": "theme", "_why": "morning in the garden, the bird; starts on the flash"},
+  {"from": 380, "mood": "chase", "hits": [470, 654], "_why": "the escalation: tower lands on 'day', Gus pops up at the neighbor's fence"},
+  {"from": 826, "mood": "silence", "_why": "'But wait': dead stop with the record_stop event"},
+  {"from": 892, "mood": "mystery", "_why": "the explanation: food into heat, four heaters"},
+  {"from": 1049, "mood": "waltz", "hits": [1051, 1141, 1204], "_why": "the fry and the potato: pick-up, low point on the baked potato, rest on half an hour"},
+  {"from": 1213, "mood": "mystery", "_why": "small things have more skin: the bird leaks heat, Gus heats up; ends on the thermometer pop"},
+  {"from": 1559, "mood": "bittersweet", "hits": [1683], "_why": "'Luckily' ... 'Unluckily' (1683)"},
+  {"from": 1765, "mood": "lullaby", "_why": "sunset, the bird gets tired"},
+  {"from": 1877, "mood": "finale", "hits": [1988], "_why": "night; button right after the last word"}
+ ],
+ "dips": [],
+ "sfx": {
+  "zip@150": {"size": "small"},
+  "zip@222": {"size": "small"},
+  "zip@1296": {"size": "small"},
+  "zip@1772": {"size": "small"},
+  "flame_poof@302": {"level": -9},
+  "sizzle@84": {"dur": 1.2},
+  "sizzle@862": {"dur": 0.9},
+  "sizzle@1160": {"dur": 1.4},
+  "sizzle@1600": {"dur": 1.6},
+  "splash@1589": {"size": "big"},
+  "bubbling@1717": {"rate": 10},
+  "amb_garden@892": {"level": -28}
+ }
+}

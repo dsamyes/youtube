@@ -1,0 +1,119 @@
+# NOTES: hummingbird-metabolism (dress rehearsal of the daily run, 2026-11-14)
+
+Every spot where the manual (`engine/PRODUCER.md`), the skill, the kit README, the audio README or a shared tool
+was wrong, missing, ambiguous or cost time. Format: file / what I expected / what was true / what I did.
+"Cost" is wall-clock time lost. Shared code was not edited.
+
+## A. Topic, facts, script, voice
+
+1. **PRODUCER.md §3-4: word count and pace cannot be planned from the manual. Cost: 3 voice runs + 2 rewrites, ~6 min.**
+   Expected: a script inside "205 to 245 words" lands inside "55 to 68 s, 3.5 to 3.9 words/s".
+   True: Kokoro at speed 1.2 speaks about 5.4 syllables a second plus about 0.3-0.6 s per comma or full stop. A topic with
+   long words (hummingbird, metabolism, hamburger, temperature) gave 241 words = 72.6 s = 3.32 words/s on the first run.
+   The example short averages 1.3 syllables a word; mine had 1.55.
+   Did: fitted a syllable model on the first run's `lines.json`, swapped long words for short ones (hamburger -> burger,
+   "temperature climbs" -> "heats up"), cut 9 words and two commas; third run 66.2 s, 3.50 words/s.
+   Fix: say in §3 "at most about 320 syllables; a comma or full stop costs about half a second", or give
+   `toon/voice.py --estimate` that prints the predicted length from the text without running the TTS (a run is 46 s).
+
+2. **PRODUCER.md §4 vs `toon/check.py`: different pace limits.** Manual: 3.5 to 3.9, "no line slower than 3.0".
+   `check.py` accepts 3.45 to 3.95 and never looks at single lines. My 3.50 passes both, but a run at 3.47 would pass
+   the gate and break the manual. Did: aimed at the manual's number.
+
+3. **PRODUCER.md §2 "verify ... with web search": half of the sources could not be opened. Cost: ~3 min.**
+   Expected: read the abstract of each paper. True: `audubon.org` and `sora.unm.edu` do not resolve from this machine
+   (network allow-list); only search-result snippets were available, and the tool says to stop trying further hosts.
+   Did: took the numbers from the snippets (Powers & Nagy 1988: 32 kJ/day at 4.48 g; Powers & Conley 1994: 29.1 and
+   81.7 kJ/day), cross-checked them against each other in `calc_video.py`, and listed in `SCRIPT.md` which figures were
+   not seen at the primary source. Fix: the manual should say what to do then (accept snippets? prefer facts with two
+   snippet sources? which hosts are reachable on the runner?).
+
+4. **PRODUCER.md §1: "A subject that shows up in two sources at once" could not be applied.** The trend file had no
+   Google Trends, no Wikipedia and only NASA headlines (`failed` lists 7 sources). Did: used "two rows of the same
+   theme inside youtube_shorts". The manual has a rule for "no trend file, or an empty one" but none for a partial one.
+
+5. **PRODUCER.md §1 gives no rule for a giant channel's row.** The top row (3.95M views/day) is from a channel whose
+   every upload gets that; the next real "what if you" row is from a small channel (plane door, 2.16M/day), which says
+   more about the topic's own pull. Did: took the top row because it is drawable with the kit; recorded the plane door
+   as rejected with the reason (two new places). Fix: add subscriber count or "views vs the channel's median" to the
+   trend rows, or say how to weigh it.
+
+6. **PRODUCER.md §1.4 "Take the theme, never the video" vs §8 "phrased the way this week's winning titles are
+   phrased".** For a theme that IS one video ("What If Humans Had Hummingbird Hearts") the two pull against each other.
+   Did: own angle (energy and heat, not the heart), own title ("...a Hummingbird's Metabolism?"), the searched phrase
+   only in the tags.
+
+7. **No tool turns `words.json` into frames.** §5 wants every cut 0-3 frames before a word; `words.json` is in seconds.
+   Did: a five-line script that prints `word@frame` per line. Fix: let `toon/voice.py` print that table (or write
+   `voice/frames.txt`).
+
+## B. Shot plan and sound
+
+8. **`toon/audio/build.py --check` refuses to look at `shots.json` until `audio/score.json` exists.** §5 says to write
+   the events "while you plan the shots" and §7 writes the score later, so the events cannot be validated when they
+   are written. Did: wrote the score earlier than planned. Fix: `--check` should validate the events alone.
+
+9. **audio README, waltz: the rule is only in the error message, and the first message is misleading. Cost: 3 check runs.**
+   The README says waltz takes "none, or exactly three [pick-up, low point, rest]". True, and not written anywhere:
+   the low point must be at least two bars (about 3 s) after the pick-up, and the rest must be within 1.2 s of the
+   section's end. The first error read "needs at least 3.0 s at tempo 128; this section is 8.2 s", which says the
+   opposite of what is wrong. Did: moved the low point to "baked potato" and ended the section 9 frames after the rest.
+
+10. **audio README rule 7 forbids `heartbeat` over music, and it stops at 200 bpm.** A story about a heart beating
+    1,200 times a minute has no fitting sound. Did: `typing` (fast ticks, 1.4 s) with a note saying what it stands for,
+    then `power_up` for "that's a hum". There is also no laugh, no stomach rumble (used `bubbling`) and no hum/buzz.
+
+11. **shots.json has two different "one event type, many meanings" traps.** `T.at("whoosh", 1)` is the second
+    whoosh in the file, so deleting or adding one event of a type silently shifts every later index. I removed two
+    whooshes while writing the plan and two constants pointed at the wrong frames until I listed all events by type.
+    Fix: allow `{"f": 495, "type": "whoosh", "id": "flip1"}` and `T.at("flip1")`.
+
+## C. Picture: kit and its README
+
+12. **kit README §3 "entry.tsx: keep it as the template has it" contradicts §9 "`dress: ...` in the story object".**
+    The story object is built in `entry.tsx`, so adding a 3D prop or a place means editing it. Did: added `dress` there.
+
+13. **kit README §6: a hand prop that reaches the character's own face disappears. Cost: one render round on 2 shots.**
+    Expected: `prop` + `front: true` draws the held thing over the body, so a burger lifted to the mouth is seen.
+    True: the head is drawn after the arms; the burger vanished behind his own head on the bite frames of the hook.
+    Did: the burgers of the hook and of the last shot are effect cards placed on the hand anchor
+    (`g.at(g.A.L, 0.07)`), which sit in front of everything. Side effect: effect cards are unlit, so at night they need
+    `gain: 0.6` by hand. Fix: say so in §6, or give `Arm.over: true` (drawn after the head).
+
+14. **kit README §4, park: "cameras stand south of it and look toward +z" does not say that screen right is then -x.**
+    Every offset I wrote for the park (feeder beside the bird, flame at the tail, camera look) was mirrored; the
+    feeder hung on the wrong side and out of frame. Cost: one render round on 2 shots. Fix: one sentence in §4, and a
+    helper `screenRight(c)`.
+
+15. **kit README §6 expression list does not say what the faces look like.** `neutral` is a deadpan, half-lidded face
+    (right for the wife, wrong for a puzzled Gus); `dazed` is spiral eyes; `chew` has happy closed eyes, so "eats
+    while exhausted" cannot be shown. Found each on a contact sheet. Fix: a sheet of all 20 faces in the kit folder
+    (one PNG), named in §6.
+
+16. **kit README §6: the `fork` prop cannot be empty** (arg 0 raw, 1 burning, 2 burnt: always a sausage). The gag
+    "loses every sausage" needed an empty fork. Did: copied the fork drawing without the sausage into my folder as
+    `PROPS.forkEmpty`. Same for `thermo`/`plate`: fine as they are.
+
+17. **kit README §6 anchors: `top` is not the top of the head.** It is 0.3 head heights above the crown (0.14 m), and
+    for the fisherman the sou'wester ends 0.09 m below it. A bird "on his hat" floated 0.15 m above it. Also not
+    written: `head` is the head centre, the fishbowl's centre is 1.2 cm above it and its radius is 0.33 m (needed to
+    fog the glass). Did: measured on stills. Fix: one line per anchor in §6.
+
+18. **kit README §4, ocean: nothing about where the boat's oar, bow and lantern are, and by day the lantern's halo
+    stays on.** A swimmer placed "beside the boat" at x 0.42 had the oar blade across his forehead, and in the wide
+    by day a white glow sits behind the fisherman's head. Did: moved Gus in front of the bow (z 2.3) and staged the
+    sea shots in depth (Gus near, boat behind). The halo cannot be switched off from a video folder; it stays.
+    Fix: list the boat's extents in §4 and add `lantern: false` (or let the light preset dim it).
+
+19. **kit README never says the frame is narrow.** At fov 40 a 1080x1920 frame is only 0.41 x the lens distance wide
+    (1.7 m at 4.2 m). Three of my first two-shots clipped a character at the edge. §4's "framings that work" are all
+    single subjects. Fix: add the number, and one two-shot recipe ("subjects at most 1.0 m apart at 4.3 m").
+
+20. **`scripts/toon-sheet.py` runs in the foreground for 8 min 20 s (README says 7).** PRODUCER.md §6 only tells you
+    to background the proxy render. Did: started later sheets with nohup and wrote the facts table, the score and the
+    metadata meanwhile. Fix: say "start it in the background" in §6.3, and let the sheet take `--shots 3,13`.
+
+21. **`toon-sheet.py` picks its two frames per shot from the events ("2 frames after the shot's first one-off
+    event").** That frame is often mid-blink (the kit blinks across every expression change) or inside a burst, so the
+    face on the sheet is a half-closed eye and the prop is behind a star. Did: a second sheet with `--frames` chosen
+    6-10 frames after each action. Fix: pick the action frame + 8.
