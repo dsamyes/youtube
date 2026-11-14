@@ -5,7 +5,8 @@ usage: scripts/toon-qa.py <id> [--proxy | --video file]
 
 Runs engine/toon/short_qa.py (the same check toon/finish.py runs on the finished film) on the silent picture:
 out/<id>/video.mp4, or with --proxy the low-resolution pass out/<id>/proxy/video.mp4. The planned jumps (shot
-changes, crossfades, flashes) come from engine/videos/<id>/shots.json. Report and 2 s contact sheets go to
+changes, crossfades, flashes, and the frames listed as "planned_pops": a jump the story wants, such as something
+bursting on a word) come from engine/videos/<id>/shots.json. Report and 2 s contact sheets go to
 out/<id>/qa/ (out/<id>/proxy/qa/ for the proxy); the report is printed, followed by the frames that come close to
 a pop. Exit code 1 when it lists black frames, unplanned white frames, frozen spans or pops (on a proxy also near
 pops, because a proxy reads a little low), so a pipeline step can stop on it.
@@ -38,7 +39,8 @@ def main():
     fl = plan.get("flash_at", [])
     start = {s["id"]: s["a"] for s in plan["shots"]}
     meta = {"shots": [{"id": s["id"], "a": s["a"], "b": s["b"]} for s in plan["shots"]],
-            "planned": [[f, f + 4] for f in ([fl] if isinstance(fl, int) else list(fl or []))],
+            "planned": [[f, f + 4] for f in ([fl] if isinstance(fl, int) else list(fl or []))]
+                       + [[int(f), int(f) + 1] for f in plan.get("planned_pops", []) or []],
             "xfade": [[start[int(k)] - v // 2, start[int(k)] + v // 2] for k, v in plan.get("xfade", {}).items()]}
     mp = os.path.join(qa, "shots_qa.json")
     json.dump(meta, open(mp, "w"))

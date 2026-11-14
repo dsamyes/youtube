@@ -55,8 +55,12 @@ Do not edit `src/toon/kit/`. Everything a video needs is imported from `"../../t
   (8 frames). Plain cuts need nothing.
 - `flash_at` (optional): a frame or a list of frames where a 4-frame white flash starts.
 - `events`: the sound cues (types: `engine/toon/audio/README.md`). `T.at("ding")` gives the frame of the first
-  event of that type, `T.at("ding", 1)` the second. Time every action from these, never from typed-in numbers that
-  repeat them. A visible reaction starts 0-3 frames before its event.
+  event of that type, `T.at("ding", 1)` the second. Counting breaks silently when an event of that type is added
+  or removed earlier in the file, so give every event the picture depends on a name of its own,
+  `{"f": 495, "type": "whoosh", "id": "flip1"}`, and ask for it by that name: `T.at("flip1")`. Time every action
+  from these, never from typed-in numbers that repeat them. A visible reaction starts 0-3 frames before its event.
+- `planned_pops` (optional): frames where the story wants a hard visual jump inside a shot (something bursts on a
+  word). The frame checker treats them like the cuts; every other pop it reports has to be fixed.
 
 ## 3. The three files of a video
 

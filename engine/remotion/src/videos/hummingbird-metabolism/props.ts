@@ -135,25 +135,27 @@ export const fxSteam = (p: Pen, t: number, a = 1) => {
 export const fxSteamBurst = (p: Pen, t: number) => {
   for (let i = 0; i < 11; i++) {
     const a = (i / 11) * TAU + 0.4, d = 30 + 150 * (1 - (1 - t) ** 2), r = (76 + 40 * (i % 3)) * (0.6 + 0.6 * t);
-    softPuff(p, 250 + d * Math.cos(a), 280 + d * 0.6 * Math.sin(a) - 100 * t, r, 0.95 * (1 - t) ** 1.2);
+    softPuff(p, 250 + d * Math.cos(a), 280 + d * 0.6 * Math.sin(a) - 100 * t, r, 0.95 * (1 - t) ** 1.2 * Math.min(1, t * 7));
   }
-  softPuff(p, 250, 290 - 100 * t, 120 * (0.6 + 0.6 * t), 0.95 * (1 - t) ** 1.2);
+  softPuff(p, 250, 290 - 100 * t, 120 * (0.6 + 0.6 * t), 0.95 * (1 - t) ** 1.2 * Math.min(1, t * 7));
 };
-/** wavy heat lines rising on a 300 x 400 canvas (soft card); t = phase 0..1, a = strength */
-export const fxHeat = (p: Pen, t: number, a = 1) => {
-  const g = p.g;
+/** wavy heat lines rising on a 300 x 400 canvas (soft card); t = phase 0..1, a = strength; red = stronger colour
+ *  for busy or yellow backgrounds */
+export const fxHeat = (p: Pen, t: number, a = 1, red = false) => {
+  const g = p.g, outer = red ? "232,52,30" : "255,96,30", inner = red ? "255,196,110" : "255,214,120";
   for (let i = 0; i < 3; i++) {
     const x0 = 70 + i * 80, pts: P2[] = [];
     for (let k = 0; k <= 20; k++) { const v = k / 20; pts.push([x0 + 22 * Math.sin(v * 9 - t * TAU + i * 1.7), 380 - 340 * v]); }
     g.lineCap = "round"; g.lineJoin = "round";
-    p.path(pts, false); g.strokeStyle = `rgba(255,110,40,${(0.9 * a).toFixed(3)})`; g.lineWidth = 16; g.stroke();
-    p.path(pts, false); g.strokeStyle = `rgba(255,214,120,${(0.9 * a).toFixed(3)})`; g.lineWidth = 6; g.stroke();
+    p.path(pts, false); g.strokeStyle = `rgba(${outer},${(0.95 * a).toFixed(3)})`; g.lineWidth = red ? 24 : 20; g.stroke();
+    p.path(pts, false); g.strokeStyle = `rgba(${inner},${(0.95 * a).toFixed(3)})`; g.lineWidth = 7; g.stroke();
   }
 };
-/** soft orange glow on a 256 x 256 canvas (soft card, HDR with gain) */
-export const fxGlow = (p: Pen, col = "255,140,50") => {
+/** soft orange glow on a 256 x 256 canvas (soft card); a = strength 0..1. Fade it with `a`, never with the card's
+ *  gain: gain only darkens the colour, the card stays as opaque as its drawing and shows as a dark blob */
+export const fxGlow = (p: Pen, col = "255,140,50", a = 1) => {
   const g = p.g, gr = g.createRadialGradient(128, 128, 0, 128, 128, 128);
-  gr.addColorStop(0, `rgba(${col},0.85)`); gr.addColorStop(0.5, `rgba(${col},0.35)`); gr.addColorStop(1, `rgba(${col},0)`);
+  gr.addColorStop(0, `rgba(${col},${(0.85 * a).toFixed(3)})`); gr.addColorStop(0.5, `rgba(${col},${(0.35 * a).toFixed(3)})`); gr.addColorStop(1, `rgba(${col},0)`);
   g.fillStyle = gr; g.fillRect(0, 0, 256, 256);
 };
 /** fog inside the fishbowl on a 300 x 300 canvas (soft card; the glass is the circle of radius 142 about the
@@ -178,19 +180,24 @@ export const fxHeater = (p: Pen, glow: number) => {
   p.dot(150, 340, 15, INK); p.dot(150, 340, 9, glow > 0.5 ? "#ff5a2a" : "#b9bec7");
   p.arc(150, 30, 60, 18, 180, 360, 9);
 };
-/** red heart on a 260 x 260 canvas; k = buzz phase (0 or 1): tick marks alternate around it */
-export const fxHeart = (p: Pen, k: number) => {
-  const pts: P2[] = [];
-  for (let i = 0; i < 60; i++) { const t = (i / 60) * TAU; pts.push([130 + 5.4 * 16 * Math.sin(t) ** 3, 124 - 5.4 * (13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t))]); }
+/** red heart on a 460 x 300 canvas; k = buzz phase (0 or 1): tick marks alternate round it; hum = true adds
+ *  vibration arcs on both sides that alternate with k (it hums) */
+export const fxHeart = (p: Pen, k: number, hum = false) => {
+  const cx = 230, cy = 146, pts: P2[] = [];
+  for (let i = 0; i < 60; i++) { const t = (i / 60) * TAU; pts.push([cx + 5.4 * 16 * Math.sin(t) ** 3, cy - 5.4 * (13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t))]); }
   p.poly(pts, "#e2332d", 10);
-  p.arc(96, 96, 26, 22, 190, 260, 9, "#ff9a90");
-  for (let i = 0; i < 8; i++) { const a = rad(i * 45 + (k ? 22 : 0)), r0 = 112, r1 = 126; p.stroke([[130 + r0 * Math.cos(a), 124 + r0 * 0.95 * Math.sin(a)], [130 + r1 * Math.cos(a), 124 + r1 * 0.95 * Math.sin(a)]], 7); }
+  p.arc(cx - 34, cy - 28, 26, 22, 190, 260, 9, "#ff9a90");
+  // white marks with an ink rim: they have to read on dark blue stripes
+  const old = p.ol; p.ol = 5;
+  if (hum) for (const r of k ? [134, 186] : [160, 212]) { p.line(ellPts(cx, cy - 6, r, r * 0.8, -30, 30), "#ffffff", 9); p.line(ellPts(cx, cy - 6, r, r * 0.8, 150, 210), "#ffffff", 9); }
+  else for (let i = 0; i < 8; i++) { const a = rad(i * 45 + (k ? 22 : 0)), r0 = 110, r1 = 130; p.line([[cx + r0 * Math.cos(a), cy + r0 * 0.95 * Math.sin(a)], [cx + r1 * Math.cos(a), cy + r1 * 0.95 * Math.sin(a)]], "#ffffff", 8); }
+  p.ol = old;
 };
 
 // ---------------- fry and potato ----------------
 const plate = (p: Pen, cx: number, cy: number, rx: number) => { p.ell(cx, cy, rx, rx * 0.2, "#f7f6f1", 8); p.ell(cx, cy - 3, rx * 0.72, rx * 0.12, "#e3e6e8", 0); };
 /** one french fry on a plate, its red carton behind it, 420 x 300 canvas; cold 0..1 turns the fries pale blue */
-export const fxFry = (p: Pen, cold: number) => {
+export const fxFry = (p: Pen, cold: number, rim = 0) => {
   const c = (a: string, b: string) => toon.mix(a, b, cold);
   // the carton with the rest of the fries
   for (const [x, h, r] of [[62, 62, -8], [82, 84, -3], [102, 70, 2], [122, 88, 6], [142, 60, 11]] as const) p.poly(rotBox(x, 104, 17, h, r), c("#f0bb2a", "#c3d0e2"), 7);
@@ -199,6 +206,8 @@ export const fxFry = (p: Pen, cold: number) => {
   plate(p, 236, 240, 178);
   // the fry: a long golden stick with a browned end and a few grains of salt
   const side: P2[] = [[104, 208], [330, 118], [348, 152], [122, 242]];
+  // rim: the fry's whole skin lit up (it is nearly all skin)
+  if (rim > 0.05) { const g = p.g; g.lineJoin = "round"; p.path([[104, 208], [330, 118], [354, 124], [372, 158], [348, 152], [122, 242]], true); g.strokeStyle = "#fff06a"; g.lineWidth = 9 + 26 * rim; g.stroke(); }
   p.poly(side, c("#e9b021", "#b9c8dc"), 9);
   p.poly([[104, 208], [330, 118], [337, 131], [111, 221]], c("#ffe06a", "#e6eef8"), 0);
   p.poly([[330, 118], [354, 124], [372, 158], [348, 152]], c("#b97a12", "#8fa2bd"), 9);
@@ -209,30 +218,32 @@ const rotBox = (x: number, yBase: number, w: number, h: number, deg: number): P2
   const a = rad(deg), cs = Math.cos(a), sn = Math.sin(a), R = (dx: number, dy: number): P2 => [x + dx * cs - dy * sn, yBase + dx * sn + dy * cs];
   return [R(-w / 2, 0), R(-w / 2, -h), R(w / 2, -h), R(w / 2, 0)];
 };
-/** a baked potato in foil on a plate, split open, 460 x 360 canvas; butter 0..1 = how far the pat has melted */
-export const fxPotato = (p: Pen, butter = 0) => {
-  plate(p, 230, 312, 214);
-  // crinkled foil cradle
+/** a baked potato on a plate, 460 x 360 canvas: an oblong brown potato seen from the side, foil round its lower
+ *  half, split on top with the fluffy inside bulging out; butter 0..1 = how far the pat on top has melted */
+export const fxPotato = (p: Pen, butter = 0, rim = 0) => {
+  plate(p, 230, 320, 214);
+  const body: P2[] = [];
+  for (let i = 0; i < 56; i++) { const a = (i / 56) * TAU, cx = Math.cos(a), sy = Math.sin(a); body.push([230 + 192 * Math.sign(cx) * Math.abs(cx) ** 0.72, 226 + 90 * Math.sign(sy) * Math.abs(sy) ** 0.82]); }
+  // rim: its skin lit up (a thin line round a lot of potato)
+  if (rim > 0.05) { const g = p.g; g.lineJoin = "round"; p.path(body, true); g.strokeStyle = "#fff06a"; g.lineWidth = 9 + 26 * rim; g.stroke(); }
+  p.poly(body, "#a8672f", 9);
+  p.clip(body, () => { p.ell(190, 160, 170, 26, "#c58a4c", 0); for (const [x, y, r] of [[70, 200, 6], [104, 176, 5], [372, 190, 6], [400, 222, 5], [340, 168, 4], [62, 232, 4]] as const) p.ell(x, y, r * 1.5, r, "#6f431c", 0); });
+  p.poly(body, null, 9);
+  // foil round the lower half, torn zig-zag edge
   const foil: P2[] = [];
-  for (let i = 0; i <= 18; i++) foil.push([34 + (392 * i) / 18, 232 + (i % 2 ? -13 : 9) - 26 * Math.sin((Math.PI * i) / 18)]);
-  for (let i = 0; i <= 16; i++) { const a = rad((180 * i) / 16); foil.push([230 + 204 * Math.cos(a), 240 + 78 * Math.sin(a)]); }
+  for (let i = 0; i <= 16; i++) foil.push([36 + (388 * i) / 16, 244 + (i % 2 ? -15 : 9)]);
+  for (let i = 0; i <= 14; i++) { const a = (Math.PI * i) / 14, cx = Math.cos(a), sy = Math.sin(a); foil.push([230 + 198 * Math.sign(cx) * Math.abs(cx) ** 0.72, 230 + 94 * sy ** 0.82]); }
   p.poly(foil, "#cfd6dd", 9);
-  for (const [x0, y0, x1, y1] of [[70, 262, 104, 296], [140, 284, 170, 312], [300, 296, 334, 274], [372, 268, 400, 246], [220, 300, 236, 318]] as const) p.stroke([[x0, y0], [x1, y1]], 5, "#8e99a6");
-  // the potato: a long brown oval with eyes and specks
-  const skin = ellPts(230, 196, 184, 80, 0, 360, -3);
-  p.poly(skin, "#a8672f", 9);
-  p.clip(skin, () => { p.ell(196, 140, 170, 34, "#c58a4c", 0); for (const [x, y, r] of [[78, 196, 6], [112, 232, 5], [350, 226, 6], [388, 190, 5], [150, 250, 4], [318, 252, 5], [66, 170, 4], [396, 164, 4]] as const) p.ell(x, y, r * 1.5, r, "#6f431c", 0); });
-  p.poly(skin, null, 9);
-  // split open: fluffy flesh with a scalloped edge
-  const open: P2[] = [];
-  for (let i = 0; i <= 22; i++) { const t = i / 22; open.push([96 + 268 * t, 190 - 66 * Math.sin(Math.PI * t) + (i % 2 ? 7 : -4)]); }
-  for (let i = 22; i >= 0; i--) { const t = i / 22; open.push([96 + 268 * t, 190 + 40 * Math.sin(Math.PI * t) + (i % 2 ? -5 : 5)]); }
-  p.poly(open, "#fbe7a0", 8);
-  p.clip(open, () => { p.ell(230, 172, 110, 24, "#fff6cf", 0); for (const [x, y] of [[150, 190], [196, 206], [300, 200], [262, 150], [330, 180]] as const) p.arc(x, y, 12, 8, 200, 340, 4, "#e2c66a"); });
+  for (const [x0, y0, x1, y1] of [[74, 262, 104, 292], [150, 272, 176, 306], [296, 304, 326, 272], [370, 284, 396, 258], [222, 280, 238, 310]] as const) p.stroke([[x0, y0], [x1, y1]], 5, "#8e99a6");
+  // the split: fluffy flesh bulging out of the top
+  const fl: [number, number, number][] = [[150, 152, 36], [196, 132, 44], [248, 126, 46], [300, 136, 42], [338, 156, 32]];
+  for (const [x, y, r] of fl) p.ell(x, y, r + 9, (r + 9) * 0.86, INK, 0);
+  for (const [x, y, r] of fl) p.ell(x, y, r, r * 0.86, "#fbe7a0", 0);
+  for (const [x, y, r] of fl) p.ell(x - 6, y - 8, r * 0.55, r * 0.4, "#fff6cf", 0);
   const m = butter;
-  p.poly(rrect(198 - 24 * m, 138 + 26 * m, 262 + 24 * m, 184 + 6 * m, 8 + 10 * m), "#ffdf3a", 7);
-  p.poly(rrect(206 - 20 * m, 144 + 26 * m, 244, 156 + 22 * m, 5), "#fff3a8", 0);
-  if (m > 0.3) p.ell(292, 196, 18 * m, 9 * m, "#ffdf3a", 6);
+  p.poly(rrect(206 - 26 * m, 78 + 26 * m, 282 + 26 * m, 118 + 6 * m, 8 + 8 * m), "#ffdf3a", 8);
+  p.poly(rrect(214 - 22 * m, 84 + 26 * m, 262, 96 + 22 * m, 5), "#fff3a8", 0);
+  if (m > 0.3) { p.stroke([[190, 130], [184, 130 + 36 * m]], 20, INK); p.stroke([[190, 130], [184, 130 + 36 * m]], 10, "#ffdf3a"); }
 };
 /** a pat of butter on a 220 x 200 canvas; melt 0..1: it slumps and drips */
 export const fxButter = (p: Pen, melt: number) => {

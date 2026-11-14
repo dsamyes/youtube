@@ -1,0 +1,35 @@
+# word@frame at 30 fps (frame = start of the word); written by toon/voice.py, do not edit
+line  1  frames 0..119
+   If@0 you@2 jumped@6 into@17 a@25 hole@26 through@38 the@44 middle@46 of@54 the@56 Earth,@61 you@80 would@84 never@88 hit@96 the@103 bottom.@105
+line  2  frames 123..260
+   It's@123 Sunday@128 morning,@138 and@158 Gus@162 has@171 just@176 dug@183 a@189 hole@190 in@200 his@202 garden,@207 straight@229 through@240 the@247 planet.@249
+line  3  frames 264..315
+   His@264 neighbor@268 says@277 he'll@285 burn@289 to@299 a@304 crisp.@305
+line  4  frames 319..389
+   His@319 wife@323 says@331 he'll@344 go@348 splat@353 on@365 the@369 other@372 side.@377
+line  5  frames 393..444
+   Gus@393 says@398 he@405 did@408 the@412 math,@414 and@426 jumps.@431
+line  6  frames 448..533
+   He's@448 pumped@451 out@462 all@467 the@473 air,@478 so@492 nothing@496 slows@506 him@518 down.@522
+line  7  frames 537..594
+   Two@537 minutes@540 in,@549 he's@559 outrunning@566 a@582 bullet.@583
+line  8  frames 598..740
+   Nineteen@598 minutes@607 in,@616 he@633 shoots@635 through@647 the@652 center@654 of@666 the@668 Earth@673 at@682 twenty@685 two@694 thousand@700 miles@712 an@726 hour.@729
+line  9  frames 743..857
+   The@743 walls@745 are@760 as@764 hot@767 as@777 the@782 surface@784 of@797 the@800 Sun.@803 It's@825 a@829 very@830 good@838 tunnel.@846
+line 10  frames 861..911
+   But@861 wait.@864 Why@875 doesn't@885 he@892 go@894 splat?@899
+line 11  frames 915..1119
+   You@915 see,@918 gravity@929 only@943 pulls@952 Gus@962 toward@971 the@980 middle.@982 So@1005 the@1009 moment@1011 he@1022 passes@1024 it,@1039 the@1050 pull@1052 that@1061 sped@1065 him@1073 up@1077 starts@1082 slowing@1093 him@1105 down.@1109
+line 12  frames 1123..1264
+   Ever@1123 pushed@1128 a@1137 kid@1138 on@1146 a@1150 swing?@1151 All@1174 the@1183 speed@1185 it@1195 gains@1197 going@1207 down,@1217 it@1229 spends@1233 going@1243 back@1252 up.@1260
+line 13  frames 1268..1461
+   So@1268 thirty@1273 eight@1288 minutes@1294 after@1304 he@1312 jumped,@1314 Gus@1336 pops@1344 up@1355 in@1360 the@1363 middle@1365 of@1372 the@1375 ocean,@1379 on@1399 the@1403 far@1405 side@1415 of@1425 the@1427 world,@1429 and@1441 stops.@1444
+line 14  frames 1465..1533
+   Luckily,@1465 he@1479 stops@1484 for@1496 exactly@1501 one@1515 moment.@1523
+line 15  frames 1537..1611
+   Unluckily,@1537 he@1559 stops@1562 for@1574 exactly@1579 one@1593 moment.@1600
+line 16  frames 1614..1749
+   Then@1614 down@1619 he@1629 goes@1632 again,@1640 and@1661 thirty@1665 eight@1678 minutes@1684 later,@1695 he's@1707 back@1713 in@1723 his@1725 own@1729 garden.@1737
+line 17  frames 1753..1920
+   So@1753 Gus@1757 never@1768 did@1776 hit@1783 the@1790 bottom.@1793 He@1820 just@1822 comes@1828 home@1836 for@1846 one@1850 second,@1857 every@1877 seventy@1884 six@1899 minutes.@1907

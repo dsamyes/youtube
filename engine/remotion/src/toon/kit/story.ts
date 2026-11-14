@@ -39,7 +39,7 @@ export type ShotsJson = {
   fps?: number; total_frames: number; flash_at?: number | number[];
   shots: { id: number; a: number; b: number; place: string; light?: string }[];
   xfade?: Record<string, number>;
-  events?: { f: number; to?: number; type: string; note?: string }[];
+  events?: { f: number; to?: number; type: string; note?: string; id?: string }[];
 };
 const LIGHTS_OK = ["day", "golden", "night", "space", "shaft"];
 /** shots.json -> the timeline pieces of a Story. Light names that are not presets map by their first word
@@ -52,9 +52,11 @@ export const readShots = (plan: ShotsJson, sun: Record<number, SunDef> = {}) => 
   const xfade: Record<number, number> = {};
   for (const [k, v] of Object.entries(plan.xfade ?? {})) xfade[Number(k)] = v;
   const flash = plan.flash_at === undefined ? [] : Array.isArray(plan.flash_at) ? plan.flash_at : [plan.flash_at];
-  /** frame of the n-th (0-based) event of a type in shots.json, e.g. at("splat") */
+  /** frame of an event of shots.json: by its own name, at("flip1") for {"f": 495, "type": "whoosh", "id": "flip1"}
+   *  (safe when events are added or removed later), or the n-th (0-based) event of a type, at("splat"), at("ding", 1) */
   const at = (type: string, n = 0) => {
-    const e = (plan.events ?? []).filter((x) => x.type === type)[n];
+    const ev = plan.events ?? [];
+    const e = ev.find((x) => x.id === type) ?? ev.filter((x) => x.type === type)[n];
     if (!e) throw new Error(`shots.json has no event "${type}" #${n}`);
     return e.f;
   };

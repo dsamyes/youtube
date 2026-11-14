@@ -3,7 +3,7 @@
 // this video's own drawings from props.ts.
 import {
   Ctx, V3, Pose, Arm, put, where, reach, fx, armMix, sm, lidAt, q, HANG, HIP, clamp01, lerp, lin, add,
-  GUS, WIFE, NEIGHBOR, FISHER, NEIGH, draw, toon, sparkle, question, burst, splash, ripples, flame, sleepBubble, popIn, Expr,
+  GUS, WIFE, NEIGHBOR, FISHER, NEIGH, draw, sparkle, question, burst, splash, ripples, sleepBubble, popIn, Expr,
 } from "../../toon/kit";
 import {
   TABLE, TABLE_H, GUS_T, GUS_C, GUS_CHAIR, GUS5, WIFE5, GUS6, FRY_AT, POTATO_AT, TOWER_N, TOWER_X, TOWER_Z, towerF, BIRD_P, SEA_G, NECK, seaY, bobY, FISHER_AT,
@@ -14,7 +14,6 @@ import {
 import { fxBurger, fxPile, fxPileSmall, fxSausage, fxHummer, fxFeeder, fxSteam, fxSteamBurst, fxHeat, fxGlow, fxFog, fxHeater, fxHeart, fxFry, fxPotato, fxButter, fxThought, fxFrost } from "./props";
 
 const { fxPancake, fxCrumbs, fxShards } = draw;
-const { fxBurst } = toon;
 
 // ---------------- small helpers ----------------
 /** white steam rising: a looping soft card whose bottom edge sits at `base` */
@@ -24,11 +23,11 @@ const steam = (c: Ctx, base: V3, w: number, a = 1, seed = 0, speed = 0.028) => {
   fx(c, `steam${t}|${aa}`, 300, 400, (p) => fxSteam(p, t, aa), [base[0], base[1] + (w * 4) / 6, base[2]], w, (w * 4) / 3, { soft: true });
 };
 /** wavy heat lines rising from `base` (rot turns them, 0 = straight up) */
-const heat = (c: Ctx, base: V3, w: number, a = 1, rot = 0, seed = 0, sx = 1) => {
+const heat = (c: Ctx, base: V3, w: number, a = 1, rot = 0, seed = 0, sx = 1, red = false) => {
   if (a <= 0.03) return;
   const t = q((((c.f * 0.045 + seed) % 1) + 1) % 1, 24), aa = q(a, 10), h = (w * 4) / 3;
   // sx = world x per screen-right x: +1 in the garden (lens looks north), -1 in the park (lens looks south)
-  fx(c, `heat${t}|${aa}`, 300, 400, (p) => fxHeat(p, t, aa), [base[0] - sx * Math.sin(rot) * h * 0.5, base[1] + Math.cos(rot) * h * 0.5, base[2]], w, h, { soft: true, rot, gain: 1.25 });
+  fx(c, `heat${t}|${aa}|${red ? 1 : 0}`, 300, 400, (p) => fxHeat(p, t, aa, red), [base[0] - sx * Math.sin(rot) * h * 0.5, base[1] + Math.cos(rot) * h * 0.5, base[2]], w, h, { soft: true, rot, gain: red ? 1.1 : 1.25 });
 };
 type BirdO = { wing?: number; lid?: number; fluff?: number; droop?: number; left?: boolean; w?: number; rot?: number; gain?: number };
 /** the hummingbird, centred on pos (its card is 0.3 m wide unless w is given); left = beak to screen left */
@@ -47,7 +46,7 @@ const garden = (c: Ctx) => {
   const { id, f } = c;
   if (id === 1) {
     // HOOK: behind the burger table, a burger in each hand: left, right, left
-    fx(c, "pile", 640, 420, fxPile, [TABLE[0] - 0.4, TABLE_H + 0.15, TABLE[2] - 0.12], 0.52, 0.341);
+    fx(c, "pile", 640, 420, fxPile, [TABLE[0] - 0.36, TABLE_H + 0.15, TABLE[2] - 0.12], 0.5, 0.328);
     fx(c, "pileS", 360, 260, fxPileSmall, [TABLE[0] + 0.42, TABLE_H + 0.1, TABLE[2] - 0.08], 0.34, 0.245);
     const bite = (f0: number) => sm(f, f0 - 7, f0 - 1) * (1 - sm(f, f0 + 3, f0 + 10));
     const kL = Math.max(bite(BITES[0]), bite(BITES[2])), kR = bite(BITES[1]);
@@ -92,12 +91,12 @@ const garden = (c: Ctx) => {
     }
   } else if (id === 4) {
     // the burger tower grows beside him
-    fx(c, "pile", 640, 420, fxPile, [TABLE[0] - 0.4, TABLE_H + 0.15, TABLE[2] - 0.12], 0.52, 0.341);
+    fx(c, "pile", 640, 420, fxPile, [TABLE[0] - 0.36, TABLE_H + 0.15, TABLE[2] - 0.12], 0.5, 0.328);
     fx(c, "pileS", 360, 260, fxPileSmall, [TABLE[0] + 0.42, TABLE_H + 0.1, TABLE[2] - 0.08], 0.34, 0.245);
     for (let n = 0; n < TOWER_N; n++) {
       const f0 = towerF(n);
       if (f < f0 - 1) break;
-      const sc = popIn(f, f0 - 1, 4), sway = 0.0011 * n * n * Math.sin(f * 0.17) * (f >= TOWER1 ? 1 + 0.8 * Math.exp(-(f - TOWER1) / 9) : 1);
+      const sc = popIn(f, f0 - 1, 4), sway = 0.0011 * n * n * Math.sin(f * 0.17) * (1 + 0.8 * sm(f, TOWER1, TOWER1 + 5) * Math.exp(-Math.max(0, f - TOWER1 - 5) / 9));
       burgerCard(c, [TOWER_X + sway, TABLE_H + 0.105 + 0.2 * n, TOWER_Z], 0.36 * sc, 0.04 * Math.sin(n * 2.3));
     }
     const up = sm(f, 430, 462), gulp = f >= LOOKUP;
@@ -119,37 +118,43 @@ const garden = (c: Ctx) => {
     FLIPS.forEach((f0, i) => {
       const f1 = CATCH[i];
       if (f >= f1) { lastCatch = f1; return; }
-      if (f >= f1 - 4) biteNow = true;
+      if (f >= f1 - 7) biteNow = true;
       if (f < f0) { if (i === 0 || f >= CATCH[i - 1] + 1) { const sc = i === 0 ? 1 : popIn(f, CATCH[i - 1] + 1, 4); fx(c, "cake0.2", 300, 300, (p) => fxPancake(p, 0.2), [pan[0], pan[1] + 0.02, pan[2]], 0.34 * sc, 0.34 * sc); } return; }
       const rel = where(c, WIFE, wifePose(f0), WIFE5, { wide: true }), p0 = rel.at(rel.A.propL, 0.05), u = (f - f0) / (f1 - f0);
-      const pos: V3 = [lerp(p0[0], mouth[0] + 0.04, u), lerp(p0[1] + 0.03, mouth[1] - 0.05, u) + 0.5 * 4 * u * (1 - u), lerp(p0[2], mouth[2], u)];
+      // a flat toss that comes up to his mouth from below and in front: the path never crosses his eyes
+      const pos: V3 = [lerp(p0[0], mouth[0] + 0.1, u ** 0.8), lerp(p0[1] + 0.03, mouth[1] - 0.03, u) + 0.1 * 4 * u * (1 - u) * (1 - u), lerp(p0[2], mouth[2], u)];
       const sq = q(Math.cos(u * Math.PI * 3), 20);
       fx(c, `cake${sq}`, 300, 300, (p) => fxPancake(p, sq), pos, 0.34 * (1 - 0.55 * u ** 3), 0.34 * (1 - 0.55 * u ** 3), { rot: 0.3 * Math.sin(u * 5) });
     });
     const waiting = f >= GONE + 4;
-    const gpose: Pose = { acc: 1, facing: 1, look: 1, expr: biteNow ? "bite" : lastCatch > 0 ? (waiting ? "smile" : "chew") : "grin", chew: eatLoop(f), blink: lidAt(f, 4, [...CATCH.map((x) => x - 4), ...CATCH, GONE + 4]),
+    const gpose: Pose = { acc: 1, facing: 1, look: 1, expr: biteNow ? "bite" : lastCatch > 0 ? (waiting ? "smile" : "chew") : "grin", chew: eatLoop(f), blink: lidAt(f, 4, [...CATCH.map((x) => x - 7), ...CATCH, GONE + 4]),
       tilt: 5, headTilt: -3, L: HANG, R: waiting ? { ...armMix(HANG, { h: [0.62, 0.1], bend: 0.1 }, sm(f, GONE + 4, GONE + 12)), front: true } : HANG };
     const g = put(c, GUS, gpose, GUS5, { wide: true, tall: true });
     for (const f1 of CATCH) crumbs(c, add(g.at(g.A.mouth, 0.08), [0.06, -0.05, 0]), f1, 0.5);
     sparkle(c, add(pan, [-0.02, 0.12, 0.03]), GONE, 14, 0.26);
   } else if (id === 6) {
-    // the neighbor laughs over his fence; Gus pops up beside him and the sausage is gone
-    const popped = f >= POPUP, notice = f >= POPUP + 5, jaw = f >= JAW;
-    const laugh = !popped, shake = laugh ? 0.012 * Math.sin(f * 1.5) : 0;
-    const npose: Pose = { expr: jaw ? "jawdrop" : notice ? "shock" : "laugh", facing: jaw ? -1 : notice ? 1 : -1, look: jaw ? -1 : notice ? 1 : -1, blink: notice ? 0 : lidAt(f, 6, [POPUP + 5]),
-      tilt: laugh ? -5 + 2.5 * Math.sin(f * 0.75) : 3, headTilt: laugh ? 5 * Math.sin(f * 0.75 + 1) : jaw ? 4 : -4,
+    // the neighbor laughs over his fence, a sausage on his fork; Gus pops up right at the fork and it is gone
+    const took = f >= POPUP + 5, notice = f >= POPUP + 9, jaw = f >= JAW;
+    const laugh = !notice, shake = laugh ? 0.012 * Math.sin(f * 1.5) : 0;
+    const forkArm = (prop: string): Arm => ({ h: [0.56, 0.16], bend: -0.3, front: true, prop, arg: 0 });
+    const npose: Pose = { expr: jaw ? "jawdrop" : notice ? "shock" : "laugh", facing: notice ? 1 : -1, look: notice ? 1 : -1, blink: lidAt(f, 6, [POPUP + 9, JAW]),
+      tilt: laugh ? -5 + 2.5 * Math.sin(f * 0.75) : 3, headTilt: laugh ? 5 * Math.sin(f * 0.75 + 1) : lerp(-4, 4, sm(f, JAW - 3, JAW + 4)),
       L: laugh ? { h: [0.86, 0.22 + 0.05 * Math.sin(f * 0.75)], bend: 0.1, front: true, hand: "point" } : { h: [0.5, 0.36], bend: 0.2, front: true },
-      R: { h: [0.52, jaw ? 0.02 : -0.18], bend: -0.3, front: true, prop: popped ? "forkEmpty" : "fork", arg: 0 } };
+      R: forkArm(took ? "forkEmpty" : "fork") };
     const n = put(c, NEIGHBOR, npose, [NEIGH[0], NEIGH[1] + shake, NEIGH[2]], { noBlob: true, wide: true });
-    burst(c, n.at(n.A.propR, 0.06), POPUP, 6, 0.6);
+    burst(c, n.at(n.A.propR, 0.06), POPUP + 5, 6, 0.6);
     if (f >= POPUP - 2) {
-      const y = lerp(-1.25, 0, 1 - (1 - clamp01((f - (POPUP - 2)) / 8)) ** 2.6), eaten = f >= SAUSAGE;
-      const gpose: Pose = { acc: 1, expr: eaten ? (f >= SAUSAGE + 16 ? "smile_closed" : "chew") : "chew", chew: eatLoop(f), facing: 1, look: 1, blink: lidAt(f, 5, [SAUSAGE, SAUSAGE + 16]), headTilt: -3,
+      // Gus comes up so that his mouth meets the sausage on the fork
+      const still = where(c, NEIGHBOR, { tilt: 0, R: forkArm("fork") }, NEIGH, { wide: true }), sp = still.at(still.A.propR, 0);
+      const gbase: Pose = { acc: 1, facing: -1 };
+      const m0 = where(c, GUS, gbase, GUS6, { wide: true, tall: true }), mm = m0.at(m0.A.mouth, 0);
+      const y = lerp(-1.3, 0, 1 - (1 - clamp01((f - (POPUP - 2)) / 8)) ** 2.6), eaten = f >= SAUSAGE;
+      const gpose: Pose = { ...gbase, expr: !took ? "bite" : eaten && f >= SAUSAGE + 16 ? "smile_closed" : "chew", chew: eatLoop(f), look: -1, blink: lidAt(f, 5, [POPUP + 5, SAUSAGE + 16]), headTilt: 3,
         L: { h: [0.3, 0.5], bend: 0.2 }, R: { h: [0.3, 0.5], bend: 0.2 } };
-      const g = put(c, GUS, gpose, [GUS6[0], GUS6[1] + y, GUS6[2]], { noBlob: true, wide: true, tall: true });
-      const m = g.at(g.A.mouth, 0.06);
-      if (!eaten) { const s = 1 - 0.5 * sm(f, SAUSAGE - 8, SAUSAGE); fx(c, "sausage", 200, 120, fxSausage, [m[0] + 0.1 * s, m[1], m[2]], 0.2 * s, 0.12); }
-      crumbs(c, add(m, [0.06, -0.05, 0]), SAUSAGE, 0.5);
+      const g = put(c, GUS, gpose, [GUS6[0] + sp[0] - mm[0] + 0.07, GUS6[1] + y + sp[1] - mm[1] + 0.01, GUS6[2]], { noBlob: true, wide: true, tall: true });
+      const m = g.at(g.A.mouth, 0.1);
+      if (took && !eaten) { const sh = 1 - 0.55 * sm(f, SAUSAGE - 9, SAUSAGE); fx(c, "sausage", 200, 120, fxSausage, [m[0] - 0.09 * sh, m[1] + 0.005, m[2]], 0.2 * sh, 0.12); }
+      crumbs(c, add(m, [-0.06, -0.05, 0]), SAUSAGE, 0.5);
     }
   } else if (id === 7) {
     // the heart that hums
@@ -157,9 +162,9 @@ const garden = (c: Ctx) => {
     const pose: Pose = { expr: turn ? "smile" : buzz ? "wow" : "smile", facing: turn ? 1 : 0, look: turn ? 1 : 0, headTilt: turn ? -3 : 9 * sm(f, 722, 732), blink: lidAt(f, 8, [TICK0, HUM + 4]),
       L: HANG, R: buzz && !turn ? { ...armMix(HANG, { h: [-0.02, 0.36], bend: 0.3 }, sm(f, TICK0 + 6, TICK0 + 16)), front: true } : HANG };
     const g = put(c, GUS, pose, GUS_C);
-    const m = g.at(g.A.mouth, 0.08), k = buzz ? f % 2 : 0, sc = popIn(f, 714, 5) * (buzz ? 1 + 0.05 * (k ? 1 : -1) : 1);
-    fx(c, `heart${k}`, 260, 260, (p) => fxHeart(p, k), [m[0] - 0.02 + (buzz ? 0.006 * (k ? 1 : -1) : 0), m[1] - 0.4, m[2]], 0.25 * sc, 0.25 * sc);
-    if (birdIn > 0) { const h = g.at(g.A.head, 0.05); bird(c, [h[0] + 0.62 + 1.4 * (1 - birdIn), h[1] + 0.08 + 0.4 * (1 - birdIn) + 0.012 * Math.sin(f * 0.4), h[2] + 0.04], { left: true }); }
+    const m = g.at(g.A.mouth, 0.08), k = buzz ? f % 2 : 0, sc = popIn(f, 714, 5) * (buzz ? 1 + 0.05 * (k ? 1 : -1) : 1), hum = f >= HUM - 8;
+    fx(c, `heart${k}${hum ? "h" : ""}`, 460, 300, (p) => fxHeart(p, k, hum), [m[0] - 0.02 + (buzz ? 0.006 * (k ? 1 : -1) : 0), m[1] - 0.4, m[2]], 0.442 * sc, 0.288 * sc);
+    if (birdIn > 0) { const h = g.at(g.A.head, 0.05); bird(c, [h[0] + 0.5 + 1.4 * (1 - birdIn), h[1] + 0.1 + 0.4 * (1 - birdIn) + 0.012 * Math.sin(f * 0.4), h[2] + 0.04], { left: true }); }
   } else if (id === 8) {
     // the helmet fogs up
     const k = 0.56 * sm(f, 830, 884);
@@ -172,32 +177,39 @@ const garden = (c: Ctx) => {
     question(c, [h[0] + 0.43, h[1] + 0.3, h[2]], WHY, 0.34);
   } else if (id === 9) {
     // all that food turns into heat; four space heaters
-    const lit = f >= TO_HEAT, drop = sm(f, 962, 974), heatA = sm(f, TO_HEAT + 2, TO_HEAT + 14);
+    const lit = f >= TO_HEAT, drop = sm(f, 962, 976), heatA = sm(f, TO_HEAT + 2, TO_HEAT + 14);
     const R: Arm = { ...armMix({ h: [0.56, -0.2], bend: -0.26 }, HANG, drop), front: true, prop: lit ? undefined : "burger" };
-    const pose: Pose = { expr: lit ? (f < TO_HEAT + 16 ? "shock" : f >= GLOW ? "pained" : "nervous") : "smile", facing: drop > 0.5 ? 0 : 1, look: drop > 0.5 ? 0 : 1, blink: lidAt(f, 10, [TO_HEAT, TO_HEAT + 16, 968, GLOW]), headTilt: -3 * (1 - drop), L: HANG, R };
+    const pose: Pose = { expr: lit ? (f < TO_HEAT + 16 ? "shock" : f >= GLOW + 7 ? "pained" : "nervous") : "smile", facing: 0, look: q(1 - drop, 10), blink: lidAt(f, 10, [TO_HEAT, TO_HEAT + 16, GLOW + 7]), headTilt: -3 * (1 - drop), L: HANG, R };
     const g = put(c, GUS, pose, GUS_C, { wide: true });
-    const hand = g.at(lit ? g.A.R : g.A.propR, 0.05);
-    flame(c, [hand[0], hand[1] + 0.02, hand[2]], TO_HEAT, 964, 0.5);
+    // the flame grows over the burger for three frames before the burger is gone, and dies as he lowers his hand
+    if (f >= TO_HEAT - 3 && f < 972) {
+      const hand = g.at(lit ? g.A.R : g.A.propR, 0.06), k = q(sm(f, TO_HEAT - 3, TO_HEAT + 4) * (1 - sm(f, 960, 972)) * (0.9 + 0.1 * Math.sin(f * 1.3)), 20), t = q(((f * 0.19) % 1), 24);
+      if (k > 0.04) fx(c, `flame9|${t}|${k}`, 300, 420, (p) => draw.fxFlame(p, t, k), [hand[0], hand[1] + 0.2 * k + (lit ? 0.02 : -0.04), hand[2]], 0.34, 0.48, { gain: 1.5 });
+      sparkle(c, [hand[0] + 0.02, hand[1] + 0.12, hand[2] + 0.02], TO_HEAT - 1, 12, 0.5);
+    }
     const top = g.at(g.A.head, -0.04);
     heat(c, [top[0], top[1] + 0.3, top[2]], 0.5, heatA, 0, 0.0);
     heat(c, [top[0] - 0.42, top[1] - 0.25, top[2]], 0.36, heatA, 0.35, 0.3); heat(c, [top[0] + 0.42, top[1] - 0.25, top[2]], 0.36, heatA, -0.35, 0.6);
-    const glowK = sm(f, GLOW, GLOW + 10);
-    [-0.63, -0.21, 0.21, 0.63].forEach((x, i) => {
+    const glowK = sm(f, GLOW, GLOW + 10), gq = q(glowK, 16);
+    [-0.57, -0.19, 0.19, 0.57].forEach((x, i) => {
       const f0 = i === 1 || i === 2 ? HEAT_A : HEAT_B;
       if (f < f0 - 1) return;
       const sc = popIn(f, f0 - 1, 5), pos: V3 = [x, 0.3 * sc, 0.55 + 0.04 * (i % 2)];
-      fx(c, `heater${q(glowK, 8)}`, 300, 420, (p) => fxHeater(p, q(glowK, 8)), pos, 0.42 * sc, 0.588 * sc);
-      if (glowK > 0) { fx(c, "glow", 256, 256, (p) => fxGlow(p), [x, 0.36, 0.6], 0.8, 0.8, { soft: true, gain: 1.5 * glowK }); heat(c, [x, 0.6, 0.56], 0.3, glowK * 0.9, 0, i * 0.23); }
+      fx(c, `heater${q(glowK, 8)}`, 300, 420, (p) => fxHeater(p, q(glowK, 8)), pos, 0.38 * sc, 0.532 * sc);
+      // the glow sits behind the heater (a halo round it), the heat lines rise in front of Gus's legs
+      if (glowK > 0) { fx(c, `glow${gq}`, 256, 256, (p) => fxGlow(p, "255,140,50", gq), [x, 0.34, 0.45], 0.95, 0.95, { soft: true, gain: 1.4 }); heat(c, [x, 0.56, 0.57], 0.26, glowK * 0.9, 0, i * 0.23); }
     });
-    if (glowK > 0) fx(c, "glow", 256, 256, (p) => fxGlow(p), add(g.at(g.A.mouth, 0.1), [0, -0.3, 0]), 1.5, 1.9, { soft: true, gain: 0.9 * glowK });
+    if (glowK > 0) fx(c, `glow${gq}`, 256, 256, (p) => fxGlow(p, "255,140,50", gq), [GUS_C[0], 1.25, GUS_C[2] - 0.12], 1.7, 2.3, { soft: true, gain: 1.1 });
   } else if (id >= 10 && id <= 12) {
     // the table: one french fry, one baked potato
     const cold = sm(f, FRY_COLD - 8, FRY_COLD + 2), fry: V3 = [FRY_AT[0], FRY_AT[1] + 0.105, FRY_AT[2]], pot: V3 = [POTATO_AT[0], POTATO_AT[1] + 0.148, POTATO_AT[2]];
-    fx(c, `fry${q(cold, 10)}`, 420, 300, (p) => fxFry(p, q(cold, 10)), fry, 0.34, 0.243);
+    // 'more skin for their size': on SKIN the outline of both lights up and stays
+    const rim = id === 12 ? q(popIn(f, SKIN - 2, 6) * 0.8, 20) : 0;
+    fx(c, `fry${q(cold, 10)}|${rim}`, 420, 300, (p) => fxFry(p, q(cold, 10), rim), fry, 0.34, 0.243);
     steam(c, [fry[0] + 0.01, fry[1] + 0.0, fry[2] - 0.02], 0.2, 1 - sm(f, FRY_COLD - 22, FRY_COLD - 4), 0.2, 0.034);
     if (f >= FRY_COLD - 1) { const sc = popIn(f, FRY_COLD - 1, 5); fx(c, "frost", 200, 200, fxFrost, [fry[0] + 0.1, fry[1] + 0.12, fry[2] + 0.02], 0.09 * sc, 0.09 * sc, { rot: 0.02 * (f - FRY_COLD) }); }
     const butter = sm(f, 1150, 1205);
-    fx(c, `potato${q(butter, 12)}`, 460, 360, (p) => fxPotato(p, q(butter, 12)), pot, 0.4, 0.313);
+    fx(c, `potato${q(butter, 12)}|${rim}`, 460, 360, (p) => fxPotato(p, q(butter, 12), rim), pot, 0.4, 0.313);
     steam(c, [pot[0] - 0.03, pot[1] + 0.02, pot[2] - 0.02], 0.26, 1, 0.0, 0.03); steam(c, [pot[0] + 0.07, pot[1] + 0.05, pot[2] - 0.03], 0.3, 0.9, 0.5, 0.024);
     if (id === 12) {
       sparkle(c, [fry[0] - 0.06, fry[1] + 0.04, fry[2] + 0.04], SKIN, 14, 0.2); sparkle(c, [pot[0] + 0.12, pot[1] + 0.06, pot[2] + 0.04], SKIN + 4, 14, 0.22);
@@ -214,12 +226,12 @@ const garden = (c: Ctx) => {
     const top = g.at(g.A.head, 0.05), crown: V3 = [top[0], top[1] + 0.335, top[2]];
     const fall = clamp01((f - (BUTTER - 9)) / 9), melt = sm(f, MELT - 2, MELT + 22);
     if (f >= BUTTER - 9) fx(c, `butter${q(melt, 12)}`, 220, 200, (p) => fxButter(p, q(melt, 12)), [crown[0], crown[1] - 0.005 + 1.1 * (1 - fall * fall), crown[2]], 0.24, 0.218);
-    burst(c, [crown[0], crown[1] + 0.02, crown[2]], BUTTER, 5, 0.5);
+    sparkle(c, [crown[0] + 0.13, crown[1] + 0.1, crown[2] + 0.02], BUTTER, 12, 0.26); // (a burst of thin rays here scored 0.7 in the frame check)
     steam(c, [crown[0] - 0.04, crown[1] + 0.06, crown[2] - 0.04], 0.46, 1, 0.0, 0.03); steam(c, [crown[0] + 0.1, crown[1] + 0.1, crown[2] - 0.05], 0.52, 0.9, 0.5, 0.024);
     if (popped && f < THERMO_POP + 14) {
       const u = (f - THERMO_POP) / 14, at = g.at(g.A.propR, 0.05);
-      fx(c, `shards${q(u, 30)}`, 400, 400, (p) => fxShards(p, q(u, 30)), at, 0.9, 0.9);
-      if (u < 0.45) fx(c, `burstR${q(u / 0.45, 30)}`, 500, 500, (p) => fxBurst(p, q(u / 0.45, 30), "#ffd9c8", 9, 30, 200), at, 0.7, 0.7);
+      const grow = 0.55 + 0.45 * sm(f, THERMO_POP, THERMO_POP + 4);
+      fx(c, `shards${q(u, 30)}`, 400, 400, (p) => fxShards(p, q(u, 30)), at, 0.9 * grow, 0.9 * grow);
     }
   }
 };
@@ -240,20 +252,20 @@ const park = (c: Ctx) => {
     // "burns fuel": a little afterburner from its tail, pointing back (screen left)
     if (f >= BURN - 1) {
       const k = q(Math.min(1, (f - BURN + 2) / 4) * (0.82 + 0.18 * Math.sin(f * 1.3)), 20), t = q(((f * 0.19) % 1), 24);
-      fx(c, `jet${t}|${k}`, 300, 420, (p) => draw.fxFlame(p, t, k), [pos[0] + SX * -0.27, pos[1] + 0.012, pos[2] + 0.02], 0.15, 0.21, { rot: Math.PI / 2, gain: 1.5 });
+      fx(c, `jet${t}|${k}`, 300, 420, (p) => draw.fxFlame(p, t, k), [pos[0] + SX * -0.24, pos[1] + 0.012, pos[2] + 0.02], 0.12, 0.17, { rot: Math.PI / 2, gain: 1.5 });
       burst(c, [pos[0] + SX * -0.17, pos[1] + 0.012, pos[2] + 0.03], BURN - 1, 5, 0.3, "#ffb52e");
     }
   } else {
     const happy = f >= COOL - 3 && f < COOL + 16;
     bird(c, pos, { lid: happy ? 1 : 0, w: W });
-    // its heat just leaks away: two waves of heat lines drifting off in every direction
-    for (const w0 of [LEAK0 - 8, LEAK0 + 7]) {
+    // its heat just leaks away: wavy lines lift off its back and its belly side, drift up and thin out, twice
+    for (const w0 of [LEAK0 - 8, LEAK0 + 9]) {
       const u = clamp01((f - w0) / 30);
       if (u <= 0 || u >= 1) continue;
-      for (let i = 0; i < 7; i++) {
-        const a = (i / 7) * Math.PI * 2 + (w0 === LEAK0 - 8 ? 0.3 : 0.75), r = 0.11 + 0.15 * u;
-        heat(c, [pos[0] + SX * (-0.02 - Math.sin(a) * r * 1.25), pos[1] + 0.0 + Math.cos(a) * r, pos[2] - 0.02], 0.085, Math.sin(Math.PI * u) ** 0.6, a, i * 0.17, SX);
-      }
+      const a = Math.sin(Math.PI * u) ** 0.6, lift = 0.1 * u;
+      heat(c, [pos[0] + SX * -0.07, pos[1] + 0.06 + lift, pos[2] - 0.02], 0.15, a, 0.3, 0.1, SX, true);
+      heat(c, [pos[0] + SX * 0.045, pos[1] + 0.085 + lift, pos[2] - 0.02], 0.15, a, -0.12, 0.45, SX, true);
+      heat(c, [pos[0] + SX * -0.2, pos[1] - 0.0 + lift, pos[2] - 0.02], 0.12, a * 0.9, 0.75, 0.8, SX, true);
     }
     sparkle(c, [pos[0] + SX * 0.06, pos[1] + 0.15, pos[2] + 0.03], COOL, 14, 0.14);
   }
@@ -266,20 +278,20 @@ const ocean = (c: Ctx) => {
   const { id, f } = c;
   const gx = SEA_G[0], gz = SEA_G[2];
   if (id === 16) {
-    const y = seaY(f), inAir = f < SPLASH, under = f >= SPLASH && f < SURFACE - 7, up = f >= SURFACE - 7;
+    const y = seaY(f), inAir = f < SPLASH + 6, under = f >= SPLASH + 6 && f < SURFACE - 7, up = f >= SURFACE - 7; // he sinks out of sight inside the splash
     if (inAir) put(c, GUS, { mode: "air", expr: "shock", flap: (f * 0.25) % 1, L: { h: [0.3, 0.55], bend: 0.3, front: true }, R: { h: [0.3, 0.6], bend: 0.3, front: true }, legs: [[-0.22, 0.62], [0.26, 0.6]] },
       [gx, y, gz], { noBlob: true });
     else if (!under) put(c, GUS, { expr: f >= BLISS - 4 ? "relief" : "relief_open", look: 0, blink: lidAt(f, 12, [BLISS - 4]), headTilt: 4 * sm(f, BLISS - 6, BLISS + 4), L: HANG, R: HANG }, [gx, y, gz], { noBlob: true });
     splash(c, [gx, 1.0, gz + 0.05], SPLASH, 17, 2.6);
     if (f >= HISS - 6 && f < HISS + 30) { const u = q((f - (HISS - 6)) / 36, 36); fx(c, `sburst${u}`, 500, 500, (p) => fxSteamBurst(p, u), [gx, 0.75 + 0.5 * u, gz + 0.1], 2.3, 2.3, { soft: true }); }
-    if (up) { const a = 0.9 - 0.4 * sm(f, SURFACE + 10, SURFACE + 50); steam(c, [gx - 0.05, y + 1.72, gz - 0.03], 0.4, a, 0.1, 0.03); steam(c, [gx + 0.16, y + 1.66, gz - 0.04], 0.34, a * 0.8, 0.6, 0.026); ripples(c, [gx, 0, gz], 2.0, 1.6, 44); }
+    if (up) { const a = (0.9 - 0.4 * sm(f, SURFACE + 10, SURFACE + 50)) * sm(f, SURFACE - 7, SURFACE + 4); steam(c, [gx - 0.05, y + 1.72, gz - 0.03], 0.4, a, 0.1, 0.03); steam(c, [gx + 0.16, y + 1.66, gz - 0.04], 0.34, a * 0.8, 0.6, 0.026); ripples(c, [gx, 0, gz], 2.0, 1.6, 44); }
     burst(c, [gx, 0.2, gz + 0.1], SURFACE - 6, 6, 0.9, "#d8eeff");
     const seen = f >= SPLASH - 14;
     fisher(c, { expr: f >= SPLASH ? (f >= SURFACE ? "wow" : "shock") : seen ? "wow" : "neutral", facing: -1, look: -1, headTilt: seen && f < SPLASH ? -12 : f >= SPLASH ? 4 : 0, blink: lidAt(f, 15, [SPLASH - 14, SPLASH, SURFACE]), L: FREST, R: FREST });
     ripples(c, [FISHER_AT(f)[0] - 0.1, 0, FISHER_AT(f)[2]], 4.6, 3.0, 66, 20);
   } else if (id === 17) {
     const oops = f >= OOPS, think = f >= THINK;
-    const g = put(c, GUS, { expr: think ? "sad" : oops ? "nervous" : "relief", look: think ? 0.6 : 0, blink: lidAt(f, 12, [OOPS, THINK]), headTilt: oops ? -3 : 4, L: HANG, R: HANG }, [gx, NECK + bobY(f), gz], { noBlob: true });
+    const g = put(c, GUS, { expr: think ? "sad" : oops ? "nervous" : "relief", look: q(0.6 * sm(f, THINK - 2, THINK + 6), 10), blink: lidAt(f, 12, [OOPS, THINK]), headTilt: lerp(4, -3, sm(f, OOPS - 4, OOPS + 5)), L: HANG, R: HANG }, [gx, NECK + bobY(f), gz], { noBlob: true });
     const rum = f >= RUMBLE0 && f < RUMBLE0 + 30;
     ripples(c, [gx, 0, gz], rum ? 1.5 : 2.0, rum ? 1.2 : 1.6, rum ? 12 : 44, 0, rum ? 0.9 : 0.55);
     if (rum) ripples(c, [gx, 0, gz], 2.3, 1.8, 12, 6, 0.7);
@@ -293,13 +305,12 @@ const ocean = (c: Ctx) => {
     const gp: V3 = [gx, NECK + bobY(f), gz];
     const base: Pose = { acc: 1, facing: 0 };
     const m = where(c, GUS, base, gp, { wide: true, tall: true }), mouth = m.at(m.A.mouth, 0);
-    const holdR: Arm = { h: [0.56, -0.5], bend: -0.2, front: true }, holdL: Arm = { h: [0.56, -0.46], bend: -0.2, front: true };
+    const holdR: Arm = { h: [0.56, -0.5], bend: -0.2, front: true };
     const toR: Arm = { h: reach(c, gp, 1, [mouth[0] + 0.06, mouth[1] - 0.1, mouth[2]]), bend: -0.3, front: true };
     const biting = id === 21 && f >= LAST_BITE - 4 && f < LAST_BITE + 1;
     const gpose: Pose = { ...base, expr: biting ? "bite" : id === 21 && f < LAST_BITE ? "sad" : "chew", chew: eatLoop(f), look: 0, blink: id === 21 ? lidAt(f, 12, [LAST_BITE - 4, LAST_BITE + 1]) : lidAt(f, 12), headTilt: 3 * biteK,
-      L: holdL, R: { ...armMix(holdR, toR, biteK), front: true } };
+      L: HANG, R: { ...armMix(holdR, toR, biteK), front: true } };
     const g = put(c, GUS, gpose, gp, { noBlob: true, wide: true, tall: true });
-    burgerCard(c, add(g.at(g.A.L, 0.07), [-0.015, 0.07, 0]), 0.3, 0.06, dim);
     burgerCard(c, add(g.at(g.A.R, 0.07), [0.015, 0.07, 0]), 0.3, -0.12 * biteK, dim);
     if (id === 21) crumbs(c, add(g.at(g.A.mouth, 0.1), [0, -0.08, 0]), LAST_BITE, 0.6);
     ripples(c, [gx, 0, gz], 2.0, 1.6, 44);
@@ -313,7 +324,7 @@ const ocean = (c: Ctx) => {
       if (f >= BIRD_SEA - 2) { const k = 1 - (1 - clamp01((f - (BIRD_SEA - 2)) / 18)) ** 3; bird(c, [hov[0] - 2.4 * (1 - k), hov[1] + 0.9 * (1 - k) + 0.02 * Math.sin(f * 0.4), hov[2]], { rot: -0.2 * (1 - k), w: 0.34 }); }
       question(c, [hov[0] - 0.5, hov[1] + 0.3, hov[2]], FUNNY, 0.44);
     } else if (id === 19) {
-      const tired = sm(f, 1808, 1856), land = sm(f, LAND0, LAND0 + 13), folded = f >= LAND0 + 11;
+      const tired = sm(f, 1808, 1852), land = sm(f, LAND0 - 6, LAND0 + 6), folded = f >= LAND0 + 4; // settled a third of a second before the crossfade
       const slow = tired < 0.4 ? 1 : tired < 0.8 ? 2 : 3, wing = folded ? 0 : Math.floor(f / slow) % 2 ? 1 : -1;
       const dip = 0.05 * tired * Math.sin(f * 0.33) - 0.04 * tired;
       bird(c, [lerp(hov[0], perch[0], land), lerp(hov[1] + dip, perch[1], land), perch[2]], { wing, lid: 0.55 * tired, droop: tired * (1 - land), w: 0.34 });

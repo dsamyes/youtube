@@ -51,7 +51,7 @@ export const GUS_C: V3 = [0, 0, 0];                         // Gus alone on the 
 export const CHAIR: V3 = [0.95, 0, 0.55], CHAIR_YAW = 0.3;  // deck chair (shot 2)
 export const GUS_CHAIR: V3 = [CHAIR[0] + 0.23 * Math.sin(CHAIR_YAW), 0, CHAIR[2] + 0.23 * Math.cos(CHAIR_YAW)];
 export const GUS5: V3 = [0.8, 0, 0.3], WIFE5: V3 = [1.78, 0, 0.4]; // the pancake two-shot
-export const GUS6: V3 = [1.52, 0.3, -5.1];                  // Gus behind the neighbor's fence, beside him
+export const GUS6: V3 = [3.2, 0.3, -5.1];                   // Gus behind the neighbor's fence, at the fork (staging.ts moves him onto the sausage)
 export const FRY_AT: V3 = [-1.08, TABLE_H, 0.38], POTATO_AT: V3 = [-0.62, TABLE_H, 0.38];
 /** the burger tower (shot 4): n-th burger sits at this height; it appears on towerF(n) */
 export const TOWER_N = 15, TOWER_X = -0.12, TOWER_Z = 0.26;
@@ -61,8 +61,8 @@ export const towerTop = (f: number) => { let n = 0; while (n < TOWER_N && f >= t
 // ---------------- the park (only a backdrop for the hummingbird) ----------------
 export const BIRD_P: V3 = [PARK[0] - 6.2, 1.5, PARK[2] - 3.4];
 // ---------------- the sea ----------------
-export const SEA_G: V3 = [0.45, 0, 2.3];                    // where Gus floats: off the bow, nearer the lens than the boat
-export const NECK = -1.21;                                  // soles this far under water = water at his collar
+export const SEA_G: V3 = [0.8, 0, 2.3];                     // where Gus floats: off the bow, nearer the lens than the boat
+export const NECK = -1.15;                                  // soles this far under water = water at his collar
 /** height of Gus's soles over the water in shot 16: cannonball from the sky, under, back up to neck-deep */
 export const seaY = (f: number) => {
   if (f < SPLASH) { const u = clamp01((f - DROP0) / (SPLASH - DROP0)); return 5.2 - 5.9 * u * u; }       // -0.7 at the splash
@@ -92,7 +92,7 @@ const S1b = (f: number) => dolly([-0.6, 1.5, 2.25], [-0.85, 1.3, -0.3], pushK(f,
 const S2a = (f: number) => dolly([1.5, 1.3, 4.5], [1.02, 0.86, 0.75], pushK(f, 131, 0.0012), { fov: 40 });
 const S2b = (f: number) => dolly([1.4, 1.2, 3.55], [1.16, 0.98, 0.75], pushK(f, 170, 0.0016), { fov: 40, roll: 0.025 });
 // 3 the bird at its feeder (park)
-const S3a = (f: number) => dolly([BIRD_P[0] - 0.32, BIRD_P[1] + 0.1, BIRD_P[2] - 1.75], [BIRD_P[0] - 0.1, BIRD_P[1] + 0.0, BIRD_P[2]], pushK(f, 239, 0.0012, 0.004, 24, 296), { fov: 36, roll: 0.03 });
+const S3a = (f: number) => dolly([BIRD_P[0] - 0.22, BIRD_P[1] + 0.1, BIRD_P[2] - 2.1], [BIRD_P[0] - 0.035, BIRD_P[1] + 0.02, BIRD_P[2]], pushK(f, 239, 0.0012, 0.004, 24, 296), { fov: 36, roll: 0.03 });
 // 4 the tower: wide, then the lens tilts up with it
 const S4a = (f: number) => dolly([0.45, 1.25, 4.9], [-0.55, 1.05, 0], pushK(f, 380, 0.001), { fov: 42 });
 const S4b = (f: number): Framing => dolly([0.5, 1.0, 5.3], [-0.42, lerp(1.25, 2.55, smooth((f - 420) / 46)), 0], pushK(f, 420, 0.0006), { fov: 46, roll: 0.03 });
@@ -102,7 +102,7 @@ const S5b = (f: number) => dolly([1.36, 1.24, 4.5], [1.3, 1.1, 0.36], pushK(f, 5
 // 6 the neighbor over his fence, then both
 const N_EYE: V3 = [NEIGH[0], NEIGH[1] + 1.42, NEIGH[2]];
 const S6a = (f: number) => dolly([1.6, 1.82, -1.1], add(N_EYE, [0.1, 0.02, 0]), pushK(f, 573, 0.0018), { fov: 40, roll: 0.035 });
-const S6b = (f: number) => dolly([1.75, 1.8, -1.0], [2.02, 1.72, -5.08], pushK(f, 650, 0.0012), { fov: 40, roll: -0.02 });
+const S6b = (f: number) => dolly([2.1, 1.8, -1.0], [2.86, 1.72, -5.08], pushK(f, 650, 0.0012), { fov: 40, roll: -0.02 });
 // 7 the heart
 const S7a = (f: number) => dolly([0.55, 1.3, 2.75], [0.06, 1.12, 0], pushK(f, 711, 0.0016), { fov: 38, roll: -0.02 });
 const S7b = (f: number) => dolly([0.62, 1.36, 2.6], [0.2, 1.24, 0], pushK(f, 800, 0.0016), { fov: 38, roll: 0.02 });
@@ -110,28 +110,28 @@ const S7b = (f: number) => dolly([0.62, 1.36, 2.6], [0.2, 1.24, 0], pushK(f, 800
 const S8a = (f: number) => dolly([0.2, 1.52, 1.72], [0.02, 1.43, 0], pushK(f, 826, 0.002, 0.005, 16, 880), { fov: 38, roll: 0.03 });
 // 9 burger into heat, then back for the four heaters
 const S9a = (f: number) => dolly([0.5, 1.4, 3.1], [0.12, 1.16, 0], pushK(f, 892, 0.0012), { fov: 38 });
-const S9b = (f: number) => dolly([0.2, 1.25, 4.5], [0, 0.98, 0], pushK(f, 990, 0.0014), { fov: 40 });
+const S9b = (f: number) => dolly([0.2, 1.12, 4.25], [0, 0.84, 0.2], pushK(f, 990, 0.0012), { fov: 40 });
 // 10-12 the table: fry, potato, both
 const S10a = (f: number) => dolly([FRY_AT[0] + 0.12, 1.2, 1.62], [FRY_AT[0], 0.9, FRY_AT[2]], pushK(f, 1049, 0.0015), { fov: 36, roll: 0.02 });
 const S11a = (f: number) => dolly([POTATO_AT[0] + 0.1, 1.24, 1.72], [POTATO_AT[0], 0.96, POTATO_AT[2]], pushK(f, 1130, 0.0014), { fov: 36, roll: -0.02 });
-const S12a = (f: number) => dolly([-0.8, 1.38, 3.05], [-0.85, 0.96, 0.38], pushK(f, 1213, 0.001), { fov: 36 });
+const S12a = (f: number) => dolly([-0.8, 1.34, 2.95], [-0.85, 0.94, 0.38], pushK(f, 1213, 0.001), { fov: 36 });
 // 13 the bird again, from the other side
-const S13a = (f: number) => dolly([BIRD_P[0] + 0.3, BIRD_P[1] + 0.04, BIRD_P[2] - 1.7], [BIRD_P[0] - 0.09, BIRD_P[1] + 0.02, BIRD_P[2]], pushK(f, 1292, 0.0011), { fov: 36, roll: -0.03 });
+const S13a = (f: number) => dolly([BIRD_P[0] + 0.3, BIRD_P[1] + 0.04, BIRD_P[2] - 1.85], [BIRD_P[0] - 0.07, BIRD_P[1] + 0.02, BIRD_P[2]], pushK(f, 1292, 0.0011), { fov: 36, roll: -0.03 });
 // 14 Gus is the potato; 15 the thermometer
 const S14a = (f: number) => dolly([0.5, 1.5, 3.2], [0.02, 1.34, 0], pushK(f, 1441, 0.002), { fov: 40 });
 const S15a = (f: number) => dolly([0.62, 1.42, 2.7], [0.2, 1.3, 0], pushK(f, 1497, 0.002, 0.006, 14, 1540), { fov: 38, roll: -0.03 });
 // 16 the sea: wide for the cannonball, then in on Gus with the boat behind him
 const SEA_EYE: V3 = [SEA_G[0], NECK + 1.42, SEA_G[2]];
-const S16a = (f: number) => dolly([0.6, 1.6, 8.6], [0.8, 1.5, 0.8], pushK(f, 1559, 0.0012), { fov: 42 });
-const S16b = (f: number) => dolly([0.6, 0.9, 5.2], [0.95, 0.72, 0.5], pushK(f, 1615, 0.001), { fov: 40, roll: -0.02 });
+const S16a = (f: number) => dolly([0.85, 1.6, 8.6], [1.0, 1.5, 0.8], pushK(f, 1559, 0.0012), { fov: 42 });
+const S16b = (f: number) => dolly([0.7, 0.84, 5.2], [1.04, 0.58, 0.5], pushK(f, 1615, 0.0008), { fov: 40, roll: -0.02 });
 // 17 close on Gus in the water
-const S17a = (f: number) => dolly([SEA_G[0] - 0.14, 0.64, SEA_G[2] + 2.75], [SEA_G[0] + 0.04, 0.42, SEA_G[2]], pushK(f, 1681, 0.0016), { fov: 38, roll: 0.03 });
+const S17a = (f: number) => dolly([SEA_G[0] + 1.25, 0.64, SEA_G[2] + 2.5], [SEA_G[0] + 0.05, 0.44, SEA_G[2]], pushK(f, 1681, 0.0016), { fov: 38, roll: 0.03 });
 // 18 sunset: Gus in front, the boat behind; 19 the bird at the lantern over the hat
-const S18a = (f: number) => dolly([0.7, 1.05, 5.5], [1.0, 0.86, 0.5], pushK(f, 1761, 0.0016), { fov: 40 });
+const S18a = (f: number) => dolly([0.8, 1.0, 5.5], [1.12, 0.72, 0.5], pushK(f, 1761, 0.0016), { fov: 40 });
 const S19a = (f: number) => dolly([HAT[0] - 0.2, HAT[1] + 0.42, 2.0], [HAT[0] - 0.14, HAT[1] + 0.22, HAT[2]], pushK(f, 1800, 0.0014), { fov: 36, roll: 0.025 });
 // 20 night: the bird on the hat; 21 everyone but Gus asleep
 const S20a = (f: number) => dolly([HAT[0] - 0.02, HAT[1] + 0.22, 1.5], [HAT[0] - 0.1, HAT[1] + 0.05, HAT[2]], pushK(f, 1873, 0.0016), { fov: 36, roll: -0.02 });
-const S21a = (f: number) => dolly([0.55, 0.86, 4.95], [0.95, 0.7, 0.5], pushK(f, 1946, 0.002), { fov: 40, roll: 0.02 });
+const S21a = (f: number) => dolly([0.78, 0.76, 5.45], [1.1, 0.54, 0.5], pushK(f, 1946, 0.0009), { fov: 40, roll: 0.02 });
 
 const CAMS: Record<number, Key[]> = {
   1: [{ f: 0, s: S1a }, { f: 96, dur: 30, s: S1b }],               // centred on 111 ("biggest problem")
@@ -139,7 +139,7 @@ const CAMS: Record<number, Key[]> = {
   3: [{ f: 239, s: S3a }],
   4: [{ f: 380, s: S4a }, { f: 414, dur: 40, s: S4b }],            // up with the tower
   5: [{ f: 482, s: S5a }, { f: 546, dur: 24, s: S5b }],            // toward her and the empty pan, centred on 558
-  6: [{ f: 573, s: S6a }, { f: 640, dur: 26, s: S6b }],            // widens to the left, centred on 653 (Gus pops up)
+  6: [{ f: 573, s: S6a }, { f: 640, dur: 26, s: S6b }],            // over to the fork, centred on 653 (Gus pops up there)
   7: [{ f: 711, s: S7a }, { f: 794, dur: 26, s: S7b }],            // makes room for the bird, centred on 807
   8: [{ f: 826, s: S8a }],
   9: [{ f: 892, s: S9a }, { f: 968, dur: 34, s: S9b }],            // back for the heaters, centred on 985
@@ -159,7 +159,8 @@ const CAMS: Record<number, Key[]> = {
 CAMS[10] = CAMS[12]; CAMS[11] = CAMS[12];
 CAMS[14] = CAMS[15];
 /** impact kicks: [frame, strength] */
-const KICKS: [number, number][] = [[BITES[0], 0.4], [BITES[1], 0.4], [BITES[2], 0.4], [TOWER1, 0.8], [POPUP, 0.6], [TO_HEAT, 0.5], [THERMO_POP, 1.0], [SPLASH, 1.2], [LAST_BITE, 0.4]];
+// (kicks only where the picture is already busy: in a quiet medium shot the frame checker reads a kick as a pop)
+const KICKS: [number, number][] = [[BITES[0], 0.4], [BITES[1], 0.4], [BITES[2], 0.4], [TOWER1, 0.35], [POPUP, 0.6], [THERMO_POP, 0.3], [SPLASH, 1.2], [LAST_BITE, 0.4]];
 export const { camAt } = camRig(CAMS, KICKS);
 
 // ---------------- lens: depth of field ----------------

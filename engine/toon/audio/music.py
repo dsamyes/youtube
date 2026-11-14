@@ -497,6 +497,11 @@ def lay_waltz(P, s):
     if n % 2:
         raise ValueError(f"waltz bars must be even (got {n})")
     if not 1 / FIT <= ratio <= FIT or top - low < 0.5 * fps:
+        if s.hits and low - pickup < 2.5 * nom / FIT:    # the section may be long enough; the hits are too close together
+            raise ValueError(f"waltz: the low point (frame {low:g}) comes {(low - pickup) / fps:.1f} s after the pick-up (frame {pickup:g}); "
+                             f"the way down takes at least {2.5 * nom / FIT / fps:.1f} s (two bars), so move the low point later or the pick-up earlier")
+        if s.hits and top - low < 0.5 * fps:
+            raise ValueError(f"waltz: the rest (frame {top:g}) must come at least half a second after the low point (frame {low:g})")
         raise _short(s, P, "waltz (two bars down to the low point, then at least half a second up to the rest)", 2.5 * nom / FIT + 0.9 * fps)
     if s.z - top > 1.2 * fps:
         raise ValueError(f"waltz: the rest (frame {top:g}) is {(s.z - top) / fps:.1f} s before the end of the section; keep it within 1.2 s or the score has a hole")

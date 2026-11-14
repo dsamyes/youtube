@@ -1,19 +1,23 @@
 #!/usr/bin/env python3
 """Contact sheets of a cartoon short (src/toon/kit): look at these before any long render.
 
-usage: scripts/toon-sheet.py <id> [--from-video [file]] [--frames f,f,...] [--scale s] [--per-sheet N]
+usage: scripts/toon-sheet.py <id> [--shots N,N] [--from-video [file]] [--frames f,f,...] [--scale s] [--per-sheet N]
 
   <id>             the video: src/videos/<id>/entry.tsx and engine/videos/<id>/shots.json
   (default)        renders the stills it needs with scripts/toon-stills.mjs (scale 0.5) into out/<id>/stills/
   --from-video     cuts the frames out of a rendered film instead: out/<id>/video.mp4 if it exists, else the proxy
                    out/<id>/proxy/video.mp4, or the file given
-  --frames f,f     these frames instead of the automatic choice
+  --shots N,N      only these shots (automatic choice of frames); sheets are then named sheet_sNN.jpg
+  --frames f,f     these frames instead of the automatic choice; sheets are named sheet_xNN.jpg
   --scale s        still size when rendering (default 0.5 = 540x960)
   --per-sheet N    tiles per sheet (default 6)
 
 Automatic choice: two frames per shot, read from shots.json: one early in the shot (the framing has settled) and one
-on its main action (2 frames after the shot's first one-off event; without events, 70 % through the shot).
-Every tile is labelled with its shot, frame and place. Output: out/<id>/sheets/sheet_NN.jpg (the paths are printed).
+on its main action (8 frames after the shot's first one-off event, when the blink that covers a change of face and
+the burst of an impact are over; without events, 70 % through the shot).
+Every tile is labelled with its shot, frame and place. Output: out/<id>/sheets/sheet_NN.jpg (the paths are printed);
+sheets of the same kind left over from an earlier, longer run are removed. A full set renders in 8 to 10 minutes:
+start it in the background.
 """
 import json, os, subprocess, sys
 
@@ -40,7 +44,7 @@ def pick(plan):
         n = b - a
         first = a + min(10, n // 4)
         ev = [e["f"] for e in plan.get("events", []) if "to" not in e and a + 6 <= e["f"] < b - 3]
-        act = min(b - 2, ev[0] + 2) if ev else a + round(0.7 * n)
+        act = min(b - 2, ev[0] + 8) if ev else a + round(0.7 * n)
         if act - first < 6: act = a + round(0.7 * n)
         out += [(s, first), (s, act)] if act > first else [(s, first)]
     return out
@@ -67,7 +71,12 @@ def main():
     plan = json.load(open(os.path.normpath(os.path.join(ROOT, "..", "videos", vid, "shots.json"))))
     shot_of = lambda f: next((s for s in plan["shots"] if s["a"] <= f < s["b"]), plan["shots"][-1])
     frames = arg("--frames")
+    only = arg("--shots")
     picks = [(shot_of(int(f)), int(f)) for f in frames.split(",") if f.strip()] if frames else pick(plan)
+    if only and not frames:
+        want = {int(x) for x in only.split(",") if x.strip()}
+        picks = [(s, f) for s, f in picks if s["id"] in want]
+        if not picks: sys.exit("--shots %s matches no shot of %s" % (only, vid))
     out = os.path.join(ROOT, "out", vid, "sheets"); os.makedirs(os.path.join(out, "frames"), exist_ok=True)
     per = int(arg("--per-sheet", "6"))
     fv = arg("--from-video")
@@ -88,7 +97,11 @@ def main():
         if r.returncode: sys.exit("stills failed")
         paths = {f: os.path.join(ROOT, "out", vid, "stills", "f%d.jpg" % f) for f in need}
     tiles = [("shot %d  f%d  %s" % (s["id"], f, s["place"]), paths[f]) for s, f in picks]
-    tag = "v" if fv is not None else ("x" if frames else "")
+    tag = "v" if fv is not None else ("x" if frames else ("s" if only else ""))
+    made = {"sheet_%s%02d.jpg" % (tag, k // per + 1) for k in range(0, len(tiles), per)}
+    for old in os.listdir(out):  # sheets of this kind from an earlier run with more tiles
+        if old.startswith("sheet_" + tag) and old[6 + len(tag):8 + len(tag)].isdigit() and old.endswith(".jpg") and old not in made:
+            os.remove(os.path.join(out, old))
     for k in range(0, len(tiles), per):
         sheet(os.path.join(out, "sheet_%s%02d.jpg" % (tag, k // per + 1)), tiles[k:k + per], cols=min(per, 6))
 

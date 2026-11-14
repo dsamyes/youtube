@@ -1,0 +1,33 @@
+# word@frame at 30 fps (frame = start of the word); written by toon/voice.py, do not edit
+line  1  frames 0..129
+   Gus@0 has@8 to@14 eat@17 a@23 burger@25 every@38 three@46 minutes,@55 and@76 that's@80 not@87 even@93 his@99 biggest@103 problem.@115
+line  2  frames 133..241
+   At@133 seven@136 this@148 morning@153 he@173 woke@176 up@184 with@189 the@192 metabolism@195 of@218 a@222 hummingbird.@223
+line  3  frames 245..378
+   Gram@245 for@253 gram,@257 that@280 tiny@285 bird@295 burns@304 fuel@315 fifty@324 times@334 as@346 fast@350 as@361 he@363 does.@366
+line  4  frames 382..480
+   At@382 his@384 size,@387 that's@409 a@415 hundred@416 and@430 twenty@433 thousand@441 calories@454 a@469 day.@470
+line  5  frames 484..571
+   His@484 wife@488 flips@495 pancakes@504 as@521 fast@525 as@534 she@535 can.@539 Gone.@560
+line  6  frames 575..710
+   His@575 neighbor@580 laughs@589 that@601 no@605 one@610 eats@617 that@627 much@632 and@652 loses@656 every@668 sausage@676 on@693 the@696 grill.@698
+line  7  frames 713..824
+   His@713 heart@717 beats@725 twenty@736 times@744 a@755 second.@756 That's@771 not@786 a@791 pulse,@792 that's@805 a@812 hum.@813
+line  8  frames 828..890
+   But@828 wait.@830 Why@848 is@855 his@858 helmet@862 steaming@872 up?@885
+line  9  frames 894..1048
+   You@894 see,@896 all@906 that@916 food@921 turns@931 into@941 heat,@945 and@968 Gus@972 now@980 puts@986 out@994 as@1000 much@1004 as@1012 four@1016 space@1023 heaters.@1033
+line 10  frames 1051..1212
+   Ever@1051 notice@1057 a@1066 french@1067 fry@1078 goes@1090 cold@1098 in@1110 minutes,@1113 but@1125 a@1140 baked@1141 potato@1153 stays@1169 hot@1179 for@1188 half@1193 an@1201 hour?@1204
+line 11  frames 1215..1439
+   Small@1215 things@1225 have@1237 more@1243 skin@1250 for@1262 their@1265 size.@1270 Pound@1298 for@1306 pound,@1310 the@1323 bird@1325 has@1336 twenty@1342 times@1350 more@1362 than@1368 Gus,@1374 so@1393 its@1397 heat@1400 just@1410 leaks@1418 away.@1426
+line 12  frames 1443..1557
+   Gus@1443 is@1452 the@1456 baked@1459 potato.@1471 He@1499 heats@1501 up@1510 more@1514 than@1522 a@1527 degree@1528 every@1542 minute.@1550
+line 13  frames 1561..1679
+   Luckily,@1561 he@1572 lives@1576 by@1584 the@1589 sea,@1591 and@1611 water@1616 pulls@1623 heat@1633 out@1638 far@1644 faster@1652 than@1664 air.@1670
+line 14  frames 1683..1763
+   Unluckily,@1683 it's@1705 now@1711 been@1717 four@1721 minutes@1730 since@1739 he@1745 last@1748 ate.@1758
+line 15  frames 1767..1875
+   And@1767 the@1770 funny@1772 part?@1779 Even@1802 a@1810 hummingbird@1811 can't@1831 afford@1839 to@1851 live@1854 like@1861 one.@1867
+line 16  frames 1879..1986
+   On@1879 cold@1883 nights@1894 it@1904 almost@1908 shuts@1921 off,@1930 just@1948 to@1956 make@1958 it@1964 to@1967 breakfast.@1969

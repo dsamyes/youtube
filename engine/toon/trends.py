@@ -4,7 +4,8 @@
   python toon/trends.py [--out PATH] [--no-youtube]
 
 Collects, from public sources, what people are searching, watching and reading today:
-  youtube_shorts   last 7 days' most viewed short videos for the channel's kind of query (views per day)
+  youtube_shorts   last 7 days' most viewed short videos for the channel's kind of query (views per day, and the
+                   size of the channel that made each: channel_subs)
   youtube_popular  YouTube's own "most popular" chart, overall and Science & Technology (US)
   own_channel      this channel's uploads and their views (what already worked here)
   google_trends    today's trending searches in the US, with the news headline behind each
@@ -23,7 +24,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 UA = "Mozilla/5.0 (compatible; feed-reader/1.0)"
-QUERIES = ["what if", "what would happen if", "science explained", "space facts", "physics"]
+QUERIES = ["what if", "what if you", "what would happen if", "what happens if you", "science explained"]
 FEEDS = {
     "NASA": "https://www.nasa.gov/news-release/feed/",
     "ScienceDaily": "https://www.sciencedaily.com/rss/top/science.xml",
@@ -111,8 +112,25 @@ def video_rows(yt, ids: list[str], now: dt.datetime) -> list[dict]:
             days = max((now - pub).total_seconds() / 86400, 0.25)
             views = int(st.get("viewCount", 0))
             rows.append({"title": clean(sn["title"], 110), "channel": clean(sn.get("channelTitle"), 40), "views": views,
-                         "views_per_day": int(views / days), "age_days": round(days, 1), "seconds": iso_seconds(v["contentDetails"].get("duration", ""))})
+                         "views_per_day": int(views / days), "age_days": round(days, 1), "seconds": iso_seconds(v["contentDetails"].get("duration", "")),
+                         "_ch": sn.get("channelId", "")})
     return rows
+
+
+def add_channel_size(yt, rows: list[dict]) -> None:
+    """channel_subs on every row (None when the channel hides it): a small channel with a big video says more about
+    the topic than a giant whose every upload gets millions. Drops the helper key _ch."""
+    ids = sorted({r["_ch"] for r in rows if r.get("_ch")})
+    subs: dict[str, int | None] = {}
+    try:
+        for i in range(0, len(ids), 50):
+            for c in yt.channels().list(part="statistics", id=",".join(ids[i:i + 50])).execute().get("items", []):
+                st = c.get("statistics", {})
+                subs[c["id"]] = None if st.get("hiddenSubscriberCount") else int(st.get("subscriberCount", 0))
+    except Exception:
+        pass                                              # the rows are still useful without it
+    for r in rows:
+        r["channel_subs"] = subs.get(r.pop("_ch", ""))
 
 
 def youtube(out: dict, failed: list[str]) -> None:
@@ -132,7 +150,9 @@ def youtube(out: dict, failed: list[str]) -> None:
                 if 0 < r["seconds"] <= 180:
                     rows.append({"query": q, **r})
         rows.sort(key=lambda r: -r["views_per_day"])
-        out["youtube_shorts"] = rows[:60]
+        rows = rows[:60]
+        add_channel_size(yt, rows)
+        out["youtube_shorts"] = rows
     except Exception as e:
         failed.append(f"youtube_shorts: {type(e).__name__}: {clean(e, 120)}")
     try:
@@ -143,6 +163,8 @@ def youtube(out: dict, failed: list[str]) -> None:
                 kw["videoCategoryId"] = cat
             ids = [x["id"] for x in yt.videos().list(**kw).execute().get("items", [])]
             pop += [{"chart": label, **r} for r in video_rows(yt, ids, now)]
+        for r in pop:
+            r.pop("_ch", None)
         out["youtube_popular"] = pop
     except Exception as e:
         failed.append(f"youtube_popular: {type(e).__name__}: {clean(e, 120)}")
@@ -150,7 +172,10 @@ def youtube(out: dict, failed: list[str]) -> None:
         ch = yt.channels().list(part="contentDetails", mine=True).execute()["items"][0]
         up = ch["contentDetails"]["relatedPlaylists"]["uploads"]
         ids = [x["contentDetails"]["videoId"] for x in yt.playlistItems().list(part="contentDetails", playlistId=up, maxResults=50).execute().get("items", [])]
-        out["own_channel"] = sorted(video_rows(yt, ids, now), key=lambda r: -r["views"])
+        own = sorted(video_rows(yt, ids, now), key=lambda r: -r["views"])
+        for r in own:
+            r.pop("_ch", None)
+        out["own_channel"] = own
     except Exception as e:
         failed.append(f"own_channel: {type(e).__name__}: {clean(e, 120)}")
 

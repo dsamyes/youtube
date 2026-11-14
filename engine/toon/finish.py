@@ -54,7 +54,7 @@ def main() -> None:
     fl = shots.get("flash_at", [])                      # optional: one frame or a list of frames with a white flash
     flashes = [fl] if isinstance(fl, int) else list(fl or [])
     qa_meta = {"shots": [{"id": s["id"], "a": s["a"], "b": s["b"]} for s in shots["shots"]],
-               "planned": [[f, f + 4] for f in flashes],
+               "planned": [[f, f + 4] for f in flashes] + [[int(f), int(f) + 1] for f in shots.get("planned_pops", []) or []],
                "xfade": [[next(s["a"] for s in shots["shots"] if s["id"] == int(k)) - v // 2, next(s["a"] for s in shots["shots"] if s["id"] == int(k)) + v // 2] for k, v in shots.get("xfade", {}).items()]}
     (final / "qa").mkdir(exist_ok=True)
     (final / "qa" / "shots_qa.json").write_text(json.dumps(qa_meta))

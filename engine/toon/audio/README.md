@@ -20,6 +20,8 @@ engine/.venv/bin/python engine/toon/audio/build.py <video_id>
 - Exit **0**: built, every check passed. Exit **1**: built, a check failed (section 6). Exit **2**: the inputs are
   wrong, nothing was rendered; every problem is printed with the valid choices. Fix and run again.
 - `build.py <video_id> --check` validates the inputs only (a second). Run it after every edit of the two JSON files.
+  Before `audio/score.json` exists it checks the shot plan and the events alone, so the events can be validated
+  while the shots are being planned.
 - `build.py --list` prints the tables of this manual from the code (types, options, moods, tunes).
 - About 35 s for a 65 s short on 4 cores. numpy + scipy only, seeded (same inputs, same samples), no network.
   It runs from any directory (from `engine/`: `.venv/bin/python -B toon/audio/build.py <id>`).
@@ -41,7 +43,8 @@ An event is one sound on one frame:
 
 - `f`: the frame where the sound starts. Put it on the picture action, which is 0 to 2 frames before the word that
   names it. `to` (some types): the frame where it ends. `type`: a name from the table. `note`: what it is for (it
-  goes into `cues.md`). Any other key is an option of that type (the options column).
+  goes into `cues.md`). `id` (optional): a name of its own, used once, by which the picture finds the event
+  (`T.at("flip1")`); the sound ignores it. Any other key is an option of that type (the options column).
 - Ambience beds need `to`. They fade in over one frame (over the crossfade if the shot has one) and out at `to`.
 - A type starting with `music_` or `pic_` makes no sound: `music_...` marks a moment of the score (the score itself
   is `score.json`), `pic_...` is an action frame of the picture that should stay silent.
@@ -216,7 +219,7 @@ mix bit for bit). A smaller one with other choices: `engine/videos/_audio_test/a
 | `theme` | -9.5 | none | The tune, swung and bouncy: clarinet, pizzicato bass, plucked chords, brushes; repeats are doubled by marimba and glockenspiel. Option "end": "stop" ends it on a stop chord two beats before the next section (leaves room for a boing, a slide whistle). |
 | `chase` | -11 / -10.3 / -9.5 | 0-2 frames where a downbeat with timpani + cymbal must land (a kick, a reveal) | Running marimba ostinato that accelerates to twice its speed and climbs chord by chord; adds xylophone, running bass, glockenspiel and brass in three gears; ends unresolved. For falls, pursuits, countdowns, anything that builds. Follow it with silence (dead stop) or let it crash into the next mood. |
 | `mystery` | -11.5 | none | The tune at half speed in the relative minor: vibraphone over a tick-tock woodblock and pizzicato, the clock runs down at the end. For explanations, 'but wait', thinking, science. |
-| `waltz` | -11 | none, or exactly three: [pick-up, low point, rest] | Music-box waltz: a pick-up, down to a low point, then an arpeggio that climbs slower and slower to a ringing rest. For swings, pendulums, floating, gentle analogies. |
+| `waltz` | -11 | none, or exactly three: [pick-up, low point, rest]. The low point comes at least two bars (about 3 s at tempo 128) after the pick-up, and the rest within 1.2 s of the section's end | Music-box waltz: a pick-up, down to a low point, then an arpeggio that climbs slower and slower to a ringing rest. For swings, pendulums, floating, gentle analogies. |
 | `lullaby` | -11.5 | none | The tune rocking in 6/8 in a warmer, darker key: music box, harp arpeggios, breathing pad; the last bar stays open. For night, sea, space, sleep, wonder. A silence after it sounds like a held breath. |
 | `bittersweet` | -11.5 | 0-1: the frame where it turns sour (default: the middle) | One little phrase twice: first sweet (music box, harp), then it droops with a soft sad trombone and lands on the dominant. For 'luckily ... unluckily', hope then oops. |
 | `runup` | -9.5 | none | A few fast accelerating bars on the dominant with a clarinet run: a spring that releases into the next section. For time-lapses, returns, 'here we go again'. Put it right before a theme or the finale. |

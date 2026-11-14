@@ -5,7 +5,8 @@
 # writes  engine/videos/<id>/audio/mix.wav, stem_voice.wav, stem_music.wav, stem_sfx.wav, cues.md, verify.json
 # Exit 0 = built and every check passed. 1 = built, a check failed (see the end of the output / cues.md).
 # 2 = the inputs are wrong; nothing was rendered, every problem is listed with the valid choices.
-#     build.py <video_id> --check     only validate the inputs (about a second)
+#     build.py <video_id> --check     only validate the inputs (about a second); before audio/score.json exists it
+#                                     checks the shot plan and the events alone
 #     build.py --list                 print every event type, mood, tune and acoustics the library knows
 # numpy + scipy only, headless, seeded, no downloads; about 40 s for a 65 s short on 4 cores. The manual is README.md.
 import os
@@ -57,7 +58,7 @@ def main(argv):
     import music
     import sfx
     try:
-        P = Project(args[0])
+        P = Project(args[0], events_only="--check" in flags)
         plan = music.Plan(P)
         bad = P.problems + plan.problems + sfx.problems(P, plan)
         if bad:
@@ -70,6 +71,10 @@ def main(argv):
         return 2
     for n in plan.notes:
         print("note:", n)
+    if "--check" in flags and P.standin:
+        print(f"build: shots.json of '{P.id}' is valid: {P.total} frames at {P.fps} fps, {len(P.ev)} events. There is no audio/score.json yet, "
+              "so only the shot plan and the events were checked (against silence); run --check again once the score exists.")
+        return 0
     if "--check" in flags:
         print(f"build: inputs of '{P.id}' are valid: {P.total} frames at {P.fps} fps, {len(P.ev)} events, {len(plan.secs)} score sections, key {P.key}, tempo {P.tempo:g}")
         return 0

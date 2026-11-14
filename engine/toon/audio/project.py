@@ -13,7 +13,7 @@ ENGINE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file_
 VIDEOS = os.path.join(ENGINE, "videos")
 SR = 48000
 
-EVENT_KEYS = ("f", "to", "type", "note")                  # everything else on an event is a sound option
+EVENT_KEYS = ("f", "to", "type", "note", "id")            # everything else on an event is a sound option ("id" names the event for the picture: T.at("id"))
 SCORE_KEYS = ("key", "tempo", "seed", "theme", "sections", "places", "dips", "sfx")
 KEYS = {"C": 0, "C#": 1, "Db": 1, "D": 2, "D#": 3, "Eb": 3, "E": 4, "F": 5, "F#": 6, "Gb": 6, "G": 7, "G#": 8, "Ab": 8, "A": 9,
         "A#": 10, "Bb": 10, "B": 11}
@@ -98,9 +98,11 @@ def _num(v):
 
 
 class Project:
-    def __init__(self, video):
+    def __init__(self, video, events_only=False):
         """video = an id under engine/videos/, or a path to a video folder. Raises Problems when files are missing
-        or the timeline is broken; everything else that is wrong is collected in .problems."""
+        or the timeline is broken; everything else that is wrong is collected in .problems.
+        events_only: when audio/score.json does not exist yet, check the shot plan and its events against a silent
+        stand-in score (.standin is then True) instead of refusing."""
         self.dir = os.path.abspath(video) if os.path.isdir(video) else os.path.join(VIDEOS, video)
         self.id = os.path.basename(self.dir.rstrip(os.sep))
         self.out = os.path.join(self.dir, "audio")
@@ -117,11 +119,18 @@ class Project:
         need = [(self.shots_json, "the shot plan with the event table"), (self.score_json, "the sound plan; start from engine/videos/_audio_test/audio/score.json or the hole short's, see engine/toon/audio/README.md"),
                 (self.voice_wav, "the narration, written by toon/voice.py"), (self.words_json, "word timings, written by toon/voice.py"),
                 (self.lines_json, "line timings, written by toon/voice.py")]
+        self.standin = bool(events_only) and not os.path.isfile(self.score_json)
+        if self.standin:
+            need = [n for n in need if n[0] != self.score_json]
         missing = [f"missing file {rel(p)} ({why})" for p, why in need if not os.path.isfile(p)]
         if missing:
             raise Problems(missing)
         S = _json(self.shots_json, "shots.json", bad)
-        C = _json(self.score_json, "audio/score.json", bad)
+        if self.standin:                                  # no sound plan yet: silence everywhere, every place outdoors
+            pl = S.get("places", []) if isinstance(S, dict) else []
+            C = {"sections": [{"from": 0, "mood": "silence"}], "places": {str(x): "outdoor" for x in (pl if isinstance(pl, (list, dict)) else [])}}
+        else:
+            C = _json(self.score_json, "audio/score.json", bad)
         W = _json(self.words_json, "voice/words.json", bad)
         Lj = _json(self.lines_json, "voice/lines.json", bad)
         if bad:
@@ -238,6 +247,9 @@ class Project:
                 bad.append(f"{where} needs a 'type' (a string) and a frame 'f': {json.dumps(d)[:120]}")
                 continue
             where += f' ("{d["type"]}")'
+            if "id" in d:                                 # the picture's name for this event: one word, used once
+                if not (isinstance(d["id"], str) and d["id"]) or any(isinstance(o, dict) and o is not d and o.get("id") == d["id"] for o in self._raw_events[:i]):
+                    bad.append(f"{where}: 'id' must be a name used by one event only (got {d['id']!r})")
             f, to = d.get("f"), d.get("to")
             if not (_num(f) and 0 <= f < self.total):
                 bad.append(f"{where}: bad frame f = {f!r}; it must be a number inside 0..{self.total - 1} (the film has {self.total} frames)")

@@ -4,7 +4,8 @@
   python toon/voice.py <video_id> [--speed 1.3] [--voice am_michael]
 
 Reads  videos/<id>/script.json  {"lines": [...], "voice": {"voice", "speed", "gap_s"}}
-Writes videos/<id>/voice/voice.wav (48 kHz mono), words.json ([{w, s, e, line}], seconds), lines.json.
+Writes videos/<id>/voice/voice.wav (48 kHz mono), words.json ([{w, s, e, line}], seconds), lines.json and
+frames.txt (the same word starts as frame numbers, line by line).
 
 Word times come from forced alignment (PocketSphinx, model bundled in the pip wheel: no downloads),
 run per line, so an error can never drift past a sentence boundary. Everything in the picture is timed
@@ -57,6 +58,16 @@ def align(x24: np.ndarray, toks: list[str]) -> list[tuple[float, float]]:
         if got == words: return [(a, b) for _, a, b in segs]
     sys.exit(f"[voice] could not align: {' '.join(words)}")
 
+def frames_table(words, fps: int = 30) -> str:
+    """voice/frames.txt: per script line, every word with the frame it starts on (what shots and reactions are cut on)"""
+    out, by = [f"# word@frame at {fps} fps (frame = start of the word); written by toon/voice.py, do not edit"], {}
+    for w in words: by.setdefault(w["line"], []).append(w)
+    for ln in sorted(by):
+        ws = by[ln]
+        out.append(f"line {ln:2d}  frames {round(ws[0]['s'] * fps)}..{round(ws[-1]['e'] * fps)}")
+        out.append("   " + " ".join(f"{w['w']}@{round(w['s'] * fps)}" for w in ws))
+    return "\n".join(out) + "\n"
+
 def main() -> None:
     ap = argparse.ArgumentParser(); ap.add_argument("video_id"); ap.add_argument("--speed", type=float); ap.add_argument("--voice")
     a = ap.parse_args()
@@ -82,6 +93,7 @@ def main() -> None:
     (vdir / "voice/words.json").write_text(json.dumps(words, indent=0) + "\n")
     (vdir / "voice/lines.json").write_text(json.dumps({"voice": f"kokoro-v1.0:{voice}@{speed}", "duration_s": round(len(y) / SR_TTS, 3), "words": len(words),
                                                         "wps": round(len(words) / (len(y) / SR_TTS), 2), "lines": lines}, indent=1) + "\n")
+    (vdir / "voice/frames.txt").write_text(frames_table(words))
     print(f"[voice] {len(words)} words, {len(y) / SR_TTS:.2f} s, {len(words) / (len(y) / SR_TTS):.2f} words/s, voice {voice}@{speed}")
     for l in lines: print(f"  {l['line']:2d} {l['s']:6.2f}-{l['e']:6.2f}  {l['wps']:.2f} w/s  {l['text'][:60]}")
 
