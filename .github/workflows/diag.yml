@@ -35,6 +35,8 @@ jobs:
           DISABLE_AUTOUPDATER: "1"
         run: |
           if [ -z "${CLAUDE_CODE_OAUTH_TOKEN}" ]; then echo "::error::CLAUDE_CODE_OAUTH_TOKEN secret missing"; exit 1; fi
+          # the secret was pasted with a terminal line wrap in it; a token never contains whitespace
+          CLAUDE_CODE_OAUTH_TOKEN="$(printf '%s' "$CLAUDE_CODE_OAUTH_TOKEN" | tr -d '[:space:]')"; export CLAUDE_CODE_OAUTH_TOKEN
           mkdir -p "$RUNNER_TEMP/h" "$RUNNER_TEMP/w"; cd "$RUNNER_TEMP/w"
           ok=0
           for m in claude-fable-5-2 opus sonnet; do
