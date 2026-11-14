@@ -117,12 +117,16 @@ jobs:
           PROMPT='Run this one shell command with the Bash tool, from the repository root, with a timeout of 900000 ms, and whatever it prints reply with the single word DONE: bash engine/diag/sandbox_probe.sh'
           mkdir -p "$RUNNER_TEMP/h"
           set +e
-          HOME="$RUNNER_TEMP/h" timeout 1200 claude -p "$PROMPT" --model "$MODEL" --max-turns 8 --output-format json \
-            --dangerously-skip-permissions --settings engine/producer.settings.json > "$RUNNER_TEMP/out.json" 2> "$RUNNER_TEMP/err.log"
+          HOME="$RUNNER_TEMP/h" timeout 1200 claude -p "$PROMPT" --model "$MODEL" --max-turns 8 --output-format stream-json --verbose \
+            --dangerously-skip-permissions --settings engine/producer.settings.json > "$RUNNER_TEMP/out.jsonl" 2> "$RUNNER_TEMP/err.log"
           rc=$?
           set -e
-          jq -r '"claude: exit='"$rc"' subtype=\(.subtype) error=\(.is_error) turns=\(.num_turns) ms=\(.duration_ms)"' "$RUNNER_TEMP/out.json" 2>/dev/null \
+          jq -r 'select(.type=="result") | "claude: exit='"$rc"' subtype=\(.subtype) error=\(.is_error) turns=\(.num_turns) ms=\(.duration_ms)"' "$RUNNER_TEMP/out.jsonl" 2>/dev/null \
             || { echo "claude: no JSON (exit $rc)"; head -c 400 "$RUNNER_TEMP/err.log" | tr -cd '[:print:]\n' | head -5; }
+          # what the Bash tool returned for our own probe script (fixed prompt, our own output): capped, printable only
+          echo "--- tool calls and results"
+          jq -r 'select(.type=="assistant") | .message.content[]? | select(.type=="tool_use") | "call: \(.name) \(.input | tostring | .[0:200])"' "$RUNNER_TEMP/out.jsonl" 2>/dev/null | tr -cd '[:print:]\n' | head -6 || true
+          jq -r 'select(.type=="user") | .message.content[]? | select(.type=="tool_result") | "result(error=\(.is_error // false)): \(.content | tostring | .[0:700])"' "$RUNNER_TEMP/out.jsonl" 2>/dev/null | tr -cd '[:print:]\n' | head -12 || true
           R=engine/videos/_probe/result.txt
           if [ -f "$R" ]; then grep -E '^(voice|still|ffmpeg|token_visible|tmp_write)=[0-9]+$' "$R" | head -5; else echo "result: missing (the command did not run or could not write into the repo)"; fi
           if [ -f engine/remotion/out/_template/stills/f30.jpg ]; then echo "still file: $(stat -c %s engine/remotion/out/_template/stills/f30.jpg) bytes"; else echo "still file: missing"; fi
