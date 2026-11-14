@@ -1,0 +1,11 @@
+{
+  "_doc": "Not a film: the reference sheet of the kit's faces and hand props (engine/remotion/src/videos/_faces). Frame n shows entry n of the list in staging.ts. Rebuild the sheet with: python3 scripts/toon-faces.py",
+  "fps": 30,
+  "total_frames": 60,
+  "places": { "garden": "the kit garden, plain lawn" },
+  "shots": [
+    { "id": 1, "a": 0, "b": 60, "place": "garden", "light": "day", "line": "", "what": "reference: Gus in a medium close-up, one face or hand prop per frame" }
+  ],
+  "xfade": {},
+  "events": []
+}

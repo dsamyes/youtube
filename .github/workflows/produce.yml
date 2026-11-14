@@ -109,11 +109,19 @@ jobs:
         with:
           node-version: "22"
 
-      - name: System packages (ffmpeg)
+      - name: System packages (ffmpeg, bubblewrap)
         run: |
           sudo apt-get update -qq
-          sudo apt-get install -y -qq ffmpeg >/dev/null
+          sudo apt-get install -y -qq ffmpeg bubblewrap >/dev/null
           ffmpeg -hide_banner -version | head -1
+          # Claude Code runs every subprocess inside bubblewrap (CLAUDE_CODE_SUBPROCESS_ENV_SCRUB=1 below: the
+          # token never reaches a subprocess). Ubuntu 24.04 blocks unprivileged user namespaces through AppArmor;
+          # lift that on this throwaway VM only if bubblewrap cannot start without it.
+          if ! bwrap --ro-bind / / --dev /dev --proc /proc true 2>/dev/null; then
+            sudo sysctl -q -w kernel.apparmor_restrict_unprivileged_userns=0
+            bwrap --ro-bind / / --dev /dev --proc /proc true
+          fi
+          echo "bubblewrap: $(bwrap --version)"
 
       # Caches are RESTORED here and SAVED below *before* Claude runs, so nothing the Claude
       # session does can poison a cache used by later jobs or runs.

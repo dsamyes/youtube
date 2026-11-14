@@ -57,6 +57,82 @@ jobs:
           done
           [ "$ok" = 1 ] || { echo "::error::no model answered"; exit 1; }
 
+  # The producer's exact start-up (same packages, caches, settings and isolation), then three of its real
+  # commands run by Claude inside the subprocess sandbox. Fixed fields only in the log.
+  sandbox:
+    if: github.repository == 'dsamyes/youtube'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    permissions:
+      contents: read
+    env:
+      REMOTION_CHROME: bundled
+      REMOTION_GL: swangle
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: "22"
+      - name: System packages (ffmpeg, bubblewrap)
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg bubblewrap >/dev/null
+          if bwrap --ro-bind / / --dev /dev --proc /proc true 2>/dev/null; then echo "bwrap: works as installed"; else
+            echo "bwrap: blocked by the user-namespace restriction, lifting it"
+            sudo sysctl -q -w kernel.apparmor_restrict_unprivileged_userns=0
+            bwrap --ro-bind / / --dev /dev --proc /proc true && echo "bwrap: works after sysctl"
+          fi
+      - uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: engine/.venv
+          key: venv-${{ runner.os }}-py312-${{ hashFiles('engine/requirements.txt') }}
+      - uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: engine/remotion/node_modules
+          key: node-${{ runner.os }}-n22-${{ hashFiles('engine/remotion/package-lock.json') }}
+      - uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: engine/models
+          key: kokoro-v1.0
+      - name: Setup engine
+        run: engine/setup.sh
+      - name: Install Claude Code
+        run: npm install -g --no-audit --no-fund "@anthropic-ai/claude-code@${CLAUDE_CODE_VERSION}"
+      - name: Three producer commands inside the sandbox
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          CLAUDE_CODE_SUBPROCESS_ENV_SCRUB: "1"
+          DISABLE_AUTOUPDATER: "1"
+          BASH_DEFAULT_TIMEOUT_MS: "600000"
+          BASH_MAX_TIMEOUT_MS: "3600000"
+        run: |
+          if [ -z "${CLAUDE_CODE_OAUTH_TOKEN}" ]; then echo "::error::CLAUDE_CODE_OAUTH_TOKEN secret missing"; exit 1; fi
+          CLAUDE_CODE_OAUTH_TOKEN="$(printf '%s' "$CLAUDE_CODE_OAUTH_TOKEN" | tr -d '[:space:]')"; export CLAUDE_CODE_OAUTH_TOKEN
+          MODEL=$(jq -r '.model' engine/toon/config.json)
+          PROMPT='Run this one shell command with the Bash tool, from the repository root, with a timeout of 900000 ms, and whatever it prints reply with the single word DONE: bash engine/diag/sandbox_probe.sh'
+          mkdir -p "$RUNNER_TEMP/h"
+          set +e
+          HOME="$RUNNER_TEMP/h" timeout 1200 claude -p "$PROMPT" --model "$MODEL" --max-turns 8 --output-format json \
+            --dangerously-skip-permissions --settings engine/producer.settings.json > "$RUNNER_TEMP/out.json" 2> "$RUNNER_TEMP/err.log"
+          rc=$?
+          set -e
+          jq -r '"claude: exit='"$rc"' subtype=\(.subtype) error=\(.is_error) turns=\(.num_turns) ms=\(.duration_ms)"' "$RUNNER_TEMP/out.json" 2>/dev/null \
+            || { echo "claude: no JSON (exit $rc)"; head -c 400 "$RUNNER_TEMP/err.log" | tr -cd '[:print:]\n' | head -5; }
+          R=engine/videos/_probe/result.txt
+          if [ -f "$R" ]; then grep -E '^(voice|still|ffmpeg|token_visible|tmp_write)=[0-9]+$' "$R" | head -5; else echo "result: missing (the command did not run or could not write into the repo)"; fi
+          if [ -f engine/remotion/out/_template/stills/f30.jpg ]; then echo "still file: $(stat -c %s engine/remotion/out/_template/stills/f30.jpg) bytes"; else echo "still file: missing"; fi
+          for l in voice still; do
+            if [ -f "engine/videos/_probe/$l.log" ] && ! grep -q "^$l=0$" "$R" 2>/dev/null; then echo "--- last lines of $l.log (our own tools' output)"; tail -c 600 "engine/videos/_probe/$l.log" | tr -cd '[:print:]\n' | tail -6; fi
+          done
+          grep -q '^voice=0$' "$R" && grep -q '^still=0$' "$R" && grep -q '^ffmpeg=0$' "$R" && [ -f engine/remotion/out/_template/stills/f30.jpg ] \
+            || { echo "::error::a producer command failed inside the sandbox"; exit 1; }
+          grep -q '^token_visible=0$' "$R" || { echo "::error::the token is visible to subprocesses"; exit 1; }
+
   trends:
     if: github.repository == 'dsamyes/youtube'
     runs-on: ubuntu-24.04
