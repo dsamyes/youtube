@@ -1,102 +1,83 @@
 # The If Engine: automated video pipeline
 
-"Run the impossible. Do the math." Faceless, cinematic science "what if" videos. Every number is
-computed in code, shown as a light overlay or Math Card and cited in the description.
+"Run the impossible. Do the math." A faceless channel of science "what if" videos. Every number is
+computed in code and cited in the description.
 
-**Production method (since 2026-11, new videos only):**
-- **Voice:** ElevenLabs (`pipeline/tts.py`), narrator "Max - Elearning and Documentary" on
-  `eleven_multilingual_v2`, speed 1.05; with-timestamps endpoint (exact word times for captions and
-  Shorts), request stitching between beats. Override with `ELEVENLABS_VOICE_ID`, `ELEVENLABS_MODEL`,
-  `ELEVENLABS_SPEED`, `ELEVENLABS_STABILITY`. Kokoro only when the key is missing or the credits run
-  out (a loud `::warning::`); a bad key fails the run (`TTS_FALLBACK_ON_ERROR=1` to fall back).
-- **Visuals:** real 3D with `@remotion/three` (`src/components/three/`, `src/scenes/cinematic.tsx`):
-  planets with NASA maps, atmosphere glow and zonal jets, the real Milky Way and 9k real stars,
-  procedural nebulae, endless first-person cloud descents with lightning and plasma, planet
-  cutaways, Ken Burns NASA photos, window/visor POV, light overlays (`src/components/Cinema.tsx`).
-  Assets: `remotion/public/lib` (about 10 MB, credits in `public/lib/CREDITS.md`).
-  WebGL is software in CI (`--gl=swangle`, `REMOTION_GL`); the 3D layer renders at 0.4-0.5x and is
-  upscaled. `IfEngineLab` previews any list of shots: `npx remotion render IfEngineLab out --props=shots.json`.
-- **Sound:** `pipeline/sound.py` synthesises a score that follows each section's `tension` and SFX
-  from the visuals and `visual.sfx`, ducks them under the voice and masters to -14 LUFS / -1 dBTP.
+**Current method (since 2026-11-14): one cartoon short a day.** A 55 to 68 second vertical story with flat
+cartoon characters in a painted 3D world, made with the `cartoon-3d-short` skill
+(`.claude/skills/cartoon-3d-short/`, vendored from mromidev/claude-animated-shorts, MIT). The recurring hero
+is Gus. The first short, `hole-through-earth` (youtube.com/shorts/HuUEsa9i4R4), is the reference for every
+file format below.
+
+- **Topic:** `toon/trends.py` collects what is trending (the week's most viewed shorts, YouTube's popular
+  chart, trending searches, Wikipedia, science desks, this channel's own numbers). The producer picks a
+  "What if you ...?" that rides one of those, and `toon/episodes.json` keeps it from repeating itself.
+- **Voice:** Kokoro (free, local), `toon/voice.py`, word times by forced alignment (PocketSphinx).
+- **Picture:** three.js inside Remotion. Shared code in `remotion/src/toon/kit/` (cast, places, camera,
+  effects, look; manual in its README), three files per video in `remotion/src/videos/<id>/`.
+- **Sound:** `toon/audio/build.py <id>` synthesises music and effects from `shots.json` events and
+  `audio/score.json`, ducks them under the voice and masters to -14 LUFS (manual in `toon/audio/README.md`).
 
 ## How it runs (fully automatic)
 
-`.github/workflows/produce.yml` runs every 2 days (odd days 1-29) at about 01:07 UTC. It also runs on
-manual dispatch, and when a request file is pushed to `engine/queue/*.json`.
+`.github/workflows/produce.yml` runs once a day (02:23 UTC), on manual dispatch, and when a request file is
+pushed to `engine/queue/*.json`. Five jobs:
 
-1. **produce** job (sees only `CLAUDE_CODE_OAUTH_TOKEN`; read-only checkout).
-   - A headless `claude -p` follows [PRODUCER.md](PRODUCER.md). It picks a topic from
-     [topics.json](topics.json) or the queue, researches it, and writes three things:
-     - `videos/<id>/` (research, calc module, script template, fact-check review);
-     - `remotion/src/videos/<id>/scenes.tsx`;
-     - a `produced` entry in topics.json.
-   - An **inline integrity check** fails the run if anything else changed, including git-ignored
-     venv, node_modules and pycache.
-   - Trusted pipeline code then re-runs research → factcheck. It then does the voice (ElevenLabs,
-     long-form and Shorts, in the only step that sees the key), captions, sound design, the full
-     1080p render (resumable 60 s chunks), the thumbnail, metadata and Shorts.
-   - The outputs plus a text-only patch go into a 1-day artifact.
-2. **publish** job (sees only the YouTube secrets; no Claude).
-   - Verifies that the patch only touches the allowed paths, then applies it.
-   - Uploads the long-form, scheduled for the next 15:00 UTC at least 3 h ahead, with thumbnail,
-     captions and playlist.
-   - Uploads 3 Shorts at +6 h, +24 h and +42 h (before the next run's long-form).
-   - Commits the text outputs (never renders or audio) and deletes the credentials.
+1. **trends** (YouTube secrets, read-only calls, trusted code): writes the day's trend data.
+2. **author** (sees only `CLAUDE_CODE_OAUTH_TOKEN`; read-only checkout): a headless `claude -p` follows
+   [PRODUCER.md](PRODUCER.md): topic, facts, script, voice, shot plan, picture, sound, metadata. An inline
+   integrity check fails the run if anything outside `videos/<id>/`, `remotion/src/videos/<id>/` and
+   `toon/episodes.json` changed; `toon/check.py <id>` is the completeness gate. Output: a text-only patch
+   plus the two wav files.
+3. **render** (no secrets, six machines): each renders a sixth of the shots
+   (`scripts/toon-render.py <id> --part i/6`).
+4. **finish** (no secrets): joins the shots, muxes the sound, writes captions, checks every frame
+   (`toon/finish.py`, `toon/check.py <id> --final`).
+5. **publish** (YouTube secrets; no Claude, executes nothing Claude wrote): verifies and applies the patch,
+   uploads the short scheduled for the next free 15:00 UTC slot, commits the text outputs.
 
-Repo secrets:
-- `CLAUDE_CODE_OAUTH_TOKEN` (create it with `claude setup-token`);
-- `YOUTUBE_CLIENT_SECRET` and `YOUTUBE_TOKEN` (the JSON contents of `secrets/client_secret.json` and
-  `secrets/token.json`, which `pipeline/get_token.py` produces);
-- `ELEVENLABS_API_KEY` (the `sk_...` key; without it the run falls back to Kokoro). Optional repo
-  variables: `TTS_PROVIDER` (default kokoro, the free voice), `ELEVENLABS_VOICE_ID`, `ELEVENLABS_MODEL`,
-  `ELEVENLABS_SPEED`.
+Settings: `toon/config.json` (model, publish hour). Repo secrets: `CLAUDE_CODE_OAUTH_TOKEN`
+(`claude setup-token`), `YOUTUBE_CLIENT_SECRET` and `YOUTUBE_TOKEN` (the JSON contents of
+`secrets/client_secret.json` and `secrets/token.json`, from `pipeline/get_token.py`).
 
-`YOUTUBE_API_KEY` is not used. Until the Google API audit passes, YouTube forces API uploads to
-**private**; scheduling then has no effect.
+Preflights: push `engine/diag/ping.json` (does Claude answer on a runner, are the trend sources reachable)
+or `engine/diag/infra.json` (setup, voice, sound and a test render on a fresh runner, no secrets).
 
 ## Layout
 ```
-PRODUCER.md            playbook for the headless producer run (security rules, steps, budget)
-producer.settings.json Claude Code deny rules for that run (defence in depth)
-topics.json            backlog + production log (todo -> produced -> published)
-queue/                 optional request files {"topic": "..."}
-pipeline/              stage scripts; each one updates videos/<id>/manifest.json
-  research.py  calc.py (+calclib.py)  build_script.py  factcheck.py  tts.py  captions.py  sound.py
-  render.py  thumbnail.py  metadata.py  shorts.py  upload.py  get_token.py  run_pipeline.py
-  build_asset_lib.py (one-off: rebuilds remotion/public/lib from downloaded originals)
-remotion/src/scenes/cinematic.tsx   shared 3D scenes: space descent cutaway photo (+ components/three, components/Cinema.tsx)
-remotion/src/scenes/shared.tsx      older 2D scenes: title rules recap outro bars number compare clock globe blank
-remotion/public/lib/                shared textures, photos, star catalogue (CREDITS.md)
-remotion/src/videos/<id>/scenes.tsx per-video scene registry (merged over the shared one)
-remotion/src/generated/             written by render.py (props.json, registry.ts); git-ignored
-videos/<id>/           research.md, calc_video.py, script.template.json, factcheck_review.json, then outputs
+PRODUCER.md             manual for the headless producer (cartoon short)
+producer.settings.json  Claude Code deny rules for that run (defence in depth)
+queue/                  optional request files {"topic": "..."}
+toon/                   trends.py voice.py check.py finish.py short_qa.py upload.py config.json episodes.json
+toon/audio/             shared sound library (build.py, README.md)
+remotion/src/toon/kit/  shared picture code (README.md is the manual)
+remotion/src/videos/<id>/   entry.tsx story.ts staging.ts (+ anything new for that story)
+remotion/src/videos/_template/  the folder a new video starts from
+remotion/scripts/       toon-stills.mjs toon-sheet.py toon-render.py toon-qa.py
+remotion/public-toon/   CC0 props (Kenney Nature Kit)
+videos/<id>/            topic.json calc_video.py calc.json SCRIPT.md script.json voice/ shots.json
+                        audio/score.json metadata.json captions.srt final/
+pipeline/               the earlier long-form method (see below); upload.py and lib.py are still used
 ```
 
 ## Local use
 ```bash
-engine/setup.sh                     # pip + npm + Kokoro voice (set REMOTION_CHROME=/path/to/chrome if remotion.media is blocked)
+engine/setup.sh                                   # pip + npm + Kokoro voice
 cd engine
-.venv/bin/python -B pipeline/run_pipeline.py <id> --to factcheck              # validate a draft
-.venv/bin/python -B pipeline/tts.py <id> --provider silent && .venv/bin/python -B pipeline/captions.py <id>
-.venv/bin/python -B pipeline/render.py <id> --stills                          # contact sheets in videos/<id>/renders/stills
-.venv/bin/python -B pipeline/run_pipeline.py <id> --from voice --render full   # everything; upload is a dry run
-.venv/bin/python -B pipeline/render.py <id> --mode full --chunk 1800           # resumable long render (60 s chunks)
-.venv/bin/python -B pipeline/shorts.py <id> --stills                          # QA frames of the native Shorts
-.venv/bin/python -B pipeline/run_pipeline.py <id> --status
-.venv/bin/python -B pipeline/get_token.py                                     # once, on your machine
-.venv/bin/python -B pipeline/upload.py <id> --publish-at 2026-11-17T15:00:00Z --confirm-reviewed
-.venv/bin/python -B pipeline/upload.py <id> --short 1 --related-id <longVideoId> --publish-at ... --confirm-reviewed
+.venv/bin/python -B toon/trends.py                # needs secrets/ (or IF_ENGINE_SECRETS) for the YouTube rows
+.venv/bin/python -B toon/voice.py <id>
+.venv/bin/python -B toon/audio/build.py <id>
+(cd remotion && python3 scripts/toon-sheet.py <id>)           # contact sheets in remotion/out/<id>/sheets
+(cd remotion && python3 scripts/toon-render.py <id>)          # full render, resumable per shot (about 85 min)
+.venv/bin/python -B toon/check.py <id>
+.venv/bin/python -B toon/finish.py <id> && .venv/bin/python -B toon/check.py <id> --final
+.venv/bin/python -B toon/upload.py <id> --publish-at 2026-11-17T15:00:00Z
 ```
 
-Videos: `earth-stops-1s` (published privately, youtu.be/KDFkzbBbN78), `moon-twice-as-close`
-(validation draft from the playbook: passes factcheck, 540p only, not uploaded) and `light-speed-nines`
-(the reference for the current quality bar: story-driven second-person escalation, a computed
-relativistic star field, a persistent HUD, native vertical Shorts and a scene thumbnail). `fall-into-jupiter` (youtu.be/VKAQ3ZT74vo, private) is the
-reference for the cinematic method: ElevenLabs narration, the 3D scene library, a depth gauge and
-the generated score; its `scenes.tsx` only adds the gauge.
+## Earlier method (long-form, not scheduled)
 
-Shorts are NATIVE: each script `shorts[]` entry has its own beats; `shorts.py` voices them and renders
-the composition `IfEngineShort` (1080x1920) with word-by-word captions. `shorts.py <id> --stills`
-renders QA frames. Thumbnails can be a real frame of a scene (`IfEngineThumb`, see PRODUCER.md).
+`pipeline/` and `pipeline/PRODUCER_LONGFORM.md` hold the earlier long-form method (research, calc module,
+script template, 3D scene library, ElevenLabs or Kokoro voice, native Shorts cut from the long video). Its
+videos: `earth-stops-1s`, `light-speed-nines`, `fall-into-jupiter`. Nothing runs it automatically any more.
 
 Fonts: Inter / Inter Display (SIL Open Font License 1.1, rsms.me/inter) in `remotion/public/fonts`.
