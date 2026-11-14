@@ -16,7 +16,7 @@ export const stage = (c: Ctx) => {
   } else if (n < FACES.length + PROPS.length) {
     const [prop, arg] = PROPS[n - FACES.length];
     const up: Arm = { h: [0.52, -0.18], front: true, prop: prop as never, arg };
-    put(c, GUS, { expr: "smile", L: up, R: HANG }, GUS_AT, { wide: true });
+    put(c, GUS, { expr: "smile", L: up, R: HANG }, [GUS_AT[0] + 0.26, GUS_AT[1], GUS_AT[2]], { wide: true });   // moved right: the prop stays in frame
   } else if (n < FACES.length + PROPS.length + 1) {
     put(c, GUS, { expr: "smile", acc: 1, L: HANG, R: HANG }, GUS_AT, { tall: true });          // helmet tipped back
   } else {
