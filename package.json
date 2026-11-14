@@ -1,0 +1,5 @@
+{
+  "name": "the-if-engine",
+  "private": true,
+  "description": "Not a Node project root (the code lives in engine/remotion). This file has to exist and be valid JSON: Claude Code's subprocess sandbox shows a missing package.json in its working directory as an empty file, and the bundler, walking up from engine/videos/<id>/shots.json, stops on an empty one."
+}

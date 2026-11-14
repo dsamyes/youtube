@@ -13,4 +13,7 @@ JSON
 ffmpeg -v error -f lavfi -i testsrc=d=1:s=64x64 -y "$P/t.mp4" > /dev/null 2>&1; echo "ffmpeg=$?" >> "$P/result.txt"
 if [ -n "${CLAUDE_CODE_OAUTH_TOKEN:-}" ]; then echo "token_visible=1"; else echo "token_visible=0"; fi >> "$P/result.txt"
 touch /tmp/probe_tmp 2> /dev/null; echo "tmp_write=$?" >> "$P/result.txt"
+# files the sandbox shows as empty placeholders at the top of the repository and of engine/ (names only)
+(cd .. && find . engine -maxdepth 1 -size 0 ! -name .nojekyll -printf '%p ' 2> /dev/null) > "$P/empty_files.txt"
+(cd remotion && npx tsc --noEmit -p tsconfig.toon.json > "../$P/tsc.log" 2>&1); echo "tsc=$?" >> "$P/result.txt"
 cat "$P/result.txt"

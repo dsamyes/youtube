@@ -136,9 +136,10 @@ jobs:
             res=$(jq -r 'select(.type=="user") | .message.content[]? | select(.type=="tool_result") | "error=\(.is_error // false) \(.content | tostring | .[0:260])"' "$RUNNER_TEMP/v.jsonl" 2>/dev/null | tr -cd '[:print:]\n' | head -1)
             R=engine/videos/_probe/result.txt
             echo "PROBE $name: exit=$rc | $res"
-            if [ -f "$R" ]; then echo "PROBE $name: $(grep -E '^(voice|still|ffmpeg|token_visible|tmp_write)=[0-9]+$' "$R" | tr '\n' ' ')"; else echo "PROBE $name: no result file"; fi
+            if [ -f "$R" ]; then echo "PROBE $name: $(grep -E '^(voice|still|ffmpeg|token_visible|tmp_write|tsc)=[0-9]+$' "$R" | tr '\n' ' ')"; else echo "PROBE $name: no result file"; fi
+            echo "PROBE $name: empty placeholder files: $(head -c 400 engine/videos/_probe/empty_files.txt 2>/dev/null | tr -cd '[:alnum:]/._ -')"
             if [ -f engine/remotion/out/_template/stills/f30.jpg ]; then echo "PROBE $name: still file $(stat -c %s engine/remotion/out/_template/stills/f30.jpg) bytes"; else echo "PROBE $name: still file missing"; fi
-            for l in voice still; do
+            for l in voice still tsc; do
               if [ -f "engine/videos/_probe/$l.log" ] && ! grep -q "^$l=0$" "$R" 2>/dev/null; then
                 echo "PROBE $name: $l.log, error lines and first lines:"
                 grep -m6 -iE "error|EACCES|EROFS|EPERM|ENOENT|denied|not permitted|cannot" "engine/videos/_probe/$l.log" | cut -c1-400 | tr -cd '[:print:]\n' || true
