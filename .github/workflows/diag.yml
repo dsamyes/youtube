@@ -139,23 +139,17 @@ jobs:
             if [ -f "$R" ]; then echo "PROBE $name: $(grep -E '^(voice|still|ffmpeg|token_visible|tmp_write)=[0-9]+$' "$R" | tr '\n' ' ')"; else echo "PROBE $name: no result file"; fi
             if [ -f engine/remotion/out/_template/stills/f30.jpg ]; then echo "PROBE $name: still file $(stat -c %s engine/remotion/out/_template/stills/f30.jpg) bytes"; else echo "PROBE $name: still file missing"; fi
             for l in voice still; do
-              if [ -f "engine/videos/_probe/$l.log" ] && ! grep -q "^$l=0$" "$R" 2>/dev/null; then echo "PROBE $name: last lines of $l.log:"; tail -c 700 "engine/videos/_probe/$l.log" | tr -cd '[:print:]\n' | tail -6; fi
+              if [ -f "engine/videos/_probe/$l.log" ] && ! grep -q "^$l=0$" "$R" 2>/dev/null; then
+                echo "PROBE $name: $l.log, error lines and first lines:"
+                grep -m6 -iE "error|EACCES|EROFS|EPERM|ENOENT|denied|not permitted|cannot" "engine/videos/_probe/$l.log" | cut -c1-400 | tr -cd '[:print:]\n' || true
+                head -c 1500 "engine/videos/_probe/$l.log" | tr -cd '[:print:]\n' | head -14
+              fi
             done
           }
           S=engine/producer.settings.json
           TOOLS="Bash Read Edit Write Glob Grep WebSearch WebFetch TodoWrite"
           # the real probe (voice, a still through headless Chrome, ffmpeg) with the producer's flags
           probe "P3 allowedTools producer-settings" --allowedTools $TOOLS --settings "$S"
-          # file tools: write and edit inside the repo, read a file outside it (the trend file lives in RUNNER_TEMP)
-          mkdir -p "$RUNNER_TEMP/trends"; echo '{"marker": "outside-ok"}' > "$RUNNER_TEMP/trends/trends.json"
-          rm -rf engine/videos/_probe
-          set +e
-          HOME="$RUNNER_TEMP/h" CLAUDE_CODE_SUBPROCESS_ENV_SCRUB=1 timeout 300 claude -p "Do these three things and then reply with the single word DONE. (1) With the Write tool create the file engine/videos/_probe/w.txt containing the word first. (2) With the Edit tool change the word first in that file to second. (3) With the Read tool read $RUNNER_TEMP/trends/trends.json and with the Write tool create engine/videos/_probe/r.txt containing the value of its marker key." \
-            --model sonnet --max-turns 10 --output-format stream-json --verbose --allowedTools $TOOLS --settings "$S" --add-dir "$RUNNER_TEMP/trends" > "$RUNNER_TEMP/v.jsonl" 2> "$RUNNER_TEMP/v.err"
-          rc=$?
-          set -e
-          echo "FILETOOLS: exit=$rc w.txt=$(head -c 20 engine/videos/_probe/w.txt 2>/dev/null | tr -cd '[:alnum:]-') r.txt=$(head -c 20 engine/videos/_probe/r.txt 2>/dev/null | tr -cd '[:alnum:]-')"
-          jq -r 'select(.type=="user") | .message.content[]? | select(.type=="tool_result") | select(.is_error==true) | "FILETOOLS error: \(.content | tostring | .[0:200])"' "$RUNNER_TEMP/v.jsonl" 2>/dev/null | tr -cd '[:print:]\n' | head -4 || true
 
   trends:
     if: github.repository == 'dsamyes/youtube'
