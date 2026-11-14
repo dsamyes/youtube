@@ -143,13 +143,19 @@ jobs:
             done
           }
           S=engine/producer.settings.json
-          C2='bash engine/diag/hello.sh'
-          try "B2 scrub=1 skip-permissions settings (socat installed)" 1 "$C2" --dangerously-skip-permissions --settings "$S"
-          try "F2 scrub=1 allowedTools=Bash settings (socat installed)" 1 "$C2" --allowedTools "Bash" --settings "$S"
-          try "H scrub=1 skip-permissions sandbox-settings" 1 "$C2" --dangerously-skip-permissions --settings engine/diag/settings_sandbox.json
-          try "I scrub=1 dontAsk sandbox-settings" 1 "$C2" --permission-mode dontAsk --settings engine/diag/settings_sandbox.json
-          probe "P1 skip-permissions sandbox-settings" --dangerously-skip-permissions --settings engine/diag/settings_sandbox.json
-          probe "P2 skip-permissions producer-settings" --dangerously-skip-permissions --settings "$S"
+          TOOLS="Bash Read Edit Write Glob Grep WebSearch WebFetch TodoWrite"
+          # the real probe (voice, a still through headless Chrome, ffmpeg) with the producer's flags
+          probe "P3 allowedTools producer-settings" --allowedTools $TOOLS --settings "$S"
+          # file tools: write and edit inside the repo, read a file outside it (the trend file lives in RUNNER_TEMP)
+          mkdir -p "$RUNNER_TEMP/trends"; echo '{"marker": "outside-ok"}' > "$RUNNER_TEMP/trends/trends.json"
+          rm -rf engine/videos/_probe
+          set +e
+          HOME="$RUNNER_TEMP/h" CLAUDE_CODE_SUBPROCESS_ENV_SCRUB=1 timeout 300 claude -p "Do these three things and then reply with the single word DONE. (1) With the Write tool create the file engine/videos/_probe/w.txt containing the word first. (2) With the Edit tool change the word first in that file to second. (3) With the Read tool read $RUNNER_TEMP/trends/trends.json and with the Write tool create engine/videos/_probe/r.txt containing the value of its marker key." \
+            --model sonnet --max-turns 10 --output-format stream-json --verbose --allowedTools $TOOLS --settings "$S" --add-dir "$RUNNER_TEMP/trends" > "$RUNNER_TEMP/v.jsonl" 2> "$RUNNER_TEMP/v.err"
+          rc=$?
+          set -e
+          echo "FILETOOLS: exit=$rc w.txt=$(head -c 20 engine/videos/_probe/w.txt 2>/dev/null | tr -cd '[:alnum:]-') r.txt=$(head -c 20 engine/videos/_probe/r.txt 2>/dev/null | tr -cd '[:alnum:]-')"
+          jq -r 'select(.type=="user") | .message.content[]? | select(.type=="tool_result") | select(.is_error==true) | "FILETOOLS error: \(.content | tostring | .[0:200])"' "$RUNNER_TEMP/v.jsonl" 2>/dev/null | tr -cd '[:print:]\n' | head -4 || true
 
   trends:
     if: github.repository == 'dsamyes/youtube'
