@@ -12,7 +12,7 @@ import plan from "../../../../videos/_template/shots.json";
 const SUN: Record<number, SunDef> = { 1: { az: 110 } };
 export const T = readShots(plan, SUN);
 /** action frames by event type (the sound uses the same file) */
-export const POINT = T.at("point"), ARROW = T.at("arrow_pop"), DING = T.at("ding");
+export const POINT = T.at("pop"), ARROW = T.at("arrow_pop"), DING = T.at("ding");
 
 // ---------------- where things are ----------------
 export const GUS_AT: V3 = [-0.85, 0, -0.55];                                  // beside the hole (the hole is at the origin)

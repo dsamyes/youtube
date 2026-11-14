@@ -2,8 +2,8 @@
 // usage: node scripts/toon-stills.mjs <id> <frame,frame,...> [scale=0.5]
 //   <id>   the video: src/videos/<id>/entry.tsx (composition "Short"), engine/videos/<id>/shots.json
 //   output out/<id>/stills/f<frame>.jpg  (1080x1920 x scale)
-// Bundles once, then renders each frame with software WebGL, like the GitHub runner. Below scale 1 the WebGL buffer
-// is rendered at that scale too (fast; lines and blur scale with it). scale 1 is the real picture of the final.
+// Bundles once, then renders each frame with software WebGL, like the GitHub runner. The picture is always rendered
+// at 1080x1920 and scaled down for the file, so a still shows exactly what the final will show.
 // env: REMOTION_CHROME (browser binary; "bundled" or unset = see below), REMOTION_GL (default swangle),
 //      TOON_PROPS (JSON input props, e.g. '{"post":{"lens":false}}'), TOON_LOG_ALL=1 (browser console),
 //      TOON_ENTRY / TOON_COMP (another entry file / composition id, e.g. the bridge template).
@@ -34,7 +34,6 @@ const browserExecutable = chrome();
 const chromiumOptions = { gl: process.env.REMOTION_GL || "swangle" };
 const s = Number(scale);
 const inputProps = process.env.TOON_PROPS ? JSON.parse(process.env.TOON_PROPS) : {};
-if (s < 1 && inputProps.post?.dpr === undefined) inputProps.post = { ...(inputProps.post ?? {}), dpr: s };
 const pub = path.resolve(ROOT, process.env.TOON_PUBLIC || "public-toon");
 const outDir = path.resolve(ROOT, "out", id, "stills");
 fs.mkdirSync(pub, { recursive: true });

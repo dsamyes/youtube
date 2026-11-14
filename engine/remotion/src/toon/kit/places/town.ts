@@ -111,10 +111,11 @@ export class Town implements PlaceObj {
     const pit = new THREE.Mesh(new THREE.CylinderGeometry(HOLE_R, HOLE_R, 7, 40, 1, true).translate(0, -3.5, 0), new THREE.MeshBasicMaterial({ map: pitHD(), side: THREE.BackSide }));
     const floor = new THREE.Mesh(new THREE.CircleGeometry(HOLE_R, 24).rotateX(-Math.PI / 2).translate(0, -7, 0), new THREE.MeshBasicMaterial({ color: "#3a1206" })); // the faint glow far down
     this.gHole.add(pit, floor);
-    { // a patch of the same lawn that closes the hole when a shot wants none
-      const g = new THREE.CircleGeometry(HOLE_R + 0.004, 40), uv = g.attributes.uv as THREE.BufferAttribute, p = g.attributes.position as THREE.BufferAttribute;
+    { // a patch of the same lawn that closes the hole when a shot wants none: the hole's own outline, in the lawn's
+      // plane (a lifted or overlapping patch gets a dashed ink line along its edge)
+      const g = new THREE.ShapeGeometry(new THREE.Shape(cut.getPoints(40))), uv = g.attributes.uv as THREE.BufferAttribute, p = g.attributes.position as THREE.BufferAttribute;
       for (let i = 0; i < uv.count; i++) uv.setXY(i, p.getX(i) / 4, p.getY(i) / 4);
-      const m = new THREE.Mesh(g.rotateX(-Math.PI / 2).translate(0, 0.002, 0), M.grass); m.receiveShadow = true; this.gCover.add(m);
+      const m = new THREE.Mesh(g.rotateX(-Math.PI / 2), M.grass); m.receiveShadow = true; this.gCover.add(m);
     }
     // trampled soil around the hole and under the mound (flat decals), stone rim
     bh.add(new THREE.RingGeometry(HOLE_R, HOLE_R + 0.42, 40).rotateX(-Math.PI / 2).translate(0, 0.012, 0), M.soilFlat);

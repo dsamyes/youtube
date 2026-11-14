@@ -17,6 +17,8 @@ Every tile is labelled with its shot, frame and place. Output: out/<id>/sheets/s
 """
 import json, os, subprocess, sys
 
+import signal
+if hasattr(signal, "SIGPIPE"): signal.signal(signal.SIGPIPE, signal.SIG_DFL)  # quiet exit when piped into head
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 try:
     from PIL import Image, ImageDraw, ImageFont

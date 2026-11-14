@@ -8,8 +8,9 @@ usage: scripts/toon-render.py <id> [--part i/n] [--scale s] [--force N,N] [--onl
   --part i/n     render only the i-th of n groups of shots (1-based). The groups are balanced by estimated cost
                  (frames x a weight per place + a start-up cost per chunk) and depend on shots.json alone, so n
                  parallel jobs cover every shot exactly once. Implies --no-concat.
-  --scale s      low-resolution proxy (e.g. 0.25 -> 270x480): chunks go to out/<id>/proxy/, the joined file is
-                 out/<id>/proxy/video.mp4. The WebGL buffer shrinks with it, so it is much faster.
+  --scale s      low-resolution proxy (0.25 -> 270x480): chunks go to out/<id>/proxy/, the joined file is
+                 out/<id>/proxy/video.mp4. The WebGL buffer, the card drawings and the bloom shrink with it: about
+                 6x faster than the final, same motion, same colours within 2 %.
   --force N,N    render these shots again even if their chunk is up to date
   --only N,N     look at these shots only (the join still needs every chunk)
   --keep         keep every complete chunk although the source is newer (their time stamp is refreshed)
@@ -19,7 +20,7 @@ usage: scripts/toon-render.py <id> [--part i/n] [--scale s] [--force N,N] [--onl
   --concurrency  browser tabs per chunk (default 4)
 
 Output: out/<id>/chunks/shot_NN.mp4 and out/<id>/video.mp4 (1080x1920, 30 fps, silent). A chunk is skipped when it
-exists, has the right frame count and is newer than every file in src/videos/<id>/, src/toon/kit/ and shots.json. A
+exists, has the right frame count and is newer than every code file in src/videos/<id>/ and src/toon/kit/ and than shots.json. A
 chunk is written to a temporary name and renamed only when complete and verified, so the script is safe to stop and
 start again. Log: <chunk dir>/render_log.txt.
 Browser: $REMOTION_CHROME when it is an existing file, else the headless shell under /opt/pw-browsers when there is
@@ -27,6 +28,8 @@ one, else Remotion's own bundled shell (CI sets REMOTION_CHROME=bundled). WebGL:
 """
 import glob, json, os, subprocess, sys, time
 
+import signal
+if hasattr(signal, "SIGPIPE"): signal.signal(signal.SIGPIPE, signal.SIG_DFL)  # quiet exit when piped into head
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # seconds per frame at 1080x1920 with software WebGL on 4 vCPU (fitted to the hole short's final render, 4 tabs; a
 # garden or ocean shot with depth of field costs about 1.5x a sharp one, the weight is the mix), and the start-up of
@@ -104,14 +107,15 @@ def main():
         i, n = (int(x) for x in part.split("/"))
         if not 1 <= i <= n: sys.exit("--part i/n needs 1 <= i <= n")
         g, load = groups(shots, n)
-        k = scale * scale if proxy else 1  # proxy frames cost roughly their pixel share (plus the same start-up)
+        k = (0.18 if scale <= 0.25 else 0.4) if proxy else 1  # measured: a 0.25 proxy frame costs about a sixth of a full one
         for j in range(n):
-            est = sum((cost(s) - STARTUP) * k + STARTUP for s in shots if s["id"] in g[j]) / 60
+            est = sum((cost(s) - STARTUP) * k + STARTUP * 0.6 for s in shots if s["id"] in g[j]) / 60 if proxy else load[j] / 60
             print("%s part %d/%d: shots %s  (%d frames, about %.0f min)" % ("->" if j == i - 1 else "  ", j + 1, n, ",".join(map(str, g[j])) or "-",
                   sum(s["b"] - s["a"] for s in shots if s["id"] in g[j]), est), flush=True)
         mine = set(g[i - 1]); no_concat = True
     if only: mine &= only
-    src = [p for d in (os.path.join(ROOT, "src", "videos", vid), os.path.join(ROOT, "src", "toon", "kit")) for p in glob.glob(os.path.join(d, "**", "*"), recursive=True) if os.path.isfile(p)]
+    src = [p for d in (os.path.join(ROOT, "src", "videos", vid), os.path.join(ROOT, "src", "toon", "kit")) for p in glob.glob(os.path.join(d, "**", "*"), recursive=True)
+           if os.path.isfile(p) and p.endswith((".ts", ".tsx", ".js", ".json"))]
     newest = max([os.path.getmtime(p) for p in src] + [os.path.getmtime(plan_path)])
     exe = chrome()
     env = dict(os.environ)
@@ -142,7 +146,11 @@ def main():
         cmd = ["npx", "remotion", "render", serve, "Short", tmp, "--frames=%d-%d" % (a, b - 1), "--public-dir=public-toon", "--codec", "h264",
                "--crf", "20" if proxy else "16", "--jpeg-quality", "80" if proxy else "95", "--concurrency=%s" % conc, "--timeout=180000", "--muted", "--log=error",
                "--gl=%s" % env["REMOTION_GL"]]
-        if proxy: cmd += ["--scale=%g" % scale, "--props=%s" % json.dumps({"post": {"dpr": scale}})]
+        if proxy:
+            # the WebGL buffer, the card drawings and the bloom chain shrink with the output (their full-size cost is
+            # fixed, so without this a proxy is only 3x faster than the final)
+            post = {"dpr": scale, "cards": min(1, max(0.25, 2 * scale)), "bloomBase": 480 if scale <= 0.25 else 960 if scale <= 0.5 else 1920}
+            cmd += ["--scale=%g" % scale, "--props=%s" % json.dumps({"post": post})]
         ok = False
         for attempt in (1, 2):
             t0 = time.time()

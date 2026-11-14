@@ -1,4 +1,4 @@
-// Painted textures for the hole short's own places (Canvas2D, cached, seams painted in as dark tints like the
+// Painted textures of the kit's own places (Canvas2D, cached, seams painted in as dark tints like the
 // template's paint.ts): fence boards, soil, the shaft's rock mask, the Earth's surface and cut face, stars, the moon,
 // washing, deck-chair canvas, the sea pipe.
 import * as THREE from "three";

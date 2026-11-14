@@ -12,27 +12,31 @@ All paths below are relative to `engine/remotion/`. Run every command from there
 `<id>` is the folder name in `engine/videos/<id>/`. The picture reads `engine/videos/<id>/shots.json`.
 
 ```
-cp -r src/videos/_template src/videos/<id>      # then fix the shots.json import path at the top of story.ts
-npx tsc --noEmit                                 # must be clean for src/toon/kit and src/videos/<id>
-node scripts/toon-stills.mjs <id> 30,90 0.5      # single frames -> out/<id>/stills/f30.jpg ...   (about 10 s each)
-python3 scripts/toon-sheet.py <id>               # two stills per shot -> out/<id>/sheets/sheet_NN.jpg : LOOK AT THEM
-python3 scripts/toon-render.py <id> --scale 0.25 # whole film as a 270x480 proxy -> out/<id>/proxy/video.mp4
-python3 scripts/toon-qa.py <id> --proxy          # black / white / frozen frames and pops; exit 1 on findings
-python3 scripts/toon-sheet.py <id> --from-video  # sheets cut from the proxy (motion check: add --frames a,b,c)
-python3 scripts/toon-render.py <id>              # final: out/<id>/chunks/shot_NN.mp4 -> out/<id>/video.mp4
+cp -r src/videos/_template src/videos/<id>       # then fix the shots.json import path at the top of story.ts
+npx tsc --noEmit                                  # must be clean for src/toon/kit and src/videos/<id>
+node scripts/toon-stills.mjs <id> 30,90 0.5       # single frames -> out/<id>/stills/f30.jpg ...  (16 s + 10 s each)
+python3 scripts/toon-sheet.py <id>                # two stills per shot -> out/<id>/sheets/sheet_NN.jpg: LOOK AT THEM
+python3 scripts/toon-sheet.py <id> --frames 400,404,408,412   # a move, frame by frame -> sheets/sheet_x01.jpg
+python3 scripts/toon-render.py <id> --scale 0.25  # the whole film as a 270x480 proxy -> out/<id>/proxy/video.mp4
+python3 scripts/toon-qa.py <id> --proxy           # black / white / frozen frames, pops and near pops; exit 1 on findings
+python3 scripts/toon-sheet.py <id> --from-video --frames 400,404,408   # frames cut from the proxy -> sheets/sheet_v01.jpg
+python3 scripts/toon-render.py <id> --scale 0.25 --only 4,5   # after a fix: only those shots again, then joined
 ```
 
-Parallel final render (n jobs, each renders its own shots; a last job joins):
+Time (4 cores, a 65 s film of 21 shots): contact sheets 7 minutes, proxy 19 minutes, QA 16 seconds.
+The final render is 86 minutes in one job, so it runs in parallel jobs, each rendering its own shots:
 
 ```
-python3 scripts/toon-render.py <id> --part i/n   # job i of n (prints all n groups); chunks only
-python3 scripts/toon-render.py <id> --concat-only   # after the chunks of all jobs are in out/<id>/chunks/
+python3 scripts/toon-render.py <id> --part i/n    # job i of n (prints all n groups with estimated minutes); chunks only
+python3 scripts/toon-render.py <id> --concat-only # once the chunks of all jobs are in out/<id>/chunks/ -> out/<id>/video.mp4
+python3 scripts/toon-render.py <id>               # or everything in one job
 ```
 
-Other flags of `toon-render.py`: `--force 3,7` (render again), `--only 3,7`, `--keep` (keep complete chunks although
-the source changed), `--no-concat`, `--dry` (print the plan only). A chunk is reused when it is newer than every file
-of `src/videos/<id>/`, `src/toon/kit/` and `shots.json`. Browser: `$REMOTION_CHROME` if that file exists, else the
-shell under `/opt/pw-browsers`, else Remotion's bundled one. WebGL: `$REMOTION_GL` (default `swangle`, software).
+Other flags of `toon-render.py`: `--force 3,7` (render again), `--keep` (keep complete chunks although the source
+changed), `--no-concat`, `--dry` (print the plan only). A chunk is reused when it is newer than every code file of
+`src/videos/<id>/` and `src/toon/kit/` and than `shots.json`. Browser: `$REMOTION_CHROME` if that file exists, else
+the shell under `/opt/pw-browsers`, else Remotion's bundled one. WebGL: `$REMOTION_GL` (default `swangle`, software).
+`--part i/n` with fewer than n shots leaves some parts empty.
 
 Do not edit `src/toon/kit/`. Everything a video needs is imported from `"../../toon/kit"`.
 
@@ -42,7 +46,7 @@ Do not edit `src/toon/kit/`. Everything a video needs is imported from `"../../t
 { "fps": 30, "total_frames": 150, "flash_at": 118,
   "shots": [ { "id": 1, "a": 0, "b": 60, "place": "garden", "light": "day" }, ... ],
   "xfade": { "3": 8 },
-  "events": [ { "f": 34, "type": "point" }, { "f": 40, "to": 90, "type": "wind" } ] }
+  "events": [ { "f": 34, "type": "pop" }, { "f": 40, "to": 90, "type": "wind_rush" } ] }
 ```
 
 - `shots`: ids 1, 2, 3 ... in order, frames `a <= f < b`, no gaps. `place` = a kit place (section 4) or one of your
@@ -50,9 +54,9 @@ Do not edit `src/toon/kit/`. Everything a video needs is imported from `"../../t
 - `xfade`: shot id -> frames of crossfade centred on that shot's first frame. Use it for a change of place or time
   (8 frames). Plain cuts need nothing.
 - `flash_at` (optional): a frame or a list of frames where a 4-frame white flash starts.
-- `events`: `T.at("type")` gives the frame of the first event of that type, `T.at("type", 1)` the second.
-  Time every action from these (the sound effects sit on the same frames). A reaction should start 0-3 frames
-  before its event.
+- `events`: the sound cues (types: `engine/toon/audio/README.md`). `T.at("ding")` gives the frame of the first
+  event of that type, `T.at("ding", 1)` the second. Time every action from these, never from typed-in numbers that
+  repeat them. A visible reaction starts 0-3 frames before its event.
 
 ## 3. The three files of a video
 
@@ -87,8 +91,9 @@ Units are metres, y is up. One place per shot, named in shots.json. Options come
 
 ### garden and park (one town; `TownParams`)
 
-Garden: lawn around the origin, plank fences, house backs on three sides, open sky to the west. The main view is
-toward -z (north). Park: 60 m away, cameras look toward +z.
+Garden: a fenced lawn (x -6.5..6.5, z -4.6..9.5) with the hole at the origin, house backs to the north, east and
+south, open sky to the west. The main view is toward -z (north): lens south of the subject. Park: 60 m away, swing
+set on sand ringed by trees and houses; cameras stand south of it and look toward +z.
 
 | Landmark | Value | What |
 |---|---|---|
@@ -99,11 +104,13 @@ toward -z (north). Park: 60 m away, cameras look toward +z.
 | `GRILL` | [3.7, 0, -6.6] | kettle grill with smoke |
 | `PARK` | [60, 0, 46] | foot of the swing frame (swing pivot 2.88 above) |
 
-Free lawn for characters: x -1.5..4, z -3.5..2.5 (washing line in the north-east corner, flower beds along the fences).
+Room for characters: the lawn within 4 m of the hole (washing line in the north-east corner, flower beds along the
+fences, the mound north-west of the hole).
 
 Options (all optional): `hole: false` (plain lawn), `mound: false`, `shovel: "planted" | "none" | { top, tip }` (hold
-it: give the handle top and blade tip per frame), `chair: { pos, yaw }` (deck chair; yaw 0 faces +z; seat a character
-on it with `mode: "chair"` 0.2 m in front of `pos`), `washing: false`, `grill: false`, `lawn: [r, g, b]`.
+it: give the handle top and blade tip per frame), `chair: { pos, yaw }` (deck chair; yaw 0 faces +z; the sitter is a card with
+`mode: "chair"` at about `pos`, nudged until a still looks right: the worked example has both), `washing: false`,
+`grill: false`, `lawn: [r, g, b]`.
 
 Framings that work (copy the numbers; `k = pushK(f, shotStart, 0.0015)`):
 
@@ -153,8 +160,15 @@ Cameras: wide `dolly([0.45, 1.35, 8.7], [0.86, 1.35, 0.2], k, { fov: 42 })`; two
 ## 5. Light presets
 
 `day`, `golden` (low sun, long shadows, sun disc), `night` (moon, stars), `space`, `shaft`. Each sets sky, fog, key
-light, shading and colour grade. Proven pairs: garden + day, garden + golden (looking west), park + golden,
-ocean + night, earth + space, shaft + shaft. Other pairs render but are unproven: check a still first.
+light, shading and colour grade.
+
+| Place | Lights that work |
+|---|---|
+| garden | `day`; `night` (blue, readable); `golden` only when the lens looks west (any other way the set lies in blue shadow) |
+| park | `golden`, `day`, `night` |
+| ocean | `night`, `day`, `golden` (sunset over the sea) |
+| earth | `space` |
+| shaft | `shaft` |
 
 Key light per shot: `readShots(plan, { id: { az, el } })` is relative to the camera (az 0 = behind the subject,
 90 = from screen right, 180 = from behind the lens) or `{ abs: [x, y, z] }` a world direction toward the sun. Rule:
@@ -268,7 +282,12 @@ Seconds per frame at 1080x1920, start-up of a chunk included (about 30 s per chu
 Depth of field costs about half as much again as the whole rest of the frame (the lens blur is 43 % of such a frame).
 Use it for medium shots and close-ups, not for wides. The hole short (1935 frames) took 86 minutes in one job;
 `--part i/6` gives six jobs of 13-16 minutes. A still takes 5-11 s plus 16 s for the bundle.
-PROXY_NOTE
+
+Proxy (`--scale 0.25`): 19 minutes for the same film; 0.35-0.6 s per frame in the shaft, on the earth and the ocean,
+0.7-1.3 s in the garden and the park (their geometry does not shrink with the picture). Card drawings and bloom are
+rendered smaller too; colours stay within 2 % of the final. The frame checker reads a proxy almost like the final
+(same curve; scores about 6 % lower, thin effects up to 40 % lower), which is why `toon-qa.py --proxy` also fails on
+near pops from 0.8. The final film is checked again at full size by `toon/finish.py`.
 
 ## 11. Traps (each one cost a render)
 
@@ -277,8 +296,9 @@ PROXY_NOTE
 2. **Post chain patch.** `kit/Short.tsx` holds every frame until the post passes exist and then draws once more.
    Without it the first frame of every still, chunk and crossfade layer comes out without ink, blur and grade. Never
    remove it and never draw outside the kit's shell.
-3. **Tiny characters.** A card is 2.16 m tall. On a phone a figure smaller than a third of the frame height has no
-   face. Story shots: lens 2.7-3.8 m from the subject at fov 38-40. Use wides only to establish.
+3. **Tiny characters.** A card is 2.16 m tall. In a character shot the head must be at least a sixth of the frame
+   height: lens 2.7-3.8 m from the subject at fov 38-40. At 6 m the head is a tenth and the face is gone on a
+   phone. Use wides only to establish.
 4. **A hole that reads as shallow.** A visible floor or a lit wall makes a pit look 1 m deep. The kit's hole has no
    visible floor and fades to black; do the same in your own pits and keep bright things out of them.
 5. **Muddy dusk.** `golden` front-lit (sun behind the lens) turns everything orange-brown, and a set ringed by houses
@@ -286,9 +306,9 @@ PROXY_NOTE
    the sun directions of section 4. Do not tune grades or light colours per video.
 6. **QA pops.** `toon-qa.py` flags any frame that changes far more than its neighbours, except shot starts,
    crossfades and flashes from shots.json. Causes met so far: a head or eye direction that snaps in one frame; a
-   prop that vanishes for a frame or changes hands; a fall faster than about 0.4 m per frame near the lens (slow it
-   or cut away); an effect that appears at full size (use `popIn`); an expression change without a blink over it;
-   a cut that is not a shot boundary in shots.json.
+   prop that vanishes for a frame or changes hands; a body that drops out of a close shot in under 8 frames (start
+   the fall slowly: 1.25 cm x frames squared passed); an effect that appears at full size (use `popIn`); an
+   expression change without a blink over it; a cut that is not a shot boundary in shots.json.
 7. **Clipped cards.** Arms, props and lifted things outside the 600-unit card are cut off: `wide: true`,
    `tall: true`.
 8. **Things crossing faces.** Cards are flat and face the lens. A flying prop whose path crosses a face reads as part
@@ -296,7 +316,11 @@ PROXY_NOTE
    contact sheet.
 9. **Cards inside geometry.** A card placed on a surface sinks into it: lift it toward the lens (`earthPoint(s, 0.8)`,
    `g.at(anchor, 0.05)`).
-10. **Stills at a scale below 1** render the WebGL buffer smaller too (fast, slightly softer lines). Scale 1 is the
-    real final picture.
+10. **Judge the look on stills, the motion on the proxy.** Stills are always rendered at full size and scaled
+    down, so they show the final picture. The proxy is rendered small: softer lines, coarser cards. Never judge
+    line quality or small props on it.
 11. **Determinism.** Each frame is rendered in its own browser tab in any order. Anything that depends on the
     previous frame, on time or on `Math.random` flickers in the film.
+12. **Flat things on the ground.** A mesh lying a few millimetres above another surface gets a dashed ink line
+    along its edge. For a puddle, a rug or a stain use a flat effect card (`fx(..., { flat: true })`) or put the
+    mesh on the no-ink layer (`mesh.layers.set(NOINK)`).

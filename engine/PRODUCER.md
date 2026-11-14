@@ -132,6 +132,8 @@ with their light presets, the camera and effect helpers, what each costs to rend
 
 1. Copy `remotion/src/videos/_template/` to `remotion/src/videos/<id>/` and build the story on the kit.
    Anything new (a place, a character, a prop) goes in your folder, built the way the kit builds its own.
+   The folders of earlier episodes (`remotion/src/videos/*/`, listed with their places in
+   `toon/episodes.json`) are a library too: import a place or prop from one when it fits, never edit it.
 2. Type-check (`cd remotion && npx tsc --noEmit`) before every render.
 3. Look at your work. Render contact sheets (`scripts/toon-sheet.py <id>`), open them, and judge each shot as
    a viewer scrolling past on a phone would:
@@ -143,9 +145,13 @@ with their light presets, the camera and effect helpers, what each costs to rend
    - Shot 1: would you stop scrolling? Last shot: is the gag readable in one glance?
    Fix what fails and render again. Expect at least two full rounds; the example needed two and its second
    round changed a third of the shots. Check moving actions with three or four frames across the move, not one.
-4. Pre-check the motion with a low-resolution pass of the whole film and the frame checker, as the kit README
-   describes. Fix black frames, frozen stretches, pops and wrong cut frames, then repeat for the shots you
-   touched.
+4. Pre-check the motion with a low-resolution pass of the whole film and the frame checker (about 20 minutes;
+   start it in the background and write the sound meanwhile):
+   ```
+   cd remotion && python3 scripts/toon-render.py <id> --scale 0.25 && python3 scripts/toon-qa.py <id> --proxy
+   ```
+   Fix black frames, frozen stretches, pops and wrong cut frames, then run it again for the shots you touched
+   (`--force N,N`).
 
 Do not run the full-resolution render; a later job does it on six machines.
 
@@ -158,7 +164,8 @@ Write `videos/<id>/audio/score.json` (the music plan) and finish the `events` li
 .venv/bin/python -B toon/audio/build.py <id>
 ```
 
-until every check passes. Use only event types that exist; the README says what to do when none fits.
+until every check passes (`--list` prints the event types, `--check` validates without building). Use only
+event types that exist; the README says what to do when none fits.
 
 ## 8. Title, description, tags: `videos/<id>/metadata.json`
 

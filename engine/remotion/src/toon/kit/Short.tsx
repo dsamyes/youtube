@@ -34,10 +34,14 @@ const toggles = (): PostToggles => ({ ink: true, lens: true, pre: true, bloom: t
  *  whatever the output size, so the glow keeps the same size relative to the frame (e-fold ~30 px at 1080p,
  *  ~1.5 % of the frame height) at 540, 1080 and 1440 widths. ADD blend: HDR-safe (SCREEN darkens values > 1). */
 const makeBloom = () => {
-  const b = new BloomEffect({ blendFunction: BlendFunction.ADD, intensity: 0.5, luminanceThreshold: 1.0, luminanceSmoothing: 0.2, mipmapBlur: true, levels: 6, radius: 0.6 });
+  // proxy renders only (inputProps `{ post: { bloomBase: 480 } }`): a smaller chain with fewer levels gives the same
+  // glow size relative to the frame for a fraction of the cost (the full chain is a fixed cost at any output size)
+  const base = (getInputProps() as { post?: { bloomBase?: number } }).post?.bloomBase ?? 1920;
+  const levels = Math.max(2, 6 - Math.round(Math.log2(1920 / base)));
+  const b = new BloomEffect({ blendFunction: BlendFunction.ADD, intensity: 0.5, luminanceThreshold: 1.0, luminanceSmoothing: 0.2, mipmapBlur: true, levels, radius: 0.6 });
   const mip = b.mipmapBlurPass;
   const setSize = mip.setSize.bind(mip);
-  mip.setSize = (w: number, h: number) => setSize(Math.round((1920 * w) / Math.max(h, 1)), 1920);
+  mip.setSize = (w: number, h: number) => setSize(Math.round((base * w) / Math.max(h, 1)), base);
   return b;
 };
 

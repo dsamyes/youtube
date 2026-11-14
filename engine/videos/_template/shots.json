@@ -1,5 +1,5 @@
 {
-  "_doc": "Picture/sound contract of the kit's template short (engine/remotion/src/videos/_template). Copy this folder's shape for a new video: 30 fps, shots in order with ids 1, 2, 3 ..., frames a <= f < b, a kit place and a light preset per shot, optional crossfades (shot id -> frames) and flash frames, and the action frames as events.",
+  "_doc": "Picture/sound contract of the kit's template short (engine/remotion/src/videos/_template). Copy this folder's shape for a new video: 30 fps, shots in order with ids 1, 2, 3 ..., frames a <= f < b, a kit place and a light preset per shot, optional crossfades (shot id -> frames) and flash frames, and the action frames as events (types from engine/toon/audio/README.md).",
   "fps": 30,
   "total_frames": 150,
   "places": {
@@ -13,7 +13,8 @@
   ],
   "xfade": {},
   "events": [
-    { "f": 34, "type": "point", "note": "he points at the hole" },
+    { "f": 34, "type": "pop", "note": "he points at the hole" },
+    { "f": 60, "type": "whoosh", "note": "cut to the Earth cutaway" },
     { "f": 72, "type": "arrow_pop", "note": "the arrow appears" },
     { "f": 126, "type": "ding", "note": "thumbs-up sparkle" }
   ]
