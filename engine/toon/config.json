@@ -1,0 +1,5 @@
+{
+ "_doc": "Settings of the daily automatic producer (read by .github/workflows/produce.yml).",
+ "model": "claude-fable-5-2",
+ "publish_hour_utc": 15
+}

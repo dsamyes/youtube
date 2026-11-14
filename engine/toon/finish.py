@@ -51,8 +51,10 @@ def main() -> None:
     n = write_srt(json.loads((vdir / "voice" / "words.json").read_text()), vdir / "captions.srt")
     print(f"[finish] {out} ({out.stat().st_size / 1e6:.1f} MB), {n} caption cues")
     if a.no_qa: return
+    fl = shots.get("flash_at", [])                      # optional: one frame or a list of frames with a white flash
+    flashes = [fl] if isinstance(fl, int) else list(fl or [])
     qa_meta = {"shots": [{"id": s["id"], "a": s["a"], "b": s["b"]} for s in shots["shots"]],
-               "flash": [shots["flash_at"], shots["flash_at"] + 4],
+               "planned": [[f, f + 4] for f in flashes],
                "xfade": [[next(s["a"] for s in shots["shots"] if s["id"] == int(k)) - v // 2, next(s["a"] for s in shots["shots"] if s["id"] == int(k)) + v // 2] for k, v in shots.get("xfade", {}).items()]}
     (final / "qa").mkdir(exist_ok=True)
     (final / "qa" / "shots_qa.json").write_text(json.dumps(qa_meta))

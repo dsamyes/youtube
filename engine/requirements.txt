@@ -8,5 +8,6 @@ numpy==2.5.4
 onnxruntime==1.31.1
 pillow==13.0.0
 piper-tts==1.8.0
+pocketsphinx==5.1.1
 scipy==1.18.1
 soundfile==0.14.0

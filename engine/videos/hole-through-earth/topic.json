@@ -1,0 +1,13 @@
+{
+ "id": "hole-through-earth",
+ "question": "What if you jumped into a hole through the middle of the Earth?",
+ "answer_in_one_line": "You never hit the bottom: you fall for 38 minutes, stop for an instant at the far side, and fall back, forever.",
+ "trend_basis": [
+  {
+   "source": "owner",
+   "evidence": "First short of the cartoon method, chosen by hand before the trend collector existed."
+  }
+ ],
+ "why_this_one": "Classic question with a paradox hook and a number most answers get wrong (38 minutes, not 42).",
+ "rejected": []
+}

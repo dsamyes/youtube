@@ -7,11 +7,14 @@
       "Bash(pip install:*)", "Bash(npm install:*)", "Bash(npx -y:*)",
       "Read(./engine/secrets/**)", "Edit(./engine/secrets/**)", "Write(./engine/secrets/**)",
       "Edit(./.github/**)", "Write(./.github/**)",
+      "Edit(./.claude/**)", "Write(./.claude/**)",
       "Edit(./engine/pipeline/**)", "Write(./engine/pipeline/**)",
+      "Edit(./engine/toon/*.py)", "Write(./engine/toon/*.py)",
+      "Edit(./engine/toon/audio/**)", "Write(./engine/toon/audio/**)",
       "Edit(./engine/PRODUCER.md)", "Write(./engine/PRODUCER.md)",
       "Edit(./engine/producer.settings.json)", "Write(./engine/producer.settings.json)",
-      "Edit(./engine/remotion/src/scenes/**)", "Write(./engine/remotion/src/scenes/**)",
-      "Edit(./engine/remotion/src/components/**)", "Write(./engine/remotion/src/components/**)"
+      "Edit(./engine/remotion/src/toon/**)", "Write(./engine/remotion/src/toon/**)",
+      "Edit(./engine/remotion/scripts/**)", "Write(./engine/remotion/scripts/**)"
     ]
   }
 }

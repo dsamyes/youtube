@@ -1,0 +1,23 @@
+{
+ "_doc": "Ledger of cartoon shorts (the daily automatic method). The producer appends one entry with status 'produced'; the publish job turns it into 'published'. Never repeat or closely paraphrase a topic listed here.",
+ "episodes": [
+  {
+   "id": "hole-through-earth",
+   "date": "2026-11-14",
+   "title": "What If You Jumped Into a Hole Through the Earth?",
+   "topic": "falling through a tunnel through the centre of the Earth (gravity tunnel, 38 minutes one way, oscillates forever)",
+   "hero": "Gus",
+   "places": [
+    "shaft",
+    "garden",
+    "earth",
+    "park",
+    "ocean"
+   ],
+   "status": "published",
+   "youtube_id": "HuUEsa9i4R4",
+   "publish_at": null,
+   "trend": "none (made before the trend collector)"
+  }
+ ]
+}
