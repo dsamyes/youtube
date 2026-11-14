@@ -13,7 +13,7 @@ All paths below are relative to `engine/remotion/`. Run every command from there
 
 ```
 cp -r src/videos/_template src/videos/<id>       # then fix the shots.json import path at the top of story.ts
-npx tsc --noEmit                                  # must be clean for src/toon/kit and src/videos/<id>
+npx tsc --noEmit -p tsconfig.toon.json            # must be clean (kit + every video with an entry.tsx)
 node scripts/toon-stills.mjs <id> 30,90 0.5       # single frames -> out/<id>/stills/f30.jpg ...  (16 s + 10 s each)
 python3 scripts/toon-sheet.py <id>                # two stills per shot -> out/<id>/sheets/sheet_NN.jpg: LOOK AT THEM
 python3 scripts/toon-sheet.py <id> --frames 400,404,408,412   # a move, frame by frame -> sheets/sheet_x01.jpg

@@ -134,6 +134,10 @@ def check_authoring(vid: str, vdir: Path) -> None:
     src = "".join(p.read_text(encoding="utf-8", errors="ignore") for p in pdir.glob("*.ts*")) if pdir.exists() else ""
     if pdir.exists() and len(src) < 8000: err("picture: the video folder is still close to the empty template")
     if re.search(r"https?://(?!www\.w3\.org)", src): err("picture: source code must not load anything from the network")
+    if pdir.exists() and (ROOT / "remotion" / "node_modules").exists():
+        r = subprocess.run(["npx", "tsc", "--noEmit", "-p", "tsconfig.toon.json"], cwd=ROOT / "remotion", capture_output=True, text=True)
+        if r.returncode != 0:
+            err("picture: type check fails (cd remotion && npx tsc --noEmit -p tsconfig.toon.json): " + " | ".join((r.stdout or r.stderr).strip().splitlines()[:3]))
     sheets = list((ROOT / "remotion" / "out" / vid / "sheets").glob("*.jpg"))
     if not sheets: err("picture: no contact sheets in remotion/out/<id>/sheets (run scripts/toon-sheet.py and look at them)")
     elif pdir.exists() and max(p.stat().st_mtime for p in sheets) < max(p.stat().st_mtime for p in pdir.glob("*.ts*")) - 1:

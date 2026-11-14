@@ -98,7 +98,7 @@ jobs:
       - name: Picture (types, two stills, one shot, render plan)
         run: |
           cd engine/remotion
-          npx tsc --noEmit && echo "tsc clean"
+          npx tsc --noEmit -p tsconfig.toon.json; echo "tsc clean"
           time node scripts/toon-stills.mjs "$VID" 150,700 0.5
           time python3 -B scripts/toon-render.py "$VID" --only 3 --no-concat
           python3 -B scripts/toon-render.py "$VID" --part 1/6 --dry | tail -8

@@ -134,7 +134,7 @@ with their light presets, the camera and effect helpers, what each costs to rend
    Anything new (a place, a character, a prop) goes in your folder, built the way the kit builds its own.
    The folders of earlier episodes (`remotion/src/videos/*/`, listed with their places in
    `toon/episodes.json`) are a library too: import a place or prop from one when it fits, never edit it.
-2. Type-check (`cd remotion && npx tsc --noEmit`) before every render.
+2. Type-check (`cd remotion && npx tsc --noEmit -p tsconfig.toon.json`) before every render.
 3. Look at your work. Render contact sheets (`scripts/toon-sheet.py <id>`), open them, and judge each shot as
    a viewer scrolling past on a phone would:
    - Is the hero big enough to read (head at least a sixth of the frame height in character shots)?
