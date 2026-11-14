@@ -159,6 +159,9 @@ with their light presets, the camera and effect helpers, what each costs to rend
    - Shot 1: would you stop scrolling? Last shot: is the gag readable in one glance?
    Fix what fails and render again. Expect at least two full rounds; the example needed two and its second
    round changed a third of the shots. Check moving actions with three or four frames across the move, not one.
+   "In the background" always means the Bash tool's own background option (`run_in_background`), then waiting
+   for the output file to appear. A process detached with `nohup ... &` dies when its command returns, and its
+   error is never seen.
 4. Pre-check the motion with a low-resolution pass of the whole film and the frame checker (20 to 30 minutes;
    start it in the background and write the sound meanwhile):
    ```

@@ -28,7 +28,10 @@ try:
     from PIL import Image, ImageDraw, ImageFont
 except ImportError:  # this python has no Pillow: run again with the engine's virtualenv
     venv = os.path.normpath(os.path.join(ROOT, "..", ".venv", "bin", "python"))
-    if os.path.exists(venv) and os.path.realpath(venv) != os.path.realpath(sys.executable): os.execv(venv, [venv] + sys.argv)
+    # (on a GitHub runner the virtualenv's python is a link to the very interpreter that is running, so compare
+    # nothing: start once through the virtualenv's path, which is what makes its packages visible)
+    if os.path.exists(venv) and os.environ.get("TOON_VENV_TRIED") != "1":
+        os.environ["TOON_VENV_TRIED"] = "1"; os.execv(venv, [venv] + sys.argv)
     raise
 
 def arg(flag, default=None):
