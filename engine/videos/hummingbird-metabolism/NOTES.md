@@ -4,20 +4,29 @@ Every spot where the manual (`engine/PRODUCER.md`), the skill, the kit README, t
 was wrong, missing, ambiguous or cost time. Format: file / what I expected / what was true / what I did.
 "Cost" is wall-clock time lost. Shared code was not edited.
 
-## Run log (wall clock, 4 cores, this machine)
+## Run log (wall clock, 4 cores, this machine): 10:03 to 12:04, 2 h 01 min
 
 | Step | Budget in PRODUCER.md | Used |
 |---|---|---|
-| read manual, skill, style bible, kit and audio READMEs, the example | (none given) | 5 min |
-| topic, facts, script | 30 min | 12 min |
+| read the manual, the skill, the style bible, the kit and audio READMEs, the example's files | (none given) | 5 min |
+| topic, facts (web search, calc), script | 30 min | 9 min |
 | voice (3 runs) and shot plan | 15 min | 8 min |
-| picture: code, 1 full sheet + 4 partial sheets | 110 min | 45 min |
-| proxy render and frame check: 1 full pass (27 min) + 3 partial passes (11, 10, 2 min) | "about 20 min" | 50 min, overlapping the sound and the notes |
-| sound (3 builds of 38 s), metadata, ledger | 25 min | 6 min |
-| final contact sheets | (not in the budget) | 9 min |
+| picture: code, first stills, 1 full contact sheet, 2 partial ones | 110 min | 33 min |
+| proxy pass 1 of the whole film + frame check; sound, metadata, ledger and these notes written meanwhile | "about 20 min" + 25 min | 27 min |
+| frame-check fixes: 3 partial proxy passes (11, 10, 2 min) | (not in the budget) | 22 min |
+| final contact sheets, two last fixes with their proxy passes, gate | 10 min | 17 min |
 
-The picture budget is generous; what is not in the budget is the waiting: every look at the film costs 8 minutes
-(sheets) or 10 to 27 minutes (proxy), and the frame checker needed three rounds.
+Result: `toon/check.py` prints `check OK` (no warnings); proxy QA: `FRAMES 2001; black []; unplanned white [];
+frozen spans [] ... POPS [] ... NEAR POPS [] ... QA CLEAN`; sound: -14.01 LUFS, -1.2 dBTP, all checks passed.
+
+The picture budget is generous. What the budget does not show is the waiting: every look at the film costs 8
+minutes (sheets) or 10 to 27 minutes (proxy), and the frame checker needed three rounds after the first pass.
+
+Note on the tools: while this run was going, shared code and manuals were changed by someone else (commit e7f624a,
+11:52: `voice/frames.txt`, `build.py --check` without a score, event ids, `planned_pops`, `toon-sheet.py --shots`,
+PRODUCER.md wording, the type check `-p tsconfig.toon.json` inside `toon/check.py`). I did not use any of the new
+features; I re-ran the type check, the sound build and the gate against the new code at the end and all pass.
+Items 1, 3, 4, 5, 7, 8, 9, 11, 20, 21, 23 and 28 below describe the tools as they were when I hit the problem.
 
 ## Top five by time lost
 

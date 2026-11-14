@@ -22,6 +22,8 @@ export type OceanParams = {
   pipe?: boolean;
   /** the rowboat with lantern, rod and float (default true) */
   boat?: boolean;
+  /** the boat's lantern is lit (default true). By day its halo reads as a white glare behind the boat: pass false. */
+  lantern?: boolean;
 };
 
 const TAU = Math.PI * 2;
@@ -178,7 +180,9 @@ export class Ocean implements PlaceObj {
     this.lineG.scale.set(1, len, 1);
     this.lineG.quaternion.copy(B.quaternion.clone().invert()).multiply(new THREE.Quaternion().setFromUnitVectors(V(0, -1, 0), d.normalize()));
     const fk = 1 + 0.06 * Math.sin(f * 0.9) + 0.04 * Math.sin(f * 1.7 + 1);
-    this.lamp.color.setRGB(3.2 * fk, 1.9 * fk, 0.6 * fk);
+    const lit = q.lantern ?? true;
+    this.halo.visible = lit;
+    if (lit) this.lamp.color.setRGB(3.2 * fk, 1.9 * fk, 0.6 * fk); else this.lamp.color.setRGB(0.78, 0.74, 0.6);
     this.halo.scale.setScalar(2.3 * (0.96 + 0.04 * fk));
   }
 }

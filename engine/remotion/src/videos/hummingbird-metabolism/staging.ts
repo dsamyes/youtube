@@ -185,7 +185,7 @@ const garden = (c: Ctx) => {
     if (f >= TO_HEAT - 3 && f < 972) {
       const hand = g.at(lit ? g.A.R : g.A.propR, 0.06), k = q(sm(f, TO_HEAT - 3, TO_HEAT + 4) * (1 - sm(f, 960, 972)) * (0.9 + 0.1 * Math.sin(f * 1.3)), 20), t = q(((f * 0.19) % 1), 24);
       if (k > 0.04) fx(c, `flame9|${t}|${k}`, 300, 420, (p) => draw.fxFlame(p, t, k), [hand[0], hand[1] + 0.2 * k + (lit ? 0.02 : -0.04), hand[2]], 0.34, 0.48, { gain: 1.5 });
-      sparkle(c, [hand[0] + 0.02, hand[1] + 0.12, hand[2] + 0.02], TO_HEAT - 1, 12, 0.5);
+      sparkle(c, [hand[0] + 0.14, hand[1] + 0.3, hand[2] + 0.02], TO_HEAT - 1, 12, 0.3);
     }
     const top = g.at(g.A.head, -0.04);
     heat(c, [top[0], top[1] + 0.3, top[2]], 0.5, heatA, 0, 0.0);

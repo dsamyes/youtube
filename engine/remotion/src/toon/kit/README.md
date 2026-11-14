@@ -23,7 +23,8 @@ python3 scripts/toon-sheet.py <id> --from-video --frames 400,404,408   # frames 
 python3 scripts/toon-render.py <id> --scale 0.25 --only 4,5   # after a fix: only those shots again, then joined
 ```
 
-Time (4 cores, a 65 s film of 21 shots): contact sheets 7 minutes, proxy 19 minutes, QA 16 seconds.
+Time (4 cores, a 65 s film of 21 shots): contact sheets 8 to 10 minutes (start them in the background; `--shots
+3,13` renders only those), proxy 19 to 27 minutes, QA 16 seconds.
 The final render is 86 minutes in one job, so it runs in parallel jobs, each rendering its own shots:
 
 ```
@@ -79,7 +80,8 @@ export const dofAt = dofTable([{ f: 0, cInf: 12, focus: focusOn(GUS_AT, 1.4) }, 
 **`staging.ts`**: `export const stage = (c: Ctx) => { ... }`, called for every frame. `c.id` shot, `c.f` frame,
 `c.shot.place`, `c.cam` (lens position and axes). It calls `put()` for each character and effect helpers.
 
-**`entry.tsx`**: keep it as the template has it. It registers ONE composition with the id `Short`:
+**`entry.tsx`**: keep it as the template has it, except for `dress` and `places` (section 9), which are added to
+the story object here. It registers ONE composition with the id `Short`:
 
 ```tsx
 const Short = makeShort({ total: T.total, shots: T.shots, xfade: T.xfade, flash: T.flash, cam: camAt, dof: dofAt, place: placeAt, stage });
@@ -87,11 +89,23 @@ registerRoot(() => <Composition id="Short" component={Short} durationInFrames={T
 ```
 
 During a crossfade the incoming shot is drawn from `a - xfade/2`, and the town samples every camera from `a - 8` to
-`b + 8`: `camAt`, `placeAt` and `stage` must work a few frames outside their shot.
+`b + 8`: `camAt`, `placeAt` and `stage` must work a few frames outside their shot. Both shots are on screen for those
+frames, so nothing may move across a crossfade: an action that ends on the cut is seen twice, in two places. End it
+10 frames before.
 
 ## 4. Places
 
 Units are metres, y is up. One place per shot, named in shots.json. Options come from `placeAt(id, f)`.
+
+The frame is narrow. At fov 40 a 1080x1920 picture is 0.41 x the lens distance wide and 0.73 x tall (fov 36: 0.37
+and 0.65): 1.7 m across at 4.2 m. Two characters fit when they stand at most 1.0 m apart and the lens is 4.3 m away;
+further apart, one of them is cut by the edge. Two things side by side on a table leave the upper and lower thirds
+empty: stage a comparison in depth or one above the other when you can.
+
+Screen right depends on which way the lens looks: toward -z (the garden's main view) screen right is +x; toward +z
+(the park) screen right is -x, so every sideways offset flips its sign. `c.cam` carries the lens axes (`right`,
+`up`, `fwd`: three.js vectors), so `[p[0] + 0.3 * c.cam.right.x, p[1], p[2] + 0.3 * c.cam.right.z]` is 30 cm to
+screen right of `p` in any shot.
 
 ### garden and park (one town; `TownParams`)
 
@@ -156,10 +170,18 @@ with sizes of 1.5-3 m.
 Open sea, water at y 0. A steel pipe stands at the origin (rim `PIPE_H` 0.95 over the water, bore `PIPE_R` 0.62);
 a rowboat with a lantern at `BOAT` [1.45, 0, 0.5]; `FISHER_SEAT` [1.74, -0.15, -0.03] is the card base of someone
 sitting in it (`mode: "chair"`, add `0.025 * Math.sin(f * 0.07)` to y: the boat bobs). Made for light `night` (moon
-low in the north, behind the pipe as seen from +z). Options: `pipe: false`, `boat: false`. Someone rising out of
+low in the north, behind the pipe as seen from +z). Options: `pipe: false`, `boat: false`, `lantern: false` (unlit, for daylight). Someone rising out of
 the pipe: `put(c, GUS, pose, [0, y, 0], { wide: true })` with y from `PIPE_H - 1.78` (hidden) to `PIPE_H + 0.5`.
 Cameras: wide `dolly([0.45, 1.35, 8.7], [0.86, 1.35, 0.2], k, { fov: 42 })`; two-shot
 `dolly([0.7, 1.98, 6.8], [0.82, 1.9, 0.2], k, { fov: 42 })` with DOF 9.
+
+By day pass `lantern: false`: the lit lantern's halo reads as a white glare behind the boat. The boat lies with
+its bow toward the lens and its oars stick out about a metre to both sides at head height of a swimmer: someone in
+the water goes in front of the bow, nearer the lens (`[0.8, y, 2.3]`), never beside the hull. A swimmer is a standing
+card sunk into the water: soles at y -1.15 puts the water at the collar. Keep it there; water cuts a card in a
+ruler-straight line, and at chin height a 3 cm bob eats the chin. Swimmer with the boat behind:
+`dolly([0.7, 0.84, 5.2], [1.04, 0.58, 0.5], k, { fov: 40 })`; close on the swimmer:
+`dolly([2.05, 0.64, 4.8], [0.85, 0.44, 2.3], k, { fov: 38 })` with DOF 11.
 
 ## 5. Light presets
 
@@ -184,6 +206,9 @@ the low sun with open sky behind the subject.
 `put(c, LOOK, pose, [x, y, z], opts)` places a character standing with its soles at that point, facing the lens.
 It returns `{ A, at }`: `g.at(g.A.propR)` is the world position of the right hand's prop; anchors are `L`, `R`
 (hands), `propL`, `propR`, `mouth`, `head`, `top`. A card is 2.16 m tall; eyes sit about 1.4 m above the soles.
+`head` is the centre of the head. `top` is NOT the top of the head: it floats 0.14 m above the crown (and 0.09 m
+above the fisherman's hat), which is right for a question mark and wrong for something that sits on the head; for
+that, go down from `top` by those amounts. Gus's fishbowl is a circle of radius 0.33 m centred 1 cm above `head`.
 
 Looks: `GUS` (striped pyjamas, glass fishbowl helmet), `WIFE` (green dress, apron, bun), `NEIGHBOR` (stout, bald,
 moustache, Hawaiian shirt), `FISHER` (yellow oilskin, sou'wester, grey beard). The park pair (kid on the swing and
@@ -195,7 +220,10 @@ Pose fields:
   `legs: [[x, y], [x, y]]` or spread `...flail(f)`).
 - `expr`: `neutral stern smile smile_closed grin laugh relief relief_open wow shock jawdrop nervous sad pained dazed
   asleep whistle lick bite chew flap`. Speaking: `expr: talk(f)` while the line runs. `chew` and `flap` animate with
-  `chew: phase` / `flap: phase` (0..1 repeating).
+  `chew: phase` / `flap: phase` (0..1 repeating). What some of them look like, because the names mislead:
+  `neutral` is a deadpan, half-lidded face (the wife's resting look, wrong for a puzzled hero: use `wow` or
+  `nervous`); `dazed` has spiral eyes; `chew` and `bite` have happy closed eyes (nobody can chew and look worn out);
+  `stern` is a frown. Render one still per face you have not used before.
 - `facing` -1 / 0 / 1 (head turned to screen left / front / right), `look` -1..1 (eyes), `blink: lidAt(f, n)` (n = any
   number per character; `lidAt(f, n, [frames])` blinks across an expression change so it does not pop).
 - `tilt` (body lean, degrees), `headTilt`, `squash` 0..1 (crouch before a jump).
@@ -207,7 +235,12 @@ Pose fields:
   `reach(c, pos, side, worldPoint)` gives the `h` that puts the hand on a point in the world.
 - Hand props (`prop`, `arg`): `clipboard`; `thermo` (arg 0..1 level, 2 popped); `pan` (arg = flick angle);
   `fork` with a sausage (0 raw, 1 burning, 2 burnt); `plate` with a sandwich (1 = bitten); `timer` (arg = dial
-  degrees). Gus only: `acc` 0..1 tips the helmet back like a lid (needs `tall: true`).
+  degrees). Gus only: `acc` 0..1 tips the helmet back like a lid (needs `tall: true`). The fork always carries a
+  sausage: for an empty one copy its drawing into your folder without it (section 9).
+- A hand prop that is lifted to the character's own face disappears: the head is drawn after the arms. Anything that
+  goes to the mouth (a burger, a cup) is an effect card placed on the hand anchor instead, `fx(..., g.at(g.A.L,
+  0.07), ...)`, which sits in front of the whole character. Effect cards are not lit: at night give them
+  `gain: 0.6`.
 
 `put` options: `scale`, `mirror`, `face: true` + `roll` (card faces the lens fully and can tumble: falling),
 `wide: true` (an arm or prop reaches more than 0.6 m sideways), `tall: true` (something rises above the head),
@@ -225,7 +258,9 @@ up as a pop in the QA.
 - Keys per shot: the first key is the framing at the shot's start; a later key `{ f, dur, s }` glides there over
   `dur` frames (18-40), centred on the beat at `f + dur / 2`. `cut: true` jumps. Reframe more than half a frame
   width only with a cut. Two shots can share one key list (`CAMS[5] = CAMS[6]`) for an invisible shot change.
-- `camRig(CAMS, [[frame, strength]])`: kicks shake the image for 7 frames (0.5 light, 1.4 hard).
+- `camRig(CAMS, [[frame, strength]])`: kicks shake the image for 7 frames (0.5 light, 1.4 hard). Kicks above 0.4
+  only where the picture is already moving (falls, glides, splashes, the shaft): in a quiet medium shot with a slow
+  push the frame checker reads the same kick as a pop. There use 0.3 or none.
 - `dofTable([{ f, cInf, focus }])`: `cInf` = background blur: 0 sharp (wides, shaft, earth), 7-9 two-shots, 12-13
   medium shots and close-ups. `focus: focusOn(point, dy)`; without it the focus is the camera's look point. An entry
   with `dur` ramps with the camera glide that shares its `f` and `dur`.
@@ -260,6 +295,11 @@ Positions next to a character come from its anchors: `sparkle(c, add(g.at(g.A.L,
   drawing... }, pos, widthMetres, heightMetres, { rot, flat, soft, gain })`. The key names the drawing; put every
   number that changes the drawing into the key, rounded with `q(v, steps)`. Pen: `poly ell stroke arc dot line clip
   band` with ink outlines (`ol` = outline width). Examples: `fxFeather`, `fxPancake` in `kit/people.ts`.
+  Effect cards are not lit by the scene, and `soft: true` cards (steam, glow, fog) always draw on top of
+  everything. So: a glow card "on" a prop washes the prop out (put it 10 cm behind the prop, then it is a halo);
+  fog or steam in front of a character also covers his ink outline, so clip the drawing to the inside of the shape
+  yourself. `gain` multiplies the colour only, never the alpha: fading a soft card in with `gain` starts as a dark
+  blob. Fade by drawing with less alpha, with the strength rounded into the key (`q(strength, 8)`).
 - **Hand prop**: `PROPS.torch = (p, hx, hy, side, u, arg) => { ...draw around the hand...; return [tipX, tipY]; }`,
   then `R: { h: [...], prop: "torch", front: true }`.
 - **Cast member**: a `Look` object (colours plus optional painters for hair, hat, beard, clothes), copied from `WIFE`
@@ -287,8 +327,10 @@ Depth of field costs about half as much again as the whole rest of the frame (th
 Use it for medium shots and close-ups, not for wides. The hole short (1935 frames) took 86 minutes in one job;
 `--part i/6` gives six jobs of 13-16 minutes. A still takes 5-11 s plus 16 s for the bundle.
 
-Proxy (`--scale 0.25`): 19 minutes for the same film; 0.35-0.6 s per frame in the shaft, on the earth and the ocean,
-0.7-1.3 s in the garden and the park (their geometry does not shrink with the picture). Card drawings and bloom are
+Proxy (`--scale 0.25`): 19 minutes for the same film, 27 minutes for a 2001-frame film that lives in the garden
+(budget 30 there); 0.35-0.6 s per frame in the shaft, on the earth and the ocean, 0.7-1.3 s in the garden and the
+park (their geometry does not shrink with the picture). The chunks `out/<id>/proxy/shot_NN.mp4` are plain mp4
+files: look at one shot's motion as soon as it is done instead of waiting for the whole pass. Card drawings and bloom are
 rendered smaller too; colours stay within 2 % of the final. The frame checker reads a proxy almost like the final
 (same curve; scores about 6 % lower, thin effects up to 40 % lower), which is why `toon-qa.py --proxy` also fails on
 near pops from 0.8. The final film is checked again at full size by `toon/finish.py`.
@@ -311,13 +353,18 @@ near pops from 0.8. The final film is checked again at full size by `toon/finish
 6. **QA pops.** `toon-qa.py` flags any frame that changes far more than its neighbours, except shot starts,
    crossfades and flashes from shots.json. Causes met so far: a head or eye direction that snaps in one frame; a
    prop that vanishes for a frame or changes hands; a body that drops out of a close shot in under 8 frames (start
-   the fall slowly: 1.25 cm x frames squared passed); an effect that appears at full size (use `popIn`); an
-   expression change without a blink over it; a cut that is not a shot boundary in shots.json.
+   the fall slowly: 1.25 cm x frames squared passed); an effect that appears at full size (use `popIn`, or grow it
+   over 3-4 frames); an expression change without a blink over it; a cut that is not a shot boundary in shots.json;
+   a camera kick in a quiet shot (section 7). A blink covers a change of face, not a `headTilt` or `facing` change on
+   the same frame: ease every `headTilt` over 7-9 frames with `sm()`, and inside a held shot turn the eyes (`look`,
+   eased) instead of `facing`. The worked example snaps `facing` in one frame in the shaft, where everything moves
+   anyway; do not copy that into a calm shot. A pop the story wants goes into `planned_pops` (section 2).
 7. **Clipped cards.** Arms, props and lifted things outside the 600-unit card are cut off: `wide: true`,
    `tall: true`.
 8. **Things crossing faces.** Cards are flat and face the lens. A flying prop whose path crosses a face reads as part
    of the face; a post or line right behind a head reads as an antenna. Check the action frame of every shot on the
-   contact sheet.
+   contact sheet. Something tossed into a mouth must not arrive in a normal arc (the mouth is the lowest part of
+   the face, so the arc crosses the eyes for three frames): throw it flat and let it come up from below the chin.
 9. **Cards inside geometry.** A card placed on a surface sinks into it: lift it toward the lens (`earthPoint(s, 0.8)`,
    `g.at(anchor, 0.05)`).
 10. **Judge the look on stills, the motion on the proxy.** Stills are always rendered at full size and scaled

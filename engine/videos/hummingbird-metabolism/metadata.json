@@ -1,7 +1,22 @@
 {
   "title": "What If You Had a Hummingbird's Metabolism? 🤔",
   "description": "Gus wakes up burning energy like a hummingbird. The food is only his second-biggest problem: this is what physics says happens to the heat.\n\nThe numbers, for a 70 kg (154 lb) man with a hummingbird's energy use per gram:\n• About 120,000 calories a day: a 250-calorie hamburger every three minutes, day and night (other hummingbird species give up to 155,000)\n• Fifty times a normal man's 2,400 calories\n• Heart rate of a hummingbird in flight: about 1,200 beats a minute, twenty a second\n• Almost 6,000 watts of heat, as much as four 1,500-watt space heaters\n• Pound for pound a hummingbird has about twenty times more skin to lose heat through (18 to 25 times, depending on how you measure)\n• Even sweating as hard as a human can, he would warm up by more than 1 °C (about 2 °F) every minute\n• Cool sea water can carry that heat away. Air cannot.\n(Assumption: energy use scales with body mass, gram for gram. Real animals of human size run far slower, for exactly this reason.)\n\nSources:\n• Powers & Nagy, \"Field metabolic rate and food consumption by free-living Anna's hummingbirds\", Physiological Zoology 61, 500 (1988)\n• Powers & Conley, \"Field metabolic rate and food consumption of two sympatric hummingbird species\", The Condor 96, 141 (1994)\n• Lasiewski, Physiological Zoology 37, 212 (1964); Smithsonian National Museum of Natural History (heart rate)\n• Xu et al., \"The specific heat of the human body\", Temperature 10, 235 (2022); Institute of Medicine, Nutritional Needs in Hot Environments (1993) (sweat rates)\n• Nadel et al., \"Energy exchanges of swimming man\", Journal of Applied Physiology 36, 465 (1974)\n• Hainsworth & Wolf, Science 168, 368 (1970) (torpor)\n\nEvery number is computed in code and checked. Animation, narration and music are made with software and AI tools.\n\n#whatif #hummingbird #science",
-  "tags": ["what if", "hummingbird", "hummingbird metabolism", "hummingbird heart", "what if humans had hummingbird hearts", "metabolism", "calories", "square cube law", "body heat", "physics", "science", "animation", "animated story", "the if engine"],
+  "tags": [
+    "what if",
+    "hummingbird",
+    "hummingbird metabolism",
+    "hummingbird heart",
+    "hummingbird heart rate",
+    "what if you had a hummingbird's metabolism",
+    "metabolism",
+    "calories",
+    "square cube law",
+    "body heat",
+    "physics",
+    "science",
+    "animated story",
+    "the if engine"
+  ],
   "categoryId": "28",
   "containsSyntheticMedia": false,
   "playlist": "Shorts: 60-Second Ifs"
