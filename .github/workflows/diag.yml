@@ -149,8 +149,20 @@ jobs:
           }
           S=engine/producer.settings.json
           TOOLS="Bash Read Edit Write Glob Grep WebSearch WebFetch TodoWrite"
-          # the real probe (voice, a still through headless Chrome, ffmpeg) with the producer's flags
-          probe "P3 allowedTools producer-settings" --allowedTools $TOOLS --settings "$S"
+          # compound commands and a background command with the producer's exact flags
+          try "K allowedTools compound" 1 'mkdir -p engine/videos/_probe && cd engine && ls videos | head -3 > videos/_probe/hello.txt; echo done' --allowedTools $TOOLS --settings "$S"
+          rm -rf engine/videos/_probe
+          set +e
+          HOME="$RUNNER_TEMP/h" CLAUDE_CODE_SUBPROCESS_ENV_SCRUB=1 timeout 300 claude -p "Start this shell command with the Bash tool in the background (run_in_background true): mkdir -p engine/videos/_probe && sleep 8 && echo bg=1 > engine/videos/_probe/bg.txt   Then run 'sleep 12; cat engine/videos/_probe/bg.txt' with the Bash tool in the foreground and reply with the single word DONE." \
+            --model sonnet --max-turns 8 --output-format stream-json --verbose --allowedTools $TOOLS --settings "$S" > "$RUNNER_TEMP/v.jsonl" 2> "$RUNNER_TEMP/v.err"
+          rc=$?
+          set -e
+          echo "BACKGROUND: exit=$rc bg.txt=$(head -c 10 engine/videos/_probe/bg.txt 2>/dev/null | tr -cd '[:alnum:]=')"
+          jq -r 'select(.type=="user") | .message.content[]? | select(.type=="tool_result") | select(.is_error==true) | "BACKGROUND error: \(.content | tostring | .[0:200])"' "$RUNNER_TEMP/v.jsonl" 2>/dev/null | tr -cd '[:print:]\n' | head -4 || true
+          # what is left in the working tree after Claude's sandboxed commands (names only)
+          rm -rf engine/videos/_probe engine/remotion/out
+          echo "LEFTOVER: $(git status --porcelain=v1 --untracked-files=all | cut -c4- | head -40 | tr '\n' ' ' | tr -cd '[:alnum:]/._ -')"
+          echo "LEFTOVER sizes: $(git status --porcelain=v1 --untracked-files=all | cut -c4- | head -40 | xargs -r stat -c '%n:%s' 2>/dev/null | tr '\n' ' ' | tr -cd '[:alnum:]/._ :-')"
 
   trends:
     if: github.repository == 'dsamyes/youtube'
