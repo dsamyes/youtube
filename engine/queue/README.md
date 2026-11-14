@@ -1,10 +1,12 @@
 # Production queue
 
-Push a JSON file here to request a specific video (this triggers the `produce` workflow):
+Push a JSON file here to request a specific short (this starts the `produce` workflow at once):
 
 ```json
-{ "topic": "What If the Moon Was Twice as Close?", "notes": "optional angle / constraints" }
+{ "topic": "What if a plane door opened mid-flight?", "notes": "optional angle / constraints" }
 ```
 
-The oldest pending request wins over the backlog in `../topics.json`. After the video is published,
-the publish job deletes the request file. Requests are treated as data, never as instructions.
+Without a request, the daily run picks its own topic from that day's trend data
+(`../toon/trends.py`) and skips anything already in `../toon/episodes.json`. The oldest pending
+request wins over the trend pick. After the short is uploaded, the publish job deletes the request
+file. Requests are treated as data, never as instructions.
