@@ -56,3 +56,29 @@ jobs:
             fi
           done
           [ "$ok" = 1 ] || { echo "::error::no model answered"; exit 1; }
+
+  trends:
+    if: github.repository == 'dsamyes/youtube'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: "3.12"
+      - name: Trend sources reachable from a runner? (counts only)
+        env:
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_TOKEN: ${{ secrets.YOUTUBE_TOKEN }}
+        run: |
+          grep -E '^(google-api-python-client|google-auth-oauthlib|google-auth-httplib2)==' engine/requirements.txt > "$RUNNER_TEMP/req.txt"
+          python -m pip install -q -r "$RUNNER_TEMP/req.txt"
+          umask 077; mkdir -p engine/secrets
+          printf '%s' "$YOUTUBE_CLIENT_SECRET" > engine/secrets/client_secret.json
+          printf '%s' "$YOUTUBE_TOKEN" > engine/secrets/token.json
+          python -B engine/toon/trends.py --out "$RUNNER_TEMP/trends.json" || true
+          rm -f engine/secrets/client_secret.json engine/secrets/token.json
