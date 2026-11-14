@@ -81,7 +81,7 @@ jobs:
       - name: System packages (ffmpeg, bubblewrap)
         run: |
           sudo apt-get update -qq
-          sudo apt-get install -y -qq ffmpeg bubblewrap >/dev/null
+          sudo apt-get install -y -qq ffmpeg bubblewrap socat >/dev/null
           if bwrap --ro-bind / / --dev /dev --proc /proc true 2>/dev/null; then echo "bwrap: works as installed"; else
             echo "bwrap: blocked by the user-namespace restriction, lifting it"
             sudo sysctl -q -w kernel.apparmor_restrict_unprivileged_userns=0
@@ -124,16 +124,32 @@ jobs:
             wrote=no; [ -f engine/videos/_probe/hello.txt ] && wrote=yes
             echo "VARIANT $name: exit=$rc file_written=$wrote | $res"
           }
+          probe() {  # name, extra flags...: the real probe (voice, a still through headless Chrome, ffmpeg)
+            name=$1; shift
+            rm -rf engine/videos/_probe engine/remotion/out/_template
+            set +e
+            HOME="$RUNNER_TEMP/h" CLAUDE_CODE_SUBPROCESS_ENV_SCRUB=1 BASH_DEFAULT_TIMEOUT_MS=600000 BASH_MAX_TIMEOUT_MS=3600000 timeout 900 \
+              claude -p "Run this one shell command with the Bash tool from the repository root, with a timeout of 900000 ms, then reply with the single word DONE: bash engine/diag/sandbox_probe.sh" \
+              --model sonnet --max-turns 4 --output-format stream-json --verbose "$@" > "$RUNNER_TEMP/v.jsonl" 2> "$RUNNER_TEMP/v.err"
+            rc=$?
+            set -e
+            res=$(jq -r 'select(.type=="user") | .message.content[]? | select(.type=="tool_result") | "error=\(.is_error // false) \(.content | tostring | .[0:260])"' "$RUNNER_TEMP/v.jsonl" 2>/dev/null | tr -cd '[:print:]\n' | head -1)
+            R=engine/videos/_probe/result.txt
+            echo "PROBE $name: exit=$rc | $res"
+            if [ -f "$R" ]; then echo "PROBE $name: $(grep -E '^(voice|still|ffmpeg|token_visible|tmp_write)=[0-9]+$' "$R" | tr '\n' ' ')"; else echo "PROBE $name: no result file"; fi
+            if [ -f engine/remotion/out/_template/stills/f30.jpg ]; then echo "PROBE $name: still file $(stat -c %s engine/remotion/out/_template/stills/f30.jpg) bytes"; else echo "PROBE $name: still file missing"; fi
+            for l in voice still; do
+              if [ -f "engine/videos/_probe/$l.log" ] && ! grep -q "^$l=0$" "$R" 2>/dev/null; then echo "PROBE $name: last lines of $l.log:"; tail -c 700 "engine/videos/_probe/$l.log" | tr -cd '[:print:]\n' | tail -6; fi
+            done
+          }
           S=engine/producer.settings.json
-          C1='mkdir -p engine/videos/_probe && echo hello=1 > engine/videos/_probe/hello.txt'
           C2='bash engine/diag/hello.sh'
-          try "A scrub=1 skip-permissions settings  plain" 1 "$C1" --dangerously-skip-permissions --settings "$S"
-          try "B scrub=1 skip-permissions settings  script" 1 "$C2" --dangerously-skip-permissions --settings "$S"
-          try "C scrub=1 skip-permissions no-settings script" 1 "$C2" --dangerously-skip-permissions
-          try "D scrub=0 skip-permissions settings  script" 0 "$C2" --dangerously-skip-permissions --settings "$S"
-          try "E scrub=1 mode=bypassPermissions settings script" 1 "$C2" --permission-mode bypassPermissions --settings "$S"
-          try "F scrub=1 allowedTools=Bash settings script" 1 "$C2" --allowedTools "Bash" --settings "$S"
-          try "G scrub=1 mode=dontAsk allowedTools=Bash script" 1 "$C2" --permission-mode dontAsk --allowedTools "Bash" --settings "$S"
+          try "B2 scrub=1 skip-permissions settings (socat installed)" 1 "$C2" --dangerously-skip-permissions --settings "$S"
+          try "F2 scrub=1 allowedTools=Bash settings (socat installed)" 1 "$C2" --allowedTools "Bash" --settings "$S"
+          try "H scrub=1 skip-permissions sandbox-settings" 1 "$C2" --dangerously-skip-permissions --settings engine/diag/settings_sandbox.json
+          try "I scrub=1 dontAsk sandbox-settings" 1 "$C2" --permission-mode dontAsk --settings engine/diag/settings_sandbox.json
+          probe "P1 skip-permissions sandbox-settings" --dangerously-skip-permissions --settings engine/diag/settings_sandbox.json
+          probe "P2 skip-permissions producer-settings" --dangerously-skip-permissions --settings "$S"
 
   trends:
     if: github.repository == 'dsamyes/youtube'
