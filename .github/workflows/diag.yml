@@ -1,0 +1,56 @@
+# Preflight for the automatic producer: does Claude Code start on a runner, and which models does the
+# owner's token allow? Runs only when a file under engine/diag/ is pushed to main. Prints fixed fields only.
+name: diag
+
+on:
+  push:
+    branches: [main]
+    paths: ["engine/diag/*.json"]
+
+permissions: {}
+
+concurrency:
+  group: if-engine-diag
+  cancel-in-progress: true
+
+env:
+  CLAUDE_CODE_VERSION: "2.1.321"
+
+jobs:
+  claude:
+    if: github.repository == 'dsamyes/youtube'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: "22"
+      - name: Install Claude Code
+        run: |
+          npm install -g --no-audit --no-fund "@anthropic-ai/claude-code@${CLAUDE_CODE_VERSION}"
+          node -v; claude --version; nproc; free -g | sed -n 2p
+      - name: One-word reply per model
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          DISABLE_AUTOUPDATER: "1"
+        run: |
+          if [ -z "${CLAUDE_CODE_OAUTH_TOKEN}" ]; then echo "::error::CLAUDE_CODE_OAUTH_TOKEN secret missing"; exit 1; fi
+          mkdir -p "$RUNNER_TEMP/h" "$RUNNER_TEMP/w"; cd "$RUNNER_TEMP/w"
+          ok=0
+          for m in claude-fable-5-2 opus sonnet; do
+            set +e
+            HOME="$RUNNER_TEMP/h" timeout 120 claude -p "Reply with the single word OK." --model "$m" --max-turns 1 \
+              --output-format json > out.json 2> err.log
+            rc=$?
+            set -e
+            line=$(jq -r '"subtype=\(.subtype) error=\(.is_error) turns=\(.num_turns) ms=\(.duration_ms) models=\((.modelUsage // {}) | keys | join(","))"' out.json 2>/dev/null || true)
+            echo "model=$m exit=$rc ${line:-no JSON}"
+            if [ "$rc" -ne 0 ]; then
+              # CLI start-up errors only (no model output): first lines, capped
+              head -c 400 err.log | tr -cd '[:print:]\n' | head -5 || true
+              jq -r '(.result // "") | tostring | .[0:200]' out.json 2>/dev/null | tr -cd '[:print:]\n' || true
+            else
+              ok=1
+            fi
+          done
+          [ "$ok" = 1 ] || { echo "::error::no model answered"; exit 1; }
