@@ -1,0 +1,104 @@
+{
+  "model": "a 70 kg man with the mass-specific field metabolic rate of a free-living hummingbird (linear in mass)",
+  "inputs": {
+    "birds_fmr_kJ_day_mass_g": {
+      "anna": [
+        32.0,
+        4.48
+      ],
+      "black_chinned": [
+        29.1,
+        3.67
+      ],
+      "blue_throated": [
+        81.7,
+        8.77
+      ]
+    },
+    "gus_kg": 70.0,
+    "gus_kcal_day": 2400.0,
+    "burger_kcal": 250.0,
+    "heart_bpm": 1200.0,
+    "space_heater_W": 1500.0,
+    "c_body_J_kgK": [
+      2980.0,
+      3470.0
+    ],
+    "sweat_max_L_h": 2.0,
+    "gus_skin_m2_dubois": 1.8481430181213463
+  },
+  "energy": {
+    "kcal_day": 119502.86806883363,
+    "kcal_day_by_species": {
+      "anna": 119502.86806883363,
+      "black_chinned": 132657.95218322298,
+      "blue_throated": 155857.90250528156
+    },
+    "kJ_per_g_day_by_species": {
+      "anna": 7.142857142857142,
+      "black_chinned": 7.929155313351499,
+      "blue_throated": 9.315849486887116
+    },
+    "times_gus_normal": 49.79286169534735,
+    "gus_normal_watts": 116.22222222222223,
+    "burgers_per_day": 478.01147227533454,
+    "one_burger_every_min": 3.0124800000000005,
+    "sugar_kg_per_day": 30.3030303030303,
+    "bird_sugar_fraction_of_body_mass": 0.4329004329004329
+  },
+  "heart": {
+    "beats_per_second": 20.0,
+    "lowest_audible_Hz": 20.0
+  },
+  "heat": {
+    "watts": 5787.0370370370365,
+    "watts_by_species": {
+      "anna": 5787.0370370370365,
+      "black_chinned": 6424.0841659097805,
+      "blue_throated": 7547.56324169095
+    },
+    "space_heaters": 3.8580246913580245,
+    "max_sweat_cooling_W": 1347.7777777777778,
+    "net_heating_W": 4323.0370370370365,
+    "deg_C_per_min_no_cooling": 1.4294862998033027,
+    "deg_C_per_min_max_sweat": 1.067855999268103,
+    "deg_C_per_min_max_sweat_low_c": 1.243443059550442,
+    "deg_F_per_min_max_sweat": 1.9221407986825854,
+    "minutes_to_plus_4C": 3.7458234094686524,
+    "sweat_needed_L_h": 8.587524045067324,
+    "sea_cooling_W_rest_18C": 6376.093412518644,
+    "sea_cooling_W_swim_18C": 16078.844257655712,
+    "water_vs_air_conductivity": 23.076923076923077,
+    "water_vs_air_h": 23.0,
+    "night_8h_kcal": 39834.28935627788,
+    "night_8h_fat_kg": 5.1732843319841395,
+    "night_8h_fat_lb": 11.405126103978873
+  },
+  "skin": {
+    "per_mass_ratio_geometry": 24.999999999999993,
+    "per_mass_ratio_meeh_vs_dubois": 22.98724292476502,
+    "per_mass_ratio_skin_under_plumage": 18.64265401198443,
+    "bird_cm2": 27.189576011048825
+  },
+  "fry_vs_potato": {
+    "fry_tau_min": 8.4,
+    "potato_tau_min": 52.49999999999999,
+    "fry_min_to_45C": 8.648803104321729,
+    "potato_min_to_45C": 54.05501940201079,
+    "fry_C_after_10_min": 41.285350189938335,
+    "potato_C_after_30_min": 59.53026854054314,
+    "ratio": 6.249999999999999
+  },
+  "facts_with_sources": {
+    "fmr_anna": "Powers & Nagy 1988, Physiological Zoology 61:500-506: FMR about 32 kJ/day at a mean mass of 4.48 g (5.2 x BMR), doubly labelled water.",
+    "fmr_two_more": "Powers & Conley 1994, The Condor 96:141-150: 29.1 kJ/day (black-chinned, 3.67 g) and 81.7 kJ/day (blue-throated, 8.77 g).",
+    "popular_figure": "Audubon Magazine, 'Where Do Hummingbirds Get All That Energy?': scaled to a human, about 155,000 calories a day.",
+    "heart": "Lasiewski 1964, Physiological Zoology 37:212-223; Smithsonian NMNH 2022: up to 1,200 beats per minute.",
+    "specific_heat": "3.47 kJ/kg/C classic; Xu et al. 2022, Temperature 10:235, about 2.98.",
+    "sweat": "Institute of Medicine 1993, Nutritional Needs in Hot Environments (NBK236237): 1.5 L/h unacclimatised, 2-3 L/h acclimatised; 580 kcal per litre evaporated.",
+    "water": "Nadel et al. 1974, J. Appl. Physiol. 36:465-471 (heat flow from skin in water at rest and swimming).",
+    "torpor": "Hainsworth & Wolf 1970, Science 168:368-369; Shankar et al. 2020, J. Avian Biol. e02305: nightly torpor cuts a hummingbird's energy use by most of its resting rate.",
+    "burger": "McDonald's USA, Hamburger: 250 Cal.",
+    "calorie_needs": "Dietary Guidelines for Americans 2020-2025, Appendix 2: sedentary man 31-40, 2,400 kcal/day."
+  }
+}

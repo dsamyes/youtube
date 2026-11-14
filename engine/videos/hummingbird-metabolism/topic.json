@@ -1,0 +1,20 @@
+{
+ "id": "hummingbird-metabolism",
+ "question": "What if you had a hummingbird's metabolism?",
+ "answer_in_one_line": "You would need about 120,000 calories a day (a hamburger every three minutes), and the real problem is the heat: almost 6,000 watts in a body with twenty times too little skin to shed it, so you warm up by more than a degree a minute.",
+ "trend_basis": [
+  {"source": "youtube_shorts", "evidence": "The week's top row of the 'what if' query is 'What If Humans Had Hummingbird Hearts' (Zack D. Films, 26.0M views, 3.95M views/day, 6.6 days old); an Arabic remake of the same theme is in the list too (Gaafora, 0.97M views, 150k/day). The theme shows up twice in 60 rows."},
+  {"source": "youtube_shorts", "evidence": "Kind of question that wins this week: body and everyday scenarios. Of the true 'what if you/humans' rows, hummingbird hearts 3.95M/day, plane door 2.16M/day, fell overboard 0.85M/day, swallowed a fish 0.71M/day; the best space row (Northern Taurids) has 0.33M/day."},
+  {"source": "own_channel", "evidence": "Our abstract space shorts sit at 1 to 73 views/day; the first cartoon short with Gus got 96 views/day in its first hours, the best row on the channel."},
+  {"source": "google_trends", "evidence": "missing in this trend file (google_trends: URLError, wikipedia_top: RuntimeError), so there is no second source to cross with"}
+ ],
+ "why_this_one": "Strongest row of the week, a body scenario, and the honest physics answer is not the one people expect: the food is absurd but possible to say in one number, the heat is what actually stops you (square-cube law). Our take is the energy balance with Gus, computed from field measurements; nothing is taken from the trending video but the theme. All of it can be drawn with kit places (garden, park, ocean) and kit props (pan, sausage fork, thermometer, timer).",
+ "rejected": [
+  "plane door opens mid-flight (2.16M views/day): strong and everyday, but it needs a cabin and an aircraft, two new places with nothing in the kit to start from; too much risk for the picture budget",
+  "falling overboard (0.85M/day): the kit has an ocean, but the honest content is survival and cold-water advice, close to medical advice and to accidents with victims",
+  "swallowing a live fish (0.71M/day): something a child could imitate",
+  "standing still beats walking on the escalator (0.59M/day): the answer is the whole of the trending video; taking it would be taking the video, not the theme",
+  "wingsuit physics (0.75M/day): a dangerous stunt as a what-if-you",
+  "world ends Friday the 13th, Napoleon, Cinderella, three-headed dog: fiction or real people, no physics answer"
+ ]
+}
