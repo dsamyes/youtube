@@ -1,0 +1,35 @@
+# word@frame at 30 fps (frame = start of the word); written by toon/voice.py, do not edit
+line  1  frames 0..137
+   Gus@0 is@8 trying@11 to@19 open@21 a@31 plane@32 door@44 seven@51 miles@61 up,@75 and@91 he's@94 in@102 no@106 danger@113 at@128 all.@130
+line  2  frames 141..276
+   It's@141 three@146 in@155 the@159 afternoon,@163 he@190 just@193 woke@200 up@208 from@213 a@218 nap,@219 and@237 he@242 thinks@244 it's@252 the@256 bathroom.@258
+line  3  frames 280..364
+   His@280 wife@283 screams.@291 His@318 neighbor@323 grabs@333 his@344 seat@347 belt.@356
+line  4  frames 368..479
+   Gus@368 pulls@373 harder.@382 Nothing.@401 He@423 puts@426 a@432 foot@433 on@440 the@444 wall.@446 Still@459 nothing.@467
+line  5  frames 483..582
+   But@483 wait.@486 Gus@501 isn't@511 that@519 weak.@525 So@543 what's@546 holding@552 the@564 door@566 shut?@573
+line  6  frames 586..741
+   You@586 see,@589 up@598 here@604 the@610 air@618 outside@623 is@637 thin.@642 It@664 presses@667 a@677 fifth@678 as@692 hard@695 as@707 the@710 air@717 on@723 the@726 ground.@728
+line  7  frames 745..847
+   So@745 the@749 cabin@751 is@762 pumped@766 up@775 like@779 a@784 tire,@785 and@808 all@811 that@818 air@824 wants@830 out.@841
+line  8  frames 850..1010
+   It@850 leans@853 on@864 every@868 square@877 inch@890 of@896 the@898 door,@901 eight@925 pounds@930 harder@941 than@953 the@958 thin@960 air@970 outside@979 pushes@994 back.@1004
+line  9  frames 1014..1164
+   And@1014 a@1017 door@1018 has@1029 a@1034 lot@1035 of@1042 square@1044 inches.@1054 Add@1080 them@1087 up,@1092 and@1106 you@1109 get@1112 almost@1116 twenty@1127 thousand@1136 pounds.@1148
+line 10  frames 1168..1243
+   That@1168 is@1171 the@1175 weight@1176 of@1185 four@1187 cars,@1196 parked@1216 on@1226 the@1229 door.@1231
+line 11  frames 1247..1395
+   Ever@1247 pull@1252 a@1259 suction@1260 cup@1273 off@1279 a@1283 window?@1284 There's@1308 no@1314 glue.@1321 It's@1341 just@1346 air@1355 pushing@1362 on@1373 one@1377 side.@1383
+line 12  frames 1399..1548
+   A@1399 plane@1400 door@1413 is@1422 a@1425 plug,@1427 a@1451 bit@1453 bigger@1459 than@1467 its@1472 hole,@1476 so@1490 it@1495 has@1497 to@1505 come@1508 in@1516 before@1520 it@1529 swings@1531 out.@1542
+line 13  frames 1551..1640
+   To@1551 open@1555 it,@1565 Gus@1575 would@1584 have@1588 to@1592 drag@1594 in@1606 all@1609 four@1615 cars.@1624
+line 14  frames 1644..1689
+   Luckily,@1644 nobody@1658 can@1673 do@1678 that.@1682
+line 15  frames 1693..1825
+   Unluckily,@1693 he@1712 still@1717 needs@1725 the@1734 bathroom,@1737 and@1764 the@1767 door@1769 only@1779 lets@1789 go@1797 on@1801 the@1808 ground.@1810
+line 16  frames 1829..1929
+   So@1829 he@1834 tries@1836 the@1847 next@1850 door,@1859 the@1877 one@1879 door@1887 on@1895 this@1898 plane@1902 he@1912 can@1914 open.@1918
+line 17  frames 1933..1955
+   It's@1933 taken.@1938

@@ -1,0 +1,21 @@
+{
+ "id": "plane-door-midflight",
+ "question": "What if you tried to open a plane door mid-flight?",
+ "answer_in_one_line": "You can't: at cruise the cabin air presses on the door about eight pounds per square inch harder than the thin air outside, almost twenty thousand pounds on a door that has to move inward before it can swing out, the weight of four cars.",
+ "trend_basis": [
+  {"source": "youtube_shorts", "evidence": "'What if a Plane Door Opened Mid-flight' (FactoHolic, 8.98M views, 2.11M views/day, 4.3 days old) is the strongest true 'what if' scenario row of the week that this channel has not made; the only one above it, 'What If Humans Had Hummingbird Hearts' (3.89M/day), is already in toon/episodes.json. FactoHolic has 23.5M subscribers, so the row alone says as much about the channel as about the topic."},
+  {"source": "youtube_shorts", "evidence": "The same kind of question, an everyday travel mishap, wins for smaller channels too: 'What If You Fell Overboard?' (Aquish, 136k subscribers, 0.86M views/day) and an Arabic 'what happens if you jump later than your friend' (MASS, 19.5k subscribers, 0.27M/day). Space and abstract rows are absent from the top of the list this week."},
+  {"source": "own_channel", "evidence": "Our abstract space shorts sit at 1 to 68 views/day; the first cartoon short with Gus ('What If You Jumped Into a Hole Through the Earth?') has 548 views/day in its first hours, the best row on the channel."},
+  {"source": "google_trends / wikipedia_top / science_news", "evidence": "No second source to cross with: today's searches are sport and celebrity names, Wikipedia's top is people and films, and the science headlines (Starship flight 15, a temporary mini-moon, the Leonids) are space topics, which do badly for us."}
+ ],
+ "why_this_one": "The owner's queue file names no topic and says to choose from the trend file. The plane door is the strongest undone row, an everyday scenario everybody has thought about in a window seat, and the honest answer is the opposite of the trending video's premise: the door cannot open at all, and the reason is one multiplication (pressure difference times door area) that we can compute and check against the regulations and a pilot's published figure. Only the theme is taken; our angle (Gus mistakes the exit for the bathroom, four cars on a door, a suction cup on his helmet) is our own. It is drawable: one new interior built from boxes, the sky with a flat cartoon airliner, and the kit's garden. Nobody is hurt and there is nothing to imitate: the film shows that pulling does nothing.",
+ "rejected": [
+  "falling overboard (0.86M/day): the honest content is cold-water survival, close to medical advice and to accidents with victims; rejected in the last run for the same reason",
+  "swallowing a live fish (0.67M/day), eating a coin (0.55M/day): things a child could imitate",
+  "jumping out of a plane after your friend (0.27M/day): a dangerous stunt as a what-if-you",
+  "giving a camel water mid-journey (0.72M/day, a 14k-subscriber channel): pulls by itself, but it is an animal fact with no 'you' and no physics number to compute",
+  "a tiny new moon orbiting Earth, the Leonid storm, Starship (science headlines): abstract space topics, the kind that gets single-digit views on this channel",
+  "three-headed dog, Cinderella's slipper, Napoleon, the world ending on Friday the 13th: fiction or real people, no physical answer",
+  "hummingbird hearts (3.89M/day): already made (hummingbird-metabolism)"
+ ]
+}

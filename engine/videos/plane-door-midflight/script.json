@@ -1,0 +1,29 @@
+{
+  "id": "plane-door-midflight",
+  "title": "What If You Tried to Open a Plane Door Mid-Flight?",
+  "voice": {
+    "provider": "kokoro",
+    "voice": "am_michael",
+    "speed": 1.2,
+    "gap_s": 0.12
+  },
+  "lines": [
+    "Gus is trying to open a plane door seven miles up, and he's in no danger at all.",
+    "It's three in the afternoon, he just woke up from a nap, and he thinks it's the bathroom.",
+    "His wife screams. His neighbor grabs his seat belt.",
+    "Gus pulls harder. Nothing. He puts a foot on the wall. Still nothing.",
+    "But wait. Gus isn't that weak. So what's holding the door shut?",
+    "You see, up here the air outside is thin. It presses a fifth as hard as the air on the ground.",
+    "So the cabin is pumped up like a tire, and all that air wants out.",
+    "It leans on every square inch of the door, eight pounds harder than the thin air outside pushes back.",
+    "And a door has a lot of square inches. Add them up, and you get almost twenty thousand pounds.",
+    "That is the weight of four cars, parked on the door.",
+    "Ever pull a suction cup off a window? There's no glue. It's just air pushing on one side.",
+    "A plane door is a plug, a bit bigger than its hole, so it has to come in before it swings out.",
+    "To open it, Gus would have to drag in all four cars.",
+    "Luckily, nobody can do that.",
+    "Unluckily, he still needs the bathroom, and the door only lets go on the ground.",
+    "So he tries the next door, the one door on this plane he can open.",
+    "It's taken."
+  ]
+}

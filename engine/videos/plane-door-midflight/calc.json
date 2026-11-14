@@ -1,0 +1,60 @@
+{
+  "model": "airliner at 38,000 ft, cabin at the 8,000 ft limit of 14 CFR 25.841 (smallest difference in cruise); ISA pressures; Boeing 737 forward entry door 34 x 72 in",
+  "inputs": {
+    "cruise_ft": 38000.0,
+    "cabin_altitude_ft": 8000.0,
+    "door_in": [
+      34.0,
+      72.0
+    ],
+    "car_lb": 4303.0,
+    "cup_diameter_in": 2.0
+  },
+  "altitude": {
+    "cruise_miles": 7.196969696969697,
+    "cruise_km": 11.582400000000002
+  },
+  "pressure": {
+    "outside_kPa": 20.646148920703762,
+    "outside_psi": 2.9944707322998747,
+    "cabin_kPa": 75.26236031384485,
+    "cabin_psi": 10.915882476155938,
+    "outside_fraction_of_sea_level": 0.2037616473792624,
+    "cabin_fraction_of_sea_level": 0.7427817450169736,
+    "difference_kPa": 54.616211393141086,
+    "difference_psi": 7.921411743856062,
+    "difference_lb_per_sqft": 1140.6832911152728,
+    "b737_schedule_psi": [
+      7.45,
+      7.8,
+      8.35
+    ]
+  },
+  "door": {
+    "area_sq_in": 2448.0,
+    "area_sq_ft": 17.0,
+    "area_m2": 1.57935168,
+    "force_N": 86258.20521899252,
+    "force_lbf": 19391.61594895964,
+    "force_tonnes": 8.795889036418403,
+    "force_short_tons": 9.69580797447982,
+    "force_lbf_at_737_max_8.35psi": 20440.8,
+    "cars": 4.506534034152833,
+    "cars_at_737_max": 4.750360213804322,
+    "adults_pulling_700N_each": 123.2260074557036
+  },
+  "suction_cup": {
+    "area_sq_in": 3.141592653589793,
+    "max_hold_lbf": 46.16868471068497,
+    "max_hold_kg": 20.94176311770236
+  },
+  "facts_with_sources": {
+    "cabin_altitude": "14 CFR 25.841(a): a cabin pressure altitude of not more than 8,000 feet at the maximum operating altitude under normal operating conditions.",
+    "atmosphere": "ICAO Standard Atmosphere (Doc 7488) / U.S. Standard Atmosphere 1976 (NOAA, NASA, USAF): 101,325 Pa at sea level, 22,632 Pa at 11 km.",
+    "differential": "Boeing 737 FCOM pressurization schedule: 7.45 psid at or below FL280, 7.80 psid FL280-FL370, 8.35 psid above FL370.",
+    "popular_statement": "Patrick Smith (airline pilot), askthepilot.com, 'Open Door Policy': up to eight pounds of pressure push against every square inch of interior fuselage, over 1,100 pounds against each square foot of door.",
+    "plug_door": "Most airliner doors are plug-type: wider than the opening, they must be pulled inward before they can move out (askthepilot.com; AirlineRatings; Business Insider 2020).",
+    "door_size": "Boeing, 737 Airplane Characteristics for Airport Planning (D6-58325-6): forward entry door 34 x 72 in.",
+    "car": "EPA Automotive Trends Report 2023: average new vehicle weight 4,303 lb (record high)."
+  }
+}

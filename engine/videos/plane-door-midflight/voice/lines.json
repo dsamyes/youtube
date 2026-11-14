@@ -1,0 +1,144 @@
+{
+ "voice": "kokoro-v1.0:am_michael@1.2",
+ "duration_s": 65.168,
+ "words": 244,
+ "wps": 3.74,
+ "lines": [
+  {
+   "line": 1,
+   "text": "Gus is trying to open a plane door seven miles up, and he's in no danger at all.",
+   "s": 0.0,
+   "e": 4.584,
+   "words": 18,
+   "wps": 3.93
+  },
+  {
+   "line": 2,
+   "text": "It's three in the afternoon, he just woke up from a nap, and he thinks it's the bathroom.",
+   "s": 4.704,
+   "e": 9.208,
+   "words": 18,
+   "wps": 4.0
+  },
+  {
+   "line": 3,
+   "text": "His wife screams. His neighbor grabs his seat belt.",
+   "s": 9.328,
+   "e": 12.142,
+   "words": 9,
+   "wps": 3.2
+  },
+  {
+   "line": 4,
+   "text": "Gus pulls harder. Nothing. He puts a foot on the wall. Still nothing.",
+   "s": 12.262,
+   "e": 15.976,
+   "words": 13,
+   "wps": 3.5
+  },
+  {
+   "line": 5,
+   "text": "But wait. Gus isn't that weak. So what's holding the door shut?",
+   "s": 16.096,
+   "e": 19.41,
+   "words": 12,
+   "wps": 3.62
+  },
+  {
+   "line": 6,
+   "text": "You see, up here the air outside is thin. It presses a fifth as hard as the air on the ground.",
+   "s": 19.53,
+   "e": 24.714,
+   "words": 21,
+   "wps": 4.05
+  },
+  {
+   "line": 7,
+   "text": "So the cabin is pumped up like a tire, and all that air wants out.",
+   "s": 24.834,
+   "e": 28.228,
+   "words": 15,
+   "wps": 4.42
+  },
+  {
+   "line": 8,
+   "text": "It leans on every square inch of the door, eight pounds harder than the thin air outside pushes back.",
+   "s": 28.348,
+   "e": 33.692,
+   "words": 19,
+   "wps": 3.56
+  },
+  {
+   "line": 9,
+   "text": "And a door has a lot of square inches. Add them up, and you get almost twenty thousand pounds.",
+   "s": 33.812,
+   "e": 38.816,
+   "words": 19,
+   "wps": 3.8
+  },
+  {
+   "line": 10,
+   "text": "That is the weight of four cars, parked on the door.",
+   "s": 38.936,
+   "e": 41.44,
+   "words": 11,
+   "wps": 4.39
+  },
+  {
+   "line": 11,
+   "text": "Ever pull a suction cup off a window? There's no glue. It's just air pushing on one side.",
+   "s": 41.56,
+   "e": 46.504,
+   "words": 18,
+   "wps": 3.64
+  },
+  {
+   "line": 12,
+   "text": "A plane door is a plug, a bit bigger than its hole, so it has to come in before it swings out.",
+   "s": 46.624,
+   "e": 51.588,
+   "words": 22,
+   "wps": 4.43
+  },
+  {
+   "line": 13,
+   "text": "To open it, Gus would have to drag in all four cars.",
+   "s": 51.708,
+   "e": 54.692,
+   "words": 12,
+   "wps": 4.02
+  },
+  {
+   "line": 14,
+   "text": "Luckily, nobody can do that.",
+   "s": 54.812,
+   "e": 56.316,
+   "words": 5,
+   "wps": 3.32
+  },
+  {
+   "line": 15,
+   "text": "Unluckily, he still needs the bathroom, and the door only lets go on the ground.",
+   "s": 56.436,
+   "e": 60.85,
+   "words": 15,
+   "wps": 3.4
+  },
+  {
+   "line": 16,
+   "text": "So he tries the next door, the one door on this plane he can open.",
+   "s": 60.97,
+   "e": 64.324,
+   "words": 15,
+   "wps": 4.47
+  },
+  {
+   "line": 17,
+   "text": "It's taken.",
+   "s": 64.444,
+   "e": 65.168,
+   "words": 2,
+   "wps": 2.76
+  }
+ ]
+}

@@ -1,0 +1,29 @@
+{
+ "_doc": "Sound plan of plane-door-midflight, read by engine/toon/audio/build.py (manual: engine/toon/audio/README.md).",
+ "key": "Bb",
+ "tempo": 144,
+ "seed": 5207,
+ "theme": "tiptoe",
+ "places": {
+  "cabin": "room",
+  "sky": "void",
+  "garden": "outdoor"
+ },
+ "sections": [
+  {"from": 0, "mood": "silence", "_why": "the hook: engine rumble, three yanks on the handle"},
+  {"from": 139, "mood": "theme", "_why": "afternoon nap on the plane; starts on the flash"},
+  {"from": 280, "mood": "chase", "hits": [399, 473], "_why": "scream, panic, pulling: downbeats on 'Nothing' and on the fall"},
+  {"from": 483, "mood": "silence", "_why": "'But wait': dead stop with the record_stop event"},
+  {"from": 586, "mood": "mystery", "_why": "the explanation: thin air outside, the pumped-up cabin"},
+  {"from": 850, "mood": "mystery", "_why": "the door: one square inch, eight pounds"},
+  {"from": 1054, "mood": "chase", "hits": [1125], "_why": "add them up: the big weight slams on 'twenty thousand'"},
+  {"from": 1168, "mood": "theme", "_why": "the garden: four cars, the suction cup"},
+  {"from": 1399, "mood": "mystery", "_why": "the plug: in before out"},
+  {"from": 1551, "mood": "chase", "_why": "dragging four cars"},
+  {"from": 1644, "mood": "bittersweet", "hits": [1693], "_why": "'Luckily' ... 'Unluckily' (1693)"},
+  {"from": 1764, "mood": "runup", "_why": "the landing: the door lets go by itself"},
+  {"from": 1829, "mood": "finale", "_why": "the next door; button right after the last word"}
+ ],
+ "dips": [],
+ "sfx": {}
+}
