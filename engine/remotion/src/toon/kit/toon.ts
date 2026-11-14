@@ -228,7 +228,8 @@ export const DEF_LIGHT = rad(-120);
 // ---------------- faces ----------------
 export type Expr = "neutral" | "stern" | "grin" | "laugh" | "whistle" | "nervous" | "shock" | "relief" | "relief_open" | "dazed"
   | "pained" | "smile" | "smile_closed" | "lick"
-  | "wow" | "asleep" | "jawdrop" | "sad" | "bite" | "chew" | "flap";
+  | "wow" | "asleep" | "jawdrop" | "sad" | "bite" | "chew" | "flap"
+  | "talk_shut" | "talk_mid" | "talk_open";
 type EyeK = "dot" | "small" | "lid" | "slit" | "happy" | "dash" | "squeeze" | "shock" | "shockHalf" | "spiral" | "shut";
 type MouthK = "dash" | "frown" | "smirk" | "smile" | "smileWide" | "grin" | "laugh" | "o" | "O" | "wave" | "teeth" | "lick" | "oo" | "jaw" | "chew" | "flap" | "chomp";
 /** eyes [back, front], brows [inner, outer] offsets in u (+ = down), mouth kind */
@@ -255,6 +256,10 @@ const FACE: Record<Expr, { eye: [EyeK, EyeK]; brow: [number, number]; mouth: Mou
   bite: { eye: ["dot", "dot"], brow: [-5, -5], mouth: "chomp" },
   chew: { eye: ["happy", "happy"], brow: [-1, -1], mouth: "chew" },
   flap: { eye: ["squeeze", "squeeze"], brow: [-6, -6], mouth: "flap" },
+  // speaking (cast.ts talk() cycles these three: same eyes and brows, only the mouth moves)
+  talk_shut: { eye: ["dot", "dot"], brow: [-1, -2], mouth: "smirk" },
+  talk_mid: { eye: ["dot", "dot"], brow: [-1, -2], mouth: "oo" },
+  talk_open: { eye: ["dot", "dot"], brow: [-1, -2], mouth: "grin" },
 };
 export const halfLid = (k: EyeK): EyeK => (k === "dot" || k === "small" ? "lid" : k === "lid" ? "slit" : k === "shock" ? "shockHalf" : k);
 export const eyeKind = (k: EyeK, lid: number): EyeK =>

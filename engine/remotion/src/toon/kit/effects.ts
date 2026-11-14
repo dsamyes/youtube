@@ -7,7 +7,8 @@
 import { Ctx, fx, q, behind } from "./cast";
 import { V3 } from "./story";
 import { fxBurst, fxSplash, fxPuff, fxRing, fxCloud, fxStars, fxNote } from "./toon";
-import { fxSparkle, fxQuestion, fxArrow, fxPop, fxFlame, fxSoot, fxBird, fxBubble } from "./people";
+import { fxSparkle, fxQuestion, fxArrow, fxPop, fxFlame, fxSoot, fxBird, fxBubble, fxTrail, miniGus } from "./people";
+import { earthPoint, EARTH_ROLL } from "./places/earth";
 
 /** pop-in scale: 0 -> 1.25 overshoot -> settles on 1; use it for anything that appears on a beat */
 export const popIn = (f: number, f0: number, n = 6) => {
@@ -107,4 +108,15 @@ export const note = (c: Ctx, pos: V3, f0: number, kind = 0, n = 40) => {
   if (c.f < f0 || c.f >= f0 + n) return;
   const age = (c.f - f0) / n, s = 0.3 * Math.min(1, age * 5) * (1 - Math.max(0, age - 0.75) * 4);
   fx(c, `note${kind}`, 220, 260, (p) => fxNote(p, kind), [pos[0] + 0.12 * Math.sin(age * 7), pos[1] + 0.85 * age, pos[2]], s * (220 / 260), s);
+};
+/** tiny Gus in the tunnel of the Earth cutaway (earth place) at tunnel point s (-1 = the garden on top, 0 = the
+ *  centre, +1 = the far side). size 1 = about 1.1 m tall on the 5 m globe; arms 1 = up (falling), 0 = down;
+ *  trail 0..1 = speed streaks behind him (dirDown = he moves toward +s) */
+export const earthMini = (c: Ctx, s: number, size: number, arms: number, expr: "o" | "smile" | "flat", trail: number, dirDown: boolean) => {
+  const p = earthPoint(s, 0.8), rot = EARTH_ROLL + (dirDown ? 0 : 0);
+  if (trail > 0.05) {
+    const t = earthPoint(s + (dirDown ? -1 : 1) * (0.09 + 0.1 * trail) * (size / 1.0), 0.76);
+    fx(c, `trail${q(trail, 10)}`, 200, 400, (pp) => fxTrail(pp, q(trail, 10)), t, 0.5 * size, 1.0 * size * (0.5 + 0.5 * trail), { rot: rot + (dirDown ? 0 : Math.PI), soft: false });
+  }
+  fx(c, `mini|${arms}|${expr}`, 300, 400, (pp) => miniGus(pp, arms, expr), p, 0.82 * size, 1.09 * size, { rot });
 };

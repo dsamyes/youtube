@@ -1,0 +1,152 @@
+// Composition shell of the cartoon-short kit (the cartoon-3d-short skill's bridge template, made story-agnostic):
+// makeShort(story) is the film as a React component; src/videos/<id>/entry.tsx registers it as the composition "Short"
+// (1080x1920, 30 fps, story.total frames).
+// One three.js world (world.ts) per canvas, posed per frame from the story. Post chain:
+//   InkPass (world ink lines, own pass) -> lens blur pre + main (thin-lens DOF per shot from story.dof) ->
+//   [bloom (emissive only) + NEUTRAL tone mapping + colour grade] (one merged EffectPass), MSAA 4.
+// Ink runs before the DOF so lines blur with what they belong to; bloom after the DOF so glows defocus with their
+// source; the grade is display-referred, so it comes after tone mapping. Every pixel-sized parameter is specified at
+// 1080x1920 and scaled with the output size, so stills at --scale 0.5 and the 1440x2560 final match.
+// Place changes crossfade by stacking a second canvas for the fade frames (story.xfade); story.flash frames start a
+// 4-frame white flash. Look values are the template's: do not tune them per video.
+import React, { useEffect, useMemo, useRef, useState } from "react";
+import * as THREE from "three";
+import { AbsoluteFill, continueRender, delayRender, getInputProps, useCurrentFrame } from "remotion";
+import { ThreeCanvas } from "@remotion/three";
+import { useFrame, useThree } from "@react-three/fiber";
+import { EffectComposer } from "@react-three/postprocessing";
+import { BlendFunction, BloomEffect, ToneMappingEffect, ToneMappingMode } from "postprocessing";
+import { World, loadKit, Story } from "./world";
+import { InkPass, noInkFallback } from "./ink";
+import { LensBlur, GrainEffect } from "./lensblur";
+import { GradeEffect, GRADES, GRADE_STRENGTH, gradeFor } from "./grade";
+import { Kit } from "./build";
+import { layersAt } from "./story";
+
+/** MSAA samples of the main render (the template uses 4) */
+const MSAA = 4;
+
+/** A/B switches for test stills only (Remotion inputProps `{ post: { ink: false, ... } }`); everything is on by default. */
+type PostToggles = { ink: boolean; lens: boolean; pre: boolean; bloom: boolean; grade: boolean; grain: boolean; msaa?: number };
+const toggles = (): PostToggles => ({ ink: true, lens: true, pre: true, bloom: true, grade: true, grain: false, ...((getInputProps() as { post?: Partial<PostToggles> }).post ?? {}) });
+
+/** Bloom for emissive sources only (depth.md 6.4). Its MIP chain always starts at 540x960 (half of 1080x1920),
+ *  whatever the output size, so the glow keeps the same size relative to the frame (e-fold ~30 px at 1080p,
+ *  ~1.5 % of the frame height) at 540, 1080 and 1440 widths. ADD blend: HDR-safe (SCREEN darkens values > 1). */
+const makeBloom = () => {
+  const b = new BloomEffect({ blendFunction: BlendFunction.ADD, intensity: 0.5, luminanceThreshold: 1.0, luminanceSmoothing: 0.2, mipmapBlur: true, levels: 6, radius: 0.6 });
+  const mip = b.mipmapBlurPass;
+  const setSize = mip.setSize.bind(mip);
+  mip.setSize = (w: number, h: number) => setSize(Math.round((1920 * w) / Math.max(h, 1)), 1920);
+  return b;
+};
+
+const fwd = new THREE.Vector3(), fpt = new THREE.Vector3();
+
+const useKit = () => {
+  const [kit, setKit] = useState<Kit | null>(null);
+  const [handle] = useState(() => delayRender("toon kit"));
+  useEffect(() => { loadKit().then((k) => { setKit(k); continueRender(handle); }); }, [handle]);
+  return kit;
+};
+
+const Inner: React.FC<{ id: number; kit: Kit; story: Story }> = ({ id, kit, story }) => {
+  const f = useCurrentFrame();
+  const { camera, scene } = useThree();
+  const world = useMemo(() => new World(kit, story), [kit, story]);
+  const target = useMemo(() => new THREE.Vector3(), []);
+  const on = useMemo(toggles, []);
+  const fx = useMemo(() => ({
+    ink: new InkPass(scene, camera as THREE.PerspectiveCamera),
+    lens: new LensBlur({ maxCoC: 24, nearScale: 1.2 }),
+    bloom: makeBloom(),
+    tone: new ToneMappingEffect({ mode: ToneMappingMode.NEUTRAL }),
+    grade: new GradeEffect(GRADES.day, GRADE_STRENGTH.day),
+    grain: new GrainEffect({ amount: 0.025, cellPx: 1.5 }), // film grain, OFF by default (inputProps post.grain): the reference measures no grain and it quadruples the file size
+  }), [camera, scene]);
+  useEffect(() => () => fx.ink.dispose(), [fx]);
+  // @react-three/postprocessing >= 3.2 creates its composer in an effect (one commit late) and builds the passes a
+  // commit after that, so the first advance() of a canvas (every still, the first frame of a render, each crossfade
+  // layer) would draw nothing. Hold the frame until the full chain exists, then advance once more.
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const compRef = useRef<any>(null);
+  const drawn = useRef(-1);
+  const advance = useThree((st) => st.advance);
+  useFrame(() => { if (compRef.current && compRef.current.passes.length > 1) drawn.current = f; }, 2);
+  // the shading uniforms are shared by every canvas: write this world's light right before this canvas is drawn
+  // (priority 0 runs before the composer's render at priority 1), so both layers of a crossfade keep their own light
+  useFrame(() => world.bind(), 0);
+  useEffect(() => {
+    if (drawn.current === f) return;
+    const hold = delayRender(`post chain for frame ${f}`);
+    let live = true, timer: ReturnType<typeof setTimeout>;
+    const tick = () => {
+      if (!live) return;
+      advance(performance.now());
+      if (drawn.current === f) { live = false; continueRender(hold); return; }
+      timer = setTimeout(tick, 10);
+    };
+    timer = setTimeout(tick, 0);
+    return () => { clearTimeout(timer); if (live) { live = false; continueRender(hold); } };
+  }, [f, advance]);
+  const post = useMemo(() => (
+    <EffectComposer ref={compRef} multisampling={on.msaa ?? MSAA}>
+      {on.ink ? <primitive object={fx.ink} dispose={null} /> : null}
+      {on.lens && on.pre ? <primitive object={fx.lens.pre} dispose={null} /> : null}
+      {on.lens ? <primitive object={fx.lens.main} dispose={null} /> : null}
+      {on.bloom ? <primitive object={fx.bloom} dispose={null} /> : null}
+      <primitive object={fx.tone} dispose={null} />
+      {on.grade ? <primitive object={fx.grade} dispose={null} /> : null}
+      {on.grain ? <primitive object={fx.grain} dispose={null} /> : null}
+    </EffectComposer>
+  ), [fx, on]);
+  const cam = camera as THREE.PerspectiveCamera;
+  target.copy(world.update(id, f, cam, scene));
+  noInkFallback(world.root);
+  // thin-lens focus: distance along the view axis to the shot's focus point (default: the camera's look target)
+  const d = story.dof ? story.dof(f) : { cInf: 0, focus: undefined };
+  cam.getWorldDirection(fwd);
+  if (d.focus) fpt.set(...d.focus(f)); else fpt.copy(target);
+  fx.lens.focus = Math.max(0.3, fpt.sub(cam.position).dot(fwd));
+  fx.lens.cInf = d.cInf;
+  gradeFor(fx.grade, story.shots[id - 1].light);
+  fx.grain.seed = f; // deterministic per frame
+  return (
+    <>
+      <primitive object={world.root} dispose={null} />
+      {post}
+    </>
+  );
+};
+
+/** test stills only: inputProps `{ post: { dpr: 0.5 } }` forces the WebGL buffer size (R3F clamps dpr to >= 1 by default) */
+const dprOverride = () => (getInputProps() as { post?: { dpr?: number } }).post?.dpr;
+const ShotView: React.FC<{ id: number; kit: Kit; alpha: number; story: Story }> = ({ id, kit, alpha, story }) => (
+  <AbsoluteFill style={{ opacity: alpha }}>
+    <ThreeCanvas width={1080} height={1920} {...(dprOverride() ? { dpr: dprOverride() } : {})} shadows gl={{ antialias: false, stencil: false, powerPreference: "high-performance", toneMappingExposure: 1.0 }}
+      camera={{ fov: 40, near: 0.2, far: 1500 }}>
+      <Inner id={id} kit={kit} story={story} />
+    </ThreeCanvas>
+  </AbsoluteFill>
+);
+
+const FLASH = [1, 0.75, 0.45, 0.2];
+/** the film as a React component: the `component` of the composition "Short" in src/videos/<id>/entry.tsx */
+export const makeShort = (story: Story): React.FC => {
+  for (const s of story.shots) if (story.shots[s.id - 1] !== s) throw new Error(`shot ids must run 1, 2, 3 ... in order (found id ${s.id} out of place)`);
+  const xfade = story.xfade ?? {}, flashes = story.flash ?? [];
+  const Short: React.FC = () => {
+    const f = useCurrentFrame();
+    const kit = useKit();
+    if (!kit) return null;
+    let flash = 0;
+    for (const f0 of flashes) if (f >= f0 && f < f0 + 4) flash = FLASH[f - f0];
+    return (
+      <AbsoluteFill style={{ background: "#0b0d1c" }}>
+        {layersAt(story.shots, xfade, f).map((l, i) => <ShotView key={i ? "over" : "base"} id={l.id} kit={kit} alpha={l.alpha} story={story} />)}
+        {flash > 0 && <AbsoluteFill style={{ background: "#ffffff", opacity: flash }} />}
+      </AbsoluteFill>
+    );
+  };
+  return Short;
+};

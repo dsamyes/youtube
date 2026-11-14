@@ -1,0 +1,20 @@
+{
+  "_doc": "Picture/sound contract of the kit's template short (engine/remotion/src/videos/_template). Copy this folder's shape for a new video: 30 fps, shots in order with ids 1, 2, 3 ..., frames a <= f < b, a kit place and a light preset per shot, optional crossfades (shot id -> frames) and flash frames, and the action frames as events.",
+  "fps": 30,
+  "total_frames": 150,
+  "places": {
+    "garden": "Gus's back garden with the hole (kit place, town)",
+    "earth": "the Earth cutaway in space (kit place)"
+  },
+  "shots": [
+    { "id": 1, "a": 0, "b": 60, "place": "garden", "light": "day", "line": "This is my hole.", "what": "medium shot: Gus by the hole talks to the lens, points down at it on 'hole'" },
+    { "id": 2, "a": 60, "b": 105, "place": "earth", "light": "space", "line": "It goes all the way through.", "what": "cut to the Earth cutaway: tiny Gus falls along the tunnel, an arrow pops in beside him" },
+    { "id": 3, "a": 105, "b": 150, "place": "garden", "light": "day", "line": "Probably.", "what": "back in the garden, wider: thumbs-up with a sparkle" }
+  ],
+  "xfade": {},
+  "events": [
+    { "f": 34, "type": "point", "note": "he points at the hole" },
+    { "f": 72, "type": "arrow_pop", "note": "the arrow appears" },
+    { "f": 126, "type": "ding", "note": "thumbs-up sparkle" }
+  ]
+}

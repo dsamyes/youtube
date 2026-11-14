@@ -153,6 +153,11 @@ export const lidAt = (f: number, i: number, swaps: number[] = []) => {
   return 0;
 };
 
+/** a speaking face: the expression to use at frame f while the character talks (mouth shapes change every 3 frames,
+ *  eyes and brows stay put); pass on = false for the pauses, seed to de-sync two speakers */
+const TALK: Expr[] = ["talk_shut", "talk_mid", "talk_open", "talk_mid", "talk_open"];
+export const talk = (f: number, on = true, seed = 0): Expr => (on ? TALK[Math.floor(hash(Math.floor(f / 3), 40 + seed) * TALK.length)] : "talk_shut");
+
 // ---------------- staging helpers ----------------
 /** what a story's stage(c) gets: the shot, the frame, the lens, and the lists it fills through put() / fx() */
 export type Ctx = { id: number; f: number; cam: CamInfo; out: Stage; light: LightName; shot: ShotDef };

@@ -1,7 +1,8 @@
-// The hole short's own cast, drawn with the template's Pen API and construction (toon.ts): bean heads (H/W .94),
-// bean torsos, single-stroke limbs with ink-dot hands, thick-thin plum outline weighted away from the light, the
-// template's face library. One posable front-view puppet (`figure`) with explicit arm targets, so every beat of the
-// story can be posed from cast.ts; each character is a `Look` (colours + hair / hat / beard / helmet painters).
+// The cast of the cartoon-short kit, drawn with the template's Pen API and construction (toon.ts): bean heads
+// (H/W .94), bean torsos, single-stroke limbs with ink-dot hands, thick-thin plum outline weighted away from the
+// light, the template's face library. One posable front-view puppet (`figure`) with explicit arm targets, so every
+// beat of a story can be posed from its stage(); each character is a `Look` (colours + hair / hat / beard / helmet
+// painters): GUS, WIFE, NEIGHBOR, FISHER here; a video adds its own by writing another Look.
 // Design space 600 x 1000 units, soles at y = 975 (same card geometry as the template's bodies).
 import {
   Pen, INK, SKIN, WHITE, mul, mix, shade, SH_SKIN, SH_CLOTH, P2, rad, clamp, rotAbout, curve, ellPts, rrect, taper, Blob, blobPts,
@@ -9,7 +10,12 @@ import {
 } from "./toon";
 
 export type Hand = "dot" | "thumb" | "point";
-export type PropName = "clipboard" | "thermo" | "pan" | "fork" | "plate" | "timer";
+/** built-in hand props; any other name is looked up in PROPS */
+export type PropName = "clipboard" | "thermo" | "pan" | "fork" | "plate" | "timer" | (string & {});
+/** hand props a video adds: PROPS.torch = (p, hx, hy, side, u, arg) => { ...draw around the hand at (hx, hy);
+ *  u = design units per "pixel" of the reference drawing (stroke widths x u), side = -1 left arm / +1 right arm,
+ *  arg = Arm.arg...; return [x, y]; } returns the prop's own anchor (its tip), reported as Anchors.propL / propR */
+export const PROPS: Record<string, (p: Pen, hx: number, hy: number, side: number, u: number, arg: number) => P2> = {};
 /** h = hand position from the shoulder in head heights (x outward on that arm's side, y down); bend = elbow offset */
 export type Arm = { h: [number, number]; bend?: number; front?: boolean; prop?: PropName; arg?: number; hand?: Hand };
 export type Pose = {
@@ -51,6 +57,8 @@ const HANG: Arm = { h: [0.17, 0.92], bend: 0.07 };
 // ---------------- props held in a hand ----------------
 /** draws the prop around the hand at (hx, hy); returns the prop's own anchor (sausage, sandwich, bulb ...) */
 const drawProp = (p: Pen, name: PropName, hx: number, hy: number, side: number, u: number, arg = 0): P2 => {
+  const custom = PROPS[name];
+  if (custom) return custom(p, hx, hy, side, u, arg);
   switch (name) {
     case "clipboard": {
       const a = rad(5 * side), c: P2 = [hx, hy];
@@ -152,6 +160,7 @@ const drawProp = (p: Pen, name: PropName, hx: number, hy: number, side: number, 
       return [hx, cy];
     }
   }
+  return [hx, hy];
 };
 
 // ---------------- the puppet ----------------
