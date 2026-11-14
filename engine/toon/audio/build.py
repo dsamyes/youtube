@@ -30,7 +30,7 @@ def vocabulary():
         out.append(f"| **{title}** | | | |")
         for sp, names in seen.values():
             if sp.group == group:
-                opts = "; ".join(f"`{k}`: {v}" for k, v in sp.params.items()) or "-"
+                opts = "; ".join(f"`{k}`: {v}" for k, v in sp.params.items()).replace(" | ", " / ") or "-"
                 out.append(f"| {', '.join('`%s`' % n for n in names)} | {span[sp.span]} | {sp.doc} | {opts} |")
     out += ["", "Every event also takes " + "; ".join(f"`{k}` ({v})" for k, v in sfx.COMMON.items()) + ".", "",
             "## Acoustics (score.json places)", "", "| name | for |", "|---|---|"]
@@ -59,7 +59,7 @@ def main(argv):
     try:
         P = Project(args[0])
         plan = music.Plan(P)
-        bad = plan.problems + (sfx.problems(P, plan) if not plan.problems else [])
+        bad = P.problems + plan.problems + sfx.problems(P, plan)
         if bad:
             raise Problems(bad)
     except Problems as e:

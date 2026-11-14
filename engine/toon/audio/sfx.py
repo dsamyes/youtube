@@ -12,12 +12,13 @@
 # "Dead cuts" (every white flash, every record_stop) silence everything that started before them, reverb included.
 import zlib
 import numpy as np
-from dsp import SR, ns, tt, rng, dbg, lp, hp, pan, st, place, widen, fades, make_ir, convolve_st, momentary_max, integrated
+from dsp import SR, ns, tt, rng, dbg, lp, hp, pan, st, place, widen, make_ir, convolve_st, momentary_max, integrated
 import sfx_gen as G
 import instruments as I
 from project import pick, hz
 
 SFX_DB = -6.0
+SILENT = ("music_", "pic_")      # event types with these prefixes make no sound: markers for the score / picture-only action frames
 
 # acoustics of a place -> (reverb, send, wet). score.json "places" maps every place of shots.json to one of these.
 ROOMS = {"outdoor": ("open", 0.10, False), "water": ("open", 0.14, True), "tunnel": ("tunnel", 0.22, False),
@@ -98,9 +99,9 @@ class Kit:
     def room(self, place_):
         v = self.P.rooms.get(place_, "outdoor")
         if isinstance(v, dict):
-            ir, send, wet = ROOMS[v.get("room", "outdoor")]
+            ir, send, wet = ROOMS.get(v.get("room"), ROOMS["outdoor"])
             return ir, float(v.get("send", send)), bool(v.get("wet", wet))
-        return ROOMS[v]
+        return ROOMS.get(v, ROOMS["outdoor"])
 
     def tonic6(self, ev):
         """MIDI note of the home note of the score at this event, in the octave C6..B6"""
@@ -138,7 +139,7 @@ class Kit:
     def cues(self):
         C = []
         for ev in self.P.ev:
-            if ev.type.startswith("music_"):        # a marker for the score; the score itself is score.json
+            if ev.type.startswith(SILENT):          # a marker, no sound
                 continue
             C += SOUND[ev.type].fn(self, ev, ev.opts, _rng(ev))
         return C
@@ -786,21 +787,21 @@ def problems(P, plan):
             bad.append(f'score.json: places has no acoustics for "{name}" (shots {", ".join(map(str, shots))}). Add "{name}": one of {", ".join(ROOMS)}.')
         elif not isinstance(room, str) or room not in ROOMS:
             bad.append(f'score.json: places "{name}": ' + pick(room, ROOMS, "acoustics"))
-        elif isinstance(v, dict) and (set(v) - {"room", "send", "wet"} or not isinstance(v.get("send", 0.1), (int, float)) or not 0 <= v.get("send", 0.1) <= 0.5):
+        elif isinstance(v, dict) and (set(v) - {"room", "send", "wet"} or isinstance(v.get("send", 0.1), bool) or not isinstance(v.get("send", 0.1), (int, float))
+                                      or not 0 <= v.get("send", 0.1) <= 0.5):
             bad.append(f'score.json: places "{name}": the long form is {{"room": ..., "send": 0..0.5, "wet": true/false}} (got {v!r})')
     for name in P.rooms:
         if name not in used and not name.startswith("_"):
             bad.append(f'score.json: places names "{name}", which no shot uses. Places in shots.json: {", ".join(sorted(used))}.')
-    if bad:
-        return bad
     K = Kit(P, plan)
     seen = {}
     for ev in P.ev:
         where = f'shots.json: event #{ev.i + 1} ("{ev.type}" at f{ev.f:g})'
-        if ev.type.startswith("music_"):
+        if ev.type.startswith(SILENT):
             continue
         if ev.type not in SOUND:
-            bad.append(f"{where}: " + pick(ev.type, SOUND, "event type") + " Use the nearest existing type; new sounds are not written per video.")
+            bad.append(f"{where}: " + pick(ev.type, SOUND, "event type") + ' Use the nearest existing type (new sounds are not written per video), '
+                       'or "pic_<name>" for an action frame of the picture that makes no sound.')
             continue
         if ev.key in seen:
             bad.append(f"{where}: a second {ev.type} on the same frame (event #{seen[ev.key] + 1}); remove one")

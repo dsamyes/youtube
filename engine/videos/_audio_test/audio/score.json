@@ -1,0 +1,25 @@
+{
+ "_doc": "Sound plan of the library's test short (see ../shots.json). Not the hole short's key, tempo, tune or mood order on purpose.",
+ "key": "D",
+ "tempo": 150,
+ "seed": 2026,
+ "theme": "hop",
+ "places": {
+  "kitchen": "room",
+  "street": "outdoor",
+  "space": "void"
+ },
+ "sections": [
+  {"from": 0, "mood": "silence", "_why": "cold open: the rocket rumble only"},
+  {"from": 120, "mood": "mystery", "_why": "the countdown in the rain"},
+  {"from": 263, "mood": "chase", "hits": [307], "_why": "she runs; a downbeat on the door slam"},
+  {"from": 400, "mood": "lullaby", "_why": "above the clouds"},
+  {"from": 490, "mood": "finale", "hits": [588], "_why": "button right after the last word"}
+ ],
+ "dips": [
+  [292, 312, -2.5]
+ ],
+ "sfx": {
+  "thunder@188": {"level": -4}
+ }
+}

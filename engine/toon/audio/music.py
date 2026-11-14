@@ -64,7 +64,7 @@ def seed_theme(seed):
     """a tune made from a number: swung rhythms from a small bank, chord tones on the beats, scale steps between,
     small leaps, the top note in bar 3, and a step into the home note of bar 4"""
     r = rng(1000003 + int(seed))
-    out, prev = [], int(r.choice([72, 77, 69]))
+    out, prev, before = [], int(r.choice([72, 77, 69])), None
     for bar in range(3):
         rhy = RHYTHMS[int(r.integers(len(RHYTHMS)))]
         for j, (beat, d) in enumerate(rhy):
@@ -76,8 +76,8 @@ def seed_theme(seed):
                 cand = [m for m in (76, 79, 74) if abs(m - prev) <= 7] or [76]
             if bar == 0 and j == 0:
                 cand = [prev]
-            w = np.array([1.0 / (1.0 + abs(m - prev)) * math.exp(-0.5 * ((m - (73 + 3.5 * bar)) / 5.0) ** 2) for m in cand])
-            prev = int(cand[int(r.choice(len(cand), p=w / w.sum()))])
+            w = np.array([1.0 / (1.0 + abs(m - prev)) * math.exp(-0.5 * ((m - (73 + 3.5 * bar)) / 5.0) ** 2) * (0.25 if m == before else 1.0) for m in cand])
+            before, prev = prev, int(cand[int(r.choice(len(cand), p=w / w.sum()))])      # (rocking between two notes is discouraged)
             out.append((bar, beat, d, prev))
     return out + [(3, 0, 2, 77)]
 
@@ -351,7 +351,7 @@ def lay_chase(P, s):
             best = (err, N, q, L0)
     err, N, q, L0 = best
     if N < 3 or (not s.bars and err > math.log(FIT)):
-        raise _short(s, P, "chase (three accelerating bars)", 2.6 * nom / FIT)
+        raise _short(s, P, "chase (three accelerating bars)", 2.82 * nom / FIT)
     free = s.a + L0 * (1 - q ** np.arange(N + 1)) / (1 - q)
     ks = []
     for h in s.hits:                                     # every hit becomes the nearest downbeat
@@ -753,7 +753,7 @@ MOODS = {
                     "For night, sea, space, sleep, wonder. A silence after it sounds like a held breath."),
     "bittersweet": Mood(lay_bittersweet, play_bittersweet, -11.5, -4, True, "0-1: the frame where it turns sour (default: the middle)",
                         "One little phrase twice: first sweet (music box, harp), then it droops with a soft sad trombone and lands on the dominant. For 'luckily ... unluckily', hope then oops."),
-    "runup": Mood(lay_runup, play_runup, -9.5, 0, False, "none", "Two to six fast accelerating bars on the dominant with a clarinet run: a spring that releases into the next section. "
+    "runup": Mood(lay_runup, play_runup, -9.5, 0, False, "none", "A few fast accelerating bars on the dominant with a clarinet run: a spring that releases into the next section. "
                   "For time-lapses, returns, 'here we go again'. Put it right before a theme or the finale."),
     "finale": Mood(lay_finale, play_finale, -9.5, 0, False, "0-1: the frame of the button (default: a third of a second before the section ends)",
                    "The tune comes home, warm and a little faster, with horns and pad, then the tag and the BUTTON, one short final chord. Use it once, as the last section."),

@@ -6,6 +6,7 @@
 // A story's stage(c) calls put() for every character and fx() (or the helpers in effects.ts) for every effect card;
 // it must be a pure function of the shot and the frame.
 import * as THREE from "three";
+import { getInputProps } from "remotion";
 import { Pen, bodySide, swingKid, KID, PARENT, fxShadow, fxContact, Expr, SideOpts, P2 } from "./toon";
 import { figure, anchorsOf, Look, Pose, Arm, fxStreak } from "./people";
 import { V3, ShotDef, smooth, clamp01, lerp, hash } from "./story";
@@ -126,11 +127,15 @@ export type FxPlace = { key: string; cw: number; ch: number; draw: (p: Pen) => v
 export type CamInfo = { pos: THREE.Vector3; right: THREE.Vector3; up: THREE.Vector3; fwd: THREE.Vector3; sun: THREE.Vector3; roll: number };
 export type Stage = { places: Place[]; fx: FxPlace[] };
 
+/** proxy renders only (inputProps `{ post: { cards: 0.5 } }`): resolution of every card drawing relative to the final's */
+export const CARD_RES = Math.max(0.1, Math.min(1, (getInputProps() as { post?: { cards?: number } }).post?.cards ?? 1));
 /** quantise (drawing keys: fewer distinct drawings = fewer canvases) */
 export const q = (v: number, n = 120) => Math.round(v * n) / n;
 /** drawing resolution by distance: [canvas w, h, scale from the 600 x 1000 design]; sized for the 1440 x 2560 final */
-export const tier = (d: number): [number, number, number] =>
-  d < 3.2 ? [1800, 3000, 3.0] : d < 6.5 ? [1080, 1800, 1.8] : d < 16 ? [480, 800, 0.8] : [240, 400, 0.4];
+export const tier = (d: number): [number, number, number] => {
+  const t: [number, number, number] = d < 3.2 ? [1800, 3000, 3.0] : d < 6.5 ? [1080, 1800, 1.8] : d < 16 ? [480, 800, 0.8] : [240, 400, 0.4];
+  return CARD_RES === 1 ? t : [Math.round(t[0] * CARD_RES), Math.round(t[1] * CARD_RES), t[2] * CARD_RES];
+};
 const tmp = new THREE.Vector3();
 /** canvas angle the key light comes FROM on a card facing the camera, in 45-degree steps (small texture cache) */
 export const light2D = (cam: CamInfo, mirror: boolean) => {
@@ -294,7 +299,7 @@ export const swingScene = (c: Ctx, m: SwingMotion, at: V3 = PARK) => {
   const expr: Expr = A < 0.4 ? "smile" : A < 0.62 ? "grin" : "laugh";
   const light = light2D(cam, true), lid = lidAt(f, 78);
   c.out.places.push({ key: `swing|${kick}|${expr}|${q(light)}|${lid}`, geo: "swing", x: at[0], y: at[1] + 2.88, z: at[2], yaw: Math.PI, roll: th,
-    draw: (p) => swingKid(p, KID, kick, expr, light, lid), size: [490, 1610, 0.7] });
+    draw: (p) => swingKid(p, KID, kick, expr, light, lid), size: [Math.round(490 * CARD_RES), Math.round(1610 * CARD_RES), 0.7 * CARD_RES] });
   if (!PUSHES.length) return;
   const push = Math.max(0, ...PUSHES.map((fp) => 1 - Math.abs(f - fp + 1.5) / 9.6));
   let k = 0;

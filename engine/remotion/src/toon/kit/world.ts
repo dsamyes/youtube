@@ -14,7 +14,7 @@ import { LIGHTS, LOOK, LightPreset, LightName } from "./lights";
 import { TONE, CHAR, untone } from "./shade";
 import { CARD_K } from "./cardshade";
 import { NOINK } from "./ink";
-import { Pool, Actor, Fx, SU_SWING, CamInfo, Ctx, Stage } from "./cast";
+import { Pool, Actor, Fx, SU_SWING, CamInfo, Ctx, Stage, CARD_RES } from "./cast";
 import { ShotDef, SunDef, Cam, V3 } from "./story";
 import { PlaceObj, PlaceFactory, PlaceCtx } from "./places/place";
 import { Town } from "./places/town";
@@ -316,7 +316,7 @@ export class World {
     for (const p of st.fx) {
       if (!this.frustum.intersectsSphere(this.sph.set(this.v.set(p.x, p.y, p.z), Math.max(p.w, p.h)))) continue;
       const fxm = this.fx(fi++);
-      fxm.r = this.pool.req(p.key, p.cw, p.ch, 1, p.draw);
+      fxm.r = CARD_RES === 1 ? this.pool.req(p.key, p.cw, p.ch, 1, p.draw) : this.pool.req(p.key, Math.max(2, Math.round(p.cw * CARD_RES)), Math.max(2, Math.round(p.ch * CARD_RES)), CARD_RES, p.draw);
       fxm.use(!!p.soft);
       fxm.mesh.visible = true;
       fxm.mesh.position.set(p.x, p.y, p.z);

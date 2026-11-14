@@ -3,7 +3,7 @@
 #     engine/.venv/bin/python engine/toon/audio/fake_voice.py <video_id> [--force]
 # reads  engine/videos/<id>/voice/words.json ([{w, s, e, line}], seconds)
 # writes engine/videos/<id>/voice/voice.wav: one formant-synthesized "word" per entry (speech-like spectrum and
-#        rhythm, no real words), 48 kHz mono 16-bit, peak 0.89, like toon/voice.py writes.
+#        rhythm, no real words), 48 kHz mono 16-bit, about -19 LUFS like the real narrator.
 # It refuses to replace an existing voice.wav unless --force is given. Never use it for a real video.
 # The self-test of the library: fake_voice.py _template, then build.py _template (see README.md).
 import json
@@ -15,7 +15,7 @@ import numpy as np
 
 sys.dont_write_bytecode = True
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from dsp import SR, ns, rng, hp                          # noqa: E402
+from dsp import SR, ns, rng, hp, lp, dbg, integrated     # noqa: E402
 import sfx_gen as G                                      # noqa: E402
 from project import VIDEOS                               # noqa: E402
 
@@ -51,7 +51,8 @@ def main(argv):
         x = word(str(w["w"]), float(w["e"]) - float(w["s"]), r, 118.0 * 0.985 ** k)
         a = ns(float(w["s"]))
         y[a:a + len(x)] += x[: len(y) - a]
-    y = y / (np.abs(y).max() + 1e-9) * 0.89
+    y = lp(y, 10000, 6)                                  # a 24 kHz speech model has nothing above 12 kHz
+    y = y * min(dbg(-19.3 - integrated(y)), 0.89 / (np.abs(y).max() + 1e-9))      # as loud as the real narrator, never over peak 0.89
     with wave.open(out, "wb") as f:
         f.setnchannels(1)
         f.setsampwidth(2)

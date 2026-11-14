@@ -1,0 +1,64 @@
+{
+ "voice": "stand-in (engine/toon/audio/fake_voice.py)",
+ "duration_s": 19.4,
+ "words": 62,
+ "wps": 3.2,
+ "lines": [
+  {
+   "line": 1,
+   "text": "If you launched a rocket from your kitchen, would it ever come back down?",
+   "s": 0.0,
+   "e": 3.74,
+   "words": 14,
+   "wps": 3.74
+  },
+  {
+   "line": 2,
+   "text": "Bea counts down while a storm rolls in.",
+   "s": 4.06,
+   "e": 6.2,
+   "words": 8,
+   "wps": 3.74
+  },
+  {
+   "line": 3,
+   "text": "Thunder cracks, and the neighbors gasp.",
+   "s": 6.34,
+   "e": 8.1,
+   "words": 6,
+   "wps": 3.41
+  },
+  {
+   "line": 4,
+   "text": "She runs inside and slams the door.",
+   "s": 8.6,
+   "e": 10.6,
+   "words": 7,
+   "wps": 3.5
+  },
+  {
+   "line": 5,
+   "text": "You see, above the clouds there is no weather at all.",
+   "s": 11.5,
+   "e": 14.6,
+   "words": 11,
+   "wps": 3.55
+  },
+  {
+   "line": 6,
+   "text": "Only the hum of space, and one very loud heartbeat.",
+   "s": 14.8,
+   "e": 17.7,
+   "words": 10,
+   "wps": 3.45
+  },
+  {
+   "line": 7,
+   "text": "The rocket is still up there.",
+   "s": 17.9,
+   "e": 19.4,
+   "words": 6,
+   "wps": 4.0
+  }
+ ]
+}

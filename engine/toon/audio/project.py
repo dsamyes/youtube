@@ -99,7 +99,8 @@ def _num(v):
 
 class Project:
     def __init__(self, video):
-        """video = an id under engine/videos/, or a path to a video folder. Raises Problems."""
+        """video = an id under engine/videos/, or a path to a video folder. Raises Problems when files are missing
+        or the timeline is broken; everything else that is wrong is collected in .problems."""
         self.dir = os.path.abspath(video) if os.path.isdir(video) else os.path.join(VIDEOS, video)
         self.id = os.path.basename(self.dir.rstrip(os.sep))
         self.out = os.path.join(self.dir, "audio")
@@ -113,7 +114,7 @@ class Project:
         if not os.path.isdir(self.dir):
             have = sorted(d for d in os.listdir(VIDEOS) if os.path.isfile(os.path.join(VIDEOS, d, "shots.json"))) if os.path.isdir(VIDEOS) else []
             raise Problems([f'no video folder {rel(self.dir)}. Folders with a shots.json: {", ".join(have) or "none"}.'])
-        need = [(self.shots_json, "the shot plan with the event table"), (self.score_json, "the sound plan; copy engine/videos/_template/audio/score.json and edit it"),
+        need = [(self.shots_json, "the shot plan with the event table"), (self.score_json, "the sound plan; start from engine/videos/_audio_test/audio/score.json or the hole short's, see engine/toon/audio/README.md"),
                 (self.voice_wav, "the narration, written by toon/voice.py"), (self.words_json, "word timings, written by toon/voice.py"),
                 (self.lines_json, "line timings, written by toon/voice.py")]
         missing = [f"missing file {rel(p)} ({why})" for p, why in need if not os.path.isfile(p)]
@@ -136,8 +137,7 @@ class Project:
         self._score(C, bad)
         self._events(S, bad)
         self._voice(W, Lj, bad)
-        if bad:
-            raise Problems(bad)
+        self.problems = bad                               # not fatal for the other checks: build.py reports them all together
 
     # ------------------------------------------------------------ shots.json
     def _shots(self, S, bad):
@@ -213,7 +213,7 @@ class Project:
         self.sections = C.get("sections")
         if not (isinstance(self.sections, list) and self.sections and all(isinstance(s, dict) for s in self.sections)):
             bad.append('score.json: \'sections\' must be a non-empty list like [{"from": 0, "mood": "silence"}, {"from": 118, "mood": "theme"}]')
-            self.sections = []
+            self.sections = [{"from": 0, "mood": "silence"}]
         self.rooms = C.get("places", {})
         if not isinstance(self.rooms, dict):
             bad.append('score.json: \'places\' must map every place of shots.json to its acoustics, e.g. {"garden": "outdoor"}')

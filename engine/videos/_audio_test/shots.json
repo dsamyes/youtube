@@ -1,0 +1,32 @@
+{
+  "_doc": "TEST DATA of the soundtrack library (engine/toon/audio), not a video: an invented 20 s short that uses many event types the hole short does not, in another key, tempo and mood order. Its narration is a synthetic stand-in. Build it with: engine/.venv/bin/python engine/toon/audio/fake_voice.py _audio_test --force && engine/.venv/bin/python engine/toon/audio/build.py _audio_test. The files double as a small copyable example of shots.json events with options and of audio/score.json.",
+  "fps": 30,
+  "total_frames": 600,
+  "flash_at": 120,
+  "places": {
+    "kitchen": "Bea's kitchen with a rocket where the fridge was",
+    "street": "the street outside in a thunderstorm, neighbours under umbrellas",
+    "space": "above the clouds: black sky, stars, the rocket as a tiny dot"
+  },
+  "shots": [
+    {"id": 1, "a": 0, "b": 120, "place": "kitchen", "light": "day", "line": 1, "what": "HOOK. The rocket shakes on the kitchen floor, engines building; white flash at 120."},
+    {"id": 2, "a": 120, "b": 400, "place": "street", "light": "storm", "line": 2, "what": "Rain. Bea counts down on her watch; lightning; the neighbours gasp; she runs inside and slams the door."},
+    {"id": 3, "a": 400, "b": 600, "place": "space", "light": "space", "line": 5, "what": "Above the clouds: silence, stars, a tiny rocket that twinkles and stays."}
+  ],
+  "xfade": {"3": 8},
+  "events": [
+    {"f": 0, "to": 120, "type": "rocket_rumble", "shape": "rise", "note": "engines build under the hook, cut by the flash"},
+    {"f": 120, "type": "flash_hit", "note": "white flash, the music starts"},
+    {"f": 120, "to": 400, "type": "amb_rain", "heavy": 0.6, "note": "steady rain on the street"},
+    {"f": 124, "to": 176, "type": "clock_tick", "every": 13, "note": "'counts down': her watch"},
+    {"f": 188, "type": "thunder", "note": "'Thunder cracks'"},
+    {"f": 234, "type": "crowd_gasp", "note": "'the neighbors gasp'"},
+    {"f": 263, "to": 300, "type": "footsteps", "pace": 4, "note": "'She runs inside'"},
+    {"f": 307, "type": "door_slam", "note": "'slams the door'"},
+    {"f": 400, "type": "whoosh_big", "note": "up through the clouds"},
+    {"f": 400, "to": 600, "type": "amb_drone", "note": "the hum of space"},
+    {"f": 470, "to": 545, "type": "heartbeat", "bpm": 84, "note": "'one very loud heartbeat'"},
+    {"f": 541, "type": "twinkle", "note": "the rocket glints among the stars"},
+    {"f": 588, "type": "music_button", "note": "marker only: the button is in score.json"}
+  ]
+}

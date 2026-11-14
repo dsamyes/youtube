@@ -1,0 +1,46 @@
+{
+ "_doc": "Sound plan of hole-through-earth, read by engine/toon/audio/build.py (manual: engine/toon/audio/README.md). This is the reference short: the plan reproduces the mix the owner approved.",
+ "key": "F",
+ "tempo": 131,
+ "seed": 3811,
+ "theme": "stroll",
+ "places": {
+  "shaft": "tunnel",
+  "garden": "outdoor",
+  "earth": "void",
+  "park": {"room": "outdoor", "send": 0.12},
+  "ocean": "water"
+ },
+ "sections": [
+  {"from": 0, "mood": "silence", "_why": "the hook: the falling rush only"},
+  {"from": 118, "mood": "theme", "end": "stop", "_why": "Sunday morning in the garden; stops on 'math' for the boing and the slide whistle"},
+  {"from": 448, "mood": "chase", "hits": [633, 743], "_why": "the fall: downbeats on the kick ('shoots') and on the white-hot core"},
+  {"from": 861, "mood": "silence", "_why": "'But wait': dead stop with the record_stop event"},
+  {"from": 915, "mood": "mystery", "_why": "the explanation over the Earth cutaway"},
+  {"from": 1123, "mood": "waltz", "hits": [1126, 1215, 1258], "_why": "the swing: push, bottom of the arc, top of the arc"},
+  {"from": 1268, "mood": "lullaby", "_why": "night ocean, he rises slower and slower"},
+  {"from": 1442, "mood": "silence", "_why": "he stops; held breath until 'Luckily'"},
+  {"from": 1465, "mood": "bittersweet", "hits": [1537], "_why": "'Luckily' ... 'Unluckily' (1537)"},
+  {"from": 1614, "mood": "runup", "_why": "the return trip in time-lapse"},
+  {"from": 1707, "mood": "finale", "hits": [1925], "_why": "home again; button after the last word"}
+ ],
+ "dips": [
+  [232, 262, -2.0],
+  [824, 858, -2.5],
+  [1700, 1716, -2.5],
+  [1876, 1921, -3.0]
+ ],
+ "sfx": {
+  "wind_rush@0": {"shape": "hook"},
+  "wind_rush@448": {"shape": "hold", "peak": 743},
+  "wind_rush@1614": {"shape": "arc"},
+  "amb_garden@861": {"birds": 0, "cricket": 1, "level": -33},
+  "zip@654": {"size": "small"},
+  "sizzle@765": {"dur": 0.85, "level": -10},
+  "swing_creak@1130": {"at": [1130, 1143.8, 1179.4, 1215, 1236.5]},
+  "slide_whistle_up_slowing@1344": {"pitch": "Ab4", "pitch_to": "Eb6"},
+  "ting@1442": {"pitch": "Eb6"},
+  "slide_whistle_down@1598": {"pitch": "Db6", "pitch_to": "C4"},
+  "flame_poof@1905": {"level": -9}
+ }
+}

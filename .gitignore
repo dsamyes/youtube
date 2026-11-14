@@ -19,7 +19,7 @@ client_secret*.json
 token.json
 # large / binary outputs: never committed (published to YouTube, passed between jobs as artifacts)
 engine/videos/*/audio/*
-!engine/videos/*/audio/*.py
+!engine/videos/*/audio/score.json
 !engine/videos/*/audio/cues.md
 engine/videos/*/final/qa/*
 !engine/videos/*/final/qa/report.md

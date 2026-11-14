@@ -12,6 +12,7 @@ import numpy as np
 from scipy import signal
 from dsp import SR, ns, dbg, read_wav, integrated, true_peak, lra, momentary
 import music
+import sfx
 
 TOL_F = 1.0                       # an event's onset must sit within one frame of its frame in shots.json
 SPEECH_BAND = (300.0, 3000.0)
@@ -26,6 +27,11 @@ def db(x):
 
 def pdb(p):
     return 10 * np.log10(np.maximum(p, 1e-24))
+
+
+def lufs(x):
+    v = float(integrated(x))
+    return round(v, 2) if np.isfinite(v) else -99.0      # -99 = silent
 
 
 def load(P, name):
@@ -68,6 +74,13 @@ def check_onsets(P, stem_sfx, C, iso):
     D = np.maximum(Ldb[:, k:] - Ldb[:, :-k], 0.0)           # (bands, frames) half-wave rectified rise over 6 ms
     tD = t[k:]
     main = [(c, i) for c, i in zip(C, iso) if c["ev_f"] is not None and c["name"] == c["ev_type"]]     # extra layers are not events
+    lagmax = ns(3 / F)
+    model = np.zeros(N + 2 * lagmax)                         # every cue where the plan put it, dry: what the stem should contain
+    for i in iso:
+        a_ = ns(i["t0"]) + lagmax
+        m_ = min(len(i["xm"]), len(model) - a_)
+        if a_ >= 0 and m_ > 0:
+            model[a_: a_ + m_] += i["xm"][:m_]
     ev_times = sorted({c["ev_f"] / F for c, _ in main} | {c["ev_to"] / F for c, _ in main if c["ev_to"] is not None and c["kind"] == "event"})
     rows = []
     for c, i in main:
@@ -75,12 +88,22 @@ def check_onsets(P, stem_sfx, C, iso):
         xm, t0, r10 = i["xm"].astype(np.float64), i["t0"], i["r10"]
         # ---- matched: lag of the stem against the isolated cue
         i0 = ns(t0)
-        lagmax = ns(3 / F)
         a, z = i0 - lagmax, i0 + len(xm) + lagmax
         seg = S[max(a, 0): min(z, N)]
         seg = np.pad(seg, (max(0, -a), max(0, z - N)))
         cc = signal.correlate(seg, xm, mode="valid", method="fft")
         lag = int(np.argmax(cc)) - lagmax
+        if abs(lag / SR + r10 - (te - t0)) * F > TOL_F and a >= 0:
+            # A steady tone or a drone matches itself one period later just as well, and a louder sound with energy on
+            # the same frequencies can pull the best match away. Second look: take the other cues out of the stem
+            # (the dry model, scaled to the stem) and ask again where this one sits; where it was placed wins a tie.
+            mod = model[a + lagmax: z + lagmax]
+            mod = np.pad(mod, (0, len(seg) - len(mod)))
+            own = np.zeros(len(seg))
+            own[lagmax: lagmax + len(xm)] = xm
+            g = max(0.0, float(seg @ mod) / (float(mod @ mod) + 1e-30))
+            cc = signal.correlate(seg - g * (mod - own), xm, mode="valid", method="fft")
+            lag = 0 if cc[lagmax] >= 0.9 * cc.max() else int(np.argmax(cc)) - lagmax
         coh = float(cc.max() / (np.sqrt((xm ** 2).sum() * (seg[lagmax + lag: lagmax + lag + len(xm)] ** 2).sum()) + 1e-20))
         on_m = (i0 + lag) / SR + r10
         # ---- blind: weighted flux around the event's frame
@@ -180,7 +203,7 @@ def gaps(P, x, thr_db, min_s=0.5):
                 j += 1
             t0, t1 = a[i] / SR, (a[j - 1] + w) / SR
             if t1 - t0 > min_s:
-                out.append((round(t0 * P.fps, 1), round(t1 * P.fps, 1)))
+                out.append((round(float(t0 * P.fps), 1), round(float(t1 * P.fps), 1)))
             i = j
         else:
             i += 1
@@ -190,7 +213,7 @@ def gaps(P, x, thr_db, min_s=0.5):
 def spectrum(x):
     f, P_ = signal.welch(x, SR, nperseg=16384, axis=-1)
     P_ = P_.sum(0)
-    tot = P_.sum()
+    tot = P_.sum() + 1e-30                               # a silent stem (no music, or no events) has an empty spectrum
     bands = [(0, 20), (20, 60), (60, 300), (300, 3000), (3000, 8000), (8000, 12000), (12000, 16000), (16000, 24001)]
     return dict(dc_dbfs=round(float(db(np.abs(x.mean(1)).max())), 1),
                 bands_db={f"{lo}-{hi if hi < 24000 else 24000} Hz": round(float(pdb(P_[(f >= lo) & (f < hi)].sum() / tot)), 1) for lo, hi in bands},
@@ -214,30 +237,41 @@ def music_landmarks(P, plan, mus, fails, notes):
         return rep
     rep["first_sound_f"] = round(float(np.argmax(loud)) / SR * F, 2)
     rep["last_sound_f"] = round(float(N - np.argmax(loud[::-1])) / SR * F, 2)
-    t, B = band_levels(mus.mean(0))
+    first = next(s for s in plan.secs if not s.silent)
+    if abs(rep["first_sound_f"] - first.a) > TOL_F:
+        fails.append(f"music: the first sound of the score is at frame {rep['first_sound_f']}, the plan starts it at {first.a:g}")
+    lead = ns(0.1)                                           # silence in front, so that a start on frame 0 is a rise too
+    t, B = band_levels(np.pad(mus.mean(0), (lead, 0)))
+    t = t - lead / SR
     L = pdb(B + B.max() * 1e-8)
     o = np.maximum(L[:, 3:] - L[:, :-3], 0).sum(0)
     tD = t[3:]
 
     def onset_near(f0):
+        """frame of the strongest rise within 3 frames of f0 (a new sound over sounding music)"""
         m = (tD >= fr(f0 - 3)) & (tD <= fr(f0 + 3))
         return round(float(tD[m][np.argmax(o[m])] * F), 2) if m.any() else None
+
+    def first_after(f0):
+        """frame at which the score becomes audible (-50 dBFS) coming out of a silence that ends at f0"""
+        a = ns(fr(max(f0 - 2, 0)))
+        idx = np.flatnonzero(loud[a: ns(fr(min(f0 + 8, P.total)))])
+        return round(float(a + idx[0]) / SR * F, 2) if len(idx) else None
     secs = plan.secs
-    first = next(s for s in secs if not s.silent)
-    if abs(rep["first_sound_f"] - first.a) > TOL_F:
-        fails.append(f"music: the first sound of the score is at frame {rep['first_sound_f']}, the plan starts it at {first.a:g}")
     for i, s in enumerate(secs):
         row = dict(section=s.name, f_a=s.a, f_b=s.z)
         if s.silent:
             choked = i > 0 and music.MOODS[secs[i - 1].mood].choke
-            row["rms_dbfs"] = round(r(s.a + (5 if choked else 0.5), s.z - 0.5), 1)
+            row["rms_dbfs"] = round(r(s.a + (0.17 * F if choked else 0.5), s.z - 0.5), 1)        # a choke takes 0.12 s
             if row["rms_dbfs"] > -70:
                 fails.append(f"music: section {s.name} (frames {s.a:g}-{s.z:g}) is not silent: {row['rms_dbfs']} dBFS")
         else:
-            row["onset_f"] = onset_near(s.a)
-            after_silence = i == 0 or secs[i - 1].silent
-            if row["onset_f"] is not None and abs(row["onset_f"] - s.a) > TOL_F:
-                (fails if after_silence else notes).append(f"music: section {s.name} should start on frame {s.a:g}; the strongest onset near it is at {row['onset_f']}")
+            if i == 0 or secs[i - 1].silent:            # out of a silence: it must be there on its frame
+                row["onset_f"] = first_after(s.a)
+                if row["onset_f"] is None or abs(row["onset_f"] - s.a) > TOL_F:
+                    fails.append(f"music: section {s.name} should start on frame {s.a:g}; the score becomes audible at {row['onset_f']}")
+            else:
+                row["onset_f"] = onset_near(s.a)
             if s.mood == "finale":
                 row["button_f"], row["button_onset_f"] = s.button, onset_near(s.button)
                 if row["button_onset_f"] is None or abs(row["button_onset_f"] - s.button) > TOL_F:
@@ -269,7 +303,7 @@ def run(P, plan, mixed):
     I, TP = float(integrated(mix)), float(true_peak(mix))
     rep["loudness"] = dict(integrated_lufs=round(I, 2), true_peak_dbtp=round(TP, 2), lra_lu=round(float(lra(mix)), 2),
                            max_momentary_lufs=round(float(momentary(mix).max()), 2), sample_peak_dbfs=round(float(db(np.abs(mix).max())), 2),
-                           voice_lufs=round(float(integrated(voice)), 2), music_lufs=round(float(integrated(mus)), 2), sfx_lufs=round(float(integrated(sfxs)), 2),
+                           voice_lufs=lufs(voice), music_lufs=lufs(mus), sfx_lufs=lufs(sfxs),
                            limiter=st_["gr"], master_gain_db=round(st_["G"], 2), voice_file_lufs=round(st_["v_ref"], 2))
     if abs(I + 14.0) > 0.2:
         fails.append(f"integrated loudness {I:.2f} LUFS (target -14.0 +- 0.2)")
@@ -282,7 +316,7 @@ def run(P, plan, mixed):
     rep["loudness"]["stem_true_peaks_dbtp"] = {k: round(float(true_peak(files[k])), 2) for k in ("stem_voice.wav", "stem_music.wav", "stem_sfx.wav")}
 
     rows = check_onsets(P, sfxs, mixed["cues"], mixed["iso"])
-    n_ev = len([e for e in P.ev if not e.type.startswith("music_")])
+    n_ev = len([e for e in P.ev if not e.type.startswith(sfx.SILENT)])
     if len(rows) != n_ev:
         fails.append(f"{len(rows)} cues for {n_ev} non-music events")
     if rows:
@@ -335,7 +369,12 @@ def run(P, plan, mixed):
     if rep["spectrum"]["mix"]["above_12k_db"] > -30:
         fails.append(f"energy above 12 kHz {rep['spectrum']['mix']['above_12k_db']} dB")
     rep["music"] = music_landmarks(P, plan, mus, fails, notes)
-    intended = [(s.a, s.z) for s in plan.secs if s.silent]
+    intended = []
+    for s in plan.secs:                                  # the 'silence' sections, neighbours merged
+        if s.silent and intended and intended[-1][1] == s.a:
+            intended[-1] = (intended[-1][0], s.z)
+        elif s.silent:
+            intended.append((s.a, s.z))
     extra = [g for g in rep["gaps_over_0.5s"]["music_below_minus60"] if not any(a - 1 <= g[0] and g[1] <= b + 1 for a, b in intended)]
     rep["gaps_over_0.5s"]["music_unintended"] = extra
     if extra and any(not s.silent for s in plan.secs):
