@@ -1,0 +1,576 @@
+{
+ "_doc": "Picture/sound contract for hummingbird-metabolism. 30 fps. Frames come from voice/words.json (word start frames). Visual reactions land 0-3 frames before their word.",
+ "fps": 30,
+ "total_frames": 2001,
+ "flash_at": 131,
+ "places": {
+  "garden": "Gus's back garden (kit town place, plain lawn, no hole): a garden table with a pile of hamburgers, deck chair, the neighbor's fence and grill",
+  "park": "the town park (kit): only as a soft green backdrop for the hummingbird at its feeder",
+  "ocean": "open sea (kit) by day, at sunset and at night: the fisherman's rowboat, no pipe"
+ },
+ "shots": [
+  {
+   "id": 1,
+   "a": 0,
+   "b": 131,
+   "place": "garden",
+   "light": "day",
+   "line": 1,
+   "what": "HOOK. Medium shot, already moving: Gus (pyjamas, fishbowl tipped back like a lid) behind a garden table piled with hamburgers, a burger in each hand, biting left, right, left (chomps f17, f40, f62), cheeks full, crumbs flying. From 'that's not even' (f84) steam puffs out of his collar and the lens pushes in on his worried eyes (whoosh f116). White flash at 131."
+  },
+  {
+   "id": 2,
+   "a": 131,
+   "b": 243,
+   "place": "garden",
+   "light": "day",
+   "line": 2,
+   "what": "Morning garden, full shot. Gus asleep in the deck chair, sleep bubble at his nose. A hummingbird zips in from screen right (f150) and hovers at his helmet. The bubble pops and he jolts awake on 'woke' (f174); the bird taps the glass with a sparkle on 'metabolism' (f194) and darts off on 'hummingbird' (f222). Slow push-in, a glide closer centred on the wake-up."
+  },
+  {
+   "id": 3,
+   "a": 243,
+   "b": 380,
+   "place": "park",
+   "light": "day",
+   "line": 3,
+   "what": "Close-up in the park, trees melted by the lens: the hummingbird hovers at a red feeder on a hook, wings a blur. On 'burns' (f302) a little flame jets from its tail like an afterburner; from 'fifty' (f322) to 'does' (f366) the nectar level in the glass drains to the bottom. Slow push-in."
+  },
+  {
+   "id": 4,
+   "a": 380,
+   "b": 482,
+   "place": "garden",
+   "light": "day",
+   "line": 4,
+   "what": "Wide of Gus at the table, looking small. A tower of hamburgers stacks up beside him, one burger after another from 'that's' (f409), faster and faster, far over his head; the lens tilts up with it. The last one lands on 'day' (f470); the tower sways, Gus looks up and gulps (f476)."
+  },
+  {
+   "id": 5,
+   "a": 482,
+   "b": 573,
+   "place": "garden",
+   "light": "day",
+   "line": 5,
+   "what": "Two-shot: his wife, deadpan, flips pancake after pancake out of the pan (flicks f495, f515, f535); each arcs across to Gus on the left, who catches it in his open mouth (chomps f507, f527, f547). On 'Gone.' (f558) the pan is empty; she turns it upside down and looks into the lens."
+  },
+  {
+   "id": 6,
+   "a": 573,
+   "b": 711,
+   "place": "garden",
+   "light": "day",
+   "line": 6,
+   "what": "The neighbor over his fence, laughing, pointing at us with his grill fork, a sausage on it. On 'loses' (f654) Gus pops up behind the fence right beside him and the sausage is gone from the fork; the lens glides left to hold both. Gus chews, a sausage end sticking out of his mouth (chomp f676); the neighbor stares at his empty fork, then jaw-drops on 'grill' (f698)."
+  },
+  {
+   "id": 7,
+   "a": 711,
+   "b": 826,
+   "place": "garden",
+   "light": "day",
+   "line": 7,
+   "what": "Medium close-up of Gus, helmet on. A red heart on his chest buzzes: it shivers every frame with little tick marks around it from 'beats' (f725). He looks down at it. On 'hum' (f811) the hummingbird slides in beside his shoulder, humming at the same rate; they look at each other."
+  },
+  {
+   "id": 8,
+   "a": 826,
+   "b": 892,
+   "place": "garden",
+   "light": "day",
+   "line": 8,
+   "what": "'But wait': music cut dead. Close-up of his helmet: the glass fogs up white from the bottom, little steam puffs leak from the collar (hiss f862), his eyes peer over the fog line. A question mark pops beside the helmet on 'up?' (f885)."
+  },
+  {
+   "id": 9,
+   "a": 892,
+   "b": 1049,
+   "place": "garden",
+   "light": "day",
+   "line": 9,
+   "what": "EXPLANATION. Full shot of Gus holding up a hamburger: on 'into heat' (f941) it flares into a flame in his hand and wavy heat lines start rising off him. On 'as much as four' two space heaters pop in on each side of him (pairs at f1000 and f1014), their coils glow orange on 'heaters' (f1031); Gus glows like a fifth one."
+  },
+  {
+   "id": 10,
+   "a": 1049,
+   "b": 1130,
+   "place": "garden",
+   "light": "day",
+   "line": 10,
+   "what": "The garden table, close: a single french fry on a plate, steaming on 'french fry' (hiss f1076). By 'cold' (f1098) the steam is gone and the fry turns pale blue with a tiny frost sparkle. Slow push-in."
+  },
+  {
+   "id": 11,
+   "a": 1130,
+   "b": 1213,
+   "place": "garden",
+   "light": "day",
+   "line": 10,
+   "what": "Glide right along the table to a fat baked potato in foil, split open, a big steam plume rolling off it; it keeps steaming on 'stays hot' (f1169-1179) while a pat of butter melts on top. Slow push-in."
+  },
+  {
+   "id": 12,
+   "a": 1213,
+   "b": 1296,
+   "place": "garden",
+   "light": "day",
+   "line": 11,
+   "what": "Wider: fry and potato side by side on the table. On 'skin' (f1250) the outline of each lights up with a sparkle: the thin fry is nearly all outline, the potato mostly inside. Short heat lines leave the fry on every side."
+  },
+  {
+   "id": 13,
+   "a": 1296,
+   "b": 1441,
+   "place": "park",
+   "light": "day",
+   "line": 11,
+   "what": "The hummingbird again, close, hovering at the feeder. From 'so its heat' (f1393) wavy heat lines drift off its whole body in every direction and fade (f1400-1430); it gives a contented blink and a sparkle on 'away' (f1426). Slow push-in."
+  },
+  {
+   "id": 14,
+   "a": 1441,
+   "b": 1497,
+   "place": "garden",
+   "light": "day",
+   "line": 12,
+   "what": "Medium shot of Gus standing exactly like the potato: a pat of butter lands on his helmet on 'baked' (f1459) and melts (f1471), a big steam plume rolls off the top of his head. He looks up at it, worried."
+  },
+  {
+   "id": 15,
+   "a": 1497,
+   "b": 1559,
+   "place": "garden",
+   "light": "day",
+   "line": 12,
+   "what": "Closer: he holds up a thermometer; the red column races to the top from 'heats' (f1499) and the bulb pops on 'minute' (f1550). His face goes from nervous to shocked; kick on the pop."
+  },
+  {
+   "id": 16,
+   "a": 1559,
+   "b": 1681,
+   "place": "ocean",
+   "light": "day",
+   "line": 13,
+   "what": "'Luckily': open sea, a fisherman in his rowboat. Gus drops out of the sky in a cannonball (whistle f1561-1589) and hits the water beside the boat on 'sea' (splash f1589). A cloud of steam hisses up (f1600). He surfaces neck-deep (f1622) with a blissful smile, wisps of steam still rising; the fisherman stares."
+  },
+  {
+   "id": 17,
+   "a": 1681,
+   "b": 1765,
+   "place": "ocean",
+   "light": "day",
+   "line": 14,
+   "what": "'Unluckily': closer on Gus, neck-deep, the boat beside him. His smile drops (gulp f1703), his stomach rumbles in rings on the water (f1717-1745), and on 'last ate' (f1748) a thought bubble with a hamburger pops over his head. The fisherman hides his lunch box."
+  },
+  {
+   "id": 18,
+   "a": 1765,
+   "b": 1800,
+   "place": "ocean",
+   "light": "golden",
+   "line": 15,
+   "what": "Sunset over the same sea, wide: Gus still neck-deep, eating a burger; the fisherman dozes in the boat. The hummingbird flies in from the left (zip f1772) and hovers over the boat. A question mark pops by it on 'part?' (f1779)."
+  },
+  {
+   "id": 19,
+   "a": 1800,
+   "b": 1877,
+   "place": "ocean",
+   "light": "golden",
+   "line": 15,
+   "what": "Close on the hummingbird hovering by the boat's lantern, eyelids drooping, wings slowing down. On 'like one' (f1861) it gives up and settles on top of the fisherman's sou'wester."
+  },
+  {
+   "id": 20,
+   "a": 1877,
+   "b": 1946,
+   "place": "ocean",
+   "light": "night",
+   "line": 16,
+   "what": "Night, moon and stars. Close on the bird perched on the hat: it fluffs itself into a ball, and on 'shuts off' (f1919) its eyes close and a sleep bubble starts to swell. The fisherman under it is asleep too."
+  },
+  {
+   "id": 21,
+   "a": 1946,
+   "b": 2001,
+   "place": "ocean",
+   "light": "night",
+   "line": 16,
+   "what": "PAYOFF, wider: everyone asleep (the fisherman, the bird on his hat, two sleep bubbles) except Gus, neck-deep in the moonlit water, eyes wide open with bags under them, a burger in each hand; he takes the next bite on 'breakfast' (chomp f1967). Ends on the last word."
+  }
+ ],
+ "xfade": {
+  "3": 8,
+  "13": 8,
+  "18": 8,
+  "20": 8
+ },
+ "events": [
+  {
+   "f": 0,
+   "to": 131,
+   "type": "amb_garden",
+   "note": "morning garden under the hook, no music"
+  },
+  {
+   "f": 17,
+   "type": "chomp",
+   "note": "bite 1 on 'eat'"
+  },
+  {
+   "f": 40,
+   "type": "chomp",
+   "note": "bite 2"
+  },
+  {
+   "f": 62,
+   "type": "chomp",
+   "note": "bite 3"
+  },
+  {
+   "f": 84,
+   "type": "sizzle",
+   "note": "steam starts to leak from his collar"
+  },
+  {
+   "f": 116,
+   "type": "whoosh_big",
+   "note": "push in on his eyes"
+  },
+  {
+   "f": 131,
+   "type": "flash_hit",
+   "note": "white flash, music starts"
+  },
+  {
+   "f": 131,
+   "to": 243,
+   "type": "amb_garden",
+   "note": "morning birds"
+  },
+  {
+   "f": 150,
+   "type": "zip",
+   "note": "the hummingbird zips in"
+  },
+  {
+   "f": 174,
+   "type": "pop",
+   "note": "sleep bubble pops, he wakes"
+  },
+  {
+   "f": 194,
+   "type": "twinkle",
+   "note": "the bird taps the glass: 'metabolism'"
+  },
+  {
+   "f": 222,
+   "type": "zip",
+   "note": "the bird darts off"
+  },
+  {
+   "f": 243,
+   "to": 380,
+   "type": "amb_garden",
+   "note": "park air"
+  },
+  {
+   "f": 302,
+   "type": "flame_poof",
+   "note": "afterburner on 'burns'"
+  },
+  {
+   "f": 322,
+   "to": 366,
+   "type": "slide_whistle_down",
+   "note": "the nectar drains"
+  },
+  {
+   "f": 380,
+   "to": 826,
+   "type": "amb_garden",
+   "note": "garden"
+  },
+  {
+   "f": 409,
+   "to": 466,
+   "type": "slide_whistle_up",
+   "note": "the burger tower grows"
+  },
+  {
+   "f": 470,
+   "type": "thud",
+   "note": "last burger lands on 'day'"
+  },
+  {
+   "f": 478,
+   "type": "gulp",
+   "note": "Gus looks up"
+  },
+  {
+   "f": 495,
+   "type": "whoosh",
+   "note": "first pancake flipped"
+  },
+  {
+   "f": 507,
+   "type": "chomp",
+   "note": "pancake 1 caught"
+  },
+  {
+   "f": 527,
+   "type": "chomp",
+   "note": "pancake 2"
+  },
+  {
+   "f": 547,
+   "type": "chomp",
+   "note": "pancake 3"
+  },
+  {
+   "f": 558,
+   "type": "ting",
+   "note": "the pan is empty: 'Gone.'"
+  },
+  {
+   "f": 601,
+   "type": "ricochet_ping",
+   "note": "the neighbor points and laughs"
+  },
+  {
+   "f": 654,
+   "type": "cork_pop",
+   "note": "Gus pops up behind the fence, the sausage is gone"
+  },
+  {
+   "f": 676,
+   "type": "chomp",
+   "note": "sausage"
+  },
+  {
+   "f": 698,
+   "type": "gulp",
+   "note": "the neighbor sees the empty grill"
+  },
+  {
+   "f": 725,
+   "to": 768,
+   "type": "typing",
+   "note": "stands for the heart ticking twenty times a second"
+  },
+  {
+   "f": 805,
+   "type": "power_up",
+   "note": "'that's a hum': the bird hums in"
+  },
+  {
+   "f": 826,
+   "type": "record_stop",
+   "note": "'But wait': music cut dead"
+  },
+  {
+   "f": 826,
+   "to": 892,
+   "type": "amb_cricket",
+   "note": "the awkward pause"
+  },
+  {
+   "f": 862,
+   "type": "sizzle",
+   "note": "the helmet steams up"
+  },
+  {
+   "f": 885,
+   "type": "question_blip",
+   "note": "'?' card"
+  },
+  {
+   "f": 892,
+   "type": "music_mystery",
+   "note": "explanation theme"
+  },
+  {
+   "f": 892,
+   "to": 1559,
+   "type": "amb_garden",
+   "note": "garden and park, quiet"
+  },
+  {
+   "f": 941,
+   "type": "flame_poof",
+   "note": "the burger turns into a flame: 'into heat'"
+  },
+  {
+   "f": 1000,
+   "type": "pop",
+   "note": "two heaters pop in"
+  },
+  {
+   "f": 1014,
+   "type": "pop",
+   "note": "two more"
+  },
+  {
+   "f": 1031,
+   "type": "power_up",
+   "note": "the heaters glow"
+  },
+  {
+   "f": 1049,
+   "type": "whoosh",
+   "note": "cut to the table"
+  },
+  {
+   "f": 1076,
+   "type": "sizzle",
+   "note": "the fry steams"
+  },
+  {
+   "f": 1098,
+   "type": "ting",
+   "note": "the fry is cold"
+  },
+  {
+   "f": 1130,
+   "type": "whoosh",
+   "note": "glide to the potato"
+  },
+  {
+   "f": 1160,
+   "type": "sizzle",
+   "note": "the potato steams on"
+  },
+  {
+   "f": 1250,
+   "type": "twinkle",
+   "note": "'skin': the outlines light up"
+  },
+  {
+   "f": 1296,
+   "type": "zip",
+   "note": "cut to the bird"
+  },
+  {
+   "f": 1400,
+   "to": 1430,
+   "type": "decel_whoosh",
+   "note": "its heat leaks away"
+  },
+  {
+   "f": 1426,
+   "type": "twinkle",
+   "note": "cool and content"
+  },
+  {
+   "f": 1459,
+   "type": "pop",
+   "note": "a pat of butter lands on his helmet"
+  },
+  {
+   "f": 1471,
+   "type": "sizzle",
+   "note": "it melts"
+  },
+  {
+   "f": 1499,
+   "to": 1548,
+   "type": "slide_whistle_up",
+   "note": "the thermometer climbs"
+  },
+  {
+   "f": 1550,
+   "type": "glass_pop",
+   "note": "it pops on 'minute'"
+  },
+  {
+   "f": 1559,
+   "to": 1765,
+   "type": "amb_ocean_night",
+   "note": "open sea, the boat"
+  },
+  {
+   "f": 1561,
+   "to": 1589,
+   "type": "slide_whistle_down",
+   "note": "Gus drops out of the sky"
+  },
+  {
+   "f": 1589,
+   "type": "splash",
+   "note": "cannonball on 'sea'"
+  },
+  {
+   "f": 1600,
+   "type": "sizzle",
+   "note": "steam cloud as he cools"
+  },
+  {
+   "f": 1622,
+   "type": "cork_pop",
+   "note": "he surfaces"
+  },
+  {
+   "f": 1652,
+   "type": "twinkle",
+   "note": "bliss"
+  },
+  {
+   "f": 1703,
+   "type": "gulp",
+   "note": "the smile drops"
+  },
+  {
+   "f": 1717,
+   "to": 1745,
+   "type": "bubbling",
+   "note": "stands for his stomach rumbling"
+  },
+  {
+   "f": 1748,
+   "type": "pop",
+   "note": "thought bubble with a hamburger"
+  },
+  {
+   "f": 1765,
+   "to": 2001,
+   "type": "amb_ocean_night",
+   "note": "evening sea"
+  },
+  {
+   "f": 1772,
+   "type": "zip",
+   "note": "the hummingbird flies in"
+  },
+  {
+   "f": 1779,
+   "type": "question_blip",
+   "note": "'the funny part?'"
+  },
+  {
+   "f": 1811,
+   "type": "bird_tweet",
+   "note": "'a hummingbird'"
+  },
+  {
+   "f": 1861,
+   "to": 1877,
+   "type": "decel_whoosh",
+   "note": "its wings slow down, it lands on the hat"
+  },
+  {
+   "f": 1919,
+   "type": "power_down",
+   "note": "'shuts off': eyes close"
+  },
+  {
+   "f": 1967,
+   "type": "chomp",
+   "note": "Gus's next bite on 'breakfast'"
+  },
+  {
+   "f": 1988,
+   "type": "music_button",
+   "note": "final stinger"
+  }
+ ]
+}

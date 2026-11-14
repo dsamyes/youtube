@@ -1,0 +1,136 @@
+{
+ "voice": "kokoro-v1.0:am_michael@1.2",
+ "duration_s": 66.224,
+ "words": 232,
+ "wps": 3.5,
+ "lines": [
+  {
+   "line": 1,
+   "text": "Gus has to eat a burger every three minutes, and that's not even his biggest problem.",
+   "s": 0.0,
+   "e": 4.314,
+   "words": 16,
+   "wps": 3.71
+  },
+  {
+   "line": 2,
+   "text": "At seven this morning he woke up with the metabolism of a hummingbird.",
+   "s": 4.434,
+   "e": 8.048,
+   "words": 13,
+   "wps": 3.6
+  },
+  {
+   "line": 3,
+   "text": "Gram for gram, that tiny bird burns fuel fifty times as fast as he does.",
+   "s": 8.168,
+   "e": 12.602,
+   "words": 15,
+   "wps": 3.38
+  },
+  {
+   "line": 4,
+   "text": "At his size, that's a hundred and twenty thousand calories a day.",
+   "s": 12.722,
+   "e": 16.016,
+   "words": 12,
+   "wps": 3.64
+  },
+  {
+   "line": 5,
+   "text": "His wife flips pancakes as fast as she can. Gone.",
+   "s": 16.136,
+   "e": 19.06,
+   "words": 10,
+   "wps": 3.42
+  },
+  {
+   "line": 6,
+   "text": "His neighbor laughs that no one eats that much and loses every sausage on the grill.",
+   "s": 19.18,
+   "e": 23.654,
+   "words": 16,
+   "wps": 3.58
+  },
+  {
+   "line": 7,
+   "text": "His heart beats twenty times a second. That's not a pulse, that's a hum.",
+   "s": 23.774,
+   "e": 27.468,
+   "words": 14,
+   "wps": 3.79
+  },
+  {
+   "line": 8,
+   "text": "But wait. Why is his helmet steaming up?",
+   "s": 27.588,
+   "e": 29.672,
+   "words": 8,
+   "wps": 3.84
+  },
+  {
+   "line": 9,
+   "text": "You see, all that food turns into heat, and Gus now puts out as much as four space heaters.",
+   "s": 29.792,
+   "e": 34.926,
+   "words": 19,
+   "wps": 3.7
+  },
+  {
+   "line": 10,
+   "text": "Ever notice a french fry goes cold in minutes, but a baked potato stays hot for half an hour?",
+   "s": 35.046,
+   "e": 40.39,
+   "words": 19,
+   "wps": 3.56
+  },
+  {
+   "line": 11,
+   "text": "Small things have more skin for their size. Pound for pound, the bird has twenty times more than Gus, so its heat just leaks away.",
+   "s": 40.51,
+   "e": 47.964,
+   "words": 25,
+   "wps": 3.35
+  },
+  {
+   "line": 12,
+   "text": "Gus is the baked potato. He heats up more than a degree every minute.",
+   "s": 48.084,
+   "e": 51.898,
+   "words": 14,
+   "wps": 3.67
+  },
+  {
+   "line": 13,
+   "text": "Luckily, he lives by the sea, and water pulls heat out far faster than air.",
+   "s": 52.018,
+   "e": 55.972,
+   "words": 15,
+   "wps": 3.79
+  },
+  {
+   "line": 14,
+   "text": "Unluckily, it's now been four minutes since he last ate.",
+   "s": 56.092,
+   "e": 58.786,
+   "words": 10,
+   "wps": 3.71
+  },
+  {
+   "line": 15,
+   "text": "And the funny part? Even a hummingbird can't afford to live like one.",
+   "s": 58.906,
+   "e": 62.52,
+   "words": 13,
+   "wps": 3.6
+  },
+  {
+   "line": 16,
+   "text": "On cold nights it almost shuts off, just to make it to breakfast.",
+   "s": 62.64,
+   "e": 66.224,
+   "words": 13,
+   "wps": 3.63
+  }
+ ]
+}

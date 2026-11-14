@@ -1,23 +1,28 @@
 {
   "id": "hummingbird-metabolism",
   "title": "What If You Had a Hummingbird's Metabolism?",
-  "voice": {"provider": "kokoro", "voice": "am_michael", "speed": 1.2, "gap_s": 0.12},
+  "voice": {
+    "provider": "kokoro",
+    "voice": "am_michael",
+    "speed": 1.2,
+    "gap_s": 0.12
+  },
   "lines": [
-    "Gus has to eat a hamburger every three minutes, and that's not even his biggest problem.",
-    "It's seven in the morning, and he's just woken up with the metabolism of a hummingbird.",
-    "Gram for gram, that tiny bird burns energy fifty times faster than he does.",
+    "Gus has to eat a burger every three minutes, and that's not even his biggest problem.",
+    "At seven this morning he woke up with the metabolism of a hummingbird.",
+    "Gram for gram, that tiny bird burns fuel fifty times as fast as he does.",
     "At his size, that's a hundred and twenty thousand calories a day.",
     "His wife flips pancakes as fast as she can. Gone.",
-    "His neighbor laughs that nobody can eat that much, and loses every sausage on the grill.",
-    "His heart is beating twenty times a second. That's not a pulse, that's a hum.",
+    "His neighbor laughs that no one eats that much and loses every sausage on the grill.",
+    "His heart beats twenty times a second. That's not a pulse, that's a hum.",
     "But wait. Why is his helmet steaming up?",
-    "You see, every calorie he burns turns into heat, and Gus now puts out as much as four space heaters.",
-    "Ever notice how a french fry goes cold in minutes, but a baked potato stays hot for half an hour?",
-    "Small things have lots of skin for their size. Pound for pound, the hummingbird has about twenty times more than Gus, so its heat just leaks away.",
-    "Gus is the baked potato. His temperature climbs more than a degree every minute.",
-    "Luckily, he lives by the sea, and cold water carries heat away far faster than air.",
-    "Unluckily, his last hamburger was four minutes ago.",
-    "And the funny part? Even a hummingbird can't afford to live like a hummingbird.",
-    "On cold nights it shuts itself almost completely off, just to make it to breakfast."
+    "You see, all that food turns into heat, and Gus now puts out as much as four space heaters.",
+    "Ever notice a french fry goes cold in minutes, but a baked potato stays hot for half an hour?",
+    "Small things have more skin for their size. Pound for pound, the bird has twenty times more than Gus, so its heat just leaks away.",
+    "Gus is the baked potato. He heats up more than a degree every minute.",
+    "Luckily, he lives by the sea, and water pulls heat out far faster than air.",
+    "Unluckily, it's now been four minutes since he last ate.",
+    "And the funny part? Even a hummingbird can't afford to live like one.",
+    "On cold nights it almost shuts off, just to make it to breakfast."
   ]
 }
