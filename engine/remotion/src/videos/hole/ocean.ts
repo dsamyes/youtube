@@ -117,7 +117,7 @@ export class Ocean {
     const iron = twoTone(new THREE.MeshPhongMaterial({ color: "#3d414c", specular: "#8a8a8a", shininess: 60 }), 0.15);
     const bm = (g: THREE.BufferGeometry, m: THREE.Material) => { const x = new THREE.Mesh(g, m); x.castShadow = true; x.receiveShadow = true; B.add(x); return x; };
     bm(h.skins[0], wood); bm(h.skins[1], woodIn); bm(h.cap, trim); bm(h.transom, wood);
-    for (const z of [-0.55, 0.3]) bm(boxGeo(V(-h.half(z / L + 0.5) * 0.9, 0.2, z - 0.11), V(h.half(z / L + 0.5) * 0.9, 0.24, z + 0.11), 1), seat);
+    for (const z of [-0.6, 0.45]) bm(boxGeo(V(-h.half(z / L + 0.5) * 0.9, 0.2, z - 0.11), V(h.half(z / L + 0.5) * 0.9, 0.24, z + 0.11), 1), seat);
     // oars shipped along the gunwales
     for (const s of [-1, 1]) {
       bm(cyl(V(s * 0.5, 0.44, -0.9), V(s * 0.4, 0.5, 0.95), 0.02, 0.02, 8), seat);
@@ -134,10 +134,11 @@ export class Ocean {
     this.halo.position.set(0, 1.76, -0.98); this.halo.scale.setScalar(2.3); this.halo.layers.set(NOINK); this.halo.renderOrder = 4;
     B.add(this.halo);
     // fishing rod propped over the side, its line and float
-    const tip = V(1.75, 1.42, 0.55);
-    bm(cyl(V(0.25, 0.42, 0.1), tip, 0.02, 0.008, 6), lam("rod", () => ({ color: "#6e4b33" })));
+    // the rod rests on the boat: butt on the floor boards by his feet, lying across the gunwale, tip out over the water
+    const tip = V(1.95, 0.86, 0.3);
+    bm(cyl(V(-0.12, 0.2, -0.28), tip, 0.022, 0.008, 6), lam("rod", () => ({ color: "#6e4b33" })));
     this.lineG = bm(new THREE.CylinderGeometry(0.004, 0.004, 1, 4).translate(0, -0.5, 0), iron); this.lineG.position.copy(tip); this.lineG.castShadow = false;
-    B.position.set(BOAT[0], 0, BOAT[2]); B.rotation.y = -0.22;
+    B.position.set(BOAT[0], 0, BOAT[2]); B.rotation.y = -0.5; // three-quarter view: the near gunwale runs in front of his legs
     R.add(B);
     this.float = new THREE.Mesh(new THREE.SphereGeometry(0.06, 12, 8).scale(1, 1.3, 1), lam("floatRed", () => ({ color: "#e2453c" })));
     R.add(this.float);

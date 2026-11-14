@@ -43,6 +43,7 @@ export class Town {
   private smoke: { m: THREE.Mesh; mat: THREE.MeshBasicMaterial; k: number }[] = [];
   private coals: THREE.Mesh;
   private fgs: { o: THREE.Object3D; a: number; b: number }[] = [];
+  private lawnMat: THREE.MeshLambertMaterial;
 
   constructor(kit: Kit, rays: Ray[]) {
     const R = this.group, b = new Batch(), r = rng(23);
@@ -58,6 +59,7 @@ export class Town {
       enamel: twoTone(new THREE.MeshPhongMaterial({ color: "#c8423a", specular: "#909090", shininess: 50 }), 0.15),
       white: lam("whitePaint", () => ({ color: "#efe9da" })),
     };
+    this.lawnMat = M.grass;
     setSight(rays);
     // ---- lawn with the hole cut out, the pit below it ----
     const shape = new THREE.Shape(); shape.moveTo(-900, -900); shape.lineTo(900, -900); shape.lineTo(900, 900); shape.lineTo(-900, 900); shape.closePath();
@@ -67,7 +69,7 @@ export class Town {
     lawn.rotateX(-Math.PI / 2);
     b.add(lawn, M.grass);
     const pit = new THREE.Mesh(new THREE.CylinderGeometry(HOLE_R, HOLE_R, 7, 40, 1, true).translate(0, -3.5, 0), new THREE.MeshBasicMaterial({ map: pitHD(), side: THREE.BackSide }));
-    const floor = new THREE.Mesh(new THREE.CircleGeometry(HOLE_R, 24).rotateX(-Math.PI / 2).translate(0, -7, 0), new THREE.MeshBasicMaterial({ color: 0x000000 }));
+    const floor = new THREE.Mesh(new THREE.CircleGeometry(HOLE_R, 24).rotateX(-Math.PI / 2).translate(0, -7, 0), new THREE.MeshBasicMaterial({ color: "#3a1206" })); // the faint glow far down
     R.add(pit, floor);
     // trampled soil around the hole and under the mound (flat decals), stone rim
     b.add(new THREE.RingGeometry(HOLE_R, HOLE_R + 0.42, 40).rotateX(-Math.PI / 2).translate(0, 0.012, 0), M.soilFlat);
@@ -117,7 +119,7 @@ export class Town {
       [-4.2, -6.3, 1.2], [5.6, -7.9, 1.3], [-1.9, -9.9, 1.1]] as const) prop(b, kit, x * z > 0 ? "plant_bushLarge" : "plant_bush", x, 0, z, h, x);
     // flower beds along the fences (kit flowers; none on the camera's side of the hole)
     const FL = ["flower_redA", "flower_yellowA", "flower_purpleA", "flower_redB", "flower_yellowB", "flower_purpleB", "flower_redC", "flower_yellowC", "flower_purpleC"];
-    for (let i = 0; i < 34; i++) { const x = -6 + 12 * r(), z = FENCE_N + 0.35 + 0.5 * r(), h = 0.3 + 0.14 * r(), yw = r() * 6; if (x < 1.1 || x > 4.2) prop(b, kit, FL[Math.floor(r() * 9)], x, 0, z, h, yw); } // (bed left open where the last move passes low over it)
+    for (let i = 0; i < 34; i++) { const x = -6 + 12 * r(), z = FENCE_N + 0.35 + 0.5 * r(), h = 0.3 + 0.14 * r(), yw = r() * 6; if (x < -1.6 || x > 4.6) prop(b, kit, FL[Math.floor(r() * 9)], x, 0, z, h, yw); } // (bed left open where the last move swings low over it)
     for (let i = 0; i < 16; i++) { const s = i % 2 ? 1 : -1; prop(b, kit, FL[Math.floor(r() * 9)], s * (5.75 + 0.45 * r()), 0, -3.5 + 9 * r(), 0.3 + 0.14 * r(), r() * 6); }
     for (let i = 0; i < 18; i++) prop(b, kit, FL[Math.floor(r() * 9)], -6 + 12 * r(), 0, FENCE_N - 0.4 - 1.2 * r(), 0.3 + 0.14 * r(), r() * 6);
     for (const [x, z] of [[-4.6, 6.8], [4.9, 7.2], [-5.3, 5.9]] as const) prop(b, kit, "pot_large", x, 0, z, 0.42, x);
@@ -213,7 +215,7 @@ export class Town {
         p.setXYZ(i, p.getX(i), y, z); }
       g.computeVertexNormals();
       cm(g, lam("sling", () => ({ map: slingTex(), side: THREE.DoubleSide }))); }
-    this.chair.position.set(CHAIR[0] - 0.1, 0, CHAIR[2] - 0.22); this.chair.rotation.y = 0.75;
+    this.chair.position.set(CHAIR[0] - 0.2, 0, CHAIR[2] + 0.12); this.chair.rotation.y = 0.75 + Math.PI / 2; // she sits south of the hole, facing it
     R.add(this.chair);
     // near framing objects
     for (const fg of FOREGROUND) {
@@ -233,6 +235,10 @@ export class Town {
     this.shovel.rotateY(1.2);
     this.shovel.scale.set(1, dir.length() / 1.28, 1);
     this.chair.visible = id >= 20;
+    // evening garden: the orange key turns a green lawn olive, so its albedo leans green-blue for those two shots only
+    // (on screen a warm green; the park keeps the template's grass)
+    // the park (shot 15) keeps the lawn it had before the day lawn was toned down: the same albedo as the first pass
+    if (id >= 20) this.lawnMat.color.setRGB(0.95, 1.7, 2.6); else if (id === 15) this.lawnMat.color.setRGB(0.78, 1.1, 0.83); else this.lawnMat.color.setRGB(1, 1, 1);
     for (const c of this.cloths) {
       const p = c.m.geometry.attributes.position as THREE.BufferAttribute;
       for (let i = 0; i < p.count; i++) { const v = -p.getY(i) / c.h, x = p.getX(i); p.setZ(i, v * (0.06 * Math.sin(t * 1.6 + c.ph + x * 2.2) + 0.03 * Math.sin(t * 2.7 + x * 5 + c.ph)) + 0.015 * Math.sin(x * 9 + c.ph)); }

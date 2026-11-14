@@ -10,12 +10,13 @@ import { NOINK } from "./ink";
 import { EARTH_R, EARTH_YAW, EARTH_ROLL, LAYERS } from "./story";
 
 const STEP = 0.11; // how far each inner layer stands proud of the one around it (m)
-const TUNNEL_W = 0.4;
+const TUNNEL_W = 0.64;
 
 export class Earth {
   group = new THREE.Group();
   private globe = new THREE.Group();
   private tunnel: THREE.Mesh;
+  private pipe = new THREE.Group();
   private core!: THREE.MeshBasicMaterial;
 
   constructor() {
@@ -51,6 +52,13 @@ export class Earth {
     this.tunnel = new THREE.Mesh(new THREE.BoxGeometry(TUNNEL_W, 2 * R, 0.08).translate(0, -R, 0), new THREE.MeshBasicMaterial({ color: "#1b1420" }));
     this.tunnel.position.set(0, R, 3 * STEP + 0.05);
     G.add(this.tunnel);
+    // the far mouth of the tunnel: the tiny rim of the ocean pipe of shots 16-18, sticking out of the sea at the bottom
+    const steel = lam("miniPipe", () => ({ color: "#9aa6b2" })), rimM = lam("pipeRim", () => ({ color: "#a4aeb9" }));
+    this.pipe.add(new THREE.Mesh(new THREE.CylinderGeometry(0.4, 0.42, 0.62, 20).translate(0, -0.31, 0), steel));
+    this.pipe.add(new THREE.Mesh(new THREE.CylinderGeometry(0.52, 0.52, 0.14, 20).translate(0, -0.6, 0), rimM));
+    this.pipe.add(new THREE.Mesh(new THREE.CircleGeometry(0.33, 18).rotateX(Math.PI / 2).translate(0, -0.675, 0), new THREE.MeshBasicMaterial({ color: "#0b0d16" })));
+    this.pipe.position.set(0, -R + 0.12, 0.14);
+    G.add(this.pipe);
     // the garden on top: a tiny house and a tree standing on the surface beside the tunnel mouth
     const wall = lam("miniWall", () => ({ color: "#ecdab2" })), roof = lam("miniRoof", () => ({ color: "#d27a62" })), leaf = lam("miniLeaf", () => ({ color: "#5aa83c" })), bark = lam("barkHD", () => ({ color: "#8f5d3b" }));
     const stand = (o: THREE.Object3D, ang: number, back = 0.45) => { // put an object on the surface at `ang` from the pole, up = radial
@@ -74,8 +82,10 @@ export class Earth {
     G.traverse((o) => { const m = o as THREE.Mesh; if (m.isMesh) { m.castShadow = false; m.receiveShadow = false; } });
   }
 
-  /** k = how far the tunnel has been dug (0..1 from the garden end), pulse = core glow gain */
-  pose(k: number, pulse = 1) {
+  /** k = how far the tunnel has been dug (0..1 from the garden end), pulse = core glow gain, pipe = 0..1 the far
+   *  rim popping out of the sea */
+  pose(k: number, pulse = 1, pipe = 1) {
+    this.pipe.visible = pipe > 0.01; this.pipe.scale.set(1, Math.max(0.01, pipe), 1);
     this.tunnel.scale.y = Math.max(0.0001, k);
     this.tunnel.visible = k > 0.001;
     this.core.color.setScalar(1.75 * pulse);

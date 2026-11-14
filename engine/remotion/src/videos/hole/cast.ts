@@ -5,10 +5,10 @@
 // and blobs live on the NOINK layer so the world ink pass never outlines their quads.
 // stage(id, f, cam) is a pure function of the shot and the frame.
 import * as THREE from "three";
-import { Pen, bodySide, swingKid, KID, PARENT, fxBurst, fxRing, fxShadow, fxContact, fxPuff, Expr, SideOpts, P2 } from "./toon";
+import { Pen, bodySide, swingKid, KID, PARENT, fxBurst, fxRing, fxShadow, fxContact, fxPuff, fxSplash, fxCloud, Expr, SideOpts, P2 } from "./toon";
 import {
   figure, anchorsOf, Look, Pose, Arm, GUS, WIFE, NEIGHBOR, FISHER, miniGus, fxFeather, fxBullet, fxFlame, fxSoot, fxQuestion, fxArrow,
-  fxFlag, fxPancake, fxSplat, fxStreak, fxSparkle, fxBird, fxTrail, fxShards, fxBubble, fxCrumbs, fxPop,
+  fxPancake, fxSplat, fxStreak, fxSparkle, fxBird, fxTrail, fxShards, fxBubble, fxCrumbs, fxPop,
 } from "./people";
 import {
   FPS, SHOTS, V3, smooth, clamp01, lerp, lin, hash, PARK, GUS_STAND, NEIGH, WIFE5, PANCAKE_AT, CHAIR, hopAt, gardenGusY, HANG_Y,
@@ -64,6 +64,12 @@ const blank = (() => { const c = document.createElement("canvas"); c.width = c.h
 export const SU = 0.00216; // metres per design unit: 1000 units = 2.16 m
 export const SU_SWING = 2.3 / 1830; // swing canvas: rope of 1830 units = 2.3 m
 const BODY = (() => { const g = new THREE.PlaneGeometry(600 * SU, 1000 * SU); g.translate(0, (975 - 500) * SU, 0); return g; })();
+/** wide card (1000 x 1000 design units, figure centred) for poses whose arm or prop reaches past the 600-unit card */
+const WIDE = 200;
+const BODY_WIDE = (() => { const g = new THREE.PlaneGeometry((600 + 2 * WIDE) * SU, 1000 * SU); g.translate(0, (975 - 500) * SU, 0); return g; })();
+/** wide and tall card (1000 x 1200: 200 more units of headroom) for Gus with the fishbowl pushed up over his head */
+const TALL = 200;
+const BODY_TALL = (() => { const g = new THREE.PlaneGeometry((600 + 2 * WIDE) * SU, (1000 + TALL) * SU); g.translate(0, (975 + TALL - (1000 + TALL) / 2) * SU, 0); return g; })();
 const CARD = new THREE.PlaneGeometry(1, 1);
 
 /** lit flat character: cardShade() material, receives shadows (dims to the bright floor only), casts its silhouette
@@ -83,6 +89,8 @@ export class Actor {
     parent.add(this.mesh);
   }
   bind() { const t = this.r?.tex; if (t) { this.mat.map = t; this.dmat.map = t; } }
+  /** standard 600-unit card or the wide one */
+  shape(wide: boolean, tall = false) { const g = tall ? BODY_TALL : wide ? BODY_WIDE : BODY; if (this.mesh.geometry !== g) this.mesh.geometry = g; }
 }
 /** unlit effect card: hard cut-out (ink drawings), soft see-through (dust, streaks) or a multiply ground blob */
 export class Fx {
@@ -115,6 +123,8 @@ export type Place = {
   scale?: number; mirror?: boolean; yaw?: number; geo?: "body" | "swing"; roll?: number; size?: [number, number, number];
   /** fully camera-facing (falling in the shaft): the card takes the camera's orientation, then rolls */
   face?: boolean;
+  /** drawn on the wide card / the wide and tall card */
+  wide?: boolean; tall?: boolean;
 };
 export type FxPlace = { key: string; cw: number; ch: number; draw: (p: Pen) => void; x: number; y: number; z: number; w: number; h: number; flat?: boolean; rot?: number; soft?: boolean; gain?: number };
 /** sun = world direction TOWARD the key light */
@@ -149,7 +159,7 @@ const lidAt = (f: number, i: number, swaps: number[] = []) => {
 
 // ---------------- staging helpers ----------------
 type Ctx = { id: number; f: number; cam: CamInfo; out: Stage; light: LightName };
-type PutOpt = { scale?: number; mirror?: boolean; face?: boolean; roll?: number; blob?: number; noBlob?: boolean };
+type PutOpt = { scale?: number; mirror?: boolean; face?: boolean; roll?: number; blob?: number; noBlob?: boolean; wide?: boolean; tall?: boolean };
 const PIVOT = 375; // design units from the soles to the body centre (the pivot of a tumbling card)
 /** where a puppet's card stands and how a design-space anchor (hands, props, mouth) maps to world space */
 const where = (c: Ctx, lk: Look, pose: Pose, pos: V3, o: PutOpt = {}) => {
@@ -176,18 +186,23 @@ const where = (c: Ctx, lk: Look, pose: Pose, pos: V3, o: PutOpt = {}) => {
 const put = (c: Ctx, lk: Look, pose: Pose, pos: V3, o: PutOpt = {}) => {
   const w = where(c, lk, pose, pos, o), { ps, x, y, z, scale } = w;
   const d = c.cam.pos.distanceTo(tmp.set(x, y, z).addScaledVector(w.U, 1.2 * scale)) / scale;
-  const [cw, ch, k] = tier(d);
-  c.out.places.push({ key: `${lk.id}|${fkey(ps)}`, x, y, z, scale, mirror: w.mirror, face: o.face, roll: w.roll, draw: (p) => { figure(p, lk, ps); }, size: [cw, ch, k] });
+  const [cw, ch, k] = tier(d), tall = !!o.tall, wide = !!o.wide || tall, add = wide ? WIDE : 0, top = tall ? TALL : 0;
+  c.out.places.push({ key: `${lk.id}|${wide ? "W" : ""}${tall ? "T" : ""}${fkey(ps)}`, x, y, z, scale, mirror: w.mirror, face: o.face, roll: w.roll, wide, tall,
+    draw: (p) => { if (add || top) p.g.translate(add, top); figure(p, lk, ps); }, size: [Math.round((cw * (600 + 2 * add)) / 600), Math.round((ch * (1000 + top)) / 1000), k] });
   if (!o.face && !o.noBlob && (c.light === "day" || c.light === "golden")) blob(c, pos[0], pos[1], pos[2], scale, o.blob ?? 1);
   return { A: w.A, at: w.at };
 };
-/** hand target (head heights from the shoulder) that reaches the world point `to` for a standing adult card at `pos` */
-const reach = (c: Ctx, pos: V3, side: number, to: V3): [number, number] => {
-  const HHm = 221.8 * SU, sx = side * 0.163, sy = 1.14;
+/** hand target (head heights from the shoulder) that reaches the world point `to` for an adult card at `pos`
+ *  (sy = shoulder height over the soles: 1.14 m standing, 0.86 m in "chair" mode); the reach is capped at `max` */
+const reach = (c: Ctx, pos: V3, side: number, to: V3, sy = 1.14, max = 1.6): [number, number] => {
+  const HHm = 221.8 * SU, sx = side * 0.163;
   const yaw = Math.atan2(c.cam.pos.x - pos[0], c.cam.pos.z - pos[2]);
   const dx = (to[0] - pos[0]) * Math.cos(yaw) - (to[2] - pos[2]) * Math.sin(yaw);
-  return [((dx - sx) * side) / HHm, (sy - (to[1] - pos[1])) / HHm];
+  const h: [number, number] = [((dx - sx) * side) / HHm, (sy - (to[1] - pos[1])) / HHm], L = Math.hypot(h[0], h[1]);
+  return L > max ? [(h[0] * max) / L, (h[1] * max) / L] : h;
 };
+/** a point `d` metres further from the lens than p (cards that must sit behind a character) */
+const behind = (c: Ctx, p: V3, d = 0.15): V3 => { const h = Math.hypot(c.cam.fwd.x, c.cam.fwd.z) || 1; return [p[0] + (c.cam.fwd.x / h) * d, p[1], p[2] + (c.cam.fwd.z / h) * d]; };
 const fx = (c: Ctx, key: string, cw: number, ch: number, draw: (p: Pen) => void, pos: V3, w: number, h: number, o: Partial<FxPlace> = {}) =>
   c.out.fx.push({ key, cw, ch, draw, x: pos[0], y: pos[1], z: pos[2], w, h, ...o });
 const armMix = (a: Arm, b: Arm, k: number): Arm => ({ ...(k < 0.5 ? a : b), h: [lerp(a.h[0], b.h[0], k), lerp(a.h[1], b.h[1], k)], bend: lerp(a.bend ?? 0.07, b.bend ?? 0.07, k) });
@@ -260,7 +275,7 @@ const shaft = (c: Ctx) => {
       flap: (f * 0.15) % 1 };
     if (wave) pose.R = { h: [0.6 + 0.1 * Math.sin((f - 578) * 1.1), -0.62], bend: -0.25 };
     put(c, GUS, pose, drift, { face: true, roll: -0.05 });
-    fx(c, "bullet", 160, 320, fxBullet, [0.74, by, 0.05], 0.25, 0.5);
+    fx(c, "bullet", 200, 420, fxBullet, [0.8, by, 0.05], 0.375, 0.79);
     speedLines(c, 9, 1.0);
   } else if (id === 9) {
     const fl = (f * 0.31) % 1, sh = 0.012 * Math.sin(f * 2.3);
@@ -348,7 +363,7 @@ const garden = (c: Ctx) => {
       tilt: laugh ? -5 + 2.5 * Math.sin(f * 0.75) : 3, headTilt: laugh ? 5 * Math.sin(f * 0.75 + 1) : -4,
       L: laugh ? { h: [0.86, 0.22 + 0.05 * Math.sin(f * 0.75)], bend: 0.1, front: true, hand: "point" } : { h: [0.5, 0.36], bend: 0.2, front: true },
       R: { h: [0.52, -0.18], bend: -0.3, front: true, prop: "fork", arg: crisp ? 2 : burn ? 1 : 0 } };
-    const g = neighbor(c, pose, [NEIGH[0], NEIGH[1] + shake, NEIGH[2]]);
+    const g = neighbor(c, pose, [NEIGH[0], NEIGH[1] + shake, NEIGH[2]], { wide: true });
     const at = g.at(g.A.propR, 0.04);
     sausageFire(c, at, f, 287, 306);
     if (crisp) { const u = ((f - 305) % 14) / 14; fx(c, `soot${q(u, 14)}`, 300, 300, (p) => fxSoot(p, q(u, 14)), [at[0] + 0.02, at[1] + 0.2 + 0.25 * u, at[2]], 0.3, 0.3); }
@@ -356,9 +371,10 @@ const garden = (c: Ctx) => {
     const landed = f >= 351;
     const wifePose = (ff: number): Pose => {
       const flick = lin([[333, 0], [337, 26], [341, -4], [346, 0]], ff), up = lin([[333, 0], [337, 0.16], [342, 0]], ff);
-      return { expr: "neutral", look: ff >= 337 && ff < 372 ? 1 : 0, facing: ff >= 345 && ff < 372 ? 1 : 0, blink: lidAt(ff, 7, [351, 372]),
-        headTilt: ff >= 338 && ff < 350 ? -5 : ff >= 351 && ff < 372 ? 4 : 0,
-        L: { h: [-0.42, 0.46], bend: 0.3, front: true }, R: { h: [0.5, 0.4 - up], bend: 0.12, front: true, prop: "pan", arg: flick } };
+      const away = sm(ff, 367, 377); // she looks back at us, slowly
+      return { expr: "neutral", look: q(sm(ff, 335, 339) * (1 - away), 20), facing: ff >= 345 ? 1 : 0, blink: lidAt(ff, 7, [351, 372]),
+        headTilt: -5 * sm(ff, 336, 340) * (1 - sm(ff, 348, 352)) + 4 * sm(ff, 350, 354) * (1 - away),
+        L: { h: [0.02, 0.74], bend: 0.36, front: true }, R: { h: [0.5, 0.4 - up], bend: 0.12, front: true, prop: "pan", arg: flick } };
     };
     const pose = wifePose(f);
     const g = put(c, WIFE, pose, WIFE5);
@@ -385,51 +401,68 @@ const garden = (c: Ctx) => {
     put(c, GUS, pose, [hp.x, hp.y, hp.z], { noBlob: air && hp.y < -0.05, blob: air ? 0.5 : 1 });
     if (f >= 411 && f < 417) { const u = (f - 411) / 6; fx(c, "sparkle", 200, 200, fxSparkle, [GUS_STAND[0] + 0.52, 1.72, GUS_STAND[2] + 0.1], 0.2 * Math.sin(Math.PI * u), 0.2 * Math.sin(Math.PI * u), { rot: u }); }
   } else if (id === 13) {
-    const q0 = f >= 895, bob = 0.01 * Math.sin(f * 0.2);
-    put(c, WIFE, { expr: "neutral", facing: 1, look: 1, tilt: 15 + bob * 40, headTilt: 9, blink: lidAt(f, 9, [895]), R: { h: [0.34, -0.56], bend: -0.4 }, L: HIP }, [-0.84, 0, -0.18]);
-    neighbor(c, { expr: q0 ? "wow" : "neutral", facing: -1, look: -1, tilt: -15 - bob * 40, headTilt: -9, blink: lidAt(f, 10, [895]), L: { h: [0.34, -0.56], bend: -0.4 }, R: HIP }, [0.84, 0, -0.18]);
+    // seen from INSIDE the hole, straight up: a dark round rim framing the sky, two heads leaning in over the edge
+    // from opposite sides, each with a hand cupped to an ear. The cards face the lens (it looks up), bodies outward.
+    const q0 = f >= 895, sw = 0.012 * Math.sin(f * 0.16), A = 0.87; // lean-in angle from upright (rad)
+    const pv = (hx: number, hz: number, side: number): [number, number] => [hx - side * 0.63 * Math.sin(A), hz - 0.63 * Math.cos(A)]; // card pivot for a head at (hx, hz); screen right = +x, screen up = +z
+    const [wx, wz] = pv(-0.31 + sw, 0.0, 1), [nx, nz] = pv(0.34 - sw, 0.05, -1);
+    put(c, WIFE, { expr: "neutral", look: 0, headTilt: -5, blink: lidAt(f, 9, [895]), L: { h: [0.3, -0.64], bend: -0.42, front: true }, R: { h: [0.24, 0.4], bend: 0.2 } },
+      [wx, 0.95, wz], { face: true, roll: -A });
+    neighbor(c, { expr: q0 ? "wow" : "neutral", look: 0, headTilt: 5, blink: lidAt(f, 10, [895]), R: { h: [0.3, -0.64], bend: -0.42, front: true }, L: { h: [0.24, 0.4], bend: 0.2 } },
+      [nx, 1.1, nz], { face: true, roll: A });
     if (f >= 895) {
-      const u = (f - 895) / 6, s = u < 1 ? 1.25 * Math.sin((Math.PI / 2) * u) : 1 + 0.25 * Math.exp(-(u - 1) * 1.2) * Math.cos((u - 1) * 2.2);
-      fx(c, "what", 300, 420, fxQuestion, [0, 1.62 + 0.03 * Math.sin(f * 0.25), 0.05], 0.5 * s, 0.7 * s, { rot: 0.1 * Math.sin(f * 0.2) });
+      const u = (f - 895) / 6, sc = u < 1 ? 1.25 * Math.sin((Math.PI / 2) * u) : 1 + 0.25 * Math.exp(-(u - 1) * 1.2) * Math.cos((u - 1) * 2.2);
+      fx(c, "what", 300, 420, fxQuestion, [0.02, 0.62, 0.46 + 0.01 * Math.sin(f * 0.25)], 0.3 * sc, 0.42 * sc, { rot: 0.1 * Math.sin(f * 0.2) });
     }
+    // one small cloud drifting high over the hole
+    fx(c, "cloud3", 600, 300, (p) => fxCloud(p, 3), [-5 + 0.05 * (f - 861), 70, 9], 22, 11, { soft: true, gain: 1.05 });
   } else if (id === 20 || id === 21) {
     const y = gardenGusY(f), top1 = f >= HANG1 - 6 && f < DROP1, rise2 = f >= POP2 - 3 && f < DROP2;
     const visible = y > -2.2;
-    // --- Gus ---
-    let lift = 0, bite = 0;
-    if (rise2) { lift = sm(f, POP2 + 8, BITE - 3) * (1 - sm(f, BITE + 8, BITE + 16)); bite = f >= BITE - 3 && f < BITE ? 1 : f >= BITE ? 2 : 0; }
+    // --- Gus: pops up, tips the fishbowl back like a lid with both hands, one big bite, chews, lid down, gone ---
+    const acc = rise2 ? sm(f, POP2 + 7, BITE - 6) * (1 - sm(f, BITE + 10, BITE + 18)) : 0;
+    const lean = (ff: number) => -10 * sm(ff, BITE - 8, BITE - 2) * (1 - sm(ff, BITE + 5, BITE + 13));
     if (visible) {
       const falling = (f >= DROP1 && f < POP2 - 3) || f >= DROP2;
-      const up: Arm = { h: [0.62, -0.5], bend: -0.2 }, hold: Arm = { h: [0.44, -0.66 - 0.5 * lift], bend: -0.35, front: true };
+      const up: Arm = { h: [0.62, -0.5], bend: -0.2 }, grab = sm(f, POP2 + 3, POP2 + 7);
+      const gripL: Arm = { h: [lerp(0.04, -0.02, acc), lerp(-0.06, -1.15, acc)], bend: -0.3, front: true }, gripR: Arm = { h: [lerp(0.04, 0.035, acc), lerp(-0.06, -1.0, acc)], bend: -0.34, front: true }; // one hand on each end of the rim
       const pose: Pose = falling
-        ? { mode: "air", expr: f >= DROP2 ? "chew" : "shock", L: { h: [0.5, -0.8], bend: -0.12 }, R: { h: [0.52, -0.78], bend: -0.12 }, legs: [[-0.2, 1.3], [0.24, 1.28]], flap: (f * 0.25) % 1 }
+        ? { mode: "air", expr: f >= DROP2 ? "chew" : "shock", chew: ((f - BITE) * 0.12) % 1, L: { h: [0.5, -0.8], bend: -0.12 }, R: { h: [0.52, -0.78], bend: -0.12 }, legs: [[-0.2, 1.3], [0.24, 1.28]], flap: f >= DROP2 ? undefined : (f * 0.25) % 1 }
         : rise2
-          ? { expr: bite === 1 ? "bite" : bite === 2 ? "chew" : "smile", facing: -1, look: -1, blink: lidAt(f, 11, [BITE]), acc: lift, tilt: -7 * sm(f, BITE - 6, BITE - 1) * (1 - sm(f, BITE + 5, BITE + 12)),
-            L: armMix(HANG, hold, sm(f, POP2 + 5, POP2 + 10)), R: armMix(HANG, hold, sm(f, POP2 + 5, POP2 + 10)) }
+          ? { expr: f >= BITE ? "chew" : f >= BITE - 6 ? "bite" : "smile", chew: ((f - BITE) * 0.12) % 1, facing: -1, look: -1, blink: lidAt(f, 11, [BITE]), acc, tilt: lean(f),
+            L: armMix(HANG, gripL, grab), R: armMix(HANG, gripR, grab) }
           : { expr: top1 ? "relief_open" : "smile", facing: -1, look: -1, blink: lidAt(f, 11, [HANG1 - 6]), L: armMix(HANG, up, sm(f, POP1 + 6, HANG1 - 4)), R: armMix(HANG, up, sm(f, POP1 + 6, HANG1 - 4)) };
-      put(c, GUS, pose, [0, y, 0], { noBlob: true });
+      put(c, GUS, pose, [0, y, 0], { noBlob: true, tall: acc > 0 });
     }
-    for (const f0 of [POP1, POP2]) if (f >= f0 && f < f0 + 7) { const u = (f - f0) / 7; fx(c, `pop${q(u, 28)}`, 500, 300, (p) => fxPop(p, q(u, 28)), [0, 0.2, -0.15], 2.0, 1.2); }
-    // --- his wife in the deck chair ---
-    const wind = f >= 1786 && f < 1812, offer = sm(f, 1812, 1826), rewind = f >= 1893 && f < 1922;
-    const lookUp = (f >= POP1 && f < DROP1 + 8) || (f >= POP2 - 2 && f < DROP2 + 6);
-    const timerArm: Arm = { h: [-0.18, 0.36], bend: 0.3, front: true, prop: "timer", arg: wind ? (f - 1786) * 14 : rewind ? (f - 1893) * 14 : f >= 1812 ? 300 - ((f - 1812) / 22) * 300 : 0 };
-    const rest: Arm = { h: [0.2, 0.5], bend: 0.25, front: true, prop: "plate", arg: f >= BITE ? 1 : 0 };
-    const out: Arm = { h: [0.93, -0.06], bend: 0.04, front: true, prop: "plate", arg: f >= BITE ? 1 : 0 };
+    for (const f0 of [POP1, POP2]) if (f >= f0 && f < f0 + 7) { const u = (f - f0) / 7; fx(c, `pop${q(u, 28)}`, 500, 300, (p) => fxPop(p, q(u, 28)), behind(c, [0, 0.2, 0]), 2.0, 1.2); }
+    // --- his wife in the deck chair: winds the egg timer, then holds the plate exactly where his mouth will be ---
+    // her left hand: the egg timer, lifted off her lap and wound (the dial turns, f1786-1812), ticking down until it
+    // rings as he arrives (f1834); wound again after he has gone. Her right hand: the plate, on her lap, then held
+    // out exactly where his mouth will be. Every change is eased: no single-frame jumps.
+    const wind = f >= 1786 && f < 1812, rewind = f >= 1893 && f < 1922, offer = sm(f, 1812, 1826);
+    const up = sm(f, 1779, 1787) * (1 - sm(f, 1812, 1821)) + sm(f, 1887, 1894), wob = wind || rewind ? 1 : 0;
+    const dial = f < 1786 ? 0 : f < 1812 ? (300 * (f - 1786)) / 26 : f < 1834 ? 300 * (1 - (f - 1812) / 22) : f < 1893 ? 0 : Math.min(300, (300 * (f - 1893)) / 29);
+    const timerArm: Arm = { h: [lerp(0.1, -0.18, up) + 0.02 * wob * Math.sin(f * 1.6), lerp(0.52, 0.36, up) + 0.02 * wob * Math.cos(f * 1.6)], bend: 0.3, front: true, prop: "timer", arg: dial };
+    const bitten = f >= BITE ? 1 : 0;
+    // where his mouth is at the bite (he leans in): the bitten end of the sandwich sits there, the hand 13 cm short and 17 cm lower
+    const gm = where(c, GUS, { facing: -1, tilt: lean(BITE) }, [0, HANG_Y, 0]), mouth = gm.at(gm.A.mouth, 0);
+    const hand: V3 = [mouth[0] - c.cam.right.x * 0.13, mouth[1] - 0.175, mouth[2] - c.cam.right.z * 0.13];
+    const rest: Arm = { h: [0.2, 0.5], bend: 0.25, front: true, prop: "plate", arg: bitten };
+    const out: Arm = { h: reach(c, CHAIR, 1, hand, 0.863, 1.2), bend: 0.04, front: true, prop: "plate", arg: bitten };
     const back = sm(f, 1884, 1894);
-    const wpose: Pose = { mode: "chair", expr: "neutral", facing: 1, look: lookUp ? 1 : wind || rewind ? -1 : 0, headTilt: lookUp ? -6 : wind || rewind ? 5 : 0, blink: lidAt(f, 12, [POP1, DROP1 + 8, POP2 - 2, DROP2 + 6]),
-      L: f < 1780 ? { h: [0.1, 0.52], bend: 0.3, front: true, prop: "timer", arg: 0 } : timerArm,
-      R: wind || rewind ? { ...armMix(out, { h: [-0.02, 0.2], bend: 0.3, front: true }, 1), prop: undefined, h: [-0.05 + 0.03 * Math.sin(f * 1.6), 0.2 + 0.03 * Math.cos(f * 1.6)] }
-        : { ...armMix(rest, out, offer * (1 - back)), prop: "plate", arg: f >= BITE ? 1 : 0, front: true } };
-    const w = put(c, WIFE, wpose, CHAIR, { noBlob: true });
-    if (f >= BITE && f < BITE + 9) { const u = (f - BITE) / 9, at = w.at(w.A.propR, 0.06); fx(c, `crumbs${q(u, 18)}`, 300, 300, (p) => fxCrumbs(p, q(u, 18)), [at[0] + 0.08, at[1], at[2]], 0.5, 0.5); }
-    if (f >= POP2 && f < POP2 + 12) { const u = (f - POP2) / 12, at = w.at(w.A.propL, 0.06), s = 0.22 * Math.sin(Math.PI * u) ** 0.6; fx(c, "sparkle", 200, 200, fxSparkle, [at[0], at[1] + 0.16, at[2]], s, s, { rot: u }); }
+    const upK = sm(f, POP1 - 1, POP1 + 3) * (1 - sm(f, DROP1 + 5, DROP1 + 11)) + sm(f, POP2 - 3, POP2 + 1) * (1 - sm(f, DROP2 + 3, DROP2 + 9)); // looks up at him
+    const downK = sm(f, 1783, 1789) * (1 - sm(f, 1809, 1816)) + sm(f, 1890, 1896) * (1 - sm(f, 1919, 1925));                                     // looks down at the timer
+    const wpose: Pose = { mode: "chair", expr: "neutral", facing: 1, look: q(upK - downK, 20), headTilt: -6 * upK + 5 * downK, blink: lidAt(f, 12, [POP1, DROP1 + 8, 1786, 1812, POP2 - 2, DROP2 + 6]),
+      L: timerArm, R: { ...armMix(rest, out, offer * (1 - back)), prop: "plate", arg: bitten, front: true } };
+    const w = put(c, WIFE, wpose, CHAIR, { noBlob: true, wide: true });
+    if (f >= BITE && f < BITE + 10) { const u = (f - BITE) / 10, at = w.at(w.A.propR, 0.06); fx(c, `crumbs${q(u, 20)}`, 300, 300, (p) => fxCrumbs(p, q(u, 20)), [at[0], at[1] - 0.02, at[2]], 0.5, 0.5); }
+    if (f >= POP2 && f < POP2 + 12) { const u = (f - POP2) / 12, at = w.at(w.A.propL, 0.06), sc = 0.22 * Math.sin(Math.PI * u) ** 0.6; fx(c, "sparkle", 200, 200, fxSparkle, [at[0], at[1] + 0.16, at[2]], sc, sc, { rot: u }); }
     // --- the neighbor at the fence (the payoff) ---
     if (id === 21) {
       const seen = f >= POP2 + 3, jaw = f >= DROP2 + 5, fire = f >= 1905;
       const pose: Pose = { expr: jaw ? "jawdrop" : seen ? "shock" : "neutral", facing: -1, look: -1, blink: jaw || seen ? 0 : lidAt(f, 13), headTilt: jaw ? 3 : 0,
         L: { h: [0.45, 0.4], bend: 0.25, front: true }, R: { h: [0.5, jaw ? 0.02 : -0.12], bend: -0.3, front: true, prop: "fork", arg: fire ? 1 : 0 } };
-      // he stands at his fence the whole time, off to the right of the two-shot; the lens goes over to him from f1880
+      // he stands at his fence the whole time, out of the two-shot; the lens swings over to him from f1880
       const g = neighbor(c, pose);
       sausageFire(c, g.at(g.A.propR, 0.04), f, 1905, 0);
     }
@@ -448,31 +481,33 @@ const mini = (c: Ctx, s: number, size: number, arms: number, expr: "o" | "smile"
 const earth = (c: Ctx) => {
   const { id, f } = c;
   if (id === 3) {
-    if (f >= FLAG_POP - 1) {
-      const u = (f - (FLAG_POP - 1)) / 6, s = u < 1 ? 1.3 * Math.sin((Math.PI / 2) * u) : 1 + 0.3 * Math.exp(-(u - 1) * 0.9) * Math.cos((u - 1) * 1.9);
-      const base = earthPoint(1.0, 0.25), tip = earthPoint(1.0 + 0.28 * s, 0.25);
-      const w = q(((f * 0.07) % 1), 16);
-      fx(c, `flag${w}`, 300, 400, (p) => fxFlag(p, w), [(base[0] + tip[0]) / 2 + (tip[0] - base[0]) * 0.5, (base[1] + tip[1]) / 2 + (tip[1] - base[1]) * 0.5, base[2]], 2.1 * s, 2.8 * s, { rot: Math.PI + EARTH_ROLL });
-      if (u < 1) fx(c, `popE${q(u, 20)}`, 500, 500, (p) => fxBurst(p, q(u, 20), "#fff6d8", 9, 50, 230), earthPoint(1.02, 0.5), 2.6, 2.6);
+    // the tunnel punches out through the ocean on the far side: a spark, a small splash, the tiny pipe rim (earth.ts)
+    if (f >= FLAG_POP - 1 && f < FLAG_POP + 14) {
+      const u = (f - (FLAG_POP - 1)) / 15;
+      const at = earthPoint(1.16, 0.45), tip = earthPoint(1.3, 0.45);
+      fx(c, `splashE${q(u, 30)}`, 800, 800, (p) => fxSplash(p, q(u, 30)), [(at[0] + tip[0]) / 2, (at[1] + tip[1]) / 2, at[2]], 2.6, 2.6, { rot: Math.PI + EARTH_ROLL });
+      if (u < 0.5) fx(c, `sparkE${q(u * 2, 20)}`, 500, 500, (p) => fxBurst(p, q(u * 2, 20), "#fff3b0", 10, 40, 230), earthPoint(1.1, 0.7), 2.4, 2.4, { gain: 1.4 });
     }
   } else if (id === 10) {
     const s = earthGusS(id, f);
-    mini(c, s, 1.7, 1, "o", 1, true);
+    mini(c, s, 1.15, 1, "o", 1, true);
     if (Math.abs(s) < 0.1) { const u = clamp01((s + 0.1) / 0.2); fx(c, `coreFlash${q(u, 12)}`, 500, 500, (p) => fxBurst(p, q(u, 12), "#ffffff", 12, 60, 240), earthPoint(0, 0.7), 3.2, 3.2, { gain: 1.6 }); }
   } else if (id === 14) {
     const s = earthGusS(id, f), speed = Math.sqrt(Math.max(0, 1 - (s / 0.93) ** 2));
-    mini(c, s, 1.9, s < 0.6 ? 1 : 0, f > 1080 ? "smile" : "o", speed * 0.9, true);
+    mini(c, s, 1.15, s < 0.6 ? 1 : 0, f > 1080 ? "smile" : "o", speed, true);
     if (f >= ARROW_POP - 1) {
       const u = (f - (ARROW_POP - 1)) / 6, pop = u < 1 ? 1.25 * Math.sin((Math.PI / 2) * u) : 1 + 0.25 * Math.exp(-(u - 1) * 1.0) * Math.cos((u - 1) * 2.0);
-      const flip = clamp01((f - (PASS - 3)) / 6), dir = flip < 0.5 ? 1 : -1, sq = Math.abs(Math.cos(Math.PI * flip)); // squash through zero as it flips
-      const kick = f >= PASS && f < PASS + 8 ? 1 + 0.25 * Math.sin(Math.PI * (f - PASS) / 8) : 1;
-      const size = (0.75 + 0.6 * Math.abs(s)) * pop * kick, len = 1.75 * size * Math.max(0.08, sq);
-      // the arrow sits beside the tunnel, between Gus and the centre, always pointing AT the centre
-      const mid = s * 0.5, p = earthPoint(mid, 0.85, 1.75);
-      fx(c, "arrow", 300, 520, (pp) => fxArrow(pp), p, 1.0 * size, len, { rot: EARTH_ROLL + (dir > 0 ? 0 : Math.PI) });
+      // the pull: a big arrow beside Gus, outside the tunnel line, always pointing AT the centre. As he passes the
+      // centre (f1022) it spins round in six frames, with a sparkle
+      const spin = clamp01((f - (PASS - 3)) / 6), turn = Math.PI * spin * spin * (3 - 2 * spin);
+      const kick = f >= PASS && f < PASS + 8 ? 1 + 0.2 * Math.sin((Math.PI * (f - PASS)) / 8) : 1;
+      const size = (1.5 + 0.45 * Math.abs(s)) * pop * kick;
+      const p = earthPoint(s - Math.sign(s) * 0.16, 0.9, 1.62);
+      fx(c, "arrow", 300, 520, (pp) => fxArrow(pp), p, 1.0 * size, 1.75 * size, { rot: EARTH_ROLL + turn });
+      if (f >= PASS - 1 && f < PASS + 12) { const v = (f - (PASS - 1)) / 13, ss = 1.5 * Math.sin(Math.PI * v) ** 0.6; fx(c, "sparkle", 200, 200, fxSparkle, earthPoint(s - 0.02, 1.1, 2.75), ss, ss, { rot: v * 2, gain: 1.3 }); }
       // the middle: a pulsing ring that the arrow points at
       const r = q(((f * 0.035) % 1), 30);
-      fx(c, `ring${r}`, 600, 600, (pp) => fxRing(pp, r), earthPoint(0, 0.6), 1.7, 1.7);
+      fx(c, `ring${r}`, 600, 600, (pp) => fxRing(pp, r), earthPoint(0, 0.6), 1.9, 1.9);
     }
   }
 };
@@ -529,9 +564,9 @@ const ocean = (c: Ctx) => {
         L: gone ? { h: [0.5, -0.8], bend: -0.12 } : { h: [0.45, 0.4], bend: 0.12 }, R: gone ? { h: [0.55, -0.78], bend: -0.12 } : armMix({ h: [0.5, 0.55], bend: 0.12 }, { h: [1.04, -0.22], bend: 0.02, front: true }, grab),
         legs: [[-0.26, 1.28], [0.3, 1.26]], flap: gone ? (f * 0.25) % 1 : undefined };
     }
-    put(c, GUS, pose, [0, y, 0]);
+    put(c, GUS, pose, [0, y, 0], { wide: true });
   }
-  if (f >= POP_SEA && f < POP_SEA + 7) { const u = (f - POP_SEA) / 7; fx(c, `pop${q(u, 28)}`, 500, 300, (p) => fxPop(p, q(u, 28)), [0, PIPE_H + 0.2, -0.15], 2.1, 1.26); }
+  if (f >= POP_SEA && f < POP_SEA + 7) { const u = (f - POP_SEA) / 7; fx(c, `pop${q(u, 28)}`, 500, 300, (p) => fxPop(p, q(u, 28)), behind(c, [0, PIPE_H + 0.2, 0]), 2.1, 1.26); }
   // --- the fisherman ---
   const awake = f >= POP_SEA + 3, follow = clamp01((y - PIPE_H) / 1.6);
   let fp: Pose;

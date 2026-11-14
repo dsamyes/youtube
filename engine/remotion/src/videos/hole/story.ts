@@ -75,8 +75,8 @@ export const FENCE_H = 1.15;
 export const NEIGH: V3 = [2.5, 0.3, -5.08];      // neighbor behind the fence, on his log pile (right of the hole: never behind Gus's head)
 export const GRILL: V3 = [3.7, 0, -6.6];
 export const WIFE5: V3 = [1.8, 0, 0.4];        // wife with the pan (shot 5)
-export const PANCAKE_AT: V3 = [2.16, 0.02, 1.5]; // on the pan's side of her: the arc never crosses her face // where the pancake lands
-export const CHAIR: V3 = [-1.04, 0, 0.42];       // deck chair by the hole (shots 20-21)
+export const PANCAKE_AT: V3 = [2.18, 0.02, 0.92]; // on the pan's side of her: the arc never crosses her face // where the pancake lands
+export const CHAIR: V3 = [0.5, 0, 0.95];         // deck chair south of the hole (shots 20-21: the lens looks west, into the low sun)
 export const PARK: V3 = [60, 0, 46];             // swing pivot base
 
 /** shovel (shot 2): 0 = held upright beside Gus, 1 = planted in the mound; the thrust lands on f181 */
@@ -99,14 +99,14 @@ export const POP1 = 1711, HANG1 = 1737, DROP1 = 1766, POP2 = 1834, BITE = 1855, 
 export const HANG_Y = -0.34; // he stops with his shins still in the hole
 const DEEP = -2.3;
 const popUp = (f: number, f0: number, n: number) => DEEP + (HANG_Y - DEEP) * (1 - (1 - clamp01((f - f0) / n)) ** 2.4);
-const dropDown = (f: number, f0: number) => HANG_Y - 0.02 * Math.max(0, f - f0) ** 2.2;
+const dropDown = (f: number, f0: number) => HANG_Y - 0.0125 * Math.max(0, f - f0) ** 2; // gone in 11 frames (the QA read the faster drop as a pop)
 export const gardenGusY = (f: number) =>
   f < DROP1 ? popUp(f, POP1 - 3, HANG1 - POP1 + 3) : f < POP2 - 3 ? dropDown(f, DROP1) : f < DROP2 ? popUp(f, POP2 - 3, 17) : dropDown(f, DROP2);
 
 // ---------------- the ocean (water y = 0, pipe at the origin) ----------------
 export const PIPE_H = 0.95;                 // rim height over the water
-export const BOAT: V3 = [1.45, 0, 0.35];    // rowboat centre (bow toward the lens)
-export const FISHER: V3 = [1.45, 0.06, 0.3];  // fisherman's seat (card base)
+export const BOAT: V3 = [1.45, 0, 0.5];     // rowboat centre (three-quarter view, bow toward the lens)
+export const FISHER: V3 = [1.74, -0.15, -0.03]; // he sits on the stern thwart: hips at its height, the near gunwale over his bent legs  // fisherman's seat (card base)
 export const POP_SEA = 1342, STOP_SEA = 1442, SINK_SEA = 1560, GONE_SEA = 1598;
 export const SEA_TOP = 0.5;                 // soles over the rim when he hangs
 /** height of Gus's soles over the WATER (shots 16-18) */
@@ -234,8 +234,8 @@ const S3b = (f: number) => dolly([0.9, -3.2, 27], [0.75, -3.4, 0], pushK(f, 240,
 const N_EYE: V3 = [NEIGH[0], NEIGH[1] + 1.42, NEIGH[2]];
 const S4a = (f: number) => dolly([1.6, 1.82, -1.1], add(N_EYE, [0.1, 0.02, 0]), pushK(f, 264, 0.0022, 0.006, 26, 281), { fov: 40, roll: 0.035 });
 // ---- shot 5: the wife and the pancake ----
-const S5a = (f: number) => dolly([0.8, 1.5, 4.3], [1.98, 0.8, 0.7], pushK(f, 319, 0.0018), { fov: 40 });
-const S5b = (f: number) => dolly([1.0, 1.42, 4.15], [2.06, 0.7, 0.85], pushK(f, 345, 0.0012), { fov: 38, roll: -0.035 });
+const S5a = (f: number) => dolly([1.15, 1.02, 3.75], [2.0, 0.84, 0.5], pushK(f, 319, 0.0014), { fov: 40 });
+const S5b = (f: number) => dolly([1.3, 0.98, 3.65], [2.04, 0.74, 0.55], pushK(f, 345, 0.001), { fov: 40, roll: -0.035 });
 // ---- shot 6: the clipboard, the salute, the hop; the lens tilts down into the hole after him ----
 const S6a = (f: number) => dolly([0.2, 1.45, 2.75], [-0.74, 1.14, -0.5], pushK(f, 393, 0.002), { fov: 38 });
 const S6b = (f: number): Shot => { // rides up with the hop, then tips into the hole after him
@@ -257,26 +257,28 @@ const S11a = (f: number) => dolly([0.2, 0.74, 1.42], [0, 0.63, 0], pushK(f, 685,
 const S12a = (f: number) => dolly([0.3, 0.35, 2.65], [0.22, 0.2, 0], pushK(f, 743, 0.0015, 0.005, 22, 790), { fov: 42, roll: 0.03 });
 const S12b = (f: number) => dolly([0.0, 0.4, 2.2], [-0.02, 0.32, 0], pushK(f, 820, 0.0018), { fov: 40, roll: -0.03 });
 // ---- shot 13: listening over the hole ----
-const S13a = (f: number) => dolly([0.08, 0.72, 5.5], [0, 0.98, -0.1], pushK(f, 861, 0.0016, 0.004, 20, 893), { fov: 44 });
+// ---- shot 13: from inside the hole, straight up at the two listeners (slow creep up, slight roll) ----
+const S13a = (f: number) => dolly([0.03, -2.0, 0.27], [0, 2.4, -0.11], pushK(f, 861, 0.001, 0.0028, 18, 893), { fov: 56, roll: 0.03 + 0.0009 * (f - 861) });
 // ---- shot 14: the explanation ----
-const S14a = (f: number) => dolly([0.4, 0.5, 36], [0.15, -0.1, 0], pushK(f, 911, 0.0009), { fov: 31, roll: -0.02 });
+const S14a = (f: number) => dolly([0.4, 0.5, 34.2], [0.2, -0.1, 0], pushK(f, 911, 0.00034), { fov: 31, roll: -0.02 }); // the globe fills ~85 % of the width
 // ---- shot 15: the park swing (the template's two framings) ----
 const S15a = (f: number) => dolly([PARK[0] + 0.1, 1.5, PARK[2] - 8.8], [PARK[0] + 0.0, 1.75, PARK[2]], pushK(f, 1119, 0.001), { fov: 40 });
 const S15b = (f: number) => dolly([PARK[0] - 1.3, 1.9, PARK[2] - 10.4], [PARK[0] - 0.1, 1.95, PARK[2]], pushK(f, 1186, 0.0009, 0.004, 28, 1236), { fov: 42 });
 // ---- shot 16: night ocean; the lens tilts up with Gus as he rises ----
-const seaLook = (f: number): V3 => { const y = seaGusY(Math.min(f, STOP_SEA)); return [0.7, 1.35 + 0.4 * smooth((y - PIPE_H + 1.2) / (SEA_TOP + 1.2)), 0.2]; };
-const S16a = (f: number) => dolly([0.3, 1.35, 8.7], [0.72, 1.35, 0.2], pushK(f, 1264, 0.0011), { fov: 42 });
-const S16b = (f: number) => dolly([0.3, 1.3, 7.7], seaLook(f), pushK(f, 1342, 0.0006), { fov: 44, roll: -0.03 });
+const seaLook = (f: number): V3 => { const y = seaGusY(Math.min(f, STOP_SEA)); return [0.84, 1.35 + 0.4 * smooth((y - PIPE_H + 1.2) / (SEA_TOP + 1.2)), 0.2]; };
+const S16a = (f: number) => dolly([0.45, 1.35, 8.7], [0.86, 1.35, 0.2], pushK(f, 1264, 0.0011), { fov: 42 });
+const S16b = (f: number) => dolly([0.45, 1.3, 7.7], seaLook(f), pushK(f, 1342, 0.0006), { fov: 44, roll: -0.03 });
 // ---- shots 17-18: the two-shot (one camera, closer on "Unluckily") ----
-const TWO: V3 = [0.76, 1.92, 0.2];
-const S17a = (f: number) => dolly([0.55, 1.98, 6.25], TWO, pushK(f, 1465, 0.0006), { fov: 42, roll: 0.03 });
-const S18a = (f: number) => dolly([0.95, 1.72, 5.95], [0.8, 1.72, 0.2], pushK(f, 1532, 0.0005), { fov: 42, roll: -0.035 });
+const TWO: V3 = [0.82, 1.9, 0.2];
+const S17a = (f: number) => dolly([0.7, 1.98, 6.8], TWO, pushK(f, 1465, 0.0006), { fov: 42, roll: 0.03 });
+const S18a = (f: number) => dolly([1.0, 1.72, 6.55], [0.84, 1.7, 0.2], pushK(f, 1532, 0.0005), { fov: 42, roll: -0.035 });
 // ---- shot 19: the way back (mirrored framing) ----
 const S19a = (f: number) => dolly([-0.6, 0.5, 2.9], [-0.1, 0.1, 0], pushK(f, 1614, 0.0016), { fov: 46, roll: -0.06 });
 // ---- shots 20-21: the evening garden ----
-const E_L: V3 = [-0.52, 0.8, 0.1];
-const S20a = (f: number) => dolly([-0.5, 1.25, 5.45], E_L, pushK(f, 1703, 0.0012), { fov: 44 });
-const S21a = (f: number) => dolly([-0.56, 1.2, 5.1], [-0.54, 0.82, 0.1], pushK(f, 1753, 0.0006), { fov: 44 });
+// the lens stands east of the hole and looks west into the low sun: sky over the fence line, long shadows toward us
+const E_L: V3 = [0.12, 0.86, 0.48];
+const S20a = (f: number) => dolly([4.4, 1.12, -0.6], E_L, pushK(f, 1703, 0.0012), { fov: 44 });
+const S21a = (f: number) => dolly([4.2, 1.1, -0.56], [0.12, 0.88, 0.5], pushK(f, 1753, 0.0005), { fov: 44 });
 const S21b = (f: number) => dolly([1.8, 1.86, -0.9], add(N_EYE, [0.1, 0.0, 0]), pushK(f, 1884, 0.0016, 0.005, 18, 1903), { fov: 40, roll: -0.03 });
 
 const CAMS: Record<number, Key[]> = {
@@ -370,13 +372,13 @@ export const DOF: Dof[] = [
   { f: 448, cInf: 0 },                                            // shaft
   { f: 685, cInf: 13, focus: () => [0, 0.63, 0] },                // face close-up: walls melt
   { f: 743, cInf: 0 },
-  { f: 861, cInf: 8, focus: () => [0, 1.1, -0.15] },              // listening over the hole
+  { f: 861, cInf: 0 },                                            // up from inside the hole: rim, heads and sky all sharp
   { f: 911, cInf: 0 },                                            // Earth
   { f: 1119, cInf: 7 },                                           // park: focus = look (the swing plane)
   { f: 1264, cInf: 0 },                                           // ocean wide
   { f: 1465, cInf: 9, focus: at(TWO) },                           // two-shot
   { f: 1614, cInf: 0 },                                           // shaft
-  { f: 1703, cInf: 9, focus: () => [0, 1.0, 0] },                 // evening garden: Gus and his wife
+  { f: 1703, cInf: 9, focus: () => [0.15, 1.0, 0.4] },            // evening garden: Gus and his wife
   { f: 1880, dur: 34, cInf: 12, focus: at(N_EYE) },                // final: over to the neighbor at the fence
 ];
 export const dofAt = (f: number) => {

@@ -46,15 +46,20 @@ export const soilHD = () => ctex("soilHD", 512, 512, (g, r) => {
   }
 });
 
-/** inside of the garden hole: strata going down, fading to black (v = 1 at the lawn) */
-export const pitHD = () => ctex("pitHD", 512, 1024, (g, r) => {
-  const bands = ["#5d7a2e", "#7a5234", "#8a5e3c", "#74492e", "#8c6a4c", "#5e3d28", "#6f4a36", "#4a3226"];
-  let y = 0;
-  bands.forEach((c, i) => { const h = i === 0 ? 14 : U(r, 40, 110); g.fillStyle = c; g.fillRect(0, y, 512, h + 2); y += h; });
-  g.fillStyle = "#3d2a20"; g.fillRect(0, y, 512, 1024 - y);
-  for (let i = 0; i < 60; i++) { g.fillStyle = r() < 0.3 ? "rgba(190,180,165,0.8)" : "rgba(50,30,20,0.5)"; g.beginPath(); g.ellipse(r() * 512, 20 + r() * 500, U(r, 4, 12), U(r, 3, 8), 0, 0, TAU); g.fill(); }
-  const sh = g.createLinearGradient(0, 0, 0, 1024); sh.addColorStop(0, "rgba(0,0,0,0)"); sh.addColorStop(0.1, "rgba(0,0,0,0.25)"); sh.addColorStop(0.55, "rgba(0,0,0,0.93)"); sh.addColorStop(1, "rgba(0,0,0,1)");
-  g.fillStyle = sh; g.fillRect(0, 0, 512, 1024);
+/** inside of the garden hole (v = 1 at the lawn, 1024 px = 7 m): it must read as BOTTOMLESS. A thin dark soil band
+ *  right under the rim (the far inner wall shows as a dark curved band from every garden camera), near-black within
+ *  half a metre, black below, and a faint warm glow far down. */
+export const pitHD = () => ctex("pitHD2", 512, 1024, (g, r) => {
+  g.fillStyle = "#000000"; g.fillRect(0, 0, 512, 1024);
+  const top = g.createLinearGradient(0, 0, 0, 150);
+  top.addColorStop(0, "#3b2819"); top.addColorStop(0.1, "#2a1b12"); top.addColorStop(0.45, "#120b09"); top.addColorStop(1, "#000000");
+  g.fillStyle = top; g.fillRect(0, 0, 512, 150);
+  g.fillStyle = "#2c3f16"; g.fillRect(0, 0, 512, 5);                                   // turf edge
+  for (let i = 0; i < 40; i++) { g.fillStyle = r() < 0.3 ? "rgba(120,104,88,0.5)" : "rgba(70,44,26,0.6)"; g.beginPath(); g.ellipse(r() * 512, 8 + r() * 46, U(r, 4, 11), U(r, 2, 5), 0, 0, TAU); g.fill(); }
+  for (let y = 22; y < 150; y += U(r, 14, 30)) { g.fillStyle = `rgba(86,56,34,${(0.35 * (1 - y / 150)).toFixed(3)})`; g.fillRect(0, y, 512, 2.5); } // strata, fading
+  const glow = g.createLinearGradient(0, 520, 0, 1024);
+  glow.addColorStop(0, "rgba(120,36,8,0)"); glow.addColorStop(1, "rgba(120,36,8,0.6)");
+  g.fillStyle = glow; g.fillRect(0, 520, 512, 504);
 });
 
 /** shaft wall mask, tileable 1024 x 1024 (data, NoColorSpace). The shader samples it twice:
@@ -138,6 +143,10 @@ export const earthCut = (rm: number, ro: number, ri: number) => ctex("earthCut",
     g.fillStyle = gr; g.beginPath(); g.arc(C, C, r1 * R + 1, 0, TAU); g.arc(C, C, Math.max(0, r0 * R - 1), 0, TAU, true); g.fill("evenodd");
   };
   ring(rm, 1.0, "#7a5236", "#5c3d28");            // crust (kept dark: it is thin)
+  // surface skin on the cut: green land over the top of the globe (the garden), blue ocean around the rest (the far side)
+  g.lineWidth = 0.022 * R; g.lineCap = "butt";
+  g.strokeStyle = "#2a84d6"; g.beginPath(); g.arc(C, C, 0.989 * R, 0, TAU); g.stroke();
+  g.strokeStyle = "#5fae4a"; g.beginPath(); g.arc(C, C, 0.989 * R, -Math.PI * 0.5 - 0.62, -Math.PI * 0.5 + 0.62); g.stroke();
   ring(ro, rm, "#f08a2c", "#d4421f");             // mantle: orange inside -> red outside
   ring(ri, ro, "#ffd23e", "#f9a02a");             // outer core
   ring(0, ri, "#fffbe6", "#ffe680");              // inner core
@@ -205,9 +214,15 @@ export const glowTex = () => ctex("glowSoft", 256, 256, (g) => {
   g.putImageData(im, 0, 0);
 });
 
-/** the garden lawn: the template's grass painting, pulled from lemon-lime toward the reference lawn green
- *  (on screen ~#7fc24a under the day light instead of ~#90d311) */
-export const lawnHD = () => ctex("lawnHD", 1024, 1024, (g) => {
+/** the garden lawn: the template's grass painting with its tufts kept, pulled from lemon-lime toward the reference
+ *  lawn green: saturation x0.72 around the luma, a little blue back in, 5 % darker (pixel by pixel, so the painted
+ *  contrast survives) */
+export const lawnHD = () => ctex("lawnHD2", 1024, 1024, (g) => {
   g.drawImage(grassHD().image as HTMLCanvasElement, 0, 0);
-  g.fillStyle = "rgba(96,158,120,0.42)"; g.fillRect(0, 0, 1024, 1024);
+  const im = g.getImageData(0, 0, 1024, 1024), d = im.data;
+  for (let i = 0; i < d.length; i += 4) {
+    const l = 0.2126 * d[i] + 0.7152 * d[i + 1] + 0.0722 * d[i + 2];
+    d[i] = (l + (d[i] - l) * 0.72) * 0.95; d[i + 1] = (l + (d[i + 1] - l) * 0.72) * 0.95; d[i + 2] = (l + (d[i + 2] - l) * 0.72 + 10) * 0.95;
+  }
+  g.putImageData(im, 0, 0);
 });

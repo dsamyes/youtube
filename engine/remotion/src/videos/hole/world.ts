@@ -51,8 +51,9 @@ const haloTex = () => ctex("sunHalo", 256, 256, (g) => {
 /** per-shot key light: camera-relative az / el (the template's rule), or an absolute world direction TOWARD the light */
 const SUN_SHOT: Record<number, { az?: number; el?: number; abs?: [number, number, number] }> = {
   15: { az: -30, el: 18 },             // park: ringed by trees and houses (template)
-  4: { az: 118 }, 5: { az: 105 }, 6: { az: 110 }, 13: { az: 112 }, // character shots: the sun over the lens's right shoulder (front-lit sets)
-  20: { az: -84, el: 19 }, 21: { az: -84, el: 19 }, // evening garden: low sun from the open west side (screen left)
+  4: { az: 118 }, 5: { az: 105 }, 6: { az: 110 }, // character shots: the sun over the lens's right shoulder (front-lit sets)
+  13: { abs: [0.5, 0.66, 0.56] },
+  20: { abs: [-0.83, 0.27, 0.49] }, 21: { abs: [-0.83, 0.27, 0.49] }, // evening garden: low sun in the open west-south-west, ahead-left of the lens (the park's backlit golden hour)
   3: { abs: [0.62, 0.45, 0.64] }, 10: { abs: [0.62, 0.45, 0.64] }, 14: { abs: [0.62, 0.45, 0.64] }, // space: the sun lights the surface crescent
   16: { az: -55, el: 38 }, 17: { az: -55, el: 38 }, 18: { az: -55, el: 38 },
 };
@@ -217,7 +218,8 @@ export class World {
       cur.lit = mix3(a.lit, b.lit); cur.shade = mix3(a.shade, b.shade); cur.tint = mix3(a.tint, b.tint); cur.gain = lerp(a.gain, b.gain, k);
     } else if (s.place === "earth") {
       const sG = earthGusS(id, f), near = Math.max(0, 1 - Math.abs(sG) / 0.25);
-      this.earth!.pose(id === 3 ? tunnelK(f) : 1, 1 + 0.25 * near + 0.04 * Math.sin(f * 0.21));
+      const pk = id === 3 ? Math.max(0, Math.min(1, (f - 245) / 3)) : 1; // the far pipe rim pops out of the sea on f247
+      this.earth!.pose(id === 3 ? tunnelK(f) : 1, 1 + 0.25 * near + 0.04 * Math.sin(f * 0.21), pk * (1 + (id === 3 ? 0.35 * Math.max(0, 1 - Math.abs(f - 249) / 3) : 0)));
     } else if (s.place === "ocean") this.ocean!.pose(f, K);
     else this.town!.pose(id, f, cam, s.a, s.b);
     this.cur = cur;
@@ -264,6 +266,7 @@ export class World {
       const a = p.geo === "swing" ? this.swing : this.actor(ai++);
       const [w, h, k] = p.size ?? [300, 500, 0.5];
       a.r = this.pool.req(p.key, w, h, k, p.draw);
+      if (p.geo !== "swing") a.shape(!!p.wide, !!p.tall);
       a.mesh.visible = true;
       a.mesh.position.set(p.x, p.y, p.z);
       if (p.face) { a.mesh.quaternion.copy(cam.quaternion); a.mesh.rotateZ(p.roll ?? 0); }

@@ -21,8 +21,10 @@ export type Pose = {
   legs?: [[number, number], [number, number]];
   /** 0..1 phase: cloth and cheeks flap in the wind */
   flap?: number;
-  /** accessory amount 0..1 (Gus: the fishbowl lifted off his chin for one bite) */
+  /** accessory amount 0..1 (Gus: the fishbowl tipped back like a lid for one bite) */
   acc?: number;
+  /** 0..1 phase of a chewing mouth */
+  chew?: number;
   light?: number;
 };
 export type G = {
@@ -42,6 +44,8 @@ export type Look = {
 export type Anchors = { L: P2; R: P2; propL: P2; propR: P2; mouth: P2; head: P2; top: P2 };
 
 const TWO = Math.PI * 2;
+/** the bite out of the sandwich: three scallops (x, y, r in u from the plate centre) taking a third of it */
+const BITE: [number, number, number][] = [[17, -29, 8.5], [13.5, -19, 9.5], [17.5, -8.5, 8]];
 const HANG: Arm = { h: [0.17, 0.92], bend: 0.07 };
 
 // ---------------- props held in a hand ----------------
@@ -112,6 +116,7 @@ const drawProp = (p: Pen, name: PropName, hx: number, hy: number, side: number, 
     }
     case "plate": {
       // a sandwich on a plate; arg = 1: one bite gone (on the side away from the holder)
+      u *= 1.4; // big enough to read in a two-shot
       const cx = hx + side * 4 * u, py = hy - 5 * u, s = side;
       const X = (x: number) => cx + s * x * u;
       const g = p.g;
@@ -125,9 +130,9 @@ const drawProp = (p: Pen, name: PropName, hx: number, hy: number, side: number, 
       const bite: P2 = [X(17), py - 19 * u];
       if (arg >= 1) { // erase a scalloped bite, then ink its edge
         g.save(); g.globalCompositeOperation = "destination-out";
-        for (const [bx, by, br] of [[19.5, -27, 6.5], [18, -18.5, 7], [20, -9.5, 6]] as const) { const [qx, qy] = p.P(X(bx), py + by * u); g.beginPath(); g.arc(qx, qy, br * u, 0, TWO); g.fill(); }
+        for (const [bx, by, br] of BITE) { const [qx, qy] = p.P(X(bx), py + by * u); g.beginPath(); g.arc(qx, qy, br * u, 0, TWO); g.fill(); }
         g.restore();
-        for (const [bx, by, br] of [[19.5, -27, 6.5], [18, -18.5, 7], [20, -9.5, 6]] as const) p.arc(X(bx), py + by * u, br * u, br * u, s > 0 ? 100 : -80, s > 0 ? 260 : 80, 1.8 * u);
+        for (const [bx, by, br] of BITE) p.arc(X(bx), py + by * u, br * u, br * u, s > 0 ? 100 : -80, s > 0 ? 260 : 80, 2 * u);
       }
       p.ell(cx, py, 31 * u, 6.5 * u, "#fbfaf4", 2.2 * u);
       p.arc(cx, py - 0.5 * u, 22 * u, 3.6 * u, 10, 170, 1.3 * u, "#c9ccd2");
@@ -232,15 +237,12 @@ export const figure = (p: Pen, lk: Look, o: Pose): Anchors => {
   const g: G = { cx: 300, hc, H, W, HH, u, crown, chin, light, thick, ow, hp: [], facing, seed, torsoBot, tcx, sole, mode, acc: o.acc ?? 0 };
   if (lk.dress && mode !== "sit") {
     const hem = sole - (mode === "chair" ? 0.45 : 0.35) * HH;
-    const D: Blob = { a: 0.5 * W * 0.98, b: 0.5 * (hem - (chin - 0.2 * HH)), nTop: 2.0, nBot: 3.0, egg: 0.35, asym: 0.03 * facing, rot: 0, noise: 0.006, seed: seed + 9 };
+    // one bell from the shoulders to the hem (the template's separate shoulder blob read as a scarf at her neck)
+    const D: Blob = { a: 0.5 * W * 0.98, b: 0.5 * (hem - (chin - 0.2 * HH)), nTop: 2.3, nBot: 3.0, egg: 0.27, asym: 0.03 * facing, rot: 0, noise: 0.006, seed: seed + 9 };
     const dp = blobPts(300, hem - D.b, D);
     p.gradFill(dp, lk.dress, mul(lk.dress, SH_CLOTH), light);
     if (lk.deco) p.clip(dp, () => lk.deco!(p, g));
     p.inkRing(dp, ow, thick);
-    const Sw: Blob = { a: 0.37 * W, b: 0.3 * HH, nTop: 2.2, nBot: 2.4, egg: 0.1, asym: 0, rot: 0, noise: 0.006, seed: seed + 8 };
-    const sp = blobPts(300, chin + 0.12 * HH, Sw);
-    p.gradFill(sp, lk.top, mul(lk.top, SH_CLOTH), light);
-    p.inkRing(sp, ow * 0.9, thick);
   } else {
     p.gradFill(tp, lk.top, mul(lk.top, SH_CLOTH), light);
     if (lk.deco) p.clip(tp, () => lk.deco!(p, g));
@@ -261,7 +263,7 @@ export const figure = (p: Pen, lk: Look, o: Pose): Anchors => {
   p.shadedFill(hp, skin, mul(skin, SH_SKIN), light, H.a);
   p.inkRing(hp, ow, thick);
   lk.headFront?.(p, g);
-  faceFront(p, 300, hc, W, expr, facing, look, lid, !!lk.brim, skin, lk.moustache, lk.build === "stout", fl ?? 0, lk.brow ?? INK);
+  faceFront(p, 300, hc, W, expr, facing, look, lid, !!lk.brim, skin, lk.moustache, lk.build === "stout", fl ?? o.chew ?? 0, lk.brow ?? INK);
   lk.faceOver?.(p, g);
   anchors.mouth = p.P(300 + 8 * u * facing, hc + 20 * u);
   anchors.head = p.P(300, hc);
@@ -279,6 +281,27 @@ const NULL_G: CanvasRenderingContext2D = (() => {
 export const anchorsOf = (lk: Look, o: Pose) => figure(new Pen(NULL_G), lk, o);
 
 // ---------------- the cast ----------------
+/** Gus's glass bowl with its steel rim. acc 0 = on (rim at the collar); acc 1 = pushed up and tipped back like a
+ *  lid: the rim rests across his forehead (one end in each hand), the dome stands behind and above his head, so his
+ *  whole face is clear for a bite. All offsets in head half widths `a` from the head centre. */
+export const BOWL_R = 1.3; // glass radius / head half width
+export const bowlAt = (hc: number, a: number, b: number, acc: number) => {
+  const R = BOWL_R * a, k = acc * acc * (3 - 2 * acc), rot = 12 * k;
+  const cx = 300 + 0.28 * a * k, cy = hc - 0.05 * b - 1.89 * a * k, d = rad(90 + rot); // lifted: the rim lies along his hairline, clear of the brows
+  // the mouth of the bowl: centre and half width of its rim (the chord 31 degrees either side of the opening axis)
+  return { R, cx, cy, rot, mx: cx + 0.857 * R * Math.cos(d), my: cy + 0.857 * R * Math.sin(d), half: R * Math.sin(rad(31)) };
+};
+const glass = (p: Pen, g: G) => {
+  const { u, hc, H, acc } = g, { R, cx, cy, rot } = bowlAt(hc, H.a, H.b, acc);
+  p.arc(cx, cy, R, R, 121 + rot, 419 + rot, 3.4 * u);
+  p.arc(cx, cy, R - 9 * u, R - 9 * u, 203 + rot, 248 + rot, 5 * u, "#ffffff");
+  p.arc(cx, cy, R - 9 * u, R - 9 * u, 256 + rot, 263 + rot, 5 * u, "#ffffff");
+};
+const rim = (p: Pen, g: G) => {
+  const { u, hc, H, acc } = g, B = bowlAt(hc, H.a, H.b, acc);
+  p.ell(B.mx, B.my, B.half * 1.08, 6.2 * u, "#d5dbe2", 2.6 * u, 0, 360, B.rot);
+  p.arc(B.mx, B.my - 1.5 * u, B.half * 0.84, 3.2 * u, 200, 340, 1.5 * u, "#ffffff");
+};
 const PJ = "#9cc7ee", PJ_STRIPE = "#3f73c4";
 /** Gus: blue striped pyjamas, red slippers, a round glass fishbowl helmet (clear: only its rim, a collar and one highlight) */
 export const GUS: Look = {
@@ -289,25 +312,15 @@ export const GUS: Look = {
     p.poly([[tcx - 13 * u, chin - 0.1 * HH], [tcx, chin + 0.2 * HH], [tcx + 13 * u, chin - 0.1 * HH], [tcx + 20 * u, chin + 0.02 * HH], [tcx, chin + 0.34 * HH], [tcx - 20 * u, chin + 0.02 * HH]], "#f4f8fc", 1.8 * u);
     for (let i = 0; i < 3; i++) { const y = chin + 0.46 * HH + i * 0.2 * HH; p.dot(tcx, y, 3.2 * u, INK); p.dot(tcx, y, 2.3 * u, "#f4f8fc"); }
   },
-  neck: (p, g) => { // helmet collar ring
-    const { u, HH, chin } = g;
-    p.ell(300, chin + 0.085 * HH, 36 * u, 6.2 * u, "#d5dbe2", 2.6 * u);
-    p.arc(300, chin + 0.07 * HH, 28 * u, 3.2 * u, 200, 340, 1.5 * u, "#ffffff");
-  },
+  neck: (p, g) => { if (g.acc <= 0.02) rim(p, g); },      // helmet rim at the collar
   headFront: (p, g) => { // a small tuft
     const { u, crown } = g;
     for (const [dx, bend] of [[-7, -7], [0, 3], [7, 9]] as const)
       p.stroke(curve([300 + dx * u, crown + 6 * u], [300 + (dx + bend * 0.6) * u, crown - 5 * u], [300 + (dx + bend) * u, crown - 11 * u]), 2.4 * u, "#5a3b2a");
   },
-  faceOver: (p, g) => { // the glass bowl: thin rim open at the collar, one highlight arc + a glint
-    const { u, hc, H, HH, acc } = g, R = 1.3 * H.a, cy = hc - 0.05 * H.b - acc * 0.62 * HH;
-    p.arc(300, cy, R, R, 121, 419, 3.4 * u);
-    if (acc > 0.05) p.arc(300, cy + R * Math.cos(rad(31)), R * Math.sin(rad(31)), 5 * u * Math.min(1, acc * 3), 0, 180, 3 * u); // the open mouth of the bowl
-    p.arc(300, cy, R - 9 * u, R - 9 * u, 203, 248, 5 * u, "#ffffff");
-    p.arc(300, cy, R - 9 * u, R - 9 * u, 256, 263, 5 * u, "#ffffff");
-  },
+  headBack: (p, g) => { if (g.acc > 0.02) glass(p, g); },                       // lifted: the dome stands behind the head
+  faceOver: (p, g) => { if (g.acc <= 0.02) glass(p, g); else rim(p, g); },      // on: glass over the face; lifted: the rim across his forehead
 };
-export const HELMET_R = 1.3; // glass radius / head half width
 
 /** Gus's wife: green dress, white apron, hair bun; deadpan */
 const HAIR_W = "#7a4a2a";
@@ -408,15 +421,22 @@ export const fxFeather = (p: Pen) => {
   p.stroke([[112, 398], [110, 330], [108, 50]], 7);
 };
 
-/** rifle bullet on a 160 x 320 canvas, nose down, with three little wake ticks behind it */
+/** rifle bullet on a 200 x 420 canvas, flying nose DOWN: pointed copper nose leading, brass case with its
+ *  shoulder and rim at the back, three short speed lines trailing above it */
 export const fxBullet = (p: Pen) => {
-  const body: P2[] = [[44, 60], [116, 60], [116, 190]];
-  for (let i = 0; i <= 12; i++) { const a = (i / 12) * Math.PI; body.push([80 + 36 * Math.cos(a), 190 + 96 * Math.sin(a) ** 0.85]); }
-  body.push([44, 190]);
-  p.poly(body, "#d89a3c", 10);
-  p.clip(body, () => { p.poly([[52, 50], [70, 50], [70, 250], [58, 250]], "#f6d58a", 0); p.poly([[40, 60], [120, 60], [120, 84], [40, 84]], "#a8702a", 0); });
-  p.poly(body, null, 10);
-  for (const x of [50, 80, 110]) p.stroke([[x, 34], [x, 12 + (x === 80 ? 0 : 8)]], 7);
+  const nose: P2[] = [[62, 236]];
+  for (let i = 0; i <= 14; i++) { const t = i / 14; nose.push([100 - 38 * (1 - t) ** 0.55, 236 + 168 * t]); }
+  for (let i = 14; i >= 0; i--) { const t = i / 14; nose.push([100 + 38 * (1 - t) ** 0.55, 236 + 168 * t]); }
+  p.poly(nose, "#c4703a", 10);
+  p.clip(nose, () => p.poly([[70, 230], [84, 230], [96, 400], [90, 400]], "#e9a878", 0));
+  p.poly(nose, null, 10);
+  const cas: P2[] = [[48, 92], [152, 92], [152, 196], [138, 222], [138, 240], [62, 240], [62, 222], [48, 196]];
+  p.poly(cas, "#d9a53c", 10);
+  p.clip(cas, () => { p.poly([[58, 92], [76, 92], [76, 240], [62, 240]], "#f6da8c", 0); p.poly([[126, 92], [152, 92], [152, 240], [132, 240]], "#b48226", 0); });
+  p.poly(cas, null, 10);
+  p.poly(rrect(40, 70, 160, 96, 8), "#c9952f", 10);
+  p.stroke([[48, 104], [152, 104]], 5);
+  for (const [x, y0, y1] of [[60, 50, 22], [100, 46, 6], [140, 50, 22]] as const) p.stroke([[x, y0], [x, y1]], 9);
 };
 
 /** flame on a 300 x 420 canvas (base at the bottom centre); t = phase 0..1, k = size 0..1 */

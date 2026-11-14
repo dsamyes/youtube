@@ -230,7 +230,7 @@ export type Expr = "neutral" | "stern" | "grin" | "laugh" | "whistle" | "nervous
   | "pained" | "smile" | "smile_closed" | "lick"
   | "wow" | "asleep" | "jawdrop" | "sad" | "bite" | "chew" | "flap";
 type EyeK = "dot" | "small" | "lid" | "slit" | "happy" | "dash" | "squeeze" | "shock" | "shockHalf" | "spiral" | "shut";
-type MouthK = "dash" | "frown" | "smirk" | "smile" | "smileWide" | "grin" | "laugh" | "o" | "O" | "wave" | "teeth" | "lick" | "oo" | "jaw" | "chew" | "flap";
+type MouthK = "dash" | "frown" | "smirk" | "smile" | "smileWide" | "grin" | "laugh" | "o" | "O" | "wave" | "teeth" | "lick" | "oo" | "jaw" | "chew" | "flap" | "chomp";
 /** eyes [back, front], brows [inner, outer] offsets in u (+ = down), mouth kind */
 const FACE: Record<Expr, { eye: [EyeK, EyeK]; brow: [number, number]; mouth: MouthK }> = {
   neutral: { eye: ["lid", "lid"], brow: [0, -1], mouth: "dash" },
@@ -252,7 +252,7 @@ const FACE: Record<Expr, { eye: [EyeK, EyeK]; brow: [number, number]; mouth: Mou
   asleep: { eye: ["shut", "shut"], brow: [1, 0], mouth: "oo" },
   jawdrop: { eye: ["shock", "shock"], brow: [-7, -6], mouth: "jaw" },
   sad: { eye: ["dot", "dot"], brow: [-5, 3], mouth: "frown" },
-  bite: { eye: ["dot", "dot"], brow: [-4, -4], mouth: "O" },
+  bite: { eye: ["dot", "dot"], brow: [-5, -5], mouth: "chomp" },
   chew: { eye: ["happy", "happy"], brow: [-1, -1], mouth: "chew" },
   flap: { eye: ["squeeze", "squeeze"], brow: [-6, -6], mouth: "flap" },
 };
@@ -315,7 +315,22 @@ export const mouth = (p: Pen, kind: MouthK, mx: number, my: number, u: number, k
       p.ell(mx, my + 10 * u, 11 * u * k, 19 * u, MOUTH, 3.2 * u);
       p.clip(ellPts(mx, my + 10 * u, 11 * u * k, 19 * u), () => p.ell(mx, my + 27 * u, 8 * u, 7 * u, TONGUE, 0));
       break;
-    case "chew": p.arc(mx - 2 * u, my - 3 * u, 6 * u * k, 4 * u, 20, 160, mw); p.arc(mx + 12 * u, my - 2 * u, 6 * u, 7 * u, -70, 70, 3 * u); break;
+    case "chew": { // closed mouth working from side to side, a full cheek bulging on alternate sides (ph = phase)
+      const sw = Math.sin(ph * Math.PI * 2);
+      p.arc(mx + 2.5 * u * sw, my - 3 * u, 6.5 * u * k, 3.6 * u, 20, 160, mw);
+      for (const sd of [-1, 1]) { const b = 0.5 + 0.5 * sd * sw; p.arc(mx + sd * 14 * u, my - 1.5 * u, (3 + 5 * b) * u, (5 + 4 * b) * u, sd > 0 ? -70 : 110, sd > 0 ? 70 : 250, 3 * u); }
+      break;
+    }
+    case "chomp": { // wide open on the sandwich: upper teeth, tongue
+      const rx = 17 * u * k, ry = 16 * u, pts = ellPts(mx, my + 4 * u, rx, ry);
+      p.poly(pts, MOUTH, 0);
+      p.clip(pts, () => {
+        p.poly([[mx - rx, my - 14 * u], [mx + rx, my - 14 * u], [mx + rx, my - 5 * u], [mx - rx, my - 5 * u]], WHITE, 0);
+        p.ell(mx, my + 17 * u, 10 * u, 7 * u, TONGUE, 0);
+      });
+      p.poly(pts, null, 3.2 * u);
+      break;
+    }
     case "flap": { // cheeks and lips flapping in the wind: a wide wobbling mouth, teeth, tongue
       const pts: P2[] = [];
       for (let i = 0; i < 40; i++) {

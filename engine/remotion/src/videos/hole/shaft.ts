@@ -1,7 +1,7 @@
 // The inside of the tunnel. Gus and the camera ride at the origin; the round rock tube stands still and its painted
 // wall texture scrolls UP past them (shaftScroll), stretched along the fall so it streaks without strobing. Colour and
 // glow follow the depth (heat 0 = brown crust, 1 = red/orange mantle, 2 = white-yellow core): a hot glow rises from
-// below, darkness sits above, so the tube reads as DOWN. Rock ledges ride the scroll and take the world ink.
+// below, darkness sits above, so the tube reads as DOWN. Thin strata rings ride the scroll and take the world ink.
 import * as THREE from "three";
 import { lam } from "./build";
 import { rockMask } from "./paint2";
@@ -37,25 +37,30 @@ void main() {
   gl_FragColor = vec4(col, 1.0);
 }`;
 
-/** a rock ledge: an arc of a lumpy tube hugging the wall, thinning to nothing at both ends (smooth normals) */
-const ledgeGeo = (start: number, arc: number, th: number, seed: number) => {
-  const NA = 30, NT = 9, pos: number[] = [], idx: number[] = [];
+/** a strata ring: a thin, slightly lumpy band that wraps the WHOLE tube and stands a hand's width proud of the wall
+ *  (smooth normals; the world ink draws its two edges). Isolated ledges read as flying planks in stills. */
+const ringGeo = (th: number, hgt: number, seed: number) => {
+  const NA = 72, NT = 7, pos: number[] = [], idx: number[] = [];
   for (let i = 0; i <= NA; i++) {
-    const t = i / NA, a = start + arc * t, taper = Math.sin(Math.PI * t) ** 0.55;
-    const rr = th * taper * (0.75 + 0.35 * Math.sin(t * 9 + seed) + 0.2 * Math.sin(t * 23 + seed * 2)), yw = 0.18 * Math.sin(t * 5 + seed * 3);
+    const t = i / NA, a = t * Math.PI * 2;
+    const rr = th * (0.8 + 0.3 * Math.sin(a * 3 + seed) + 0.2 * Math.sin(a * 7 + seed * 2.3)), yw = 0.1 * Math.sin(a * 2 + seed * 3) + 0.05 * Math.sin(a * 5 + seed);
     for (let j = 0; j < NT; j++) {
-      const p = (j / NT) * Math.PI * 2, rad = SHAFT_R + 0.04 - rr * (0.9 + 0.9 * Math.max(0, Math.cos(p))) * Math.max(0, Math.cos(p)) - 0.02;
-      pos.push(rad * Math.cos(a), yw + rr * 0.62 * Math.sin(p), rad * Math.sin(a));
+      const p = (j / NT) * Math.PI * 2, c = Math.max(0, Math.cos(p));
+      pos.push((SHAFT_R + 0.03 - rr * c) * Math.cos(a), yw + hgt * 0.5 * Math.sin(p), (SHAFT_R + 0.03 - rr * c) * Math.sin(a));
     }
   }
   for (let i = 0; i < NA; i++) for (let j = 0; j < NT; j++) { const a0 = i * NT + j, a1 = i * NT + ((j + 1) % NT), b0 = a0 + NT, b1 = a1 + NT; idx.push(a0, b0, a1, a1, b0, b1); }
   const g = new THREE.BufferGeometry();
   g.setAttribute("position", new THREE.Float32BufferAttribute(pos, 3)); g.setIndex(idx); g.computeVertexNormals();
+  { // close the seam: first and last ring of vertices share positions, so share their normals too
+    const n = g.attributes.normal as THREE.BufferAttribute;
+    for (let j = 0; j < NT; j++) { const a0 = j, a1 = NA * NT + j, x = n.getX(a0) + n.getX(a1), y = n.getY(a0) + n.getY(a1), z = n.getZ(a0) + n.getZ(a1), l = Math.hypot(x, y, z) || 1; n.setXYZ(a0, x / l, y / l, z / l); n.setXYZ(a1, x / l, y / l, z / l); }
+  }
   g.setAttribute("uv", new THREE.Float32BufferAttribute(new Float32Array((pos.length / 3) * 2), 2));
   return g;
 };
 
-const SPAN = 132, LEDGES = 20;
+const SPAN = 132, LEDGES = 14;
 export class Shaft {
   group = new THREE.Group();
   private U: Record<string, THREE.IUniform>;
@@ -79,12 +84,10 @@ export class Shaft {
     this.cap = new THREE.Mesh(new THREE.CircleGeometry(SHAFT_R, 32).rotateX(Math.PI / 2), new THREE.MeshBasicMaterial({ color: 0x050303, fog: false }));
     this.cap.position.y = 440; this.cap.layers.set(NOINK);
     R.add(this.glow, this.cap);
-    // rock ledges: arcs of a squashed ring hugging the wall, on the far side from the cameras (which sit at +z)
+    // strata rings riding the scroll: thin bands all the way round, 14 in the 132 m loop, each a little different
     this.ledgeMat = lam("shaftLedge", () => ({ color: "#8a6243", side: THREE.DoubleSide }));
     for (let i = 0; i < LEDGES; i++) {
-      const start = Math.PI * (0.83 + 0.8 * hash(i, 3)), arc = Math.min(0.9 + 1.2 * hash(i, 1), Math.PI * 2.14 - start), th = 0.2 + 0.2 * hash(i, 2);
-      const g = ledgeGeo(start, arc, th, i * 1.7);
-      const m = new THREE.Mesh(g, this.ledgeMat);
+      const m = new THREE.Mesh(ringGeo(0.1 + 0.1 * hash(i, 2), 0.16 + 0.2 * hash(i, 4), i * 1.7), this.ledgeMat);
       m.frustumCulled = false;
       this.ledges.push({ m, base: (i + hash(i, 5) * 0.7) * (SPAN / LEDGES) }); R.add(m);
     }
