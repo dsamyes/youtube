@@ -140,7 +140,8 @@ This file is the contract between picture and sound. Same schema as the example:
 ## 6. Picture
 
 Read `remotion/src/toon/kit/README.md` now. It lists the cast with their poses, faces and props, the places
-with their light presets, the camera and effect helpers, what each costs to render, and the traps.
+with their light presets, the camera and effect helpers, what each costs to render, and the traps. Open
+`remotion/src/toon/kit/faces.jpg` as well: every face and hand prop of the kit on one sheet.
 
 1. Copy `remotion/src/videos/_template/` to `remotion/src/videos/<id>/` and build the story on the kit.
    Anything new (a place, a character, a prop) goes in your folder, built the way the kit builds its own.

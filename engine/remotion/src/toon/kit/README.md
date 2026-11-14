@@ -210,6 +210,10 @@ It returns `{ A, at }`: `g.at(g.A.propR)` is the world position of the right han
 above the fisherman's hat), which is right for a question mark and wrong for something that sits on the head; for
 that, go down from `top` by those amounts. Gus's fishbowl is a circle of radius 0.33 m centred 1 cm above `head`.
 
+**Look at `kit/faces.jpg` first** (open it with the Read tool): one labelled tile for every face (`expr`), every
+hand prop with its `arg` values, the helmet tipped back, and the cast. It is rebuilt with
+`python3 scripts/toon-faces.py` after a change to the kit.
+
 Looks: `GUS` (striped pyjamas, glass fishbowl helmet), `WIFE` (green dress, apron, bun), `NEIGHBOR` (stout, bald,
 moustache, Hawaiian shirt), `FISHER` (yellow oilskin, sou'wester, grey beard). The park pair (kid on the swing and
 the adult who pushes) comes from `swingScene(c, pendulum(f, firstPushFrame))`.
