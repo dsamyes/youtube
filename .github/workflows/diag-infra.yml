@@ -1,0 +1,113 @@
+# Preflight for the automatic producer, without Claude and without secrets: does a fresh runner build the
+# engine, speak, mix and render the reference short the way this repository's own machine does?
+# Runs only when engine/diag/infra.json is pushed to main. It also warms the caches the produce workflow uses.
+name: diag-infra
+
+on:
+  push:
+    branches: [main]
+    paths: ["engine/diag/infra.json"]
+
+permissions: {}
+
+concurrency:
+  group: if-engine-diag-infra
+  cancel-in-progress: true
+
+env:
+  PYTHONDONTWRITEBYTECODE: "1"
+  PIP_DISABLE_PIP_VERSION_CHECK: "1"
+
+jobs:
+  infra:
+    if: github.repository == 'dsamyes/youtube'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    permissions:
+      contents: read
+    env:
+      REMOTION_CHROME: bundled
+      REMOTION_GL: swangle
+      VID: hole-through-earth
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: "22"
+      - name: System packages (ffmpeg)
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg >/dev/null
+          ffmpeg -hide_banner -version | head -1
+      - name: Restore venv cache
+        id: c-venv
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: engine/.venv
+          key: venv-${{ runner.os }}-py312-${{ hashFiles('engine/requirements.txt') }}
+      - name: Restore node_modules cache
+        id: c-node
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: engine/remotion/node_modules
+          key: node-${{ runner.os }}-n22-${{ hashFiles('engine/remotion/package-lock.json') }}
+      - name: Restore Kokoro model cache
+        id: c-models
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: engine/models
+          key: kokoro-v1.0
+      - name: Setup engine
+        run: time engine/setup.sh
+      - name: Save venv cache
+        if: steps.c-venv.outputs.cache-hit != 'true'
+        uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: engine/.venv
+          key: ${{ steps.c-venv.outputs.cache-primary-key }}
+      - name: Save node_modules cache
+        if: steps.c-node.outputs.cache-hit != 'true'
+        uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: engine/remotion/node_modules
+          key: ${{ steps.c-node.outputs.cache-primary-key }}
+      - name: Save Kokoro model cache
+        if: steps.c-models.outputs.cache-hit != 'true'
+        uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: engine/models
+          key: ${{ steps.c-models.outputs.cache-primary-key }}
+      - name: Voice (same words and times as the committed ones?)
+        run: |
+          cp "engine/videos/$VID/voice/words.json" "$RUNNER_TEMP/words-committed.json"
+          time engine/.venv/bin/python -B engine/toon/voice.py "$VID" | tail -3
+          engine/.venv/bin/python -B - "$RUNNER_TEMP/words-committed.json" "engine/videos/$VID/voice/words.json" <<'PY'
+          import json, sys
+          a, b = (json.load(open(p)) for p in sys.argv[1:3])
+          same = [x["w"] for x in a] == [x["w"] for x in b]
+          d = max((abs(x["s"] - y["s"]) for x, y in zip(a, b)), default=-1)
+          print(f"voice: words {len(a)} vs {len(b)}, same text {same}, largest start-time difference {d * 1000:.1f} ms, end {a[-1]['e']:.3f} vs {b[-1]['e']:.3f} s")
+          PY
+      - name: Sound
+        run: time engine/.venv/bin/python -B engine/toon/audio/build.py "$VID" | tail -3
+      - name: Picture (types, two stills, one shot, render plan)
+        run: |
+          cd engine/remotion
+          npx tsc --noEmit && echo "tsc clean"
+          time node scripts/toon-stills.mjs "$VID" 150,700 0.5
+          time python3 -B scripts/toon-render.py "$VID" --only 3 --no-concat
+          python3 -B scripts/toon-render.py "$VID" --part 1/6 --dry | tail -8
+          ../.venv/bin/python -B - <<'PY'
+          import glob
+          import numpy as np
+          from PIL import Image
+          for p in sorted(glob.glob("out/hole-through-earth/stills/*")):
+              a = np.asarray(Image.open(p).convert("RGB"), dtype=float) / 255
+              print(f"still {p.split('/')[-1]}: {a.shape[1]}x{a.shape[0]} mean rgb {a.mean((0, 1)).round(4).tolist()} std {a.std():.4f}")
+          PY
+          ffprobe -v error -count_frames -show_entries stream=nb_read_frames,width,height -of csv=p=0 out/hole-through-earth/chunks/shot_03.mp4

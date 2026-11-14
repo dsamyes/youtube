@@ -5,7 +5,7 @@ name: diag
 on:
   push:
     branches: [main]
-    paths: ["engine/diag/*.json"]
+    paths: ["engine/diag/ping.json"]
 
 permissions: {}
 
