@@ -1,0 +1,35 @@
+# word@frame at 30 fps (frame = start of the word); written by toon/voice.py, do not edit
+line  1  frames 0..154
+   Gus@0 is@8 wearing@13 glass@22 slippers@32 strong@45 enough@56 to@63 hold@67 up@77 two@81 elephants,@89 and@115 they're@118 about@123 to@130 break@132 under@142 him.@149
+line  2  frames 158..281
+   It's@158 eleven@162 at@174 night@176 at@185 the@187 neighbor's@189 costume@201 party,@214 and@236 Gus@241 came@250 as@260 Cinderella.@263
+line  3  frames 285..372
+   His@285 wife@288 can't@296 look.@306 Glass@315 shoes?@325 He'll@339 go@343 right@349 through@357 them.@365
+line  4  frames 375..505
+   Gus@375 stands@380 up.@392 Nothing.@405 He@416 hops.@420 Nothing.@433 He@451 dances@454 with@467 the@471 neighbor.@473 Still@485 nothing.@494
+line  5  frames 509..644
+   But@509 wait.@512 A@531 dropped@534 cup@548 breaks@555 on@563 the@566 floor.@568 So@589 why@593 not@599 a@606 shoe@606 with@614 Gus@618 on@627 top?@631
+line  6  frames 648..779
+   You@648 see,@650 glass@658 loves@670 a@678 squeeze.@679 Press@707 on@716 it@722 and@727 it@730 pushes@732 back@742 harder@751 than@760 concrete.@765
+line  7  frames 783..937
+   A@783 glass@785 cube@795 smaller@805 than@818 a@822 sugar@823 cube@834 can@842 carry@846 ten@854 tons.@862 That's@887 two@893 elephants@900 on@915 one@919 heel.@926
+line  8  frames 941..1009
+   Then@941 the@944 clock@947 strikes@955 twelve,@966 and@982 Gus@987 runs.@994
+line  9  frames 1013..1133
+   Now@1013 every@1020 step@1028 lands@1038 with@1049 two@1052 and@1059 a@1061 half@1062 times@1070 his@1082 weight,@1086 and@1105 it@1109 lands@1111 crooked.@1121
+line 10  frames 1137..1247
+   So@1137 the@1140 heel@1143 bends.@1150 One@1176 side@1182 gets@1191 squeezed@1197 and@1212 the@1216 other@1219 gets@1225 stretched.@1233
+line 11  frames 1251..1324
+   And@1251 stretched@1254 glass@1265 is@1278 twenty@1285 five@1293 times@1302 weaker.@1313
+line 12  frames 1328..1463
+   Ever@1328 try@1333 to@1342 rip@1344 open@1352 a@1359 bag@1361 of@1369 chips?@1372 It@1395 won't@1398 tear@1407 until@1420 you@1426 find@1431 the@1440 little@1442 notch.@1448
+line 13  frames 1467..1621
+   Glass@1467 is@1476 covered@1480 in@1490 tiny@1494 scratches@1504 too@1520 small@1525 to@1534 see.@1538 Pull@1560 on@1567 one@1574 and@1584 it@1590 runs@1592 right@1604 through.@1612
+line 14  frames 1624..1687
+   Luckily,@1624 a@1637 squeeze@1639 holds@1650 every@1659 scratch@1667 shut.@1679
+line 15  frames 1691..1740
+   Unluckily,@1691 Gus@1708 is@1720 in@1723 a@1726 hurry.@1727
+line 16  frames 1743..1824
+   Snap.@1743 One@1756 heel@1763 is@1772 gone,@1775 three@1791 steps@1798 from@1809 the@1814 gate.@1816
+line 17  frames 1828..1961
+   So@1828 Gus@1832 hops@1839 home@1849 in@1859 one@1863 glass@1871 slipper,@1879 which@1898 is@1906 exactly@1909 how@1926 the@1932 story@1935 goes.@1946

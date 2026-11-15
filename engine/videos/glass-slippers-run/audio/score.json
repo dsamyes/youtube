@@ -1,0 +1,28 @@
+{
+ "_doc": "Sound plan of glass-slippers-run, read by engine/toon/audio/build.py (manual: engine/toon/audio/README.md).",
+ "key": "D",
+ "tempo": 138,
+ "seed": 7411,
+ "theme": "hop",
+ "places": {
+  "sky": "void",
+  "garden": "outdoor",
+  "park": "outdoor"
+ },
+ "sections": [
+  {"from": 0, "mood": "silence", "_why": "the hook: the rush of the sky, two elephants landing"},
+  {"from": 158, "mood": "theme", "end": "stop", "_why": "the costume party; starts on the flash, stops before he stands up"},
+  {"from": 375, "mood": "chase", "hits": [418, 492], "_why": "stands, hops, dances: downbeats on the hop and on 'Still nothing'"},
+  {"from": 509, "mood": "silence", "_why": "'But wait': dead stop with the record_stop event, one cricket"},
+  {"from": 648, "mood": "mystery", "_why": "the explanation: glass loves a squeeze, ten tons"},
+  {"from": 941, "mood": "runup", "_why": "the clock strikes twelve and he bolts"},
+  {"from": 1013, "mood": "mystery", "_why": "the step, the bending heel, twenty-five times weaker"},
+  {"from": 1328, "mood": "theme", "_why": "the park: a bag of chips"},
+  {"from": 1467, "mood": "mystery", "_why": "the scratches, the crack"},
+  {"from": 1624, "mood": "bittersweet", "hits": [1691], "_why": "'Luckily' ... 'Unluckily' (1691)"},
+  {"from": 1743, "mood": "silence", "_why": "Snap: only the night garden"},
+  {"from": 1828, "mood": "finale", "_why": "he hops home; button right after the last word"}
+ ],
+ "dips": [],
+ "sfx": {}
+}

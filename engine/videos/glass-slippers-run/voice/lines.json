@@ -1,0 +1,144 @@
+{
+ "voice": "kokoro-v1.0:am_michael@1.2",
+ "duration_s": 65.388,
+ "words": 229,
+ "wps": 3.5,
+ "lines": [
+  {
+   "line": 1,
+   "text": "Gus is wearing glass slippers strong enough to hold up two elephants, and they're about to break under him.",
+   "s": 0.0,
+   "e": 5.144,
+   "words": 19,
+   "wps": 3.69
+  },
+  {
+   "line": 2,
+   "text": "It's eleven at night at the neighbor's costume party, and Gus came as Cinderella.",
+   "s": 5.264,
+   "e": 9.368,
+   "words": 14,
+   "wps": 3.41
+  },
+  {
+   "line": 3,
+   "text": "His wife can't look. Glass shoes? He'll go right through them.",
+   "s": 9.488,
+   "e": 12.392,
+   "words": 11,
+   "wps": 3.79
+  },
+  {
+   "line": 4,
+   "text": "Gus stands up. Nothing. He hops. Nothing. He dances with the neighbor. Still nothing.",
+   "s": 12.512,
+   "e": 16.846,
+   "words": 14,
+   "wps": 3.23
+  },
+  {
+   "line": 5,
+   "text": "But wait. A dropped cup breaks on the floor. So why not a shoe with Gus on top?",
+   "s": 16.966,
+   "e": 21.47,
+   "words": 18,
+   "wps": 4.0
+  },
+  {
+   "line": 6,
+   "text": "You see, glass loves a squeeze. Press on it and it pushes back harder than concrete.",
+   "s": 21.59,
+   "e": 25.984,
+   "words": 16,
+   "wps": 3.64
+  },
+  {
+   "line": 7,
+   "text": "A glass cube smaller than a sugar cube can carry ten tons. That's two elephants on one heel.",
+   "s": 26.104,
+   "e": 31.248,
+   "words": 18,
+   "wps": 3.5
+  },
+  {
+   "line": 8,
+   "text": "Then the clock strikes twelve, and Gus runs.",
+   "s": 31.368,
+   "e": 33.652,
+   "words": 8,
+   "wps": 3.5
+  },
+  {
+   "line": 9,
+   "text": "Now every step lands with two and a half times his weight, and it lands crooked.",
+   "s": 33.772,
+   "e": 37.766,
+   "words": 16,
+   "wps": 4.01
+  },
+  {
+   "line": 10,
+   "text": "So the heel bends. One side gets squeezed and the other gets stretched.",
+   "s": 37.886,
+   "e": 41.58,
+   "words": 13,
+   "wps": 3.52
+  },
+  {
+   "line": 11,
+   "text": "And stretched glass is twenty-five times weaker.",
+   "s": 41.7,
+   "e": 44.154,
+   "words": 8,
+   "wps": 3.26
+  },
+  {
+   "line": 12,
+   "text": "Ever try to rip open a bag of chips? It won't tear until you find the little notch.",
+   "s": 44.274,
+   "e": 48.778,
+   "words": 18,
+   "wps": 4.0
+  },
+  {
+   "line": 13,
+   "text": "Glass is covered in tiny scratches too small to see. Pull on one and it runs right through.",
+   "s": 48.898,
+   "e": 54.022,
+   "words": 18,
+   "wps": 3.51
+  },
+  {
+   "line": 14,
+   "text": "Luckily, a squeeze holds every scratch shut.",
+   "s": 54.142,
+   "e": 56.236,
+   "words": 7,
+   "wps": 3.34
+  },
+  {
+   "line": 15,
+   "text": "Unluckily, Gus is in a hurry.",
+   "s": 56.356,
+   "e": 57.99,
+   "words": 6,
+   "wps": 3.67
+  },
+  {
+   "line": 16,
+   "text": "Snap. One heel is gone, three steps from the gate.",
+   "s": 58.11,
+   "e": 60.814,
+   "words": 10,
+   "wps": 3.7
+  },
+  {
+   "line": 17,
+   "text": "So Gus hops home in one glass slipper, which is exactly how the story goes.",
+   "s": 60.934,
+   "e": 65.388,
+   "words": 15,
+   "wps": 3.37
+  }
+ ]
+}

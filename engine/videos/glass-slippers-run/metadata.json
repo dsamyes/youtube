@@ -1,0 +1,23 @@
+{
+  "title": "What If You Ran in Cinderella's Glass Slippers? 👠",
+  "description": "Gus goes to the neighbor's costume party as Cinderella, in real glass slippers. He stands, hops and dances in them and nothing happens, and then the clock strikes twelve and he runs.\n\nThe numbers:\n• Squeezed, ordinary glass holds a nominal 1,000 MPa: a cube 1 cm on a side carries about 100 kN, ten tonnes (two elephants: a 6 t bull and a 3 t cow). Concrete manages 20 to 40 MPa.\n• Stretched or bent, the same glass breaks at about 40 MPa, twenty-five times less, because the stress piles up at the tips of microscopic surface scratches. A squeeze presses those scratches shut; a pull opens them, the same way a bag of chips tears from its notch.\n• Standing, all of Gus (80 kg) on one 1 cm x 1 cm heel is 8 MPa of squeeze, over a hundred times below the limit.\n• A running step peaks at about 2.5 times body weight. Tilted only 10 degrees against a 4 cm heel, it stretches one side of the heel with about 62 MPa. The limit is 40.\n(Assumptions: annealed soda-lime glass, a square heel post 1 cm thick and 4 cm tall, an 80 kg runner, the force line 10 degrees off the heel's axis. Makers quote 700 to 1,000 MPa for squeezed glass and 20 to 45 MPa for bent glass, so 'twenty-five times' is a round middle value. Toughened glass would do better.)\n\nSources:\n• Viridian Glass, TechDirect: thermal stress and glass strength (1,000 MPa in compression, a 1 cm cube takes 10 t, about 40 MPa in bending)\n• Saint-Gobain Glass, The strength of glass; EN 572-1 (45 MPa characteristic bending strength of float glass)\n• MIT OpenCourseWare 3.071 Amorphous Materials, lecture 8: strength and surface flaws (Griffith cracks)\n• Running biomechanics reviews: peak vertical ground reaction force of 2 to 3 body weights\n• \"Cinderella's Shattered Dreams\", Journal of Physics Special Topics, University of Leicester, 2015 (a student paper that reaches the same conclusion: to run, the glass heel has to be about a centimetre low)\n\nEvery number is computed in code and checked. Animation, narration and music are made with software and AI tools.\n\n#whatif #cinderella #physics",
+  "tags": [
+    "what if",
+    "glass slippers",
+    "cinderella glass slipper",
+    "what if cinderella's slipper fit you",
+    "can you walk in glass shoes",
+    "cinderella",
+    "strength of glass",
+    "why glass breaks",
+    "glass physics",
+    "materials science",
+    "physics",
+    "science",
+    "animated story",
+    "the if engine"
+  ],
+  "categoryId": "28",
+  "containsSyntheticMedia": false,
+  "playlist": "Shorts: 60-Second Ifs"
+}

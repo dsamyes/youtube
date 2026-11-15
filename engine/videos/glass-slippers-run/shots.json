@@ -1,0 +1,862 @@
+{
+ "_doc": "Picture/sound contract for glass-slippers-run. 30 fps. Frames come from voice/frames.txt (word start frames). Visual reactions land 0-3 frames before their word.",
+ "fps": 30,
+ "total_frames": 1977,
+ "flash_at": 158,
+ "planned_pops": [
+  5,
+  6,
+  30,
+  31,
+  33,
+  674,
+  675,
+  676,
+  740,
+  741,
+  742,
+  763,
+  764,
+  765,
+  766,
+  767,
+  857,
+  858,
+  859,
+  860,
+  861,
+  1449,
+  1450
+ ],
+ "places": {
+  "sky": "open sky above a sea of clouds (imported from plane-door-midflight): the stage for the diagrams, all flat cards: the big glass slipper with two elephants, cubes and weights on a shelf, the foot, the heel, the glass bars",
+  "garden": "the neighbor's back garden at night (kit town place, plain lawn): a checkered dance floor, paper lanterns, a pole clock, a white gate",
+  "park": "the park by day (kit town place): Gus with a bag of chips"
+ },
+ "shots": [
+  {
+   "id": 1,
+   "a": 0,
+   "b": 115,
+   "place": "sky",
+   "light": "day",
+   "line": 1,
+   "what": "HOOK, already moving. High in a blue sky over a sea of clouds: a big glass slipper, shiny pale blue, heel on the left. An elephant drops into it from above (lands f6), a second elephant lands on the first one's back (f30). The tower wobbles, the slipper holds and glints (f45). Lens pushes in, slightly rolled."
+  },
+  {
+   "id": 2,
+   "a": 115,
+   "b": 158,
+   "place": "garden",
+   "light": "night",
+   "line": 1,
+   "what": "Cut to the garden at night: Gus in pyjamas and fishbowl helmet runs straight at the lens in his two glass slippers, arms pumping, face in panic. On 'break' a crack star bursts at his front slipper (f130) and shards fly. Whoosh at f143, white flash at f158."
+  },
+  {
+   "id": 3,
+   "a": 158,
+   "b": 236,
+   "place": "garden",
+   "light": "night",
+   "line": 2,
+   "what": "Wide over the neighbor's lawn at night: a checkered dance floor, a string of paper lanterns, a tall pole clock showing eleven on the left. Gus stands in the middle of the floor, his wife and the neighbor to the right of him. Slow push-in."
+  },
+  {
+   "id": 4,
+   "a": 236,
+   "b": 285,
+   "place": "garden",
+   "light": "night",
+   "line": 2,
+   "what": "Full shot of Gus on the dance floor: he puts one foot forward and points down at his glass slippers, proud grin. The slippers sparkle on 'Cinderella' (f261)."
+  },
+  {
+   "id": 5,
+   "a": 285,
+   "b": 375,
+   "place": "garden",
+   "light": "night",
+   "line": 3,
+   "what": "Medium shot of his wife: she claps a hand over her eyes (f294). A thought bubble pops over her (f313) with a glass slipper in it; on 'right through' the slipper in the bubble shatters (f339). She gulps (f357)."
+  },
+  {
+   "id": 6,
+   "a": 375,
+   "b": 451,
+   "place": "garden",
+   "light": "night",
+   "line": 4,
+   "what": "Full shot of Gus: from a crouch he stands up straight (f378), looks down, the slippers glint: nothing (f403). He hops (off the floor f418, lands f430), a small dust puff, the slippers glint again (f433). Camera creeps in."
+  },
+  {
+   "id": 7,
+   "a": 451,
+   "b": 509,
+   "place": "garden",
+   "light": "night",
+   "line": 4,
+   "what": "Two-shot: Gus and the stout neighbor dance side by side, swaying left and right in step, arms up, music notes float up (f460, f474). On 'Still nothing' Gus looks down and the slippers glint (f492)."
+  },
+  {
+   "id": 8,
+   "a": 509,
+   "b": 589,
+   "place": "garden",
+   "light": "night",
+   "line": 5,
+   "what": "Record stop. Low close shot at the dance floor: a white cup falls in from the top (from f531), hits the floor and shatters into shards (f553). The pieces skid apart and lie still."
+  },
+  {
+   "id": 9,
+   "a": 589,
+   "b": 648,
+   "place": "garden",
+   "light": "night",
+   "line": 5,
+   "what": "Low close shot of Gus's feet on the floor: two glass slippers with his socks inside, striped pyjama legs above. A big question mark pops over them (f591); he wiggles one foot (f618)."
+  },
+  {
+   "id": 10,
+   "a": 648,
+   "b": 783,
+   "place": "sky",
+   "light": "day",
+   "line": 6,
+   "what": "Crossfade to the sky: a wooden shelf with a glass cube on the left and a grey concrete block on the right. An iron weight drops on the glass cube (lands f676): it holds and sparkles (f690). The same weight drops on the concrete (lands f742): on 'concrete' the block crumbles to rubble (f763)."
+  },
+  {
+   "id": 11,
+   "a": 783,
+   "b": 887,
+   "place": "sky",
+   "light": "day",
+   "line": 7,
+   "what": "Closer on the shelf: a small glass cube pops in (f793), a bigger white sugar cube pops in beside it (f821). A huge iron weight with the number 10 falls from above (from f846) and slams on the little glass cube (f860), which holds; a glint (f866)."
+  },
+  {
+   "id": 12,
+   "a": 887,
+   "b": 941,
+   "place": "sky",
+   "light": "day",
+   "line": 7,
+   "what": "Close on the glass heel of the big slipper; the lens glides back and up (centred f905) to show the two elephants standing on it again, one on the other, swaying; the heel glints on 'heel' (f924)."
+  },
+  {
+   "id": 13,
+   "a": 941,
+   "b": 982,
+   "place": "garden",
+   "light": "night",
+   "line": 8,
+   "what": "Hard cut to the pole clock in the garden, close: the hand jumps from eleven to twelve (f953), the clock shakes as it strikes (f964), lanterns behind it."
+  },
+  {
+   "id": 14,
+   "a": 982,
+   "b": 1013,
+   "place": "garden",
+   "light": "night",
+   "line": 8,
+   "what": "Full shot of Gus on the dance floor: he gasps, both hands up (f984), then bolts out of frame to screen left in a run (from f992)."
+  },
+  {
+   "id": 15,
+   "a": 1013,
+   "b": 1137,
+   "place": "sky",
+   "light": "day",
+   "line": 9,
+   "what": "Crossfade to the sky, slow motion diagram: a big foot in a glass slipper with a striped pyjama leg comes down on a floor line and lands (f1036) with a dust burst. Three little Gus figures pop up stacked beside the leg, the top one cut in half: two and a half (f1050, f1058, f1066). On 'crooked' the whole foot tips over onto the edge of its heel (f1109 to f1119), a spark at the heel tip."
+  },
+  {
+   "id": 16,
+   "a": 1137,
+   "b": 1251,
+   "place": "sky",
+   "light": "day",
+   "line": 10,
+   "what": "The glass heel alone, huge, under a piece of sole: it bends over to the right (f1148 to f1168). Blue arrows squeeze the inside of the bend (f1195), red arrows pull the outside apart (f1231)."
+  },
+  {
+   "id": 17,
+   "a": 1251,
+   "b": 1328,
+   "place": "sky",
+   "light": "day",
+   "line": 11,
+   "what": "Two glass bars pop in (f1262). Left: a bar standing on the shelf carries a stack of weights that grows to twenty-five (f1283 to f1305). Right: a bar hanging from a hook carries one single weight; on 'weaker' it snaps in two and the weight drops (f1311)."
+  },
+  {
+   "id": 18,
+   "a": 1328,
+   "b": 1467,
+   "place": "park",
+   "light": "day",
+   "line": 12,
+   "what": "Crossfade to the park by day: medium shot of Gus pulling at a red bag of chips with both hands, straining, twice (f1342, f1372), the bag only stretches. A glint on the little notch in the bag's edge (f1429); he tears there and the bag rips open (f1446), chips fly up and away, and he laughs (f1458)."
+  },
+  {
+   "id": 19,
+   "a": 1467,
+   "b": 1560,
+   "place": "sky",
+   "light": "day",
+   "line": 13,
+   "what": "Crossfade to the sky: a long glass bar, smooth and shiny. A magnifying glass slides in over it (f1492) and in the lens the smooth edge is full of tiny V-shaped scratches, which glint (f1502)."
+  },
+  {
+   "id": 20,
+   "a": 1560,
+   "b": 1691,
+   "place": "sky",
+   "light": "day",
+   "line": 13,
+   "what": "The same bar: red arrows pull at both ends (f1558); a crack runs from one scratch right through the bar (f1590 to f1610) and the two halves fly apart. A new bar pops in (f1624); blue arrows push its ends together (f1637); the scratch on it closes and glints (f1677)."
+  },
+  {
+   "id": 21,
+   "a": 1691,
+   "b": 1743,
+   "place": "garden",
+   "light": "night",
+   "line": 15,
+   "what": "Crossfade to the garden at night: Gus runs across the lawn to screen left in his glass slippers, the lens travels with him, sweat drops fly, a white garden gate comes into view on the left."
+  },
+  {
+   "id": 22,
+   "a": 1743,
+   "b": 1828,
+   "place": "garden",
+   "light": "night",
+   "line": 16,
+   "what": "Snap (f1742): the heel of his back slipper breaks off in a burst of shards; Gus tips, one leg in the air, arms flailing, and stops three steps from the gate. The broken heel spins away and lands on the grass (f1775)."
+  },
+  {
+   "id": 23,
+   "a": 1828,
+   "b": 1898,
+   "place": "garden",
+   "light": "night",
+   "line": 17,
+   "what": "Same view: Gus hops on to the gate on the one foot that still has a glass slipper, the other foot in its sock held up (hops f1839, f1857, f1875)."
+  },
+  {
+   "id": 24,
+   "a": 1898,
+   "b": 1977,
+   "place": "garden",
+   "light": "night",
+   "line": 17,
+   "what": "Medium shot of the neighbor on the dance floor: he picks up the heelless glass slipper Gus left behind (f1906), holds it up and looks after him with a dreamy smile. The slipper sparkles on 'story' (f1934). Ends on the last word."
+  }
+ ],
+ "xfade": {
+  "10": 8,
+  "15": 8,
+  "18": 8,
+  "19": 8,
+  "21": 8
+ },
+ "events": [
+  {
+   "f": 0,
+   "type": "wind_rush",
+   "to": 158,
+   "shape": "hook",
+   "note": "hook bed: high in the sky"
+  },
+  {
+   "f": 6,
+   "type": "thud",
+   "id": "ele1",
+   "note": "first elephant lands in the slipper"
+  },
+  {
+   "f": 30,
+   "type": "thud",
+   "id": "ele2",
+   "note": "second elephant lands on the first"
+  },
+  {
+   "f": 45,
+   "type": "ting",
+   "id": "holds",
+   "note": "the slipper glints: it holds"
+  },
+  {
+   "f": 70,
+   "type": "squeak",
+   "note": "the tower wobbles"
+  },
+  {
+   "f": 115,
+   "type": "footsteps",
+   "to": 130,
+   "pace": 6,
+   "surface": "soft",
+   "note": "Gus runs at the lens"
+  },
+  {
+   "f": 130,
+   "type": "glass_pop",
+   "id": "hookcrack",
+   "note": "a crack at his slipper on 'break'"
+  },
+  {
+   "f": 143,
+   "type": "whoosh_big",
+   "note": "into the flash"
+  },
+  {
+   "f": 158,
+   "type": "flash_hit",
+   "note": "white flash, the story starts"
+  },
+  {
+   "f": 158,
+   "type": "amb_night",
+   "to": 509,
+   "note": "garden party at night"
+  },
+  {
+   "f": 176,
+   "type": "bell",
+   "pitch": "C5",
+   "level": -10,
+   "note": "the clock: eleven at night"
+  },
+  {
+   "f": 214,
+   "type": "crowd_cheer",
+   "to": 234,
+   "level": -11,
+   "note": "party"
+  },
+  {
+   "f": 243,
+   "type": "slide_whistle_up",
+   "to": 255,
+   "id": "pose",
+   "note": "Gus puts a foot forward"
+  },
+  {
+   "f": 261,
+   "type": "twinkle",
+   "id": "cind",
+   "note": "the slippers sparkle on 'Cinderella'"
+  },
+  {
+   "f": 294,
+   "type": "whoosh",
+   "id": "cover",
+   "note": "wife's hand over her eyes"
+  },
+  {
+   "f": 313,
+   "type": "pop",
+   "id": "think",
+   "note": "thought bubble with a slipper"
+  },
+  {
+   "f": 339,
+   "type": "glass_pop",
+   "id": "imagine",
+   "note": "the slipper in the bubble shatters"
+  },
+  {
+   "f": 357,
+   "type": "gulp",
+   "id": "gulp",
+   "note": "she gulps"
+  },
+  {
+   "f": 378,
+   "type": "slide_whistle_up",
+   "to": 390,
+   "id": "stand",
+   "note": "Gus stands up"
+  },
+  {
+   "f": 403,
+   "type": "ting",
+   "id": "n1",
+   "note": "nothing: glint"
+  },
+  {
+   "f": 418,
+   "type": "jump_boing",
+   "id": "hop",
+   "note": "he hops"
+  },
+  {
+   "f": 430,
+   "type": "thud",
+   "id": "land",
+   "level": -8,
+   "note": "lands"
+  },
+  {
+   "f": 436,
+   "type": "ting",
+   "id": "n2",
+   "pitch": "A6",
+   "note": "nothing: glint"
+  },
+  {
+   "f": 454,
+   "type": "footsteps",
+   "to": 490,
+   "pace": 4,
+   "surface": "hard",
+   "id": "dance",
+   "note": "dancing on the floor"
+  },
+  {
+   "f": 460,
+   "type": "pop",
+   "id": "note1",
+   "level": -11,
+   "note": "music note"
+  },
+  {
+   "f": 474,
+   "type": "pop",
+   "id": "note2",
+   "level": -11,
+   "pitch": "A6",
+   "note": "music note"
+  },
+  {
+   "f": 492,
+   "type": "ting",
+   "id": "n3",
+   "pitch": "C7",
+   "note": "still nothing: glint"
+  },
+  {
+   "f": 509,
+   "type": "record_stop",
+   "note": "But wait"
+  },
+  {
+   "f": 509,
+   "type": "amb_cricket",
+   "to": 648,
+   "note": "the pause"
+  },
+  {
+   "f": 531,
+   "type": "slide_whistle_down",
+   "to": 553,
+   "id": "drop",
+   "note": "the cup falls"
+  },
+  {
+   "f": 553,
+   "type": "glass_pop",
+   "id": "smash",
+   "level": -4,
+   "note": "the cup breaks on the floor"
+  },
+  {
+   "f": 591,
+   "type": "question_blip",
+   "id": "why",
+   "note": "question mark over the slippers"
+  },
+  {
+   "f": 618,
+   "type": "squeak",
+   "id": "wiggle",
+   "note": "he wiggles a foot"
+  },
+  {
+   "f": 648,
+   "type": "whoosh",
+   "note": "to the diagram"
+  },
+  {
+   "f": 676,
+   "type": "metal_clang",
+   "id": "press1",
+   "note": "weight lands on the glass cube"
+  },
+  {
+   "f": 690,
+   "type": "twinkle",
+   "id": "ok1",
+   "note": "the glass holds"
+  },
+  {
+   "f": 742,
+   "type": "metal_clang",
+   "id": "press2",
+   "pitch": 260,
+   "note": "weight lands on the concrete"
+  },
+  {
+   "f": 763,
+   "type": "crash",
+   "id": "crumble",
+   "note": "the concrete crumbles"
+  },
+  {
+   "f": 793,
+   "type": "pop",
+   "id": "gcube",
+   "note": "glass cube pops in"
+  },
+  {
+   "f": 821,
+   "type": "pop",
+   "id": "sugar",
+   "pitch": "E6",
+   "note": "sugar cube pops in"
+  },
+  {
+   "f": 846,
+   "type": "slide_whistle_down",
+   "to": 860,
+   "id": "tenfall",
+   "note": "the ten-ton weight falls"
+  },
+  {
+   "f": 860,
+   "type": "thud",
+   "id": "ten",
+   "level": -3,
+   "note": "ten tons land on the cube"
+  },
+  {
+   "f": 868,
+   "type": "ting",
+   "id": "tenok",
+   "note": "the cube holds"
+  },
+  {
+   "f": 889,
+   "type": "whoosh_big",
+   "id": "reveal",
+   "level": -6,
+   "note": "glide back to the elephants"
+  },
+  {
+   "f": 924,
+   "type": "twinkle",
+   "id": "heel",
+   "note": "the heel glints"
+  },
+  {
+   "f": 941,
+   "type": "whoosh",
+   "note": "cut to the clock"
+  },
+  {
+   "f": 953,
+   "type": "click",
+   "id": "hand",
+   "note": "the hand jumps to twelve"
+  },
+  {
+   "f": 964,
+   "type": "bell",
+   "id": "strike",
+   "note": "the clock strikes twelve"
+  },
+  {
+   "f": 984,
+   "type": "gulp",
+   "id": "gasp",
+   "note": "Gus gasps"
+  },
+  {
+   "f": 992,
+   "type": "whoosh",
+   "id": "bolt",
+   "note": "he bolts"
+  },
+  {
+   "f": 994,
+   "type": "footsteps",
+   "to": 1012,
+   "pace": 6,
+   "surface": "hard",
+   "note": "running"
+  },
+  {
+   "f": 1036,
+   "type": "thud",
+   "id": "step",
+   "note": "the foot lands"
+  },
+  {
+   "f": 1050,
+   "type": "pop",
+   "id": "g1",
+   "note": "one Gus of weight"
+  },
+  {
+   "f": 1058,
+   "type": "pop",
+   "id": "g2",
+   "pitch": "A6",
+   "note": "two"
+  },
+  {
+   "f": 1066,
+   "type": "pop",
+   "id": "g3",
+   "pitch": "C7",
+   "note": "and a half"
+  },
+  {
+   "f": 1109,
+   "type": "door_creak",
+   "to": 1121,
+   "id": "tilt",
+   "note": "the foot tips onto the heel edge"
+  },
+  {
+   "f": 1121,
+   "type": "ricochet_ping",
+   "id": "spark",
+   "note": "spark at the heel tip"
+  },
+  {
+   "f": 1137,
+   "type": "whoosh",
+   "note": "to the heel"
+  },
+  {
+   "f": 1148,
+   "type": "door_creak",
+   "to": 1170,
+   "id": "bend",
+   "note": "the heel bends"
+  },
+  {
+   "f": 1195,
+   "type": "arrow_pop",
+   "id": "squeeze",
+   "note": "blue arrows squeeze"
+  },
+  {
+   "f": 1231,
+   "type": "arrow_pop",
+   "id": "stretch",
+   "note": "red arrows stretch"
+  },
+  {
+   "f": 1262,
+   "type": "pop",
+   "id": "bars",
+   "note": "two bars pop in"
+  },
+  {
+   "f": 1283,
+   "type": "timer_ticks",
+   "to": 1305,
+   "id": "count",
+   "note": "the stack grows to twenty-five"
+  },
+  {
+   "f": 1311,
+   "type": "glass_pop",
+   "id": "weak",
+   "note": "the stretched bar snaps"
+  },
+  {
+   "f": 1317,
+   "type": "thud",
+   "id": "wdrop",
+   "level": -8,
+   "note": "its weight drops"
+  },
+  {
+   "f": 1328,
+   "type": "amb_garden",
+   "to": 1467,
+   "note": "the park by day"
+  },
+  {
+   "f": 1342,
+   "type": "paper_flick",
+   "id": "rip1",
+   "note": "pulls at the bag"
+  },
+  {
+   "f": 1356,
+   "type": "oof",
+   "kind": "ugh",
+   "note": "strains"
+  },
+  {
+   "f": 1372,
+   "type": "paper_flick",
+   "id": "rip2",
+   "note": "pulls again"
+  },
+  {
+   "f": 1405,
+   "type": "squeak",
+   "id": "strain",
+   "note": "the bag only stretches"
+  },
+  {
+   "f": 1429,
+   "type": "twinkle",
+   "id": "notch",
+   "note": "glint on the notch"
+  },
+  {
+   "f": 1446,
+   "type": "zip",
+   "id": "tear",
+   "note": "the bag rips open"
+  },
+  {
+   "f": 1458,
+   "type": "ding",
+   "id": "eat",
+   "note": "the bag is open: he laughs"
+  },
+  {
+   "f": 1467,
+   "type": "whoosh",
+   "note": "to the glass bar"
+  },
+  {
+   "f": 1492,
+   "type": "slide_whistle_up",
+   "to": 1500,
+   "id": "lens",
+   "level": -10,
+   "note": "the magnifying glass slides in"
+  },
+  {
+   "f": 1502,
+   "type": "twinkle",
+   "id": "scratches",
+   "note": "tiny scratches glint"
+  },
+  {
+   "f": 1558,
+   "type": "arrow_pop",
+   "id": "pull",
+   "note": "arrows pull the bar"
+  },
+  {
+   "f": 1590,
+   "type": "zip",
+   "id": "crackrun",
+   "size": "small",
+   "note": "the crack runs"
+  },
+  {
+   "f": 1610,
+   "type": "glass_pop",
+   "id": "split",
+   "note": "the bar splits"
+  },
+  {
+   "f": 1624,
+   "type": "pop",
+   "id": "newbar",
+   "note": "a new bar"
+  },
+  {
+   "f": 1637,
+   "type": "push_whoosh",
+   "id": "push",
+   "note": "arrows push it together"
+  },
+  {
+   "f": 1677,
+   "type": "ding",
+   "id": "shut",
+   "note": "the scratch is held shut"
+  },
+  {
+   "f": 1691,
+   "type": "amb_night",
+   "to": 1977,
+   "note": "back in the garden"
+  },
+  {
+   "f": 1693,
+   "type": "footsteps",
+   "to": 1740,
+   "pace": 6,
+   "surface": "soft",
+   "id": "hurry",
+   "note": "Gus runs"
+  },
+  {
+   "f": 1710,
+   "type": "oof",
+   "kind": "oh",
+   "level": -9,
+   "note": "panting"
+  },
+  {
+   "f": 1742,
+   "type": "glass_pop",
+   "id": "snap",
+   "level": -3,
+   "note": "the heel snaps"
+  },
+  {
+   "f": 1750,
+   "type": "oof",
+   "id": "trip",
+   "kind": "ow",
+   "note": "he tips"
+  },
+  {
+   "f": 1762,
+   "type": "slide_whistle_down",
+   "to": 1775,
+   "id": "heelfly",
+   "level": -10,
+   "note": "the heel flies off"
+  },
+  {
+   "f": 1775,
+   "type": "drip",
+   "id": "gone",
+   "note": "it lands in the grass"
+  },
+  {
+   "f": 1839,
+   "type": "jump_boing",
+   "id": "hop1",
+   "note": "hop"
+  },
+  {
+   "f": 1857,
+   "type": "squeak",
+   "id": "hop2",
+   "note": "hop"
+  },
+  {
+   "f": 1875,
+   "type": "jump_boing",
+   "id": "hop3",
+   "level": -7,
+   "note": "hop"
+  },
+  {
+   "f": 1906,
+   "type": "pop",
+   "id": "pick",
+   "note": "the neighbor picks up the slipper"
+  },
+  {
+   "f": 1934,
+   "type": "twinkle",
+   "id": "story",
+   "note": "the slipper sparkles"
+  }
+ ]
+}

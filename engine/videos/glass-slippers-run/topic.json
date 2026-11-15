@@ -1,0 +1,34 @@
+{
+ "id": "glass-slippers-run",
+ "question": "What if you ran in Cinderella's glass slippers?",
+ "answer_in_one_line": "Standing and dancing are fine, because squeezed glass is stronger than concrete (a 1 cm cube carries about ten tons), but a running step bends the heel, and stretched glass is about twenty-five times weaker because of its invisible surface scratches: the heel snaps.",
+ "trend_basis": [
+  {
+   "source": "youtube_shorts",
+   "evidence": "The same Cinderella's-slipper question wins for three different channels this week: 'What If Cinderella's Slipper ACTUALLY Fit You?!' (lilBrain, 232k subscribers, 1.76M views/day), the Indonesian 'Jika Sepatu Cinderella Benar-Benar Pas di Kakimu' (Den TV, 460k subscribers, 0.81M views/day) and the Arabic row about fitting Cinderella's shoe (HawdAlafkar, 517k subscribers, 0.61M views/day). Together about 3.2M views/day, none of them from a giant channel."
+  },
+  {
+   "source": "youtube_shorts",
+   "evidence": "Of the real 'what if' rows above it, 'What Happens When Ants Get Unlimited Sugar?' (Nadeem Bhatti, 3.24M/day) is an animal experiment with no 'you', and 'What if a Plane Door Opened Mid-flight' (1.88M/day) is already in toon/episodes.json; the remaining top rows of the query are 'Comment GRINCH if you want one' gift adverts, not questions."
+  },
+  {
+   "source": "own_channel",
+   "evidence": "The cartoon shorts with Gus are the channel's best rows (hole through the Earth 358 views/day, hummingbird 192/day) against 1 to 55/day for the abstract space shorts, so the pick stays an everyday object and a body scenario."
+  },
+  {
+   "source": "google_trends / wikipedia_top / science_news",
+   "evidence": "No second source to cross with: today's searches are sport, politics and GTA 6; Wikipedia's top is films and people; the science headlines are space and medicine."
+  }
+ ],
+ "why_this_one": "It is the one question of the week that wins for several mid-size channels at once, and the trending videos treat it as a fairy tale, which leaves the physical question open: could anybody actually move in glass shoes? The honest answer surprises twice (glass is far stronger than people think when squeezed, and far weaker when bent), it is one division (1000 MPa against 40 MPa) plus a lever, it can be checked against glass makers' data and a published student paper, and it is drawable with the kit: the garden at night as a costume party, flat diagram cards in the sky place of the plane-door episode, the park for the bag of chips. Only the theme is taken; the story (Gus at the neighbor's costume party, two elephants on a heel, the bag-of-chips notch, the one slipper left behind) is our own. Nobody is hurt, and nobody has glass shoes at home to try it.",
+ "rejected": [
+  "falling overboard (0.97M/day): cold-water survival, close to medical advice and to accidents with victims; rejected in the last two runs for the same reason",
+  "ants with unlimited sugar (3.24M/day, 46k-subscriber channel): pulls by itself, but it is an animal experiment with no 'you'; the nearest 'what if you' (shrinking to ant size) rests on the square-cube law, the mechanism of the hummingbird episode",
+  "swallowing a live fish (0.54M/day), being swallowed by a sperm whale (0.61M/day): things a child could imitate, or gore",
+  "ice-cold baths for a year (0.86M/day), eating reheated rice (0.59M/day): medical advice",
+  "giving a camel water mid-journey (0.63M/day, 15k-subscriber channel): the 'you' version is drinking a hundred litres, a dangerous challenge",
+  "three-headed dog, Napoleon, Cybertruck tractors, GTA and Roblox rows: fiction, games or real people, no physical answer",
+  "the new mini-moon, Voyager 1 at one light-day, the Leonids (science headlines): abstract space topics, the kind that gets single-digit views on this channel",
+  "plane door (1.88M/day): already made (plane-door-midflight)"
+ ]
+}

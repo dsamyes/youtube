@@ -1,0 +1,49 @@
+{
+  "model": "annealed soda-lime glass: 1000 MPa squeezed, 40 MPa stretched; heel = square glass post 1 cm x 1 cm, 4 cm tall; Gus 80 kg; a running step = 2.5 body weights tilted 10 degrees against the post",
+  "inputs": {
+    "compressive_MPa": 1000.0,
+    "tensile_MPa": 40.0,
+    "cube_cm": 1.0,
+    "heel_height_cm": 4.0,
+    "gus_kg": 80.0,
+    "step_body_weights": 2.5,
+    "tilt_deg": 10.0
+  },
+  "squeeze": {
+    "cube_crush_load_kN": 100.0,
+    "cube_crush_load_tonnes": 10.197162129779283,
+    "cube_crush_load_short_tons": 11.240433787277,
+    "cube_crush_load_tonnes_at_700MPa": 7.138013490845498,
+    "sugar_cube_cm": 1.27,
+    "glass_cube_cm": 1.0,
+    "two_elephants_tonnes": 9.0,
+    "elephant_pairs_carried": 1.1330180144199202,
+    "times_stronger_than_concrete": 25.0
+  },
+  "stretch": {
+    "squeezed_over_stretched": 25.0,
+    "with_EN572_45MPa": 22.22222222222222
+  },
+  "standing": {
+    "stress_on_one_heel_MPa": 7.845319999999999,
+    "safety_factor": 127.46452662224104
+  },
+  "running": {
+    "step_force_N": 1961.33,
+    "step_force_kg": 200.0,
+    "stretch_on_heel_MPa": 62.42420137068096,
+    "times_over_the_limit": 1.560605034267024,
+    "tilt_that_breaks_it_deg": 7.26,
+    "max_heel_height_cm_gus": 2.9026508460963862,
+    "max_heel_height_cm_light_adult": 3.792395032229765,
+    "leicester_paper_heel_cm": 1.15
+  },
+  "facts_with_sources": {
+    "compressive": "Viridian TechDirect 'Thermal stress / glass strength': compressive strength nominally around 1000 MPa; to shatter a 1 cm cube of glass a load of about 10 t is required. Same statement in Saint-Gobain Glass UK, 'The strength of glass'. Guardian Glass lists 700-900 MPa.",
+    "tensile": "Viridian: resistance to breakage on deflection approximately 40 MPa for annealed glass. EN 572-1: characteristic bending strength of float glass 45 N/mm2. MIT OCW 3.071 lecture 8: practical strength is limited by stress concentration at surface flaws (Griffith cracks).",
+    "running": "Peak vertical ground reaction force in running is two to three times body weight (running biomechanics literature, e.g. the review in Frontiers in Bioengineering and Biotechnology 2024).",
+    "elephants": "African bush elephant: adult males average about 6 t, females about 3 t.",
+    "concrete": "Ordinary structural concrete: compressive strength 20-40 MPa.",
+    "leicester": "'Cinderella's Shattered Dreams', Journal of Physics Special Topics, University of Leicester, 2015: a glass heel has to be lower than 1.15 cm to survive a run."
+  }
+}
