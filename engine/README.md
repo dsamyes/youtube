@@ -36,6 +36,10 @@ pushed to `engine/queue/*.json`. Five jobs:
 5. **publish** (YouTube secrets; no Claude, executes nothing Claude wrote): verifies and applies the patch,
    uploads the short scheduled for the next free 15:00 UTC slot, commits the text outputs.
 
+Topics: the producer takes a fresh everyday scenario from the day's trend data when there is a strong one, and
+otherwise the best unused entry of `toon/topic_bank.json` (31 vetted scenarios with their evidence, built from
+1,190 mined shorts on 2026-11-15; `toon/topic_mine.py` collects the raw material for the next refresh).
+
 Settings: `toon/config.json` (model, publish hour). Repo secrets: `CLAUDE_CODE_OAUTH_TOKEN`
 (`claude setup-token`), `YOUTUBE_CLIENT_SECRET` and `YOUTUBE_TOKEN` (the JSON contents of
 `secrets/client_secret.json` and `secrets/token.json`, from `pipeline/get_token.py`).

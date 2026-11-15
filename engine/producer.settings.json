@@ -11,6 +11,8 @@
       "Edit(./engine/pipeline/**)", "Write(./engine/pipeline/**)",
       "Edit(./engine/toon/*.py)", "Write(./engine/toon/*.py)",
       "Edit(./engine/toon/audio/**)", "Write(./engine/toon/audio/**)",
+      "Edit(./engine/toon/topic_bank.json)", "Write(./engine/toon/topic_bank.json)",
+      "Edit(./engine/toon/config.json)", "Write(./engine/toon/config.json)",
       "Edit(./engine/PRODUCER.md)", "Write(./engine/PRODUCER.md)",
       "Edit(./engine/producer.settings.json)", "Write(./engine/producer.settings.json)",
       "Edit(./engine/remotion/src/toon/**)", "Write(./engine/remotion/src/toon/**)",
