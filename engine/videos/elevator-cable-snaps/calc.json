@@ -1,0 +1,95 @@
+{
+ "inputs": {
+  "rated_fpm": 500.0,
+  "governor_trip_fpm": 625.0,
+  "ropes": 6,
+  "rope_factor_of_safety": 10.25,
+  "storey_m": 3.1,
+  "floors_below": 19,
+  "jump_height_m": 0.41
+ },
+ "one_rope_holds_loaded_cars": 1.71,
+ "trip_speed_mps": 3.175,
+ "trip_speed_mph": 7.1,
+ "free_fall_to_trip_s": 0.324,
+ "free_fall_to_trip_ft": 1.69,
+ "brake_distance_ft": [
+  1.68,
+  5.65
+ ],
+ "total_fall_ft": [
+  3.4,
+  7.3
+ ],
+ "total_fall_mid_ft": 5.4,
+ "total_time_s": [
+  0.65,
+  1.25
+ ],
+ "total_time_mid_s": 0.95,
+ "brake_g": [
+  0.35,
+  1.0
+ ],
+ "felt_g_while_braking": [
+  1.35,
+  2.0
+ ],
+ "fall_from_20th_m": 58.9,
+ "fall_from_20th_mph": 76.0,
+ "jump_takeoff_mph": 6.3,
+ "landing_after_perfect_jump_mph": 69.7,
+ "spoken": {
+  "fall_ft": 5,
+  "stop_s": 1,
+  "fall_mph": 76,
+  "jump_mph": 6
+ },
+ "checks": [
+  {
+   "check": "one rope holds the loaded car",
+   "ok": true,
+   "detail": "1.71 loaded cars per rope"
+  },
+  {
+   "check": "formula constants are 2*a*3600",
+   "ok": true,
+   "detail": "2*1g*3600 = 231653, 2*0.35g*3600 = 81079"
+  },
+  {
+   "check": "stopping distances match the code table (within 1 in)",
+   "ok": true,
+   "detail": "computed 1.68 and 5.65 ft; table 1.67 and 5.67 ft"
+  },
+  {
+   "check": "energy balance of the free fall",
+   "ok": true,
+   "detail": "sqrt(2 g d) = 3.175 m/s = trip speed"
+  },
+  {
+   "check": "spoken 'about five feet' inside the range",
+   "ok": true,
+   "detail": "3.4 to 7.3 ft, middle 5.4"
+  },
+  {
+   "check": "spoken 'one second' inside the range",
+   "ok": true,
+   "detail": "0.65 to 1.25 s"
+  },
+  {
+   "check": "spoken fall speed",
+   "ok": true,
+   "detail": "76.0 mph"
+  },
+  {
+   "check": "spoken jump speed",
+   "ok": true,
+   "detail": "6.3 mph"
+  },
+  {
+   "check": "limiting case: a 1 m drop gives 4.43 m/s",
+   "ok": true,
+   "detail": "4.429 m/s"
+  }
+ ]
+}

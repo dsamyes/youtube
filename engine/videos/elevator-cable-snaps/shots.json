@@ -1,0 +1,745 @@
+{
+ "_doc": "Picture/sound contract for elevator-cable-snaps. 30 fps. Frames come from voice/frames.txt (word start frames). Visual reactions land 0-3 frames before their word.",
+ "fps": 30,
+ "total_frames": 1994,
+ "flash_at": 122,
+ "planned_pops": [
+  43,
+  44,
+  45,
+  97,
+  98,
+  99,
+  950,
+  951,
+  952,
+  1367,
+  1368
+ ],
+ "places": {
+  "lift": "inside the elevator car, seen from the door side: wood back wall with a handrail, the floor indicator, a button panel, carpet, ceiling light",
+  "hoistway": "the lift shaft from outside the car: dark concrete walls with floor bands and numbered landing doors, two steel guide rails, the car with its open front, six steel ropes, orange safety wedges under the car",
+  "sky": "open sky as the board for flat diagram cards (building and speedometer, the governor wheel, the wedge on its rail); place imported from plane-door-midflight",
+  "garden": "Gus's garden by day (kit town) with a small red open car parked on the lawn for the seat belt"
+ },
+ "shots": [
+  {
+   "id": 1,
+   "a": 0,
+   "b": 56,
+   "place": "hoistway",
+   "light": "day",
+   "line": 1,
+   "what": "HOOK, already moving. Outside view up the lift shaft at the elevator car hanging on six steel ropes, Gus and the neighbor small inside the open front. The ropes creak and shiver from f0, all six part with a whip on 'snapped' (f43); the car starts to fall at f45: the shaft's floor bands and landing doors streak upward, camera rides with the car and rolls 3 degrees."
+  },
+  {
+   "id": 2,
+   "a": 56,
+   "b": 122,
+   "place": "lift",
+   "light": "day",
+   "line": 1,
+   "what": "Inside the car, two-shot from the door side: Gus (left) and the neighbor (right) float off the floor, limbs flailing, shock faces, white speed lines rushing up. On 'five' (f98) the car stops dead: both drop back onto the floor with a camera kick and a dust puff, dazed. White flash at 122."
+  },
+  {
+   "id": 3,
+   "a": 122,
+   "b": 273,
+   "place": "lift",
+   "light": "day",
+   "line": 2,
+   "what": "Calm Monday morning. Same car, lens at the door side. The neighbor already stands at the right holding the handrail; Gus bobs in from screen left on 'steps' (f150-180) and turns to the lens. The floor indicator over the back wall shows 20 and glints on 'twentieth' (f215). Camera glides right (centred f250) to a medium shot of the neighbor, who waves at Gus on 'neighbor' (f257)."
+  },
+  {
+   "id": 4,
+   "a": 273,
+   "b": 354,
+   "place": "hoistway",
+   "light": "day",
+   "line": 3,
+   "what": "Outside the car, lens low in the shaft looking up: the car roof with its crosshead and the six steel ropes running up into the dark shaft. Camera tilts up along them from f273; a glint runs across the six ropes on 'six' (f291)."
+  },
+  {
+   "id": 5,
+   "a": 354,
+   "b": 416,
+   "place": "hoistway",
+   "light": "day",
+   "line": 3,
+   "what": "Same view, wider on the whole car: on 'one' (f360) five of the ropes go slack and droop away, one stays taut; on 'packed' (f398) six more passengers pop in and cram the car (wife, fisherman, a second neighbor) and sags a hand's width; the single rope holds, a glint on it at f408."
+  },
+  {
+   "id": 6,
+   "a": 416,
+   "b": 547,
+   "place": "lift",
+   "light": "day",
+   "line": 4,
+   "what": "Two-shot in the car. The neighbor raises a finger on 'plan' (f433), grinning; Gus looks at him, nervous. Camera glides in on the neighbor (centred f480): he crouches on 'snap' (f488-506), hops straight up on 'jump' (f508), lands on 'second' (f526) and gives a thumbs-up."
+  },
+  {
+   "id": 7,
+   "a": 547,
+   "b": 585,
+   "place": "lift",
+   "light": "day",
+   "line": 5,
+   "what": "Medium shot of Gus: he pulls out his clipboard of sums and holds it up on 'math' (f560), stern face."
+  },
+  {
+   "id": 8,
+   "a": 585,
+   "b": 698,
+   "place": "sky",
+   "light": "day",
+   "line": 5,
+   "what": "Diagram on open sky: a tall cutaway building of twenty floors with a lift shaft down its middle on the left; a tiny car drops down the shaft from the top floor (f586) to the bottom (f672), faster and faster. On the right a big speedometer dial with numbers 0 to 100: its red needle sweeps up with the fall and stops on 76 on 'seventy-six' (f642-675), the dial shakes."
+  },
+  {
+   "id": 9,
+   "a": 698,
+   "b": 743,
+   "place": "lift",
+   "light": "day",
+   "line": 5,
+   "what": "Medium-wide of Gus in the car with the same speedometer hanging beside him at the right: he hops as high as he can on 'jump' (f709); the needle only twitches up to 6 on 'six' (f723). He looks at it and gulps."
+  },
+  {
+   "id": 10,
+   "a": 743,
+   "b": 798,
+   "place": "hoistway",
+   "light": "day",
+   "line": 6,
+   "what": "Close on the car roof from outside: the six ropes at their hitch, fraying. They part one after another from 'all' (f762) and the last one whips away on 'snap' (f784) with a camera kick; short frayed stubs stay on the roof."
+  },
+  {
+   "id": 11,
+   "a": 798,
+   "b": 823,
+   "place": "hoistway",
+   "light": "day",
+   "line": 7,
+   "what": "'The car drops': outside view of the whole car falling, rope stubs flapping, floor bands and doors streaking up past it, camera rolled, speed lines."
+  },
+  {
+   "id": 12,
+   "a": 823,
+   "b": 973,
+   "place": "lift",
+   "light": "day",
+   "line": 7,
+   "what": "Inside, two-shot. On 'Gus floats' (f831) Gus drifts up off the floor, arms and legs paddling, shock face. On 'ready' (f886) the neighbor, also floating, tucks into a crouch with a determined frown, ready to jump. Speed lines rush up. A slow camera roll through 'one second later'; on 'stops' (f951) the car halts: both slam to the floor, camera kick, dust puffs, dazed faces."
+  },
+  {
+   "id": 13,
+   "a": 973,
+   "b": 1068,
+   "place": "hoistway",
+   "light": "day",
+   "line": 9,
+   "what": "'But wait': dead quiet. Outside view of the car sitting still in the shaft, the frayed rope stubs on its roof and nothing but empty shaft above it; camera drifts up over the empty shaft on 'Nothing holds the car up' (f993-1026). A big question mark pops over the car on 'why' (f1038)."
+  },
+  {
+   "id": 14,
+   "a": 1068,
+   "b": 1258,
+   "place": "sky",
+   "light": "day",
+   "line": 10,
+   "what": "Diagram on open sky: the car as a small icon on its two rails at the left, joined by a thin loop of rope to a big spoked wheel at the top right, which pops in on 'wheel' (f1087) and turns as the car icon moves down. From 'Spin it too fast' (f1163) the car icon speeds up, the wheel blurs; its two red weights slide outward on 'fly out' (f1216) and knock a lever over on 'trip' (f1237): the lever flips, a burst, the wheel stops."
+  },
+  {
+   "id": 15,
+   "a": 1258,
+   "b": 1348,
+   "place": "garden",
+   "light": "day",
+   "line": 11,
+   "what": "The garden: Gus sits in a small red open car parked on the lawn, seen from the side, facing the lens. He takes the seat belt at his shoulder (f1281) and pulls it slowly across his chest from f1300: the strap runs out smoothly; pleased face on 'runs' (f1354 in the next shot)."
+  },
+  {
+   "id": 16,
+   "a": 1348,
+   "b": 1389,
+   "place": "garden",
+   "light": "day",
+   "line": 11,
+   "what": "Closer on Gus in the car seat: he lets the belt go back, then yanks it hard (f1347); on 'locks' (f1367) the strap snaps taut and stops dead, a burst at the reel, his arm jerks back, shock face."
+  },
+  {
+   "id": 17,
+   "a": 1389,
+   "b": 1470,
+   "place": "hoistway",
+   "light": "day",
+   "line": 12,
+   "what": "Outside, low view of the underside of the car between its two steel rails: two orange wedge blocks sit under the car floor, one at each rail. An arrow pops in over the left one on 'two' (f1402) and over the right one on 'wedges' (f1423); camera pushes in."
+  },
+  {
+   "id": 18,
+   "a": 1470,
+   "b": 1594,
+   "place": "sky",
+   "light": "day",
+   "line": 12,
+   "what": "Diagram on open sky, one wedge close up: a grey steel rail runs up the middle; on each side of it an orange wedge sits in a tapered jaw fixed to the car. On 'jam' (f1472) the wedges slide up the taper and squeeze the rail, sparks on 'rails' (f1497). On 'pulls' (f1539) a big down arrow grows on the car; on 'bite' (f1579) two arrows squeeze inward on the wedges and a burst flashes at the rail."
+  },
+  {
+   "id": 19,
+   "a": 1594,
+   "b": 1782,
+   "place": "lift",
+   "light": "day",
+   "line": 13,
+   "what": "Two-shot in the stopped car, both standing with relieved smiles. Three crossed-out symbols pop up over them: a power plug on 'power' (f1619), a computer on 'computer' (f1645), a four-leaf clover on 'luck' (f1670). 'Unluckily' (f1687): their smiles drop. On 'lifts' (f1753) both stretch up on tiptoe and push toward the ceiling with both arms, straining; nothing moves; they sag (f1766)."
+  },
+  {
+   "id": 20,
+   "a": 1782,
+   "b": 1880,
+   "place": "hoistway",
+   "light": "day",
+   "line": 15,
+   "what": "Outside view of the stuck car: frayed stubs on the roof ('snapped', f1798); above it the landing door of floor 20 it started from. On 'five feet' (f1826) a ghost outline of the car pops in at its old height with a double arrow from there down to the roof. On 'fine' (f1861) Gus, small inside, gives a thumbs-up with a glint."
+  },
+  {
+   "id": 21,
+   "a": 1880,
+   "b": 1994,
+   "place": "lift",
+   "light": "day",
+   "line": 16,
+   "what": "Final gag, two-shot in the car. The floor indicator blinks two dashes on 'between floors' (f1904). Gus stands with a deadpan face, arms hanging. Beside him the neighbor crouches (f1934), wags a finger, and on the last word 'jump' (f1968) hops straight up, grinning; Gus only rolls his eyes toward him. Ends on the hop."
+  }
+ ],
+ "xfade": {
+  "14": 8,
+  "15": 8,
+  "17": 8,
+  "19": 8
+ },
+ "events": [
+  {
+   "f": 0,
+   "type": "amb_drone",
+   "to": 122,
+   "note": "hook bed: the hum of the lift shaft"
+  },
+  {
+   "f": 4,
+   "type": "swing_creak",
+   "to": 40,
+   "note": "the ropes creak under the load"
+  },
+  {
+   "f": 43,
+   "type": "metal_clang",
+   "id": "hsnap",
+   "note": "all six ropes part"
+  },
+  {
+   "f": 45,
+   "type": "wind_rush",
+   "to": 98,
+   "shape": "hook",
+   "note": "the car falls"
+  },
+  {
+   "f": 56,
+   "type": "whoosh",
+   "note": "cut inside"
+  },
+  {
+   "f": 62,
+   "type": "crowd_gasp",
+   "note": "they scream"
+  },
+  {
+   "f": 98,
+   "type": "thud",
+   "id": "hstop",
+   "note": "the car stops dead, they land"
+  },
+  {
+   "f": 104,
+   "type": "oof",
+   "note": "Gus lands"
+  },
+  {
+   "f": 107,
+   "type": "whoosh_big",
+   "note": "into the flash"
+  },
+  {
+   "f": 122,
+   "type": "flash_hit",
+   "note": "white flash, the story starts"
+  },
+  {
+   "f": 122,
+   "type": "amb_room",
+   "to": 273,
+   "note": "inside the car"
+  },
+  {
+   "f": 150,
+   "type": "footsteps",
+   "to": 180,
+   "id": "stepin",
+   "note": "Gus steps in"
+  },
+  {
+   "f": 215,
+   "type": "ding",
+   "id": "floor20",
+   "note": "the floor indicator: twentieth floor"
+  },
+  {
+   "f": 234,
+   "type": "push_whoosh",
+   "note": "the doors slide shut"
+  },
+  {
+   "f": 257,
+   "type": "twinkle",
+   "id": "wave",
+   "note": "the neighbor waves"
+  },
+  {
+   "f": 273,
+   "type": "whoosh",
+   "note": "cut to the shaft"
+  },
+  {
+   "f": 273,
+   "type": "amb_drone",
+   "to": 416,
+   "note": "the shaft"
+  },
+  {
+   "f": 291,
+   "type": "blip",
+   "id": "six",
+   "note": "a glint runs over the six ropes"
+  },
+  {
+   "f": 326,
+   "type": "swing_creak",
+   "to": 350,
+   "note": "ropes under load"
+  },
+  {
+   "f": 360,
+   "type": "slide_whistle_down",
+   "to": 372,
+   "id": "slack",
+   "note": "five ropes go slack"
+  },
+  {
+   "f": 398,
+   "type": "thud",
+   "id": "packed",
+   "note": "the car is packed full"
+  },
+  {
+   "f": 408,
+   "type": "ting",
+   "id": "holds",
+   "note": "the one rope holds"
+  },
+  {
+   "f": 416,
+   "type": "amb_room",
+   "to": 585,
+   "note": "inside the car"
+  },
+  {
+   "f": 433,
+   "type": "ding",
+   "id": "plan",
+   "note": "the neighbor has a plan"
+  },
+  {
+   "f": 490,
+   "type": "squeak",
+   "id": "ncrouch",
+   "note": "he crouches"
+  },
+  {
+   "f": 508,
+   "type": "jump_boing",
+   "id": "nhop",
+   "note": "he hops"
+  },
+  {
+   "f": 526,
+   "type": "thud",
+   "id": "nland",
+   "level": -9,
+   "note": "he lands"
+  },
+  {
+   "f": 560,
+   "type": "paper_flick",
+   "id": "math",
+   "note": "the clipboard"
+  },
+  {
+   "f": 585,
+   "type": "whoosh",
+   "note": "cut to the diagram"
+  },
+  {
+   "f": 588,
+   "type": "slide_whistle_down",
+   "to": 672,
+   "id": "bfall",
+   "note": "the tiny car falls twenty floors"
+  },
+  {
+   "f": 675,
+   "type": "buzzer",
+   "id": "seventysix",
+   "note": "the needle stops on 76"
+  },
+  {
+   "f": 698,
+   "type": "amb_room",
+   "to": 743,
+   "note": "inside the car"
+  },
+  {
+   "f": 709,
+   "type": "jump_boing",
+   "id": "ghop",
+   "note": "Gus's best jump"
+  },
+  {
+   "f": 723,
+   "type": "squeak",
+   "id": "six6",
+   "note": "the needle twitches to 6"
+  },
+  {
+   "f": 735,
+   "type": "gulp",
+   "note": "he gulps"
+  },
+  {
+   "f": 743,
+   "type": "amb_drone",
+   "to": 798,
+   "note": "the shaft"
+  },
+  {
+   "f": 746,
+   "type": "swing_creak",
+   "to": 760,
+   "note": "ropes fraying"
+  },
+  {
+   "f": 762,
+   "type": "ricochet_ping",
+   "id": "snapA",
+   "note": "first ropes part"
+  },
+  {
+   "f": 773,
+   "type": "ricochet_ping",
+   "id": "snapB",
+   "note": "more ropes part"
+  },
+  {
+   "f": 784,
+   "type": "metal_clang",
+   "id": "snap",
+   "note": "the last rope whips away"
+  },
+  {
+   "f": 798,
+   "type": "wind_rush",
+   "to": 950,
+   "shape": "rise",
+   "note": "the car drops"
+  },
+  {
+   "f": 800,
+   "type": "impact_kick",
+   "id": "drop",
+   "note": "it drops"
+  },
+  {
+   "f": 824,
+   "type": "crowd_gasp",
+   "id": "scream",
+   "note": "they scream"
+  },
+  {
+   "f": 831,
+   "type": "slide_whistle_up",
+   "to": 846,
+   "id": "float",
+   "note": "Gus floats up"
+  },
+  {
+   "f": 886,
+   "type": "squeak",
+   "id": "ready",
+   "note": "the neighbor tucks into a crouch"
+  },
+  {
+   "f": 906,
+   "type": "clock_tick",
+   "to": 946,
+   "note": "one second"
+  },
+  {
+   "f": 951,
+   "type": "crash",
+   "id": "stop",
+   "note": "the car stops"
+  },
+  {
+   "f": 960,
+   "type": "oof",
+   "note": "they land"
+  },
+  {
+   "f": 973,
+   "type": "record_stop",
+   "note": "but wait"
+  },
+  {
+   "f": 973,
+   "type": "amb_drone",
+   "to": 1068,
+   "note": "the silent shaft"
+  },
+  {
+   "f": 996,
+   "type": "swing_creak",
+   "to": 1024,
+   "note": "a rope stub swings"
+  },
+  {
+   "f": 1038,
+   "type": "question_blip",
+   "id": "why",
+   "note": "why did it stop"
+  },
+  {
+   "f": 1068,
+   "type": "whoosh",
+   "note": "to the diagram"
+  },
+  {
+   "f": 1087,
+   "type": "pop",
+   "id": "wheel",
+   "note": "the little wheel"
+  },
+  {
+   "f": 1099,
+   "type": "timer_ticks",
+   "to": 1158,
+   "note": "the wheel turns with the car"
+  },
+  {
+   "f": 1163,
+   "type": "power_up",
+   "id": "faster",
+   "note": "spin it too fast"
+  },
+  {
+   "f": 1216,
+   "type": "zip",
+   "id": "flyout",
+   "note": "the weights fly out"
+  },
+  {
+   "f": 1237,
+   "type": "metal_clang",
+   "id": "trip",
+   "pitch": 520,
+   "note": "they trip the lever"
+  },
+  {
+   "f": 1250,
+   "type": "click",
+   "note": "the brake is set"
+  },
+  {
+   "f": 1258,
+   "type": "amb_garden",
+   "to": 1389,
+   "note": "the garden"
+  },
+  {
+   "f": 1281,
+   "type": "click",
+   "id": "belt",
+   "note": "he takes the belt"
+  },
+  {
+   "f": 1300,
+   "type": "timer_ticks",
+   "to": 1340,
+   "id": "pull",
+   "note": "the belt runs out slowly"
+  },
+  {
+   "f": 1347,
+   "type": "whoosh",
+   "id": "yank",
+   "note": "he yanks it"
+  },
+  {
+   "f": 1367,
+   "type": "metal_clang",
+   "id": "locks",
+   "pitch": 700,
+   "note": "the belt locks"
+  },
+  {
+   "f": 1374,
+   "type": "oof",
+   "kind": "ugh",
+   "note": "his arm stops dead"
+  },
+  {
+   "f": 1389,
+   "type": "amb_drone",
+   "to": 1470,
+   "note": "the shaft"
+  },
+  {
+   "f": 1402,
+   "type": "arrow_pop",
+   "id": "wedge1",
+   "note": "first wedge"
+  },
+  {
+   "f": 1423,
+   "type": "arrow_pop",
+   "id": "wedge2",
+   "note": "second wedge"
+  },
+  {
+   "f": 1472,
+   "type": "shovel_thunk",
+   "id": "jam",
+   "note": "the wedges jam"
+  },
+  {
+   "f": 1497,
+   "type": "sizzle",
+   "id": "sparks",
+   "dur": 0.6,
+   "note": "sparks on the rail"
+  },
+  {
+   "f": 1539,
+   "type": "arrow_pop",
+   "id": "pulls",
+   "note": "the car pulls down"
+  },
+  {
+   "f": 1579,
+   "type": "chomp",
+   "id": "bite",
+   "note": "the wedges bite"
+  },
+  {
+   "f": 1594,
+   "type": "amb_room",
+   "to": 1782,
+   "note": "inside the stopped car"
+  },
+  {
+   "f": 1619,
+   "type": "pop",
+   "id": "nopower",
+   "note": "no power"
+  },
+  {
+   "f": 1645,
+   "type": "pop",
+   "id": "nocomputer",
+   "note": "no computer"
+  },
+  {
+   "f": 1670,
+   "type": "pop",
+   "id": "noluck",
+   "note": "no luck"
+  },
+  {
+   "f": 1690,
+   "type": "gulp",
+   "id": "unlucky",
+   "note": "unluckily"
+  },
+  {
+   "f": 1753,
+   "type": "oof",
+   "kind": "ugh",
+   "id": "lift",
+   "note": "they push up on the ceiling"
+  },
+  {
+   "f": 1767,
+   "type": "bonk",
+   "id": "nope",
+   "note": "nothing moves"
+  },
+  {
+   "f": 1782,
+   "type": "amb_drone",
+   "to": 1880,
+   "note": "the shaft"
+  },
+  {
+   "f": 1798,
+   "type": "squeak",
+   "id": "stub",
+   "note": "a frayed stub wobbles"
+  },
+  {
+   "f": 1826,
+   "type": "arrow_pop",
+   "id": "fivefeet",
+   "note": "five feet"
+  },
+  {
+   "f": 1861,
+   "type": "ding",
+   "id": "fine",
+   "note": "he's fine"
+  },
+  {
+   "f": 1880,
+   "type": "amb_room",
+   "to": 1994,
+   "note": "stuck in the car"
+  },
+  {
+   "f": 1904,
+   "type": "beep",
+   "id": "between",
+   "note": "the indicator blinks two dashes"
+  },
+  {
+   "f": 1934,
+   "type": "squeak",
+   "id": "crouch",
+   "note": "the neighbor crouches again"
+  },
+  {
+   "f": 1968,
+   "type": "jump_boing",
+   "id": "lastjump",
+   "note": "he still wants to jump"
+  }
+ ]
+}

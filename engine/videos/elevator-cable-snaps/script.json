@@ -1,0 +1,23 @@
+{
+  "id": "elevator-cable-snaps",
+  "title": "What If the Elevator Cable Snapped?",
+  "voice": {"provider": "kokoro", "voice": "am_michael", "speed": 1.2, "gap_s": 0.12},
+  "lines": [
+    "If every cable on your elevator snapped at once, you'd fall about five feet.",
+    "It's Monday morning, and Gus steps into the elevator on the twentieth floor, with his neighbor.",
+    "Above them, six steel ropes hold the car, and any one of them could carry it fully packed.",
+    "The neighbor has a plan anyway. If they ever snap, just jump at the last second.",
+    "Gus does the math. A fall from the twentieth floor ends at seventy-six miles an hour. His best jump is six.",
+    "And right then, all six ropes snap.",
+    "The car drops. Gus floats. The neighbor gets ready to jump.",
+    "And one second later, the car just stops.",
+    "But wait. Nothing holds the car up. So why did it stop?",
+    "You see, a little wheel spins as fast as the car moves. Spin it too fast, and its weights fly out and trip a brake.",
+    "Ever yanked a seat belt? Pull it slowly, and it runs. Yank it, and it locks.",
+    "The brake is two steel wedges under the car. They jam against its rails, and the harder the car pulls, the harder they bite.",
+    "Luckily, they need no power, no computer, and no luck.",
+    "Unluckily, they only let go when somebody lifts the car.",
+    "So the cables snapped, and Gus fell five feet. He's fine.",
+    "He's just stuck between floors, with a neighbor who still wants to jump."
+  ]
+}

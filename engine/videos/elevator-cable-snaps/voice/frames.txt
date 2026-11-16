@@ -1,0 +1,33 @@
+# word@frame at 30 fps (frame = start of the word); written by toon/voice.py, do not edit
+line  1  frames 0..121
+   If@0 every@3 cable@12 on@25 your@28 elevator@32 snapped@45 at@56 once,@58 you'd@80 fall@84 about@94 five@101 feet.@112
+line  2  frames 125..269
+   It's@125 Monday@129 morning,@140 and@162 Gus@167 steps@176 into@186 the@191 elevator@195 on@212 the@215 twentieth@217 floor,@228 with@250 his@254 neighbor.@259
+line  3  frames 273..412
+   Above@273 them,@282 six@293 steel@301 ropes@312 hold@321 the@330 car,@332 and@354 any@358 one@362 of@366 them@369 could@374 carry@379 it@388 fully@391 packed.@400
+line  4  frames 416..543
+   The@416 neighbor@418 has@429 a@434 plan@435 anyway.@446 If@473 they@476 ever@481 snap,@488 just@503 jump@510 at@518 the@521 last@522 second.@531
+line  5  frames 547..739
+   Gus@547 does@553 the@560 math.@562 A@585 fall@586 from@597 the@602 twentieth@604 floor@616 ends@630 at@638 seventy@642 six@656 miles@663 an@675 hour.@677 His@698 best@702 jump@711 is@722 six.@725
+line  6  frames 743..794
+   And@743 right@746 then,@752 all@760 six@768 ropes@777 snap.@786
+line  7  frames 798..898
+   The@798 car@800 drops.@809 Gus@823 floats.@833 The@849 neighbor@858 gets@868 ready@876 to@884 jump.@887
+line  8  frames 902..969
+   And@902 one@906 second@910 later,@921 the@936 car@938 just@948 stops.@954
+line  9  frames 973..1064
+   But@973 wait.@976 Nothing@993 holds@1002 the@1013 car@1015 up.@1026 So@1036 why@1040 did@1047 it@1051 stop?@1053
+line 10  frames 1068..1254
+   You@1068 see,@1069 a@1079 little@1080 wheel@1089 spins@1097 as@1112 fast@1116 as@1125 the@1128 car@1130 moves.@1139 Spin@1163 it@1170 too@1173 fast,@1177 and@1199 its@1203 weights@1207 fly@1218 out@1229 and@1236 trip@1239 a@1246 brake.@1247
+line 11  frames 1258..1384
+   Ever@1258 yanked@1264 a@1273 seat@1274 belt?@1283 Pull@1300 it@1305 slowly,@1307 and@1322 it@1324 runs.@1326 Yank@1348 it,@1359 and@1364 it@1366 locks.@1369
+line 12  frames 1389..1590
+   The@1389 brake@1390 is@1400 two@1404 steel@1412 wedges@1425 under@1439 the@1442 car.@1444 They@1470 jam@1474 against@1485 its@1495 rails,@1499 and@1515 the@1518 harder@1520 the@1529 car@1531 pulls,@1541 the@1564 harder@1567 they@1577 bite.@1581
+line 13  frames 1594..1683
+   Luckily,@1594 they@1606 need@1609 no@1616 power,@1621 no@1642 computer,@1647 and@1664 no@1668 luck.@1672
+line 14  frames 1687..1778
+   Unluckily,@1687 they@1705 only@1714 let@1722 go@1729 when@1735 somebody@1741 lifts@1755 the@1765 car.@1768
+line 15  frames 1782..1876
+   So@1782 the@1785 cables@1788 snapped,@1800 and@1812 Gus@1816 fell@1822 five@1828 feet.@1839 He's@1857 fine.@1863
+line 16  frames 1880..1979
+   He's@1880 just@1883 stuck@1889 between@1896 floors,@1906 with@1929 a@1936 neighbor@1936 who@1947 still@1950 wants@1958 to@1966 jump.@1970

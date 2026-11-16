@@ -1,0 +1,24 @@
+{
+ "_doc": "Sound plan of elevator-cable-snaps, read by engine/toon/audio/build.py (manual: engine/toon/audio/README.md).",
+ "key": "G",
+ "tempo": 138,
+ "seed": 6116,
+ "theme": "hop",
+ "places": {"lift": "room", "hoistway": "tunnel", "sky": "void", "garden": "outdoor"},
+ "sections": [
+  {"from": 0, "mood": "silence", "_why": "the hook: shaft hum, creaking ropes, the snap, the rush"},
+  {"from": 122, "mood": "theme", "_why": "Monday morning in the elevator; starts on the flash"},
+  {"from": 416, "mood": "theme", "_why": "the neighbor's plan"},
+  {"from": 547, "mood": "mystery", "_why": "Gus does the math: 76 against 6"},
+  {"from": 743, "mood": "chase", "hits": [784, 951], "_why": "the ropes part, the car drops: downbeats on the last snap and on the stop"},
+  {"from": 973, "mood": "silence", "_why": "'But wait': dead stop with the record_stop event, the shaft hum alone"},
+  {"from": 1068, "mood": "mystery", "_why": "the governor wheel"},
+  {"from": 1258, "mood": "theme", "_why": "the garden: the seat belt"},
+  {"from": 1389, "mood": "mystery", "_why": "the wedges"},
+  {"from": 1594, "mood": "bittersweet", "hits": [1687], "_why": "'Luckily' ... 'Unluckily' (1687)"},
+  {"from": 1782, "mood": "runup", "_why": "the recap: fell five feet, he's fine"},
+  {"from": 1880, "mood": "finale", "_why": "stuck between floors; button right after the last word"}
+ ],
+ "dips": [],
+ "sfx": {}
+}

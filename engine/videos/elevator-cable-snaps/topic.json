@@ -1,0 +1,33 @@
+{
+ "id": "elevator-cable-snaps",
+ "question": "What if the elevator cable snapped?",
+ "answer_in_one_line": "You fall about five feet: the car hangs on six ropes that could each carry it alone, and if all of them part, a spinning governor trips two steel wedges that jam on the guide rails within about a second.",
+ "trend_basis": [
+  {
+   "source": "topic_bank",
+   "evidence": "elevator-cable-snaps: 44 elevator shorts, 60M views, 43 channels; 'cable snaps' videos reach 27k to 178k views on channels with 50 to 1,250 subscribers (up to 555 views per subscriber) in the last two weeks."
+  },
+  {
+   "source": "youtube_shorts",
+   "evidence": "No fresh everyday 'what if you' row passes the four tests today. The 60 rows are led by 'Comment X if you want one' gift adverts (9.7M to 1.1M views/day); the real question rows on top are 'What if a Plane Door Opened Mid-flight' (FactoHolic, 1.68M/day) and the Cinderella's-slipper question (lilBrain 1.55M/day, Den TV 0.79M, HawdAlafkar 0.49M), both already in toon/episodes.json, and the Indonesian fall-to-the-centre-of-the-Earth row (0.33M/day), also made."
+  },
+  {
+   "source": "own_channel",
+   "evidence": "The plane-door short is the channel's best row by far (8,201 views, 9,892 views/day after 0.8 days) against 1,388 for the hummingbird and 1 to 243 for the space shorts: a place everybody has stood in, a question everybody has asked, a plain title."
+  },
+  {
+   "source": "google_trends / wikipedia_top / science_news",
+   "evidence": "Nothing to cross with: the searches are actors, cricket and GTA VI; Wikipedia's top is films, fighters and people; the headlines are Starship, Voyager, Euclid and medicine."
+  }
+ ],
+ "why_this_one": "With no usable fresh row, the rule sends the topic to the bank: tier A, and not the cluster of either of the last two episodes (plane, fairy tale). The elevator entry is the bank's first and has the broadest small-channel evidence (43 channels). It passes all four tests: everybody has stood in an elevator and wondered about the cable; the title is a plain question with two nouns a child knows; it wins for channels with a few hundred subscribers; and the answer is a surprise one number carries (five feet). The numbers come straight from the elevator code (rope factor of safety, governor trip speed, stopping distances), so they can be computed and checked, and the mechanism has an exact everyday twin: the seat belt that runs when pulled slowly and locks when yanked is a centrifugal lock like the governor. The story (Gus, the neighbor's plan to jump at the last second, the stuck car) is our own, and the ending is safe: nobody is hurt, the brakes work.",
+ "rejected": [
+  "immortal snail (Retroyap, 1.44M views/day, 51k subscribers; also in the bank): a meme, taken only when it clearly beats the bank; the elevator has evidence from 43 channels and real mechanics",
+  "plane door, Cinderella's slipper, falling to the centre of the Earth: already made",
+  "shaving your eyebrows (1.99M/day), ice-cold baths for a year (0.60M/day), reheated rice (0.49M/day): body and medical advice, and things a child could copy",
+  "a horse kicks you (0.26M/day), a snake's fang breaks, a camel given water: animal facts and injuries, no physical 'you' question",
+  "three-headed dog, Napoleon, Cybertruck tractors, GTA, Roblox, Sonic and Pokemon rows: fiction, games or real people",
+  "the new mini-moon, Voyager 1 at one light-day, Starship flight 15 (science headlines): space as astronomy, which gets single-digit views on this channel",
+  "jump-on-a-cloud, friction-off-5-seconds and the other tier A entries of the bank: kept for later days; the bank is ranked and the elevator comes first"
+ ]
+}

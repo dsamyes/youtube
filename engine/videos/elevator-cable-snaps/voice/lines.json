@@ -1,0 +1,136 @@
+{
+ "voice": "kokoro-v1.0:am_michael@1.2",
+ "duration_s": 65.974,
+ "words": 233,
+ "wps": 3.53,
+ "lines": [
+  {
+   "line": 1,
+   "text": "If every cable on your elevator snapped at once, you'd fall about five feet.",
+   "s": 0.0,
+   "e": 4.034,
+   "words": 14,
+   "wps": 3.47
+  },
+  {
+   "line": 2,
+   "text": "It's Monday morning, and Gus steps into the elevator on the twentieth floor, with his neighbor.",
+   "s": 4.154,
+   "e": 8.978,
+   "words": 16,
+   "wps": 3.32
+  },
+  {
+   "line": 3,
+   "text": "Above them, six steel ropes hold the car, and any one of them could carry it fully packed.",
+   "s": 9.098,
+   "e": 13.752,
+   "words": 18,
+   "wps": 3.87
+  },
+  {
+   "line": 4,
+   "text": "The neighbor has a plan anyway. If they ever snap, just jump at the last second.",
+   "s": 13.872,
+   "e": 18.126,
+   "words": 16,
+   "wps": 3.76
+  },
+  {
+   "line": 5,
+   "text": "Gus does the math. A fall from the twentieth floor ends at seventy-six miles an hour. His best jump is six.",
+   "s": 18.246,
+   "e": 24.64,
+   "words": 22,
+   "wps": 3.44
+  },
+  {
+   "line": 6,
+   "text": "And right then, all six ropes snap.",
+   "s": 24.76,
+   "e": 26.474,
+   "words": 7,
+   "wps": 4.08
+  },
+  {
+   "line": 7,
+   "text": "The car drops. Gus floats. The neighbor gets ready to jump.",
+   "s": 26.594,
+   "e": 29.938,
+   "words": 11,
+   "wps": 3.29
+  },
+  {
+   "line": 8,
+   "text": "And one second later, the car just stops.",
+   "s": 30.058,
+   "e": 32.312,
+   "words": 8,
+   "wps": 3.55
+  },
+  {
+   "line": 9,
+   "text": "But wait. Nothing holds the car up. So why did it stop?",
+   "s": 32.432,
+   "e": 35.466,
+   "words": 12,
+   "wps": 3.96
+  },
+  {
+   "line": 10,
+   "text": "You see, a little wheel spins as fast as the car moves. Spin it too fast, and its weights fly out and trip a brake.",
+   "s": 35.586,
+   "e": 41.82,
+   "words": 25,
+   "wps": 4.01
+  },
+  {
+   "line": 11,
+   "text": "Ever yanked a seat belt? Pull it slowly, and it runs. Yank it, and it locks.",
+   "s": 41.94,
+   "e": 46.164,
+   "words": 16,
+   "wps": 3.79
+  },
+  {
+   "line": 12,
+   "text": "The brake is two steel wedges under the car. They jam against its rails, and the harder the car pulls, the harder they bite.",
+   "s": 46.284,
+   "e": 53.028,
+   "words": 24,
+   "wps": 3.56
+  },
+  {
+   "line": 13,
+   "text": "Luckily, they need no power, no computer, and no luck.",
+   "s": 53.148,
+   "e": 56.112,
+   "words": 10,
+   "wps": 3.37
+  },
+  {
+   "line": 14,
+   "text": "Unluckily, they only let go when somebody lifts the car.",
+   "s": 56.232,
+   "e": 59.286,
+   "words": 10,
+   "wps": 3.27
+  },
+  {
+   "line": 15,
+   "text": "So the cables snapped, and Gus fell five feet. He's fine.",
+   "s": 59.406,
+   "e": 62.54,
+   "words": 11,
+   "wps": 3.51
+  },
+  {
+   "line": 16,
+   "text": "He's just stuck between floors, with a neighbor who still wants to jump.",
+   "s": 62.66,
+   "e": 65.974,
+   "words": 13,
+   "wps": 3.92
+  }
+ ]
+}

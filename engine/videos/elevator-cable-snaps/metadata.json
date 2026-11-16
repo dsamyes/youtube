@@ -1,0 +1,22 @@
+{
+  "title": "What If the Elevator Cable Snapped? 😱",
+  "description": "Gus steps into the elevator on the twentieth floor, and every one of its six ropes snaps at once. He falls about five feet, and then the car just stops.\n\nThe numbers, for a passenger elevator rated 500 ft/min hanging on six ropes, standing at the twentieth floor:\n• One rope alone could hold 1.7 fully loaded cars (rope factor of safety 10.25, six ropes)\n• The car free-falls 1.7 ft in a third of a second, until it reaches the governor's trip speed of 625 ft/min (7 mph)\n• The wedge brakes then stop it within 1 ft 8 in to 5 ft 8 in: 3.4 to 7.3 ft in all, about five feet, in about one second\n• A free fall from the twentieth floor (19 storeys of 3.1 m, no air, no brakes) would end at 76 mph; a good standing jump takes off at about 6 mph\n(A slower elevator falls less. Counterweight, pit buffer and the air in the shaft are left out. Cartoon physics for fun, not safety advice: in a stuck elevator, press the alarm and wait.)\n\nSources:\n• ASME A17.1 / CSA B44 Safety Code for Elevators, as printed in California Code of Regulations, Title 8, section 1604.19 (governor trip speeds, stopping distances of car safeties, release by raising the car) and section 3042 (rope factors of safety)\n• EN 81-20 (braking of progressive safety gear between 0.2 g and 1 g), via Elevator World, \"Progressive Safety Gears and Engineering\"\n• HowStuffWorks, \"How Seatbelts Work\" (the retractor's centrifugal lock)\n• CTBUH tall building height calculator (storey height); Topend Sports vertical jump norms\n\nEvery number is computed in code and checked. Animation, narration and music are made with software and AI tools.\n\n#whatif #elevator #physics",
+  "tags": [
+    "what if",
+    "elevator cable snaps",
+    "what if the elevator cable snapped",
+    "elevator free fall",
+    "falling elevator",
+    "jump in a falling elevator",
+    "elevator safety brake",
+    "how elevators work",
+    "physics",
+    "science",
+    "animation",
+    "animated story",
+    "the if engine"
+  ],
+  "categoryId": "28",
+  "containsSyntheticMedia": false,
+  "playlist": "Shorts: 60-Second Ifs"
+}
