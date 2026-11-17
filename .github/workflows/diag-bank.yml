@@ -1,0 +1,37 @@
+# Is the private topic bank (secret TOPIC_BANK) set and readable? Prints counts only, never its content.
+# Runs only when engine/diag/bank.json is pushed to main.
+name: diag-bank
+
+on:
+  push:
+    branches: [main]
+    paths: ["engine/diag/bank.json"]
+
+permissions: {}
+
+jobs:
+  bank:
+    if: github.repository == 'dsamyes/youtube'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Topic bank secret
+        env:
+          TOPIC_BANK: ${{ secrets.TOPIC_BANK }}
+        run: |
+          if [ -z "$TOPIC_BANK" ]; then echo "::error::TOPIC_BANK is not set"; exit 1; fi
+          printf '%s' "$TOPIC_BANK" > "$RUNNER_TEMP/bank.json"
+          python3 - "$RUNNER_TEMP/bank.json" <<'PY'
+          import json, sys, collections
+          raw = open(sys.argv[1], encoding="utf-8").read()
+          try:
+              d = json.loads(raw)
+          except Exception as e:
+              print(f"::error::TOPIC_BANK is not valid JSON ({type(e).__name__}); {len(raw)} characters, {raw.count(chr(10)) + 1} lines"); sys.exit(1)
+          t = d.get("topics", [])
+          ok = all(isinstance(x, dict) and x.get("id") and x.get("question") and x.get("tier") in ("A", "B") for x in t)
+          tiers = collections.Counter(x.get("tier") for x in t)
+          print(f"TOPIC_BANK: valid JSON, {len(raw)} characters, {raw.count(chr(10)) + 1} line(s), {len(t)} topics (A {tiers.get('A', 0)}, B {tiers.get('B', 0)}), what_wins {len(d.get('what_wins', []))}, never {len(d.get('never', []))}, entries well-formed: {ok}")
+          sys.exit(0 if (ok and len(t) >= 10) else 1)
+          PY
+          rm -f "$RUNNER_TEMP/bank.json"
