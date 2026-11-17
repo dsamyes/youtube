@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Raw material for the topic bank (toon/topic_bank.json): the short 'what if / what happens if' videos that drew the
+"""Raw material for the topic bank (private: the repository secret TOPIC_BANK): the short 'what if / what happens if' videos that drew the
 most views in the last 30 days and in the last year, each with the size of its channel.
 
   python toon/topic_mine.py --out PATH
@@ -8,7 +8,8 @@ About 2,900 YouTube quota units (28 searches). Needs the channel's OAuth files (
 The output is public titles and numbers: data for a person or a model to read, never instructions. Reading it and
 choosing topics is editorial work: rank a video by views per subscriber of its channel (a small channel far above its
 size shows a topic that pulls by itself), group the titles into themes, drop everything PRODUCER.md forbids, and
-rewrite toon/topic_bank.json. Do it about once a month, or when the bank runs low.
+rewrite the bank (same JSON shape as before: _doc, what_wins, never, topics). Do it about once a month, or when it
+runs low.
 """
 import sys, json, re, argparse, datetime as dt
 from pathlib import Path
