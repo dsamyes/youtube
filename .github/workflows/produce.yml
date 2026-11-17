@@ -201,8 +201,7 @@ jobs:
         run: |
           mkdir -p "$RUNNER_TEMP/trends"
           B="$RUNNER_TEMP/trends/topic_bank.json"; src=none
-          if [ -n "$TOPIC_BANK" ]; then printf '%s' "$TOPIC_BANK" > "$B"; src="secret"
-          elif [ -f engine/toon/topic_bank.json ]; then cp engine/toon/topic_bank.json "$B"; src="repository"; fi
+          if [ -n "$TOPIC_BANK" ]; then printf '%s' "$TOPIC_BANK" > "$B"; src="secret"; fi
           if [ -f "$B" ] && n=$(python3 -c 'import json,sys; t=json.load(open(sys.argv[1]))["topics"]; assert all("id" in x and "question" in x for x in t); print(len(t))' "$B" 2>/dev/null); then
             echo "topic bank: $n topics (from the $src)"
           else

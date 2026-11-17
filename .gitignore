@@ -34,3 +34,7 @@ engine/videos/*/thumbnail.jpg
 *.wav
 *.mp3
 *.onnx
+
+# the topic bank is private (repository secret TOPIC_BANK): a working copy must never be committed
+engine/toon/topic_bank.json
+TOPIC_BANK.txt
