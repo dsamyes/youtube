@@ -1,0 +1,33 @@
+{
+ "id": "immortal-snail",
+ "question": "What if an immortal snail was chasing you?",
+ "answer_in_one_line": "Even at the pace of the fastest snail ever timed (13 inches in 2 minutes) and never stopping, it covers only 260 yards a day: a three-minute walk wins the day back, and one flight across the Atlantic puts 64 years between you; what it has on its side is that it never stops, like a dripping tap that fills a bathtub in a week.",
+ "trend_basis": [
+  {
+   "source": "youtube_shorts",
+   "evidence": "'Would you take a billion dollars if you were followed by an Immortal Snail forever?' (Retroyap, 53,900 subscribers) is at 1.36M views/day, the best row of the week that is a real 'what if you' question from a channel under 100,000 subscribers; every row above it except three (shaved eyebrows, a Japanese eating sketch, a football advert) is a 'Comment X if you want one' gift advert."
+  },
+  {
+   "source": "topic_bank",
+   "evidence": "immortal-snail: 'Why You Can't Escape The Immortal Snail' 6.7M views on a 5.5k-subscriber channel (1,216 views per subscriber); two more snail rows with 4.8M and 0.3M."
+  },
+  {
+   "source": "own_channel",
+   "evidence": "The Gus shorts with a plain everyday question lead the channel (plane door 4,596 views/day, glass slippers 1,351/day) against 1 to 37/day for the abstract space videos."
+  },
+  {
+   "source": "google_trends / wikipedia_top / science_news",
+   "evidence": "No second source to cross with: today's searches are sport, gas prices and films; Wikipedia's top is actors and films; the science headlines are space probes and medicine."
+  }
+ ],
+ "why_this_one": "It is the one question that shows up in two sources at once: a fresh row of today's trend file from a mid-size channel and a tier A entry of the channel's research, where a 5.5k-subscriber channel reached millions with it. Everybody who has met the question has asked himself whether he could get away, the title is plain words, and the honest answer is arithmetic anyone can check: one record from Guinness World Records (33 cm in two minutes), a walking pace, a great-circle distance. The trending videos argue about the money; we take only the theme and compute the chase: one step is four minutes, a night's sleep is 87 yards, a flight is 64 years. The mechanism (a slow thing that never stops against a fast thing that must) is carried by a dripping tap. It is drawable with the kit (garden by day and night, flat diagrams in the sky place, one simple beach), nobody is hurt, and there is nothing in it a child could copy. The cluster (meme-physics) differs from the last two episodes (elevator, glass slippers).",
+ "rejected": [
+  "shaving your eyebrows off (1.89M/day): a giant channel's stunt, and a thing a child could copy",
+  "building a dog with three heads, Anakin, Roblox, Sonic, dinosaurs, Cybertruck tractors: fiction, games and films, no physical answer",
+  "falling asleep in a smart car (0.36M/day, 47k-subscriber channel): crashes with victims",
+  "being swallowed by a sperm whale (0.34M/day), ice-cold baths for a year (0.47M/day), eating reheated rice (0.42M/day): gore or medical advice",
+  "giving a camel water mid-journey (0.59M/day, 17k-subscriber channel): an animal fact with no 'you'",
+  "falling to the centre of the Earth (0.29M/day) and Cinderella's slipper (three rows): already made (hole-through-earth, glass-slippers-run)",
+  "Voyager 1 at one light-day, the Leonids, the Starship catch (science headlines): abstract space topics, the kind that gets single-digit views on this channel"
+ ]
+}

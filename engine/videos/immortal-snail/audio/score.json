@@ -1,0 +1,64 @@
+{
+ "_doc": "Sound plan of immortal-snail, read by engine/toon/audio/build.py (manual: engine/toon/audio/README.md).",
+ "key": "G",
+ "tempo": 132,
+ "seed": 5117,
+ "theme": "tiptoe",
+ "places": {
+  "garden": "outdoor",
+  "sky": "void",
+  "beach": "water"
+ },
+ "sections": [
+  {
+   "from": 0,
+   "mood": "silence",
+   "_why": "the hook: the rush, running feet"
+  },
+  {
+   "from": 103,
+   "mood": "theme",
+   "end": "stop",
+   "_why": "the deal in the morning garden; starts on the flash"
+  },
+  {
+   "from": 546,
+   "mood": "chase",
+   "hits": [
+    642,
+    757
+   ],
+   "_why": "the record, one step, five hundred times: downbeats on the two stopwatch bells"
+  },
+  {
+   "from": 852,
+   "mood": "silence",
+   "_why": "'So why can't Gus sleep': dead stop with the record_stop event, one cricket"
+  },
+  {
+   "from": 899,
+   "mood": "mystery",
+   "_why": "the explanation: he has to stop, the dripping tap"
+  },
+  {
+   "from": 1198,
+   "mood": "lullaby",
+   "_why": "every night Gus sleeps; the yards and the miles"
+  },
+  {
+   "from": 1432,
+   "mood": "bittersweet",
+   "hits": [
+    1635
+   ],
+   "_why": "'Luckily' ... 'Unluckily' (1635)"
+  },
+  {
+   "from": 1712,
+   "mood": "finale",
+   "_why": "the beach; button right after the last word"
+  }
+ ],
+ "dips": [],
+ "sfx": {}
+}

@@ -1,0 +1,33 @@
+# word@frame at 30 fps (frame = start of the word); written by toon/voice.py, do not edit
+line  1  frames 0..99
+   Gus@0 has@7 a@12 billion@13 dollars,@28 and@52 he's@56 running@60 away@68 from@77 a@83 snail.@84
+line  2  frames 103..195
+   It's@103 nine@108 in@118 the@120 morning@122 in@133 the@135 garden,@138 and@161 the@164 deal@166 is@179 simple.@180
+line  3  frames 198..370
+   He@198 keeps@200 the@210 money.@212 But@233 a@238 snail@239 that@256 can't@260 die@269 will@277 follow@282 him@295 forever,@298 and@320 one@325 touch@330 means@341 game@350 over.@360
+line  4  frames 373..506
+   His@373 wife@376 laughs.@385 It's@396 a@402 snail.@404 His@431 neighbor@436 steps@445 right@455 over@463 it.@473 Just@478 walk@485 away.@493
+line  5  frames 509..657
+   And@509 they've@512 got@515 a@520 point.@521 The@546 fastest@548 snail@563 ever@577 timed@583 took@597 two@603 minutes@609 to@619 go@622 thirteen@627 inches.@642
+line  6  frames 660..760
+   Gus@660 takes@666 one@674 step@682 and@698 the@703 snail@705 needs@717 four@727 minutes@733 to@742 catch@745 up.@755
+line  7  frames 764..848
+   He@764 walks@765 almost@774 five@787 hundred@797 times@805 faster@816 than@827 it@831 crawls.@834
+line  8  frames 852..895
+   So@852 why@856 can't@862 Gus@872 sleep@877 at@885 night?@888
+line  9  frames 899..1032
+   You@899 see,@901 Gus@908 has@916 to@920 stop.@923 He@938 eats.@946 He@960 naps.@962 He@974 sleeps.@977 The@992 snail@1002 never@1014 does.@1023
+line 10  frames 1036..1194
+   It's@1036 like@1040 a@1045 dripping@1047 tap.@1059 One@1082 drop@1088 is@1099 nothing,@1103 but@1115 leave@1119 it@1127 for@1129 a@1135 week@1136 and@1152 it@1157 fills@1159 a@1167 whole@1168 bathtub.@1177
+line 11  frames 1198..1311
+   Every@1198 night@1204 Gus@1213 sleeps,@1220 the@1234 snail@1245 gets@1258 eighty@1267 seven@1275 yards@1286 closer.@1295
+line 12  frames 1314..1428
+   That's@1314 two@1320 hundred@1326 and@1337 sixty@1341 yards@1351 a@1363 day,@1364 and@1382 fifty@1386 four@1395 miles@1403 a@1416 year.@1418
+line 13  frames 1432..1523
+   Luckily,@1432 Gus@1450 can@1456 win@1461 a@1464 whole@1465 day@1474 back@1480 with@1489 a@1493 three@1494 minute@1503 walk.@1511
+line 14  frames 1527..1631
+   And@1527 one@1530 flight@1535 across@1545 the@1555 ocean@1559 puts@1579 sixty@1586 four@1595 years@1604 between@1614 them.@1626
+line 15  frames 1635..1709
+   Unluckily,@1635 snails@1656 are@1668 very@1670 good@1678 at@1685 hitching@1687 a@1697 ride.@1698
+line 16  frames 1712..1880
+   So@1712 Gus@1716 lands@1724 on@1734 a@1737 sunny@1738 beach@1747 with@1757 a@1760 billion@1761 dollars,@1773 one@1798 suitcase,@1804 and@1832 one@1838 very@1844 patient@1852 snail.@1866

@@ -1,0 +1,28 @@
+{
+  "id": "immortal-snail",
+  "title": "What If an Immortal Snail Was Chasing You?",
+  "voice": {
+    "provider": "kokoro",
+    "voice": "am_michael",
+    "speed": 1.2,
+    "gap_s": 0.12
+  },
+  "lines": [
+    "Gus has a billion dollars, and he's running away from a snail.",
+    "It's nine in the morning in the garden, and the deal is simple.",
+    "He keeps the money. But a snail that can't die will follow him forever, and one touch means game over.",
+    "His wife laughs. It's a snail. His neighbor steps right over it. Just walk away.",
+    "And they've got a point. The fastest snail ever timed took two minutes to go thirteen inches.",
+    "Gus takes one step and the snail needs four minutes to catch up.",
+    "He walks almost five hundred times faster than it crawls.",
+    "So why can't Gus sleep at night?",
+    "You see, Gus has to stop. He eats. He naps. He sleeps. The snail never does.",
+    "It's like a dripping tap. One drop is nothing, but leave it for a week and it fills a whole bathtub.",
+    "Every night Gus sleeps, the snail gets eighty-seven yards closer.",
+    "That's two hundred and sixty yards a day, and fifty-four miles a year.",
+    "Luckily, Gus can win a whole day back with a three-minute walk.",
+    "And one flight across the ocean puts sixty-four years between them.",
+    "Unluckily, snails are very good at hitching a ride.",
+    "So Gus lands on a sunny beach with a billion dollars, one suitcase, and one very patient snail."
+  ]
+}

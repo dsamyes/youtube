@@ -1,0 +1,823 @@
+{
+ "_doc": "Picture/sound contract for immortal-snail. 30 fps. Frames come from voice/frames.txt (word start frames). Visual reactions land 0-3 frames before their word.",
+ "fps": 30,
+ "total_frames": 1896,
+ "flash_at": 103,
+ "planned_pops": [
+  262,
+  263,
+  278,
+  279,
+  280,
+  281,
+  282,
+  946,
+  1722,
+  1723,
+  1724
+ ],
+ "places": {
+  "garden": "Gus's back garden (kit town place, plain lawn) by day and at night: the lawn, the neighbor's fence, a deck chair",
+  "sky": "open sky above a sea of clouds (imported from plane-door-midflight): the stage for the diagrams, all flat cards (the snail race on a ruler, the race lanes, the tap and the bathtub, the road with milestones) and for the airliner",
+  "beach": "a sunny beach (this video's own place): yellow sand, blue sea to the horizon, a palm tree"
+ },
+ "shots": [
+  {
+   "id": 1,
+   "a": 0,
+   "b": 52,
+   "place": "garden",
+   "light": "day",
+   "line": 1,
+   "what": "HOOK, already moving. Gus in striped pyjamas and fishbowl helmet runs straight at the lens across the lawn, hugging a fat money sack with a dollar sign, face in panic, looking back over his shoulder. The sack sparkles on 'billion' (f13). Lens low, slightly rolled, pulling back before him."
+  },
+  {
+   "id": 2,
+   "a": 52,
+   "b": 103,
+   "place": "garden",
+   "light": "day",
+   "line": 1,
+   "what": "Cut to what he runs from: a low close shot in the grass of a small brown garden snail with a spiral shell, crawling to screen right, stretching and bunching. On 'snail' (f84) its eyes narrow and a glint flashes on the shell. Slow push-in. Whoosh at f88, white flash at f103."
+  },
+  {
+   "id": 3,
+   "a": 103,
+   "b": 233,
+   "place": "garden",
+   "light": "day",
+   "line": 2,
+   "what": "Morning in the garden, wide: Gus stands on the lawn holding the money sack, his wife to the right of him, the neighbor behind his fence, the snail on the grass in front, creeping toward Gus. From f186 the lens glides in (centred f198) to a medium shot of Gus hugging the sack with a grin; the sack sparkles on 'money' (f212)."
+  },
+  {
+   "id": 4,
+   "a": 233,
+   "b": 320,
+   "place": "garden",
+   "light": "day",
+   "line": 3,
+   "what": "Low close shot of the snail in the grass. An iron weight falls from above (from f252) and lands flat on it (f262, 'can't die'). A beat, the weight wobbles, then the snail pops back up unharmed and flips the weight away to screen right (f278). It crawls on, a glint on its shell on 'forever' (f300)."
+  },
+  {
+   "id": 5,
+   "a": 320,
+   "b": 373,
+   "place": "garden",
+   "light": "day",
+   "line": 3,
+   "what": "Full shot of Gus with the sack, the snail at his feet to screen right. The snail stretches an eye stalk toward his slipper (f322 to f329). On 'touch' Gus jumps back to screen left (off f329, lands f341), sack clutched. On 'game over' a red cross pops over the sack (f350) and he stares at it."
+  },
+  {
+   "id": 6,
+   "a": 373,
+   "b": 431,
+   "place": "garden",
+   "light": "day",
+   "line": 4,
+   "what": "Medium shot of his wife: she laughs with closed eyes, shoulders shaking (from f383). On 'It's a snail' she points down to screen left at it (f398), still laughing."
+  },
+  {
+   "id": 7,
+   "a": 431,
+   "b": 509,
+   "place": "garden",
+   "light": "day",
+   "line": 4,
+   "what": "Full shot on the lawn, the snail in the middle of the frame. The stout neighbor walks in from screen right and takes one big high step right over it (off f452, down f468), without a glance. Past it he turns to the lens and jerks a thumb over his shoulder: just walk away (f484)."
+  },
+  {
+   "id": 8,
+   "a": 509,
+   "b": 546,
+   "place": "garden",
+   "light": "day",
+   "line": 5,
+   "what": "Medium shot of Gus with the sack: he looks down at the snail, breathes out, relieved, and gives a thumbs-up on 'point' (f519), a small ding."
+  },
+  {
+   "id": 9,
+   "a": 546,
+   "b": 660,
+   "place": "sky",
+   "light": "day",
+   "line": 5,
+   "what": "Crossfade to the sky, a flat diagram over a sea of clouds: a wooden ruler with thirteen marks, numbered 0 at the left end and 13 at the right, a checkered flag at the 13. A racing snail starts at 0 (f563) and creeps along the ruler. Above, a stopwatch: its hand goes round twice (f597 to f640). The snail reaches the flag on 'inches' (f642), the stopwatch rings, a sparkle."
+  },
+  {
+   "id": 10,
+   "a": 660,
+   "b": 764,
+   "place": "garden",
+   "light": "day",
+   "line": 6,
+   "what": "Full shot on the lawn: Gus stands just left of the snail, the snail right behind his heel. On 'one step' he takes one single step to screen left (f674 to f684) and looks back. A stopwatch pops over the snail (f703); its hand spins four full turns (f717 to f755) while the snail strains across the gap, and rings as it gets there (f757)."
+  },
+  {
+   "id": 11,
+   "a": 764,
+   "b": 852,
+   "place": "sky",
+   "light": "day",
+   "line": 7,
+   "what": "Crossfade to the sky: two race lanes on a board. On the top lane a tiny Gus shoots across from left to right again and again (f765, f787, f805, f816), speed streaks behind him; on the bottom lane the snail has barely moved off the start line. On 'crawls' (f834) sweat drops fly off the snail."
+  },
+  {
+   "id": 12,
+   "a": 852,
+   "b": 899,
+   "place": "garden",
+   "light": "night",
+   "line": 8,
+   "what": "Record stop, hard cut to night. Gus sits in a deck chair on the dark lawn hugging the sack, wide awake, eyes darting left and right. A big question mark pops over him (f856). He gulps (f880). One cricket."
+  },
+  {
+   "id": 13,
+   "a": 899,
+   "b": 960,
+   "place": "garden",
+   "light": "day",
+   "line": 9,
+   "what": "Day. Gus strides across the lawn to screen left with the sack under his arm, the lens travelling with him, and on 'stop' he stops dead (f920), out of breath, a puff of dust at his feet. On 'eats' a sandwich on a plate is in his hand and he takes a bite (f946) and chews."
+  },
+  {
+   "id": 14,
+   "a": 960,
+   "b": 974,
+   "place": "garden",
+   "light": "day",
+   "line": 9,
+   "what": "Jump cut, same lawn by day: Gus asleep in the deck chair, head tipped back, the sack on his lap, a sleep bubble at his nose (naps, f962)."
+  },
+  {
+   "id": 15,
+   "a": 974,
+   "b": 992,
+   "place": "garden",
+   "light": "night",
+   "line": 9,
+   "what": "Jump cut, the same framing at night: Gus asleep in the deck chair under the moon, sleep bubble swelling (sleeps, f977)."
+  },
+  {
+   "id": 16,
+   "a": 992,
+   "b": 1036,
+   "place": "garden",
+   "light": "night",
+   "line": 9,
+   "what": "Low close shot in the night grass: the snail, eyes wide open, crawling steadily to screen right, never pausing, a silver trail behind it. A glint on its shell on 'never' (f1014)."
+  },
+  {
+   "id": 17,
+   "a": 1036,
+   "b": 1115,
+   "place": "sky",
+   "light": "day",
+   "line": 10,
+   "what": "Crossfade to the sky: a chrome tap at the top, an empty white bathtub on feet below. Drops form at the spout and fall one by one into the tub (they land f1047, f1067, f1088). On 'One drop is nothing' the third lands with a tiny splash at the bottom of the empty tub and a little glint."
+  },
+  {
+   "id": 18,
+   "a": 1115,
+   "b": 1198,
+   "place": "sky",
+   "light": "day",
+   "line": 10,
+   "what": "Closer on the tub, time-lapse: seven little suns pop in a row above it, one per day (f1119 to f1149), the tap keeps dripping fast, and the water climbs. On 'fills a whole bathtub' the water reaches the brim (f1177) and spills over, a rubber duck bobbing on top."
+  },
+  {
+   "id": 19,
+   "a": 1198,
+   "b": 1314,
+   "place": "garden",
+   "light": "night",
+   "line": 11,
+   "what": "Night. Low on the grass: the snail big in the foreground at screen left, crawling toward Gus, who sleeps in the deck chair in the background, the sack on his lap, sleep bubble swelling. On 'eighty-seven' a yellow measuring tape rolls out behind the snail along its silver trail and a tag with the number 87 pops up on it (f1267)."
+  },
+  {
+   "id": 20,
+   "a": 1314,
+   "b": 1432,
+   "place": "sky",
+   "light": "day",
+   "line": 12,
+   "what": "Crossfade to the sky: a strip of road. The snail crawls along it to screen right, the road sliding under it. A milestone with the number 260 and a small sun on it pops up beside the road (f1320) while a sun arcs over the sky and sets. A second, bigger milestone with the number 54 and a calendar leaf on it pops up (f1386); a glint on 'year' (f1418)."
+  },
+  {
+   "id": 21,
+   "a": 1432,
+   "b": 1527,
+   "place": "garden",
+   "light": "day",
+   "line": 13,
+   "what": "Crossfade to the garden by day: Gus strolls to screen left with the sack under his arm, whistling, a music note floating up (f1461); the lens travels with him. A stopwatch floats beside him: its hand goes round three times (f1489 to f1511) and it rings on 'walk' (f1513). He grins."
+  },
+  {
+   "id": 22,
+   "a": 1527,
+   "b": 1635,
+   "place": "sky",
+   "light": "day",
+   "line": 14,
+   "what": "Crossfade to the sky: the airliner from the side flies in from screen left over the sea of clouds and across the frame (f1527 to f1600), getting away to the right. Down at screen left, on a small grassy islet, the snail looks up after it. On 'sixty-four' an hourglass sign with the number 64 pops up beside the snail (f1586)."
+  },
+  {
+   "id": 23,
+   "a": 1635,
+   "b": 1712,
+   "place": "sky",
+   "light": "day",
+   "line": 15,
+   "what": "Close on the airliner cruising, seen from the side. On 'snails' a round bubble pops out of its belly like an X-ray (f1656): inside, Gus's red suitcase in the hold, and the snail stuck flat to its side. On 'hitching' the snail lifts its eyes and winks (f1687); a glint on 'ride' (f1698)."
+  },
+  {
+   "id": 24,
+   "a": 1712,
+   "b": 1896,
+   "place": "beach",
+   "light": "day",
+   "line": 16,
+   "what": "Hard cut to a sunny beach: yellow sand, blue sea, a palm tree. Gus drops into frame and lands on the sand (f1724), the sack under one arm, the red suitcase standing beside him, a huge grin. The sack sparkles on 'billion dollars' (f1761), the suitcase glints on 'suitcase' (f1804). The lens glides in (centred f1820). Behind the suitcase two eye stalks rise (f1838 to f1850), the snail climbs onto the top of it and, on the last word, stretches one eye stalk toward Gus's hand (f1866). Gus beams at the sea and sees nothing. Ends on the last word."
+  }
+ ],
+ "xfade": {
+  "9": 8,
+  "11": 8,
+  "17": 8,
+  "20": 8,
+  "21": 8,
+  "22": 8
+ },
+ "events": [
+  {
+   "f": 0,
+   "type": "wind_rush",
+   "to": 103,
+   "shape": "hook",
+   "note": "hook bed: Gus runs for it"
+  },
+  {
+   "f": 2,
+   "type": "footsteps",
+   "to": 50,
+   "pace": 6,
+   "surface": "soft",
+   "note": "Gus runs at the lens"
+  },
+  {
+   "f": 13,
+   "type": "twinkle",
+   "id": "bill",
+   "note": "the sack sparkles on 'billion'"
+  },
+  {
+   "f": 56,
+   "type": "squeak",
+   "note": "the snail, close"
+  },
+  {
+   "f": 84,
+   "type": "ting",
+   "id": "hookglint",
+   "note": "glint on the shell on 'snail'"
+  },
+  {
+   "f": 88,
+   "type": "whoosh_big",
+   "note": "into the flash"
+  },
+  {
+   "f": 103,
+   "type": "flash_hit",
+   "note": "white flash, the story starts"
+  },
+  {
+   "f": 103,
+   "type": "amb_garden",
+   "to": 852,
+   "note": "morning in the garden"
+  },
+  {
+   "f": 110,
+   "type": "bird_tweet",
+   "note": "nine in the morning"
+  },
+  {
+   "f": 166,
+   "type": "paper_flick",
+   "note": "the deal"
+  },
+  {
+   "f": 212,
+   "type": "twinkle",
+   "id": "money",
+   "note": "the sack sparkles on 'money'"
+  },
+  {
+   "f": 233,
+   "type": "whoosh",
+   "note": "cut to the snail"
+  },
+  {
+   "f": 252,
+   "type": "slide_whistle_down",
+   "to": 262,
+   "id": "wfall",
+   "note": "the weight falls"
+  },
+  {
+   "f": 262,
+   "type": "metal_clang",
+   "id": "wland",
+   "note": "the weight lands on the snail"
+  },
+  {
+   "f": 278,
+   "type": "boing",
+   "id": "wflip",
+   "note": "the snail pops up and flips it off"
+  },
+  {
+   "f": 300,
+   "type": "ting",
+   "id": "forever",
+   "note": "glint on 'forever'"
+  },
+  {
+   "f": 322,
+   "type": "squeak",
+   "id": "stalk",
+   "note": "an eye stalk stretches toward his slipper"
+  },
+  {
+   "f": 329,
+   "type": "jump_boing",
+   "id": "jump",
+   "note": "Gus jumps back on 'touch'"
+  },
+  {
+   "f": 341,
+   "type": "thud",
+   "id": "jland",
+   "level": -8,
+   "note": "lands"
+  },
+  {
+   "f": 350,
+   "type": "buzzer",
+   "id": "over",
+   "note": "red cross: game over"
+  },
+  {
+   "f": 383,
+   "type": "crowd_cheer",
+   "to": 396,
+   "id": "laugh",
+   "level": -11,
+   "note": "his wife laughs (nearest: a small crowd's hurrah, soft)"
+  },
+  {
+   "f": 398,
+   "type": "whoosh",
+   "id": "wpoint",
+   "note": "she points at it"
+  },
+  {
+   "f": 412,
+   "type": "squeak",
+   "note": "she giggles on"
+  },
+  {
+   "f": 433,
+   "type": "footsteps",
+   "to": 452,
+   "pace": 3,
+   "surface": "soft",
+   "id": "nwalk",
+   "note": "the neighbor walks in"
+  },
+  {
+   "f": 452,
+   "type": "slide_whistle_up",
+   "to": 460,
+   "id": "nstep",
+   "note": "one big step over the snail"
+  },
+  {
+   "f": 468,
+   "type": "thud",
+   "id": "ndown",
+   "level": -8,
+   "note": "his foot comes down past it"
+  },
+  {
+   "f": 484,
+   "type": "whoosh",
+   "id": "thumb",
+   "note": "thumb over the shoulder: just walk away"
+  },
+  {
+   "f": 519,
+   "type": "ding",
+   "id": "point",
+   "note": "Gus's thumbs-up: they've got a point"
+  },
+  {
+   "f": 546,
+   "type": "whoosh",
+   "note": "to the diagram"
+  },
+  {
+   "f": 563,
+   "type": "pop",
+   "id": "start",
+   "note": "the racing snail starts"
+  },
+  {
+   "f": 597,
+   "type": "timer_ticks",
+   "to": 640,
+   "id": "race",
+   "note": "the stopwatch goes round twice"
+  },
+  {
+   "f": 642,
+   "type": "timer_ding",
+   "id": "finish",
+   "note": "thirteen inches: the flag"
+  },
+  {
+   "f": 674,
+   "type": "footsteps",
+   "to": 686,
+   "surface": "soft",
+   "id": "step",
+   "at": [
+    674,
+    684
+   ],
+   "note": "one single step"
+  },
+  {
+   "f": 703,
+   "type": "pop",
+   "id": "watch",
+   "note": "a stopwatch pops over the snail"
+  },
+  {
+   "f": 717,
+   "type": "timer_ticks",
+   "to": 755,
+   "id": "four",
+   "note": "four turns: four minutes"
+  },
+  {
+   "f": 757,
+   "type": "timer_ding",
+   "id": "caught",
+   "note": "the snail has caught up"
+  },
+  {
+   "f": 765,
+   "type": "zip",
+   "id": "lap1",
+   "note": "tiny Gus shoots across"
+  },
+  {
+   "f": 787,
+   "type": "zip",
+   "id": "lap2",
+   "note": "again"
+  },
+  {
+   "f": 805,
+   "type": "zip",
+   "id": "lap3",
+   "size": "small",
+   "note": "again"
+  },
+  {
+   "f": 816,
+   "type": "zip",
+   "id": "lap4",
+   "note": "again"
+  },
+  {
+   "f": 834,
+   "type": "squeak",
+   "id": "crawls",
+   "note": "the snail strains"
+  },
+  {
+   "f": 852,
+   "type": "record_stop",
+   "note": "So why can't Gus sleep"
+  },
+  {
+   "f": 852,
+   "type": "amb_cricket",
+   "to": 899,
+   "note": "night, wide awake"
+  },
+  {
+   "f": 856,
+   "type": "question_blip",
+   "id": "why",
+   "note": "question mark"
+  },
+  {
+   "f": 880,
+   "type": "gulp",
+   "id": "gulp",
+   "note": "he gulps"
+  },
+  {
+   "f": 899,
+   "type": "amb_garden",
+   "to": 974,
+   "note": "day again"
+  },
+  {
+   "f": 901,
+   "type": "footsteps",
+   "to": 920,
+   "pace": 4,
+   "surface": "soft",
+   "id": "stride",
+   "note": "Gus strides"
+  },
+  {
+   "f": 920,
+   "type": "decel_whoosh",
+   "to": 934,
+   "id": "stop",
+   "note": "he stops dead"
+  },
+  {
+   "f": 946,
+   "type": "chomp",
+   "id": "eat",
+   "note": "he eats"
+  },
+  {
+   "f": 960,
+   "type": "flip_blip",
+   "id": "nap",
+   "note": "jump cut: he naps"
+  },
+  {
+   "f": 974,
+   "type": "flip_blip",
+   "id": "sleep",
+   "note": "jump cut: he sleeps"
+  },
+  {
+   "f": 974,
+   "type": "amb_night",
+   "to": 1036,
+   "note": "night"
+  },
+  {
+   "f": 1014,
+   "type": "ting",
+   "id": "never",
+   "note": "glint on 'never'"
+  },
+  {
+   "f": 1036,
+   "type": "whoosh",
+   "note": "to the tap"
+  },
+  {
+   "f": 1047,
+   "type": "drip",
+   "id": "drip1",
+   "note": "a drop lands"
+  },
+  {
+   "f": 1067,
+   "type": "drip",
+   "id": "drip2",
+   "note": "a drop lands"
+  },
+  {
+   "f": 1088,
+   "type": "drip",
+   "id": "drip3",
+   "note": "one drop is nothing"
+  },
+  {
+   "f": 1119,
+   "type": "blip",
+   "id": "week",
+   "pitch": "C6",
+   "note": "day one"
+  },
+  {
+   "f": 1119,
+   "type": "bubbling",
+   "to": 1177,
+   "level": -24,
+   "note": "the tub fills"
+  },
+  {
+   "f": 1129,
+   "type": "blip",
+   "pitch": "E6",
+   "note": "day three"
+  },
+  {
+   "f": 1139,
+   "type": "blip",
+   "pitch": "G6",
+   "note": "day five"
+  },
+  {
+   "f": 1149,
+   "type": "blip",
+   "pitch": "C7",
+   "note": "day seven"
+  },
+  {
+   "f": 1177,
+   "type": "splash",
+   "id": "full",
+   "note": "over the brim"
+  },
+  {
+   "f": 1186,
+   "type": "squeak",
+   "id": "duck",
+   "note": "the rubber duck"
+  },
+  {
+   "f": 1198,
+   "type": "amb_night",
+   "to": 1314,
+   "note": "every night"
+  },
+  {
+   "f": 1204,
+   "type": "clock_tick",
+   "to": 1258,
+   "note": "the night goes by"
+  },
+  {
+   "f": 1267,
+   "type": "pop",
+   "id": "tape",
+   "note": "the tape and its tag: 87"
+  },
+  {
+   "f": 1295,
+   "type": "ting",
+   "id": "closer",
+   "note": "closer"
+  },
+  {
+   "f": 1314,
+   "type": "whoosh",
+   "note": "to the road"
+  },
+  {
+   "f": 1320,
+   "type": "arrow_pop",
+   "id": "mile1",
+   "note": "milestone 260"
+  },
+  {
+   "f": 1364,
+   "type": "blip",
+   "note": "the sun sets: a day"
+  },
+  {
+   "f": 1386,
+   "type": "arrow_pop",
+   "id": "mile2",
+   "note": "milestone 54"
+  },
+  {
+   "f": 1418,
+   "type": "ting",
+   "id": "year",
+   "note": "glint on 'year'"
+  },
+  {
+   "f": 1432,
+   "type": "amb_garden",
+   "to": 1527,
+   "note": "a walk in the morning"
+  },
+  {
+   "f": 1436,
+   "type": "footsteps",
+   "to": 1508,
+   "pace": 2.4,
+   "surface": "soft",
+   "id": "walk",
+   "note": "Gus strolls"
+  },
+  {
+   "f": 1461,
+   "type": "pop",
+   "id": "whistle",
+   "level": -11,
+   "note": "he whistles: a note floats up"
+  },
+  {
+   "f": 1489,
+   "type": "timer_ticks",
+   "to": 1511,
+   "id": "three",
+   "note": "three turns: three minutes"
+  },
+  {
+   "f": 1513,
+   "type": "timer_ding",
+   "id": "walked",
+   "note": "a whole day won back"
+  },
+  {
+   "f": 1527,
+   "type": "rocket_rumble",
+   "to": 1612,
+   "shape": "fade",
+   "level": -17,
+   "note": "the airliner flies off"
+  },
+  {
+   "f": 1535,
+   "type": "whoosh_big",
+   "id": "fly",
+   "note": "the airliner passes"
+  },
+  {
+   "f": 1586,
+   "type": "pop",
+   "id": "years",
+   "note": "the hourglass sign: 64"
+  },
+  {
+   "f": 1635,
+   "type": "rocket_rumble",
+   "to": 1712,
+   "shape": "steady",
+   "level": -20,
+   "note": "cruising"
+  },
+  {
+   "f": 1656,
+   "type": "pop",
+   "id": "xray",
+   "note": "the bubble: the suitcase in the hold"
+  },
+  {
+   "f": 1687,
+   "type": "ricochet_ping",
+   "id": "wink",
+   "note": "the snail winks"
+  },
+  {
+   "f": 1698,
+   "type": "ting",
+   "id": "ride",
+   "note": "glint on 'ride'"
+  },
+  {
+   "f": 1712,
+   "type": "amb_ocean_night",
+   "to": 1896,
+   "note": "the beach (nearest bed: calm sea)"
+  },
+  {
+   "f": 1724,
+   "type": "thud",
+   "id": "beach",
+   "note": "Gus lands on the sand"
+  },
+  {
+   "f": 1761,
+   "type": "twinkle",
+   "id": "bill2",
+   "note": "the sack sparkles"
+  },
+  {
+   "f": 1804,
+   "type": "ting",
+   "id": "case",
+   "note": "the suitcase glints"
+  },
+  {
+   "f": 1838,
+   "type": "slide_whistle_up_slowing",
+   "to": 1856,
+   "id": "rise",
+   "note": "two eye stalks rise behind the suitcase"
+  },
+  {
+   "f": 1866,
+   "type": "ricochet_ping",
+   "id": "last",
+   "note": "the snail, on the last word"
+  }
+ ]
+}

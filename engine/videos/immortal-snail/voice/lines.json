@@ -1,0 +1,136 @@
+{
+ "voice": "kokoro-v1.0:am_michael@1.2",
+ "duration_s": 62.684,
+ "words": 221,
+ "wps": 3.53,
+ "lines": [
+  {
+   "line": 1,
+   "text": "Gus has a billion dollars, and he's running away from a snail.",
+   "s": 0.0,
+   "e": 3.304,
+   "words": 12,
+   "wps": 3.63
+  },
+  {
+   "line": 2,
+   "text": "It's nine in the morning in the garden, and the deal is simple.",
+   "s": 3.424,
+   "e": 6.488,
+   "words": 13,
+   "wps": 4.24
+  },
+  {
+   "line": 3,
+   "text": "He keeps the money. But a snail that can't die will follow him forever, and one touch means game over.",
+   "s": 6.608,
+   "e": 12.322,
+   "words": 20,
+   "wps": 3.5
+  },
+  {
+   "line": 4,
+   "text": "His wife laughs. It's a snail. His neighbor steps right over it. Just walk away.",
+   "s": 12.442,
+   "e": 16.856,
+   "words": 15,
+   "wps": 3.4
+  },
+  {
+   "line": 5,
+   "text": "And they've got a point. The fastest snail ever timed took two minutes to go thirteen inches.",
+   "s": 16.976,
+   "e": 21.89,
+   "words": 17,
+   "wps": 3.46
+  },
+  {
+   "line": 6,
+   "text": "Gus takes one step and the snail needs four minutes to catch up.",
+   "s": 22.01,
+   "e": 25.334,
+   "words": 13,
+   "wps": 3.91
+  },
+  {
+   "line": 7,
+   "text": "He walks almost five hundred times faster than it crawls.",
+   "s": 25.454,
+   "e": 28.278,
+   "words": 10,
+   "wps": 3.54
+  },
+  {
+   "line": 8,
+   "text": "So why can't Gus sleep at night?",
+   "s": 28.398,
+   "e": 29.852,
+   "words": 7,
+   "wps": 4.81
+  },
+  {
+   "line": 9,
+   "text": "You see, Gus has to stop. He eats. He naps. He sleeps. The snail never does.",
+   "s": 29.972,
+   "e": 34.416,
+   "words": 16,
+   "wps": 3.6
+  },
+  {
+   "line": 10,
+   "text": "It's like a dripping tap. One drop is nothing, but leave it for a week and it fills a whole bathtub.",
+   "s": 34.536,
+   "e": 39.81,
+   "words": 21,
+   "wps": 3.98
+  },
+  {
+   "line": 11,
+   "text": "Every night Gus sleeps, the snail gets eighty-seven yards closer.",
+   "s": 39.93,
+   "e": 43.694,
+   "words": 11,
+   "wps": 2.92
+  },
+  {
+   "line": 12,
+   "text": "That's two hundred and sixty yards a day, and fifty-four miles a year.",
+   "s": 43.814,
+   "e": 47.608,
+   "words": 14,
+   "wps": 3.69
+  },
+  {
+   "line": 13,
+   "text": "Luckily, Gus can win a whole day back with a three-minute walk.",
+   "s": 47.728,
+   "e": 50.782,
+   "words": 13,
+   "wps": 4.26
+  },
+  {
+   "line": 14,
+   "text": "And one flight across the ocean puts sixty-four years between them.",
+   "s": 50.902,
+   "e": 54.386,
+   "words": 12,
+   "wps": 3.44
+  },
+  {
+   "line": 15,
+   "text": "Unluckily, snails are very good at hitching a ride.",
+   "s": 54.506,
+   "e": 56.96,
+   "words": 9,
+   "wps": 3.67
+  },
+  {
+   "line": 16,
+   "text": "So Gus lands on a sunny beach with a billion dollars, one suitcase, and one very patient snail.",
+   "s": 57.08,
+   "e": 62.684,
+   "words": 18,
+   "wps": 3.21
+  }
+ ]
+}

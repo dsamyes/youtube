@@ -1,0 +1,53 @@
+{
+  "model": "snail at the pace of the fastest snail ever timed (33 cm in 2 min, Guinness), never stopping; Gus walks 3 mph, 0.70 m steps, sleeps 8 h; ocean = New York to London great circle; tap = 1 drip/s of 0.25 mL into a 40-gallon tub",
+  "inputs": {
+    "course_cm": 33.0,
+    "course_in": 13.0,
+    "record_s": 120.0,
+    "walk_mph": 3.0,
+    "step_m": 0.7,
+    "sleep_h": 8.0,
+    "drip_mL": 0.25,
+    "tub_gal": 40.0
+  },
+  "snail": {
+    "speed_mm_s": 2.7500000000000004,
+    "speed_mph": 0.006151574803149607,
+    "per_hour_m": 9.9,
+    "per_hour_yd": 10.826771653543307,
+    "per_day_m": 237.60000000000002,
+    "per_day_yd": 259.8425196850394,
+    "per_year_km": 86.78340000000001,
+    "per_year_miles": 53.92470472440945,
+    "per_night_of_sleep_m": 79.2,
+    "per_night_of_sleep_yd": 86.61417322834646
+  },
+  "gus": {
+    "walk_m_s": 1.34112,
+    "times_faster_than_snail": 487.68,
+    "one_step_lead_s": 254.5454545454545,
+    "one_step_lead_min": 4.242424242424241,
+    "walk_that_wins_a_day_back_s": 177.16535433070868,
+    "walk_that_wins_a_day_back_min": 2.9527559055118116
+  },
+  "ocean": {
+    "new_york_london_km": 5540.0189701660875,
+    "new_york_london_miles": 3442.4081925095484,
+    "snail_days": 23316.578157264674,
+    "snail_years": 63.83731186109425
+  },
+  "tap": {
+    "litres_per_day": 21.6,
+    "gallons_per_day": 5.706116330936006,
+    "tub_litres": 151.41647136,
+    "days_to_fill_tub": 7.010021822222222,
+    "days_to_fill_60_gal_tub": 10.515032733333333
+  },
+  "facts_with_sources": {
+    "record": "Guinness World Records, 'Fastest snail racing': a snail named Archie (trainer Carl Bramham) covered the 33 cm (13 in) course in 2 min 00 s at the World Snail Racing Championships, Congham, Norfolk, 1995. Same figures in the 'Snail racing' encyclopedia article (0.006 mph).",
+    "walking": "Usual walking pace of healthy adults: 1.31 m/s (Murtagh et al., Sports Medicine 2021, meta-analysis); 3 mph = 1.34 m/s.",
+    "ocean": "Great-circle distance JFK to LHR: 5,540 to 5,567 km (3,442 to 3,459 miles) depending on the calculator; computed here with the haversine formula.",
+    "tap": "USGS Water Science School, drip calculator: 0.25 mL per drip, 15,140 drips per gallon, 4,000 drips per litre.",
+    "hitching": "USDA APHIS: hitchhiking snails 'can attach themselves to almost anything including shipping containers and can survive for months'; US Customs and Border Protection regularly finds live snails in air passengers' luggage (Houston 2021, Detroit 2023)."
+  }
+}
