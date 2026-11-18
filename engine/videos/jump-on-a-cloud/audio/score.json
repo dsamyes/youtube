@@ -1,0 +1,26 @@
+{
+ "_doc": "Sound plan of jump-on-a-cloud, read by engine/toon/audio/build.py (manual: engine/toon/audio/README.md).",
+ "key": "G",
+ "tempo": 126,
+ "seed": 1118,
+ "theme": "hop",
+ "places": {
+  "sky": {"room": "outdoor", "send": 0.1},
+  "cloud": "void",
+  "garden": "outdoor"
+ },
+ "sections": [
+  {"from": 0, "mood": "silence", "_why": "the hook: the falling rush only"},
+  {"from": 146, "mood": "theme", "end": "stop", "_why": "Sunday afternoon in the garden, the bed, the doubters, the balloon; stops as it hangs above the cloud"},
+  {"from": 584, "mood": "mystery", "_why": "up close: solid, five hundred tons, a hundred elephants"},
+  {"from": 765, "mood": "chase", "hits": [771, 938], "_why": "the jump and the fall through the white; downbeats on the take-off and on the stopwatch bell"},
+  {"from": 985, "mood": "silence", "_why": "dead stop with the record_stop: where are the elephants?"},
+  {"from": 1036, "mood": "mystery", "_why": "the explanation: huge, the fridge, ten drops, the droplet"},
+  {"from": 1393, "mood": "lullaby", "_why": "fog, and the one cup of water"},
+  {"from": 1575, "mood": "bittersweet", "hits": [1702], "_why": "'Luckily' ... 'Unluckily' (1702)"},
+  {"from": 1807, "mood": "runup", "_why": "evening: the cloud slides in"},
+  {"from": 1872, "mood": "finale", "_why": "the cloud lands on Gus; button after the last word"}
+ ],
+ "dips": [[762, 778, -6.0]],
+ "sfx": {}
+}

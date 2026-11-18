@@ -1,0 +1,144 @@
+{
+ "voice": "kokoro-v1.0:am_michael@1.2",
+ "duration_s": 65.678,
+ "words": 228,
+ "wps": 3.47,
+ "lines": [
+  {
+   "line": 1,
+   "text": "A cloud weighs more than a million pounds and it can't hold up one man in pajamas.",
+   "s": 0.0,
+   "e": 4.754,
+   "words": 17,
+   "wps": 3.58
+  },
+  {
+   "line": 2,
+   "text": "It's two on a Sunday afternoon and Gus lies in his garden staring at a fat little cloud.",
+   "s": 4.874,
+   "e": 9.818,
+   "words": 18,
+   "wps": 3.64
+  },
+  {
+   "line": 3,
+   "text": "It looks like the softest bed in the world.",
+   "s": 9.938,
+   "e": 11.912,
+   "words": 9,
+   "wps": 4.56
+  },
+  {
+   "line": 4,
+   "text": "His wife says it's just fog and his neighbor bets he'll bounce.",
+   "s": 12.032,
+   "e": 15.216,
+   "words": 12,
+   "wps": 3.77
+  },
+  {
+   "line": 5,
+   "text": "So Gus puts on a parachute, borrows a balloon and rides up above the cloud.",
+   "s": 15.336,
+   "e": 19.33,
+   "words": 15,
+   "wps": 3.76
+  },
+  {
+   "line": 6,
+   "text": "Up close the cloud looks solid. It holds five hundred tons of water, as much as a hundred elephants.",
+   "s": 19.45,
+   "e": 25.384,
+   "words": 19,
+   "wps": 3.2
+  },
+  {
+   "line": 7,
+   "text": "Gus jumps.",
+   "s": 25.504,
+   "e": 26.268,
+   "words": 2,
+   "wps": 2.62
+  },
+  {
+   "line": 8,
+   "text": "He doesn't bounce. He doesn't even slow down.",
+   "s": 26.388,
+   "e": 28.712,
+   "words": 8,
+   "wps": 3.44
+  },
+  {
+   "line": 9,
+   "text": "He falls through the whole thing in twenty-two seconds and all he sees is white.",
+   "s": 28.832,
+   "e": 32.706,
+   "words": 16,
+   "wps": 4.13
+  },
+  {
+   "line": 10,
+   "text": "So where are the hundred elephants?",
+   "s": 32.826,
+   "e": 34.43,
+   "words": 6,
+   "wps": 3.74
+  },
+  {
+   "line": 11,
+   "text": "You see, a cloud is huge. A piece the size of your fridge holds just ten drops of water.",
+   "s": 34.55,
+   "e": 39.704,
+   "words": 19,
+   "wps": 3.69
+  },
+  {
+   "line": 12,
+   "text": "The rest is air. Each droplet is so tiny that it sinks half an inch a second, so the faintest breeze holds it up.",
+   "s": 39.824,
+   "e": 46.318,
+   "words": 24,
+   "wps": 3.7
+  },
+  {
+   "line": 13,
+   "text": "Ever walked through fog? That's a cloud that sat down.",
+   "s": 46.438,
+   "e": 49.212,
+   "words": 10,
+   "wps": 3.6
+  },
+  {
+   "line": 14,
+   "text": "In his whole fall Gus runs into one cup of water.",
+   "s": 49.332,
+   "e": 52.376,
+   "words": 11,
+   "wps": 3.61
+  },
+  {
+   "line": 15,
+   "text": "Luckily, his parachute opens and he lands in his own garden, barely damp.",
+   "s": 52.496,
+   "e": 56.6,
+   "words": 13,
+   "wps": 3.17
+  },
+  {
+   "line": 16,
+   "text": "Unluckily a million of those droplets make one raindrop and by evening the cloud has made plenty.",
+   "s": 56.72,
+   "e": 62.284,
+   "words": 17,
+   "wps": 3.06
+  },
+  {
+   "line": 17,
+   "text": "Gus couldn't land on the cloud. So the cloud lands on Gus.",
+   "s": 62.404,
+   "e": 65.678,
+   "words": 12,
+   "wps": 3.67
+  }
+ ]
+}

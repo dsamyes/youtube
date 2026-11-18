@@ -1,0 +1,35 @@
+# word@frame at 30 fps (frame = start of the word); written by toon/voice.py, do not edit
+line  1  frames 0..142
+   A@0 cloud@1 weighs@15 more@23 than@31 a@35 million@37 pounds@50 and@75 it@79 can't@81 hold@88 up@97 one@102 man@108 in@116 pajamas.@119
+line  2  frames 146..294
+   It's@146 two@151 on@158 a@161 Sunday@162 afternoon@175 and@204 Gus@208 lies@219 in@232 his@234 garden@238 staring@251 at@265 a@267 fat@268 little@277 cloud.@283
+line  3  frames 298..357
+   It@298 looks@301 like@308 the@313 softest@315 bed@330 in@339 the@342 world.@343
+line  4  frames 361..456
+   His@361 wife@365 says@373 it's@381 just@385 fog@391 and@413 his@417 neighbor@421 bets@431 he'll@438 bounce.@442
+line  5  frames 460..579
+   So@460 Gus@464 puts@472 on@479 a@482 parachute,@484 borrows@510 a@525 balloon@526 and@540 rides@545 up@556 above@560 the@566 cloud.@568
+line  6  frames 584..761
+   Up@584 close@588 the@596 cloud@599 looks@612 solid.@620 It@646 holds@649 five@660 hundred@670 tons@680 of@691 water,@694 as@713 much@718 as@725 a@728 hundred@730 elephants.@743
+line  7  frames 765..788
+   Gus@765 jumps.@773
+line  8  frames 792..861
+   He@792 doesn't@793 bounce.@802 He@823 doesn't@826 even@833 slow@839 down.@849
+line  9  frames 865..981
+   He@865 falls@867 through@876 the@881 whole@883 thing@890 in@900 twenty@904 two@912 seconds@919 and@943 all@947 he@953 sees@956 is@969 white.@973
+line 10  frames 985..1032
+   So@985 where@988 are@995 the@998 hundred@1000 elephants?@1014
+line 11  frames 1036..1191
+   You@1036 see,@1038 a@1048 cloud@1050 is@1064 huge.@1068 A@1095 piece@1097 the@1107 size@1110 of@1122 your@1124 fridge@1127 holds@1139 just@1150 ten@1157 drops@1166 of@1177 water.@1180
+line 12  frames 1195..1389
+   The@1195 rest@1197 is@1207 air.@1212 Each@1236 droplet@1243 is@1259 so@1262 tiny@1269 that@1282 it@1286 sinks@1290 half@1298 an@1307 inch@1311 a@1317 second,@1318 so@1338 the@1341 faintest@1344 breeze@1361 holds@1372 it@1382 up.@1385
+line 13  frames 1393..1476
+   Ever@1393 walked@1398 through@1407 fog?@1413 That's@1428 a@1440 cloud@1441 that@1453 sat@1456 down.@1465
+line 14  frames 1480..1571
+   In@1480 his@1482 whole@1485 fall@1492 Gus@1509 runs@1526 into@1538 one@1543 cup@1552 of@1558 water.@1561
+line 15  frames 1575..1698
+   Luckily,@1575 his@1589 parachute@1594 opens@1610 and@1623 he@1626 lands@1628 in@1639 his@1641 own@1645 garden,@1652 barely@1675 damp.@1686
+line 16  frames 1702..1868
+   Unluckily@1702 a@1724 million@1726 of@1737 those@1740 droplets@1747 make@1764 one@1771 raindrop@1778 and@1807 by@1810 evening@1814 the@1828 cloud@1830 has@1844 made@1849 plenty.@1856
+line 17  frames 1872..1970
+   Gus@1872 couldn't@1878 land@1884 on@1894 the@1897 cloud.@1899 So@1923 the@1927 cloud@1929 lands@1942 on@1953 Gus.@1958

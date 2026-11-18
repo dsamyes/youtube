@@ -1,0 +1,34 @@
+{
+ "id": "jump-on-a-cloud",
+ "question": "What if you jumped on a cloud?",
+ "answer_in_one_line": "You fall straight through: a small fair-weather cloud holds 500 tons of water (1.1 million pounds, a hundred elephants), but spread so thin that a fridge-sized piece holds ten drops; an 80 kg jumper is through it in 22 seconds and meets about one cup of water on the way.",
+ "trend_basis": [
+  {
+   "source": "topic_bank",
+   "evidence": "jump-on-a-cloud: 'what would happen if you jumped on top of a cloud' 927k views on a 6.3k-subscriber channel (147 views per subscriber); a 'fell through a cloud' copy appeared this week."
+  },
+  {
+   "source": "youtube_shorts",
+   "evidence": "Today's file has no fresh everyday 'what if you' row that passes the four tests: thirteen of the top fifteen rows are 'Comment X if you want one' gift adverts (best 17.6M views/day); the best real question from a small channel, 'Would you take a billion dollars if you were followed by an Immortal Snail forever?' (56.8k subscribers, 1.28M views/day), was made yesterday; the Cinderella's-slipper rows (0.75M and 0.49M views/day) are made too."
+  },
+  {
+   "source": "own_channel",
+   "evidence": "The plain everyday questions lead the channel: the plane door short is at 3,165 views/day and the elevator cable at 2,114/day, against 1 to 32/day for the abstract space videos."
+  },
+  {
+   "source": "google_trends / wikipedia_top / science_news",
+   "evidence": "Nothing to cross with: the searches are finance, countries and Twitch; Wikipedia's top is actors and films; the science headlines are space probes, quantum physics and medicine."
+  }
+ ],
+ "why_this_one": "The trend file offers no fresh row that passes all four tests, so this is the best unused tier A entry of the topic bank, from a cluster (sky) that neither of the last two episodes used (elevator, the snail). Everybody has looked out of a plane window or up from a lawn and wondered whether a cloud would hold him. The title is six plain words. A 6.3k-subscriber channel reached 927k views with the question, so it pulls without a big channel behind it. And the surprise is carried by numbers anyone can check: 0.5 grams of water per cubic metre (USGS) times a cubic kilometre is 500 tons, yet a fridge of it is ten drops and a whole fall through it is one cup. The mechanism (droplets so small that they sink half an inch a second) is carried by fog, a cloud that sat down. It is drawable with the kit: the garden, the open sky of an earlier episode, flat cards for the cloud, the balloon and the diagrams. Gus wears a parachute, lands on his own lawn and gets rained on; nobody is hurt and there is nothing a child could copy.",
+ "rejected": [
+  "'Comment X if you want one' rows (alarms, umbrellas, tree lights; up to 17.6M views/day): adverts, not questions",
+  "falling off an infinity pool (0.36M/day, 5.1k-subscriber channel): a fall from a height, and a thing a child could copy",
+  "falling asleep in a smart car (0.38M/day): crashes with victims",
+  "being swallowed by a sperm whale, ice-cold baths for a year, six fingers: gore or medical advice",
+  "giving a camel water mid-journey (0.49M/day, 17k-subscriber channel): an animal fact with no 'you' and no computable number",
+  "the immortal snail and Cinderella's slipper: already made (immortal-snail, glass-slippers-run)",
+  "Anakin, Jujutsu Kaisen, Roblox, GTA, dinosaurs, countryballs, Cybertruck tractors: fiction, games and countries, no physical answer",
+  "Hera at the asteroid, Voyager 1 at one light-day (science headlines): abstract space topics, the kind that gets single-digit views on this channel"
+ ]
+}

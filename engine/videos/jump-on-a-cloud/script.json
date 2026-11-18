@@ -1,0 +1,29 @@
+{
+  "id": "jump-on-a-cloud",
+  "title": "What If You Jumped on a Cloud?",
+  "voice": {
+    "provider": "kokoro",
+    "voice": "am_michael",
+    "speed": 1.2,
+    "gap_s": 0.12
+  },
+  "lines": [
+    "A cloud weighs more than a million pounds and it can't hold up one man in pajamas.",
+    "It's two on a Sunday afternoon and Gus lies in his garden staring at a fat little cloud.",
+    "It looks like the softest bed in the world.",
+    "His wife says it's just fog and his neighbor bets he'll bounce.",
+    "So Gus puts on a parachute, borrows a balloon and rides up above the cloud.",
+    "Up close the cloud looks solid. It holds five hundred tons of water, as much as a hundred elephants.",
+    "Gus jumps.",
+    "He doesn't bounce. He doesn't even slow down.",
+    "He falls through the whole thing in twenty-two seconds and all he sees is white.",
+    "So where are the hundred elephants?",
+    "You see, a cloud is huge. A piece the size of your fridge holds just ten drops of water.",
+    "The rest is air. Each droplet is so tiny that it sinks half an inch a second, so the faintest breeze holds it up.",
+    "Ever walked through fog? That's a cloud that sat down.",
+    "In his whole fall Gus runs into one cup of water.",
+    "Luckily, his parachute opens and he lands in his own garden, barely damp.",
+    "Unluckily a million of those droplets make one raindrop and by evening the cloud has made plenty.",
+    "Gus couldn't land on the cloud. So the cloud lands on Gus."
+  ]
+}

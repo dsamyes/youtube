@@ -1,0 +1,676 @@
+{
+ "_doc": "Picture/sound contract for jump-on-a-cloud. 30 fps. Frames come from voice/frames.txt (word start frames). Visual reactions land 0-3 frames before their word.",
+ "fps": 30,
+ "total_frames": 1986,
+ "flash_at": 146,
+ "planned_pops": [
+  480,
+  481,
+  482,
+  483,
+  656,
+  657,
+  658,
+  659,
+  1453,
+  1454,
+  1455,
+  1456,
+  1457,
+  1606,
+  1607,
+  1608,
+  1609,
+  1610,
+  1611
+ ],
+ "places": {
+  "sky": "open sky (the place of plane-door-midflight): the fat white cloud, the hot-air balloon, the diagrams (weight, elephants, fridge, droplet, raindrop), all flat cards",
+  "cloud": "inside the cloud: the same empty place wrapped in white, grey wisps streaking past the falling Gus",
+  "garden": "Gus's back garden (kit town place, plain lawn): the deck chair, his wife, the neighbor at his fence, the fog, the landing and the evening rain"
+ },
+ "shots": [
+  {
+   "id": 1,
+   "a": 0,
+   "b": 75,
+   "place": "sky",
+   "light": "day",
+   "line": 1,
+   "what": "HOOK, already moving. Gus in striped pyjamas, fishbowl helmet and a red parachute harness drops out of the blue from the top of the frame, arms and legs flailing, mouth wide, straight at a fat white cloud that fills the lower half of the picture. He hits its top at f37 ('million') and sinks into it without the slightest bounce; two wisps puff up where he went in (f38). The lens tilts a little and pushes in."
+  },
+  {
+   "id": 2,
+   "a": 75,
+   "b": 146,
+   "place": "sky",
+   "light": "day",
+   "line": 1,
+   "what": "Under the cloud: its flat grey-white belly fills the top of the frame. At f80 ('can't hold') Gus drops out of it feet first, trailing wisps, and falls toward the lens, the lens falling with him: the cloud shrinks away above, speed lines rush up, he flails in shock. Whoosh at f131, white flash at f146."
+  },
+  {
+   "id": 3,
+   "a": 146,
+   "b": 298,
+   "place": "garden",
+   "light": "day",
+   "line": 2,
+   "what": "Gus's garden on a sunny afternoon: medium shot of Gus lying back in his striped deck chair, hands on his belly, smiling up at the sky. On 'staring' (f236 to f266) the lens tilts up over the roofs and chimneys to one fat little white cloud alone in the blue; he keeps his eyes on it from the bottom of the frame, mouth a small o (f248). A glint twinkles on the cloud (f283)."
+  },
+  {
+   "id": 4,
+   "a": 298,
+   "b": 361,
+   "place": "sky",
+   "light": "day",
+   "line": 3,
+   "what": "What he sees: the cloud close, round and soft, with a dream Gus stretched out asleep on top of it, a sleep bubble at his nose. A plump pillow pops under his head (f313, 'softest') and a red-and-yellow patchwork blanket over him (f328, 'bed'). Two sparkles on 'world' (f343). Slow push-in."
+  },
+  {
+   "id": 5,
+   "a": 361,
+   "b": 413,
+   "place": "garden",
+   "light": "day",
+   "line": 4,
+   "what": "Medium shot of his wife in the garden, deadpan, one hand on her hip: on 'just fog' she waves the idea away with a flick of the other hand (f389), eyes half shut."
+  },
+  {
+   "id": 6,
+   "a": 413,
+   "b": 460,
+   "place": "garden",
+   "light": "day",
+   "line": 4,
+   "what": "The neighbor behind his fence, grinning: on 'bounce' he bobs up and down behind the fence like a ball (boing f440) and gives a thumbs-up."
+  },
+  {
+   "id": 7,
+   "a": 460,
+   "b": 508,
+   "place": "garden",
+   "light": "day",
+   "line": 5,
+   "what": "Full shot of Gus on the lawn, determined: the red parachute harness snaps onto his chest (click f482) and the pack onto his back, he tugs the straps tight (click f496) and looks up."
+  },
+  {
+   "id": 8,
+   "a": 508,
+   "b": 584,
+   "place": "sky",
+   "light": "day",
+   "line": 5,
+   "what": "The sky: a striped hot-air balloon with Gus in its basket rises from the bottom of the frame beside the cloud (burner poof f512) and climbs until it hangs above the cloud's top (f568, 'cloud'). The lens rises with it."
+  },
+  {
+   "id": 9,
+   "a": 584,
+   "b": 646,
+   "place": "sky",
+   "light": "day",
+   "line": 6,
+   "what": "Up close: Gus leans out of the basket over the bulging cloud top just below him and raps on it with his knuckles (f616, f622, 'solid'); two little knock bursts. He nods, impressed."
+  },
+  {
+   "id": 10,
+   "a": 646,
+   "b": 765,
+   "place": "sky",
+   "light": "day",
+   "line": 6,
+   "what": "The whole cloud, wide: a big iron weight marked 500 drops onto its top (lands f658, 'five hundred tons') and sits there, the cloud does not sag. On 'a hundred elephants' the weight shrinks away and grey elephants pop in on the cloud in three waves (f728, f736, f744), row on row, until a pyramid of them stands on it. The balloon hangs small in the corner."
+  },
+  {
+   "id": 11,
+   "a": 765,
+   "b": 823,
+   "place": "sky",
+   "light": "day",
+   "line": 7,
+   "what": "Side view of the basket above the cloud top: Gus crouches on the rim and jumps (f771, 'jumps'), arcs up, drops, and at f800 ('bounce') goes into the cloud top like into nothing: no dent, no bounce, only two wisps."
+  },
+  {
+   "id": 12,
+   "a": 823,
+   "b": 943,
+   "place": "cloud",
+   "light": "day",
+   "line": 8,
+   "what": "Inside the cloud: everything is white. Gus falls in the middle of the frame, flailing, grey wisps and speed lines streaking up past him ('doesn't even slow down'). A stopwatch pops in beside him (f898), a tag with 22 pops over it (f902, 'twenty-two') and its hand runs to the 22 mark (ticks f904 to f938, bell f938)."
+  },
+  {
+   "id": 13,
+   "a": 943,
+   "b": 985,
+   "place": "cloud",
+   "light": "day",
+   "line": 9,
+   "what": "Close on his face inside the white: nothing to see anywhere. His eyes go left, then right (f953, f966); cheeks flap in the wind."
+  },
+  {
+   "id": 14,
+   "a": 985,
+   "b": 1036,
+   "place": "sky",
+   "light": "day",
+   "line": 10,
+   "what": "Dead stop. Under the cloud: Gus hangs in the air just below its belly, bone dry, and looks back up at it; a big question mark pops beside a pale ghost elephant on the cloud (f998, 'hundred elephants')."
+  },
+  {
+   "id": 15,
+   "a": 1036,
+   "b": 1095,
+   "place": "sky",
+   "light": "day",
+   "line": 11,
+   "what": "The lens pulls far back (from f1036): the cloud is enormous, and under it stand a tiny house and tree, small as crumbs ('a cloud is huge', f1066)."
+  },
+  {
+   "id": 16,
+   "a": 1095,
+   "b": 1236,
+   "place": "sky",
+   "light": "day",
+   "line": 11,
+   "what": "A fridge-sized block is cut out of the cloud's edge with a dashed frame (f1095) and a white kitchen fridge full of mist stands in its place (f1125, 'fridge'). Under it ten blue drops pop in one by one in two rows (f1150 to f1180, 'ten drops'). On 'The rest is air' the fridge door swings open (f1195 to f1210): inside it is empty, one small puff floats out."
+  },
+  {
+   "id": 17,
+   "a": 1236,
+   "b": 1393,
+   "place": "sky",
+   "light": "day",
+   "line": 12,
+   "what": "One round droplet with a sleepy face against the blue, among smaller ones (pops in f1241). It sinks very slowly beside an inch scale (from f1288, 'sinks half an inch a second'). On 'faintest breeze' three small blue arrows pop in under it pointing up (f1342) and it stops sinking and bobs where it is (f1383, 'up')."
+  },
+  {
+   "id": 18,
+   "a": 1393,
+   "b": 1480,
+   "place": "garden",
+   "light": "day",
+   "line": 13,
+   "what": "The garden in fog, low white banks drifting across the lawn: Gus walks through it with his arms out, feeling his way (steps f1397 to f1412). On 'sat down' a fat cloud with a content face plumps down onto the lawn over him (f1456), and his head and shoulders poke out of its top, deadpan."
+  },
+  {
+   "id": 19,
+   "a": 1480,
+   "b": 1575,
+   "place": "sky",
+   "light": "day",
+   "line": 14,
+   "what": "Gus falling out of the cloud's belly again, lens falling with him. A glass measuring cup pops in beside him (f1541, 'one cup'), full of blue water, tips over and empties onto his helmet (f1555, 'water') with a small splash; he blinks."
+  },
+  {
+   "id": 20,
+   "a": 1575,
+   "b": 1623,
+   "place": "sky",
+   "light": "day",
+   "line": 15,
+   "what": "His red-and-white parachute bursts open above him (f1606, 'opens') and yanks him upright; he hangs under it, relieved, swinging gently."
+  },
+  {
+   "id": 21,
+   "a": 1623,
+   "b": 1702,
+   "place": "garden",
+   "light": "day",
+   "line": 15,
+   "what": "The garden: Gus floats down under the canopy and lands on his lawn on both feet (f1650, 'garden'), knees bending; the canopy sinks behind him. One single drop falls from his helmet (f1684, 'damp'). He grins."
+  },
+  {
+   "id": 22,
+   "a": 1702,
+   "b": 1807,
+   "place": "sky",
+   "light": "day",
+   "line": 16,
+   "what": "A swarm of tiny droplets against the blue (twinkle f1724). They rush together to one point (f1763 to f1777) and on 'raindrop' one fat blue raindrop pops out of them (f1777), hangs for a beat and falls out of the frame."
+  },
+  {
+   "id": 23,
+   "a": 1807,
+   "b": 1872,
+   "place": "garden",
+   "light": "golden",
+   "line": 16,
+   "what": "Evening in the garden, looking west into the low sun: Gus stands proud on his lawn, hands on hips; over him the same cloud, now big and dark grey, slides in and covers the sky (f1815 to f1855); far thunder (f1831). He looks up."
+  },
+  {
+   "id": 24,
+   "a": 1872,
+   "b": 1986,
+   "place": "garden",
+   "light": "golden",
+   "line": 17,
+   "what": "Same evening, closer: Gus under the dark cloud, shrugging. One drop taps his helmet (f1897, 'cloud'). On 'lands' the rain comes down on him in sheets (f1940), he stands in it deadpan; his wife beside him has opened her umbrella just before (f1927) and stays dry, eyes closed, content. Push-in to the end."
+  }
+ ],
+ "xfade": {
+  "4": 8,
+  "5": 8,
+  "18": 8,
+  "23": 8
+ },
+ "events": [
+  {
+   "f": 0,
+   "to": 146,
+   "type": "wind_rush",
+   "shape": "hook",
+   "note": "cold open: Gus falling at the cloud"
+  },
+  {
+   "f": 37,
+   "type": "whoosh",
+   "id": "plunge",
+   "note": "he goes into the cloud top, no bounce"
+  },
+  {
+   "f": 80,
+   "type": "zip",
+   "id": "out1",
+   "note": "he drops out of the cloud's belly"
+  },
+  {
+   "f": 131,
+   "type": "whoosh_big",
+   "note": "rush before the flash"
+  },
+  {
+   "f": 146,
+   "type": "flash_hit",
+   "note": "white flash into the garden"
+  },
+  {
+   "f": 146,
+   "to": 302,
+   "type": "amb_garden",
+   "note": "sunny afternoon in the garden"
+  },
+  {
+   "f": 175,
+   "type": "bird_tweet",
+   "note": "birds cross the sky"
+  },
+  {
+   "f": 208,
+   "type": "swing_creak",
+   "to": 240,
+   "id": "chair",
+   "at": [
+    208,
+    226
+   ],
+   "note": "the deck chair creaks as he settles"
+  },
+  {
+   "f": 283,
+   "type": "twinkle",
+   "id": "glint",
+   "note": "a glint on the fat little cloud"
+  },
+  {
+   "f": 313,
+   "type": "pop",
+   "id": "pillow",
+   "note": "a pillow pops onto the cloud"
+  },
+  {
+   "f": 328,
+   "type": "pop",
+   "id": "blanket",
+   "pitch": "C6",
+   "note": "a blanket pops onto the cloud"
+  },
+  {
+   "f": 343,
+   "type": "ding",
+   "id": "dream",
+   "note": "sparkle: the softest bed in the world"
+  },
+  {
+   "f": 357,
+   "to": 508,
+   "type": "amb_garden",
+   "note": "the garden: wife, neighbor, parachute"
+  },
+  {
+   "f": 389,
+   "type": "whoosh",
+   "id": "wave",
+   "note": "his wife waves the idea away"
+  },
+  {
+   "f": 440,
+   "type": "boing",
+   "id": "bounce",
+   "note": "the neighbor bobs behind his fence: he'll bounce"
+  },
+  {
+   "f": 482,
+   "type": "click",
+   "id": "strap",
+   "note": "the parachute harness snaps on"
+  },
+  {
+   "f": 496,
+   "type": "click",
+   "id": "tug",
+   "note": "he tugs the straps tight"
+  },
+  {
+   "f": 508,
+   "to": 823,
+   "type": "amb_wind",
+   "strength": 0.25,
+   "note": "high air around the balloon"
+  },
+  {
+   "f": 512,
+   "type": "flame_poof",
+   "id": "burner",
+   "note": "the balloon's burner"
+  },
+  {
+   "f": 545,
+   "to": 578,
+   "type": "slide_whistle_up_slowing",
+   "id": "rise",
+   "note": "the balloon climbs above the cloud"
+  },
+  {
+   "f": 616,
+   "type": "knock",
+   "id": "knock",
+   "count": 2,
+   "note": "he raps on the cloud: it looks solid"
+  },
+  {
+   "f": 658,
+   "type": "thud",
+   "id": "tons",
+   "note": "the 500 weight lands on the cloud"
+  },
+  {
+   "f": 728,
+   "type": "arrow_pop",
+   "id": "eleph1",
+   "note": "elephants pop in"
+  },
+  {
+   "f": 736,
+   "type": "arrow_pop",
+   "id": "eleph2",
+   "note": "more elephants"
+  },
+  {
+   "f": 744,
+   "type": "arrow_pop",
+   "id": "eleph3",
+   "note": "a hundred elephants"
+  },
+  {
+   "f": 771,
+   "type": "jump_boing",
+   "id": "jump",
+   "note": "Gus jumps off the basket"
+  },
+  {
+   "f": 781,
+   "to": 800,
+   "type": "slide_whistle_down",
+   "id": "drop",
+   "note": "he drops to the cloud top"
+  },
+  {
+   "f": 800,
+   "type": "whoosh",
+   "id": "enter",
+   "note": "into the cloud like into nothing"
+  },
+  {
+   "f": 823,
+   "to": 985,
+   "type": "wind_rush",
+   "shape": "hold",
+   "peak": 943,
+   "note": "falling inside the cloud"
+  },
+  {
+   "f": 898,
+   "type": "pop",
+   "id": "watch",
+   "note": "a stopwatch pops in"
+  },
+  {
+   "f": 904,
+   "to": 938,
+   "type": "timer_ticks",
+   "id": "ticks",
+   "note": "twenty-two seconds race by"
+  },
+  {
+   "f": 938,
+   "type": "timer_ding",
+   "id": "t22",
+   "note": "time is up: through the cloud"
+  },
+  {
+   "f": 985,
+   "type": "record_stop",
+   "id": "stop",
+   "note": "dead stop: where are the elephants?"
+  },
+  {
+   "f": 985,
+   "to": 1040,
+   "type": "amb_wind",
+   "strength": 0.15,
+   "level": -27,
+   "note": "thin air in the pause"
+  },
+  {
+   "f": 998,
+   "type": "question_blip",
+   "id": "why",
+   "note": "question mark by the ghost elephant"
+  },
+  {
+   "f": 1036,
+   "type": "whoosh_big",
+   "id": "pull",
+   "note": "the lens pulls far back: the cloud is huge"
+  },
+  {
+   "f": 1095,
+   "type": "paper_flick",
+   "id": "piece",
+   "note": "a fridge-sized piece is cut out"
+  },
+  {
+   "f": 1125,
+   "type": "thud",
+   "id": "fridge",
+   "level": -8,
+   "note": "the fridge stands there"
+  },
+  {
+   "f": 1156,
+   "type": "drip",
+   "id": "drops",
+   "note": "ten drops, first row"
+  },
+  {
+   "f": 1166,
+   "type": "drip",
+   "note": "ten drops"
+  },
+  {
+   "f": 1177,
+   "type": "drip",
+   "note": "ten drops, last one"
+  },
+  {
+   "f": 1195,
+   "to": 1212,
+   "type": "door_creak",
+   "id": "door",
+   "note": "the fridge door opens: air"
+  },
+  {
+   "f": 1241,
+   "type": "pop",
+   "id": "droplet",
+   "pitch": "E6",
+   "note": "one droplet"
+  },
+  {
+   "f": 1288,
+   "to": 1336,
+   "type": "slide_whistle_down",
+   "id": "sink",
+   "level": -11,
+   "note": "it sinks, very slowly"
+  },
+  {
+   "f": 1342,
+   "type": "arrow_pop",
+   "id": "breeze",
+   "note": "the faintest breeze: arrows up"
+  },
+  {
+   "f": 1383,
+   "type": "ting",
+   "id": "held",
+   "note": "it hangs in the air"
+  },
+  {
+   "f": 1389,
+   "to": 1480,
+   "type": "amb_garden",
+   "birds": 0.3,
+   "note": "the garden in fog"
+  },
+  {
+   "f": 1397,
+   "to": 1412,
+   "type": "footsteps",
+   "surface": "soft",
+   "note": "Gus feels his way through the fog"
+  },
+  {
+   "f": 1456,
+   "type": "thud",
+   "id": "sat",
+   "note": "the cloud sits down on the lawn"
+  },
+  {
+   "f": 1480,
+   "to": 1606,
+   "type": "wind_rush",
+   "shape": "arc",
+   "level": -18,
+   "note": "falling out of the cloud"
+  },
+  {
+   "f": 1541,
+   "type": "pop",
+   "id": "cup",
+   "note": "one cup of water"
+  },
+  {
+   "f": 1555,
+   "type": "splash",
+   "id": "tip",
+   "note": "the cup empties onto his helmet"
+  },
+  {
+   "f": 1606,
+   "type": "whoosh_big",
+   "id": "chute",
+   "level": -5,
+   "note": "the parachute opens"
+  },
+  {
+   "f": 1623,
+   "to": 1702,
+   "type": "amb_garden",
+   "note": "back in the garden"
+  },
+  {
+   "f": 1650,
+   "type": "thud",
+   "id": "land",
+   "note": "he lands on his lawn"
+  },
+  {
+   "f": 1684,
+   "type": "drip",
+   "id": "damp",
+   "note": "one drop falls off his helmet: barely damp"
+  },
+  {
+   "f": 1724,
+   "type": "twinkle",
+   "id": "swarm",
+   "note": "a million droplets"
+  },
+  {
+   "f": 1763,
+   "type": "zip",
+   "id": "merge",
+   "size": "small",
+   "note": "they rush together"
+  },
+  {
+   "f": 1777,
+   "type": "pop",
+   "id": "raindrop",
+   "pitch": "G5",
+   "note": "one raindrop"
+  },
+  {
+   "f": 1803,
+   "to": 1905,
+   "type": "amb_garden_evening",
+   "note": "evening in the garden"
+  },
+  {
+   "f": 1831,
+   "type": "thunder",
+   "id": "dark",
+   "distance": "far",
+   "note": "the cloud has grown dark"
+  },
+  {
+   "f": 1897,
+   "type": "drip",
+   "id": "first",
+   "note": "the first drop taps his helmet"
+  },
+  {
+   "f": 1905,
+   "to": 1986,
+   "type": "amb_rain",
+   "heavy": 0.3,
+   "id": "rain",
+   "note": "it starts to rain"
+  },
+  {
+   "f": 1927,
+   "type": "pop",
+   "id": "umbrella",
+   "note": "his wife opens her umbrella just in time"
+  },
+  {
+   "f": 1940,
+   "type": "splash",
+   "id": "pour",
+   "size": "big",
+   "level": -6,
+   "note": "the cloud lands on Gus"
+  }
+ ]
+}
