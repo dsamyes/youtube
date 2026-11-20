@@ -1,0 +1,29 @@
+{
+  "id": "friction-off-5-seconds",
+  "title": "What If Friction Vanished for 5 Seconds?",
+  "voice": {
+    "provider": "kokoro",
+    "voice": "am_michael",
+    "speed": 1.2,
+    "gap_s": 0.12
+  },
+  "lines": [
+    "For five seconds nothing on Earth can grip anything, and Gus slides twenty feet without taking a step.",
+    "It's nine on a Sunday morning and Gus is shoving a heavy flowerpot across his garden.",
+    "It scrapes and sticks and he wishes friction would just go away.",
+    "His wife says he'd miss it. His neighbor says life would be a breeze.",
+    "Then for five seconds Gus gets his wish.",
+    "The pot glides off like a puck on ice. But his feet can't push, so he runs on the spot.",
+    "His wife's cup slips right through her fingers and the neighbor's ladder slides flat down the wall.",
+    "Then the whole garden starts to drift, all the same way.",
+    "But the lawn looks flat. So what's pulling them?",
+    "You see, no lawn is flat. Builders tilt it half an inch a foot so rain runs away from the house.",
+    "That slope tugs at Gus with nine pounds all day long.",
+    "Ever pressed two brushes together? Up close his feet and the grass are bristles too, and they lock.",
+    "Take that away and nine pounds is plenty. Heavy or light, everything speeds up alike: twenty feet in five seconds.",
+    "Luckily, friction comes back.",
+    "Unluckily it grabs his feet and the rest of Gus keeps going at a jogging pace.",
+    "And his pot? It stops twenty feet too far.",
+    "Gus drags it all the way back and never complains again."
+  ]
+}

@@ -1,0 +1,144 @@
+{
+ "voice": "kokoro-v1.0:am_michael@1.2",
+ "duration_s": 66.818,
+ "words": 235,
+ "wps": 3.52,
+ "lines": [
+  {
+   "line": 1,
+   "text": "For five seconds nothing on Earth can grip anything, and Gus slides twenty feet without taking a step.",
+   "s": 0.0,
+   "e": 5.364,
+   "words": 18,
+   "wps": 3.36
+  },
+  {
+   "line": 2,
+   "text": "It's nine on a Sunday morning and Gus is shoving a heavy flowerpot across his garden.",
+   "s": 5.484,
+   "e": 10.178,
+   "words": 16,
+   "wps": 3.41
+  },
+  {
+   "line": 3,
+   "text": "It scrapes and sticks and he wishes friction would just go away.",
+   "s": 10.298,
+   "e": 13.612,
+   "words": 12,
+   "wps": 3.62
+  },
+  {
+   "line": 4,
+   "text": "His wife says he'd miss it. His neighbor says life would be a breeze.",
+   "s": 13.732,
+   "e": 17.266,
+   "words": 14,
+   "wps": 3.96
+  },
+  {
+   "line": 5,
+   "text": "Then for five seconds Gus gets his wish.",
+   "s": 17.386,
+   "e": 19.53,
+   "words": 8,
+   "wps": 3.73
+  },
+  {
+   "line": 6,
+   "text": "The pot glides off like a puck on ice. But his feet can't push, so he runs on the spot.",
+   "s": 19.65,
+   "e": 24.654,
+   "words": 20,
+   "wps": 4.0
+  },
+  {
+   "line": 7,
+   "text": "His wife's cup slips right through her fingers and the neighbor's ladder slides flat down the wall.",
+   "s": 24.774,
+   "e": 29.498,
+   "words": 17,
+   "wps": 3.6
+  },
+  {
+   "line": 8,
+   "text": "Then the whole garden starts to drift, all the same way.",
+   "s": 29.618,
+   "e": 32.542,
+   "words": 11,
+   "wps": 3.76
+  },
+  {
+   "line": 9,
+   "text": "But the lawn looks flat. So what's pulling them?",
+   "s": 32.662,
+   "e": 35.036,
+   "words": 9,
+   "wps": 3.79
+  },
+  {
+   "line": 10,
+   "text": "You see, no lawn is flat. Builders tilt it half an inch a foot so rain runs away from the house.",
+   "s": 35.156,
+   "e": 40.56,
+   "words": 21,
+   "wps": 3.89
+  },
+  {
+   "line": 11,
+   "text": "That slope tugs at Gus with nine pounds all day long.",
+   "s": 40.68,
+   "e": 43.374,
+   "words": 11,
+   "wps": 4.08
+  },
+  {
+   "line": 12,
+   "text": "Ever pressed two brushes together? Up close his feet and the grass are bristles too, and they lock.",
+   "s": 43.494,
+   "e": 48.408,
+   "words": 18,
+   "wps": 3.66
+  },
+  {
+   "line": 13,
+   "text": "Take that away and nine pounds is plenty. Heavy or light, everything speeds up alike: twenty feet in five seconds.",
+   "s": 48.528,
+   "e": 55.222,
+   "words": 20,
+   "wps": 2.99
+  },
+  {
+   "line": 14,
+   "text": "Luckily, friction comes back.",
+   "s": 55.342,
+   "e": 56.706,
+   "words": 4,
+   "wps": 2.93
+  },
+  {
+   "line": 15,
+   "text": "Unluckily it grabs his feet and the rest of Gus keeps going at a jogging pace.",
+   "s": 56.826,
+   "e": 61.22,
+   "words": 16,
+   "wps": 3.64
+  },
+  {
+   "line": 16,
+   "text": "And his pot? It stops twenty feet too far.",
+   "s": 61.34,
+   "e": 63.734,
+   "words": 9,
+   "wps": 3.76
+  },
+  {
+   "line": 17,
+   "text": "Gus drags it all the way back and never complains again.",
+   "s": 63.854,
+   "e": 66.818,
+   "words": 11,
+   "wps": 3.71
+  }
+ ]
+}

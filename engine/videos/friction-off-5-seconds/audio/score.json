@@ -1,0 +1,28 @@
+{
+ "_doc": "Sound plan of friction-off-5-seconds, read by engine/toon/audio/build.py (manual: engine/toon/audio/README.md).",
+ "key": "A",
+ "tempo": 128,
+ "seed": 1120,
+ "theme": "tiptoe",
+ "places": {
+  "garden": "outdoor",
+  "sky": "void"
+ },
+ "sections": [
+  {"from": 0, "mood": "silence", "_why": "the hook: the sliding rush only"},
+  {"from": 165, "mood": "theme", "end": "stop", "_why": "Sunday morning, the pot, the doubters; stops as the stopwatch clicks"},
+  {"from": 572, "mood": "silence", "_why": "the wish: click and shimmer alone"},
+  {"from": 590, "mood": "chase", "hits": [857], "_why": "five seconds without grip: the puck, the run on the spot, the cup; downbeat on the ladder's clatter"},
+  {"from": 889, "mood": "chase", "_why": "the whole garden drifts, faster and faster"},
+  {"from": 1053, "mood": "silence", "_why": "dead stop with the record_stop: what is pulling them?"},
+  {"from": 1087, "mood": "mystery", "_why": "the explanation: no lawn is flat, half an inch a foot, nine pounds"},
+  {"from": 1305, "mood": "waltz", "hits": [1309, 1407, 1443], "_why": "the brushes: they come together, bristles, lock"},
+  {"from": 1456, "mood": "mystery", "_why": "take that away"},
+  {"from": 1535, "mood": "chase", "hits": [1640], "_why": "heavy or light, twenty feet in five seconds; downbeat on the bell"},
+  {"from": 1660, "mood": "bittersweet", "hits": [1705], "_why": "'Luckily' ... 'Unluckily' (1705)"},
+  {"from": 1840, "mood": "runup", "_why": "the pot, twenty feet too far"},
+  {"from": 1916, "mood": "finale", "_why": "the way back; button after the last word"}
+ ],
+ "dips": [],
+ "sfx": {}
+}

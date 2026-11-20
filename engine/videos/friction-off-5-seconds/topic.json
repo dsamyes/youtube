@@ -1,0 +1,33 @@
+{
+ "id": "friction-off-5-seconds",
+ "question": "What if friction vanished for 5 seconds?",
+ "answer_in_one_line": "Nothing can grip anything: feet cannot push, a cup slips through closed fingers, a leaning ladder slides flat, and because no lawn is level (building codes ask for 6 inches of fall in 10 feet so rain runs off) everything on it, heavy or light, slides downhill together: 20 feet in 5 seconds, ending at a jogging pace, pulled by just 9 pounds on a 180-pound man.",
+ "trend_basis": [
+  {
+   "source": "topic_bank",
+   "evidence": "friction-off-5-seconds: 2.7M views on a 1,640-subscriber channel (1,653 views per subscriber, the biggest outlier of the sample)."
+  },
+  {
+   "source": "youtube_shorts",
+   "evidence": "Today's file has no fresh everyday 'what if you' row that passes the four tests. The top of the list is 'Comment X if you want one' gift adverts (best 23.3M views/day); the real questions are games and films ('What Happens If You Reach the N in GTA 6?' 2.75M/day, Darth Vader, Star-Lord, Minecraft), food and body advice, or fiction. The two everyday rows from small channels are 'What Happens If You Fall Off an Infinity Pool?' (5.6k subscribers, 0.45M/day), a fall from a height that a child could copy, and 'What Happens If You Fall Asleep in a Smart Car' (51.9k subscribers, 0.42M/day), a crash story."
+  },
+  {
+   "source": "own_channel",
+   "evidence": "The plain everyday questions lead the channel (plane door 8,960 views, elevator cable 2,025, immortal snail 1,593) against 1 to 243 views for the abstract space videos; the cloud short of two days ago is at 432 views/day."
+  },
+  {
+   "source": "youtube_popular / google_trends / wikipedia_top / science_news",
+   "evidence": "Nothing to cross with: the charts and searches are GTA 6, the CMA awards and film trailers; the one science item in two sources (Voyager 1 one light-day out: NASA, Space.com, and 'Your Flashlight vs. Voyager 1' at 3.3M views/day) is deep-space astronomy, the kind that gets single-digit views here."
+  }
+ ],
+ "why_this_one": "The trend file offers no fresh row that passes all four tests, so this is the best unused tier A entry of the topic bank, from a cluster that neither of the last two episodes used (the snail, the cloud). Everybody has slipped on ice or a wet floor and knows what one second without grip feels like; the question asks for five. The title is seven plain words. A 1,640-subscriber channel reached 2.7M views with it, so the topic pulls without a big channel behind it. The surprise is carried by one number anyone can check: a lawn that looks flat falls 6 inches in 10 feet, and with nothing to hold on to that is a 20-foot slide in 5 seconds, the same for a heavy pot, a man and a teacup. The mechanism (surfaces are bristles that lock) is carried by two brushes pressed together. It is drawable with the kit's garden and flat cards. The story stays in one back garden, away from roads and cars; Gus belly-flops onto his lawn inside his fishbowl and gets up beaming; nobody is hurt and there is nothing a child could copy.",
+ "rejected": [
+  "'Comment X if you want one' rows (up to 23.3M views/day): adverts, not questions",
+  "falling off an infinity pool (0.45M/day, 5.6k-subscriber channel): a fall from a height, and a thing a child could copy",
+  "falling asleep in a smart car (0.42M/day): a crash story",
+  "reaching the N in GTA 6, Darth Vader, Star-Lord, Sentry and Superman, Minecraft, Shadow the Hedgehog: games, films and superheroes, no physical answer",
+  "shaving off your eyebrows, growing a beard, yogurt on fish, ice-cold baths for a year: body and diet advice",
+  "a flashlight against Voyager 1 (3.3M/day in the science chart, plus NASA and Space.com headlines): abstract space, and from a channel with no small-channel proof",
+  "every woman on Earth disappearing, flags combined, police orders: people, countries and politics"
+ ]
+}

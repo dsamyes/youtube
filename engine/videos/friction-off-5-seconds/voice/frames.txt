@@ -1,0 +1,35 @@
+# word@frame at 30 fps (frame = start of the word); written by toon/voice.py, do not edit
+line  1  frames 0..161
+   For@0 five@2 seconds@12 nothing@26 on@38 Earth@43 can@51 grip@57 anything,@64 and@89 Gus@93 slides@100 twenty@115 feet@124 without@133 taking@142 a@152 step.@153
+line  2  frames 165..305
+   It's@165 nine@170 on@181 a@184 Sunday@185 morning@197 and@218 Gus@223 is@233 shoving@235 a@249 heavy@250 flowerpot@258 across@278 his@288 garden.@291
+line  3  frames 309..408
+   It@309 scrapes@312 and@325 sticks@329 and@349 he@354 wishes@355 friction@367 would@378 just@383 go@390 away.@397
+line  4  frames 412..518
+   His@412 wife@415 says@424 he'd@434 miss@439 it.@446 His@461 neighbor@466 says@475 life@483 would@494 be@497 a@500 breeze.@501
+line  5  frames 522..585
+   Then@522 for@525 five@528 seconds@538 Gus@551 gets@562 his@570 wish.@574
+line  6  frames 590..740
+   The@590 pot@591 glides@600 off@614 like@620 a@625 puck@626 on@634 ice.@639 But@660 his@665 feet@669 can't@677 push,@688 so@704 he@709 runs@712 on@723 the@726 spot.@728
+line  7  frames 743..885
+   His@743 wife's@747 cup@756 slips@764 right@773 through@782 her@788 fingers@790 and@813 the@818 neighbor's@819 ladder@832 slides@841 flat@856 down@866 the@873 wall.@874
+line  8  frames 889..976
+   Then@889 the@892 whole@894 garden@902 starts@914 to@925 drift,@928 all@942 the@955 same@957 way.@968
+line  9  frames 980..1051
+   But@980 the@983 lawn@984 looks@997 flat.@1004 So@1021 what's@1026 pulling@1033 them?@1045
+line 10  frames 1055..1216
+   You@1055 see,@1056 no@1065 lawn@1071 is@1083 flat.@1087 Builders@1110 tilt@1122 it@1131 half@1133 an@1141 inch@1143 a@1150 foot@1152 so@1161 rain@1167 runs@1181 away@1188 from@1195 the@1201 house.@1203
+line 11  frames 1220..1301
+   That@1220 slope@1224 tugs@1233 at@1242 Gus@1244 with@1254 nine@1260 pounds@1270 all@1281 day@1287 long.@1293
+line 12  frames 1305..1452
+   Ever@1305 pressed@1311 two@1320 brushes@1325 together?@1336 Up@1360 close@1365 his@1374 feet@1379 and@1386 the@1389 grass@1391 are@1404 bristles@1407 too,@1420 and@1435 they@1440 lock.@1443
+line 13  frames 1456..1656
+   Take@1456 that@1461 away@1465 and@1480 nine@1483 pounds@1493 is@1505 plenty.@1508 Heavy@1535 or@1543 light,@1546 everything@1562 speeds@1574 up@1587 alike:@1590 twenty@1609 feet@1617 in@1627 five@1630 seconds.@1640
+line 14  frames 1660..1701
+   Luckily,@1660 friction@1673 comes@1686 back.@1694
+line 15  frames 1705..1836
+   Unluckily@1705 it@1720 grabs@1723 his@1735 feet@1740 and@1758 the@1761 rest@1763 of@1771 Gus@1774 keeps@1784 going@1794 at@1805 a@1807 jogging@1808 pace.@1824
+line 16  frames 1840..1912
+   And@1840 his@1843 pot?@1847 It@1864 stops@1868 twenty@1880 feet@1888 too@1896 far.@1900
+line 17  frames 1916..2004
+   Gus@1916 drags@1922 it@1935 all@1937 the@1943 way@1945 back@1952 and@1968 never@1972 complains@1980 again.@1995

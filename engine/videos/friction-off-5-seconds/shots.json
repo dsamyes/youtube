@@ -1,0 +1,719 @@
+{
+ "_doc": "Picture/sound contract for friction-off-5-seconds. 30 fps. Frames come from voice/frames.txt (word start frames). Visual reactions land 0-3 frames before their word.",
+ "fps": 30,
+ "total_frames": 2020,
+ "flash_at": 165,
+ "places": {
+  "garden": "Gus's back garden (kit town place, plain lawn): the flowerpot and its saucer, his wife with her teacup, the neighbor and his ladder behind the north fence; the slide runs toward screen left (west), where the garden is open",
+  "sky": "open sky (the place of plane-door-midflight) as a board for the diagrams: the house with its sloping lawn, the ruler triangle and the rain, the two brushes; all flat cards"
+ },
+ "shots": [
+  {
+   "id": 1,
+   "a": 0,
+   "b": 89,
+   "place": "garden",
+   "light": "day",
+   "line": 1,
+   "what": "HOOK, already moving. Wide tracking shot along Gus's lawn: Gus in pyjamas and fishbowl helmet glides sideways to screen left, standing stiff with both feet planted, arms windmilling, mouth wide open; beside him his big terracotta flowerpot and his deadpan wife glide at exactly the same speed. White speed streaks trail behind them, the fence rushes past, the lens is tilted and travels with them."
+  },
+  {
+   "id": 2,
+   "a": 89,
+   "b": 165,
+   "place": "garden",
+   "light": "day",
+   "line": 1,
+   "what": "Closer on Gus, the lens gliding with him: he stands bolt upright and slides, legs not moving at all. A white tag with 20 pops in beside him (f113, 'twenty'). On 'without taking a step' he looks down at his own two feet (f150). Whoosh at f150, white flash at f165."
+  },
+  {
+   "id": 3,
+   "a": 165,
+   "b": 309,
+   "place": "garden",
+   "light": "day",
+   "line": 2,
+   "what": "Sunday morning in Gus's back garden, wide: Gus leans against a heavy terracotta pot with a little bush in it and shoves it to screen left in two jerks (f235 'shoving', f276 'heavy'); a clay saucer waits on the lawn a few steps further left. His wife stands behind with a teacup. From f221 the lens glides in to a full shot of Gus and the pot."
+  },
+  {
+   "id": 4,
+   "a": 309,
+   "b": 412,
+   "place": "garden",
+   "light": "day",
+   "line": 3,
+   "what": "Full shot of Gus and the pot: one more shove, the pot scrapes a hand's width (f312) and sticks dead (f329); Gus strains, sweat flying. On 'wishes' he straightens up, scowls and jabs a finger down at the lawn (f365)."
+  },
+  {
+   "id": 5,
+   "a": 412,
+   "b": 461,
+   "place": "garden",
+   "light": "day",
+   "line": 4,
+   "what": "Medium shot of his wife with her teacup in her hand, deadpan: she speaks ('he'd miss it'), then swallows a sip and closes her eyes, content (f439)."
+  },
+  {
+   "id": 6,
+   "a": 461,
+   "b": 522,
+   "place": "garden",
+   "light": "day",
+   "line": 4,
+   "what": "The neighbor behind his fence, grinning, his wooden ladder leaning on the house wall behind him: he talks and gives a thumbs-up on 'breeze' (f499), a sparkle on his thumb."
+  },
+  {
+   "id": 7,
+   "a": 522,
+   "b": 590,
+   "place": "garden",
+   "light": "day",
+   "line": 5,
+   "what": "Full shot of Gus beside the stuck pot. A stopwatch pops in over the pot (f525) and a tag with 5 on it (f536, 'seconds'). On 'wish' its button clicks (f572), the hand starts to run and sparkles shimmer across the lawn (f574); Gus's scowl turns into a round-mouthed 'oh'."
+  },
+  {
+   "id": 8,
+   "a": 590,
+   "b": 660,
+   "place": "garden",
+   "light": "day",
+   "line": 6,
+   "what": "Same place, a little wider: Gus gives the pot one light push (f597) and it glides off to screen left, smooth as a puck, never slowing, short streaks behind it, and leaves the frame; Gus throws both arms up and grins (f620)."
+  },
+  {
+   "id": 9,
+   "a": 660,
+   "b": 743,
+   "place": "garden",
+   "light": "day",
+   "line": 6,
+   "what": "Full shot of Gus: he tries to go after it and his legs scissor faster and faster (from f668) while he stays exactly where he is; his feet find nothing to push against. Shock on his face, sweat drops fly (f694, f720)."
+  },
+  {
+   "id": 10,
+   "a": 743,
+   "b": 813,
+   "place": "garden",
+   "light": "day",
+   "line": 7,
+   "what": "Medium shot of his wife: on 'slips' the teacup slides straight down out of her closed fingers (f764) and drops out of the frame; her hand stays where it was. She looks at her empty fingers, mouth a small o."
+  },
+  {
+   "id": 11,
+   "a": 813,
+   "b": 889,
+   "place": "garden",
+   "light": "day",
+   "line": 7,
+   "what": "The neighbor at his fence, smug. Behind him the ladder slides down the house wall (f841 to f857) and lies flat behind the fence with a clatter and a puff of dust (f857); his eyes go wide and his jaw drops as he turns his eyes to it."
+  },
+  {
+   "id": 12,
+   "a": 889,
+   "b": 980,
+   "place": "garden",
+   "light": "day",
+   "line": 8,
+   "what": "The whole garden, wide, the horizon tilted a touch: Gus (frozen mid-stride, arms out), his wife, the teacup on the grass and the pot all start to creep toward screen left together (from f892), slowly at first, then faster, keeping their distances exactly. The lens drifts after them at half their speed."
+  },
+  {
+   "id": 13,
+   "a": 980,
+   "b": 1055,
+   "place": "garden",
+   "light": "day",
+   "line": 9,
+   "what": "Closer, the lens gliding with Gus as the fence slides past behind him: he stares down at the lawn under his feet, then left and right, puzzled. A big question mark pops over his head (f1019, 'what's pulling')."
+  },
+  {
+   "id": 14,
+   "a": 1055,
+   "b": 1110,
+   "place": "sky",
+   "light": "day",
+   "line": 10,
+   "what": "A diagram against the blue: a little house seen from the side with its lawn drawn as a level green strip and a yellow spirit level lying on it. On 'flat' (f1085) the strip tips down away from the house and the bubble in the level runs off centre."
+  },
+  {
+   "id": 15,
+   "a": 1110,
+   "b": 1220,
+   "place": "sky",
+   "light": "day",
+   "line": 10,
+   "what": "The same diagram, closer: under the sloping lawn a ruler triangle pops in, 12 along the bottom, a half at its short side (f1131, 'half an inch'). A grey cloud pops over the house (f1163, 'rain'), drops fall, hit the lawn and run down the slope away from the house (f1181 to f1215)."
+  },
+  {
+   "id": 16,
+   "a": 1220,
+   "b": 1305,
+   "place": "garden",
+   "light": "day",
+   "line": 11,
+   "what": "Full shot of Gus standing on his lawn on an ordinary day, hands on hips, smiling, not moving an inch. A blue arrow pops in at his hip pointing to screen left (f1231, 'tugs') and an iron weight marked 9 pops in at its tip (f1258, 'nine pounds'). Gus doesn't notice; he whistles, a note drifts up (f1281)."
+  },
+  {
+   "id": 17,
+   "a": 1305,
+   "b": 1360,
+   "place": "sky",
+   "light": "day",
+   "line": 12,
+   "what": "Against the blue, two brushes, one above the other, bristles facing: the upper one comes down (f1309) and the bristles mesh (f1323, 'brushes'). On 'together' the upper one tries to slide sideways and only jiggles (f1338): stuck."
+  },
+  {
+   "id": 18,
+   "a": 1360,
+   "b": 1456,
+   "place": "garden",
+   "light": "day",
+   "line": 12,
+   "what": "Close on Gus's two slippers on the grass. A round magnifying glass pops in over them (f1362, 'Up close'): inside, the sole and the grass are two rows of teeth, bristle against bristle, fitting into each other. On 'lock' the teeth close tight with a glint (f1441)."
+  },
+  {
+   "id": 19,
+   "a": 1456,
+   "b": 1535,
+   "place": "garden",
+   "light": "day",
+   "line": 13,
+   "what": "Same close shot. On 'away' the teeth in the magnifying glass shrink to two smooth lines (f1463). From f1483 ('nine pounds') the smooth sole in the glass slides off to screen left, and below it Gus's slippers begin to slide the same way."
+  },
+  {
+   "id": 20,
+   "a": 1535,
+   "b": 1660,
+   "place": "garden",
+   "light": "day",
+   "line": 13,
+   "what": "Side by side on the lawn, the lens gliding with them: the heavy pot with an iron weight over it (pops f1537, 'Heavy'), Gus, his wife, and the teacup with a feather over it (pops f1546, 'light'). From f1562 they all slide to screen left, faster and faster, and stay exactly abreast. A stopwatch pops in above (f1560), its hand runs (ticks f1565 to f1640); a tag with 20 pops beside it (f1607, 'twenty feet'); the bell rings as the hand reaches five (f1640, 'seconds')."
+  },
+  {
+   "id": 21,
+   "a": 1660,
+   "b": 1705,
+   "place": "garden",
+   "light": "day",
+   "line": 14,
+   "what": "Close on Gus's slippers gliding over the grass, the lens with them. Sparkles run over the lawn (f1671, 'friction'); on 'back' the slippers bite and stop dead in two short ruts, clods and a puff of dust flying up (f1692)."
+  },
+  {
+   "id": 22,
+   "a": 1705,
+   "b": 1840,
+   "place": "garden",
+   "light": "day",
+   "line": 15,
+   "what": "Full shot. Gus glides in from screen right; his feet stop dead (f1721, 'grabs his feet') and the rest of him keeps going: he tips forward (f1738), leaves the ground, sails across the frame flat as a board (f1765 to f1795) and belly-flops onto the lawn (f1795), safe inside his fishbowl. Dust puffs; stars circle over his helmet (from f1805) while he lies there, dazed."
+  },
+  {
+   "id": 23,
+   "a": 1840,
+   "b": 1916,
+   "place": "garden",
+   "light": "day",
+   "line": 16,
+   "what": "The clay saucer on the lawn, empty, where the pot should stand. On 'It stops' the lens sweeps along the lawn to screen left (f1860 to f1886), all the way to the far fence: there stands the pot, with Gus sitting beside it, glum. A tag with 20 pops over the pot (f1880, 'twenty feet')."
+  },
+  {
+   "id": 24,
+   "a": 1916,
+   "b": 2020,
+   "place": "garden",
+   "light": "day",
+   "line": 17,
+   "what": "Full shot: Gus hauls the pot back toward screen right, one heave after another (f1922, f1945, f1972), the pot scraping and sticking behind him, sweat flying, and he beams all the way. On 'again' he turns to the lens with a thumbs-up and closed, blissful eyes, a sparkle on his thumb (f1993). Slow push-in to the end."
+  }
+ ],
+ "xfade": {
+  "14": 8,
+  "16": 8,
+  "17": 8,
+  "18": 8
+ },
+ "events": [
+  {
+   "f": 0,
+   "to": 165,
+   "type": "wind_rush",
+   "shape": "hook",
+   "note": "cold open: the whole garden is sliding"
+  },
+  {
+   "f": 113,
+   "type": "arrow_pop",
+   "id": "tag20",
+   "note": "the 20 tag pops in"
+  },
+  {
+   "f": 150,
+   "type": "whoosh_big",
+   "note": "rush before the flash"
+  },
+  {
+   "f": 165,
+   "type": "flash_hit",
+   "note": "white flash into the morning"
+  },
+  {
+   "f": 165,
+   "to": 590,
+   "type": "amb_garden",
+   "note": "Sunday morning in the garden"
+  },
+  {
+   "f": 190,
+   "type": "bird_tweet",
+   "note": "a sparrow"
+  },
+  {
+   "f": 235,
+   "type": "oof",
+   "id": "shove1",
+   "kind": "ugh",
+   "note": "Gus shoves the pot"
+  },
+  {
+   "f": 238,
+   "to": 252,
+   "type": "door_creak",
+   "id": "scrape1",
+   "note": "the pot scrapes over the ground"
+  },
+  {
+   "f": 276,
+   "type": "oof",
+   "id": "shove2",
+   "note": "he shoves again"
+  },
+  {
+   "f": 279,
+   "to": 293,
+   "type": "door_creak",
+   "id": "scrape2",
+   "note": "it scrapes a little further"
+  },
+  {
+   "f": 312,
+   "to": 326,
+   "type": "door_creak",
+   "id": "scrape3",
+   "note": "it scrapes"
+  },
+  {
+   "f": 329,
+   "type": "bonk",
+   "id": "stick",
+   "note": "it sticks dead"
+  },
+  {
+   "f": 365,
+   "type": "whoosh",
+   "id": "jab",
+   "note": "he jabs a finger at the lawn"
+  },
+  {
+   "f": 439,
+   "type": "gulp",
+   "id": "sip",
+   "level": -11,
+   "note": "his wife takes a sip"
+  },
+  {
+   "f": 499,
+   "type": "ding",
+   "id": "thumb",
+   "note": "the neighbor's thumbs-up"
+  },
+  {
+   "f": 525,
+   "type": "pop",
+   "id": "watch",
+   "note": "a stopwatch pops in"
+  },
+  {
+   "f": 536,
+   "type": "arrow_pop",
+   "id": "five",
+   "note": "the 5 tag"
+  },
+  {
+   "f": 572,
+   "type": "click",
+   "id": "start",
+   "note": "the stopwatch starts"
+  },
+  {
+   "f": 574,
+   "type": "twinkle",
+   "id": "wish",
+   "note": "the wish: a shimmer runs over the lawn"
+  },
+  {
+   "f": 590,
+   "to": 889,
+   "type": "amb_cricket",
+   "cricket": 0,
+   "note": "five strange quiet seconds"
+  },
+  {
+   "f": 597,
+   "type": "push_whoosh",
+   "id": "push",
+   "note": "one light push"
+  },
+  {
+   "f": 601,
+   "type": "zip",
+   "id": "glide",
+   "size": "small",
+   "note": "the pot glides away like a puck"
+  },
+  {
+   "f": 620,
+   "type": "ding",
+   "id": "yes",
+   "pitch": "E6",
+   "level": -10,
+   "note": "arms up: it works"
+  },
+  {
+   "f": 668,
+   "to": 740,
+   "type": "footsteps",
+   "id": "run",
+   "pace": 6,
+   "surface": "soft",
+   "level": -13,
+   "note": "his legs run, he does not move"
+  },
+  {
+   "f": 694,
+   "type": "squeak",
+   "id": "slip1",
+   "note": "his slippers find no grip"
+  },
+  {
+   "f": 720,
+   "type": "squeak",
+   "id": "slip2",
+   "note": "still none"
+  },
+  {
+   "f": 764,
+   "to": 780,
+   "type": "slide_whistle_down",
+   "id": "cup",
+   "note": "the cup slips through her fingers"
+  },
+  {
+   "f": 782,
+   "type": "thud",
+   "id": "cupland",
+   "level": -11,
+   "note": "it lands in the grass"
+  },
+  {
+   "f": 841,
+   "to": 857,
+   "type": "slide_whistle_down",
+   "id": "ladder",
+   "pitch": "G5",
+   "note": "the ladder slides down the wall"
+  },
+  {
+   "f": 857,
+   "type": "crash",
+   "id": "clatter",
+   "level": -6,
+   "note": "and lies flat"
+  },
+  {
+   "f": 892,
+   "to": 1053,
+   "type": "wind_rush",
+   "id": "drift",
+   "shape": "rise",
+   "level": -19,
+   "note": "the whole garden starts to drift"
+  },
+  {
+   "f": 1019,
+   "type": "question_blip",
+   "id": "why",
+   "note": "what is pulling them?"
+  },
+  {
+   "f": 1053,
+   "type": "record_stop",
+   "id": "stop",
+   "note": "dead stop into the explanation"
+  },
+  {
+   "f": 1085,
+   "type": "flip_blip",
+   "id": "tip",
+   "note": "the lawn in the diagram tips"
+  },
+  {
+   "f": 1131,
+   "type": "arrow_pop",
+   "id": "rule",
+   "note": "the ruler triangle: half an inch a foot"
+  },
+  {
+   "f": 1163,
+   "type": "pop",
+   "id": "raincloud",
+   "note": "a rain cloud"
+  },
+  {
+   "f": 1165,
+   "to": 1220,
+   "type": "amb_rain",
+   "heavy": 0.2,
+   "level": -27,
+   "note": "rain on the diagram"
+  },
+  {
+   "f": 1181,
+   "type": "drip",
+   "id": "run1",
+   "note": "rain runs down the slope"
+  },
+  {
+   "f": 1192,
+   "type": "drip",
+   "note": "another drop"
+  },
+  {
+   "f": 1203,
+   "type": "drip",
+   "note": "away from the house"
+  },
+  {
+   "f": 1216,
+   "to": 1305,
+   "type": "amb_garden",
+   "note": "an ordinary day on the lawn"
+  },
+  {
+   "f": 1231,
+   "type": "arrow_pop",
+   "id": "tug",
+   "note": "the slope tugs: an arrow at his hip"
+  },
+  {
+   "f": 1258,
+   "type": "thud",
+   "id": "nine",
+   "level": -9,
+   "note": "a nine-pound weight"
+  },
+  {
+   "f": 1281,
+   "type": "twinkle",
+   "id": "whistle",
+   "level": -13,
+   "note": "he whistles, all day long"
+  },
+  {
+   "f": 1309,
+   "type": "whoosh",
+   "id": "brush",
+   "note": "the upper brush comes down"
+  },
+  {
+   "f": 1323,
+   "type": "click",
+   "id": "mesh",
+   "note": "the bristles mesh"
+  },
+  {
+   "f": 1338,
+   "type": "squeak",
+   "id": "stuck",
+   "note": "it will not slide"
+  },
+  {
+   "f": 1356,
+   "to": 1535,
+   "type": "amb_garden",
+   "birds": 0.4,
+   "note": "down at his slippers"
+  },
+  {
+   "f": 1362,
+   "type": "pop",
+   "id": "lens",
+   "note": "a magnifying glass"
+  },
+  {
+   "f": 1441,
+   "type": "click",
+   "id": "lock",
+   "level": -8,
+   "note": "the teeth lock"
+  },
+  {
+   "f": 1443,
+   "type": "ting",
+   "id": "glint",
+   "note": "a glint"
+  },
+  {
+   "f": 1463,
+   "type": "flip_blip",
+   "id": "gone",
+   "note": "the teeth are gone"
+  },
+  {
+   "f": 1488,
+   "type": "zip",
+   "id": "slips",
+   "size": "small",
+   "level": -10,
+   "note": "the smooth sole slides off"
+  },
+  {
+   "f": 1535,
+   "to": 1650,
+   "type": "wind_rush",
+   "id": "race",
+   "shape": "rise",
+   "level": -17,
+   "note": "everything slides, faster and faster"
+  },
+  {
+   "f": 1537,
+   "type": "arrow_pop",
+   "id": "heavy",
+   "note": "a weight over the pot"
+  },
+  {
+   "f": 1546,
+   "type": "pop",
+   "id": "light",
+   "pitch": "E6",
+   "note": "a feather over the cup"
+  },
+  {
+   "f": 1560,
+   "type": "pop",
+   "id": "watch2",
+   "note": "the stopwatch"
+  },
+  {
+   "f": 1565,
+   "to": 1640,
+   "type": "timer_ticks",
+   "id": "ticks",
+   "note": "five seconds run"
+  },
+  {
+   "f": 1607,
+   "type": "arrow_pop",
+   "id": "twenty",
+   "note": "the 20 tag"
+  },
+  {
+   "f": 1640,
+   "type": "timer_ding",
+   "id": "five2",
+   "note": "five seconds are up"
+  },
+  {
+   "f": 1656,
+   "to": 2020,
+   "type": "amb_garden",
+   "note": "the garden, with friction again"
+  },
+  {
+   "f": 1671,
+   "type": "twinkle",
+   "id": "back",
+   "note": "friction comes back"
+  },
+  {
+   "f": 1692,
+   "type": "shovel_thunk",
+   "id": "grip",
+   "note": "his slippers bite into the lawn"
+  },
+  {
+   "f": 1721,
+   "type": "squeak",
+   "id": "grab",
+   "note": "his feet stop dead"
+  },
+  {
+   "f": 1738,
+   "type": "whoosh",
+   "id": "tip2",
+   "note": "the rest of him keeps going"
+  },
+  {
+   "f": 1765,
+   "to": 1795,
+   "type": "slide_whistle_down",
+   "id": "fly",
+   "note": "he sails across the lawn"
+  },
+  {
+   "f": 1795,
+   "type": "thud",
+   "id": "flop",
+   "note": "belly flop"
+  },
+  {
+   "f": 1798,
+   "type": "oof",
+   "id": "oof",
+   "note": "oof"
+  },
+  {
+   "f": 1812,
+   "type": "bird_tweet",
+   "note": "stars and birds over his helmet"
+  },
+  {
+   "f": 1860,
+   "type": "whoosh",
+   "id": "pan",
+   "note": "the lens sweeps along the lawn"
+  },
+  {
+   "f": 1880,
+   "type": "arrow_pop",
+   "id": "twenty2",
+   "note": "twenty feet of lawn between saucer and pot"
+  },
+  {
+   "f": 1922,
+   "to": 1938,
+   "type": "door_creak",
+   "id": "drag1",
+   "note": "he drags the pot back"
+  },
+  {
+   "f": 1945,
+   "to": 1961,
+   "type": "door_creak",
+   "id": "drag2",
+   "note": "scrape"
+  },
+  {
+   "f": 1972,
+   "to": 1986,
+   "type": "door_creak",
+   "id": "drag3",
+   "note": "scrape"
+  },
+  {
+   "f": 1993,
+   "type": "ding",
+   "id": "thanks",
+   "note": "thumbs-up: never complains again"
+  }
+ ]
+}

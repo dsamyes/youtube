@@ -1,0 +1,89 @@
+{
+ "inputs": {
+  "fall_in": 6.0,
+  "run_ft": 10.0,
+  "seconds": 5.0,
+  "gus_lb": 180.0,
+  "g": 9.80665
+ },
+ "slope": {
+  "grade_percent": 5.0,
+  "angle_deg": 2.862,
+  "inch_per_foot": 0.6
+ },
+ "slide": {
+  "acceleration_m_s2": 0.4897,
+  "distance_m": 6.12,
+  "distance_ft": 20.1,
+  "distance_ft_numeric": 20.1,
+  "distance_ft_with_air_drag": 19.9,
+  "end_speed_m_s": 2.45,
+  "end_speed_mph": 5.5,
+  "height_lost_in": 12.0,
+  "pot_ft": 20.1,
+  "cup_ft": 20.1
+ },
+ "pull": {
+  "down_slope_lb": 9.0,
+  "down_slope_N": 40.0,
+  "soles_can_hold_lb": 90,
+  "air_drag_at_end_N": 2.88,
+  "drag_share_of_pull": 0.072
+ },
+ "other": {
+  "walker_glides_ft": 22.0,
+  "cup_fall_1m_s": 0.45,
+  "stop_distance_ft_when_grip_returns": 2.0,
+  "stop_time_s": 0.5
+ },
+ "checks": [
+  {
+   "check": "vertical limit: g sin(90 deg) x 5 s gives free fall, 122.6 m",
+   "ok": true
+  },
+  {
+   "check": "flat limit: no slope, no slide",
+   "ok": true
+  },
+  {
+   "check": "numeric integration agrees with the formula within 0.1 percent",
+   "ok": true
+  },
+  {
+   "check": "energy: end speed equals sqrt(2 g h) for the height lost",
+   "ok": true
+  },
+  {
+   "check": "mass drops out: pot, cup and Gus slide the same distance",
+   "ok": true
+  },
+  {
+   "check": "slide is 20 feet to the nearest foot",
+   "ok": true
+  },
+  {
+   "check": "pull is 9 pounds to the nearest pound",
+   "ok": true
+  },
+  {
+   "check": "5 percent grade is 0.6 inch per foot ('half an inch a foot' is the round figure, a little under)",
+   "ok": true
+  },
+  {
+   "check": "end speed is a jogging pace (4 to 6 mph)",
+   "ok": true
+  },
+  {
+   "check": "air drag is under a tenth of the pull even at the end, and with it the slide still rounds to 20 feet",
+   "ok": true
+  },
+  {
+   "check": "with friction the soles hold ten times the pull, so nobody slides on a normal day",
+   "ok": true
+  },
+  {
+   "check": "unit round trip: 20.08 ft = 6.12 m",
+   "ok": true
+  }
+ ]
+}

@@ -1,0 +1,23 @@
+{
+  "title": "What If Friction Vanished for 5 Seconds? 😱",
+  "description": "Gus is shoving a heavy flowerpot across his garden and wishes friction would just go away. For five seconds, it does.\n\nThe numbers:\n• Building codes ask for the ground beside a house to fall at least 6 inches in the first 10 feet, so rain runs away from the walls. That is a 5% slope (2.9 degrees), a little over half an inch per foot.\n• On that slope the part of a 180-pound man's weight that points downhill is 9 pounds. Normally the grip of his soles holds about ten times that, so nobody notices.\n• With no friction, anything on the slope speeds up at g x sin(2.9 degrees) = 0.49 m/s2, whatever it weighs: 20 feet (6.1 m) in 5 seconds, ending at 5.5 mph, a jogging pace.\n• With no friction a foot cannot push off, fingers cannot hold a smooth cup, and a ladder leaning on a wall cannot stay up: all three are held by friction alone.\n(Assumptions: only the friction between solid surfaces is switched off; gravity and air stay. The lawn keeps the code's minimum slope for the whole 20 feet and everything starts at rest. Air drag would shorten the slide by about 2 inches. The lawn in the cartoon is drawn level; the slope is too small to see, which is the point.)\n\nSources:\n• International Residential Code, section R401.3, drainage: \"The grade shall fall not fewer than 6 inches within the first 10 feet\"\n• OpenStax College Physics, chapter 5: acceleration down a frictionless incline is g sin(theta), the same for every mass\n• MIT OpenCourseWare / MIT RELATE, the ladder problem: a leaning ladder needs friction at the floor\n• Bowden and Tabor, The Friction and Lubrication of Solids: surfaces touch only at microscopic bumps\n\nEvery number is computed in code and checked. Animation, narration and music are made with software and AI tools.\n\n#whatif #friction #science",
+  "tags": [
+    "what if",
+    "what if friction disappeared",
+    "what if friction disappeared for 5 seconds",
+    "no friction for 5 seconds",
+    "what if there was no friction",
+    "world without friction",
+    "what is friction",
+    "why do things slide",
+    "for 5 seconds",
+    "friction",
+    "physics",
+    "science",
+    "animated story",
+    "the if engine"
+  ],
+  "categoryId": "28",
+  "containsSyntheticMedia": false,
+  "playlist": "Shorts: 60-Second Ifs"
+}
