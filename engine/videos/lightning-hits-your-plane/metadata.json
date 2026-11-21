@@ -1,0 +1,23 @@
+{
+  "title": "What If Lightning Hit Your Plane? ⚡",
+  "description": "A bolt of lightning hits the plane Gus is asleep on, two miles up in a storm cloud, and the only thing he loses is his nap. This is where all that electricity goes, and what gets him in the end.\n\nThe numbers:\n• A typical lightning flash carries about 30,000 amperes and heats the air to about 50,000 °F, five times the surface of the Sun (9,930 °F). An ordinary household circuit trips at 15 amperes: the bolt is 2,000 times that\n• An airliner's skin is aluminium about 1 mm thick, thinner than a dime (1.35 mm). The current stays in that metal shell: in at one end, typically the nose or a wingtip, out at another, typically the tail\n• Ohm's law for 30,000 A through a seamless aluminium tube the size of a 737 fuselage (38 m long, 3.76 m across, 1 mm skin): 0.19 milliohm, so about 6 volts from nose to tail. Real airframes have joints and are kept under about 2.5 milliohms, which would still be 75 volts: less than a 120-volt wall socket either way\n• Airliners are struck about once a year each (one or two times, says the U.S. National Weather Service), mostly between 5,000 and 15,000 feet, and almost 90 % of the strikes are set off by the aircraft itself as it flies through a charged cloud\n• A static spark has to be about 3,000 volts before you feel it. It carries less than a thousandth of a joule, which is why it only stings\n(Assumptions: a typical flash, not the rare giant one; peak current; the skin alone, without frames and floor. Pilots still keep away from thunderstorms because of turbulence and hail, and every struck aircraft is inspected afterwards.)\n\nSources:\n• U.S. National Weather Service, Lightning Safety: \"How Powerful Is Lightning?\", \"How Hot Is Lightning?\", \"Lightning and Planes\" (weather.gov/safety/lightning)\n• E. J. Rupke, \"What happens when lightning strikes an airplane?\", Scientific American\n• Flight Safety Foundation, AeroSafety World, June 2010 (aircraft-triggered strikes); SKYbrary, \"Lightning\" (5,000 to 15,000 ft)\n• Fisher, Plumer and Perala, Aircraft Lightning Protection Handbook, DOT/FAA/CT-89/22; In Compliance Magazine, \"Lightning and RF Electrical Bonding\" (500 V at 200,000 A)\n• Aluminium 2024-T3 resistivity (5.82e-8 ohm m); U.S. Mint coin specifications (dime 1.35 mm)\n\nEvery number is computed in code and checked. Animation, narration and music are made with software and AI tools.\n\n#whatif #lightning #airplane",
+  "tags": [
+    "what if",
+    "lightning hits plane",
+    "what if lightning hit your plane",
+    "what happens when lightning strikes a plane",
+    "plane struck by lightning",
+    "lightning strike airplane",
+    "is it safe to fly in a thunderstorm",
+    "faraday cage",
+    "static shock doorknob",
+    "airplane facts",
+    "physics",
+    "science",
+    "animated story",
+    "the if engine"
+  ],
+  "categoryId": "28",
+  "containsSyntheticMedia": false,
+  "playlist": "Shorts: 60-Second Ifs"
+}

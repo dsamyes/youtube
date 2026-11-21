@@ -1,0 +1,144 @@
+{
+ "voice": "kokoro-v1.0:am_michael@1.2",
+ "duration_s": 64.978,
+ "words": 226,
+ "wps": 3.48,
+ "lines": [
+  {
+   "line": 1,
+   "text": "A lightning bolt five times hotter than the sun's surface just hit the plane Gus is on, and all he lost is his nap.",
+   "s": 0.0,
+   "e": 6.454,
+   "words": 24,
+   "wps": 3.72
+  },
+  {
+   "line": 2,
+   "text": "It's nine at night, two miles up in a storm cloud, and Gus is asleep.",
+   "s": 6.574,
+   "e": 10.268,
+   "words": 15,
+   "wps": 4.06
+  },
+  {
+   "line": 3,
+   "text": "Bang. A white flash. His wife screams. His neighbor throws both hands up.",
+   "s": 10.388,
+   "e": 14.512,
+   "words": 13,
+   "wps": 3.15
+  },
+  {
+   "line": 4,
+   "text": "That bolt carries two thousand times the current that blows the fuse in his kitchen.",
+   "s": 14.632,
+   "e": 18.636,
+   "words": 15,
+   "wps": 3.75
+  },
+  {
+   "line": 5,
+   "text": "But wait. Nobody is hurt. So where did it all go?",
+   "s": 18.756,
+   "e": 21.43,
+   "words": 11,
+   "wps": 4.11
+  },
+  {
+   "line": 6,
+   "text": "You see, electricity is lazy. It takes the easy road, and nothing is easier than metal.",
+   "s": 21.55,
+   "e": 26.474,
+   "words": 16,
+   "wps": 3.25
+  },
+  {
+   "line": 7,
+   "text": "The plane's skin is aluminum, no thicker than a dime.",
+   "s": 26.594,
+   "e": 29.368,
+   "words": 10,
+   "wps": 3.6
+  },
+  {
+   "line": 8,
+   "text": "So the bolt lands on the nose, runs along the outside, and jumps off the tail.",
+   "s": 29.488,
+   "e": 33.772,
+   "words": 16,
+   "wps": 3.73
+  },
+  {
+   "line": 9,
+   "text": "Ever stand under an umbrella in the rain? The water runs around you, and you stay dry.",
+   "s": 33.892,
+   "e": 38.596,
+   "words": 17,
+   "wps": 3.61
+  },
+  {
+   "line": 10,
+   "text": "Pushing all of it from nose to tail takes only a few volts. Less than a wall socket.",
+   "s": 38.716,
+   "e": 43.4,
+   "words": 18,
+   "wps": 3.84
+  },
+  {
+   "line": 11,
+   "text": "And it's no accident. Every airliner gets hit about once a year.",
+   "s": 43.52,
+   "e": 47.014,
+   "words": 12,
+   "wps": 3.43
+  },
+  {
+   "line": 12,
+   "text": "Nine times out of ten, the plane sets the bolt off itself.",
+   "s": 47.134,
+   "e": 50.398,
+   "words": 12,
+   "wps": 3.68
+  },
+  {
+   "line": 13,
+   "text": "Luckily, the lightning can't get to Gus.",
+   "s": 50.518,
+   "e": 52.502,
+   "words": 7,
+   "wps": 3.53
+  },
+  {
+   "line": 14,
+   "text": "Unluckily, cabin air is bone dry, the floor is carpet, and Gus wears slippers.",
+   "s": 52.622,
+   "e": 57.206,
+   "words": 14,
+   "wps": 3.05
+  },
+  {
+   "line": 15,
+   "text": "He shuffles to the bathroom and reaches for the knob.",
+   "s": 57.326,
+   "e": 59.84,
+   "words": 10,
+   "wps": 3.98
+  },
+  {
+   "line": 16,
+   "text": "Zap. That tiny spark is three thousand volts.",
+   "s": 59.96,
+   "e": 62.374,
+   "words": 8,
+   "wps": 3.31
+  },
+  {
+   "line": 17,
+   "text": "The lightning never touched him. The doorknob did.",
+   "s": 62.494,
+   "e": 64.978,
+   "words": 8,
+   "wps": 3.22
+  }
+ ]
+}

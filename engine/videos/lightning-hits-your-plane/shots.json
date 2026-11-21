@@ -1,0 +1,665 @@
+{
+ "_doc": "Picture/sound contract for lightning-hits-your-plane. 30 fps. Frames come from voice/frames.txt (word start frames). Visual reactions land 0-3 frames before their word.",
+ "fps": 30,
+ "total_frames": 1965,
+ "flash_at": [
+  197,
+  331
+ ],
+ "places": {
+  "sky": "the night sky in a storm (the open-sky place of plane-door-midflight under the night light): the airliner, the bolts, the storm clouds and every diagram are flat cards",
+  "cabin": "inside the airliner at night with the cabin lights on (the cabin of plane-door-midflight with dark windows that flare): the seat row, the door wall, the lavatory door with its steel knob",
+  "garden": "Gus's back garden at night in the rain (kit town place, plain lawn): Gus under his umbrella"
+ },
+ "shots": [
+  {
+   "id": 1,
+   "a": 0,
+   "b": 92,
+   "place": "sky",
+   "light": "night",
+   "line": 1,
+   "what": "HOOK, already moving. Night storm sky, dark clouds drifting: a white airliner flies to screen right and a huge jagged yellow-white lightning bolt slams into its nose on frame 1 and keeps flickering. On 'five times hotter' a small orange sun with a worried face pops in beside the bolt (f23) and breaks into a sweat (f45). The lens pushes in on the plane, tilted."
+  },
+  {
+   "id": 2,
+   "a": 92,
+   "b": 197,
+   "place": "cabin",
+   "light": "day",
+   "line": 1,
+   "what": "Inside the cabin, the seat row from the aisle: the windows blaze white as the bolt hits (f97, 'hit'), the neighbor at the window and Gus's wife in the middle throw their hands up wide-eyed, and Gus on the aisle seat, in pyjamas and fishbowl helmet, sleeps on with a sleep bubble at his nose. On 'lost' the bubble pops (f164), he opens his eyes and scowls, grumpy (f185, 'nap'). Whoosh at f181, white flash at f197."
+  },
+  {
+   "id": 3,
+   "a": 197,
+   "b": 281,
+   "place": "sky",
+   "light": "night",
+   "line": 2,
+   "what": "Nine at night, wide: the small airliner under a crescent of stars flies to screen right toward a towering dark storm cloud and slides into it (nose touches at f229, 'two miles up'); the cloud flickers from inside (f254, 'storm'). The lens glides with the plane."
+  },
+  {
+   "id": 4,
+   "a": 281,
+   "b": 312,
+   "place": "cabin",
+   "light": "day",
+   "line": 2,
+   "what": "The seat row before it happens, calm: the neighbor at the dark window smiles, the wife sits deadpan with her hands in her lap, Gus sleeps with his head tipped and a sleep bubble swelling at his nose. Slow push in."
+  },
+  {
+   "id": 5,
+   "a": 312,
+   "b": 388,
+   "place": "cabin",
+   "light": "day",
+   "line": 3,
+   "what": "Same row. BANG (f310): the windows flare, the picture jolts; a full white flash on 'white flash' (f331). The wife throws her head back and screams, one hand up (f358). Gus sleeps through all of it."
+  },
+  {
+   "id": 6,
+   "a": 388,
+   "b": 439,
+   "place": "cabin",
+   "light": "day",
+   "line": 3,
+   "what": "The same row, the lens still creeping in: the neighbor at the window throws both hands straight up over his head, mouth wide open (f419, 'throws both hands up'), next to the screaming wife, while the windows still flicker. Gus sleeps on."
+  },
+  {
+   "id": 7,
+   "a": 439,
+   "b": 563,
+   "place": "sky",
+   "light": "night",
+   "line": 4,
+   "what": "A comparison on the night sky, one above the other: on top the giant lightning bolt, crackling (f441); a tag with x 2,000 pops beside it (f468, 'two thousand times'); below it a small glass fuse from Gus's kitchen, which pops with a burst and a wisp of smoke on 'blows' (f512) and hangs there blackened."
+  },
+  {
+   "id": 8,
+   "a": 563,
+   "b": 646,
+   "place": "cabin",
+   "light": "day",
+   "line": 5,
+   "what": "Record stop. The seat row, everybody intact: the wife pats her own shoulders, the neighbor looks at his hands, both unharmed (sparkle at f597, 'nobody is hurt'); Gus sits awake, arms hanging, annoyed. A big question mark pops over the row (f615, 'where did it all go')."
+  },
+  {
+   "id": 9,
+   "a": 646,
+   "b": 798,
+   "place": "sky",
+   "light": "night",
+   "line": 6,
+   "what": "A diagram on the night sky: a small lightning spark with a sleepy face pops in at the top (f656) and yawns, lids drooping (f680, 'lazy'). Below him two roads: to the left a steep rocky climb, to the right a smooth shiny metal slide going down. He picks the slide and glides down it (f710 to f740, 'takes the easy road'); the metal glints (f780, 'metal')."
+  },
+  {
+   "id": 10,
+   "a": 798,
+   "b": 885,
+   "place": "sky",
+   "light": "night",
+   "line": 7,
+   "what": "The airliner from the side, big in the frame; a glint runs along its skin (f808, 'skin'). A round magnifying glass pops in over the fuselage (f847): inside it the skin seen edge-on, a thin silver line, and next to it a dime standing on its edge, just a little thicker (the coin pops at f868, 'dime')."
+  },
+  {
+   "id": 11,
+   "a": 885,
+   "b": 1017,
+   "place": "sky",
+   "light": "night",
+   "line": 8,
+   "what": "The airliner from the side among storm clouds. A bolt comes down from the upper right onto the nose (f898, 'lands on the nose'); a bright yellow glow runs along the outline of the fuselage from nose to tail (f940 to f975, 'runs along the outside'); at the tail it leaps off downward as a second bolt (f982, 'jumps off the tail'). The windows stay calm and dark blue."
+  },
+  {
+   "id": 12,
+   "a": 1017,
+   "b": 1161,
+   "place": "garden",
+   "light": "night",
+   "line": 9,
+   "what": "Gus's garden in the rain at night. Gus stands on the lawn and pops open a big red umbrella over his head (f1041, 'umbrella'); rain streaks fall all around (from the cut). The water runs over the dome and pours off the rim on both sides in two streams (f1098, 'runs around you'); underneath Gus is dry and gives a thumbs-up with a grin (f1144, 'stay dry')."
+  },
+  {
+   "id": 13,
+   "a": 1161,
+   "b": 1306,
+   "place": "sky",
+   "light": "night",
+   "line": 10,
+   "what": "The airliner on top, its outline glowing, a little arrow running from nose to tail (f1186). Under it a big meter with a needle: on 'a few volts' the needle only twitches a hair off zero (f1231). At the far end of the scale a wall socket pops in (f1262, 'less than a wall socket') and blinks (f1286): the needle is nowhere near it."
+  },
+  {
+   "id": 14,
+   "a": 1306,
+   "b": 1414,
+   "place": "sky",
+   "light": "night",
+   "line": 11,
+   "what": "Three little airliners in a column in the night sky, flying to screen right. A small bolt hits the first (f1355, 'every airliner'), then the second (f1376, 'gets hit'), then the third (f1400); each just blinks and flies on. A calendar page of twelve squares, one of them marked with a bolt, pops in beside them (f1392, 'once a year')."
+  },
+  {
+   "id": 15,
+   "a": 1414,
+   "b": 1516,
+   "place": "sky",
+   "light": "night",
+   "line": 12,
+   "what": "A row of ten small bolts pops in along the bottom (f1421); nine turn bright yellow, one stays grey (f1437, 'nine times out of ten'). Above, the airliner pokes its nose into a dark cloud marked with plus and minus signs (f1458 to f1470) and the bolt shoots out of the plane itself, up and down at once (f1489, 'sets the bolt off itself')."
+  },
+  {
+   "id": 16,
+   "a": 1516,
+   "b": 1579,
+   "place": "cabin",
+   "light": "day",
+   "line": 13,
+   "what": "The seat row, closer on Gus: he leans back smug, hands behind his helmet, eyes closed in a smile, while the window flickers harmlessly far behind (f1531). A sparkle on his helmet (f1560, 'can't get to Gus')."
+  },
+  {
+   "id": 17,
+   "a": 1579,
+   "b": 1647,
+   "place": "cabin",
+   "light": "day",
+   "line": 14,
+   "what": "Gus stands in the cross-aisle in front of the door wall, squirming: he needs the bathroom. His smile drops with a gulp (f1579, 'Unluckily'). A water drop with a red bar across it pops in beside his head (f1614, 'bone dry')."
+  },
+  {
+   "id": 18,
+   "a": 1647,
+   "b": 1720,
+   "place": "cabin",
+   "light": "day",
+   "line": 14,
+   "what": "Low and close on Gus's feet on the blue carpet: his slippers shuffle left, right, left (from f1647, 'the floor is carpet'), tiny yellow sparks crackling at the soles with every step; a glint on a slipper (f1698, 'slippers')."
+  },
+  {
+   "id": 19,
+   "a": 1720,
+   "b": 1799,
+   "place": "cabin",
+   "light": "day",
+   "line": 15,
+   "what": "Gus shuffles along the door wall to screen left, to the lavatory door (f1722 to f1758), little plus signs and sparks clinging to him, his helmet fuzzing with charge. He stretches a finger toward the round steel knob (f1763 to f1783, 'reaches for the knob')."
+  },
+  {
+   "id": 20,
+   "a": 1799,
+   "b": 1875,
+   "place": "cabin",
+   "light": "day",
+   "line": 16,
+   "what": "Close on the knob and Gus's hand. ZAP (f1797): a blue-white spark jumps from the knob to his fingertip with a star burst; Gus goes rigid, eyes wide, pyjamas bristling. A tag with a little bolt and 3,000 pops in over the knob (f1844, 'three thousand volts')."
+  },
+  {
+   "id": 21,
+   "a": 1875,
+   "b": 1965,
+   "place": "cabin",
+   "light": "day",
+   "line": 17,
+   "what": "Gus beside the lavatory door, frazzled, his fingertip smoking (f1877). He glares sideways at the knob. The knob glints, innocent (f1922, 'the doorknob'). On the last word it spits one more tiny spark at him and he flinches (f1939, 'did')."
+  }
+ ],
+ "xfade": {
+  "4": 8,
+  "7": 8,
+  "9": 8,
+  "12": 8,
+  "13": 8,
+  "16": 8
+ },
+ "events": [
+  {
+   "f": 0,
+   "type": "amb_wind",
+   "to": 197,
+   "strength": 0.9,
+   "note": "storm air under the cold open"
+  },
+  {
+   "f": 1,
+   "type": "thunder",
+   "id": "strike",
+   "note": "the bolt hits the nose"
+  },
+  {
+   "f": 4,
+   "type": "zap",
+   "note": "the bolt crackles"
+  },
+  {
+   "f": 23,
+   "type": "pop",
+   "id": "sun",
+   "note": "the little sun pops in"
+  },
+  {
+   "f": 45,
+   "type": "sizzle",
+   "id": "sweat",
+   "note": "the sun sweats: hotter"
+  },
+  {
+   "f": 97,
+   "type": "impact_kick",
+   "id": "hit",
+   "note": "the cabin takes the hit, windows blaze"
+  },
+  {
+   "f": 164,
+   "type": "pop",
+   "id": "wake",
+   "note": "the sleep bubble pops"
+  },
+  {
+   "f": 181,
+   "type": "whoosh_big",
+   "id": "grump",
+   "note": "into the flash; Gus scowls"
+  },
+  {
+   "f": 197,
+   "type": "flash_hit",
+   "note": "white flash"
+  },
+  {
+   "f": 197,
+   "type": "amb_wind",
+   "to": 281,
+   "strength": 0.6,
+   "note": "night sky"
+  },
+  {
+   "f": 229,
+   "type": "whoosh",
+   "id": "enter",
+   "note": "the plane slides into the cloud"
+  },
+  {
+   "f": 254,
+   "type": "thunder",
+   "id": "storm",
+   "distance": "far",
+   "note": "the cloud flickers"
+  },
+  {
+   "f": 281,
+   "type": "amb_drone",
+   "to": 331,
+   "note": "cabin hum"
+  },
+  {
+   "f": 310,
+   "type": "thunder",
+   "id": "bang",
+   "note": "BANG"
+  },
+  {
+   "f": 331,
+   "type": "flash_hit",
+   "id": "flash2",
+   "note": "a white flash"
+  },
+  {
+   "f": 331,
+   "type": "amb_drone",
+   "to": 439,
+   "note": "cabin hum after the flash"
+  },
+  {
+   "f": 358,
+   "type": "crowd_gasp",
+   "id": "scream",
+   "note": "his wife screams"
+  },
+  {
+   "f": 419,
+   "type": "oof",
+   "id": "hands",
+   "kind": "oh",
+   "note": "the neighbor throws both hands up"
+  },
+  {
+   "f": 439,
+   "type": "amb_wind",
+   "to": 563,
+   "strength": 0.5,
+   "note": "night sky under the comparison"
+  },
+  {
+   "f": 441,
+   "type": "zap",
+   "id": "bigbolt",
+   "note": "the giant bolt crackles"
+  },
+  {
+   "f": 468,
+   "type": "arrow_pop",
+   "id": "x2000",
+   "note": "the tag x 2,000"
+  },
+  {
+   "f": 512,
+   "type": "glass_pop",
+   "id": "fuse",
+   "note": "the kitchen fuse blows"
+  },
+  {
+   "f": 563,
+   "type": "record_stop",
+   "note": "But wait"
+  },
+  {
+   "f": 563,
+   "type": "amb_drone",
+   "to": 646,
+   "note": "cabin hum in the pause"
+  },
+  {
+   "f": 597,
+   "type": "twinkle",
+   "id": "fine",
+   "note": "nobody is hurt"
+  },
+  {
+   "f": 615,
+   "type": "question_blip",
+   "id": "where",
+   "note": "where did it all go?"
+  },
+  {
+   "f": 656,
+   "type": "pop",
+   "id": "spark",
+   "note": "the lazy spark pops in"
+  },
+  {
+   "f": 680,
+   "type": "power_down",
+   "id": "lazy",
+   "note": "he yawns"
+  },
+  {
+   "f": 710,
+   "type": "slide_whistle_down",
+   "id": "slide",
+   "to": 740,
+   "note": "he takes the metal slide"
+  },
+  {
+   "f": 780,
+   "type": "ting",
+   "id": "metal",
+   "note": "the metal glints"
+  },
+  {
+   "f": 808,
+   "type": "twinkle",
+   "id": "shine",
+   "note": "a glint along the skin"
+  },
+  {
+   "f": 847,
+   "type": "pop",
+   "id": "lens",
+   "note": "the magnifying glass"
+  },
+  {
+   "f": 868,
+   "type": "ting",
+   "id": "dime",
+   "note": "the dime"
+  },
+  {
+   "f": 898,
+   "type": "zap",
+   "id": "land",
+   "note": "the bolt lands on the nose"
+  },
+  {
+   "f": 940,
+   "type": "zip",
+   "id": "run",
+   "note": "the glow runs along the outside"
+  },
+  {
+   "f": 982,
+   "type": "zap",
+   "id": "jump",
+   "note": "it jumps off the tail"
+  },
+  {
+   "f": 1000,
+   "type": "thunder",
+   "id": "off",
+   "distance": "far",
+   "note": "and rolls away"
+  },
+  {
+   "f": 1017,
+   "type": "amb_rain",
+   "to": 1161,
+   "heavy": 0.6,
+   "note": "rain in the garden"
+  },
+  {
+   "f": 1041,
+   "type": "pop",
+   "id": "umbrella",
+   "note": "the umbrella opens"
+  },
+  {
+   "f": 1098,
+   "type": "drip",
+   "id": "runs",
+   "note": "water pours off the rim"
+  },
+  {
+   "f": 1121,
+   "type": "drip",
+   "note": "and off the other side"
+  },
+  {
+   "f": 1144,
+   "type": "ding",
+   "id": "dry",
+   "note": "dry: thumbs-up"
+  },
+  {
+   "f": 1186,
+   "type": "zip",
+   "id": "push",
+   "size": "small",
+   "note": "the arrow runs from nose to tail"
+  },
+  {
+   "f": 1231,
+   "type": "blip",
+   "id": "few",
+   "note": "the needle twitches: a few volts"
+  },
+  {
+   "f": 1262,
+   "type": "arrow_pop",
+   "id": "socket",
+   "note": "the wall socket pops in"
+  },
+  {
+   "f": 1286,
+   "type": "beep",
+   "id": "socket2",
+   "note": "the socket blinks"
+  },
+  {
+   "f": 1355,
+   "type": "zap",
+   "id": "hit1",
+   "note": "first airliner"
+  },
+  {
+   "f": 1376,
+   "type": "zap",
+   "id": "hit2",
+   "note": "second airliner"
+  },
+  {
+   "f": 1392,
+   "type": "arrow_pop",
+   "id": "year",
+   "note": "the calendar page"
+  },
+  {
+   "f": 1400,
+   "type": "pic_hit3",
+   "id": "hit3",
+   "note": "third airliner (silent)"
+  },
+  {
+   "f": 1421,
+   "type": "pop",
+   "id": "ten",
+   "note": "ten little bolts"
+  },
+  {
+   "f": 1437,
+   "type": "flip_blip",
+   "id": "nine",
+   "note": "nine light up"
+  },
+  {
+   "f": 1458,
+   "type": "whoosh",
+   "id": "poke",
+   "note": "the nose pokes into the charged cloud"
+  },
+  {
+   "f": 1489,
+   "type": "zap",
+   "id": "setoff",
+   "note": "the plane sets it off"
+  },
+  {
+   "f": 1500,
+   "type": "thunder",
+   "distance": "far",
+   "note": "rumble"
+  },
+  {
+   "f": 1516,
+   "type": "amb_drone",
+   "to": 1965,
+   "note": "cabin hum to the end"
+  },
+  {
+   "f": 1531,
+   "type": "pic_flicker",
+   "id": "far",
+   "note": "the window flickers, harmless"
+  },
+  {
+   "f": 1560,
+   "type": "twinkle",
+   "id": "safe",
+   "note": "safe"
+  },
+  {
+   "f": 1579,
+   "type": "gulp",
+   "id": "unlucky",
+   "note": "Unluckily"
+  },
+  {
+   "f": 1614,
+   "type": "pop",
+   "id": "dryair",
+   "note": "the no-water sign"
+  },
+  {
+   "f": 1647,
+   "type": "footsteps",
+   "id": "carpet",
+   "to": 1716,
+   "surface": "soft",
+   "pace": 2.6,
+   "note": "slippers on carpet"
+  },
+  {
+   "f": 1698,
+   "type": "squeak",
+   "id": "slippers",
+   "note": "slippers"
+  },
+  {
+   "f": 1722,
+   "type": "footsteps",
+   "id": "shuffle",
+   "to": 1758,
+   "surface": "soft",
+   "pace": 3,
+   "note": "he shuffles to the bathroom"
+  },
+  {
+   "f": 1763,
+   "type": "power_up",
+   "id": "reach",
+   "note": "the charge builds as he reaches"
+  },
+  {
+   "f": 1797,
+   "type": "zap",
+   "id": "zap",
+   "note": "ZAP"
+  },
+  {
+   "f": 1808,
+   "type": "oof",
+   "id": "ow",
+   "kind": "ow",
+   "note": "ow"
+  },
+  {
+   "f": 1844,
+   "type": "arrow_pop",
+   "id": "k3000",
+   "note": "the tag 3,000"
+  },
+  {
+   "f": 1877,
+   "type": "sizzle",
+   "id": "smoke",
+   "note": "his fingertip smokes"
+  },
+  {
+   "f": 1922,
+   "type": "ting",
+   "id": "knob",
+   "note": "the knob glints"
+  },
+  {
+   "f": 1939,
+   "type": "zap",
+   "id": "zap2",
+   "level": -10,
+   "note": "one more tiny spark"
+  }
+ ],
+ "planned_pops": [
+  97,
+  254,
+  264,
+  310,
+  898,
+  899,
+  1355,
+  1376,
+  1377,
+  1400,
+  1489,
+  1490,
+  1507,
+  1531,
+  1553
+ ]
+}

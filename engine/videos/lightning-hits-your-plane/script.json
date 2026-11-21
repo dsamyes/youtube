@@ -1,0 +1,29 @@
+{
+  "id": "lightning-hits-your-plane",
+  "title": "What If Lightning Hit Your Plane?",
+  "voice": {
+    "provider": "kokoro",
+    "voice": "am_michael",
+    "speed": 1.2,
+    "gap_s": 0.12
+  },
+  "lines": [
+    "A lightning bolt five times hotter than the sun's surface just hit the plane Gus is on, and all he lost is his nap.",
+    "It's nine at night, two miles up in a storm cloud, and Gus is asleep.",
+    "Bang. A white flash. His wife screams. His neighbor throws both hands up.",
+    "That bolt carries two thousand times the current that blows the fuse in his kitchen.",
+    "But wait. Nobody is hurt. So where did it all go?",
+    "You see, electricity is lazy. It takes the easy road, and nothing is easier than metal.",
+    "The plane's skin is aluminum, no thicker than a dime.",
+    "So the bolt lands on the nose, runs along the outside, and jumps off the tail.",
+    "Ever stand under an umbrella in the rain? The water runs around you, and you stay dry.",
+    "Pushing all of it from nose to tail takes only a few volts. Less than a wall socket.",
+    "And it's no accident. Every airliner gets hit about once a year.",
+    "Nine times out of ten, the plane sets the bolt off itself.",
+    "Luckily, the lightning can't get to Gus.",
+    "Unluckily, cabin air is bone dry, the floor is carpet, and Gus wears slippers.",
+    "He shuffles to the bathroom and reaches for the knob.",
+    "Zap. That tiny spark is three thousand volts.",
+    "The lightning never touched him. The doorknob did."
+  ]
+}

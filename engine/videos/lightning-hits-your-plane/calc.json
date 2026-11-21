@@ -1,0 +1,112 @@
+{
+ "bolt": {
+  "amps": 30000.0,
+  "volts": 300000000.0,
+  "temp_F": 50000.0,
+  "sun_surface_F": 9930,
+  "times_sun_surface": 5.04,
+  "household_amps": 15.0,
+  "times_household": 2000.0
+ },
+ "skin": {
+  "length_m": 38.0,
+  "diameter_m": 3.76,
+  "thickness_mm": 1.0,
+  "dime_mm": 1.35,
+  "metal_area_cm2": 118.1,
+  "resistance_milliohm": 0.187,
+  "volts_nose_to_tail": 5.6,
+  "aa_cells_1p5V": 3.7,
+  "bound_milliohm": 2.5,
+  "volts_at_bound": 75,
+  "wall_socket_V": 120.0,
+  "peak_power_in_skin_MW": 0.17,
+  "skin_depth_10kHz_mm": 1.21
+ },
+ "rate": {
+  "strikes_per_year_low": 1.0,
+  "strikes_per_year_high": 3.0,
+  "self_triggered_fraction": 0.9,
+  "nine_in_ten": 9,
+  "two_miles_ft": 10560,
+  "strike_band_ft": [
+   5000.0,
+   15000.0
+  ]
+ },
+ "doorknob": {
+  "volts": 3000.0,
+  "body_pF": 150.0,
+  "energy_mJ": 0.675,
+  "charge_microC": 0.45,
+  "times_the_skin_volts": 534,
+  "flash_charge_over_spark_charge": 33333333
+ },
+ "checks": [
+  {
+   "check": "formula on a textbook copper wire (1 m, 1 mm2 = 16.8 milliohm)",
+   "ok": true,
+   "detail": "16.8 mOhm"
+  },
+  {
+   "check": "ideal tube below the published 2.5 milliohm bound, within a factor 30",
+   "ok": true,
+   "detail": "0.187 vs 2.5 mOhm"
+  },
+  {
+   "check": "ideal tube gives a few volts (2 to 9)",
+   "ok": true,
+   "detail": "5.6 V"
+  },
+  {
+   "check": "even the bound stays under a wall socket",
+   "ok": true,
+   "detail": "75 V < 120 V"
+  },
+  {
+   "check": "limiting cases (double skin halves it, zero current gives zero)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "skin depth at 10 kHz is at least the skin thickness",
+   "ok": true,
+   "detail": "1.21 mm"
+  },
+  {
+   "check": "five times the Sun's surface (4.5 to 5.5)",
+   "ok": true,
+   "detail": "5.04"
+  },
+  {
+   "check": "bolt / household circuit = 2,000",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "strike rate lands on about once a year (1 to 3)",
+   "ok": true,
+   "detail": "(1.0, 3.0)"
+  },
+  {
+   "check": "two miles is inside 5,000 to 15,000 ft",
+   "ok": true,
+   "detail": "10560 ft"
+  },
+  {
+   "check": "skin thinner than a dime",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "check": "spark energy under 1 mJ",
+   "ok": true,
+   "detail": "0.68 mJ"
+  },
+  {
+   "check": "F <-> K round trip",
+   "ok": true,
+   "detail": ""
+  }
+ ]
+}

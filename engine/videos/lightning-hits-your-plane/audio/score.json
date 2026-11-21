@@ -1,0 +1,27 @@
+{
+ "_doc": "Sound plan of lightning-hits-your-plane, read by engine/toon/audio/build.py (manual: engine/toon/audio/README.md).",
+ "key": "D",
+ "tempo": 126,
+ "seed": 2111,
+ "theme": "hop",
+ "places": {
+  "sky": "void",
+  "cabin": "room",
+  "garden": "water"
+ },
+ "sections": [
+  {"from": 0, "mood": "silence", "_why": "the hook: thunder and storm air only"},
+  {"from": 197, "mood": "theme", "end": "stop", "_why": "nine at night, the plane slides into the cloud, Gus asleep; stops for the bang"},
+  {"from": 312, "mood": "chase", "hits": [331], "_why": "bang, the white flash (downbeat), the scream, the hands, the bolt against the fuse"},
+  {"from": 563, "mood": "silence", "_why": "'But wait': dead stop with the record_stop; cabin hum underneath"},
+  {"from": 646, "mood": "mystery", "_why": "the explanation: lazy electricity, the skin, nose to tail"},
+  {"from": 1017, "mood": "waltz", "_why": "the umbrella in the rain"},
+  {"from": 1161, "mood": "mystery", "_why": "a few volts, less than a wall socket"},
+  {"from": 1306, "mood": "theme", "_why": "no accident: once a year, the plane sets it off"},
+  {"from": 1516, "mood": "bittersweet", "hits": [1579], "_why": "'Luckily' ... 'Unluckily' (1579)"},
+  {"from": 1720, "mood": "runup", "_why": "he shuffles to the bathroom, the charge builds"},
+  {"from": 1799, "mood": "finale", "_why": "zap, three thousand volts, the doorknob did; button after the last word"}
+ ],
+ "dips": [],
+ "sfx": {}
+}

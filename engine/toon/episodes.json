@@ -135,6 +135,23 @@
    "status": "published",
    "youtube_id": "cl7jP-cPfBY",
    "publish_at": "2026-11-20T15:00:00Z"
+  },
+  {
+   "id": "lightning-hits-your-plane",
+   "date": "2026-11-21",
+   "title": "What If Lightning Hit Your Plane? ⚡",
+   "topic": "lightning strikes the airliner Gus is asleep on: a typical bolt (30,000 A, five times hotter than the sun's surface) is 2,000 times the current that blows a kitchen fuse, yet it runs through the aluminium skin (thinner than a dime) from nose to tail, which takes only a few volts (Ohm's law: about 6 V, less than a wall socket); every airliner is hit about once a year and nine times out of ten sets the bolt off itself; umbrella analogy; the dry cabin, the carpet and his slippers then give him a 3,000-volt doorknob spark",
+   "hero": "Gus",
+   "places": [
+    "sky",
+    "cabin",
+    "garden"
+   ],
+   "trend": "topic_bank: lightning-hits-your-plane (129k views on a 686-subscriber channel; the plane cluster: 60 videos, 171M views, 43 channels); today's trend file has no fresh everyday row that is not an advert, a game or already made",
+   "bank_id": "lightning-hits-your-plane",
+   "status": "published",
+   "youtube_id": "S4FtbtPAVw0",
+   "publish_at": "2026-11-21T15:00:00Z"
   }
  ]
 }

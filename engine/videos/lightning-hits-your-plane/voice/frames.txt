@@ -1,0 +1,35 @@
+# word@frame at 30 fps (frame = start of the word); written by toon/voice.py, do not edit
+line  1  frames 0..194
+   A@0 lightning@1 bolt@15 five@23 times@34 hotter@45 than@55 the@59 sun's@61 surface@71 just@92 hit@99 the@108 plane@111 Gus@122 is@130 on,@134 and@153 all@157 he@164 lost@166 is@179 his@182 nap.@187
+line  2  frames 197..308
+   It's@197 nine@202 at@211 night,@213 two@232 miles@237 up@248 in@251 a@253 storm@254 cloud,@267 and@281 Gus@285 is@294 asleep.@297
+line  3  frames 312..435
+   Bang.@312 A@321 white@324 flash.@333 His@348 wife@352 screams.@360 His@388 neighbor@393 throws@402 both@412 hands@421 up.@432
+line  4  frames 439..559
+   That@439 bolt@442 carries@452 two@464 thousand@470 times@483 the@496 current@498 that@510 blows@514 the@525 fuse@527 in@541 his@543 kitchen.@547
+line  5  frames 563..643
+   But@563 wait.@565 Nobody@581 is@594 hurt.@599 So@612 where@617 did@621 it@624 all@627 go?@633
+line  6  frames 646..794
+   You@646 see,@649 electricity@658 is@677 lazy.@682 It@709 takes@712 the@720 easy@724 road,@733 and@746 nothing@750 is@760 easier@765 than@777 metal.@782
+line  7  frames 798..881
+   The@798 plane's@800 skin@810 is@820 aluminum,@825 no@849 thicker@855 than@865 a@869 dime.@870
+line  8  frames 885..1013
+   So@885 the@888 bolt@890 lands@900 on@911 the@913 nose,@916 runs@941 along@951 the@960 outside,@964 and@980 jumps@984 off@994 the@999 tail.@1002
+line  9  frames 1017..1158
+   Ever@1017 stand@1022 under@1034 an@1041 umbrella@1043 in@1059 the@1063 rain?@1065 The@1089 water@1091 runs@1100 around@1111 you,@1123 and@1132 you@1135 stay@1138 dry.@1146
+line 10  frames 1161..1302
+   Pushing@1161 all@1170 of@1178 it@1181 from@1183 nose@1188 to@1197 tail@1200 takes@1212 only@1221 a@1231 few@1233 volts.@1239 Less@1263 than@1272 a@1277 wall@1278 socket.@1288
+line 11  frames 1306..1410
+   And@1306 it's@1308 no@1313 accident.@1320 Every@1347 airliner@1357 gets@1370 hit@1378 about@1385 once@1394 a@1400 year.@1401
+line 12  frames 1414..1512
+   Nine@1414 times@1423 out@1434 of@1436 ten,@1439 the@1457 plane@1460 sets@1470 the@1480 bolt@1482 off@1491 itself.@1498
+line 13  frames 1516..1575
+   Luckily,@1516 the@1531 lightning@1533 can't@1548 get@1556 to@1560 Gus.@1562
+line 14  frames 1579..1716
+   Unluckily,@1579 cabin@1593 air@1604 is@1613 bone@1616 dry,@1626 the@1647 floor@1649 is@1660 carpet,@1663 and@1680 Gus@1685 wears@1692 slippers.@1700
+line 15  frames 1720..1795
+   He@1720 shuffles@1722 to@1734 the@1737 bathroom@1739 and@1761 reaches@1765 for@1777 the@1780 knob.@1783
+line 16  frames 1799..1871
+   Zap.@1799 That@1808 tiny@1814 spark@1823 is@1834 three@1839 thousand@1846 volts.@1858
+line 17  frames 1875..1949
+   The@1875 lightning@1877 never@1891 touched@1897 him.@1909 The@1922 doorknob@1924 did.@1941

@@ -1,0 +1,21 @@
+{
+ "id": "lightning-hits-your-plane",
+ "question": "What if lightning hit your plane?",
+ "answer_in_one_line": "Nothing happens to you: the bolt, two thousand times the current that blows a kitchen fuse, runs through the aluminium skin from nose to tail, which takes only a few volts, and it happens to every airliner about once a year; the doorknob spark afterwards is three thousand volts.",
+ "trend_basis": [
+  {"source": "topic_bank", "evidence": "lightning-hits-your-plane: 129k views on a 686-subscriber channel; the plane cluster as a whole (60 videos, 171M views, 43 channels)."},
+  {"source": "youtube_shorts", "evidence": "No fresh everyday 'what if you' row today. Of the 60 rows, 23 are 'Comment ... if you need one' product adverts (the top nine among them, up to 23.7M views/day), the next group is GTA 6 and film or game what-ifs ('What Happens If You Reach the N in GTA 6?' 2.81M/day, 'What If Star-Lord Never Punched Thanos?' 1.01M/day), and the one physical scenario near the top, 'What Would Happen If You Jumped Through a Hole in the Earth' (15.6k-subscriber channel, 2.45M views/day), is this channel's first episode."},
+  {"source": "own_channel", "evidence": "The plane-door short is the channel's best by far (8,963 views, 1,537 views/day after 5.8 days); the next best full-week short has 207 views/day. A week has passed since that plane story, and the last two episodes were a five-seconds story and a sky story."},
+  {"source": "google_trends / wikipedia_top / science_news", "evidence": "Nothing to cross with: searches and Wikipedia are GTA 6, films and people; the science headlines are Voyager, Mars and particle physics, the abstract kind that does badly here."}
+ ],
+ "why_this_one": "The trend file has no row that passes the four tests, so the topic comes from the bank: a tier A entry outside the clusters of the last two episodes, from the cluster that works best on this channel. Everybody who has sat in a window seat in bad weather has asked this question; the title is plain nouns; and the answer is a surprise carried by numbers we can compute and cite: the current of a bolt against a kitchen fuse (2,000 to 1), Ohm's law on the aluminium skin (a few volts from nose to tail), once a year per airliner. The ending is ours: the lightning cannot reach Gus, but the dry cabin, the carpet and his slippers give him a three-thousand-volt doorknob spark. It is drawable with the cabin and sky of the plane-door episode and the kit garden; nobody is hurt and there is nothing to imitate.",
+ "rejected": [
+  "the 'Comment ... if you need one' rows (23 of 60, up to 23.7M views/day): product adverts, not topics",
+  "GTA 6 rows (reaching the N, leaving the map, typing the game by hand), Star-Lord, Darth Vader, Sentry and Superman, FNaF, Minecraft: games, films and superheroes",
+  "'What Would Happen If You Jumped Through a Hole in the Earth' (2.45M/day): already made (hole-through-earth)",
+  "'What if you bring your PS5 on the Moon' (0.75M/day, 149k subscribers): a space place nobody has sat in, built on a product",
+  "no sleep for three days, shaving eyebrows, growing a beard, fish with yogurt, a snake bite: body and medical advice",
+  "'What if every woman on earth disappeared' (0.34M/day): no physical answer and no number; 'What Happens When Sand Is Heated?' (0.37M/day): something a child could try with heat",
+  "'What If Your Neighbor's Dog Poops in Your Yard?' (0.30M/day): a legal question, no physics"
+ ]
+}
