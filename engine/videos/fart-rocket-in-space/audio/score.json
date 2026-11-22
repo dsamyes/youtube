@@ -1,0 +1,28 @@
+{
+ "_doc": "Sound plan of fart-rocket-in-space, read by engine/toon/audio/build.py (manual: engine/toon/audio/README.md).",
+ "key": "Eb",
+ "tempo": 124,
+ "seed": 4217,
+ "theme": "tiptoe",
+ "places": {
+  "space": "void",
+  "board": "void",
+  "garden": "outdoor",
+  "street": "outdoor"
+ },
+ "sections": [
+  {"from": 0, "mood": "silence", "_why": "the hook: the hum of space and the effects only"},
+  {"from": 153, "mood": "theme", "end": "stop", "_why": "two in the afternoon over the ocean; the rope, the kicks, wife and neighbor"},
+  {"from": 516, "mood": "chase", "hits": [594], "_why": "beans for lunch, he turns and fires (downbeat), hero pose, the hair, three weeks, eight hours"},
+  {"from": 889, "mood": "silence", "_why": "'But wait': dead stop with the record_stop; the hum of space underneath"},
+  {"from": 954, "mood": "mystery", "_why": "why so weak; a rocket throws stuff away; how much and how fast"},
+  {"from": 1147, "mood": "waltz", "_why": "the skateboard and the backpack"},
+  {"from": 1270, "mood": "mystery", "_why": "a tenth of a gram, ten feet a second, four hundred sixty pounds"},
+  {"from": 1468, "mood": "runup", "_why": "the slipper comes off and flies"},
+  {"from": 1543, "mood": "theme", "_why": "half a pound at twenty miles an hour; he is really moving"},
+  {"from": 1678, "mood": "bittersweet", "hits": [1775], "_why": "'Luckily' ... 'Unluckily' (1775)"},
+  {"from": 1828, "mood": "finale", "_why": "the fart never left; button after the last word"}
+ ],
+ "dips": [],
+ "sfx": {}
+}

@@ -1,0 +1,37 @@
+# word@frame at 30 fps (frame = start of the word); written by toon/voice.py, do not edit
+line  1  frames 0..151
+   Gus@0 is@8 stuck@10 floating@20 in@32 space,@34 ten@57 feet@64 from@72 his@76 ship,@79 and@97 the@100 only@104 rocket@114 he@127 has@129 is@137 a@141 fart.@142
+line  2  frames 155..296
+   It's@155 two@159 in@167 the@169 afternoon,@173 high@200 above@210 the@218 ocean,@222 and@243 his@246 safety@249 rope@261 just@270 came@276 loose.@284
+line  3  frames 300..403
+   He@300 kicks.@302 He@311 swims.@315 Nothing.@331 In@354 space,@357 there's@369 nothing@375 to@384 push@386 on.@395
+line  4  frames 407..512
+   His@407 wife@410 radios,@419 throw@439 something!@446 His@471 neighbor@476 says@486 he's@494 a@498 goner.@500
+line  5  frames 516..613
+   Gus@516 says@521 he@528 had@531 beans@536 for@547 lunch,@550 turns@570 around,@579 and@592 fires.@596
+line  6  frames 617..689
+   Let's@617 be@620 kind@623 and@636 say@640 it@646 all@648 shoots@654 straight@666 out@675 the@680 back.@682
+line  7  frames 693..762
+   Now@693 Gus@698 is@707 moving.@711 One@732 hair's@737 width@746 a@754 minute.@756
+line  8  frames 766..885
+   At@766 that@769 pace,@775 ten@784 feet@791 takes@799 over@807 three@812 weeks.@820 He@842 has@844 air@850 for@856 eight@862 hours.@869
+line  9  frames 889..990
+   But@889 wait.@891 Rockets@908 run@920 on@926 gas@930 too.@939 So@954 why@958 is@966 his@971 so@974 weak?@979
+line 10  frames 994..1143
+   You@994 see,@996 a@1006 rocket@1008 moves@1021 by@1032 throwing@1038 stuff@1051 away.@1060 What@1083 counts@1087 is@1099 how@1102 much,@1107 and@1120 how@1123 fast.@1129
+line 11  frames 1147..1266
+   Ever@1147 stood@1152 on@1159 a@1162 skateboard@1163 and@1183 thrown@1186 a@1196 heavy@1197 backpack?@1205 You@1233 roll@1237 the@1247 other@1252 way.@1258
+line 12  frames 1270..1383
+   A@1270 fart@1271 is@1284 a@1287 tenth@1289 of@1301 a@1304 gram@1305 of@1317 gas,@1319 leaving@1343 at@1354 ten@1357 feet@1364 a@1371 second.@1371
+line 13  frames 1387..1464
+   Gus@1387 and@1396 his@1399 suit@1402 weigh@1412 four@1420 hundred@1431 sixty@1440 pounds.@1450
+line 14  frames 1468..1539
+   So@1468 he@1472 pulls@1475 off@1484 a@1488 slipper,@1489 and@1505 throws@1511 it,@1522 hard.@1525
+line 15  frames 1543..1674
+   Half@1543 a@1548 pound@1550 at@1563 twenty@1565 miles@1573 an@1586 hour.@1589 That's@1613 six@1620 thousand@1627 times@1639 the@1650 push@1653 of@1661 a@1663 fart.@1664
+line 16  frames 1678..1771
+   Luckily,@1678 five@1689 minutes@1699 later,@1708 Gus@1727 floats@1734 in@1747 through@1751 the@1756 hatch.@1758
+line 17  frames 1775..1824
+   Unluckily,@1775 a@1791 spacesuit@1792 is@1808 airtight.@1812
+line 18  frames 1828..1933
+   So@1828 the@1832 fart@1834 never@1844 left.@1852 It@1875 rode@1878 home@1886 with@1894 him,@1899 inside@1907 the@1921 helmet.@1923

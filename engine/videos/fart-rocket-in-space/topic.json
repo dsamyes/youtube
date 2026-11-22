@@ -1,0 +1,33 @@
+{
+ "id": "fart-rocket-in-space",
+ "question": "What if a fart was your only rocket in space?",
+ "answer_in_one_line": "It would move you one hair's width a minute, so ten feet would take over three weeks; one thrown slipper pushes six thousand times harder and gets you home in five minutes, and in a real, airtight spacesuit the fart never leaves at all.",
+ "trend_basis": [
+  {
+   "source": "topic_bank",
+   "evidence": "fart-rocket-in-space: 'What if You Fart in Space' 57M and 'Fart In A Space Suit' 25M (giant channels); 'If You Fart in a Silent Elevator' 3.4M on an 18.7k-subscriber channel this week."
+  },
+  {
+   "source": "youtube_shorts",
+   "evidence": "No fresh everyday 'what if you' row today. Of the 60 rows about 25 are 'Comment ... if you need one' product adverts (the top two at 46.0M and 24.0M views/day), the next group is GTA 6 and film or game what-ifs ('What Happens If You Reach the N in GTA 6?' 2.33M/day, 'What If Star-Lord Never Punched Thanos?' 1.03M/day), and the one physical scenario near the top, 'What Would Happen If You Jumped Through a Hole in the Earth' (16.4k-subscriber channel, 2.58M views/day, and a 2,970-subscriber copy at 0.66M/day), is this channel's first episode."
+  },
+  {
+   "source": "own_channel",
+   "evidence": "The last two episodes were a plane story (lightning, 721 views/day on its first day) and a five-seconds story (friction, 799 views/day); both clusters rest today. Personal-survival-in-space is the one kind of space story that works for small channels."
+  },
+  {
+   "source": "google_trends / wikipedia_top / science_news",
+   "evidence": "Nothing to cross with: searches and Wikipedia are GTA 6, films and people; the science headlines carry no everyday scenario."
+  }
+ ],
+ "why_this_one": "The trend file has no row that passes the four tests, so the topic comes from the bank: the first tier A entry outside the clusters of the last two episodes (plane, five seconds). Everybody has wondered what you could push on if you were stuck floating; the title is plain nouns a ten-year-old laughs at; and the answer is a surprise that numbers carry: one hair's width a minute, three weeks for ten feet, and one slipper worth six thousand farts. The ending is real physics too: a spacesuit is airtight, so the gas never leaves and the push is exactly zero. It is drawable with flat cards in empty space, the kit garden and a road; nobody is hurt and there is nothing to imitate.",
+ "rejected": [
+  "the 'Comment ... if you need one' rows (about 25 of 60, up to 46.0M views/day): product adverts, not topics",
+  "GTA 6 rows (reaching the N, leaving the map, six stars, typing the game by hand), Minecraft's Nether roof, Star-Lord, Darth Vader, Doctor Strange, Sentry and Superman: games, films and superheroes",
+  "'What Would Happen If You Jumped Through a Hole in the Earth' (2.58M/day and 0.66M/day): already made (hole-through-earth)",
+  "'What If You Slapped A Chicken Until it Cooked' (0.72M/day, 44.3k subscribers): something a child could try on an animal",
+  "'What if you bring your PS5 on the Moon' (0.59M/day, 149k subscribers): built on a product, a place nobody has sat in",
+  "'What If You Built a Human With Four Arms?!' and the bull on two legs (0.59M and 1.16M/day): no physical answer and no number to check",
+  "shaving eyebrows, fish with yogurt, the last-period question: body and medical advice"
+ ]
+}

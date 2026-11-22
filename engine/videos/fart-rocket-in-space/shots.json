@@ -1,0 +1,723 @@
+{
+ "_doc": "Picture/sound contract for fart-rocket-in-space. 30 fps. Frames come from voice/words.json. Visual reactions land 0-3 frames before their word.",
+ "fps": 30,
+ "total_frames": 1948,
+ "flash_at": 153,
+ "places": {
+  "space": "open space in orbit: black sky with stars, the blue curve of the Earth below, the white hull of Gus's ship with an open hatch, a ring for the rope and two round windows; all flat cards. Also the lit inside of the ship for the last shot",
+  "garden": "Gus's back garden by day (kit), plain lawn",
+  "street": "a plain tarmac road with a yellow line and grass behind, under a day sky (the ground of plane-door-midflight's sky place)",
+  "board": "a dark blue blueprint board with a grid, for the diagrams: rocket, weight and speed dial, kitchen scale and ruler, bathroom scale"
+ },
+ "shots": [
+  {
+   "id": 1,
+   "a": 0,
+   "b": 153,
+   "place": "space",
+   "light": "space",
+   "line": 1,
+   "what": "HOOK. Close on Gus in his white suit and fishbowl helmet, tumbling slowly, arms and legs flailing, the loose rope end drifting by. From f44 the lens glides back and down: the ship's open hatch is far below him to the right, and a dashed ruler with the number 10 pops in between them on 'ten feet' (f62). A thought bubble with a rocket pops over his head on 'rocket' (f112) and flips to a small green puff on 'fart' (f140). White flash at 153."
+  },
+  {
+   "id": 2,
+   "a": 153,
+   "b": 243,
+   "place": "space",
+   "light": "space",
+   "line": 2,
+   "what": "Wide: the blue curve of the Earth and its ocean fills the bottom, the ship hangs over it, Gus floats beside the hatch on his rope, small. A glint runs over the ocean on 'high' (f198). The lens creeps in."
+  },
+  {
+   "id": 3,
+   "a": 243,
+   "b": 300,
+   "place": "space",
+   "light": "space",
+   "line": 2,
+   "what": "Close on the ring by the hatch: the hook of Gus's rope sits in it, slips out on 'loose' (f281) and drifts away up left with the rope. Gus (above, nervous) watches it go."
+  },
+  {
+   "id": 4,
+   "a": 300,
+   "b": 407,
+   "place": "space",
+   "light": "space",
+   "line": 3,
+   "what": "Medium on Gus. He kicks both legs on 'kicks' (f300), does breast strokes on 'swims' (f313), then hangs still, deadpan, on 'Nothing' (f329). The lens glides back (f340-372) to the wide view: he shoves both palms at empty space on 'push' (f384) and stays exactly where he is, the hatch far below."
+  },
+  {
+   "id": 5,
+   "a": 407,
+   "b": 516,
+   "place": "space",
+   "light": "space",
+   "line": 4,
+   "what": "The ship's wall with two round windows. In the first, his wife holds a radio handset (beep f417) and makes a throwing move with her free arm on 'throw' (f437). The lens glides right (f458-482) to the second window: the neighbor grins, then laughs and waves goodbye on 'goner' (f498)."
+  },
+  {
+   "id": 6,
+   "a": 516,
+   "b": 570,
+   "place": "garden",
+   "light": "day",
+   "line": 5,
+   "what": "Memory: Gus in pyjamas on the lawn at noon, three cans stacked at his feet. He lifts an open can heaped with beans on 'beans' (f534) and chews happily (chomp f548)."
+  },
+  {
+   "id": 7,
+   "a": 570,
+   "b": 617,
+   "place": "space",
+   "light": "space",
+   "line": 5,
+   "what": "Back in space, wide. Gus swings round on 'turns' (f570-590) until his head points at the hatch and his seat points away from it, squeezes his eyes shut, and on 'fires' (f594) a small green puff pops out behind him."
+  },
+  {
+   "id": 8,
+   "a": 617,
+   "b": 693,
+   "place": "space",
+   "light": "space",
+   "line": 6,
+   "what": "Closer on the same pose. The puff becomes a neat straight jet of little green clouds streaming away from the ship; a blue arrow pops in along it on 'straight' (f664); Gus gives a thumbs-up on 'back' (f680)."
+  },
+  {
+   "id": 9,
+   "a": 693,
+   "b": 732,
+   "place": "space",
+   "light": "space",
+   "line": 7,
+   "what": "Closer. Gus, still head down toward the hatch, strikes a flying-hero pose, one fist forward toward the hatch (f696), a sparkle on 'moving' (f709). Nothing in the frame moves at all."
+  },
+  {
+   "id": 10,
+   "a": 732,
+   "b": 766,
+   "place": "space",
+   "light": "space",
+   "line": 7,
+   "what": "A big magnifying glass pops over his slipper on 'One' (f732): inside it, one thick hair stands upright and the tip of the slipper creeps across its width while a stopwatch beside it makes one full turn (f737-762)."
+  },
+  {
+   "id": 11,
+   "a": 766,
+   "b": 842,
+   "place": "space",
+   "light": "space",
+   "line": 8,
+   "what": "Wide. Gus still in the hero pose, still in the same place, the dashed ruler with its 10 back between him and the hatch. A calendar sheet hangs beside him and its boxes fill with red crosses, one row a week: rows done at f790, f804, f818 ('three weeks')."
+  },
+  {
+   "id": 12,
+   "a": 842,
+   "b": 889,
+   "place": "space",
+   "light": "space",
+   "line": 8,
+   "what": "Close on Gus's chest: a round air gauge marked 8 pops in (f844), its needle sinks toward the red while a red lamp blinks. Gus looks down at it and gulps on 'eight' (f862)."
+  },
+  {
+   "id": 13,
+   "a": 889,
+   "b": 994,
+   "place": "space",
+   "light": "space",
+   "line": 9,
+   "what": "'But wait': everything stops. Medium on Gus, a question mark over his helmet (f893). A real rocket roars up past him in the background on 'Rockets' (f906), flame and all. He looks back at his own small green puff on 'his' (f970) and droops on 'weak' (f976)."
+  },
+  {
+   "id": 14,
+   "a": 994,
+   "b": 1083,
+   "place": "board",
+   "light": "space",
+   "line": 10,
+   "what": "Blueprint board. A rocket in the middle throws glowing lumps of gas down out of its nozzle and climbs. A blue arrow pointing up pops beside the rocket on 'moves' (f1019), a red arrow pointing down beside the lumps on 'throwing' (f1036)."
+  },
+  {
+   "id": 15,
+   "a": 1083,
+   "b": 1147,
+   "place": "board",
+   "light": "space",
+   "line": 10,
+   "what": "Same board, three signs one above the other: an iron weight drops in on 'how much' (f1100), a multiplication cross pops under it (f1116), a speed dial pops in at the bottom and its needle sweeps over on 'how fast' (f1121)."
+  },
+  {
+   "id": 16,
+   "a": 1147,
+   "b": 1233,
+   "place": "street",
+   "light": "day",
+   "line": 11,
+   "what": "A quiet road by day. Gus in pyjamas stands on a skateboard hugging a fat red backpack (the board clacks f1161). On 'thrown' (f1184) he hurls it to screen left; it lands with a thud (f1203) while the board starts to carry him to screen right."
+  },
+  {
+   "id": 17,
+   "a": 1233,
+   "b": 1270,
+   "place": "street",
+   "light": "day",
+   "line": 11,
+   "what": "The lens travels with Gus as he rolls away to screen right, arms out for balance, amazed (f1235), the backpack left behind at the left edge."
+  },
+  {
+   "id": 18,
+   "a": 1270,
+   "b": 1387,
+   "place": "board",
+   "light": "space",
+   "line": 12,
+   "what": "Blueprint board. On top, a small kitchen scale: the green puff lands on its pan on 'tenth' (f1287) and the window shows 0.1 (f1303). Below, a ruler marked 0 to 10: from 'leaving' (f1343) a second puff drifts along it from 0 to 10 while a stopwatch makes one turn (f1343-1373)."
+  },
+  {
+   "id": 19,
+   "a": 1387,
+   "b": 1468,
+   "place": "board",
+   "light": "space",
+   "line": 13,
+   "what": "Blueprint board. Gus in his suit hops onto a big bathroom scale (lands f1394), the scale's dial spins (f1418) and settles on 460 on 'pounds' (f1448). Gus shrugs."
+  },
+  {
+   "id": 20,
+   "a": 1468,
+   "b": 1543,
+   "place": "space",
+   "light": "space",
+   "line": 14,
+   "what": "Medium on Gus in space. He bends, pulls the red slipper off his foot on 'slipper' (pops off f1487), winds up (f1500) and throws it hard up left, away from the ship, on 'throws' (f1509). He recoils the other way."
+  },
+  {
+   "id": 21,
+   "a": 1543,
+   "b": 1613,
+   "place": "space",
+   "light": "space",
+   "line": 15,
+   "what": "The slipper tumbles across the stars with speed streaks (f1543). A small weight marked 1/2 pops beside it on 'Half' (f1548), a speed dial marked 20 on 'twenty' (f1563)."
+  },
+  {
+   "id": 22,
+   "a": 1613,
+   "b": 1678,
+   "place": "space",
+   "light": "space",
+   "line": 15,
+   "what": "Wide. Now Gus really moves: he glides steadily down toward the hatch, grinning (f1611). Beside him pops a sum: the slipper, an equals sign, the green puff and a tag marked x6000 on 'six thousand' (f1625)."
+  },
+  {
+   "id": 23,
+   "a": 1678,
+   "b": 1775,
+   "place": "space",
+   "light": "space",
+   "line": 16,
+   "what": "Wide on the hatch. A stopwatch marked 5 pops in on 'five' (f1687). Gus drifts in from the upper left, arms folded, and slides through the open hatch into the lit ship on 'floats in' (f1745); the hatch thumps shut behind him (f1764)."
+  },
+  {
+   "id": 24,
+   "a": 1775,
+   "b": 1948,
+   "place": "space",
+   "light": "space",
+   "line": 17,
+   "what": "Inside the ship, close on Gus, relieved, his wife deadpan at his shoulder. The collar of his helmet glints and clicks on 'airtight' (f1810). On 'fart' (f1834) green haze starts to rise inside the glass bowl; his smile dies (f1856); the bowl is full by 'home' (f1886). The lens pushes in; on 'helmet' (f1921) he is cross-eyed in a bowl of green fog."
+  }
+ ],
+ "xfade": {
+  "6": 6,
+  "7": 6,
+  "14": 8,
+  "16": 8,
+  "18": 8,
+  "20": 8
+ },
+ "events": [
+  {
+   "f": 0,
+   "type": "amb_drone",
+   "to": 153,
+   "level": -16,
+   "note": "the hum of space under the cold open"
+  },
+  {
+   "f": 1,
+   "type": "whoosh",
+   "id": "tumble",
+   "note": "Gus tumbles"
+  },
+  {
+   "f": 46,
+   "type": "decel_whoosh",
+   "id": "pullback",
+   "note": "the lens pulls back to the ship"
+  },
+  {
+   "f": 62,
+   "type": "arrow_pop",
+   "id": "ruler",
+   "note": "the ruler with its 10 pops in"
+  },
+  {
+   "f": 112,
+   "type": "pop",
+   "id": "think",
+   "note": "thought bubble: a rocket"
+  },
+  {
+   "f": 136,
+   "type": "whoosh_big",
+   "id": "toflash",
+   "note": "into the flash"
+  },
+  {
+   "f": 140,
+   "type": "flip_blip",
+   "id": "puff1",
+   "note": "the bubble flips to a green puff"
+  },
+  {
+   "f": 153,
+   "type": "flash_hit",
+   "note": "white flash"
+  },
+  {
+   "f": 153,
+   "type": "amb_drone",
+   "to": 516,
+   "note": "space"
+  },
+  {
+   "f": 198,
+   "type": "twinkle",
+   "id": "glint",
+   "note": "glint on the ocean"
+  },
+  {
+   "f": 281,
+   "type": "click",
+   "id": "unclip",
+   "note": "the hook slips out of the ring"
+  },
+  {
+   "f": 288,
+   "type": "slide_whistle_up_slowing",
+   "to": 300,
+   "id": "ropeaway",
+   "note": "the rope drifts off"
+  },
+  {
+   "f": 300,
+   "type": "whoosh",
+   "id": "kick",
+   "note": "he kicks"
+  },
+  {
+   "f": 313,
+   "type": "whoosh",
+   "id": "swim",
+   "note": "he swims"
+  },
+  {
+   "f": 329,
+   "type": "ting",
+   "id": "nothing",
+   "note": "nothing"
+  },
+  {
+   "f": 344,
+   "type": "decel_whoosh",
+   "id": "back4",
+   "note": "glide back to the wide view"
+  },
+  {
+   "f": 384,
+   "type": "push_whoosh",
+   "id": "push",
+   "note": "he shoves at empty space"
+  },
+  {
+   "f": 417,
+   "type": "beep",
+   "id": "radio",
+   "note": "radio"
+  },
+  {
+   "f": 437,
+   "type": "whoosh",
+   "id": "wifethrow",
+   "note": "her throwing move"
+  },
+  {
+   "f": 471,
+   "type": "beep",
+   "id": "radio2",
+   "pitch": "E6",
+   "note": "radio again"
+  },
+  {
+   "f": 498,
+   "type": "slide_whistle_down",
+   "id": "goner",
+   "note": "the neighbor waves him goodbye"
+  },
+  {
+   "f": 516,
+   "type": "amb_garden",
+   "to": 570,
+   "note": "noon in the garden"
+  },
+  {
+   "f": 534,
+   "type": "pop",
+   "id": "beans",
+   "note": "the can of beans goes up"
+  },
+  {
+   "f": 548,
+   "type": "chomp",
+   "id": "chomp",
+   "note": "he chews"
+  },
+  {
+   "f": 570,
+   "type": "amb_drone",
+   "to": 889,
+   "note": "space"
+  },
+  {
+   "f": 570,
+   "type": "whoosh",
+   "id": "turn",
+   "note": "he swings round"
+  },
+  {
+   "f": 594,
+   "type": "squeak",
+   "id": "fire",
+   "note": "the fart (a rubber squeak is the nearest sound in the vocabulary)"
+  },
+  {
+   "f": 597,
+   "type": "flame_poof",
+   "level": -10,
+   "note": "the puff"
+  },
+  {
+   "f": 664,
+   "type": "arrow_pop",
+   "id": "arrowback",
+   "note": "arrow along the jet"
+  },
+  {
+   "f": 680,
+   "type": "ding",
+   "id": "thumb",
+   "note": "thumbs-up"
+  },
+  {
+   "f": 696,
+   "type": "whoosh",
+   "id": "hero",
+   "note": "hero pose"
+  },
+  {
+   "f": 709,
+   "type": "ting",
+   "id": "moving",
+   "note": "sparkle: moving"
+  },
+  {
+   "f": 732,
+   "type": "pop",
+   "id": "lens",
+   "note": "the magnifying glass"
+  },
+  {
+   "f": 737,
+   "type": "timer_ticks",
+   "to": 762,
+   "id": "tick1",
+   "note": "one minute on the stopwatch"
+  },
+  {
+   "f": 790,
+   "type": "flip_blip",
+   "id": "wk1",
+   "note": "week one crossed off"
+  },
+  {
+   "f": 804,
+   "type": "flip_blip",
+   "id": "wk2",
+   "note": "week two"
+  },
+  {
+   "f": 818,
+   "type": "flip_blip",
+   "id": "wk3",
+   "note": "week three"
+  },
+  {
+   "f": 844,
+   "type": "alarm",
+   "to": 876,
+   "id": "alarm",
+   "level": -15,
+   "note": "air gauge warning"
+  },
+  {
+   "f": 862,
+   "type": "gulp",
+   "id": "gulp",
+   "note": "he gulps"
+  },
+  {
+   "f": 889,
+   "type": "record_stop",
+   "id": "wait",
+   "note": "But wait"
+  },
+  {
+   "f": 889,
+   "type": "amb_drone",
+   "to": 994,
+   "note": "space, after the dead stop"
+  },
+  {
+   "f": 893,
+   "type": "question_blip",
+   "id": "q1",
+   "note": "question mark"
+  },
+  {
+   "f": 906,
+   "type": "whoosh_big",
+   "id": "rocketpass",
+   "note": "a real rocket roars past"
+  },
+  {
+   "f": 976,
+   "type": "power_down",
+   "id": "weak",
+   "note": "he droops"
+  },
+  {
+   "f": 994,
+   "type": "rocket_rumble",
+   "to": 1083,
+   "shape": "steady",
+   "level": -20,
+   "note": "the rocket on the board"
+  },
+  {
+   "f": 1019,
+   "type": "arrow_pop",
+   "id": "up",
+   "note": "arrow up"
+  },
+  {
+   "f": 1036,
+   "type": "arrow_pop",
+   "id": "down",
+   "note": "arrow down"
+  },
+  {
+   "f": 1100,
+   "type": "thud",
+   "id": "much",
+   "note": "the weight drops in"
+  },
+  {
+   "f": 1116,
+   "type": "blip",
+   "id": "times",
+   "note": "multiplication cross"
+  },
+  {
+   "f": 1121,
+   "type": "zip",
+   "id": "fast",
+   "note": "the speed needle sweeps"
+  },
+  {
+   "f": 1147,
+   "type": "amb_garden",
+   "to": 1270,
+   "note": "the road"
+  },
+  {
+   "f": 1161,
+   "type": "knock",
+   "id": "board",
+   "count": 2,
+   "note": "the skateboard clacks"
+  },
+  {
+   "f": 1184,
+   "type": "push_whoosh",
+   "id": "throw",
+   "note": "he hurls the backpack"
+  },
+  {
+   "f": 1203,
+   "type": "thud",
+   "id": "packland",
+   "note": "the backpack lands"
+  },
+  {
+   "f": 1235,
+   "type": "whoosh",
+   "id": "roll",
+   "note": "he rolls away"
+  },
+  {
+   "f": 1287,
+   "type": "pop",
+   "id": "puffscale",
+   "note": "the puff lands on the scale"
+  },
+  {
+   "f": 1303,
+   "type": "beep",
+   "id": "read",
+   "note": "the scale reads 0.1"
+  },
+  {
+   "f": 1343,
+   "type": "timer_ticks",
+   "to": 1373,
+   "id": "onesec",
+   "note": "one second on the stopwatch"
+  },
+  {
+   "f": 1394,
+   "type": "thud",
+   "id": "step",
+   "note": "Gus lands on the big scale"
+  },
+  {
+   "f": 1418,
+   "type": "boing",
+   "id": "dial",
+   "note": "the dial spins"
+  },
+  {
+   "f": 1448,
+   "type": "timer_ding",
+   "id": "lbs",
+   "note": "460"
+  },
+  {
+   "f": 1468,
+   "type": "amb_drone",
+   "to": 1775,
+   "note": "space"
+  },
+  {
+   "f": 1487,
+   "type": "cork_pop",
+   "id": "slipoff",
+   "note": "the slipper comes off"
+  },
+  {
+   "f": 1500,
+   "type": "whoosh",
+   "id": "windup",
+   "note": "wind-up"
+  },
+  {
+   "f": 1509,
+   "type": "impact_kick",
+   "id": "hurl",
+   "note": "the throw"
+  },
+  {
+   "f": 1543,
+   "type": "zip",
+   "id": "slipfly",
+   "note": "the slipper flies"
+  },
+  {
+   "f": 1548,
+   "type": "pop",
+   "id": "half",
+   "note": "half a pound"
+  },
+  {
+   "f": 1563,
+   "type": "arrow_pop",
+   "id": "twenty",
+   "note": "twenty miles an hour"
+  },
+  {
+   "f": 1611,
+   "type": "whoosh_big",
+   "id": "drift",
+   "level": -6,
+   "note": "Gus is really moving now"
+  },
+  {
+   "f": 1625,
+   "type": "ding",
+   "id": "x6000",
+   "note": "the sum"
+  },
+  {
+   "f": 1687,
+   "type": "timer_ding",
+   "id": "five",
+   "note": "five minutes"
+  },
+  {
+   "f": 1745,
+   "type": "whoosh",
+   "id": "enter",
+   "note": "in through the hatch"
+  },
+  {
+   "f": 1764,
+   "type": "door_slam",
+   "id": "hatch",
+   "note": "the hatch shuts"
+  },
+  {
+   "f": 1775,
+   "type": "amb_room",
+   "to": 1948,
+   "level": -28,
+   "note": "inside the ship"
+  },
+  {
+   "f": 1810,
+   "type": "click",
+   "id": "seal",
+   "note": "airtight"
+  },
+  {
+   "f": 1834,
+   "type": "bubbling",
+   "to": 1900,
+   "id": "green",
+   "level": -26,
+   "rate": 14,
+   "note": "the green haze rises in the bowl"
+  },
+  {
+   "f": 1856,
+   "type": "gulp",
+   "id": "uhoh",
+   "note": "his smile dies"
+  },
+  {
+   "f": 1921,
+   "type": "squeak",
+   "id": "end",
+   "level": -11,
+   "note": "cross-eyed in the fog"
+  }
+ ]
+}

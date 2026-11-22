@@ -1,0 +1,152 @@
+{
+ "voice": "kokoro-v1.0:am_michael@1.2",
+ "duration_s": 64.442,
+ "words": 231,
+ "wps": 3.58,
+ "lines": [
+  {
+   "line": 1,
+   "text": "Gus is stuck floating in space, ten feet from his ship, and the only rocket he has is a fart.",
+   "s": 0.0,
+   "e": 5.054,
+   "words": 20,
+   "wps": 3.96
+  },
+  {
+   "line": 2,
+   "text": "It's two in the afternoon, high above the ocean, and his safety rope just came loose.",
+   "s": 5.174,
+   "e": 9.878,
+   "words": 16,
+   "wps": 3.4
+  },
+  {
+   "line": 3,
+   "text": "He kicks. He swims. Nothing. In space, there's nothing to push on.",
+   "s": 9.998,
+   "e": 13.432,
+   "words": 12,
+   "wps": 3.49
+  },
+  {
+   "line": 4,
+   "text": "His wife radios, throw something! His neighbor says he's a goner.",
+   "s": 13.552,
+   "e": 17.066,
+   "words": 11,
+   "wps": 3.13
+  },
+  {
+   "line": 5,
+   "text": "Gus says he had beans for lunch, turns around, and fires.",
+   "s": 17.186,
+   "e": 20.44,
+   "words": 11,
+   "wps": 3.38
+  },
+  {
+   "line": 6,
+   "text": "Let's be kind and say it all shoots straight out the back.",
+   "s": 20.56,
+   "e": 22.974,
+   "words": 12,
+   "wps": 4.97
+  },
+  {
+   "line": 7,
+   "text": "Now Gus is moving. One hair's width a minute.",
+   "s": 23.094,
+   "e": 25.428,
+   "words": 9,
+   "wps": 3.86
+  },
+  {
+   "line": 8,
+   "text": "At that pace, ten feet takes over three weeks. He has air for eight hours.",
+   "s": 25.548,
+   "e": 29.502,
+   "words": 15,
+   "wps": 3.79
+  },
+  {
+   "line": 9,
+   "text": "But wait. Rockets run on gas too. So why is his so weak?",
+   "s": 29.622,
+   "e": 33.016,
+   "words": 13,
+   "wps": 3.83
+  },
+  {
+   "line": 10,
+   "text": "You see, a rocket moves by throwing stuff away. What counts is how much, and how fast.",
+   "s": 33.136,
+   "e": 38.1,
+   "words": 17,
+   "wps": 3.42
+  },
+  {
+   "line": 11,
+   "text": "Ever stood on a skateboard and thrown a heavy backpack? You roll the other way.",
+   "s": 38.22,
+   "e": 42.214,
+   "words": 15,
+   "wps": 3.76
+  },
+  {
+   "line": 12,
+   "text": "A fart is a tenth of a gram of gas, leaving at ten feet a second.",
+   "s": 42.334,
+   "e": 46.118,
+   "words": 16,
+   "wps": 4.23
+  },
+  {
+   "line": 13,
+   "text": "Gus and his suit weigh four hundred sixty pounds.",
+   "s": 46.238,
+   "e": 48.812,
+   "words": 9,
+   "wps": 3.5
+  },
+  {
+   "line": 14,
+   "text": "So he pulls off a slipper, and throws it, hard.",
+   "s": 48.932,
+   "e": 51.306,
+   "words": 10,
+   "wps": 4.21
+  },
+  {
+   "line": 15,
+   "text": "Half a pound at twenty miles an hour. That's six thousand times the push of a fart.",
+   "s": 51.426,
+   "e": 55.82,
+   "words": 17,
+   "wps": 3.87
+  },
+  {
+   "line": 16,
+   "text": "Luckily, five minutes later, Gus floats in through the hatch.",
+   "s": 55.94,
+   "e": 59.054,
+   "words": 10,
+   "wps": 3.21
+  },
+  {
+   "line": 17,
+   "text": "Unluckily, a spacesuit is airtight.",
+   "s": 59.174,
+   "e": 60.828,
+   "words": 5,
+   "wps": 3.02
+  },
+  {
+   "line": 18,
+   "text": "So the fart never left. It rode home with him, inside the helmet.",
+   "s": 60.948,
+   "e": 64.442,
+   "words": 13,
+   "wps": 3.72
+  }
+ ]
+}

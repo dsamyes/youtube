@@ -1,0 +1,62 @@
+{
+  "model": "momentum conservation, Gus at rest 10 ft from the hatch, all the gas leaves straight backwards (generous)",
+  "inputs": {
+    "gus_lb": 180.0,
+    "suit_lb": 280.0,
+    "fart_ml": 90.0,
+    "fart_speed_ft_s_ASSUMED": 10.0,
+    "gap_ft": 10.0,
+    "oxygen_h": 8.0,
+    "slipper_lb": 0.5,
+    "throw_mph": 20.0
+  },
+  "gus_and_suit_lb": 460.0,
+  "gus_and_suit_kg": 208.65249020000002,
+  "fart": {
+    "mass_g": 0.10242635604558042,
+    "mass_g_hydrogen_rich_mix": 0.05744431758248455,
+    "exit_speed_m_s": 3.048,
+    "gus_speed_m_s": 1.4962471149173415e-06,
+    "gus_speed_um_per_s": 1.4962471149173415,
+    "gus_speed_um_per_min": 89.77482689504049,
+    "hair_width_um_range": [
+      17.0,
+      181.0
+    ],
+    "ten_feet_takes_days": 23.577507636314913,
+    "ten_feet_takes_weeks": 3.368215376616416,
+    "distance_in_8_h_oxygen_mm": 43.091916909619435,
+    "distance_in_8_h_oxygen_in": 1.696532161796041,
+    "farts_for_1_mph": 298774.1767673826,
+    "years_for_1_mph_at_8_a_day": 102.2498893796655,
+    "mass_g_range_33_to_125_ml": [
+      0.03755633055004615,
+      0.14225882784108393
+    ]
+  },
+  "slipper": {
+    "mass_kg": 0.226796185,
+    "throw_m_s": 8.9408,
+    "gus_speed_mm_s": 9.728835690968443,
+    "ten_feet_takes_s": 313.29545454545456,
+    "ten_feet_takes_min": 5.221590909090909,
+    "worth_farts": 6495.093987696723
+  },
+  "checks": {
+    "rocket_equation_vs_momentum_rel_diff": 2.4518430263853475e-07,
+    "continuity_speed_range_m_s": [
+      0.44999999999999996,
+      8.999999999999998
+    ],
+    "safer_delta_v_m_s": 3.907479424673282,
+    "safer_published_m_s": 3.048,
+    "air_density_37C_g_per_L": 1.1380706227286714
+  },
+  "sources": {
+    "fart_volume": "Tomlin, Lowis & Read, 'Investigation of normal flatus production in healthy volunteers', Gut 32, 665 (1991): 476-1491 ml/day (median 705), 33-125 ml per passage (median 90), median 8 passages",
+    "fart_speed": "no published measurement; '10 ft/s' is the popular figure (J. Dawson, Who Cut the Cheese?, 1999). Assumed; consistent with check 2",
+    "suit": "about 280 lb on the ground is the widely quoted figure for the NASA spacewalk suit (NASA EMU fact sheet: 113 kg = 250 lb without the SAFER jetpack; the enhanced ISS suit 319 lb); primary life support 8 h (sources give 6.5 to 8 h)",
+    "safer": "NASA SAFER: 3 lb (1.4 kg) of nitrogen gives about 10 ft/s (3 m/s)",
+    "hair": "human hair diameter 17-181 micrometres, typically 70-100 (Ley, The Physics Factbook)"
+  }
+}
