@@ -1,0 +1,34 @@
+{
+ "id": "gravity-off-5-seconds",
+ "question": "What if gravity switched off for 5 seconds?",
+ "answer_in_one_line": "Nothing flies off by itself: whatever sits still stays put (the spinning ground only sinks ten inches away from under a chair in five seconds), but anything that was already moving keeps its speed, so a pancake flipped at eight feet a second never comes back and a one-foot hop carries Gus thirty-two feet up in four seconds, to the height of an Olympic diving tower, from where he comes down at thirty miles an hour.",
+ "trend_basis": [
+  {
+   "source": "topic_bank",
+   "evidence": "gravity-off-5-seconds: the 'for 5 seconds' family: 13 videos, 46M views, 31M of them on channels under 100k subscribers."
+  },
+  {
+   "source": "youtube_shorts",
+   "evidence": "Today's file has no fresh everyday 'what if you' row that passes the four tests. The top of the list is 'Comment X if you want one' gift adverts (best 28.6M views/day); the real questions are games ('...Swim Too Far Into the Ocean in GTA 6' 5.7M/day, six stars in GTA 6 on five channels, the Nether roof), films and superheroes (Star-Lord, Darth Vader, Doctor Strange), body topics, or a topic already made here ('What Would Happen If You Jumped Through a Hole in the Earth' on two small channels, 1.45M and 0.47M views/day)."
+  },
+  {
+   "source": "own_channel",
+   "evidence": "The channel's own 'for 5 seconds' short (friction, 508 views/day after 2.8 days) is among its better recent ones, and the plain everyday questions lead (plane door 8,970 views, elevator cable 2,072) against 1 to 243 views for the abstract space videos."
+  },
+  {
+   "source": "google_trends / wikipedia_top / science_news",
+   "evidence": "Nothing to cross with: searches and most-read articles are GTA 6, films, football and people; the science item in several sources (a claimed proof of the Riemann hypothesis: New Scientist three times, Wikipedia 206k views) is pure mathematics with nothing to draw."
+  }
+ ],
+ "why_this_one": "The trend file offers no fresh row that passes all four tests, so this is the best unused tier A entry of the topic bank from a cluster that neither of the last two episodes used (a plane, then space). Everybody has wondered what would happen if gravity let go for a moment, and everybody expects to float away or be flung off the spinning planet. The title is seven plain words in the 'for 5 seconds' frame that works for small channels. The surprise is that nothing happens to whoever sits still (ten inches in five seconds from the Earth's spin) and that one number carries the rest: a one-foot hop is eight feet a second, and with no brake that is thirty-two feet in four seconds. The mechanism (gravity is a brake on anything going up) is carried by a ball rolled up a hill and across a flat floor. It is drawable with the kit's garden and flat cards. Nobody is hurt: Gus lands in a pool inside his fishbowl helmet and comes up with a pancake on his head; the scenario needs gravity to be switched off, so there is nothing a child could copy.",
+ "rejected": [
+  "'Comment X if you want one' rows (up to 28.6M views/day): adverts, not questions",
+  "swimming too far, six stars and leaving the map in GTA 6, the Nether roof, a Roblox account: games, no physical answer",
+  "Star-Lord and Thanos, Darth Vader's suit, Doctor Strange, Sentry and Superman: films and superheroes",
+  "jumping through a hole in the Earth (two small channels this week): already made here (hole-through-earth)",
+  "eating this while pregnant, every woman's last period: body and medical topics",
+  "why potholes come back (1.0M/day on a 5.4k-subscriber channel): a good everyday row but not a 'what if you' with Gus in it and no single surprising number to compute",
+  "a neighbor's dog in your yard, turning left four times when followed: law and personal-safety advice, not physics",
+  "a PS5 on the Moon, a bull on two legs, a human with four arms: products and invented creatures"
+ ]
+}

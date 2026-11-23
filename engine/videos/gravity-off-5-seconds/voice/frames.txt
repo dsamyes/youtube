@@ -1,0 +1,31 @@
+# word@frame at 30 fps (frame = start of the word); written by toon/voice.py, do not edit
+line  1  frames 0..157
+   For@0 five@2 seconds@12 gravity@24 lets@39 go@46 of@53 the@55 garden,@57 and@81 one@86 small@92 hop@101 puts@111 Gus@119 higher@126 than@137 his@142 roof.@146
+line  2  frames 161..276
+   It's@161 ten@165 on@171 a@175 Sunday@176 morning@188 and@209 Gus@213 is@223 flipping@228 a@238 pancake@239 in@256 his@258 garden.@262
+line  3  frames 280..431
+   Then@280 gravity@284 switches@297 off.@310 The@331 pancake@334 leaves@349 the@359 pan@361 at@371 eight@376 feet@382 a@390 second@391 and@402 just@406 keeps@411 going.@420
+line  4  frames 434..588
+   His@434 neighbor@439 yells@448 that@461 the@466 Earth@471 spins@479 at@493 eight@497 hundred@502 miles@512 an@524 hour,@527 so@547 they'll@551 be@554 flung@558 into@567 space.@572
+line  5  frames 592..754
+   His@592 wife@595 sits@603 still.@612 In@633 five@637 seconds@647 the@658 spinning@660 ground@670 sinks@682 ten@690 inches@698 under@709 her@714 chair.@717 That's@739 all.@747
+line  6  frames 758..855
+   Don't@758 move,@762 she@770 says.@775 But@794 Gus@799 wants@806 his@813 pancake,@816 so@833 he@838 hops.@840
+line  7  frames 859..972
+   That@859 hop@862 is@870 good@874 for@880 one@885 foot.@892 So@911 why@916 is@924 he@929 sailing@932 past@945 his@954 chimney?@958
+line  8  frames 976..1101
+   You@976 see,@977 gravity@985 is@1000 a@1004 brake.@1005 Roll@1028 a@1034 ball@1035 up@1046 a@1049 hill@1051 and@1062 the@1065 hill@1066 eats@1076 its@1083 speed.@1087
+line  9  frames 1105..1238
+   Take@1105 the@1110 hill@1113 away@1120 and@1135 the@1137 ball@1139 rolls@1149 on@1161 across@1166 the@1176 floor,@1178 as@1201 fast@1207 as@1219 it@1223 started.@1225
+line 10  frames 1242..1407
+   Gus@1242 leaves@1249 the@1259 lawn@1261 at@1274 eight@1280 feet@1285 a@1293 second@1294 and@1306 keeps@1310 it@1319 all.@1321 Four@1341 seconds@1349 later@1361 he's@1371 thirty@1379 two@1389 feet@1395 up.@1403
+line 11  frames 1411..1551
+   The@1411 pancake@1412 left@1428 a@1435 second@1436 sooner@1448 at@1458 the@1461 same@1463 speed,@1472 so@1498 it@1502 stays@1504 eight@1517 feet@1524 out@1533 of@1537 reach.@1540
+line 12  frames 1555..1673
+   Then@1555 gravity@1560 comes@1573 back.@1581 Gus@1602 coasts@1609 up@1621 one@1627 more@1632 foot@1639 and@1648 starts@1651 down.@1662
+line 13  frames 1677..1801
+   Luckily,@1677 that's@1692 the@1700 height@1702 of@1713 an@1716 Olympic@1719 diving@1731 tower,@1743 and@1765 the@1768 neighbor@1770 has@1782 a@1788 pool.@1789
+line 14  frames 1805..1931
+   Unluckily,@1805 Gus@1821 is@1833 no@1838 diver.@1845 He@1869 hits@1871 the@1879 water@1881 at@1892 thirty@1894 miles@1907 an@1918 hour.@1921
+line 15  frames 1935..2031
+   A@1935 moment@1936 later@1945 the@1951 pancake@1954 comes@1968 down@1977 too,@1986 right@2004 on@2013 Gus.@2019

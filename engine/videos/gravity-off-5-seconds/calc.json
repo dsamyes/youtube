@@ -1,0 +1,65 @@
+{
+ "model": "gravity stops pulling on Gus, his wife and the loose things in his garden for 5 s; the planet and the air stay; 40 N; a pancake flip and a hop that would each rise one foot; the pancake leaves as gravity lets go, Gus hops one second later; no air drag in the headline",
+ "hop": {
+  "normal_height_ft": 1.0,
+  "takeoff_m_s": 2.445,
+  "takeoff_ft_s": 8.02,
+  "takeoff_mph": 5.47
+ },
+ "flight": {
+  "coast_s": 4.0,
+  "rise_ft_when_gravity_returns": 32.1,
+  "rise_m": 9.78,
+  "extra_ft_after_return": 1.0,
+  "top_ft": 33.1,
+  "top_m": 10.08,
+  "fall_s": 1.43,
+  "landing_mph": 31.5,
+  "landing_m_s": 14.06,
+  "with_air_drag": {
+   "rise_ft": 31.2,
+   "top_ft": 32.1,
+   "landing_mph": 30.1
+  },
+  "if_he_hopped_at_once_ft": 40.1
+ },
+ "pancake": {
+  "lead_ft": 8.02,
+  "height_ft_when_gravity_returns": 40.1
+ },
+ "high_dive": {
+  "platform_m": 10.0,
+  "platform_ft": 32.8,
+  "entry_mph_from_rest": 31.3
+ },
+ "earth_spin": {
+  "equator_mph": 1040,
+  "equator_m_s": 465.1,
+  "at_40N_mph": 797,
+  "centripetal_equator_m_s2": 0.0339,
+  "ground_sinks_in_5s_in": 9.8,
+  "ground_sinks_in_5s_m": 0.249,
+  "sideways_in": 8.2,
+  "at_equator_in": 16.7,
+  "chair_drop_s": 0.23
+ },
+ "checks": {
+  "take-off speed lands on the force-plate value (2.45 m/s for a 0.31 m jump, Hawkin Dynamics)": true,
+  "one-foot hop is 8 ft/s to the first decimal": true,
+  "with gravity ON the same hop rises exactly one foot (energy)": true,
+  "step-by-step integration agrees on the rise": true,
+  "step-by-step integration agrees on the top and the landing speed": true,
+  "the rise rounds to 32 feet and the top to 33": true,
+  "the top is the 10 m high-dive platform within 10 cm": true,
+  "landing speed lands on the published 10 m dive entry (about 50 km/h = 31 mph, NBC Olympics)": true,
+  "air drag changes the rise by under a foot and the landing by under 1.5 mph": true,
+  "limiting case: zero hop, zero rise": true,
+  "the pancake's lead is the hop speed times one second: 8 ft": true,
+  "equator speed lands on the published 1,040 mph (sidereal day)": true,
+  "equator centripetal acceleration lands on the textbook 0.034 m/s2": true,
+  "40 N ground speed is about 800 mph": true,
+  "exact geometry agrees with 1/2 a t^2 for the sinking ground": true,
+  "the ground sinks about ten inches (9 to 11)": true,
+  "limiting case: at the pole the ground does not sink": true
+ }
+}

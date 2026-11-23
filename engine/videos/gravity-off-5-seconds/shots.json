@@ -1,0 +1,778 @@
+{
+ "_doc": "Picture/sound contract for gravity-off-5-seconds. 30 fps. Frames come from voice/frames.txt (word start frames). Visual reactions land 0-3 frames before their word.",
+ "fps": 30,
+ "total_frames": 2047,
+ "flash_at": 161,
+ "planned_pops": [
+  1584,
+  1585,
+  1586,
+  1587,
+  1588,
+  1589,
+  1590,
+  1879,
+  1880
+ ],
+ "places": {
+  "garden": "Gus's back garden (kit town place, plain lawn): Gus with his frying pan, his wife in the deck chair with her teacup, the neighbor behind the north fence and, on his side, a round blue garden pool",
+  "sky": "open sky (the place of plane-door-midflight): Gus and his pancake in the air above the roof and chimney of his house, and the board for the diagrams (the hill and the ball, the diving tower); all flat cards"
+ },
+ "shots": [
+  {
+   "id": 1,
+   "a": 0,
+   "b": 81,
+   "place": "sky",
+   "light": "day",
+   "line": 1,
+   "what": "HOOK, already moving. Close on Gus in pyjamas and fishbowl helmet sailing straight up against the blue, one arm stretched high toward a pancake that climbs just out of his reach; the red roof and the brick chimney of his own house slide down past him and out of the frame, white streaks rush downward, the horizon is tilted. His mouth is wide open."
+  },
+  {
+   "id": 2,
+   "a": 81,
+   "b": 161,
+   "place": "sky",
+   "light": "day",
+   "line": 1,
+   "what": "The same moment from far off: the whole little house stands at the bottom of the frame and Gus hangs in the air well above its roof and chimney, still rising, the pancake above him; a small cloud drifts by. On 'higher than his roof' he looks down at the chimney (f126). Big whoosh at f146, white flash at f161."
+  },
+  {
+   "id": 3,
+   "a": 161,
+   "b": 280,
+   "place": "garden",
+   "light": "day",
+   "line": 2,
+   "what": "Sunday morning in Gus's back garden, wide: Gus stands on the lawn with a frying pan, his wife sits behind him in a deck chair with a teacup. From f205 the lens glides in to a full shot of Gus. On 'flipping' he flicks the pan (f228): the pancake hops a foot into the air, turns over and slaps back into the pan (f244). He smiles."
+  },
+  {
+   "id": 4,
+   "a": 280,
+   "b": 331,
+   "place": "garden",
+   "light": "day",
+   "line": 3,
+   "what": "Full shot of Gus with the pan, pleased. A stopwatch pops in over his shoulder (f284, 'gravity') with a tag showing 5 (f295). On 'off' its button clicks (f308), the hand starts to run and sparkles shimmer across the lawn (f310)."
+  },
+  {
+   "id": 5,
+   "a": 331,
+   "b": 434,
+   "place": "garden",
+   "light": "day",
+   "line": 3,
+   "what": "Same full shot. Gus flicks the pan again (f347): the pancake leaves the pan and climbs in a dead straight line at a steady speed, not slowing at all; the lens tilts up after it past the fence and the houses into the sky (from f360). A tag with 8 pops in beside it (f374, 'eight feet'). Gus stares up after it, jaw dropped."
+  },
+  {
+   "id": 6,
+   "a": 434,
+   "b": 592,
+   "place": "garden",
+   "light": "day",
+   "line": 4,
+   "what": "The neighbor behind his fence, both arms in the air, yelling. A little spinning globe pops in beside his head (f469, 'Earth') and a tag with 800 over it (f495, 'eight hundred'). From f541 the lens glides closer; on 'flung' (f556) an arrow pointing up pops over him and he grabs the top of the fence with both hands, eyes squeezed shut."
+  },
+  {
+   "id": 7,
+   "a": 592,
+   "b": 633,
+   "place": "garden",
+   "light": "day",
+   "line": 5,
+   "what": "Medium shot of his wife in her deck chair, deadpan, teacup in her hand. On 'still' she takes a calm sip (f610), eyes closed."
+  },
+  {
+   "id": 8,
+   "a": 633,
+   "b": 758,
+   "place": "garden",
+   "light": "day",
+   "line": 5,
+   "what": "Her chair from the side of the lawn, full shot: chair and wife drift slowly upward off the grass (f645 to f715) and hang there, their shadow staying on the lawn. A yellow ruler pops in under the chair leg, standing on the grass (f688, 'ten'), and a tag with 10 beside it (f696). She does not react at all. On 'That's all' (f739) a small glint on her cup."
+  },
+  {
+   "id": 9,
+   "a": 758,
+   "b": 794,
+   "place": "garden",
+   "light": "day",
+   "line": 6,
+   "what": "Medium shot of his wife floating in her chair, speaking sideways to Gus without turning her head ('Don't move'); one finger raised (f762)."
+  },
+  {
+   "id": 10,
+   "a": 794,
+   "b": 859,
+   "place": "garden",
+   "light": "day",
+   "line": 6,
+   "what": "Full shot of Gus, the empty pan in his hand, staring up after his pancake (f806). On 'so' he crouches (f830) and on 'hops' he hops (f838): his feet leave the grass and he rises at a steady speed, straight up and out of the top of the frame, a puff of dust where he stood."
+  },
+  {
+   "id": 11,
+   "a": 859,
+   "b": 911,
+   "place": "garden",
+   "light": "day",
+   "line": 7,
+   "what": "An ordinary hop for comparison, full shot: Gus hops (f862), rises one foot and lands again (f880) with a little dust. A yellow ruler stands beside him and a tag with 1 pops in at the height his feet reached (f883, 'one foot')."
+  },
+  {
+   "id": 12,
+   "a": 911,
+   "b": 976,
+   "place": "sky",
+   "light": "day",
+   "line": 7,
+   "what": "Against the blue: Gus drifts upward past his own brick chimney and red roof, upright, arms out, puzzled; the chimney slides down behind him. A big question mark pops over his head (f914, 'why'). Record-stop at f966."
+  },
+  {
+   "id": 13,
+   "a": 976,
+   "b": 1105,
+   "place": "sky",
+   "light": "day",
+   "line": 8,
+   "what": "A diagram against the blue: a green hill with a level run-up in front of it and a red ball waiting at the start. A blue arrow pointing down pops in over the ball (f983, 'gravity'). On 'Roll' the ball is pushed off (f1033), rolls along the level, climbs the hill slower and slower with the arrow riding on it, stops near the top (f1085, 'speed') and starts to roll back (f1090)."
+  },
+  {
+   "id": 14,
+   "a": 1105,
+   "b": 1242,
+   "place": "sky",
+   "light": "day",
+   "line": 9,
+   "what": "The same diagram. On 'away' the hill sinks flat into a level floor and the blue arrow shrinks to nothing (f1118). The ball is pushed off again (f1137) and rolls on to screen right at one steady speed, the lens gliding with it; evenly spaced white posts pass at an even beat (f1166, f1186, f1206, f1226) and the ball never slows."
+  },
+  {
+   "id": 15,
+   "a": 1242,
+   "b": 1341,
+   "place": "garden",
+   "light": "day",
+   "line": 10,
+   "what": "Full shot of Gus on his lawn: he hops (f1247) and rises at a steady speed, the lens rising with him past the fence and the neighbor's windows; short streaks under his slippers. A tag with 8 pops in beside him (f1278, 'eight feet'); on 'keeps it all' a glint (f1310): the speed does not change."
+  },
+  {
+   "id": 16,
+   "a": 1341,
+   "b": 1411,
+   "place": "sky",
+   "light": "day",
+   "line": 10,
+   "what": "Far off, against the blue: the little house at the bottom, Gus high above it and still rising. A yellow measuring tape runs up from the lawn to his slippers (f1345 to f1377) and a tag with 32 pops in beside it (f1377, 'thirty-two')."
+  },
+  {
+   "id": 17,
+   "a": 1411,
+   "b": 1555,
+   "place": "sky",
+   "light": "day",
+   "line": 11,
+   "what": "Gus and the pancake against the blue, both rising, streaks rushing down: the pancake above, Gus below, looking up at it. A glint on the pancake (f1412). A stopwatch pops in beside it (f1434, 'a second') and its hand ticks one second ahead (f1446). Two equal blue arrows pointing up pop in, one beside each (f1461, f1466, 'same speed'). A bracket with a tag showing 8 pops in between them (f1515, 'eight feet'); Gus stretches his arm as far as it goes (f1531) and the gap stays exactly the same."
+  },
+  {
+   "id": 18,
+   "a": 1555,
+   "b": 1602,
+   "place": "garden",
+   "light": "day",
+   "line": 12,
+   "what": "The garden: his wife floating in her chair above the lawn, the stopwatch over the grass, its hand reaching five. Sparkles run over the lawn (f1560, 'gravity'); the bell rings (f1579, 'back') and chair and wife drop the ten inches onto the grass (f1580 to f1590) with a little dust. She keeps her cup level."
+  },
+  {
+   "id": 19,
+   "a": 1602,
+   "b": 1677,
+   "place": "sky",
+   "light": "day",
+   "line": 12,
+   "what": "Medium shot of Gus against the blue: the streaks around him thin out as he slows (f1609 to f1639), he hangs dead still at the top with a glint (f1641), looks down, swallows (f1648), and on 'down' he drops out of the bottom of the frame (from f1660)."
+  },
+  {
+   "id": 20,
+   "a": 1677,
+   "b": 1765,
+   "place": "sky",
+   "light": "day",
+   "line": 13,
+   "what": "Far off: Gus hanging in the air beside a tall white diving tower that pops up from the bottom of the frame (f1700, 'height'), a blue pool at its foot. A dashed red line runs level from the top platform to his slippers and a glint lands on it (f1719, 'Olympic'): exactly the same height."
+  },
+  {
+   "id": 21,
+   "a": 1765,
+   "b": 1805,
+   "place": "garden",
+   "light": "day",
+   "line": 13,
+   "what": "The neighbor behind his fence, beaming, beside his round blue garden pool with a white rim and a little ladder; he points at it with his thumb and a glint lands on the water (f1787, 'pool')."
+  },
+  {
+   "id": 22,
+   "a": 1805,
+   "b": 1869,
+   "place": "sky",
+   "light": "day",
+   "line": 14,
+   "what": "Gus falling against the blue, arms and legs flailing, tumbling slowly, streaks rushing up past him, mouth wide open; the lens tilted. Nothing like a diver."
+  },
+  {
+   "id": 23,
+   "a": 1869,
+   "b": 2047,
+   "place": "garden",
+   "light": "day",
+   "line": 14,
+   "what": "The neighbor's pool behind the fence, the neighbor beside it looking up. Gus drops in from the top of the frame (f1869 to f1879) and hits the water (f1879, 'water'): a huge splash, water flying over the neighbor, who flinches. A tag with 30 pops in over the pool (f1892, 'thirty'). From f1935 the lens glides closer: Gus's head in its fishbowl bobs up out of the water, dazed (f1938). The pancake drops out of the sky (f1990 to f2017) and lands flat on top of his helmet (f2017, 'Gus'). He looks up at it and smiles. Slow push-in to the end."
+  }
+ ],
+ "xfade": {
+  "12": 8,
+  "13": 8,
+  "15": 8,
+  "16": 8,
+  "18": 8,
+  "19": 8,
+  "21": 8
+ },
+ "events": [
+  {
+   "f": 0,
+   "to": 161,
+   "type": "wind_rush",
+   "shape": "hook",
+   "note": "cold open: Gus sails up past his roof"
+  },
+  {
+   "f": 146,
+   "type": "whoosh_big",
+   "note": "rush before the flash"
+  },
+  {
+   "f": 161,
+   "type": "flash_hit",
+   "note": "white flash into the morning"
+  },
+  {
+   "f": 161,
+   "to": 911,
+   "type": "amb_garden",
+   "note": "Sunday morning in the garden"
+  },
+  {
+   "f": 176,
+   "type": "bird_tweet",
+   "note": "a sparrow"
+  },
+  {
+   "f": 228,
+   "type": "whoosh",
+   "id": "flip1",
+   "note": "he flips the pancake"
+  },
+  {
+   "f": 244,
+   "type": "splat",
+   "id": "catch1",
+   "level": -11,
+   "note": "it slaps back into the pan"
+  },
+  {
+   "f": 258,
+   "type": "sizzle",
+   "id": "sizzle",
+   "level": -12,
+   "note": "the pan sizzles"
+  },
+  {
+   "f": 284,
+   "type": "pop",
+   "id": "watch",
+   "note": "a stopwatch pops in"
+  },
+  {
+   "f": 295,
+   "type": "arrow_pop",
+   "id": "five",
+   "note": "the 5 tag"
+  },
+  {
+   "f": 308,
+   "type": "click",
+   "id": "off",
+   "note": "the stopwatch starts: gravity is off"
+  },
+  {
+   "f": 310,
+   "type": "twinkle",
+   "id": "shimmer",
+   "note": "a shimmer runs over the lawn"
+  },
+  {
+   "f": 347,
+   "type": "whoosh",
+   "id": "flip2",
+   "note": "he flips again"
+  },
+  {
+   "f": 351,
+   "to": 400,
+   "type": "slide_whistle_up",
+   "id": "cakeup",
+   "level": -9,
+   "note": "the pancake keeps going up"
+  },
+  {
+   "f": 374,
+   "type": "arrow_pop",
+   "id": "eight1",
+   "note": "the 8 tag: eight feet a second"
+  },
+  {
+   "f": 412,
+   "type": "gulp",
+   "id": "stare",
+   "note": "Gus stares after it"
+  },
+  {
+   "f": 446,
+   "type": "oof",
+   "id": "yell",
+   "kind": "oh",
+   "note": "the neighbor yells"
+  },
+  {
+   "f": 469,
+   "type": "pop",
+   "id": "globe",
+   "note": "a spinning globe pops in"
+  },
+  {
+   "f": 495,
+   "type": "arrow_pop",
+   "id": "t800",
+   "note": "the 800 tag"
+  },
+  {
+   "f": 556,
+   "type": "zip",
+   "id": "flung",
+   "note": "an arrow up: flung into space"
+  },
+  {
+   "f": 562,
+   "type": "knock",
+   "id": "grab",
+   "count": 1,
+   "level": -9,
+   "note": "he grabs his fence"
+  },
+  {
+   "f": 610,
+   "type": "gulp",
+   "id": "sip",
+   "level": -11,
+   "note": "his wife takes a sip"
+  },
+  {
+   "f": 647,
+   "to": 700,
+   "type": "door_creak",
+   "id": "sink",
+   "level": -11,
+   "note": "the chair creaks as the ground sinks away"
+  },
+  {
+   "f": 688,
+   "type": "pop",
+   "id": "ruler",
+   "note": "a ruler under the chair leg"
+  },
+  {
+   "f": 698,
+   "type": "arrow_pop",
+   "id": "ten",
+   "note": "the 10 tag"
+  },
+  {
+   "f": 739,
+   "type": "ting",
+   "id": "thatsall",
+   "note": "that's all: a glint on her cup"
+  },
+  {
+   "f": 762,
+   "type": "blip",
+   "id": "dont",
+   "note": "one finger up: don't move"
+  },
+  {
+   "f": 830,
+   "type": "squeak",
+   "id": "crouch",
+   "note": "Gus crouches"
+  },
+  {
+   "f": 838,
+   "type": "jump_boing",
+   "id": "hop",
+   "note": "he hops"
+  },
+  {
+   "f": 840,
+   "to": 859,
+   "type": "slide_whistle_up",
+   "id": "hopup",
+   "note": "and does not come down"
+  },
+  {
+   "f": 862,
+   "type": "jump_boing",
+   "id": "hop1",
+   "level": -8,
+   "note": "an ordinary hop"
+  },
+  {
+   "f": 880,
+   "type": "thud",
+   "id": "land1",
+   "level": -10,
+   "note": "and lands"
+  },
+  {
+   "f": 883,
+   "type": "arrow_pop",
+   "id": "one",
+   "note": "the 1 tag: one foot"
+  },
+  {
+   "f": 911,
+   "to": 966,
+   "type": "wind_rush",
+   "id": "sail",
+   "shape": "rise",
+   "level": -17,
+   "note": "he sails past his chimney"
+  },
+  {
+   "f": 914,
+   "type": "question_blip",
+   "id": "why",
+   "note": "why?"
+  },
+  {
+   "f": 966,
+   "type": "record_stop",
+   "id": "stop",
+   "note": "dead stop into the explanation"
+  },
+  {
+   "f": 983,
+   "type": "arrow_pop",
+   "id": "garrow",
+   "note": "gravity: an arrow pointing down"
+  },
+  {
+   "f": 1003,
+   "type": "squeak",
+   "id": "brake",
+   "note": "a brake"
+  },
+  {
+   "f": 1033,
+   "type": "push_whoosh",
+   "id": "roll1",
+   "note": "the ball is rolled off"
+  },
+  {
+   "f": 1062,
+   "to": 1085,
+   "type": "decel_whoosh",
+   "id": "eats",
+   "note": "the hill eats its speed"
+  },
+  {
+   "f": 1087,
+   "type": "ting",
+   "id": "stopped",
+   "note": "it stops"
+  },
+  {
+   "f": 1118,
+   "type": "flip_blip",
+   "id": "flat",
+   "note": "the hill sinks flat"
+  },
+  {
+   "f": 1137,
+   "type": "push_whoosh",
+   "id": "roll2",
+   "note": "rolled off again"
+  },
+  {
+   "f": 1166,
+   "type": "blip",
+   "id": "post1",
+   "note": "a post passes"
+  },
+  {
+   "f": 1186,
+   "type": "blip",
+   "id": "post2",
+   "note": "a post passes"
+  },
+  {
+   "f": 1206,
+   "type": "blip",
+   "id": "post3",
+   "note": "a post passes"
+  },
+  {
+   "f": 1226,
+   "type": "blip",
+   "id": "post4",
+   "note": "a post passes, same beat"
+  },
+  {
+   "f": 1238,
+   "to": 1341,
+   "type": "amb_garden",
+   "birds": 0.5,
+   "note": "the lawn"
+  },
+  {
+   "f": 1247,
+   "type": "jump_boing",
+   "id": "hop2",
+   "note": "Gus leaves the lawn"
+  },
+  {
+   "f": 1251,
+   "to": 1330,
+   "type": "slide_whistle_up",
+   "id": "rise",
+   "level": -10,
+   "note": "he rises at a steady speed"
+  },
+  {
+   "f": 1278,
+   "type": "arrow_pop",
+   "id": "eight2",
+   "note": "the 8 tag"
+  },
+  {
+   "f": 1310,
+   "type": "ding",
+   "id": "keeps",
+   "level": -10,
+   "note": "he keeps it all"
+  },
+  {
+   "f": 1345,
+   "to": 1377,
+   "type": "timer_ticks",
+   "id": "tape",
+   "note": "the measuring tape runs up"
+  },
+  {
+   "f": 1377,
+   "type": "arrow_pop",
+   "id": "t32",
+   "note": "the 32 tag"
+  },
+  {
+   "f": 1412,
+   "type": "twinkle",
+   "id": "cake",
+   "level": -11,
+   "note": "a glint on the pancake"
+  },
+  {
+   "f": 1434,
+   "type": "pop",
+   "id": "watch1",
+   "note": "a stopwatch by the pancake"
+  },
+  {
+   "f": 1446,
+   "type": "click",
+   "id": "tick1",
+   "note": "one second ahead"
+  },
+  {
+   "f": 1461,
+   "type": "arrow_pop",
+   "id": "same",
+   "note": "an arrow up at the pancake"
+  },
+  {
+   "f": 1466,
+   "type": "arrow_pop",
+   "id": "same2",
+   "note": "the same arrow at Gus"
+  },
+  {
+   "f": 1515,
+   "type": "pop",
+   "id": "gap8",
+   "note": "the bracket with 8"
+  },
+  {
+   "f": 1531,
+   "type": "squeak",
+   "id": "reach",
+   "note": "he stretches"
+  },
+  {
+   "f": 1541,
+   "type": "oof",
+   "id": "strain",
+   "kind": "ugh",
+   "level": -9,
+   "note": "out of reach"
+  },
+  {
+   "f": 1551,
+   "to": 1602,
+   "type": "amb_garden",
+   "birds": 0.4,
+   "note": "back in the garden"
+  },
+  {
+   "f": 1560,
+   "type": "twinkle",
+   "id": "shimmer2",
+   "note": "gravity comes back: a shimmer over the lawn"
+  },
+  {
+   "f": 1579,
+   "type": "timer_ding",
+   "id": "bell",
+   "note": "five seconds are up"
+  },
+  {
+   "f": 1590,
+   "type": "thud",
+   "id": "chairland",
+   "level": -8,
+   "note": "the chair drops ten inches"
+  },
+  {
+   "f": 1609,
+   "to": 1639,
+   "type": "decel_whoosh",
+   "id": "coast",
+   "note": "he coasts up one more foot"
+  },
+  {
+   "f": 1641,
+   "type": "ting",
+   "id": "apex",
+   "note": "the top"
+  },
+  {
+   "f": 1648,
+   "type": "gulp",
+   "id": "uhoh",
+   "note": "he looks down"
+  },
+  {
+   "f": 1660,
+   "to": 1677,
+   "type": "slide_whistle_down",
+   "id": "down",
+   "note": "and starts down"
+  },
+  {
+   "f": 1700,
+   "type": "pop",
+   "id": "tower",
+   "note": "a diving tower pops up"
+  },
+  {
+   "f": 1719,
+   "type": "ding",
+   "id": "level",
+   "note": "exactly the same height"
+  },
+  {
+   "f": 1761,
+   "to": 1805,
+   "type": "amb_garden",
+   "birds": 0.4,
+   "note": "the neighbor's side"
+  },
+  {
+   "f": 1787,
+   "type": "twinkle",
+   "id": "pool",
+   "note": "the neighbor has a pool"
+  },
+  {
+   "f": 1805,
+   "to": 1869,
+   "type": "wind_rush",
+   "id": "fall",
+   "shape": "rise",
+   "level": -14,
+   "note": "Gus comes down"
+  },
+  {
+   "f": 1821,
+   "type": "oof",
+   "id": "aah",
+   "kind": "oh",
+   "level": -8,
+   "note": "no diver"
+  },
+  {
+   "f": 1869,
+   "to": 2047,
+   "type": "amb_garden",
+   "birds": 0.6,
+   "note": "the garden, with gravity again"
+  },
+  {
+   "f": 1879,
+   "type": "splash",
+   "id": "splash",
+   "size": "big",
+   "note": "he hits the water"
+  },
+  {
+   "f": 1892,
+   "type": "arrow_pop",
+   "id": "t30",
+   "note": "the 30 tag"
+  },
+  {
+   "f": 1938,
+   "type": "cork_pop",
+   "id": "surface",
+   "level": -7,
+   "wet": true,
+   "note": "his fishbowl bobs up"
+  },
+  {
+   "f": 1962,
+   "type": "drip",
+   "id": "drip1",
+   "note": "dripping"
+  },
+  {
+   "f": 1990,
+   "to": 2017,
+   "type": "slide_whistle_down",
+   "id": "cakefall",
+   "level": -9,
+   "note": "the pancake comes down too"
+  },
+  {
+   "f": 2017,
+   "type": "splat",
+   "id": "cakeland",
+   "note": "right on Gus"
+  }
+ ]
+}

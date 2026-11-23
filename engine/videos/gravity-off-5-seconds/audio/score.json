@@ -1,0 +1,28 @@
+{
+ "_doc": "Sound plan of gravity-off-5-seconds, read by engine/toon/audio/build.py (manual: engine/toon/audio/README.md).",
+ "key": "G",
+ "tempo": 126,
+ "seed": 2311,
+ "theme": "hop",
+ "places": {
+  "garden": "outdoor",
+  "sky": "void"
+ },
+ "sections": [
+  {"from": 0, "mood": "silence", "_why": "the hook: the rush of Gus sailing up past his roof"},
+  {"from": 161, "mood": "theme", "end": "stop", "_why": "Sunday morning, the pancake; stops as the stopwatch clicks"},
+  {"from": 308, "mood": "silence", "_why": "gravity off: click and shimmer alone"},
+  {"from": 331, "mood": "lullaby", "_why": "weightless: the pancake keeps going, the neighbor panics"},
+  {"from": 592, "mood": "waltz", "_why": "his wife sits still and the ground sinks ten inches"},
+  {"from": 794, "mood": "chase", "hits": [838], "_why": "Gus wants his pancake: downbeat on the hop, on past the chimney"},
+  {"from": 966, "mood": "silence", "_why": "dead stop with the record_stop: why?"},
+  {"from": 976, "mood": "mystery", "_why": "the explanation: gravity is a brake, the hill and the ball"},
+  {"from": 1242, "mood": "chase", "hits": [1377], "_why": "eight feet a second, thirty-two feet up; downbeat on the 32"},
+  {"from": 1411, "mood": "waltz", "_why": "the pancake floats eight feet out of reach"},
+  {"from": 1555, "mood": "lullaby", "_why": "gravity comes back; he coasts to the top"},
+  {"from": 1677, "mood": "bittersweet", "hits": [1805], "_why": "'Luckily' ... 'Unluckily' (1805)"},
+  {"from": 1869, "mood": "finale", "_why": "the pool, and the pancake; button after the last word"}
+ ],
+ "dips": [],
+ "sfx": {}
+}

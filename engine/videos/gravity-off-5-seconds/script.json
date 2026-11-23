@@ -1,0 +1,27 @@
+{
+  "id": "gravity-off-5-seconds",
+  "title": "What If Gravity Switched Off for 5 Seconds?",
+  "voice": {
+    "provider": "kokoro",
+    "voice": "am_michael",
+    "speed": 1.2,
+    "gap_s": 0.12
+  },
+  "lines": [
+    "For five seconds gravity lets go of the garden, and one small hop puts Gus higher than his roof.",
+    "It's ten on a Sunday morning and Gus is flipping a pancake in his garden.",
+    "Then gravity switches off. The pancake leaves the pan at eight feet a second and just keeps going.",
+    "His neighbor yells that the Earth spins at eight hundred miles an hour, so they'll be flung into space.",
+    "His wife sits still. In five seconds the spinning ground sinks ten inches under her chair. That's all.",
+    "Don't move, she says. But Gus wants his pancake, so he hops.",
+    "That hop is good for one foot. So why is he sailing past his chimney?",
+    "You see, gravity is a brake. Roll a ball up a hill and the hill eats its speed.",
+    "Take the hill away and the ball rolls on across the floor, as fast as it started.",
+    "Gus leaves the lawn at eight feet a second and keeps it all. Four seconds later he's thirty-two feet up.",
+    "The pancake left a second sooner at the same speed, so it stays eight feet out of reach.",
+    "Then gravity comes back. Gus coasts up one more foot and starts down.",
+    "Luckily, that's the height of an Olympic diving tower, and the neighbor has a pool.",
+    "Unluckily, Gus is no diver. He hits the water at thirty miles an hour.",
+    "A moment later the pancake comes down too, right on Gus."
+  ]
+}

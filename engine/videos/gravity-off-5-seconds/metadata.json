@@ -1,0 +1,23 @@
+{
+  "title": "What If Gravity Switched Off for 5 Seconds? 😱",
+  "description": "Gus is flipping a pancake in his garden when gravity lets go for five seconds. His wife sits still and nothing happens to her; Gus hops after his pancake and ends up higher than his roof.\n\nThe numbers:\n• A flip or a hop that would normally rise one foot leaves at v = sqrt(2 x g x 1 ft) = 8.0 feet per second (2.45 m/s, 5.5 mph).\n• With no gravity nothing slows it down (Newton's first law): the pancake and Gus keep that speed. Gus hops one second after gravity goes, so in the four seconds left he rises 4 x 8 = 32 feet (9.8 m).\n• The pancake left one second sooner at the same speed, so it stays 8 feet ahead of him all the way.\n• When gravity returns he still coasts up the one foot the hop was good for, to 33 feet (10.08 m): the height of the 10-metre Olympic diving platform. Falling from there he reaches 31 mph (14 m/s); 30 mph with air drag.\n• Someone who sits still keeps moving with the ground at about 800 mph (40 degrees north) in a straight line, while the ground curves away: in 5 seconds it sinks 10 inches (25 cm) under her. At the equator it would be 17 inches.\n(Assumptions: gravity stops pulling on Gus, his wife and the loose things in his garden for 5 seconds; the planet itself and the air stay as they are. If the whole Earth lost its own gravity the squeezed rock under your feet would spring outward and the story would be a very different one. Latitude 40 degrees north. Air drag is ignored for the rise (it costs under a foot). The small spring-back of soles, grass and seat cushions is ignored. The five seconds are stretched in the telling, and the pancake's drift toward the neighbor's pool is cartoon licence: a straight hop comes straight back down.)\n\nSources:\n• NASA Glenn Research Center, Newton's Laws of Motion: an object in motion stays in motion at constant speed unless a force acts on it\n• Hawkin Dynamics, \"Calculate jump height from take-off velocity\": a 2.45 m/s take-off is a 0.31 m (one-foot) jump; h = v^2 / 2g\n• NBC Olympics, Diving 101: the platform is 10 metres high and divers hit the water at about 50 km/h (31 mph)\n• University of Illinois Physics Van, \"Earth's Rotation and Centripetal Acceleration\": 3.39 cm/s^2 at the equator; Earth's rotation speed 1,040 mph at the equator, times the cosine of the latitude\n\nEvery number is computed in code and checked. Animation, narration and music are made with software and AI tools.\n\n#whatif #gravity #science",
+  "tags": [
+    "what if",
+    "what if gravity disappeared",
+    "what if gravity stopped for 5 seconds",
+    "no gravity for 5 seconds",
+    "what if there was no gravity",
+    "zero gravity",
+    "what if gravity turned off",
+    "for 5 seconds",
+    "would you float away",
+    "gravity",
+    "physics",
+    "science",
+    "animated story",
+    "the if engine"
+  ],
+  "categoryId": "28",
+  "containsSyntheticMedia": false,
+  "playlist": "Shorts: 60-Second Ifs"
+}

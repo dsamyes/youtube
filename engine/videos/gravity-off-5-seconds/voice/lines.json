@@ -1,0 +1,128 @@
+{
+ "voice": "kokoro-v1.0:am_michael@1.2",
+ "duration_s": 67.71,
+ "words": 243,
+ "wps": 3.59,
+ "lines": [
+  {
+   "line": 1,
+   "text": "For five seconds gravity lets go of the garden, and one small hop puts Gus higher than his roof.",
+   "s": 0.0,
+   "e": 5.234,
+   "words": 19,
+   "wps": 3.63
+  },
+  {
+   "line": 2,
+   "text": "It's ten on a Sunday morning and Gus is flipping a pancake in his garden.",
+   "s": 5.354,
+   "e": 9.208,
+   "words": 15,
+   "wps": 3.89
+  },
+  {
+   "line": 3,
+   "text": "Then gravity switches off. The pancake leaves the pan at eight feet a second and just keeps going.",
+   "s": 9.328,
+   "e": 14.362,
+   "words": 18,
+   "wps": 3.58
+  },
+  {
+   "line": 4,
+   "text": "His neighbor yells that the Earth spins at eight hundred miles an hour, so they'll be flung into space.",
+   "s": 14.482,
+   "e": 19.606,
+   "words": 19,
+   "wps": 3.71
+  },
+  {
+   "line": 5,
+   "text": "His wife sits still. In five seconds the spinning ground sinks ten inches under her chair. That's all.",
+   "s": 19.726,
+   "e": 25.15,
+   "words": 18,
+   "wps": 3.32
+  },
+  {
+   "line": 6,
+   "text": "Don't move, she says. But Gus wants his pancake, so he hops.",
+   "s": 25.27,
+   "e": 28.504,
+   "words": 12,
+   "wps": 3.71
+  },
+  {
+   "line": 7,
+   "text": "That hop is good for one foot. So why is he sailing past his chimney?",
+   "s": 28.624,
+   "e": 32.398,
+   "words": 15,
+   "wps": 3.97
+  },
+  {
+   "line": 8,
+   "text": "You see, gravity is a brake. Roll a ball up a hill and the hill eats its speed.",
+   "s": 32.518,
+   "e": 36.702,
+   "words": 18,
+   "wps": 4.3
+  },
+  {
+   "line": 9,
+   "text": "Take the hill away and the ball rolls on across the floor, as fast as it started.",
+   "s": 36.822,
+   "e": 41.286,
+   "words": 17,
+   "wps": 3.81
+  },
+  {
+   "line": 10,
+   "text": "Gus leaves the lawn at eight feet a second and keeps it all. Four seconds later he's thirty-two feet up.",
+   "s": 41.406,
+   "e": 46.9,
+   "words": 21,
+   "wps": 3.82
+  },
+  {
+   "line": 11,
+   "text": "The pancake left a second sooner at the same speed, so it stays eight feet out of reach.",
+   "s": 47.02,
+   "e": 51.724,
+   "words": 18,
+   "wps": 3.83
+  },
+  {
+   "line": 12,
+   "text": "Then gravity comes back. Gus coasts up one more foot and starts down.",
+   "s": 51.844,
+   "e": 55.778,
+   "words": 13,
+   "wps": 3.3
+  },
+  {
+   "line": 13,
+   "text": "Luckily, that's the height of an Olympic diving tower, and the neighbor has a pool.",
+   "s": 55.898,
+   "e": 60.042,
+   "words": 15,
+   "wps": 3.62
+  },
+  {
+   "line": 14,
+   "text": "Unluckily, Gus is no diver. He hits the water at thirty miles an hour.",
+   "s": 60.162,
+   "e": 64.386,
+   "words": 14,
+   "wps": 3.31
+  },
+  {
+   "line": 15,
+   "text": "A moment later the pancake comes down too, right on Gus.",
+   "s": 64.506,
+   "e": 67.71,
+   "words": 11,
+   "wps": 3.43
+  }
+ ]
+}
