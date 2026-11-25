@@ -1,0 +1,28 @@
+{
+  "id": "engines-quit-midflight",
+  "title": "What If Both Engines Quit on Your Plane?",
+  "voice": {
+    "provider": "kokoro",
+    "voice": "am_michael",
+    "speed": 1.2,
+    "gap_s": 0.12
+  },
+  "lines": [
+    "Both engines just quit on the plane Gus is on, seven miles up, and the only thing that stops is his movie.",
+    "It's three in the afternoon, and Gus is halfway through a movie.",
+    "Then it all goes quiet and the screen goes black. His neighbor grabs his seat.",
+    "We'll drop like a rock, yells Gus, but his wife just eats her sandwich.",
+    "But wait. The plane isn't dropping. Why not?",
+    "You see, the engines never held the plane up. The wings do that, and engines only push.",
+    "Ever coast down a hill on a bike? You stop pedaling, and you keep rolling.",
+    "A plane does the same. It rolls down a hill made of air.",
+    "And that hill is not steep. For each mile it sinks the plane slides fifteen miles ahead.",
+    "That's flatter than a wheelchair ramp.",
+    "So from seven miles up it glides over a hundred miles, for almost twenty minutes.",
+    "A jet once ran out of fuel and glided seventy-five miles to an island, and they all lived.",
+    "Luckily, a little propeller drops from the belly and spins in the wind to power the controls.",
+    "Unluckily, it's too small to run the movie screens.",
+    "And here's the thing. On a normal flight the pilots pull the engines back to idle a hundred miles out.",
+    "Gus has been gliding home his whole life. He just never knew it till the movie stopped."
+  ]
+}

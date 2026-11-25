@@ -1,0 +1,772 @@
+{
+ "_doc": "Picture/sound contract for engines-quit-midflight. 30 fps. Frames come from voice/frames.txt (word start frames). Visual reactions land 0-3 frames before their word.",
+ "fps": 30,
+ "total_frames": 2026,
+ "flash_at": [
+  197
+ ],
+ "places": {
+  "sky": "the open sky (the sky place of plane-door-midflight) by day and once at golden hour: the airliner, the clouds, the bike hill and every diagram are flat cards",
+  "cabin": "inside the airliner by day (the cabin of plane-door-midflight): the seat row seen from the aisle, and Gus's point of view of the seat back in front of him with its screen",
+  "ocean": "the kit's open sea at night without pipe and boat: the Atlantic of the real glide"
+ },
+ "shots": [
+  {
+   "id": 1,
+   "a": 0,
+   "b": 86,
+   "place": "sky",
+   "light": "day",
+   "line": 1,
+   "what": "HOOK, already moving. Bright day sky, white clouds streaming to screen left: a white airliner flies to screen right, big and tilted in the frame. Its engine is already coughing a ball of black smoke on frame 0, with orange sparks at the exhaust, its white exhaust streaks stutter and die, and on 'quit' (f27) a second black puff bursts out and the streaks are gone for good. The plane flies on, level. The lens pushes in on the engine side, rolled a little."
+  },
+  {
+   "id": 2,
+   "a": 86,
+   "b": 129,
+   "place": "sky",
+   "light": "day",
+   "line": 1,
+   "what": "The lens has jumped far back (whoosh at f86): the airliner is small at the top of the tall frame, a strip of land with tiny hills and houses lies at the very bottom, and a dashed white line with seven ticks runs straight down between them; the ticks pop in from the bottom up (f90 to f108) and a yellow tag with the number 7 pops beside the line (f96, 'seven miles')."
+  },
+  {
+   "id": 3,
+   "a": 129,
+   "b": 197,
+   "place": "cabin",
+   "light": "day",
+   "line": 1,
+   "what": "Gus's point of view: the blue seat back in front of him fills the frame, with its little screen in the middle. On the screen his movie plays, a red car chased by a blue car bouncing along a desert road, with a progress bar under it. On 'stops' (f157) the picture collapses to a white line and the screen is black. Whoosh at f181, white flash at f197."
+  },
+  {
+   "id": 4,
+   "a": 197,
+   "b": 241,
+   "place": "sky",
+   "light": "day",
+   "line": 2,
+   "what": "Three in the afternoon, wide and calm: a smiling sun high on the left (glint at f204), white clouds, and the small airliner cruising to screen right with two white exhaust streaks behind its engine. The lens glides along with it."
+  },
+  {
+   "id": 5,
+   "a": 241,
+   "b": 294,
+   "place": "cabin",
+   "light": "day",
+   "line": 2,
+   "what": "Inside, the seat row from the aisle: the neighbor in his Hawaiian shirt at the window, Gus's wife in the middle, deadpan, holding a sandwich on a plate, and Gus on the aisle seat in pyjamas and fishbowl helmet, leaning forward, staring straight ahead at his screen with a grin; on 'halfway' (f256) he laughs out loud. Slow push in."
+  },
+  {
+   "id": 6,
+   "a": 294,
+   "b": 329,
+   "place": "sky",
+   "light": "day",
+   "line": 3,
+   "what": "Close on the airliner's engine under the wing: its white exhaust streaks shorten and thin out (from f294), give one last flicker and are gone; on 'quiet' (f311) a small grey puff drifts out of the back and the engine hangs there, silent. Clouds still slide past."
+  },
+  {
+   "id": 7,
+   "a": 329,
+   "b": 371,
+   "place": "cabin",
+   "light": "day",
+   "line": 3,
+   "what": "Gus's point of view again: the movie on the seat-back screen, the two cars mid-chase; on 'black' (f347) the picture collapses to a white line and goes black. In the black glass the faint reflection of Gus's face in his fishbowl appears, mouth open (f352)."
+  },
+  {
+   "id": 8,
+   "a": 371,
+   "b": 467,
+   "place": "cabin",
+   "light": "day",
+   "line": 3,
+   "what": "The seat row. The neighbor at the window grabs his seat with both hands and goes rigid, eyes wide (f384, 'grabs his seat'); the wife calmly holds her plate. The lens glides over to Gus (centred on f413): he throws both hands up and yells, mouth going (f413 to f455); a thought bubble with a grey rock dropping, speed lines above it, pops over his head (f428, 'rock')."
+  },
+  {
+   "id": 9,
+   "a": 467,
+   "b": 537,
+   "place": "cabin",
+   "light": "day",
+   "line": 4,
+   "what": "The lens settles on Gus's wife in the middle seat, deadpan, plate with the sandwich in her hand, while Gus still flails beside her at the edge of the frame. On 'eats' (f500) she takes a big bite and chews with happy closed eyes; the sandwich on the plate now has a bite out of it."
+  },
+  {
+   "id": 10,
+   "a": 537,
+   "b": 607,
+   "place": "sky",
+   "light": "day",
+   "line": 5,
+   "what": "Record stop. The airliner from the side, steady in the middle of the sky, engine silent, flying level. Below it a dashed arrow points straight down, the fall everybody expects; on 'isn't dropping' (f565) a red cross stamps over that arrow. A big question mark pops beside the plane (f586, 'Why not')."
+  },
+  {
+   "id": 11,
+   "a": 607,
+   "b": 755,
+   "place": "sky",
+   "light": "day",
+   "line": 6,
+   "what": "The same airliner, a diagram now. A small pale arrow pointing up pops under the engine (f640, 'held the plane up') and a red cross stamps over it (f659): no. On 'The wings do that' two big blue arrows pointing up pop under the wing one after the other and bob, carrying the plane (f681, f689). On 'engines only push' an orange arrow pointing forward pops behind the engine, pushing it (f713) and the plane nudges ahead with it (f735, 'push')."
+  },
+  {
+   "id": 12,
+   "a": 755,
+   "b": 812,
+   "place": "sky",
+   "light": "day",
+   "line": 7,
+   "what": "A green hill, a long straight slope from the upper left to the lower right, against the sky. Gus sits on a red bicycle at the top, in pyjamas and helmet, feet on the pedals, and starts rolling down it (f760, 'coast down'), wheels turning, his pedals going round."
+  },
+  {
+   "id": 13,
+   "a": 812,
+   "b": 871,
+   "place": "sky",
+   "light": "day",
+   "line": 7,
+   "what": "Closer on Gus on the bike, halfway down the same slope: on 'stop pedaling' he takes both feet off the pedals and sticks his legs straight out to the sides (f815 to f823), grinning; the bike keeps rolling down the hill, wheels spinning, speed streaks behind him (f845, 'keep rolling')."
+  },
+  {
+   "id": 14,
+   "a": 871,
+   "b": 1019,
+   "place": "sky",
+   "light": "day",
+   "line": 8,
+   "what": "The same slope, and on it, in place of the bike, the airliner, nose down the hill, engine silent. On 'rolls down' it slides down the slope (f916 to f960); as it goes the green hill under it turns into a pale blue see-through wedge with little white swirls: a hill made of air (f944). Then, on 'not steep', the whole wedge tips down until it is almost flat (f986 to f1000), the plane riding it."
+  },
+  {
+   "id": 15,
+   "a": 1019,
+   "b": 1120,
+   "place": "sky",
+   "light": "day",
+   "line": 9,
+   "what": "A long flat triangle across the frame, true to scale, the plane gliding down its long side from left to right. At the left end a short upright side with a tag showing 1 (the side turns orange and the tag pops at f1030, 'each mile it sinks'). Along the bottom fifteen ticks pop in one after the other from left to right (f1065 to f1093, 'slides fifteen miles ahead') and a tag showing 15 pops under them (f1081)."
+  },
+  {
+   "id": 16,
+   "a": 1120,
+   "b": 1169,
+   "place": "sky",
+   "light": "day",
+   "line": 10,
+   "what": "Two wedges one above the other, the same length. On top the plane's pale wedge of air with its dashed blue slope and the airliner sliding down it; below it a grey concrete wheelchair ramp with a handrail, visibly steeper, and a blue sign with the white wheelchair symbol that pops beside it (f1142, 'wheelchair'). A sparkle on the plane (f1157, 'ramp')."
+  },
+  {
+   "id": 17,
+   "a": 1169,
+   "b": 1311,
+   "place": "sky",
+   "light": "day",
+   "line": 11,
+   "what": "The whole glide from the side: the airliner starts at the top left beside an upright arrow and a tag showing 7 (f1177, 'seven miles up') and glides down a long dashed line to a runway on the ground at the bottom right (f1209 to f1300). A tag showing 100+ pops under the ground line (f1232, 'over a hundred miles'). A round clock pops in at the top right (f1268); a red wedge sweeps over a third of its face (f1274 to f1296) and a tag showing 20 pops beside it (f1296, 'twenty minutes')."
+  },
+  {
+   "id": 18,
+   "a": 1311,
+   "b": 1472,
+   "place": "ocean",
+   "light": "night",
+   "line": 12,
+   "what": "Night over the open Atlantic, moon on the water. A jet glides in from the left, low over the sea. A round fuel gauge with a little pump symbol pops in below it over the water (f1320); its needle sinks to empty and a red lamp blinks (f1343, 'out of fuel'); the engine's exhaust streaks die (f1357). The jet glides on to screen right; a tag showing 75 pops under it (f1373, 'seventy-five miles'). A dark island with a lit runway slides in from the right (from f1412, 'island'); the jet touches down on it (f1436) and stops, and sparkles and little hearts rise over it (f1449, 'they all lived')."
+  },
+  {
+   "id": 19,
+   "a": 1472,
+   "b": 1622,
+   "place": "sky",
+   "light": "day",
+   "line": 13,
+   "what": "Day again, close under the airliner's belly. A small hatch flips open (f1508) and a little two-blade propeller on a short arm drops out (f1510, 'drops from the belly'); wind streaks hit it and it spins up, faster and faster (f1544, 'spins in the wind'). A yellow spark runs from it along the belly to the nose (f1583, 'power') and a round control wheel symbol lights up over the cockpit with a ding (f1598, 'controls')."
+  },
+  {
+   "id": 20,
+   "a": 1622,
+   "b": 1709,
+   "place": "cabin",
+   "light": "day",
+   "line": 14,
+   "what": "Gus's point of view: the seat-back screen, black, with the reflection of his glum face in it. His finger comes up from below and pokes the screen (f1670), then again (f1682): nothing. On 'movie screens' a small red crossed-out plug lights up on the black glass (f1690)."
+  },
+  {
+   "id": 21,
+   "a": 1709,
+   "b": 1874,
+   "place": "sky",
+   "light": "day",
+   "line": 15,
+   "what": "An ordinary sunny flight: the airliner at the top left with two lively white exhaust streaks, a dashed line running from its nose down to a runway at the right edge. A lightbulb pops over it (f1722, 'here's the thing'). In the lower half of the frame a pilot's hand in a dark sleeve with gold stripes holds two throttle levers and pulls them back (f1791 to f1812, 'pull the engines back'); the exhaust streaks shrink to nothing and a sleep bubble swells at the engine (f1827, 'idle'). A tag showing 100 pops under the dashed line (f1840, 'a hundred miles out') and the plane noses down along it."
+  },
+  {
+   "id": 22,
+   "a": 1874,
+   "b": 1952,
+   "place": "sky",
+   "light": "golden",
+   "line": 16,
+   "what": "Golden evening sky. The airliner, big in the frame, engine silent, glides gently down to screen right past the low sun toward a little house with lit windows on the green land at the bottom right (from f1893, 'gliding home'); a sparkle on the house (f1929)."
+  },
+  {
+   "id": 23,
+   "a": 1952,
+   "b": 2026,
+   "place": "cabin",
+   "light": "day",
+   "line": 16,
+   "what": "PAYOFF. Gus's point of view one last time: the dead black seat-back screen, and in it the reflection of his face, scowling. He lets out a sigh (f1958). On the last word his finger taps the dark screen once more (f1993, 'stopped'): nothing happens. Hold on the scowl."
+  }
+ ],
+ "xfade": {
+  "5": 8,
+  "10": 8,
+  "12": 8,
+  "14": 8,
+  "16": 8,
+  "18": 8,
+  "19": 8,
+  "22": 8
+ },
+ "events": [
+  {
+   "f": 0,
+   "type": "wind_rush",
+   "to": 197,
+   "shape": "hook",
+   "note": "the airliner at speed under the cold open"
+  },
+  {
+   "f": 5,
+   "type": "flame_poof",
+   "id": "cough",
+   "note": "the engine coughs black smoke"
+  },
+  {
+   "f": 27,
+   "type": "power_down",
+   "id": "quit",
+   "note": "both engines quit"
+  },
+  {
+   "f": 86,
+   "type": "whoosh",
+   "id": "back",
+   "note": "the lens jumps back"
+  },
+  {
+   "f": 96,
+   "type": "arrow_pop",
+   "id": "seven",
+   "note": "tag 7: seven miles up"
+  },
+  {
+   "f": 157,
+   "type": "power_down",
+   "id": "stop",
+   "level": -10,
+   "note": "the movie stops"
+  },
+  {
+   "f": 181,
+   "type": "whoosh_big",
+   "note": "into the flash"
+  },
+  {
+   "f": 197,
+   "type": "flash_hit",
+   "note": "white flash"
+  },
+  {
+   "f": 197,
+   "type": "amb_wind",
+   "to": 241,
+   "strength": 0.3,
+   "note": "open sky"
+  },
+  {
+   "f": 204,
+   "type": "twinkle",
+   "id": "sun",
+   "note": "afternoon sun glints"
+  },
+  {
+   "f": 241,
+   "type": "amb_drone",
+   "to": 294,
+   "note": "cabin hum, engines running"
+  },
+  {
+   "f": 256,
+   "type": "pic_laugh",
+   "id": "laugh",
+   "note": "Gus laughs at his movie (silent)"
+  },
+  {
+   "f": 294,
+   "type": "rocket_rumble",
+   "to": 326,
+   "shape": "fade",
+   "id": "die",
+   "level": -16,
+   "note": "the engine winds down"
+  },
+  {
+   "f": 311,
+   "type": "power_down",
+   "id": "quiet",
+   "note": "it all goes quiet"
+  },
+  {
+   "f": 329,
+   "type": "amb_room",
+   "to": 537,
+   "note": "the quiet cabin"
+  },
+  {
+   "f": 347,
+   "type": "click",
+   "id": "black",
+   "note": "the screen goes black"
+  },
+  {
+   "f": 352,
+   "type": "gulp",
+   "id": "reflect",
+   "note": "Gus's face in the black glass"
+  },
+  {
+   "f": 384,
+   "type": "push_whoosh",
+   "id": "grab",
+   "note": "the neighbor grabs his seat"
+  },
+  {
+   "f": 413,
+   "type": "crowd_gasp",
+   "id": "yell",
+   "note": "Gus yells"
+  },
+  {
+   "f": 428,
+   "type": "pop",
+   "id": "rock",
+   "note": "thought bubble: a rock"
+  },
+  {
+   "f": 440,
+   "type": "slide_whistle_down",
+   "to": 455,
+   "id": "rockfall",
+   "note": "the rock drops"
+  },
+  {
+   "f": 500,
+   "type": "chomp",
+   "id": "bite",
+   "note": "his wife bites her sandwich"
+  },
+  {
+   "f": 537,
+   "type": "record_stop",
+   "note": "But wait"
+  },
+  {
+   "f": 537,
+   "type": "amb_wind",
+   "to": 607,
+   "strength": 0.2,
+   "note": "thin air in the pause"
+  },
+  {
+   "f": 565,
+   "type": "buzzer",
+   "id": "nodrop",
+   "note": "red cross over the fall arrow"
+  },
+  {
+   "f": 586,
+   "type": "question_blip",
+   "id": "why",
+   "note": "why not?"
+  },
+  {
+   "f": 640,
+   "type": "arrow_pop",
+   "id": "fake",
+   "note": "up arrow under the engine"
+  },
+  {
+   "f": 659,
+   "type": "flip_blip",
+   "id": "cross",
+   "note": "crossed out: engines never held it up"
+  },
+  {
+   "f": 681,
+   "type": "pop",
+   "id": "lift1",
+   "pitch": "E6",
+   "note": "first lift arrow under the wing"
+  },
+  {
+   "f": 689,
+   "type": "pop",
+   "id": "lift2",
+   "pitch": "G6",
+   "note": "second lift arrow"
+  },
+  {
+   "f": 713,
+   "type": "push_whoosh",
+   "id": "push",
+   "note": "the push arrow at the engine"
+  },
+  {
+   "f": 735,
+   "type": "zip",
+   "id": "nudge",
+   "size": "small",
+   "note": "the plane nudges ahead"
+  },
+  {
+   "f": 755,
+   "type": "amb_garden",
+   "to": 871,
+   "note": "the hill outdoors"
+  },
+  {
+   "f": 760,
+   "type": "whoosh",
+   "id": "coast",
+   "note": "Gus rolls off down the hill"
+  },
+  {
+   "f": 772,
+   "type": "timer_ticks",
+   "to": 806,
+   "id": "free",
+   "level": -16,
+   "note": "the chain turning"
+  },
+  {
+   "f": 815,
+   "type": "pop",
+   "id": "legs",
+   "note": "feet off the pedals"
+  },
+  {
+   "f": 826,
+   "type": "timer_ticks",
+   "to": 866,
+   "id": "free2",
+   "level": -15,
+   "note": "freewheel clicking: he keeps rolling"
+  },
+  {
+   "f": 845,
+   "type": "zip",
+   "id": "roll",
+   "note": "rolling on"
+  },
+  {
+   "f": 871,
+   "type": "whoosh",
+   "id": "swap",
+   "note": "the airliner on the hill"
+  },
+  {
+   "f": 916,
+   "type": "slide_whistle_down",
+   "to": 958,
+   "id": "slide",
+   "note": "it rolls down the hill"
+  },
+  {
+   "f": 944,
+   "type": "twinkle",
+   "id": "air",
+   "note": "the hill turns to air"
+  },
+  {
+   "f": 986,
+   "type": "decel_whoosh",
+   "to": 1002,
+   "id": "flat",
+   "note": "the hill tips flat: not steep"
+  },
+  {
+   "f": 1030,
+   "type": "arrow_pop",
+   "id": "one",
+   "note": "tag 1"
+  },
+  {
+   "f": 1044,
+   "type": "blip",
+   "id": "sink",
+   "note": "it sinks one mile"
+  },
+  {
+   "f": 1065,
+   "type": "timer_ticks",
+   "to": 1093,
+   "id": "ticks",
+   "note": "fifteen ticks"
+  },
+  {
+   "f": 1081,
+   "type": "arrow_pop",
+   "id": "fifteen",
+   "note": "tag 15"
+  },
+  {
+   "f": 1120,
+   "type": "whoosh",
+   "id": "rampin",
+   "note": "the ramp"
+  },
+  {
+   "f": 1142,
+   "type": "pop",
+   "id": "chair",
+   "note": "wheelchair sign"
+  },
+  {
+   "f": 1157,
+   "type": "ding",
+   "id": "flatter",
+   "note": "flatter than the ramp"
+  },
+  {
+   "f": 1177,
+   "type": "arrow_pop",
+   "id": "seven2",
+   "note": "tag 7"
+  },
+  {
+   "f": 1209,
+   "type": "decel_whoosh",
+   "to": 1262,
+   "id": "glide",
+   "note": "the long glide"
+  },
+  {
+   "f": 1232,
+   "type": "arrow_pop",
+   "id": "hundred",
+   "note": "tag 100+"
+  },
+  {
+   "f": 1268,
+   "type": "pop",
+   "id": "clock",
+   "note": "the clock"
+  },
+  {
+   "f": 1274,
+   "type": "timer_ticks",
+   "to": 1294,
+   "id": "sweep",
+   "note": "the minutes sweep"
+  },
+  {
+   "f": 1296,
+   "type": "timer_ding",
+   "id": "twenty",
+   "note": "twenty minutes"
+  },
+  {
+   "f": 1311,
+   "type": "amb_ocean_night",
+   "to": 1472,
+   "note": "the Atlantic at night"
+  },
+  {
+   "f": 1320,
+   "type": "pop",
+   "id": "gauge",
+   "note": "fuel gauge"
+  },
+  {
+   "f": 1343,
+   "type": "alarm",
+   "to": 1356,
+   "id": "empty",
+   "kind": "beep",
+   "note": "out of fuel"
+  },
+  {
+   "f": 1357,
+   "type": "power_down",
+   "id": "out",
+   "note": "the engines die"
+  },
+  {
+   "f": 1373,
+   "type": "arrow_pop",
+   "id": "miles75",
+   "note": "tag 75"
+  },
+  {
+   "f": 1412,
+   "type": "twinkle",
+   "id": "island",
+   "note": "the island's runway lights"
+  },
+  {
+   "f": 1436,
+   "type": "thud",
+   "id": "land",
+   "note": "touchdown"
+  },
+  {
+   "f": 1449,
+   "type": "crowd_cheer",
+   "to": 1470,
+   "id": "lived",
+   "note": "they all lived"
+  },
+  {
+   "f": 1472,
+   "type": "amb_wind",
+   "to": 1622,
+   "strength": 0.4,
+   "note": "air under the belly"
+  },
+  {
+   "f": 1499,
+   "type": "click",
+   "id": "hatch",
+   "note": "the hatch flips open"
+  },
+  {
+   "f": 1510,
+   "type": "cork_pop",
+   "id": "drop",
+   "wet": false,
+   "note": "the little propeller drops out"
+  },
+  {
+   "f": 1544,
+   "type": "power_up",
+   "id": "spin",
+   "note": "it spins up in the wind"
+  },
+  {
+   "f": 1583,
+   "type": "zip",
+   "id": "power",
+   "size": "small",
+   "note": "power runs to the nose"
+  },
+  {
+   "f": 1598,
+   "type": "ding",
+   "id": "controls",
+   "note": "the controls light up"
+  },
+  {
+   "f": 1622,
+   "type": "amb_room",
+   "to": 1709,
+   "note": "the quiet cabin"
+  },
+  {
+   "f": 1622,
+   "type": "gulp",
+   "id": "unlucky",
+   "note": "Unluckily"
+  },
+  {
+   "f": 1670,
+   "type": "click",
+   "id": "poke1",
+   "note": "he pokes the screen"
+  },
+  {
+   "f": 1682,
+   "type": "click",
+   "id": "poke2",
+   "note": "again"
+  },
+  {
+   "f": 1690,
+   "type": "buzzer",
+   "id": "nope",
+   "note": "no power for the screens"
+  },
+  {
+   "f": 1709,
+   "type": "amb_wind",
+   "to": 1952,
+   "strength": 0.3,
+   "note": "open sky"
+  },
+  {
+   "f": 1722,
+   "type": "pop",
+   "id": "thing",
+   "note": "lightbulb"
+  },
+  {
+   "f": 1791,
+   "type": "door_creak",
+   "to": 1812,
+   "id": "pull",
+   "note": "the throttle levers come back"
+  },
+  {
+   "f": 1827,
+   "type": "power_down",
+   "id": "idle",
+   "note": "engines to idle"
+  },
+  {
+   "f": 1840,
+   "type": "arrow_pop",
+   "id": "hundred2",
+   "note": "tag 100"
+  },
+  {
+   "f": 1893,
+   "type": "decel_whoosh",
+   "to": 1946,
+   "id": "home",
+   "note": "gliding home"
+  },
+  {
+   "f": 1929,
+   "type": "twinkle",
+   "id": "house",
+   "note": "home"
+  },
+  {
+   "f": 1952,
+   "type": "amb_room",
+   "to": 2026,
+   "note": "the quiet cabin"
+  },
+  {
+   "f": 1958,
+   "type": "oof",
+   "id": "sigh",
+   "kind": "ugh",
+   "note": "Gus sighs"
+  },
+  {
+   "f": 1993,
+   "type": "click",
+   "id": "tap",
+   "note": "one more tap on the dead screen"
+  }
+ ],
+ "planned_pops": [
+  157,
+  347,
+  565,
+  566,
+  1690
+ ]
+}

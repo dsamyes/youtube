@@ -1,0 +1,21 @@
+{
+ "id": "engines-quit-midflight",
+ "question": "What if both engines quit on your plane?",
+ "answer_in_one_line": "It does not fall: an airliner without thrust is a glider that slides about fifteen miles ahead for every mile it sinks, a slope flatter than a wheelchair ramp, so from seven miles up it has over a hundred miles and almost twenty minutes to reach a runway; pilots pull the engines back to idle about that far out on a normal flight anyway.",
+ "trend_basis": [
+  {"source": "topic_bank", "evidence": "engines-quit-midflight: 'What Happens If a Plane's Engines Stop Mid-Flight?' 125k views on a 686-subscriber channel."},
+  {"source": "youtube_shorts", "evidence": "No fresh everyday 'what if you' row today. Of the 60 rows, 17 are 'Comment ... if you need one' product adverts (the top of the list, up to 16.6M views/day), 16 are GTA 6 rows ('What Happens If You Hit a Plane's Wing in Every GTA Game?' 1.83M/day, 'What Happens If You Reach the N in GTA 6?' 1.30M/day), the rest are Minecraft, film and fan what-ifs; the one physical scenario, 'What Would Happen If You Jumped Through a Hole in the Earth' (0.82M/day on a 19.1k-subscriber channel), is this channel's first episode."},
+  {"source": "google_trends", "evidence": "Flying is what people are doing and searching this week: 'radar' (10,000+) with the news 'Delays reported after brief ground stop at Chicago's O'Hare on busiest day of Thanksgiving holiday', and 'weather miami' with 'Thanksgiving travel in South Florida likely to be impacted'."},
+  {"source": "own_channel", "evidence": "The plane-door short is still the channel's best (8,971 views); the lightning-on-a-plane short still draws 352 views/day after four days. The last two episodes were a space story and a five-seconds story, so a plane story is due."}
+ ],
+ "why_this_one": "The trend file has no row that passes the four tests, so the topic comes from the bank: a tier A entry outside the clusters of the last two episodes, from the cluster that works best on this channel, in the week when the most people of the year sit in a plane seat. Everybody who has heard the engines change their note has asked this question; the title is plain nouns; the answer is a surprise that one number carries (fifteen to one: over a hundred miles from cruise) and that we can compute and check against a real glide (2001, 75 miles to an island, everybody lived). The ending is ours: the engines are back at idle about a hundred miles out on every normal flight, so Gus has been gliding home his whole life; the only thing he loses is the end of his movie. It is drawable with the cabin and sky of the plane-door episode and the kit's night sea; nobody is hurt and there is nothing to imitate.",
+ "rejected": [
+  "the 'Comment ... if you need one' rows (17 of 60, up to 16.6M views/day): product adverts, not topics",
+  "GTA 6 rows (hitting a plane's wing, reaching the N, six stars, leaving the map), Minecraft bedrock and Nether rows, Thanos, Cobra Kai, Cinderella's childhood: games, films and superheroes",
+  "'What Would Happen If You Jumped Through a Hole in the Earth' (0.82M/day): already made (hole-through-earth)",
+  "'What Happens If Both Train Drivers Fall Asleep?' (1.41M/day): train accidents; 'What Happens If You Drink Too Much Water?' and gum with braces: body and medical advice",
+  "'What If You Slapped A Chicken Until it Cooked' (0.34M/day, 44.9k subscribers): a real computable answer, but something a child could try on an animal",
+  "'What If You Built A Bull That Walks On Two Legs' and 'A Human With Four Arms' (0.58M and 0.49M/day on small channels): anatomy fantasies without a number we could check",
+  "'Never Put a Mosasaurus in Your Pool' (0.38M/day, 2,980 subscribers): an animal fantasy, does not clearly beat an everyday plane question"
+ ]
+}

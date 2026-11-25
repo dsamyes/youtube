@@ -1,0 +1,104 @@
+{
+ "inputs": {
+  "altitude_ft": 38000.0,
+  "glide_ratio": 15.0,
+  "glide_ratio_range": [
+   12.0,
+   17.0
+  ],
+  "glide_speed_keas": 230.0
+ },
+ "height": {
+  "miles": 7.2,
+  "seven_miles": 7
+ },
+ "glide": {
+  "distance_mi": 108,
+  "distance_km": 174,
+  "distance_mi_low": 86,
+  "distance_mi_high": 122,
+  "minutes": 18.4,
+  "mean_sink_ft_per_min": 2068,
+  "slope_deg": 3.81,
+  "tas_start_mph": 508
+ },
+ "ramp": {
+  "ratio": 12.0,
+  "slope_deg": 4.76
+ },
+ "free_fall": {
+  "vacuum_seconds": 48.6
+ },
+ "normal_descent": {
+  "nm_per_1000ft": 3.0,
+  "start_nm": 114,
+  "start_mi": 131,
+  "ratio": 18.2
+ },
+ "glide_2001": {
+  "miles": 75,
+  "nmi": 65.0,
+  "from_ft": 34500.0,
+  "minutes": 19.0,
+  "people": 306,
+  "ratio_flown": 11.4,
+  "model_minutes": 17.1
+ },
+ "checks": [
+  {
+   "check": "integrated glide distance = height x L/D within 0.5 %",
+   "ok": true,
+   "detail": "108.0 mi vs 108.0 mi"
+  },
+  {
+   "check": "ISA density at 11 km = 0.3639 kg/m3",
+   "ok": true,
+   "detail": "0.3639"
+  },
+  {
+   "check": "2001 glide (65 nmi from 34,500 ft) needs less than L/D 15",
+   "ok": true,
+   "detail": "flown ratio 11.4"
+  },
+  {
+   "check": "2001 glide lasted 19 min; model from 34,500 ft within 25 %",
+   "ok": true,
+   "detail": "model 17.1 min"
+  },
+  {
+   "check": "glide time from 38,000 ft is 17 to 23 minutes",
+   "ok": true,
+   "detail": "18.4 min, mean sink 2068 ft/min"
+  },
+  {
+   "check": "L/D 15 gives more than 100 miles",
+   "ok": true,
+   "detail": "108 mi (range 86 to 122)"
+  },
+  {
+   "check": "even L/D 12 beats the 75 miles flown in 2001",
+   "ok": true,
+   "detail": "86 mi vs 75 mi"
+  },
+  {
+   "check": "glide slope is flatter than a 1:12 ramp",
+   "ok": true,
+   "detail": "3.81 deg vs 4.76 deg"
+  },
+  {
+   "check": "38,000 ft is about seven miles",
+   "ok": true,
+   "detail": "7.20 mi"
+  },
+  {
+   "check": "3-to-1 rule from 38,000 ft is more than 100 miles",
+   "ok": true,
+   "detail": "114 nmi = 131 mi, ratio 18.2:1"
+  },
+  {
+   "check": "glide lasts more than 20 times a vacuum free fall",
+   "ok": true,
+   "detail": "free fall 49 s"
+  }
+ ]
+}

@@ -186,6 +186,23 @@
    "status": "published",
    "youtube_id": "0AYhmUTp0zc",
    "publish_at": "2026-11-24T15:00:00Z"
+  },
+  {
+   "id": "engines-quit-midflight",
+   "date": "2026-11-25",
+   "title": "What If Both Engines Quit on Your Plane? ✈️",
+   "topic": "both engines of an airliner stop at 38,000 ft: it glides about fifteen miles for each mile it sinks (flatter than a wheelchair ramp), over a hundred miles in almost twenty minutes; bike coasting downhill analogy; the 2001 glide of 75 miles to an island; ram air turbine; a normal descent is at idle from a hundred miles out",
+   "hero": "Gus",
+   "places": [
+    "sky",
+    "cabin",
+    "ocean"
+   ],
+   "trend": "topic bank (plane cluster) in Thanksgiving travel week: google_trends 'radar' with the O'Hare ground stop on the busiest travel day; no fresh everyday what-if row in youtube_shorts (adverts and GTA 6)",
+   "bank_id": "engines-quit-midflight",
+   "status": "published",
+   "youtube_id": "cdHCld-1GWE",
+   "publish_at": "2026-11-26T15:00:00Z"
   }
  ]
 }

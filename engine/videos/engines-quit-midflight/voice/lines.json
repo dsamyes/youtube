@@ -1,0 +1,136 @@
+{
+ "voice": "kokoro-v1.0:am_michael@1.2",
+ "duration_s": 67.044,
+ "words": 236,
+ "wps": 3.52,
+ "lines": [
+  {
+   "line": 1,
+   "text": "Both engines just quit on the plane Gus is on, seven miles up, and the only thing that stops is his movie.",
+   "s": 0.0,
+   "e": 6.444,
+   "words": 22,
+   "wps": 3.41
+  },
+  {
+   "line": 2,
+   "text": "It's three in the afternoon, and Gus is halfway through a movie.",
+   "s": 6.564,
+   "e": 9.668,
+   "words": 12,
+   "wps": 3.87
+  },
+  {
+   "line": 3,
+   "text": "Then it all goes quiet and the screen goes black. His neighbor grabs his seat.",
+   "s": 9.788,
+   "e": 13.662,
+   "words": 15,
+   "wps": 3.87
+  },
+  {
+   "line": 4,
+   "text": "We'll drop like a rock, yells Gus, but his wife just eats her sandwich.",
+   "s": 13.782,
+   "e": 17.766,
+   "words": 14,
+   "wps": 3.51
+  },
+  {
+   "line": 5,
+   "text": "But wait. The plane isn't dropping. Why not?",
+   "s": 17.886,
+   "e": 20.12,
+   "words": 8,
+   "wps": 3.58
+  },
+  {
+   "line": 6,
+   "text": "You see, the engines never held the plane up. The wings do that, and engines only push.",
+   "s": 20.24,
+   "e": 25.044,
+   "words": 17,
+   "wps": 3.54
+  },
+  {
+   "line": 7,
+   "text": "Ever coast down a hill on a bike? You stop pedaling, and you keep rolling.",
+   "s": 25.164,
+   "e": 28.908,
+   "words": 15,
+   "wps": 4.01
+  },
+  {
+   "line": 8,
+   "text": "A plane does the same. It rolls down a hill made of air.",
+   "s": 29.028,
+   "e": 32.192,
+   "words": 13,
+   "wps": 4.11
+  },
+  {
+   "line": 9,
+   "text": "And that hill is not steep. For each mile it sinks the plane slides fifteen miles ahead.",
+   "s": 32.312,
+   "e": 37.206,
+   "words": 17,
+   "wps": 3.47
+  },
+  {
+   "line": 10,
+   "text": "That's flatter than a wheelchair ramp.",
+   "s": 37.326,
+   "e": 38.85,
+   "words": 6,
+   "wps": 3.94
+  },
+  {
+   "line": 11,
+   "text": "So from seven miles up it glides over a hundred miles, for almost twenty minutes.",
+   "s": 38.97,
+   "e": 43.584,
+   "words": 15,
+   "wps": 3.25
+  },
+  {
+   "line": 12,
+   "text": "A jet once ran out of fuel and glided seventy-five miles to an island, and they all lived.",
+   "s": 43.704,
+   "e": 48.948,
+   "words": 19,
+   "wps": 3.62
+  },
+  {
+   "line": 13,
+   "text": "Luckily, a little propeller drops from the belly and spins in the wind to power the controls.",
+   "s": 49.068,
+   "e": 53.962,
+   "words": 17,
+   "wps": 3.47
+  },
+  {
+   "line": 14,
+   "text": "Unluckily, it's too small to run the movie screens.",
+   "s": 54.082,
+   "e": 56.836,
+   "words": 9,
+   "wps": 3.27
+  },
+  {
+   "line": 15,
+   "text": "And here's the thing. On a normal flight the pilots pull the engines back to idle a hundred miles out.",
+   "s": 56.956,
+   "e": 62.34,
+   "words": 20,
+   "wps": 3.71
+  },
+  {
+   "line": 16,
+   "text": "Gus has been gliding home his whole life. He just never knew it till the movie stopped.",
+   "s": 62.46,
+   "e": 67.044,
+   "words": 17,
+   "wps": 3.71
+  }
+ ]
+}

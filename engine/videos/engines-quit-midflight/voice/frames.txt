@@ -1,0 +1,33 @@
+# word@frame at 30 fps (frame = start of the word); written by toon/voice.py, do not edit
+line  1  frames 0..193
+   Both@0 engines@9 just@22 quit@29 on@38 the@42 plane@44 Gus@56 is@64 on,@68 seven@88 miles@98 up,@112 and@129 the@133 only@136 thing@146 that@154 stops@159 is@174 his@178 movie.@182
+line  2  frames 197..290
+   It's@197 three@201 in@209 the@211 afternoon,@215 and@241 Gus@246 is@254 halfway@258 through@272 a@278 movie.@279
+line  3  frames 294..409
+   Then@294 it@297 all@299 goes@306 quiet@313 and@326 the@329 screen@331 goes@343 black.@349 His@371 neighbor@376 grabs@386 his@398 seat.@401
+line  4  frames 413..533
+   We'll@413 drop@416 like@424 a@428 rock,@430 yells@443 Gus,@455 but@467 his@480 wife@484 just@493 eats@502 her@509 sandwich.@512
+line  5  frames 537..603
+   But@537 wait.@539 The@555 plane@558 isn't@567 dropping.@573 Why@588 not?@594
+line  6  frames 607..751
+   You@607 see,@609 the@617 engines@622 never@634 held@642 the@650 plane@651 up.@661 The@680 wings@682 do@693 that,@698 and@709 engines@715 only@728 push.@737
+line  7  frames 755..867
+   Ever@755 coast@760 down@771 a@778 hill@779 on@786 a@789 bike?@790 You@812 stop@815 pedaling,@825 and@838 you@842 keep@845 rolling.@853
+line  8  frames 871..966
+   A@871 plane@872 does@884 the@890 same.@893 It@915 rolls@918 down@928 a@935 hill@937 made@946 of@952 air.@957
+line  9  frames 969..1116
+   And@969 that@972 hill@976 is@984 not@988 steep.@995 For@1019 each@1023 mile@1032 it@1042 sinks@1046 the@1054 plane@1057 slides@1067 fifteen@1083 miles@1094 ahead.@1105
+line 10  frames 1120..1165
+   That's@1120 flatter@1125 than@1138 a@1143 wheelchair@1144 ramp.@1157
+line 11  frames 1169..1307
+   So@1169 from@1174 seven@1179 miles@1190 up@1203 it@1209 glides@1211 over@1226 a@1233 hundred@1234 miles,@1245 for@1268 almost@1274 twenty@1284 minutes.@1294
+line 12  frames 1311..1468
+   A@1311 jet@1312 once@1322 ran@1330 out@1338 of@1341 fuel@1343 and@1357 glided@1362 seventy@1375 five@1388 miles@1397 to@1411 an@1414 island,@1417 and@1441 they@1445 all@1449 lived.@1456
+line 13  frames 1472..1618
+   Luckily,@1472 a@1489 little@1491 propeller@1497 drops@1510 from@1521 the@1526 belly@1528 and@1542 spins@1546 in@1560 the@1563 wind@1565 to@1582 power@1585 the@1595 controls.@1598
+line 14  frames 1622..1705
+   Unluckily,@1622 it's@1646 too@1651 small@1657 to@1667 run@1670 the@1678 movie@1679 screens.@1688
+line 15  frames 1709..1870
+   And@1709 here's@1711 the@1719 thing.@1722 On@1744 a@1750 normal@1751 flight@1763 the@1775 pilots@1778 pull@1791 the@1798 engines@1804 back@1815 to@1824 idle@1827 a@1839 hundred@1840 miles@1851 out.@1864
+line 16  frames 1874..2011
+   Gus@1874 has@1880 been@1886 gliding@1893 home@1906 his@1916 whole@1921 life.@1929 He@1952 just@1955 never@1960 knew@1968 it@1976 till@1978 the@1983 movie@1985 stopped.@1995

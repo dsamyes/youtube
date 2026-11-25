@@ -1,0 +1,29 @@
+{
+ "_doc": "Sound plan of engines-quit-midflight, read by engine/toon/audio/build.py (manual: engine/toon/audio/README.md).",
+ "key": "G",
+ "tempo": 124,
+ "seed": 2511,
+ "theme": "stroll",
+ "places": {
+  "sky": "void",
+  "cabin": "room",
+  "ocean": "water"
+ },
+ "sections": [
+  {"from": 0, "mood": "silence", "_why": "the hook: the rush of the airliner, the engine dying, no music"},
+  {"from": 197, "mood": "theme", "end": "stop", "_why": "three in the afternoon, Gus and his movie; stops as the engines do"},
+  {"from": 294, "mood": "silence", "_why": "it all goes quiet: the engine winds down, the screen clicks off"},
+  {"from": 371, "mood": "chase", "hits": [413], "_why": "the neighbor grabs his seat, Gus yells (downbeat), the rock, the sandwich"},
+  {"from": 537, "mood": "silence", "_why": "'But wait': dead stop with the record_stop; thin air underneath"},
+  {"from": 607, "mood": "mystery", "_why": "the explanation: wings lift, engines push"},
+  {"from": 755, "mood": "waltz", "_why": "coasting down the hill on the bike"},
+  {"from": 871, "mood": "mystery", "_why": "a hill made of air, one to fifteen, the ramp"},
+  {"from": 1169, "mood": "theme", "_why": "over a hundred miles, almost twenty minutes"},
+  {"from": 1311, "mood": "lullaby", "_why": "the night glide over the Atlantic"},
+  {"from": 1472, "mood": "bittersweet", "hits": [1622], "_why": "'Luckily' the little propeller ... 'Unluckily' (1622) no movie"},
+  {"from": 1709, "mood": "mystery", "_why": "here's the thing: idle a hundred miles out"},
+  {"from": 1874, "mood": "finale", "_why": "gliding home; button after the last word"}
+ ],
+ "dips": [],
+ "sfx": {}
+}
