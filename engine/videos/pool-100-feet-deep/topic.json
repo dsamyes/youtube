@@ -1,0 +1,31 @@
+{
+ "id": "pool-100-feet-deep",
+ "question": "What if your pool was 100 feet deep?",
+ "answer_in_one_line": "The bottom is another world: every 34 feet of water weigh as much as all the air above your head, so at 100 feet the water presses with four atmospheres, a beach ball is squeezed to a quarter of its air (the size of a basketball) and every square foot of the floor holds up three tons of water.",
+ "trend_basis": [
+  {
+   "source": "youtube_shorts",
+   "evidence": "The strongest real 'what if' row of the week is 'What If You Dug a 60-Foot Pool in Your Backyard?' (4.11M views/day at 1.3 days old, on a 111k-subscriber channel; only gift adverts stand above it). The same backyard-digging theme works for a tiny channel: 'What If You Dig a Hole to the Center of Earth?' has 295k views/day on a 1,500-subscriber channel, and 'What if you were stuck in a bedrock hole?' 1.76M/day on a 33.9k one. We take the theme (a pool far too deep, in your own backyard) and ask our own physical question about what the bottom is like."
+  },
+  {
+   "source": "own_channel",
+   "evidence": "Plain questions about a place everybody has been in lead the channel (plane door 8,974 views, elevator cable 2,073, engines quit 584 views/day) against 1 to 243 views for the abstract space videos; a pool is such a place."
+  },
+  {
+   "source": "google_trends / wikipedia_top / science_news",
+   "evidence": "Nothing to cross with: parade times, elections, football, films; no science headline with an everyday question in it."
+  }
+ ],
+ "why_this_one": "A fresh row of the trend file passes all four tests, so the topic bank was not needed today (its last two clusters, a plane and 'for 5 seconds', are rested either way). Everybody has stood at the deep end of a pool and wondered what a really deep one would be like. The title is eight plain words with concrete nouns. The theme pulls for channels of 1,500, 33,900 and 111,000 subscribers this week. And one number carries the surprise: 34 feet of water weigh as much as the whole sky, so a hundred feet is four atmospheres, which squeezes a beach ball to a quarter and loads every floor tile with three tons. The mechanism (the bottom of a stack carries everything above it) is carried by a stack of pancakes. It is drawable with the kit's garden plus one simple under-water place. Nobody goes under water: only a beach ball on a rope does, Gus stays at the rim, and the film ends on him keeping to the top step because he cannot swim.",
+ "rejected": [
+  "'Comment X if you want one' rows (up to 5.1M views/day): adverts, not questions",
+  "GTA 6 rows (a plane's wing, lying down in front of a plane, Lucia and Mandy), Pac-Man, Roblox, a bedrock hole: games, no physical answer",
+  "Thor, Cinderella's childhood, Cobra Kai, Godzilla: films and series",
+  "mouth breathing and your face, drinking too much water: body and medical topics",
+  "digging a hole to the centre of the Earth (1,500-subscriber channel, 295k views/day): already made here (hole-through-earth); it counts as evidence for the digging theme only",
+  "a kid kicking your seat on a plane (8.4k-subscriber channel, 951k views/day): etiquette, no physics, and the last episode was a plane",
+  "why potholes come back, why concrete cannot wait (10.4k-subscriber channel): good everyday rows but not a 'what if you' with one surprising number",
+  "1,000 mosasaurs in the ocean, an elephant in the ice age, a real cyborg: invented creatures, nothing to compute",
+  "European flags combined, a cricketer born elsewhere: countries and real people"
+ ]
+}

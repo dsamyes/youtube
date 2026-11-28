@@ -1,0 +1,33 @@
+# word@frame at 30 fps (frame = start of the word); written by toon/voice.py, do not edit
+line  1  frames 0..131
+   Gus@0 dug@7 a@13 pool@14 so@26 deep@34 that@56 a@59 beach@60 ball@70 shrinks@80 to@91 a@94 basketball@95 at@115 the@117 bottom.@119
+line  2  frames 135..289
+   It's@135 Saturday@140 morning,@152 and@164 Gus@169 wants@176 the@184 deepest@187 pool@200 on@210 his@213 street:@216 a@240 hundred@241 feet,@254 straight@267 down.@279
+line  3  frames 293..442
+   The@293 dirt@295 fills@303 almost@312 two@326 hundred@332 dump@343 trucks,@350 and@370 the@375 garden@377 hose@389 runs@399 for@411 over@416 three@421 weeks.@429
+line  4  frames 446..540
+   His@446 neighbor@450 laughs.@459 Deep@482 water,@491 he@500 says,@503 is@513 just@516 more@521 water.@528
+line  5  frames 544..712
+   So@544 Gus@549 tests@556 it@566 with@567 a@572 beach@573 ball.@582 It@603 won't@607 go@613 under:@621 full@637 of@645 air,@648 it@661 pushes@665 up@676 with@681 sixty@685 pounds.@696
+line  6  frames 716..818
+   He@716 ties@718 it@728 to@730 a@736 hundred@737 pound@751 barbell@761 and@784 lowers@788 it@799 on@802 a@806 rope.@806
+line  7  frames 822..1019
+   At@822 thirty@825 four@835 feet,@843 the@852 ball@855 is@866 half@869 its@876 size.@880 At@907 a@910 hundred,@911 a@928 quarter:@930 a@955 wrinkled@957 thing@969 no@977 bigger@983 than@992 a@997 basketball.@998
+line  8  frames 1023..1109
+   But@1023 wait.@1025 Nobody@1043 is@1057 touching@1060 it.@1073 So@1078 what@1083 makes@1088 it@1095 shrink?@1098
+line  9  frames 1113..1303
+   You@1113 see,@1115 water@1124 is@1139 heavy.@1142 Think@1165 of@1170 the@1172 bottom@1174 pancake@1187 in@1203 a@1205 tall@1207 stack:@1216 it@1238 carries@1241 all@1253 the@1259 others,@1263 so@1273 it@1279 gets@1280 squashed.@1287
+line 10  frames 1307..1372
+   Down@1307 there,@1314 the@1322 ball@1326 is@1338 the@1342 bottom@1344 pancake.@1356
+line 11  frames 1376..1515
+   Thirty@1376 four@1384 feet@1392 of@1400 water@1403 weigh@1412 as@1419 much@1424 as@1432 all@1435 the@1442 air@1448 above@1454 your@1462 head,@1465 right@1484 up@1491 to@1496 space.@1499
+line 12  frames 1519..1597
+   So@1519 at@1524 a@1526 hundred@1527 feet,@1538 the@1552 ball@1554 carries@1563 four@1574 skies.@1580
+line 13  frames 1601..1718
+   And@1601 every@1604 floor@1611 tile,@1621 one@1638 foot@1644 wide,@1650 holds@1674 up@1683 three@1686 tons@1694 of@1704 water.@1707
+line 14  frames 1722..1860
+   Luckily,@1722 squeezed@1735 air@1750 isn't@1758 lost.@1764 Gus@1790 pulls@1797 the@1807 rope,@1810 and@1820 the@1823 ball@1825 grows@1835 right@1845 back.@1854
+line 15  frames 1864..1908
+   Unluckily,@1864 Gus@1880 can't@1888 swim.@1896
+line 16  frames 1911..2002
+   So@1911 of@1919 his@1921 hundred@1925 feet@1938 of@1944 pool,@1947 he@1967 uses@1970 the@1981 top@1983 two.@1993

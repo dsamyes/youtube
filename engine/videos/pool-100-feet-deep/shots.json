@@ -1,0 +1,794 @@
+{
+ "_doc": "Picture/sound contract for pool-100-feet-deep. 30 fps. Frames come from voice/frames.txt (word start frames). Visual reactions land 0-3 frames before their word.",
+ "fps": 30,
+ "total_frames": 2018,
+ "flash_at": 135,
+ "planned_pops": [
+  1241,
+  1253,
+  1263,
+  1320,
+  1321,
+  1322,
+  1323,
+  1324,
+  1325,
+  1326,
+  1336,
+  1337,
+  1338,
+  1339,
+  1340,
+  1341,
+  1342,
+  1679,
+  1680,
+  1681,
+  1682,
+  1683,
+  1684,
+  1685
+ ],
+ "places": {
+  "garden": "Gus's back garden (kit town place, plain lawn with the dirt mound) with his new rectangular pool: pale stone rim, very dark water",
+  "deep": "under water in the pool (this video's place): a blue tiled wall with white depth marks that scrolls, the tiled floor at 100 feet, bubbles; the beach ball, the barbell and the diagrams are flat cards",
+  "street": "a road under open sky (the 'sky' place of plane-door-midflight with its ground): the dump trucks",
+  "board": "open sky without ground (the same place): the balance scale with the block of water and the column of air"
+ },
+ "shots": [
+  {
+   "id": 1,
+   "a": 0,
+   "b": 56,
+   "place": "deep",
+   "light": "day",
+   "line": 1,
+   "what": "HOOK, already moving. Under water in a tiled pool shaft: a striped beach ball tied by a short rope to a black barbell sinks fast past the blue tiled wall, bubbles streaming up, white depth marks rushing upward behind it; the lens rides down with it, tilted. The ball is already denting in."
+  },
+  {
+   "id": 2,
+   "a": 56,
+   "b": 135,
+   "place": "deep",
+   "light": "day",
+   "line": 1,
+   "what": "Same ride, a little wider: the wall darkens to deep blue and the ball crumples smaller and smaller inside a dashed ring that shows its first size, the marks 60, 70, 80, 90 sliding up past it. The barbell lands on the tiled floor (f116, 'bottom') with a puff; a real basketball pops in beside the wrinkled ball, the same size (f93). Big whoosh f120, white flash f135."
+  },
+  {
+   "id": 3,
+   "a": 135,
+   "b": 240,
+   "place": "garden",
+   "light": "day",
+   "line": 2,
+   "what": "Saturday morning in Gus's back garden, wide over the lawn: a new rectangular pool with a pale stone rim and very dark blue water lies in the grass, the dirt mound with the planted shovel beside it. Gus in pyjamas and fishbowl helmet stands behind the pool, proud, hands on hips; from f176 the lens glides in to a full shot and on 'deepest' (f187) he points straight down into the water."
+  },
+  {
+   "id": 4,
+   "a": 240,
+   "b": 293,
+   "place": "deep",
+   "light": "day",
+   "line": 2,
+   "what": "Under water: the lens dives straight down along the tiled wall, the depth marks 20, 40, 60, 80 flying up past it and the blue getting darker, bubbles rushing up; it brakes at the floor where a big white mark reads 100 (arrives f277, 'down') and a glint lands on it."
+  },
+  {
+   "id": 5,
+   "a": 293,
+   "b": 370,
+   "place": "street",
+   "light": "day",
+   "line": 3,
+   "what": "A road under open sky: a row of orange dump trucks heaped with brown dirt rolls past from right to left, nose to tail, more behind them in the distance. A white tag with 200 pops in over the trucks (f324, 'two hundred'); the front truck honks."
+  },
+  {
+   "id": 6,
+   "a": 370,
+   "b": 446,
+   "place": "garden",
+   "light": "day",
+   "line": 3,
+   "what": "Full shot of Gus behind his pool holding a green garden hose that pours a thin arc of water into it; he is bored, then asleep on his feet (from f399). A wall calendar card pops in beside him (f375) and red crosses fill its days row by row; a tag with 3 pops in on 'three' (f419)."
+  },
+  {
+   "id": 7,
+   "a": 446,
+   "b": 544,
+   "place": "garden",
+   "light": "day",
+   "line": 4,
+   "what": "The neighbor behind his fence, head and shoulders, laughing with his eyes shut (f457). From f482 he talks, deadpan, and on 'more water' (f519) he waves the whole thing off with one hand. The lens creeps in."
+  },
+  {
+   "id": 8,
+   "a": 544,
+   "b": 716,
+   "place": "garden",
+   "light": "day",
+   "line": 5,
+   "what": "Full shot of Gus behind the pool. He holds up a big striped beach ball (f571, 'beach ball'), sets it on the water and pushes it down with both hands (f612 to f621, 'won't go under'): it jumps back up out of the water with a splash (f628) and bobs. A fat arrow pointing up pops in under the ball (f663, 'pushes up') and a tag with 60 over it (f683, 'sixty'). Gus stares at it."
+  },
+  {
+   "id": 9,
+   "a": 716,
+   "b": 822,
+   "place": "garden",
+   "light": "day",
+   "line": 6,
+   "what": "Same place, the lens a little lower and closer: a black barbell with 100 on its plates lies on the pool's rim, the beach ball tied to it with a rope. Gus knots the rope (f718), pats the barbell (f759, 'barbell'), then tips it over the rim (f787, 'lowers'): barbell and ball go under with a splash and he pays the rope out hand over hand, looking down."
+  },
+  {
+   "id": 10,
+   "a": 822,
+   "b": 955,
+   "place": "deep",
+   "light": "day",
+   "line": 7,
+   "what": "Under water, the lens riding down with the ball: it hangs on its rope above the barbell, the dashed ring of its first size around it. A white mark 34 slides up the wall and stops beside it (f823); the ball is dented in to half its volume and shudders (f864, 'half'). The descent goes on, fast (f884 to f912), past 40 to 90 to the mark 100 and the floor; the barbell touches down (f912) with a puff and the ball, crumpled to a quarter, shudders again (f928, 'quarter')."
+  },
+  {
+   "id": 11,
+   "a": 955,
+   "b": 1023,
+   "place": "deep",
+   "light": "day",
+   "line": 7,
+   "what": "Close on the floor of the pool: the small wrinkled ball floats on its rope just over the barbell, bubbles trickling up. On 'basketball' (f996) an orange basketball pops in next to it: the same size. The lens creeps in."
+  },
+  {
+   "id": 12,
+   "a": 1023,
+   "b": 1113,
+   "place": "garden",
+   "light": "day",
+   "line": 8,
+   "what": "The music stops. Medium shot of Gus standing at the rim with the rope in his hand, staring down into the dark water, worried; he lifts his other hand, empty, and looks at it ('nobody is touching it', f1043), then a big question mark pops over his helmet (f1081, 'what')."
+  },
+  {
+   "id": 13,
+   "a": 1113,
+   "b": 1165,
+   "place": "garden",
+   "light": "day",
+   "line": 9,
+   "what": "Full shot of Gus at the rim, lifting a full bucket of water out of the pool with one hand; on 'heavy' (f1140) the bucket drags his arm straight down and he bends with it, water slopping out."
+  },
+  {
+   "id": 14,
+   "a": 1165,
+   "b": 1238,
+   "place": "garden",
+   "light": "day",
+   "line": 9,
+   "what": "His wife, medium shot, holds a plate; pancakes drop onto it one after another (f1185, f1196, f1207, f1218) into a tall, tottering stack that climbs past her face. She watches it, deadpan."
+  },
+  {
+   "id": 15,
+   "a": 1238,
+   "b": 1307,
+   "place": "garden",
+   "light": "day",
+   "line": 9,
+   "what": "Close on the bottom of the stack on the plate: more pancakes land on top (f1241, f1253, f1263) and with each one the bottom pancake, marked by a red arrow, gets flatter and wider; on 'squashed' (f1285) it is pressed quite flat."
+  },
+  {
+   "id": 16,
+   "a": 1307,
+   "b": 1376,
+   "place": "deep",
+   "light": "day",
+   "line": 10,
+   "what": "On the floor of the pool again: the wrinkled ball, and over it three thick slabs of water drop into place one on top of the other like pancakes (f1312, f1326, f1342), each marked with a wavy line; the ball flattens a little more under each. A red arrow points at the ball (f1354, 'bottom pancake')."
+  },
+  {
+   "id": 17,
+   "a": 1376,
+   "b": 1519,
+   "place": "board",
+   "light": "day",
+   "line": 11,
+   "what": "A big balance scale against the open sky. A blue block of water with a ruler and a tag 34 drops into the left pan (f1378) and that pan sinks. A tall column of sky, pale blue with little clouds, lands in the right pan (f1436, 'all the air') and the beam swings level (f1452). From f1478 the lens climbs up the column: the blue darkens to black and stars come out at its top (f1499, 'space')."
+  },
+  {
+   "id": 18,
+   "a": 1519,
+   "b": 1601,
+   "place": "deep",
+   "light": "day",
+   "line": 12,
+   "what": "The floor of the pool: the ball under its stack, now three slabs of water and on top of them one slab of sky with a cloud in it. Tags count them from the top down, 1, 2, 3, 4 (f1552, f1558, f1565, f1572, 'four skies'), and the stack presses the ball flat for a moment."
+  },
+  {
+   "id": 19,
+   "a": 1601,
+   "b": 1722,
+   "place": "deep",
+   "light": "day",
+   "line": 13,
+   "what": "Low over the tiled floor of the pool. One floor tile lights up yellow (f1609, 'floor tile'), a small ruler with a tag 1 pops in along its edge (f1636, 'one foot'), and a huge iron weight with a 3 on it drops onto the tile out of the dark above (lands f1684, 'three tons'); the picture shakes, bubbles burst out from under it."
+  },
+  {
+   "id": 20,
+   "a": 1722,
+   "b": 1790,
+   "place": "deep",
+   "light": "day",
+   "line": 14,
+   "what": "Under water, going up: the rope pulls the barbell and the ball up past the wall, marks sliding down, the blue getting lighter; the wrinkles smooth out and the ball swells back to fill its dashed ring (f1735 to f1785), bubbles around it."
+  },
+  {
+   "id": 21,
+   "a": 1790,
+   "b": 1864,
+   "place": "garden",
+   "light": "day",
+   "line": 14,
+   "what": "Full shot of Gus hauling the rope in hand over hand (f1797, 'pulls'). The beach ball bursts out of the water, big and round again (f1833, 'grows'), with a splash, and bobs in front of him; he beams and gives a thumbs-up (f1852, 'back')."
+  },
+  {
+   "id": 22,
+   "a": 1864,
+   "b": 1911,
+   "place": "garden",
+   "light": "day",
+   "line": 15,
+   "what": "Medium shot of Gus at the rim looking down at the black water. On 'Gus' (f1878) he gulps, a drop of sweat on his brow, and takes half a step back."
+  },
+  {
+   "id": 23,
+   "a": 1911,
+   "b": 2018,
+   "place": "garden",
+   "light": "day",
+   "line": 16,
+   "what": "The payoff, a full shot across the pool: Gus stands on the top step in the corner of his dark pool, the water just over his knees, a yellow duck swim ring round his waist, the beach ball floating beside him. He paddles the water happily with one hand. A little ruler with a tag 2 pops in at the water line beside him on the last word (f1991, 'two') and he smiles with his eyes shut."
+  }
+ ],
+ "xfade": {
+  "4": 8,
+  "6": 8,
+  "10": 8,
+  "12": 8,
+  "16": 8,
+  "17": 8,
+  "18": 8,
+  "21": 8
+ },
+ "events": [
+  {
+   "f": 0,
+   "type": "wind_rush",
+   "to": 135,
+   "shape": "hook",
+   "note": "the hook: the ball sinks fast"
+  },
+  {
+   "f": 0,
+   "type": "bubbling",
+   "to": 135,
+   "rate": 40,
+   "note": "under water"
+  },
+  {
+   "f": 30,
+   "type": "squeak",
+   "id": "dent0",
+   "note": "the ball dents"
+  },
+  {
+   "f": 78,
+   "type": "squeak",
+   "id": "shrink1",
+   "note": "the ball crumples"
+  },
+  {
+   "f": 93,
+   "type": "pop",
+   "id": "bball1",
+   "note": "a basketball pops in beside it"
+  },
+  {
+   "f": 116,
+   "type": "thud",
+   "id": "floor1",
+   "note": "the barbell lands on the floor"
+  },
+  {
+   "f": 120,
+   "type": "whoosh_big",
+   "note": "before the flash"
+  },
+  {
+   "f": 135,
+   "type": "flash_hit",
+   "note": "white flash"
+  },
+  {
+   "f": 135,
+   "type": "amb_garden",
+   "to": 240,
+   "note": "Saturday morning in the garden"
+  },
+  {
+   "f": 150,
+   "type": "bird_tweet",
+   "note": "morning"
+  },
+  {
+   "f": 187,
+   "type": "pop",
+   "id": "point",
+   "note": "Gus points down into the pool"
+  },
+  {
+   "f": 240,
+   "type": "whoosh",
+   "id": "dive",
+   "note": "the lens dives"
+  },
+  {
+   "f": 240,
+   "type": "bubbling",
+   "to": 293,
+   "rate": 40,
+   "note": "under water"
+  },
+  {
+   "f": 277,
+   "type": "ting",
+   "id": "at100",
+   "note": "the 100 mark at the floor"
+  },
+  {
+   "f": 293,
+   "type": "car_pass",
+   "to": 345,
+   "note": "dump trucks roll past"
+  },
+  {
+   "f": 324,
+   "type": "arrow_pop",
+   "id": "t200",
+   "note": "tag 200"
+  },
+  {
+   "f": 346,
+   "type": "car_horn",
+   "id": "honk",
+   "level": -9,
+   "note": "the front truck honks"
+  },
+  {
+   "f": 370,
+   "type": "amb_garden",
+   "to": 822,
+   "note": "garden"
+  },
+  {
+   "f": 375,
+   "type": "paper_flick",
+   "id": "cal",
+   "note": "the calendar pops in"
+  },
+  {
+   "f": 377,
+   "type": "amb_river",
+   "to": 446,
+   "level": -26,
+   "note": "the hose runs into the pool"
+  },
+  {
+   "f": 399,
+   "type": "clock_tick",
+   "to": 440,
+   "id": "doze",
+   "note": "days go by"
+  },
+  {
+   "f": 419,
+   "type": "flip_blip",
+   "id": "weeks",
+   "note": "tag 3 (weeks)"
+  },
+  {
+   "f": 457,
+   "type": "oof",
+   "id": "laugh",
+   "kind": "oh",
+   "note": "the neighbor laughs"
+  },
+  {
+   "f": 519,
+   "type": "whoosh",
+   "id": "wave",
+   "note": "he waves it off"
+  },
+  {
+   "f": 571,
+   "type": "pop",
+   "id": "ball",
+   "note": "Gus holds up the beach ball"
+  },
+  {
+   "f": 612,
+   "type": "push_whoosh",
+   "id": "push",
+   "note": "he pushes it under"
+  },
+  {
+   "f": 628,
+   "type": "cork_pop",
+   "id": "popup",
+   "wet": true,
+   "note": "the ball jumps back up"
+  },
+  {
+   "f": 663,
+   "type": "arrow_pop",
+   "id": "uparrow",
+   "note": "arrow up under the ball"
+  },
+  {
+   "f": 683,
+   "type": "pop",
+   "id": "t60",
+   "note": "tag 60"
+  },
+  {
+   "f": 718,
+   "type": "click",
+   "id": "tie",
+   "note": "he knots the rope"
+  },
+  {
+   "f": 759,
+   "type": "metal_clang",
+   "id": "pat",
+   "level": -10,
+   "note": "he pats the barbell"
+  },
+  {
+   "f": 787,
+   "type": "splash",
+   "id": "lower",
+   "size": "big",
+   "note": "barbell and ball go under"
+  },
+  {
+   "f": 800,
+   "type": "swing_creak",
+   "to": 822,
+   "note": "the rope runs out"
+  },
+  {
+   "f": 822,
+   "type": "bubbling",
+   "to": 1023,
+   "note": "under water"
+  },
+  {
+   "f": 823,
+   "type": "arrow_pop",
+   "id": "m34",
+   "note": "mark 34 arrives"
+  },
+  {
+   "f": 864,
+   "type": "squeak",
+   "id": "half",
+   "note": "the ball is half"
+  },
+  {
+   "f": 884,
+   "type": "whoosh",
+   "id": "drop2",
+   "note": "down again, fast"
+  },
+  {
+   "f": 912,
+   "type": "thud",
+   "id": "floor2",
+   "note": "the barbell touches down at 100"
+  },
+  {
+   "f": 928,
+   "type": "squeak",
+   "id": "quarter",
+   "note": "a quarter"
+  },
+  {
+   "f": 996,
+   "type": "pop",
+   "id": "bball2",
+   "note": "the basketball"
+  },
+  {
+   "f": 1023,
+   "type": "record_stop",
+   "note": "But wait"
+  },
+  {
+   "f": 1023,
+   "type": "amb_garden",
+   "to": 1307,
+   "birds": 0.4,
+   "cricket": 1,
+   "note": "the quiet garden"
+  },
+  {
+   "f": 1043,
+   "type": "blip",
+   "id": "hands",
+   "note": "he looks at his empty hands"
+  },
+  {
+   "f": 1081,
+   "type": "question_blip",
+   "id": "what",
+   "note": "question mark"
+  },
+  {
+   "f": 1118,
+   "type": "drip",
+   "id": "bucket",
+   "note": "the bucket comes out of the water"
+  },
+  {
+   "f": 1140,
+   "type": "thud",
+   "id": "heavy",
+   "level": -8,
+   "note": "the bucket drags his arm down"
+  },
+  {
+   "f": 1146,
+   "type": "splash",
+   "id": "slop",
+   "note": "water slops out"
+  },
+  {
+   "f": 1185,
+   "type": "pop",
+   "id": "stk1",
+   "pitch": "C6",
+   "note": "a pancake lands on the stack"
+  },
+  {
+   "f": 1196,
+   "type": "pop",
+   "id": "stk2",
+   "pitch": "D6",
+   "note": "a pancake lands on the stack"
+  },
+  {
+   "f": 1207,
+   "type": "pop",
+   "id": "stk3",
+   "pitch": "E6",
+   "note": "a pancake lands on the stack"
+  },
+  {
+   "f": 1218,
+   "type": "pop",
+   "id": "stk4",
+   "pitch": "G6",
+   "note": "a pancake lands on the stack"
+  },
+  {
+   "f": 1241,
+   "type": "blip",
+   "id": "more1",
+   "pitch": "G5",
+   "note": "one more pancake on top"
+  },
+  {
+   "f": 1253,
+   "type": "blip",
+   "id": "more2",
+   "pitch": "E5",
+   "note": "one more pancake on top"
+  },
+  {
+   "f": 1263,
+   "type": "blip",
+   "id": "more3",
+   "pitch": "C5",
+   "note": "one more pancake on top"
+  },
+  {
+   "f": 1285,
+   "type": "splat",
+   "id": "squash",
+   "level": -8,
+   "note": "the bottom pancake is squashed"
+  },
+  {
+   "f": 1307,
+   "type": "bubbling",
+   "to": 1376,
+   "note": "under water"
+  },
+  {
+   "f": 1312,
+   "type": "thud",
+   "id": "slab1",
+   "level": -9,
+   "note": "a slab of water drops on the ball"
+  },
+  {
+   "f": 1326,
+   "type": "thud",
+   "id": "slab2",
+   "level": -9,
+   "note": "a slab of water drops on the ball"
+  },
+  {
+   "f": 1342,
+   "type": "thud",
+   "id": "slab3",
+   "level": -9,
+   "note": "a slab of water drops on the ball"
+  },
+  {
+   "f": 1354,
+   "type": "arrow_pop",
+   "id": "bottom",
+   "note": "arrow at the ball"
+  },
+  {
+   "f": 1378,
+   "type": "thud",
+   "id": "wblock",
+   "level": -8,
+   "note": "the block of water lands in the pan"
+  },
+  {
+   "f": 1381,
+   "type": "arrow_pop",
+   "id": "t34",
+   "note": "tag 34"
+  },
+  {
+   "f": 1436,
+   "type": "whoosh",
+   "id": "aircol",
+   "note": "the column of air lands in the other pan"
+  },
+  {
+   "f": 1452,
+   "type": "ding",
+   "id": "level",
+   "note": "the scale is level"
+  },
+  {
+   "f": 1478,
+   "type": "whoosh_big",
+   "id": "tilt",
+   "level": -6,
+   "note": "up the column to space"
+  },
+  {
+   "f": 1499,
+   "type": "twinkle",
+   "id": "space",
+   "note": "stars"
+  },
+  {
+   "f": 1519,
+   "type": "bubbling",
+   "to": 1790,
+   "note": "under water"
+  },
+  {
+   "f": 1552,
+   "type": "blip",
+   "id": "c1",
+   "pitch": "C6",
+   "note": "count the skies"
+  },
+  {
+   "f": 1558,
+   "type": "blip",
+   "id": "c2",
+   "pitch": "D6",
+   "note": "count the skies"
+  },
+  {
+   "f": 1565,
+   "type": "blip",
+   "id": "c3",
+   "pitch": "E6",
+   "note": "count the skies"
+  },
+  {
+   "f": 1572,
+   "type": "ding",
+   "id": "c4",
+   "note": "four"
+  },
+  {
+   "f": 1609,
+   "type": "flip_blip",
+   "id": "tile",
+   "note": "one tile lights up"
+  },
+  {
+   "f": 1636,
+   "type": "arrow_pop",
+   "id": "foot",
+   "note": "ruler and tag 1"
+  },
+  {
+   "f": 1684,
+   "type": "thud",
+   "id": "tons",
+   "level": -3,
+   "note": "three tons land on the tile"
+  },
+  {
+   "f": 1687,
+   "type": "metal_clang",
+   "id": "ring",
+   "pitch": 150,
+   "level": -9,
+   "note": "the iron weight rings"
+  },
+  {
+   "f": 1735,
+   "type": "slide_whistle_up",
+   "to": 1785,
+   "id": "rise",
+   "note": "the ball comes up and grows"
+  },
+  {
+   "f": 1790,
+   "type": "amb_garden",
+   "to": 2018,
+   "note": "garden"
+  },
+  {
+   "f": 1797,
+   "type": "swing_creak",
+   "to": 1830,
+   "id": "pull",
+   "note": "Gus hauls the rope"
+  },
+  {
+   "f": 1833,
+   "type": "cork_pop",
+   "id": "out",
+   "wet": true,
+   "note": "the ball bursts out, full size"
+  },
+  {
+   "f": 1852,
+   "type": "ding",
+   "id": "back",
+   "note": "thumbs up"
+  },
+  {
+   "f": 1878,
+   "type": "gulp",
+   "id": "gulp",
+   "note": "Gus gulps"
+  },
+  {
+   "f": 1915,
+   "type": "splash",
+   "id": "paddle",
+   "note": "he paddles on the top step"
+  },
+  {
+   "f": 1945,
+   "type": "squeak",
+   "id": "duck",
+   "note": "the duck ring"
+  },
+  {
+   "f": 1991,
+   "type": "arrow_pop",
+   "id": "two",
+   "note": "tag 2"
+  }
+ ]
+}

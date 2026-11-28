@@ -1,0 +1,22 @@
+{
+ "_doc": "Sound plan of pool-100-feet-deep, read by engine/toon/audio/build.py (manual: engine/toon/audio/README.md).",
+ "key": "D",
+ "tempo": 134,
+ "seed": 2811,
+ "theme": "tiptoe",
+ "places": {"garden": "outdoor", "deep": "water", "street": "outdoor", "board": "void"},
+ "sections": [
+  {"from": 0, "mood": "silence", "_why": "the hook: the rush and the bubbles of the sinking ball"},
+  {"from": 135, "mood": "theme", "end": "stop", "_why": "Saturday morning, the dig, the hose, the neighbor"},
+  {"from": 544, "mood": "chase", "hits": [628, 787], "_why": "the test: downbeats on the ball jumping back up and on the barbell going under"},
+  {"from": 822, "mood": "lullaby", "_why": "under water: thirty-four feet, a hundred feet"},
+  {"from": 1023, "mood": "silence", "_why": "'But wait': dead stop with the record_stop"},
+  {"from": 1113, "mood": "mystery", "_why": "the explanation: heavy water, the pancakes"},
+  {"from": 1376, "mood": "waltz", "_why": "the scale: water against all the air"},
+  {"from": 1519, "mood": "chase", "hits": [1572, 1684], "_why": "four skies and three tons: downbeats on 'four' and on the weight"},
+  {"from": 1722, "mood": "bittersweet", "hits": [1864], "_why": "'Luckily' ... 'Unluckily' (1864)"},
+  {"from": 1915, "mood": "finale", "_why": "the top two feet; button after the last word"}
+ ],
+ "dips": [],
+ "sfx": {}
+}

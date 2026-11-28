@@ -1,0 +1,28 @@
+{
+  "id": "pool-100-feet-deep",
+  "title": "What If Your Pool Was 100 Feet Deep?",
+  "voice": {
+    "provider": "kokoro",
+    "voice": "am_michael",
+    "speed": 1.2,
+    "gap_s": 0.12
+  },
+  "lines": [
+    "Gus dug a pool so deep that a beach ball shrinks to a basketball at the bottom.",
+    "It's Saturday morning, and Gus wants the deepest pool on his street: a hundred feet, straight down.",
+    "The dirt fills almost two hundred dump trucks, and the garden hose runs for over three weeks.",
+    "His neighbor laughs. Deep water, he says, is just more water.",
+    "So Gus tests it with a beach ball. It won't go under: full of air, it pushes up with sixty pounds.",
+    "He ties it to a hundred-pound barbell and lowers it on a rope.",
+    "At thirty-four feet, the ball is half its size. At a hundred, a quarter: a wrinkled thing no bigger than a basketball.",
+    "But wait. Nobody is touching it. So what makes it shrink?",
+    "You see, water is heavy. Think of the bottom pancake in a tall stack: it carries all the others, so it gets squashed.",
+    "Down there, the ball is the bottom pancake.",
+    "Thirty-four feet of water weigh as much as all the air above your head, right up to space.",
+    "So at a hundred feet, the ball carries four skies.",
+    "And every floor tile, one foot wide, holds up three tons of water.",
+    "Luckily, squeezed air isn't lost. Gus pulls the rope, and the ball grows right back.",
+    "Unluckily, Gus can't swim.",
+    "So of his hundred feet of pool, he uses the top two."
+  ]
+}

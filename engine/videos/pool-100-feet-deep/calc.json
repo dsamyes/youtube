@@ -1,0 +1,111 @@
+{
+ "assumptions": {
+  "pool_plan_ft": [
+   16.0,
+   32.0
+  ],
+  "depth_ft": 100.0,
+  "water": "fresh, 20 C",
+  "ball_in": 15.0,
+  "hose_gpm": 11.0,
+  "truck_cubic_yards": 10.0,
+  "barbell_lb": 100.0
+ },
+ "pressure": {
+  "feet_of_fresh_water_per_atmosphere": 33.96,
+  "abs_atm_at_34_ft": 2.001,
+  "abs_atm_at_100_ft": 3.945,
+  "gauge_psi_at_100_ft": 43.3,
+  "air_lb_per_sq_ft": 2116.0
+ },
+ "ball": {
+  "volume_fraction_at_34_ft": 0.5,
+  "volume_fraction_at_100_ft": 0.254,
+  "width_fraction_at_100_ft": 0.633,
+  "width_at_100_ft_in": 9.49,
+  "basketball_width_in": 9.39,
+  "volume_L": 29.0,
+  "lift_at_surface_lb": 63.7,
+  "lift_at_100_ft_lb": 16.2,
+  "barbell_under_water_lb": 86.1,
+  "barbell_minus_lift_lb": 22.4
+ },
+ "floor": {
+  "water_on_one_square_foot_lb": 6232.0,
+  "short_tons": 3.12
+ },
+ "pool": {
+  "volume_cubic_feet": 51200,
+  "gallons": 383000.0,
+  "dump_truck_loads": 190,
+  "hose_days": 24.2,
+  "hose_weeks": 3.45,
+  "water_short_tons": 1595
+ },
+ "checks": [
+  {
+   "check": "fresh water: about 34 ft per atmosphere (NOAA Diving Manual: 34 ft)",
+   "ok": true
+  },
+  {
+   "check": "two methods agree on feet per atmosphere",
+   "ok": true
+  },
+  {
+   "check": "at 34 ft the air is half its volume (within 1 %)",
+   "ok": true
+  },
+  {
+   "check": "at 100 ft about four atmospheres: 3.9 to 4.0",
+   "ok": true
+  },
+  {
+   "check": "foot-by-foot stack gives the same pressure at 100 ft",
+   "ok": true
+  },
+  {
+   "check": "at 100 ft the air is a quarter of its volume (within 0.01)",
+   "ok": true
+  },
+  {
+   "check": "limiting case: at the surface nothing is squeezed",
+   "ok": true
+  },
+  {
+   "check": "published: 0.432 psi per foot of fresh water (NOAA) -> 43.2 psi at 100 ft",
+   "ok": true
+  },
+  {
+   "check": "published: water weighs 62.4 lb per cubic foot (USGS), 62.3 at 20 C",
+   "ok": true
+  },
+  {
+   "check": "the squeezed ball is a basketball: within 6 %",
+   "ok": true
+  },
+  {
+   "check": "the ball pushes up with a little over sixty pounds",
+   "ok": true
+  },
+  {
+   "check": "the barbell still sinks it at the surface",
+   "ok": true
+  },
+  {
+   "check": "three tons of water on one square foot (3.0 to 3.2)",
+   "ok": true
+  },
+  {
+   "check": "almost two hundred truck loads (180 to 200)",
+   "ok": true
+  },
+  {
+   "check": "over three weeks of hose (21 to 28 days)",
+   "ok": true
+  },
+  {
+   "check": "volume two ways: gallons x 8.33 lb is the weight of the water",
+   "ok": true
+  }
+ ]
+}

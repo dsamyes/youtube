@@ -1,0 +1,136 @@
+{
+ "voice": "kokoro-v1.0:am_michael@1.2",
+ "duration_s": 66.764,
+ "words": 235,
+ "wps": 3.52,
+ "lines": [
+  {
+   "line": 1,
+   "text": "Gus dug a pool so deep that a beach ball shrinks to a basketball at the bottom.",
+   "s": 0.0,
+   "e": 4.394,
+   "words": 17,
+   "wps": 3.87
+  },
+  {
+   "line": 2,
+   "text": "It's Saturday morning, and Gus wants the deepest pool on his street: a hundred feet, straight down.",
+   "s": 4.514,
+   "e": 9.648,
+   "words": 17,
+   "wps": 3.31
+  },
+  {
+   "line": 3,
+   "text": "The dirt fills almost two hundred dump trucks, and the garden hose runs for over three weeks.",
+   "s": 9.768,
+   "e": 14.742,
+   "words": 17,
+   "wps": 3.42
+  },
+  {
+   "line": 4,
+   "text": "His neighbor laughs. Deep water, he says, is just more water.",
+   "s": 14.862,
+   "e": 18.016,
+   "words": 11,
+   "wps": 3.49
+  },
+  {
+   "line": 5,
+   "text": "So Gus tests it with a beach ball. It won't go under: full of air, it pushes up with sixty pounds.",
+   "s": 18.136,
+   "e": 23.74,
+   "words": 21,
+   "wps": 3.75
+  },
+  {
+   "line": 6,
+   "text": "He ties it to a hundred-pound barbell and lowers it on a rope.",
+   "s": 23.86,
+   "e": 27.284,
+   "words": 14,
+   "wps": 4.09
+  },
+  {
+   "line": 7,
+   "text": "At thirty-four feet, the ball is half its size. At a hundred, a quarter: a wrinkled thing no bigger than a basketball.",
+   "s": 27.404,
+   "e": 33.968,
+   "words": 23,
+   "wps": 3.5
+  },
+  {
+   "line": 8,
+   "text": "But wait. Nobody is touching it. So what makes it shrink?",
+   "s": 34.088,
+   "e": 36.992,
+   "words": 11,
+   "wps": 3.79
+  },
+  {
+   "line": 9,
+   "text": "You see, water is heavy. Think of the bottom pancake in a tall stack: it carries all the others, so it gets squashed.",
+   "s": 37.112,
+   "e": 43.456,
+   "words": 23,
+   "wps": 3.63
+  },
+  {
+   "line": 10,
+   "text": "Down there, the ball is the bottom pancake.",
+   "s": 43.576,
+   "e": 45.74,
+   "words": 8,
+   "wps": 3.7
+  },
+  {
+   "line": 11,
+   "text": "Thirty-four feet of water weigh as much as all the air above your head, right up to space.",
+   "s": 45.86,
+   "e": 50.514,
+   "words": 19,
+   "wps": 4.08
+  },
+  {
+   "line": 12,
+   "text": "So at a hundred feet, the ball carries four skies.",
+   "s": 50.634,
+   "e": 53.238,
+   "words": 10,
+   "wps": 3.84
+  },
+  {
+   "line": 13,
+   "text": "And every floor tile, one foot wide, holds up three tons of water.",
+   "s": 53.358,
+   "e": 57.272,
+   "words": 13,
+   "wps": 3.32
+  },
+  {
+   "line": 14,
+   "text": "Luckily, squeezed air isn't lost. Gus pulls the rope, and the ball grows right back.",
+   "s": 57.392,
+   "e": 62.026,
+   "words": 15,
+   "wps": 3.24
+  },
+  {
+   "line": 15,
+   "text": "Unluckily, Gus can't swim.",
+   "s": 62.146,
+   "e": 63.59,
+   "words": 4,
+   "wps": 2.77
+  },
+  {
+   "line": 16,
+   "text": "So of his hundred feet of pool, he uses the top two.",
+   "s": 63.71,
+   "e": 66.764,
+   "words": 12,
+   "wps": 3.93
+  }
+ ]
+}
